@@ -4,7 +4,7 @@ import './question.dart';
 import './answer.dart';
 
 class Quiz extends StatelessWidget {
-  final List<String> questions;
+  final List<Map<String, Object>> questions;
   final int questionIndex;
   final Function answerQuestion;
   final Function showButtonClicker;
@@ -24,22 +24,29 @@ class Quiz extends StatelessWidget {
       child: Column(
         children: [
           Question(
-            questions[questionIndex],
+            questions[questionIndex]['questionText'],
           ),
           showButtonClicked
-              ? ButtonTheme(
-                  minWidth: 400.0,
-                  height: 200.0,
-                  child: RaisedButton(
-                    color: Colors.yellow,
-                    textColor: Colors.black,
-                    child: Text("Show Answer"),
-                    onPressed: showButtonClicker,
-                  ),
-                )
-              : Answer(answerQuestion)
+              ? showButtonWidget()
+              : Answer(answerQuestion, questions[questionIndex]['answerText'])
         ],
       ),
     );
+  }
+
+  Widget showButtonWidget() {
+    return Column(children: [
+      SizedBox(height: 100),
+      ButtonTheme(
+        minWidth: 400.0,
+        height: 200.0,
+        child: RaisedButton(
+          color: Colors.yellow,
+          textColor: Colors.black,
+          child: Text("Show Answer"),
+          onPressed: showButtonClicker,
+        ),
+      )
+    ]);
   }
 }

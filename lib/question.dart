@@ -11,8 +11,8 @@ class Question extends StatelessWidget {
       height: 250.0,
       width: 200.0,
       margin: const EdgeInsets.only(
-        top: 50,
-        bottom: 100,
+        top: 10,
+        bottom: 10,
       ),
       decoration: BoxDecoration(
         image: DecorationImage(
