@@ -15,19 +15,26 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final _questions = const [
     {
-      'questionText': 'What\'s your favorite color?',
+      'questionText': 'assets/images/15_Kanji_xl.png',
       'answers': [
         {'text': 'Red', 'score': 10},
         {'text': 'Black', 'score': 5},
       ],
     },
     {
-      'questionText': 'What\'s your favorite animal?',
+      'questionText': 'assets/images/16_Kanji_xl.png',
       'answers': [
         {'text': 'Dog', 'score': 10},
         {'text': 'Rabbit', 'score': 5},
       ],
     },
+    {
+      'questionText': 'assets/images/17_Kanji_xl.png',
+      'answers': [
+        {'text': 'Dog', 'score': 10},
+        {'text': 'Rabbit', 'score': 5},
+      ],
+    }
   ];
 
   var _questionIndex = 0;
