@@ -8,8 +8,8 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150.0,
-      width: 150.0,
+      height: 250.0,
+      width: 200.0,
       margin: const EdgeInsets.only(
         top: 50,
         bottom: 100,

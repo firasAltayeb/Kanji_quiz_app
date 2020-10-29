@@ -8,6 +8,7 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ButtonTheme(
           minWidth: 200.0,

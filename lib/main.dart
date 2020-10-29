@@ -25,13 +25,21 @@ class _MyAppState extends State<MyApp> {
     }
   ];
 
+  var _showButtonClicked = true;
   var _questionIndex = 0;
   var _totalScore = 0;
+
+  void _showButtonClicker() {
+    setState(() {
+      _showButtonClicked = false;
+    });
+  }
 
   void _answerQuestion(int score) {
     _totalScore += score;
 
     setState(() {
+      _showButtonClicked = true;
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
@@ -56,6 +64,8 @@ class _MyAppState extends State<MyApp> {
                 answerQuestion: _answerQuestion,
                 questionIndex: _questionIndex,
                 questions: _questions,
+                showButtonClicked: _showButtonClicked,
+                showButtonClicker: _showButtonClicker,
               )
             : Result(
                 _totalScore,
