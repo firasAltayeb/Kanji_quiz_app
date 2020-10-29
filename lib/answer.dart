@@ -2,20 +2,34 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
   final Function selectHandler;
-  final String answerText;
 
-  Answer(this.selectHandler, this.answerText);
+  Answer(this.selectHandler);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child: RaisedButton(
-        color: Colors.blue,
-        textColor: Colors.white,
-        child: Text(answerText),
-        onPressed: selectHandler,
-      ),
+    return Row(
+      children: [
+        ButtonTheme(
+          minWidth: 200.0,
+          height: 200.0,
+          child: RaisedButton(
+            color: Colors.red,
+            textColor: Colors.white,
+            child: Text("Incorrect"),
+            onPressed: () => selectHandler(0),
+          ),
+        ),
+        ButtonTheme(
+          minWidth: 200.0,
+          height: 200.0,
+          child: RaisedButton(
+            color: Colors.green,
+            textColor: Colors.white,
+            child: Text("Correct"),
+            onPressed: () => selectHandler(5),
+          ),
+        ),
+      ],
     );
   }
 }

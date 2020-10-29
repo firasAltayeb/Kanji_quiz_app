@@ -8,13 +8,6 @@ class Result extends StatelessWidget {
 
   String get resultPhrase {
     var resultText;
-    if (resultScore >= 12) {
-      resultText = 'great boy';
-    } else if (resultScore >= 8) {
-      resultText = 'good boy';
-    } else {
-      resultText = 'bad boy';
-    }
     return resultText;
   }
 
@@ -24,7 +17,7 @@ class Result extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            resultPhrase,
+            resultScore.toString(),
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
