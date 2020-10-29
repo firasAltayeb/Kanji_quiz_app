@@ -9,14 +9,21 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          kanjiAnswer,
-          style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
+        Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black87, width: 3),
+            color: Colors.yellow,
+          ),
+          child: Text(
+            'The correct keyword is: ' +
+                kanjiAnswer +
+                '. \n Did you remember correctly?',
+            style: TextStyle(fontSize: 25),
+            textAlign: TextAlign.center,
+          ),
         ),
-        SizedBox(height: 100),
+        SizedBox(height: 50),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
