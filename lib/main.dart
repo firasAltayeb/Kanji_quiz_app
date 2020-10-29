@@ -14,15 +14,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   final _questions = const [
-    {
-      'questionText': 'assets/images/15_Kanji_xl.png',
-    },
-    {
-      'questionText': 'assets/images/16_Kanji_xl.png',
-    },
-    {
-      'questionText': 'assets/images/17_Kanji_xl.png',
-    }
+    'assets/images/15_Kanji_xl.png',
+    'assets/images/16_Kanji_xl.png',
+    'assets/images/17_Kanji_xl.png',
   ];
 
   var _showButtonClicked = true;

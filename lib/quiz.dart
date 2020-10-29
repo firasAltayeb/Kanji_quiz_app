@@ -4,7 +4,7 @@ import './question.dart';
 import './answer.dart';
 
 class Quiz extends StatelessWidget {
-  final List<Map<String, Object>> questions;
+  final List<String> questions;
   final int questionIndex;
   final Function answerQuestion;
   final Function showButtonClicker;
@@ -24,7 +24,7 @@ class Quiz extends StatelessWidget {
       child: Column(
         children: [
           Question(
-            questions[questionIndex]['questionText'],
+            questions[questionIndex],
           ),
           showButtonClicked
               ? ButtonTheme(
