@@ -19,13 +19,13 @@ class _MyAppState extends State<MyApp> {
     {'questionText': 'assets/images/18_Kanji_xl.png', 'answerText': 'Bright'}
   ];
 
-  var _showButtonClicked = true;
+  var _showButtonVisible = true;
   var _questionIndex = 0;
   var _totalScore = 0;
 
-  void _showButtonClicker() {
+  void _hideShowButton() {
     setState(() {
-      _showButtonClicked = false;
+      _showButtonVisible = false;
     });
   }
 
@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
     _totalScore += score;
 
     setState(() {
-      _showButtonClicked = true;
+      _showButtonVisible = true;
       _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
@@ -58,8 +58,8 @@ class _MyAppState extends State<MyApp> {
                 answerQuestion: _answerQuestion,
                 questionIndex: _questionIndex,
                 questions: _questions,
-                showButtonClicked: _showButtonClicked,
-                showButtonClicker: _showButtonClicker,
+                showButtonClicked: _showButtonVisible,
+                showButtonClicker: _hideShowButton,
               )
             : Result(
                 _totalScore,
