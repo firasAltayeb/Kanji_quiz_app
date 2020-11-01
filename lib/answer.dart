@@ -24,32 +24,36 @@ class Answer extends StatelessWidget {
           ),
         ),
         SizedBox(height: 50),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            ButtonTheme(
-              minWidth: 200.0,
-              height: 180.0,
-              child: RaisedButton(
-                color: Colors.red,
-                textColor: Colors.white,
-                child: Text("Incorrect"),
-                onPressed: () => selectHandler(0),
-              ),
-            ),
-            ButtonTheme(
-              minWidth: 200.0,
-              height: 180.0,
-              child: RaisedButton(
-                color: Colors.green,
-                textColor: Colors.white,
-                child: Text("Correct"),
-                onPressed: () => selectHandler(5),
-              ),
-            ),
-          ],
-        ),
+        //buttonRow(),
       ],
     );
+
+    Widget buttonRow() {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          ButtonTheme(
+            minWidth: 200.0,
+            height: 180.0,
+            child: RaisedButton(
+              color: Colors.red,
+              textColor: Colors.white,
+              child: Text("Incorrect"),
+              onPressed: () => selectHandler(0),
+            ),
+          ),
+          ButtonTheme(
+            minWidth: 200.0,
+            height: 180.0,
+            child: RaisedButton(
+              color: Colors.green,
+              textColor: Colors.white,
+              child: Text("Correct"),
+              onPressed: () => selectHandler(5),
+            ),
+          ),
+        ],
+      );
+    }
   }
 }
