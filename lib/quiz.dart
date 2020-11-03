@@ -22,6 +22,7 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Question(
             questions[questionIndex]['questionText'],
@@ -35,18 +36,27 @@ class Quiz extends StatelessWidget {
   }
 
   Widget showButtonWidget() {
-    return Column(children: [
-      SizedBox(height: 100),
-      ButtonTheme(
-        minWidth: 400.0,
-        height: 200.0,
-        child: RaisedButton(
-          color: Colors.yellow,
-          textColor: Colors.black,
-          child: Text("Show Answer"),
-          onPressed: showButtonClicker,
+    return Container(
+      width: 400,
+      height: 250,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
         ),
-      )
-    ]);
+      ),
+      child: RaisedButton(
+        color: Colors.yellow,
+        textColor: Colors.black,
+        child: Text(
+          "Show Answer",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onPressed: showButtonClicker,
+      ),
+    );
   }
 }

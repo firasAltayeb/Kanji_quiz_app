@@ -10,10 +10,6 @@ class Question extends StatelessWidget {
     return Container(
       height: 250.0,
       width: 200.0,
-      margin: const EdgeInsets.only(
-        top: 10,
-        bottom: 10,
-      ),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(questionText),

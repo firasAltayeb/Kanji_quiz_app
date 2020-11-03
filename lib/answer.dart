@@ -12,12 +12,15 @@ class Answer extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.black87, width: 3),
+            border: Border.all(
+              color: Colors.black,
+              width: 3,
+            ),
             color: Colors.yellow,
           ),
+          padding: EdgeInsets.all(10),
           child: Text(
-            'The correct keyword is: ' +
-                kanjiAnswer +
+            'The correct keyword is: $kanjiAnswer' +
                 '. \n Did you remember correctly?',
             style: TextStyle(fontSize: 25),
             textAlign: TextAlign.center,
@@ -33,23 +36,47 @@ class Answer extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        ButtonTheme(
-          minWidth: 200.0,
+        Container(
+          width: 200.0,
           height: 180.0,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.black,
+              width: 3,
+            ),
+          ),
           child: RaisedButton(
             color: Colors.red,
             textColor: Colors.white,
-            child: Text("Incorrect"),
+            child: Text(
+              "Incorrect",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onPressed: () => selectHandler(0),
           ),
         ),
-        ButtonTheme(
-          minWidth: 200.0,
+        Container(
+          width: 200.0,
           height: 180.0,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.black,
+              width: 3,
+            ),
+          ),
           child: RaisedButton(
             color: Colors.green,
             textColor: Colors.white,
-            child: Text("Correct"),
+            child: Text(
+              "Correct",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             onPressed: () => selectHandler(5),
           ),
         ),
