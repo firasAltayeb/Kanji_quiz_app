@@ -1,7 +1,7 @@
-import 'package:Kanji_quiz_app/result.dart';
+import 'package:Kanji_quiz_app/widgets/result.dart';
 import 'package:flutter/material.dart';
 
-import './quiz.dart';
+import 'widgets/quiz.dart';
 
 void main() => runApp(MyApp());
 
