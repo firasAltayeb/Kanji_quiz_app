@@ -22,14 +22,15 @@ class QuizPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Question(
             questions[questionIndex]['questionText'],
           ),
           showButtonClicked
               ? showButtonWidget()
-              : Answer(answerQuestion, questions[questionIndex]['answerText'])
+              : AnswerPage(
+                  answerQuestion, questions[questionIndex]['answerText'])
         ],
       ),
     );

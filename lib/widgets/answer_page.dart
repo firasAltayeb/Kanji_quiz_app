@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Answer extends StatelessWidget {
+class AnswerPage extends StatelessWidget {
   final Function selectHandler;
   final String kanjiAnswer;
 
-  Answer(this.selectHandler, this.kanjiAnswer);
+  AnswerPage(this.selectHandler, this.kanjiAnswer);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class Answer extends StatelessWidget {
       children: [
         Container(
           width: MediaQuery.of(context).size.width / 2,
-          height: 180.0,
+          height: MediaQuery.of(context).size.height / 3,
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.black,
@@ -59,7 +59,7 @@ class Answer extends StatelessWidget {
         ),
         Container(
           width: MediaQuery.of(context).size.width / 2,
-          height: 180.0,
+          height: MediaQuery.of(context).size.height / 3,
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.black,
