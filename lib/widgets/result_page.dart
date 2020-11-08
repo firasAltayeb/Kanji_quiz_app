@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Result extends StatelessWidget {
+class ResultPage extends StatelessWidget {
   final int resultScore;
   final Function resetHandler;
 
-  Result(this.resultScore, this.resetHandler);
+  ResultPage(this.resultScore, this.resetHandler);
 
   @override
   Widget build(BuildContext context) {

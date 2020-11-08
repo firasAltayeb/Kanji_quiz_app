@@ -27,22 +27,21 @@ class Answer extends StatelessWidget {
           ),
         ),
         SizedBox(height: 50),
-        buttonRow(),
+        buttonRow(context),
       ],
     );
   }
 
-  Widget buttonRow() {
+  Widget buttonRow(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Container(
-          width: 200.0,
+          width: MediaQuery.of(context).size.width / 2,
           height: 180.0,
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.black,
-              width: 3,
+              width: 1,
             ),
           ),
           child: RaisedButton(
@@ -59,12 +58,12 @@ class Answer extends StatelessWidget {
           ),
         ),
         Container(
-          width: 200.0,
+          width: MediaQuery.of(context).size.width / 2,
           height: 180.0,
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.black,
-              width: 3,
+              width: 1,
             ),
           ),
           child: RaisedButton(

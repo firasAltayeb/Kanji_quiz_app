@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'question.dart';
-import 'answer.dart';
+import 'ques_page.dart';
+import 'answer_page.dart';
 
-class Quiz extends StatelessWidget {
+class QuizPage extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final int questionIndex;
   final Function answerQuestion;
   final Function showButtonClicker;
   final bool showButtonClicked;
 
-  Quiz({
+  QuizPage({
     @required this.questions,
     @required this.questionIndex,
     @required this.answerQuestion,
