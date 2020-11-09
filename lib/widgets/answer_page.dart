@@ -19,9 +19,11 @@ class AnswerPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        kanjiPicture(),
-        infoBox(),
-        SizedBox(height: 75),
+        kanjiPicture(context),
+        infoBox(context),
+        SizedBox(
+          height: MediaQuery.of(context).size.height / 40,
+        ),
         Row(
           children: [
             answerButton(context, Colors.green, "Correct", 5),
@@ -32,10 +34,10 @@ class AnswerPage extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture() {
+  Widget kanjiPicture(BuildContext context) {
     return Container(
-      height: 250.0,
-      width: 200.0,
+      height: MediaQuery.of(context).size.height / 2.5,
+      width: MediaQuery.of(context).size.width / 2,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -47,8 +49,9 @@ class AnswerPage extends StatelessWidget {
     );
   }
 
-  Widget infoBox() {
+  Widget infoBox(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,

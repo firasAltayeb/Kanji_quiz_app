@@ -16,17 +16,39 @@ class QuizPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        kanjiPicture(),
-        SizedBox(height: 100),
+        kanjiPicture(context),
+        infoBox(context),
+        SizedBox(
+          height: MediaQuery.of(context).size.height / 40,
+        ),
         recallButtonWidget(context)
       ],
     );
   }
 
-  Widget kanjiPicture() {
+  Widget infoBox(BuildContext context) {
     return Container(
-      height: 250.0,
-      width: 200.0,
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: Colors.red,
+      ),
+      padding: EdgeInsets.all(10),
+      child: Text(
+        'Can you recall this character?',
+        style: TextStyle(fontSize: 25),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+
+  Widget kanjiPicture(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height / 2.5,
+      width: MediaQuery.of(context).size.width / 2,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -41,7 +63,7 @@ class QuizPage extends StatelessWidget {
   Widget recallButtonWidget(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 2.5,
+      height: MediaQuery.of(context).size.height / 3,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
