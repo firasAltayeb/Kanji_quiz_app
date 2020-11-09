@@ -39,10 +39,9 @@ class _QuizManagerState extends State<QuizManager> {
   }
 
   void _resetQuiz() {
-    setState(() {
-      _questionIndex = 0;
-      _totalScore = 0;
-    });
+    _questionIndex = 0;
+    _totalScore = 0;
+    Navigator.pop(context);
   }
 
   @override
@@ -69,6 +68,13 @@ class _QuizManagerState extends State<QuizManager> {
         _resetQuiz,
       );
     }
-    return page;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Sub Page'),
+        backgroundColor: Colors.black,
+      ),
+      body: page,
+    );
   }
 }
