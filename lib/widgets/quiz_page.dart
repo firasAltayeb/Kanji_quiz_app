@@ -16,25 +16,29 @@ class QuizPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Container(
-          height: 250.0,
-          width: 200.0,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                questions[questionIndex]['questionText'],
-              ),
-              fit: BoxFit.fill,
-            ),
-          ),
-        ),
+        kanjiPicture(),
         SizedBox(height: 100),
-        showButtonWidget(context)
+        recallButtonWidget(context)
       ],
     );
   }
 
-  Widget showButtonWidget(BuildContext context) {
+  Widget kanjiPicture() {
+    return Container(
+      height: 250.0,
+      width: 200.0,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            questions[questionIndex]['questionText'],
+          ),
+          fit: BoxFit.fill,
+        ),
+      ),
+    );
+  }
+
+  Widget recallButtonWidget(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 2.5,

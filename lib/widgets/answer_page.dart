@@ -19,88 +19,78 @@ class AnswerPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Container(
-          height: 250.0,
-          width: 200.0,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                questions[questionIndex]['questionText'],
-              ),
-              fit: BoxFit.fill,
-            ),
-          ),
+        kanjiPicture(),
+        infoBox(),
+        SizedBox(height: 75),
+        Row(
+          children: [
+            answerButton(context, Colors.green, "Correct", 5),
+            answerButton(context, Colors.red, "Incorrect", 0),
+          ],
         ),
-        Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black,
-              width: 3,
-            ),
-            color: Colors.yellow,
-          ),
-          padding: EdgeInsets.all(10),
-          child: Text(
-            'The correct keyword is: $kanjiAnswer' +
-                '. \n Did you remember correctly?',
-            style: TextStyle(fontSize: 25),
-            textAlign: TextAlign.center,
-          ),
-        ),
-        SizedBox(height: 50),
-        buttonRow(context),
       ],
     );
   }
 
-  Widget buttonRow(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: MediaQuery.of(context).size.width / 2,
-          height: MediaQuery.of(context).size.height / 3,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black,
-              width: 1,
-            ),
+  Widget kanjiPicture() {
+    return Container(
+      height: 250.0,
+      width: 200.0,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            questions[questionIndex]['questionText'],
           ),
-          child: RaisedButton(
-            color: Colors.red,
-            textColor: Colors.white,
-            child: Text(
-              "Incorrect",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onPressed: () => selectHandler(0),
+          fit: BoxFit.fill,
+        ),
+      ),
+    );
+  }
+
+  Widget infoBox() {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: Colors.yellow,
+      ),
+      padding: EdgeInsets.all(10),
+      child: Text(
+        'The correct keyword is: $kanjiAnswer' +
+            '. \n Did you remember correctly?',
+        style: TextStyle(fontSize: 25),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+
+  Widget answerButton(
+      BuildContext context, Color color, String label, int resultModifier) {
+    return Container(
+      width: MediaQuery.of(context).size.width / 2,
+      height: MediaQuery.of(context).size.height / 3,
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(width: 3.0, color: Colors.black),
+          left: BorderSide(width: 1.0, color: Colors.black),
+          right: BorderSide(width: 1.0, color: Colors.black),
+          bottom: BorderSide(width: 3.0, color: Colors.black),
+        ),
+      ),
+      child: RaisedButton(
+        color: color,
+        textColor: Colors.white,
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        Container(
-          width: MediaQuery.of(context).size.width / 2,
-          height: MediaQuery.of(context).size.height / 3,
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black,
-              width: 1,
-            ),
-          ),
-          child: RaisedButton(
-            color: Colors.green,
-            textColor: Colors.white,
-            child: Text(
-              "Correct",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onPressed: () => selectHandler(5),
-          ),
-        ),
-      ],
+        onPressed: () => selectHandler(resultModifier),
+      ),
     );
   }
 }
