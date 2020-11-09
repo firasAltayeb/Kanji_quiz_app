@@ -16,21 +16,23 @@ class AnswerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        kanjiPicture(context),
-        infoBox(context),
-        SizedBox(
-          height: MediaQuery.of(context).size.height / 40,
-        ),
-        Row(
-          children: [
-            answerButton(context, Colors.green, "Correct", 5),
-            answerButton(context, Colors.red, "Incorrect", 0),
-          ],
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          kanjiPicture(context),
+          infoBox(context),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 40,
+          ),
+          Row(
+            children: [
+              answerButton(context, Colors.green, "Correct", 5),
+              answerButton(context, Colors.red, "Incorrect", 0),
+            ],
+          ),
+        ],
+      ),
     );
   }
 
