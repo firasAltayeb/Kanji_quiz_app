@@ -1,45 +1,43 @@
 import 'package:flutter/material.dart';
 
-import 'ques_page.dart';
-import 'answer_page.dart';
-
 class QuizPage extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final int questionIndex;
-  final Function answerQuestion;
-  final Function showButtonClicker;
-  final bool showButtonClicked;
+  final Function hideRecallButton;
 
   QuizPage({
     @required this.questions,
     @required this.questionIndex,
-    @required this.answerQuestion,
-    @required this.showButtonClicked,
-    @required this.showButtonClicker,
+    @required this.hideRecallButton,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Question(
-            questions[questionIndex]['questionText'],
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          height: 250.0,
+          width: 200.0,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                questions[questionIndex]['questionText'],
+              ),
+              fit: BoxFit.fill,
+            ),
           ),
-          showButtonClicked
-              ? showButtonWidget()
-              : AnswerPage(
-                  answerQuestion, questions[questionIndex]['answerText'])
-        ],
-      ),
+        ),
+        SizedBox(height: 100),
+        showButtonWidget(context)
+      ],
     );
   }
 
-  Widget showButtonWidget() {
+  Widget showButtonWidget(BuildContext context) {
     return Container(
-      width: 400,
-      height: 250,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height / 2.5,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -56,7 +54,7 @@ class QuizPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: showButtonClicker,
+        onPressed: hideRecallButton,
       ),
     );
   }

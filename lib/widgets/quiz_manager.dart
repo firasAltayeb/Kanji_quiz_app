@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'answer_page.dart';
 import 'result_page.dart';
 import 'quiz_page.dart';
 
@@ -46,17 +47,28 @@ class _QuizManagerState extends State<QuizManager> {
 
   @override
   Widget build(BuildContext context) {
-    return _questionIndex < _questions.length
-        ? QuizPage(
-            answerQuestion: _answerQuestion,
-            questionIndex: _questionIndex,
-            questions: _questions,
-            showButtonClicked: _recallButtonVisible,
-            showButtonClicker: _hideRecallButton,
-          )
-        : ResultPage(
-            _totalScore,
-            _resetQuiz,
-          );
+    Widget page;
+    if (_questionIndex < _questions.length) {
+      if (_recallButtonVisible) {
+        page = QuizPage(
+          questionIndex: _questionIndex,
+          questions: _questions,
+          hideRecallButton: _hideRecallButton,
+        );
+      } else {
+        page = AnswerPage(
+          questionIndex: _questionIndex,
+          questions: _questions,
+          kanjiAnswer: _questions[_questionIndex]['answerText'],
+          selectHandler: _answerQuestion,
+        );
+      }
+    } else {
+      page = ResultPage(
+        _totalScore,
+        _resetQuiz,
+      );
+    }
+    return page;
   }
 }

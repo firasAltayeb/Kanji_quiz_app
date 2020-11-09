@@ -4,12 +4,33 @@ class AnswerPage extends StatelessWidget {
   final Function selectHandler;
   final String kanjiAnswer;
 
-  AnswerPage(this.selectHandler, this.kanjiAnswer);
+  final List<Map<String, Object>> questions;
+  final int questionIndex;
+
+  AnswerPage({
+    @required this.selectHandler,
+    @required this.kanjiAnswer,
+    @required this.questionIndex,
+    @required this.questions,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        Container(
+          height: 250.0,
+          width: 200.0,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                questions[questionIndex]['questionText'],
+              ),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
         Container(
           decoration: BoxDecoration(
             border: Border.all(
