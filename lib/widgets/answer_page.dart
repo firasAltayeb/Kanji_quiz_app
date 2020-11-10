@@ -18,12 +18,11 @@ class AnswerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           kanjiPicture(context),
           infoBox(context),
           SizedBox(
-            height: MediaQuery.of(context).size.height / 40,
+            height: MediaQuery.of(context).size.height / 19,
           ),
           Row(
             children: [

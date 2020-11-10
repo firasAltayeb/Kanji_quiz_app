@@ -13,7 +13,11 @@ class _QuizManagerState extends State<QuizManager> {
   final _questions = const [
     {'questionText': 'assets/images/15_Kanji_xl.png', 'answerText': 'Eye'},
     {'questionText': 'assets/images/16_Kanji_xl.png', 'answerText': 'Old'},
-    {'questionText': 'assets/images/18_Kanji_xl.png', 'answerText': 'Bright'}
+    {
+      'questionText': 'assets/images/18_Kanji_xl.png',
+      'answerText':
+          'BrightBrightBrightBrightBrightBrightBrightBrightBrightBright'
+    }
   ];
 
   var _recallButtonVisible = true;
