@@ -16,12 +16,53 @@ class RecallPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          kanjiPicture(context),
+          topRow(context),
           SizedBox(height: 35),
           infoBox(context),
           SizedBox(height: 35),
           recallButtonWidget(context)
         ],
+      ),
+    );
+  }
+
+  Widget topRow(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
+          child: Text(
+            '1/10',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+        ),
+        kanjiPicture(context),
+        FlatButton(
+          padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+          textColor: Colors.black,
+          child: Text(
+            "Undo",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          onPressed: null,
+        ),
+      ],
+    );
+  }
+
+  Widget kanjiPicture(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height / 2.5,
+      width: MediaQuery.of(context).size.width / 2,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            questions[questionIndex]['kanjiPicture'],
+          ),
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }
@@ -41,21 +82,6 @@ class RecallPage extends StatelessWidget {
         'Can you recall this character?',
         style: TextStyle(fontSize: 25),
         textAlign: TextAlign.center,
-      ),
-    );
-  }
-
-  Widget kanjiPicture(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height / 2.5,
-      width: MediaQuery.of(context).size.width / 2,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(
-            questions[questionIndex]['kanjiPicture'],
-          ),
-          fit: BoxFit.fill,
-        ),
       ),
     );
   }

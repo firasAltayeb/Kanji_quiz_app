@@ -19,7 +19,7 @@ class AnswerPage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          kanjiPicture(context),
+          topRow(context),
           infoBox(context),
           SizedBox(height: 40),
           Row(
@@ -30,6 +30,32 @@ class AnswerPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget topRow(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
+          child: Text(
+            '1/10',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+        ),
+        kanjiPicture(context),
+        FlatButton(
+          padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+          textColor: Colors.black,
+          child: Text(
+            "Undo",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          onPressed: null,
+        ),
+      ],
     );
   }
 
