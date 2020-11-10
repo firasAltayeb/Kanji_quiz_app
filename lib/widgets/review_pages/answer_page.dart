@@ -21,9 +21,7 @@ class AnswerPage extends StatelessWidget {
         children: [
           kanjiPicture(context),
           infoBox(context),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 19,
-          ),
+          SizedBox(height: 40),
           Row(
             children: [
               answerButton(context, Colors.green, "Correct", 5),

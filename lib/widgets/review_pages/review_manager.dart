@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'answer_page.dart';
 import 'result_page.dart';
-import 'quiz_page.dart';
+import 'recall_page.dart';
 
 class ReviewManager extends StatefulWidget {
   @override
@@ -53,7 +53,7 @@ class _ReviewManagerState extends State<ReviewManager> {
     Widget page;
     if (_questionIndex < _questions.length) {
       if (_recallButtonVisible) {
-        page = QuizPage(
+        page = RecallPage(
           questionIndex: _questionIndex,
           questions: _questions,
           hideRecallButton: _hideRecallButton,

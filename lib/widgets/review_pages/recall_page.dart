@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class QuizPage extends StatelessWidget {
+class RecallPage extends StatelessWidget {
   final List<Map<String, Object>> questions;
   final int questionIndex;
   final Function hideRecallButton;
 
-  QuizPage({
+  RecallPage({
     @required this.questions,
     @required this.questionIndex,
     @required this.hideRecallButton,
@@ -13,16 +13,16 @@ class QuizPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        kanjiPicture(context),
-        infoBox(context),
-        SizedBox(
-          height: MediaQuery.of(context).size.height / 40,
-        ),
-        recallButtonWidget(context)
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          kanjiPicture(context),
+          SizedBox(height: 35),
+          infoBox(context),
+          SizedBox(height: 35),
+          recallButtonWidget(context)
+        ],
+      ),
     );
   }
 

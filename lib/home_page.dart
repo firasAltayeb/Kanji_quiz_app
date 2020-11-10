@@ -1,5 +1,5 @@
 import 'package:Kanji_quiz_app/widgets/lesson/lesson_manager.dart';
-import 'package:Kanji_quiz_app/widgets/review/review_manager.dart';
+import 'package:Kanji_quiz_app/widgets/review_pages/review_manager.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
