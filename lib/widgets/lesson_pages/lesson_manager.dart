@@ -1,47 +1,30 @@
 import 'package:flutter/material.dart';
 
+import 'mnemonic_page.dart';
+
 class LessonManager extends StatefulWidget {
   @override
   _LessonManagerState createState() => _LessonManagerState();
 }
 
 class _LessonManagerState extends State<LessonManager> {
-  final _questions = const [
-    {'questionText': 'assets/images/15_Kanji_xl.png', 'answerText': 'Eye'},
-    {'questionText': 'assets/images/16_Kanji_xl.png', 'answerText': 'Old'},
+  final _learnQueue = const [
+    {'kanjiPicture': 'assets/images/15_Kanji_xl.png', 'keywordText': 'Eye'},
+    {'kanjiPicture': 'assets/images/16_Kanji_xl.png', 'keywordText': 'Old'},
     {
-      'questionText': 'assets/images/18_Kanji_xl.png',
-      'answerText':
+      'kanjiPicture': 'assets/images/18_Kanji_xl.png',
+      'keywordText':
           'BrightBrightBrightBrightBrightBrightBrightBrightBrightBright'
     }
   ];
 
-  var _recallButtonVisible = true;
+  var _queueIndex = 0;
 
-  var _questionIndex = 0;
-
-  var _totalScore = 0;
-
-  void _hideRecallButton() {
+  void _mnemonicProvided() {
     setState(() {
-      _recallButtonVisible = false;
+      _queueIndex = _queueIndex + 1;
     });
-  }
-
-  void _answerQuestion(int score) {
-    _totalScore += score;
-
-    setState(() {
-      _recallButtonVisible = true;
-      _questionIndex = _questionIndex + 1;
-    });
-    print(_questionIndex);
-  }
-
-  void _resetQuiz() {
-    _questionIndex = 0;
-    _totalScore = 0;
-    Navigator.pop(context);
+    print(_queueIndex);
   }
 
   @override
@@ -51,17 +34,10 @@ class _LessonManagerState extends State<LessonManager> {
         title: Text('Sub Page'),
         backgroundColor: Colors.black,
       ),
-      body: Column(
-        children: [
-          RaisedButton(
-            child: Text('Restart Quiz'),
-            textColor: Colors.blue,
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          Text('Sub Page'),
-        ],
+      body: MnemonicPage(
+        _learnQueue,
+        _queueIndex,
+        _mnemonicProvided,
       ),
     );
   }

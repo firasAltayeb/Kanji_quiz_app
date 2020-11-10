@@ -52,7 +52,7 @@ class RecallPage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            questions[questionIndex]['questionText'],
+            questions[questionIndex]['kanjiPicture'],
           ),
           fit: BoxFit.fill,
         ),

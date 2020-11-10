@@ -11,10 +11,10 @@ class ReviewManager extends StatefulWidget {
 
 class _ReviewManagerState extends State<ReviewManager> {
   final _questions = const [
-    {'questionText': 'assets/images/15_Kanji_xl.png', 'answerText': 'Eye'},
-    {'questionText': 'assets/images/16_Kanji_xl.png', 'answerText': 'Old'},
+    {'kanjiPicture': 'assets/images/15_Kanji_xl.png', 'answerText': 'Eye'},
+    {'kanjiPicture': 'assets/images/16_Kanji_xl.png', 'answerText': 'Old'},
     {
-      'questionText': 'assets/images/18_Kanji_xl.png',
+      'kanjiPicture': 'assets/images/18_Kanji_xl.png',
       'answerText':
           'BrightBrightBrightBrightBrightBrightBrightBrightBrightBright'
     }
