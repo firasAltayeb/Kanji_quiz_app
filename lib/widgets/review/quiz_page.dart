@@ -65,13 +65,13 @@ class QuizPage extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 3,
       decoration: BoxDecoration(
+        color: Colors.yellow,
         border: Border.all(
           color: Colors.black,
           width: 3,
         ),
       ),
-      child: RaisedButton(
-        color: Colors.yellow,
+      child: FlatButton(
         textColor: Colors.black,
         child: Text(
           "Show Answer",

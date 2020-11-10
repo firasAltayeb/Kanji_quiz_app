@@ -76,6 +76,7 @@ class AnswerPage extends StatelessWidget {
       width: MediaQuery.of(context).size.width / 2,
       height: MediaQuery.of(context).size.height / 3,
       decoration: BoxDecoration(
+        color: color,
         border: Border(
           top: BorderSide(width: 3.0, color: Colors.black),
           left: BorderSide(width: 1.0, color: Colors.black),
@@ -83,8 +84,7 @@ class AnswerPage extends StatelessWidget {
           bottom: BorderSide(width: 3.0, color: Colors.black),
         ),
       ),
-      child: RaisedButton(
-        color: color,
+      child: FlatButton(
         textColor: Colors.white,
         child: Text(
           label,

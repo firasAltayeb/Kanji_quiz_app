@@ -4,12 +4,12 @@ import 'answer_page.dart';
 import 'result_page.dart';
 import 'quiz_page.dart';
 
-class QuizManager extends StatefulWidget {
+class ReviewManager extends StatefulWidget {
   @override
-  _QuizManagerState createState() => _QuizManagerState();
+  _ReviewManagerState createState() => _ReviewManagerState();
 }
 
-class _QuizManagerState extends State<QuizManager> {
+class _ReviewManagerState extends State<ReviewManager> {
   final _questions = const [
     {'questionText': 'assets/images/15_Kanji_xl.png', 'answerText': 'Eye'},
     {'questionText': 'assets/images/16_Kanji_xl.png', 'answerText': 'Old'},

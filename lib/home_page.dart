@@ -1,6 +1,6 @@
+import 'package:Kanji_quiz_app/widgets/lesson/lesson_manager.dart';
+import 'package:Kanji_quiz_app/widgets/review/review_manager.dart';
 import 'package:flutter/material.dart';
-
-import 'widgets/quiz_manager.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,15 +20,16 @@ class _HomePageState extends State<HomePage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            progressButton(context, "Lesson", "10"),
-            progressButton(context, "Review", "30"),
+            progressButton(context, "Lesson", "10", navigateToLessonPage),
+            progressButton(context, "Review", "30", navigateToReviewPage),
           ],
         ),
       ],
     );
   }
 
-  Widget progressButton(context, String label, String progress) {
+  Widget progressButton(
+      context, String label, String progress, Function navigate) {
     return Column(
       children: [
         Text(
@@ -42,21 +43,19 @@ class _HomePageState extends State<HomePage> {
           height: MediaQuery.of(context).size.height / 50,
         ),
         Container(
-          width: MediaQuery.of(context).size.width / 4,
-          height: MediaQuery.of(context).size.height / 10,
           decoration: BoxDecoration(
+            color: Colors.yellow,
             border: Border.all(
               color: Colors.black,
               width: 3,
             ),
           ),
-          child: RaisedButton(
-            color: Colors.yellow,
+          child: FlatButton(
             textColor: Colors.black,
             child: Text(label,
-                style: TextStyle(fontSize: 18), textAlign: TextAlign.center),
+                style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
             onPressed: () {
-              navigateToSubPage(context);
+              navigate(context);
             },
           ),
         )
@@ -64,8 +63,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future navigateToSubPage(context) async {
+  Future navigateToLessonPage(context) async {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => QuizManager()));
+        context, MaterialPageRoute(builder: (context) => LessonManager()));
+  }
+
+  Future navigateToReviewPage(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ReviewManager()));
   }
 }
