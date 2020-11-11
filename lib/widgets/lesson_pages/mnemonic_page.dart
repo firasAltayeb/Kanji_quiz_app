@@ -10,17 +10,38 @@ class MnemonicPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          topRow(context),
+          keywordBox(context),
+        ],
+      ),
+    );
+  }
+
+  Widget topRow(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        kanjiPicture(context),
-        RaisedButton(
-          child: Text('Restart Quiz'),
-          textColor: Colors.blue,
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
+          child: Text(
+            '1/10',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
         ),
-        Text('Sub Page'),
+        kanjiPicture(context),
+        FlatButton(
+          padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+          textColor: Colors.black,
+          child: Text(
+            "Undo",
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          onPressed: null,
+        ),
       ],
     );
   }
@@ -36,6 +57,23 @@ class MnemonicPage extends StatelessWidget {
           ),
           fit: BoxFit.fill,
         ),
+      ),
+    );
+  }
+
+  Widget keywordBox(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(width: 3.0, color: Colors.black),
+        ),
+      ),
+      padding: EdgeInsets.all(10),
+      child: Text(
+        'Keyword: ' + learnQueue[queueIndex]['keywordText'],
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        textAlign: TextAlign.left,
       ),
     );
   }

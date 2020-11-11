@@ -31,7 +31,7 @@ class _LessonManagerState extends State<LessonManager> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sub Page'),
+        title: Text('Lesson Page'),
         backgroundColor: Colors.black,
       ),
       body: MnemonicPage(
