@@ -45,7 +45,7 @@ class AnswerPage extends StatelessWidget {
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
         ),
-        kanjiPicture(context),
+        kanjiPicture(context, questions[questionIndex]['photoAddress'], 2.5, 3),
         FlatButton(
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           textColor: Colors.black,
@@ -59,14 +59,15 @@ class AnswerPage extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture(BuildContext context) {
+  Widget kanjiPicture(BuildContext context, String photoAddress,
+      double requestedwidth, double requestedheight) {
     return Container(
-      height: MediaQuery.of(context).size.height / 2.5,
-      width: MediaQuery.of(context).size.width / 2,
+      width: MediaQuery.of(context).size.width / requestedwidth,
+      height: MediaQuery.of(context).size.height / requestedheight,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            questions[questionIndex]['kanjiPicture'],
+            photoAddress,
           ),
           fit: BoxFit.fill,
         ),

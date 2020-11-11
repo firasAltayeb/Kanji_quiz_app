@@ -86,14 +86,14 @@ class MnemonicPage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(
             'Building blocks: ',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 4, 5),
-          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 4, 5),
+          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 5, 6),
+          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 5, 6),
         ],
       ),
     );

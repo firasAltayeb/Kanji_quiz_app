@@ -11,12 +11,11 @@ class ReviewManager extends StatefulWidget {
 
 class _ReviewManagerState extends State<ReviewManager> {
   final _questions = const [
-    {'kanjiPicture': 'assets/images/15_Kanji_xl.png', 'answerText': 'Eye'},
-    {'kanjiPicture': 'assets/images/16_Kanji_xl.png', 'answerText': 'Old'},
+    {'photoAddress': 'assets/images/15_Kanji_xl.png', 'keyword': 'Eye'},
+    {'photoAddress': 'assets/images/16_Kanji_xl.png', 'keyword': 'Old'},
     {
-      'kanjiPicture': 'assets/images/18_Kanji_xl.png',
-      'answerText':
-          'BrightBrightBrightBrightBrightBrightBrightBrightBrightBright'
+      'photoAddress': 'assets/images/18_Kanji_xl.png',
+      'keyword': 'BrightBrightBrightBrightBrightBrightBrightBrightBrightBright'
     }
   ];
 
@@ -62,7 +61,7 @@ class _ReviewManagerState extends State<ReviewManager> {
         page = AnswerPage(
           questionIndex: _questionIndex,
           questions: _questions,
-          kanjiAnswer: _questions[_questionIndex]['answerText'],
+          kanjiAnswer: _questions[_questionIndex]['keyword'],
           selectHandler: _answerQuestion,
         );
       }
