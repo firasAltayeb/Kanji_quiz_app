@@ -4,6 +4,7 @@ class MnemonicPage extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
   final Function mnemonicProvided;
+  final mnemonicController = TextEditingController();
 
   MnemonicPage(this.learnQueue, this.queueIndex, this.mnemonicProvided);
 
@@ -16,6 +17,8 @@ class MnemonicPage extends StatelessWidget {
           keywordBox(context),
           buildBlockRow(context),
           mnemonicField(context),
+          SizedBox(height: 10),
+          submitFetchMnemonic(context),
         ],
       ),
     );
@@ -104,11 +107,10 @@ class MnemonicPage extends StatelessWidget {
     String intialText =
         'Please create a mnemonic for the above kanji $keyword' +
             ' using its bulidng blocks a and b';
-    TextEditingController mnemonicController =
-        TextEditingController(text: intialText);
+    mnemonicController.text = intialText;
     bool textCleared = false;
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width - 30,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -126,6 +128,33 @@ class MnemonicPage extends StatelessWidget {
             textCleared = true;
           }
         },
+      ),
+    );
+  }
+
+  Widget submitFetchMnemonic(context) {
+    return Container(
+      width: MediaQuery.of(context).size.width - 30,
+      height: MediaQuery.of(context).size.height / 7,
+      decoration: BoxDecoration(
+        color: Colors.yellow,
+        border: Border(
+          top: BorderSide(width: 3.0, color: Colors.black),
+          right: BorderSide(width: 3.0, color: Colors.black),
+          left: BorderSide(width: 3.0, color: Colors.black),
+          bottom: BorderSide(width: 5, color: Colors.black),
+        ),
+      ),
+      child: FlatButton(
+        textColor: Colors.black,
+        child: Text(
+          "Submit Mnemonic",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onPressed: mnemonicProvided,
       ),
     );
   }

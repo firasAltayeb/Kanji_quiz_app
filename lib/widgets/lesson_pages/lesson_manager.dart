@@ -17,10 +17,13 @@ class _LessonManagerState extends State<LessonManager> {
   var _queueIndex = 0;
 
   void _mnemonicProvided() {
-    setState(() {
-      _queueIndex = _queueIndex + 1;
-    });
-    print(_queueIndex);
+    if (_queueIndex == 2) {
+      Navigator.pop(context);
+    } else {
+      setState(() {
+        _queueIndex = _queueIndex + 1;
+      });
+    }
   }
 
   @override
