@@ -15,6 +15,7 @@ class MnemonicPage extends StatelessWidget {
         children: [
           topRow(context),
           keywordBox(context),
+          buildBlockRow(context),
         ],
       ),
     );
@@ -25,19 +26,21 @@ class MnemonicPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        FlatButton(
           padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
+          textColor: Colors.black,
           child: Text(
-            '1/10',
+            "Prev",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
+          onPressed: null,
         ),
-        kanjiPicture(context),
+        kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 2.5, 3),
         FlatButton(
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           textColor: Colors.black,
           child: Text(
-            "Undo",
+            "Next",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           onPressed: null,
@@ -46,14 +49,15 @@ class MnemonicPage extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture(BuildContext context) {
+  Widget kanjiPicture(BuildContext context, String photoAddress,
+      double requestedwidth, double requestedheight) {
     return Container(
-      height: MediaQuery.of(context).size.height / 2.5,
-      width: MediaQuery.of(context).size.width / 2,
+      width: MediaQuery.of(context).size.width / requestedwidth,
+      height: MediaQuery.of(context).size.height / requestedheight,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            learnQueue[queueIndex]['kanjiPicture'],
+            photoAddress,
           ),
           fit: BoxFit.fill,
         ),
@@ -69,11 +73,28 @@ class MnemonicPage extends StatelessWidget {
           bottom: BorderSide(width: 3.0, color: Colors.black),
         ),
       ),
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
       child: Text(
-        'Keyword: ' + learnQueue[queueIndex]['keywordText'],
+        'Keyword: ' + learnQueue[queueIndex]['keyword'],
         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         textAlign: TextAlign.left,
+      ),
+    );
+  }
+
+  Widget buildBlockRow(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'Building blocks: ',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 4, 5),
+          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 4, 5),
+        ],
       ),
     );
   }

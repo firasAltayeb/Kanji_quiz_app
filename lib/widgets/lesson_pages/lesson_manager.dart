@@ -9,13 +9,9 @@ class LessonManager extends StatefulWidget {
 
 class _LessonManagerState extends State<LessonManager> {
   final _learnQueue = const [
-    {'kanjiPicture': 'assets/images/15_Kanji_xl.png', 'keywordText': 'Eye'},
-    {'kanjiPicture': 'assets/images/16_Kanji_xl.png', 'keywordText': 'Old'},
-    {
-      'kanjiPicture': 'assets/images/18_Kanji_xl.png',
-      'keywordText':
-          'BrightBrightBrightBrightBrightBrightBrightBrightBrightBright'
-    }
+    {'photoAddress': 'assets/images/15_Kanji_xl.png', 'keyword': 'Eye'},
+    {'photoAddress': 'assets/images/16_Kanji_xl.png', 'keyword': 'Old'},
+    {'photoAddress': 'assets/images/18_Kanji_xl.png', 'keyword': 'Bright'}
   ];
 
   var _queueIndex = 0;
