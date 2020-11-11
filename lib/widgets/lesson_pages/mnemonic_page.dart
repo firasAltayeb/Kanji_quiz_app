@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MnemonicPage extends StatelessWidget {
-  final List<Map<String, Object>> learnQueue;
   final int queueIndex;
-
+  final List<Map<String, Object>> learnQueue;
   final Function mnemonicProvided;
 
   MnemonicPage(this.learnQueue, this.queueIndex, this.mnemonicProvided);
@@ -16,6 +15,7 @@ class MnemonicPage extends StatelessWidget {
           topRow(context),
           keywordBox(context),
           buildBlockRow(context),
+          mnemonicField(context),
         ],
       ),
     );
@@ -95,6 +95,37 @@ class MnemonicPage extends StatelessWidget {
           kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 5, 6),
           kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 5, 6),
         ],
+      ),
+    );
+  }
+
+  Widget mnemonicField(BuildContext context) {
+    String keyword = learnQueue[queueIndex]['keyword'];
+    String intialText =
+        'Please create a mnemonic for the above kanji $keyword' +
+            ' using its bulidng blocks a and b';
+    TextEditingController mnemonicController =
+        TextEditingController(text: intialText);
+    bool textCleared = false;
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+      ),
+      padding: EdgeInsets.all(10),
+      child: TextField(
+        keyboardType: TextInputType.multiline,
+        maxLines: null,
+        controller: mnemonicController,
+        onChanged: (value) {
+          if (textCleared == false) {
+            mnemonicController.clear();
+            textCleared = true;
+          }
+        },
       ),
     );
   }
