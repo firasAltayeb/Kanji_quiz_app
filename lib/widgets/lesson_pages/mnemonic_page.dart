@@ -102,8 +102,10 @@ class MnemonicPage extends StatelessWidget {
             'Building blocks: ',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 5, 6),
-          kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 5, 6),
+          kanjiPicture(
+              context, learnQueue[queueIndex]['buildingBlockOne'], 5, 6),
+          kanjiPicture(
+              context, learnQueue[queueIndex]['buildingBlockTwo'], 5, 6),
         ],
       ),
     );
@@ -155,7 +157,7 @@ class MnemonicPage extends StatelessWidget {
       child: FlatButton(
         textColor: Colors.black,
         child: Text(
-          "Submit Mnemonic",
+          "Fetch From KanjiKoohii",
           style: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,

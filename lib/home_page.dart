@@ -21,8 +21,8 @@ class _HomePageState extends State<HomePage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            progressButton(context, "Lesson", "10", navigateToLessonPage),
-            progressButton(context, "Review", "30", navigateToReviewPage),
+            progressButton(context, "Lesson", "3", navigateToLessonPage),
+            progressButton(context, "Review", "4", navigateToReviewPage),
           ],
         ),
       ],

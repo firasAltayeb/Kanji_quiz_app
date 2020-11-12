@@ -11,11 +11,12 @@ class ReviewManager extends StatefulWidget {
 
 class _ReviewManagerState extends State<ReviewManager> {
   final _questionQueue = const [
-    {'photoAddress': 'assets/images/15_Kanji_xl.png', 'keyword': 'Eye'},
-    {'photoAddress': 'assets/images/16_Kanji_xl.png', 'keyword': 'Old'},
+    {'photoAddress': 'assets/images/5_Kanji_xl.png', 'keyword': 'Five'},
+    {'photoAddress': 'assets/images/11_Kanji_xl.png', 'keyword': 'Mouth'},
+    {'photoAddress': 'assets/images/12_Kanji_xl.png', 'keyword': 'Sun'},
     {
-      'photoAddress': 'assets/images/18_Kanji_xl.png',
-      'keyword': 'BrightBrightBrightBrightBrightBrightBrightBrightBrightBright'
+      'photoAddress': 'assets/images/13_Kanji_xl.png',
+      'keyword': 'Moooooooooooooooooooooooooooooooooooooooooooooooooooooooon',
     }
   ];
 
