@@ -3,10 +3,17 @@ import 'package:flutter/material.dart';
 class MnemonicPage extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
-  final Function mnemonicProvided;
+
+  final Function nextKanji;
+  final Function previousKanji;
   final mnemonicController = TextEditingController();
 
-  MnemonicPage(this.learnQueue, this.queueIndex, this.mnemonicProvided);
+  MnemonicPage({
+    @required this.learnQueue,
+    @required this.queueIndex,
+    @required this.nextKanji,
+    @required this.previousKanji,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +43,7 @@ class MnemonicPage extends StatelessWidget {
             "Prev",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          onPressed: null,
+          onPressed: previousKanji,
         ),
         kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 2.5, 3),
         FlatButton(
@@ -46,7 +53,7 @@ class MnemonicPage extends StatelessWidget {
             "Next",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          onPressed: null,
+          onPressed: nextKanji,
         ),
       ],
     );
@@ -154,7 +161,7 @@ class MnemonicPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: mnemonicProvided,
+        onPressed: null,
       ),
     );
   }
