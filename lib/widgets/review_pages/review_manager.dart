@@ -10,7 +10,7 @@ class ReviewManager extends StatefulWidget {
 }
 
 class _ReviewManagerState extends State<ReviewManager> {
-  final _questions = const [
+  final _questionQueue = const [
     {'photoAddress': 'assets/images/15_Kanji_xl.png', 'keyword': 'Eye'},
     {'photoAddress': 'assets/images/16_Kanji_xl.png', 'keyword': 'Old'},
     {
@@ -50,18 +50,18 @@ class _ReviewManagerState extends State<ReviewManager> {
   @override
   Widget build(BuildContext context) {
     Widget page;
-    if (_questionIndex < _questions.length) {
+    if (_questionIndex < _questionQueue.length) {
       if (_recallButtonVisible) {
         page = RecallPage(
           questionIndex: _questionIndex,
-          questions: _questions,
+          questionQueue: _questionQueue,
           hideRecallButton: _hideRecallButton,
         );
       } else {
         page = AnswerPage(
           questionIndex: _questionIndex,
-          questions: _questions,
-          kanjiAnswer: _questions[_questionIndex]['keyword'],
+          questionQueue: _questionQueue,
+          kanjiAnswer: _questionQueue[_questionIndex]['keyword'],
           selectHandler: _answerQuestion,
         );
       }

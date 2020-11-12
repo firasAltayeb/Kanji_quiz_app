@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class RecallPage extends StatelessWidget {
-  final List<Map<String, Object>> questions;
+  final List<Map<String, Object>> questionQueue;
   final int questionIndex;
+
   final Function hideRecallButton;
 
   RecallPage({
-    @required this.questions,
+    @required this.questionQueue,
     @required this.questionIndex,
     @required this.hideRecallButton,
   });
@@ -34,11 +35,12 @@ class RecallPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
           child: Text(
-            '1/10',
+            (questionIndex + 1).toString() + '/ ${questionQueue.length}',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
         ),
-        kanjiPicture(context, questions[questionIndex]['photoAddress'], 2.5, 3),
+        kanjiPicture(
+            context, questionQueue[questionIndex]['photoAddress'], 2.5, 3),
         FlatButton(
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           textColor: Colors.black,
