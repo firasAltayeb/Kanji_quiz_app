@@ -76,7 +76,6 @@ class _ReviewManagerState extends State<ReviewManager> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Review Page'),
-        backgroundColor: Colors.black,
       ),
       body: page,
     );

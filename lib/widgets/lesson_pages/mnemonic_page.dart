@@ -15,6 +15,10 @@ class MnemonicPage extends StatelessWidget {
     @required this.previousKanji,
   });
 
+  void submitData() {
+    nextKanji();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -53,7 +57,7 @@ class MnemonicPage extends StatelessWidget {
             "Next",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          onPressed: nextKanji,
+          onPressed: submitData,
         ),
       ],
     );
@@ -128,10 +132,12 @@ class MnemonicPage extends StatelessWidget {
       ),
       padding: EdgeInsets.all(10),
       child: TextField(
+        textInputAction: TextInputAction.go,
         keyboardType: TextInputType.multiline,
         maxLines: null,
         controller: mnemonicController,
-        onChanged: (value) {
+        onSubmitted: (_) => submitData(),
+        onTap: () {
           if (textCleared == false) {
             mnemonicController.clear();
             textCleared = true;
@@ -163,7 +169,7 @@ class MnemonicPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: null,
+        onPressed: submitData,
       ),
     );
   }
