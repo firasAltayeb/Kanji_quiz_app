@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/lesson_pages/fetch_button.dart';
 import 'package:flutter/material.dart';
 
 class MnemonicPage extends StatelessWidget {
@@ -29,7 +30,10 @@ class MnemonicPage extends StatelessWidget {
           buildBlockRow(context),
           mnemonicField(context),
           SizedBox(height: 10),
-          submitFetchMnemonic(context),
+          FetchButton(
+            learnQueue: learnQueue,
+            queueIndex: queueIndex,
+          ),
         ],
       ),
     );
@@ -143,33 +147,6 @@ class MnemonicPage extends StatelessWidget {
             textCleared = true;
           }
         },
-      ),
-    );
-  }
-
-  Widget submitFetchMnemonic(context) {
-    return Container(
-      width: MediaQuery.of(context).size.width - 30,
-      height: MediaQuery.of(context).size.height / 7,
-      decoration: BoxDecoration(
-        color: Colors.yellow,
-        border: Border(
-          top: BorderSide(width: 3.0, color: Colors.black),
-          right: BorderSide(width: 3.0, color: Colors.black),
-          left: BorderSide(width: 3.0, color: Colors.black),
-          bottom: BorderSide(width: 5, color: Colors.black),
-        ),
-      ),
-      child: FlatButton(
-        textColor: Colors.black,
-        child: Text(
-          "Fetch From KanjiKoohii",
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        onPressed: submitData,
       ),
     );
   }
