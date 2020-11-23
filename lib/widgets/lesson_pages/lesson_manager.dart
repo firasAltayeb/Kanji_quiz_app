@@ -59,6 +59,7 @@ class _LessonManagerState extends State<LessonManager> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Lesson Page'),
+        backgroundColor: Colors.black,
       ),
       body: MnemonicPage(
         learnQueue: _learnQueue,

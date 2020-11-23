@@ -16,20 +16,21 @@ class AnswerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          topRow(context),
-          infoBox(context),
-          SizedBox(height: 40),
-          Row(
-            children: [
-              answerButton(context, Colors.green, "Correct", 5),
-              answerButton(context, Colors.red, "Incorrect", 0),
-            ],
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        topRow(context),
+        Flexible(
+          fit: FlexFit.tight,
+          child: infoBox(),
+        ),
+        SizedBox(height: 25),
+        Row(
+          children: [
+            answerButton(context, Colors.green, "Correct", 5),
+            answerButton(context, Colors.red, "Incorrect", 0),
+          ],
+        ),
+      ],
     );
   }
 
@@ -76,9 +77,8 @@ class AnswerPage extends StatelessWidget {
     );
   }
 
-  Widget infoBox(BuildContext context) {
+  Widget infoBox() {
     return Container(
-      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -86,12 +86,14 @@ class AnswerPage extends StatelessWidget {
         ),
         color: Colors.yellow,
       ),
-      padding: EdgeInsets.all(10),
-      child: Text(
-        'The correct keyword is: $kanjiAnswer' +
-            '. \n Did you remember correctly?',
-        style: TextStyle(fontSize: 25),
-        textAlign: TextAlign.center,
+      padding: const EdgeInsets.all(10),
+      child: FittedBox(
+        fit: BoxFit.fill,
+        child: Text(
+          'The correct keyword is: $kanjiAnswer' +
+              '. \n Did you remember correctly?',
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
@@ -100,7 +102,7 @@ class AnswerPage extends StatelessWidget {
       BuildContext context, Color color, String label, int resultModifier) {
     return Container(
       width: MediaQuery.of(context).size.width / 2,
-      height: MediaQuery.of(context).size.height / 3,
+      height: MediaQuery.of(context).size.height / 2.5,
       decoration: BoxDecoration(
         color: color,
         border: Border(

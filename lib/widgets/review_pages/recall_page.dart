@@ -14,16 +14,21 @@ class RecallPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          topRow(context),
-          SizedBox(height: 35),
-          infoBox(context),
-          SizedBox(height: 35),
-          recallButtonWidget(context)
-        ],
-      ),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
+          child: topRow(context),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
+          child: infoBox(context),
+        ),
+        Flexible(
+          fit: FlexFit.tight,
+          child: recallButtonWidget(context),
+        )
+      ],
     );
   }
 
@@ -92,7 +97,6 @@ class RecallPage extends StatelessWidget {
   Widget recallButtonWidget(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 3,
       decoration: BoxDecoration(
         color: Colors.yellow,
         border: Border.all(
