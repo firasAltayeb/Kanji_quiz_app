@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'widgets/lesson_pages/lesson_manager.dart';
 import 'widgets/review_pages/review_manager.dart';
 
-class HomePage extends StatefulWidget {
+class MainBody extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _MainBodyState createState() => _MainBodyState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MainBodyState extends State<MainBody> {
   @override
   Widget build(BuildContext context) {
     return Column(

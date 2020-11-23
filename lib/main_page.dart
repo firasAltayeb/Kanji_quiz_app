@@ -1,5 +1,7 @@
-import 'package:Kanji_quiz_app/main_body.dart';
 import 'package:flutter/material.dart';
+
+import './main_body.dart';
+import './widgets/misc_pages/user_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +10,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Kanji Quiz App',
-      home: Scaffold(
+      home: MyHome(),
+    );
+  }
+}
+
+class MyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text('Kanji Quiz App'),
@@ -27,12 +37,11 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
                 size: 40,
               ),
-              onPressed: null,
+              onPressed: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => UserPage())),
             ),
           ],
         ),
-        body: HomePage(),
-      ),
-    );
+        body: MainBody());
   }
 }
