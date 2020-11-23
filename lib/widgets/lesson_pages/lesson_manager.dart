@@ -60,6 +60,16 @@ class _LessonManagerState extends State<LessonManager> {
       appBar: AppBar(
         title: Text('Lesson Page'),
         backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.search_rounded,
+              color: Colors.white,
+              size: 40,
+            ),
+            onPressed: null,
+          ),
+        ],
       ),
       body: MnemonicPage(
         learnQueue: _learnQueue,
