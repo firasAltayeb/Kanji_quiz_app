@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './widgets/lesson_pages/lesson_manager.dart';
-import './widgets/review_pages/review_manager.dart';
+import 'widgets/lesson_pages/lesson_manager.dart';
+import 'widgets/review_pages/review_manager.dart';
 
 class HomePage extends StatefulWidget {
   @override

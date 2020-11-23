@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/home_page.dart';
+import 'package:Kanji_quiz_app/main_body.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
