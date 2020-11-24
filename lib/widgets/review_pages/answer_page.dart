@@ -19,8 +19,7 @@ class AnswerPage extends StatelessWidget {
     return Column(
       children: [
         topRow(context),
-        Flexible(
-          fit: FlexFit.tight,
+        Expanded(
           child: infoBox(),
         ),
         SizedBox(height: 25),
