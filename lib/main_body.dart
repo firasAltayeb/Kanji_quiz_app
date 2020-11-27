@@ -49,9 +49,10 @@ class _MainBodyState extends State<MainBody> {
           ),
           child: FlatButton(
             textColor: Colors.black,
-            child: Text(label,
+            child: Text('Start',
                 style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.02),
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                ),
                 textAlign: TextAlign.center),
             onPressed: () {
               navigate(context);

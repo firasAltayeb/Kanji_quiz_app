@@ -4,16 +4,17 @@ class MnemonicField extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
 
-  final bool textCleared;
   final Function nextKanji;
+  final bool initialtextCleared;
+  final Function clearInitialText;
   final mnemonicController = TextEditingController();
 
-  MnemonicField({
-    @required this.learnQueue,
-    @required this.queueIndex,
-    @required this.nextKanji,
-    @required this.textCleared,
-  });
+  MnemonicField(
+      {@required this.learnQueue,
+      @required this.queueIndex,
+      @required this.nextKanji,
+      @required this.initialtextCleared,
+      @required this.clearInitialText});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +23,8 @@ class MnemonicField extends StatelessWidget {
         'Please create a mnemonic for the above kanji $keyword' +
             ' using its bulidng blocks a and b';
 
-    textCleared
-        ? mnemonicController.text = 'txt cleared'
+    initialtextCleared
+        ? mnemonicController.text = ''
         : mnemonicController.text = intialText;
 
     return Container(
@@ -35,21 +36,17 @@ class MnemonicField extends StatelessWidget {
           width: 3,
         ),
       ),
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: TextField(
         textInputAction: TextInputAction.go,
         keyboardType: TextInputType.multiline,
         maxLines: null,
         controller: mnemonicController,
         onSubmitted: (_) {
-          print('on submitted clicked');
+          print(mnemonicController.text);
           nextKanji();
         },
-        onTap: () {
-          if (textCleared == false) {
-            // mnemonicController.clear();
-          }
-        },
+        onTap: () => clearInitialText(),
       ),
     );
   }

@@ -35,13 +35,14 @@ class _LessonManagerState extends State<LessonManager> {
   ];
 
   var _queueIndex = 0;
-  var _textCleared = false;
+  var _initialTextCleared = false;
 
   void _nextKanji() {
     if (_queueIndex == 2) {
       Navigator.pop(context);
     } else {
       setState(() {
+        _initialTextCleared = false;
         _queueIndex = _queueIndex + 1;
       });
     }
@@ -53,6 +54,14 @@ class _LessonManagerState extends State<LessonManager> {
     } else {
       setState(() {
         _queueIndex = _queueIndex - 1;
+      });
+    }
+  }
+
+  void _clearInitialText() {
+    if (_initialTextCleared == false) {
+      setState(() {
+        _initialTextCleared = true;
       });
     }
   }
@@ -87,7 +96,8 @@ class _LessonManagerState extends State<LessonManager> {
               learnQueue: _learnQueue,
               queueIndex: _queueIndex,
               nextKanji: _nextKanji,
-              textCleared: _textCleared,
+              initialtextCleared: _initialTextCleared,
+              clearInitialText: _clearInitialText,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.0125,
