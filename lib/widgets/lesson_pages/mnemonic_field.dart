@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
 
-class MnemonicField extends StatefulWidget {
+class MnemonicField extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
+
+  final bool textCleared;
   final Function nextKanji;
+  final mnemonicController = TextEditingController();
 
-  const MnemonicField(
-      {@required this.learnQueue,
-      @required this.queueIndex,
-      @required this.nextKanji});
-
-  @override
-  _MnemonicFieldState createState() => _MnemonicFieldState();
-}
-
-class _MnemonicFieldState extends State<MnemonicField> {
-  var mnemonicController = TextEditingController();
-  var textCleared = false;
-
-  void _updateTextField() {
-    setState(() {
-      textCleared = true;
-    });
-  }
+  MnemonicField({
+    @required this.learnQueue,
+    @required this.queueIndex,
+    @required this.nextKanji,
+    @required this.textCleared,
+  });
 
   @override
   Widget build(BuildContext context) {
-    String keyword = widget.learnQueue[widget.queueIndex]['keyword'];
+    String keyword = learnQueue[queueIndex]['keyword'];
     String intialText =
         'Please create a mnemonic for the above kanji $keyword' +
             ' using its bulidng blocks a and b';
@@ -44,7 +35,7 @@ class _MnemonicFieldState extends State<MnemonicField> {
           width: 3,
         ),
       ),
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: TextField(
         textInputAction: TextInputAction.go,
         keyboardType: TextInputType.multiline,
@@ -52,12 +43,11 @@ class _MnemonicFieldState extends State<MnemonicField> {
         controller: mnemonicController,
         onSubmitted: (_) {
           print('on submitted clicked');
-          widget.nextKanji();
+          nextKanji();
         },
         onTap: () {
           if (textCleared == false) {
             // mnemonicController.clear();
-            _updateTextField();
           }
         },
       ),

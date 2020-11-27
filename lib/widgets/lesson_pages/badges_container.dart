@@ -1,8 +1,6 @@
-import 'package:Kanji_quiz_app/widgets/lesson_pages/fetch_button.dart';
-import 'package:Kanji_quiz_app/widgets/lesson_pages/mnemonic_field.dart';
 import 'package:flutter/material.dart';
 
-class MnemonicPage extends StatelessWidget {
+class BadgesContainer extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
 
@@ -10,7 +8,7 @@ class MnemonicPage extends StatelessWidget {
   final Function previousKanji;
   final mnemonicController = TextEditingController();
 
-  MnemonicPage({
+  BadgesContainer({
     @required this.learnQueue,
     @required this.queueIndex,
     @required this.nextKanji,
@@ -19,23 +17,12 @@ class MnemonicPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          topRow(context),
-          keywordBox(context),
-          buildBlockRow(context),
-          MnemonicField(
-              learnQueue: learnQueue,
-              queueIndex: queueIndex,
-              nextKanji: nextKanji),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-          FetchButton(
-            learnQueue: learnQueue,
-            queueIndex: queueIndex,
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        topRow(context),
+        keywordArea(context),
+        buildBlockRow(context),
+      ],
     );
   }
 
@@ -53,7 +40,12 @@ class MnemonicPage extends StatelessWidget {
           ),
           onPressed: previousKanji,
         ),
-        kanjiPicture(context, learnQueue[queueIndex]['photoAddress'], 2.5, 3),
+        kanjiPicture(
+          context: context,
+          photoAddress: learnQueue[queueIndex]['photoAddress'],
+          requestedwidth: 0.4,
+          requestedheight: 0.3,
+        ),
         FlatButton(
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           textColor: Colors.black,
@@ -67,11 +59,14 @@ class MnemonicPage extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture(BuildContext context, String photoAddress,
-      double requestedwidth, double requestedheight) {
+  Widget kanjiPicture(
+      {BuildContext context,
+      String photoAddress,
+      double requestedwidth,
+      double requestedheight}) {
     return Container(
-      width: MediaQuery.of(context).size.width / requestedwidth,
-      height: MediaQuery.of(context).size.height / requestedheight,
+      width: MediaQuery.of(context).size.width * requestedwidth,
+      height: MediaQuery.of(context).size.height * requestedheight,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -83,7 +78,7 @@ class MnemonicPage extends StatelessWidget {
     );
   }
 
-  Widget keywordBox(BuildContext context) {
+  Widget keywordArea(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
@@ -102,7 +97,7 @@ class MnemonicPage extends StatelessWidget {
 
   Widget buildBlockRow(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.fromLTRB(5, 5, 5, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -111,9 +106,17 @@ class MnemonicPage extends StatelessWidget {
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           kanjiPicture(
-              context, learnQueue[queueIndex]['buildingBlockOne'], 5, 6),
+            context: context,
+            photoAddress: learnQueue[queueIndex]['buildingBlockOne'],
+            requestedwidth: 0.19,
+            requestedheight: 0.19,
+          ),
           kanjiPicture(
-              context, learnQueue[queueIndex]['buildingBlockTwo'], 5, 6),
+            context: context,
+            photoAddress: learnQueue[queueIndex]['buildingBlockTwo'],
+            requestedwidth: 0.19,
+            requestedheight: 0.19,
+          ),
         ],
       ),
     );

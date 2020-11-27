@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class FetchButton extends StatefulWidget {
+class FetchButton extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
 
-  const FetchButton({
+  FetchButton({
     @required this.learnQueue,
     @required this.queueIndex,
   });
 
-  @override
-  _FetchButtonState createState() => _FetchButtonState();
-}
-
-class _FetchButtonState extends State<FetchButton> {
-  @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width - 30,
-      height: MediaQuery.of(context).size.height / 7,
+      height: MediaQuery.of(context).size.height * 0.14,
+      width: MediaQuery.of(context).size.width * 0.95,
       decoration: BoxDecoration(
         color: Colors.yellow,
         border: Border(
@@ -45,7 +39,7 @@ class _FetchButtonState extends State<FetchButton> {
 
   void launchURL() async {
     String url = 'https://kanji.koohii.com/study/kanji/' +
-        '${widget.learnQueue[widget.queueIndex]['frameNumber']}';
+        '${learnQueue[queueIndex]['frameNumber']}';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

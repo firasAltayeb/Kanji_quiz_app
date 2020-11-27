@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'mnemonic_page.dart';
+import 'fetch_button.dart';
+import 'badges_container.dart';
+import 'mnemonic_field.dart';
 
 class LessonManager extends StatefulWidget {
   @override
@@ -33,6 +35,7 @@ class _LessonManagerState extends State<LessonManager> {
   ];
 
   var _queueIndex = 0;
+  var _textCleared = false;
 
   void _nextKanji() {
     if (_queueIndex == 2) {
@@ -71,11 +74,30 @@ class _LessonManagerState extends State<LessonManager> {
           ),
         ],
       ),
-      body: MnemonicPage(
-        learnQueue: _learnQueue,
-        queueIndex: _queueIndex,
-        nextKanji: _nextKanji,
-        previousKanji: _previousKanji,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            BadgesContainer(
+              learnQueue: _learnQueue,
+              queueIndex: _queueIndex,
+              nextKanji: _nextKanji,
+              previousKanji: _previousKanji,
+            ),
+            MnemonicField(
+              learnQueue: _learnQueue,
+              queueIndex: _queueIndex,
+              nextKanji: _nextKanji,
+              textCleared: _textCleared,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.0125,
+            ),
+            FetchButton(
+              learnQueue: _learnQueue,
+              queueIndex: _queueIndex,
+            ),
+          ],
+        ),
       ),
     );
   }
