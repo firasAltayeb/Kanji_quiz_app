@@ -16,16 +16,15 @@ class RecallPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
-          child: topRow(context),
+        topRow(context),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.02,
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
-          child: infoBox(context),
+        infoBox(context),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.02,
         ),
-        Flexible(
-          fit: FlexFit.tight,
+        Expanded(
           child: recallButtonWidget(context),
         )
       ],
@@ -45,7 +44,11 @@ class RecallPage extends StatelessWidget {
           ),
         ),
         kanjiPicture(
-            context, questionQueue[questionIndex]['photoAddress'], 2.5, 3),
+          context: context,
+          photoAddress: questionQueue[questionIndex]['photoAddress'],
+          requestedwidth: 0.4,
+          requestedheight: 0.35,
+        ),
         FlatButton(
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           textColor: Colors.black,
@@ -59,11 +62,14 @@ class RecallPage extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture(BuildContext context, String photoAddress,
-      double requestedwidth, double requestedheight) {
+  Widget kanjiPicture(
+      {BuildContext context,
+      String photoAddress,
+      double requestedwidth,
+      double requestedheight}) {
     return Container(
-      width: MediaQuery.of(context).size.width / requestedwidth,
-      height: MediaQuery.of(context).size.height / requestedheight,
+      width: MediaQuery.of(context).size.width * requestedwidth,
+      height: MediaQuery.of(context).size.height * requestedheight,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -77,7 +83,7 @@ class RecallPage extends StatelessWidget {
 
   Widget infoBox(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width * 0.95,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -85,7 +91,7 @@ class RecallPage extends StatelessWidget {
         ),
         color: Colors.red,
       ),
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       child: Text(
         'Can you recall this character?',
         style: TextStyle(fontSize: 25),

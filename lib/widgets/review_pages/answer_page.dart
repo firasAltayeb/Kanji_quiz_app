@@ -19,10 +19,8 @@ class AnswerPage extends StatelessWidget {
     return Column(
       children: [
         topRow(context),
-        Expanded(
-          child: infoBox(),
-        ),
-        SizedBox(height: 25),
+        infoBox(context),
+        Expanded(child: SizedBox()),
         Row(
           children: [
             answerButton(context, Colors.green, "Correct", 5),
@@ -46,7 +44,11 @@ class AnswerPage extends StatelessWidget {
           ),
         ),
         kanjiPicture(
-            context, questionQueue[questionIndex]['photoAddress'], 2.5, 3),
+          context: context,
+          photoAddress: questionQueue[questionIndex]['photoAddress'],
+          requestedwidth: 0.4,
+          requestedheight: 0.35,
+        ),
         FlatButton(
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           textColor: Colors.black,
@@ -60,11 +62,14 @@ class AnswerPage extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture(BuildContext context, String photoAddress,
-      double requestedwidth, double requestedheight) {
+  Widget kanjiPicture(
+      {BuildContext context,
+      String photoAddress,
+      double requestedwidth,
+      double requestedheight}) {
     return Container(
-      width: MediaQuery.of(context).size.width / requestedwidth,
-      height: MediaQuery.of(context).size.height / requestedheight,
+      width: MediaQuery.of(context).size.width * requestedwidth,
+      height: MediaQuery.of(context).size.height * requestedheight,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
@@ -76,8 +81,10 @@ class AnswerPage extends StatelessWidget {
     );
   }
 
-  Widget infoBox() {
+  Widget infoBox(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width * 0.95,
+      height: MediaQuery.of(context).size.height * 0.125,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -100,8 +107,8 @@ class AnswerPage extends StatelessWidget {
   Widget answerButton(
       BuildContext context, Color color, String label, int resultModifier) {
     return Container(
-      width: MediaQuery.of(context).size.width / 2,
-      height: MediaQuery.of(context).size.height / 2.5,
+      width: MediaQuery.of(context).size.width * 0.5,
+      height: MediaQuery.of(context).size.height * 0.38,
       decoration: BoxDecoration(
         color: color,
         border: Border(
