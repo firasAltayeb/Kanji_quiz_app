@@ -32,12 +32,12 @@ class _MainBodyState extends State<MainBody> {
         Text(
           label + ": " + progress,
           style: TextStyle(
-            fontSize: 25,
+            fontSize: MediaQuery.of(context).size.height * 0.04,
             fontWeight: FontWeight.bold,
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height / 50,
+          height: MediaQuery.of(context).size.height * 0.02,
         ),
         Container(
           decoration: BoxDecoration(
@@ -50,7 +50,9 @@ class _MainBodyState extends State<MainBody> {
           child: FlatButton(
             textColor: Colors.black,
             child: Text(label,
-                style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
+                style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.height * 0.02),
+                textAlign: TextAlign.center),
             onPressed: () {
               navigate(context);
             },

@@ -65,7 +65,7 @@ class _LessonManagerState extends State<LessonManager> {
             icon: Icon(
               Icons.search_rounded,
               color: Colors.white,
-              size: 40,
+              size: MediaQuery.of(context).size.height * 0.05,
             ),
             onPressed: null,
           ),

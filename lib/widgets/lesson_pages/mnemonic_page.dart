@@ -1,4 +1,5 @@
 import 'package:Kanji_quiz_app/widgets/lesson_pages/fetch_button.dart';
+import 'package:Kanji_quiz_app/widgets/lesson_pages/mnemonic_field.dart';
 import 'package:flutter/material.dart';
 
 class MnemonicPage extends StatelessWidget {
@@ -16,10 +17,6 @@ class MnemonicPage extends StatelessWidget {
     @required this.previousKanji,
   });
 
-  void submitData() {
-    nextKanji();
-  }
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -28,8 +25,11 @@ class MnemonicPage extends StatelessWidget {
           topRow(context),
           keywordBox(context),
           buildBlockRow(context),
-          mnemonicField(context),
-          SizedBox(height: 10),
+          MnemonicField(
+              learnQueue: learnQueue,
+              queueIndex: queueIndex,
+              nextKanji: nextKanji),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.01),
           FetchButton(
             learnQueue: learnQueue,
             queueIndex: queueIndex,
@@ -61,7 +61,7 @@ class MnemonicPage extends StatelessWidget {
             "Next",
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          onPressed: submitData,
+          onPressed: nextKanji,
         ),
       ],
     );
@@ -115,38 +115,6 @@ class MnemonicPage extends StatelessWidget {
           kanjiPicture(
               context, learnQueue[queueIndex]['buildingBlockTwo'], 5, 6),
         ],
-      ),
-    );
-  }
-
-  Widget mnemonicField(BuildContext context) {
-    String keyword = learnQueue[queueIndex]['keyword'];
-    String intialText =
-        'Please create a mnemonic for the above kanji $keyword' +
-            ' using its bulidng blocks a and b';
-    mnemonicController.text = intialText;
-    bool textCleared = false;
-    return Container(
-      width: MediaQuery.of(context).size.width - 30,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-      ),
-      padding: EdgeInsets.all(10),
-      child: TextField(
-        textInputAction: TextInputAction.go,
-        keyboardType: TextInputType.multiline,
-        maxLines: null,
-        controller: mnemonicController,
-        onSubmitted: (_) => submitData(),
-        onTap: () {
-          if (textCleared == false) {
-            mnemonicController.clear();
-            textCleared = true;
-          }
-        },
       ),
     );
   }
