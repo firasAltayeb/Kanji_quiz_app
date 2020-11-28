@@ -11,27 +11,56 @@ class MainBody extends StatefulWidget {
 }
 
 class _MainBodyState extends State<MainBody> {
-  var kanjiMap = Hive.box('kanjiMap').get('map') == null
-      ? KanjiMap().initialKanjiMap
-      : Hive.box('kanjiMap').get('map');
+  var _kanjiMap = Hive.box('kanjiMap').get('map');
+  var _lessonMap = List<Map<String, String>>();
+  var _reviewMap = List<Map<String, String>>();
+
+  Future navigateToLessonPage(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => LessonManager()));
+  }
+
+  Future navigateToReviewPage(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ReviewManager()));
+  }
+
+  void allocateMaps() {
+    for (var i = 0; i < _kanjiMap.length; i++) {
+      if (_kanjiMap[i]['learningStatus'] == 'Lesson') {
+        var myMap = new Map<String, String>.from(_kanjiMap[i]);
+        _lessonMap.add(myMap);
+      } else {
+        var myMap = new Map<String, String>.from(_kanjiMap[i]);
+        _reviewMap.add(myMap);
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    print('The kanji map is ' + kanjiMap.toString());
+    if (_kanjiMap == null) {
+      print('hive is null');
+      _kanjiMap = KanjiMap().initialKanjiMap;
+      Hive.box('kanjiMap').put('map', _kanjiMap);
+    } else {
+      print('hive is not null');
+    }
 
-    Map<String, String> initalMap = {
-      'keyword': 'Oneself',
-      'frameNumber': '17',
-      'photoAddress': 'assets/images/17_Kanji_xlg.png',
-      'buildingBlockOne': 'assets/images/5_Kanji_xl.png',
-      'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
-    };
+    allocateMaps();
 
-    var lessonCount = kanjiMap.length.toString();
+    //print('The kanji map is ' + _kanjiMap.toString());
 
-    kanjiMap.add(initalMap);
+    // Map<String, String> initalMap = {
+    //   'keyword': 'Goods',
+    //   'frameNumber': '23',
+    //   'learningStatus': 'Review',
+    //   'photoAddress': 'assets/images/19_Kanji_xlg.png',
+    //   'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
+    //   'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
+    // };
 
-    Hive.box('kanjiMap').put('map', kanjiMap);
+    // _kanjiMap.add(initalMap);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -39,9 +68,10 @@ class _MainBodyState extends State<MainBody> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            progressButton(
-                context, "Lesson", lessonCount, navigateToLessonPage),
-            progressButton(context, "Review", "4", navigateToReviewPage),
+            progressButton(context, "Lesson", _lessonMap.length.toString(),
+                navigateToLessonPage),
+            progressButton(context, "Review", _reviewMap.length.toString(),
+                navigateToReviewPage),
           ],
         ),
       ],
@@ -84,15 +114,5 @@ class _MainBodyState extends State<MainBody> {
         )
       ],
     );
-  }
-
-  Future navigateToLessonPage(context) async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LessonManager()));
-  }
-
-  Future navigateToReviewPage(context) async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ReviewManager()));
   }
 }
