@@ -1,4 +1,6 @@
+import 'package:Kanji_quiz_app/model/kanji_map.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import 'widgets/lesson_pages/lesson_manager.dart';
 import 'widgets/review_pages/review_manager.dart';
@@ -9,15 +11,36 @@ class MainBody extends StatefulWidget {
 }
 
 class _MainBodyState extends State<MainBody> {
+  var kanjiMap = Hive.box('kanjiMap').get('map') == null
+      ? KanjiMap().initialKanjiMap
+      : Hive.box('kanjiMap').get('map');
+
   @override
   Widget build(BuildContext context) {
+    print('The kanji map is ' + kanjiMap.toString());
+
+    Map<String, String> initalMap = {
+      'keyword': 'Oneself',
+      'frameNumber': '17',
+      'photoAddress': 'assets/images/17_Kanji_xlg.png',
+      'buildingBlockOne': 'assets/images/5_Kanji_xl.png',
+      'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
+    };
+
+    var lessonCount = kanjiMap.length.toString();
+
+    kanjiMap.add(initalMap);
+
+    Hive.box('kanjiMap').put('map', kanjiMap);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            progressButton(context, "Lesson", "3", navigateToLessonPage),
+            progressButton(
+                context, "Lesson", lessonCount, navigateToLessonPage),
             progressButton(context, "Review", "4", navigateToReviewPage),
           ],
         ),
