@@ -8,41 +8,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final appDocumentDir = await getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
+  await Hive.openBox('kanjiBox');
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
+class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     print('MaterialApp is called');
     return MaterialApp(
       title: 'Kanji Quiz App',
-      home: FutureBuilder(
-        future: Hive.openBox('kanjiMap'),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if (snapshot.hasError) {
-              return Text(snapshot.error.toString());
-            } else {
-              return MyHome();
-            }
-          } else {
-            return Scaffold();
-          }
-        },
-      ),
+      home: MyHome(),
     );
-  }
-
-  @override
-  void dispose() {
-    print('hive disposed');
-    Hive.close();
-    super.dispose();
   }
 }
