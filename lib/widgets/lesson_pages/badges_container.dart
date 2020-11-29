@@ -42,9 +42,9 @@ class BadgesContainer extends StatelessWidget {
         ),
         kanjiPicture(
           context: context,
-          photoAddress: learnQueue[queueIndex]['greyPhotoAddress'],
-          requestedwidth: 0.4,
-          requestedheight: 0.3,
+          address: learnQueue[queueIndex]['greyPhotoAddress'],
+          width: 0.4,
+          height: 0.3,
         ),
         FlatButton(
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -60,18 +60,13 @@ class BadgesContainer extends StatelessWidget {
   }
 
   Widget kanjiPicture(
-      {BuildContext context,
-      String photoAddress,
-      double requestedwidth,
-      double requestedheight}) {
+      {BuildContext context, String address, double width, double height}) {
     return Container(
-      width: MediaQuery.of(context).size.width * requestedwidth,
-      height: MediaQuery.of(context).size.height * requestedheight,
+      width: MediaQuery.of(context).size.width * width,
+      height: MediaQuery.of(context).size.height * height,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(
-            photoAddress,
-          ),
+          image: AssetImage(address),
           fit: BoxFit.fill,
         ),
       ),
@@ -96,6 +91,8 @@ class BadgesContainer extends StatelessWidget {
   }
 
   Widget buildBlockRow(BuildContext context) {
+    var desiredWidth = 0.19;
+    var desiredheight = 0.19;
     return Padding(
       padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
       child: Row(
@@ -105,19 +102,27 @@ class BadgesContainer extends StatelessWidget {
             'Building blocks: ',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          kanjiPicture(
-            context: context,
-            photoAddress: learnQueue[queueIndex]['buildingBlockOne'],
-            requestedwidth: 0.19,
-            requestedheight: 0.19,
-          ),
-          learnQueue[queueIndex]['buildingBlockTwo'] == 'empty'
-              ? SizedBox()
+          learnQueue[queueIndex]['buildingBlockOne'] == 'empty'
+              ? SizedBox(
+                  width: MediaQuery.of(context).size.width * desiredWidth,
+                  height: MediaQuery.of(context).size.height * desiredheight,
+                )
               : kanjiPicture(
                   context: context,
-                  photoAddress: learnQueue[queueIndex]['buildingBlockTwo'],
-                  requestedwidth: 0.19,
-                  requestedheight: 0.19,
+                  address: learnQueue[queueIndex]['buildingBlockOne'],
+                  width: desiredWidth,
+                  height: desiredheight,
+                ),
+          learnQueue[queueIndex]['buildingBlockTwo'] == 'empty'
+              ? SizedBox(
+                  width: MediaQuery.of(context).size.width * desiredWidth,
+                  height: MediaQuery.of(context).size.height * desiredheight,
+                )
+              : kanjiPicture(
+                  context: context,
+                  address: learnQueue[queueIndex]['buildingBlockTwo'],
+                  width: desiredWidth,
+                  height: desiredheight,
                 ),
         ],
       ),

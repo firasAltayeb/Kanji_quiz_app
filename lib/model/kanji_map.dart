@@ -1,29 +1,45 @@
 class KanjiMap {
   List<Map<String, String>> _initalMap = [
-    // {
-    //   'keyword': 'Five',
-    //   'frameNumber': '5',
-    //   'learningStatus': 'Review',
-    //   'photoAddress': 'assets/images/17_Kanji_xlg.png',
-    // },
-    // {
-    //   'keyword': 'Mouth',
-    //   'frameNumber': '11',
-    //   'learningStatus': 'Review',
-    //   'photoAddress': 'assets/images/18_Kanji_xlg.png',
-    // },
-    // {
-    //   'keyword': 'Sun',
-    //   'frameNumber': '12',
-    //   'learningStatus': 'Review',
-    //   'photoAddress': 'assets/images/19_Kanji_xlg.png',
-    // },
-    // {
-    //   'keyword': 'Moon',
-    //   'frameNumber': '13',
-    //   'learningStatus': 'Review',
-    //   'photoAddress': 'assets/images/19_Kanji_xlg.png',
-    // },
+    {
+      'keyword': 'Five',
+      'frameNumber': '5',
+      'mnemonicStory': '',
+      'learningStatus': 'Review',
+      'greyPhotoAddress': 'assets/images/5_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/5_Kanji_xl.png',
+      'buildingBlockOne': 'empty',
+      'buildingBlockTwo': 'empty'
+    },
+    {
+      'keyword': 'Mouth',
+      'frameNumber': '11',
+      'mnemonicStory': '',
+      'learningStatus': 'Review',
+      'greyPhotoAddress': 'assets/images/11_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/11_Kanji_xl.png',
+      'buildingBlockOne': 'empty',
+      'buildingBlockTwo': 'empty'
+    },
+    {
+      'keyword': 'Sun',
+      'frameNumber': '12',
+      'mnemonicStory': '',
+      'learningStatus': 'Review',
+      'greyPhotoAddress': 'assets/images/12_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/12_Kanji_xl.png',
+      'buildingBlockOne': 'empty',
+      'buildingBlockTwo': 'empty'
+    },
+    {
+      'keyword': 'Moon',
+      'frameNumber': '13',
+      'mnemonicStory': '',
+      'learningStatus': 'Review',
+      'greyPhotoAddress': 'assets/images/13_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/13_Kanji_xl.png',
+      'buildingBlockOne': 'empty',
+      'buildingBlockTwo': 'empty'
+    },
     {
       'keyword': 'Oneself',
       'frameNumber': '17',
