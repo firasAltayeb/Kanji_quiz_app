@@ -14,7 +14,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
-    print('MaterialApp is called');
     return MaterialApp(
       title: 'Kanji Quiz App',
       home: MyHome(),

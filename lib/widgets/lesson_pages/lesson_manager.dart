@@ -1,49 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import 'fetch_button.dart';
-import 'badges_container.dart';
 import 'mnemonic_field.dart';
+import 'badges_container.dart';
 
 class LessonManager extends StatefulWidget {
+  final Function allocateMaps;
+  final List<dynamic> kanjiMap;
+  final List<Map<String, String>> lessonMap;
+
+  const LessonManager(this.allocateMaps, this.kanjiMap, this.lessonMap);
+
   @override
   _LessonManagerState createState() => _LessonManagerState();
 }
 
 class _LessonManagerState extends State<LessonManager> {
-  final _learnQueue = const [
-    {
-      'keyword': 'Oneself',
-      'frameNumber': '17',
-      'photoAddress': 'assets/images/17_Kanji_xlg.png',
-      'buildingBlockOne': 'assets/images/5_Kanji_xl.png',
-      'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
-    },
-    {
-      'keyword': 'Bright',
-      'frameNumber': '20',
-      'photoAddress': 'assets/images/18_Kanji_xlg.png',
-      'buildingBlockOne': 'assets/images/12_Kanji_xl.png',
-      'buildingBlockTwo': 'assets/images/13_Kanji_xl.png'
-    },
-    {
-      'keyword': 'Goods',
-      'frameNumber': '23',
-      'photoAddress': 'assets/images/19_Kanji_xlg.png',
-      'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
-      'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
-    }
-  ];
-
   var _queueIndex = 0;
   var _initialTextCleared = false;
 
   void _nextKanji() {
     if (_queueIndex == 2) {
+      //Hive.box('kanjiBox').put('map', widget.kanjiMap);
+      widget.allocateMaps();
       Navigator.pop(context);
     } else {
       setState(() {
         _initialTextCleared = false;
         _queueIndex = _queueIndex + 1;
+        widget.kanjiMap[0]['learningStatus'] = 'Review';
       });
     }
   }
@@ -68,6 +54,7 @@ class _LessonManagerState extends State<LessonManager> {
 
   @override
   Widget build(BuildContext context) {
+    final _learnQueue = widget.lessonMap;
     return Scaffold(
       appBar: AppBar(
         title: Text('Lesson Page'),

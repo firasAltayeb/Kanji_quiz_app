@@ -16,8 +16,10 @@ class _MyHomeState extends State<MyHome> {
   var _reviewMap = List<Map<String, String>>();
   var _lessonMap = List<Map<String, String>>();
 
-  void allocateMaps() {
+  void _allocateMaps() {
+    print('allocation start');
     var stringMap;
+    _lessonMap.clear();
     for (var i = 0; i < _kanjiMap.length; i++) {
       if (_kanjiMap[i]['learningStatus'] == 'Review') {
         stringMap = new Map<String, String>.from(_kanjiMap[i]);
@@ -44,7 +46,7 @@ class _MyHomeState extends State<MyHome> {
       print('kanjimap is not null');
     }
 
-    allocateMaps();
+    _allocateMaps();
     print('allocation complete');
   }
 
@@ -79,6 +81,7 @@ class _MyHomeState extends State<MyHome> {
           kanjiMap: _kanjiMap,
           lessonMap: _lessonMap,
           reviewMap: _reviewMap,
+          allocateMaps: _allocateMaps,
         ));
   }
 }

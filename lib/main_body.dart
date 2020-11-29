@@ -5,16 +5,7 @@ import 'widgets/lesson_pages/lesson_manager.dart';
 import 'widgets/review_pages/review_manager.dart';
 
 class MainBody extends StatelessWidget {
-  Future navigateToLessonPage(context) async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => LessonManager()));
-  }
-
-  Future navigateToReviewPage(context) async {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ReviewManager()));
-  }
-
+  final Function allocateMaps;
   final List<dynamic> kanjiMap;
   final List<Map<String, String>> lessonMap;
   final List<Map<String, String>> reviewMap;
@@ -23,7 +14,22 @@ class MainBody extends StatelessWidget {
     @required this.kanjiMap,
     @required this.lessonMap,
     @required this.reviewMap,
+    @required this.allocateMaps,
   });
+
+  Future navigateToLessonPage(context) async {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => LessonManager(allocateMaps, kanjiMap, lessonMap),
+      ),
+    );
+  }
+
+  Future navigateToReviewPage(context) async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ReviewManager()));
+  }
 
   @override
   Widget build(BuildContext context) {
