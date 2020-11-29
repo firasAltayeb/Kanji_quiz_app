@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'answer_page.dart';
 import 'result_page.dart';
 import 'recall_page.dart';
 
@@ -47,29 +46,9 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   @override
   Widget build(BuildContext context) {
-    Widget page;
     final _learnQueue = widget.reviewMap;
-
-    if (_queueIndex < _learnQueue.length) {
-      if (_recallButtonVisible) {
-        page = RecallPage(
-          questionIndex: _queueIndex,
-          questionQueue: _learnQueue,
-          hideRecallButton: _hideRecallButton,
-        );
-      } else {
-        page = AnswerPage(
-          questionIndex: _queueIndex,
-          questionQueue: _learnQueue,
-          kanjiAnswer: _learnQueue[_queueIndex]['keyword'],
-          selectHandler: _answerQuestion,
-        );
-      }
-    } else {
-      page = ResultPage(
-        _totalScore,
-        _resetQuiz,
-      );
+    if (_learnQueue.isEmpty == true) {
+      return Scaffold();
     }
 
     return Scaffold(
@@ -77,7 +56,18 @@ class _ReviewManagerState extends State<ReviewManager> {
         title: Text('Review Page'),
         backgroundColor: Colors.black,
       ),
-      body: page,
+      body: _queueIndex < _learnQueue.length
+          ? RecallPage(
+              questionIndex: _queueIndex,
+              questionQueue: _learnQueue,
+              hideRecallButton: _hideRecallButton,
+              selectHandler: _answerQuestion,
+              recallButtonVisible: _recallButtonVisible,
+            )
+          : ResultPage(
+              _totalScore,
+              _resetQuiz,
+            ),
     );
   }
 }
