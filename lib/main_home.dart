@@ -20,6 +20,7 @@ class _MyHomeState extends State<MyHome> {
     print('allocation start');
     var stringMap;
     _lessonMap.clear();
+    _reviewMap.clear();
     for (var i = 0; i < _kanjiMap.length; i++) {
       if (_kanjiMap[i]['learningStatus'] == 'Review') {
         stringMap = new Map<String, String>.from(_kanjiMap[i]);
@@ -29,6 +30,8 @@ class _MyHomeState extends State<MyHome> {
         _lessonMap.add(stringMap);
       }
     }
+    print('LessonMap size is ' + '${_lessonMap.length}');
+    print('ReviewMap size is ' + '${_reviewMap.length}');
   }
 
   @override
@@ -45,9 +48,7 @@ class _MyHomeState extends State<MyHome> {
     } else {
       print('kanjimap is not null');
     }
-
     _allocateMaps();
-    print('allocation complete');
   }
 
   @override

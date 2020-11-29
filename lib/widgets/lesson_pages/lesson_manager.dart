@@ -22,14 +22,20 @@ class _LessonManagerState extends State<LessonManager> {
 
   void _nextKanji() {
     if (_queueIndex == 2) {
-      //Hive.box('kanjiBox').put('map', widget.kanjiMap);
       widget.allocateMaps();
       Navigator.pop(context);
     } else {
       setState(() {
+        print(widget.lessonMap[_queueIndex]);
+        print(widget.kanjiMap);
+
+        int index = widget.kanjiMap.indexOf(widget.lessonMap[_queueIndex]);
+        print(index);
+        widget.kanjiMap[index]['learningStatus'] = 'Review';
+        Hive.box('kanjiBox').put('map', widget.kanjiMap);
+
         _initialTextCleared = false;
         _queueIndex = _queueIndex + 1;
-        widget.kanjiMap[0]['learningStatus'] = 'Review';
       });
     }
   }
