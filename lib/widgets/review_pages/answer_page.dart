@@ -23,8 +23,8 @@ class AnswerPage extends StatelessWidget {
         Expanded(child: SizedBox()),
         Row(
           children: [
-            answerButton(context, Colors.green, "Correct", 5),
-            answerButton(context, Colors.red, "Incorrect", 0),
+            answerButton(context, Colors.green, "Correct", true),
+            answerButton(context, Colors.red, "Incorrect", false),
           ],
         ),
       ],
@@ -105,7 +105,7 @@ class AnswerPage extends StatelessWidget {
   }
 
   Widget answerButton(
-      BuildContext context, Color color, String label, int resultModifier) {
+      BuildContext context, Color color, String label, bool answer) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.5,
       height: MediaQuery.of(context).size.height * 0.38,
@@ -127,7 +127,7 @@ class AnswerPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: () => selectHandler(resultModifier),
+        onPressed: () => selectHandler(answer),
       ),
     );
   }

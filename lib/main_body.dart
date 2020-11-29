@@ -5,7 +5,7 @@ import 'widgets/lesson_pages/lesson_manager.dart';
 import 'widgets/review_pages/review_manager.dart';
 
 class MainBody extends StatelessWidget {
-  final Function allocateMaps;
+  final Function reAllocateMaps;
   final List<dynamic> kanjiMap;
   final List<Map<String, String>> lessonMap;
   final List<Map<String, String>> reviewMap;
@@ -14,21 +14,25 @@ class MainBody extends StatelessWidget {
     @required this.kanjiMap,
     @required this.lessonMap,
     @required this.reviewMap,
-    @required this.allocateMaps,
+    @required this.reAllocateMaps,
   });
 
   Future navigateToLessonPage(context) async {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => LessonManager(allocateMaps, kanjiMap, lessonMap),
+        builder: (context) => LessonManager(reAllocateMaps, lessonMap),
       ),
     );
   }
 
   Future navigateToReviewPage(context) async {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ReviewManager()));
+      context,
+      MaterialPageRoute(
+        builder: (context) => ReviewManager(reAllocateMaps, reviewMap),
+      ),
+    );
   }
 
   @override
@@ -56,9 +60,9 @@ class MainBody extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             progressButton(
-                context, "Lesson", '${lessonMap.length}', navigateToLessonPage),
+                context, "Lesson", lessonMap.length, navigateToLessonPage),
             progressButton(
-                context, "Review", '${reviewMap.length}', navigateToReviewPage),
+                context, "Review", reviewMap.length, navigateToReviewPage),
           ],
         ),
       ],
@@ -66,11 +70,11 @@ class MainBody extends StatelessWidget {
   }
 
   Widget progressButton(
-      context, String label, String progress, Function navigate) {
+      context, String label, int progress, Function navigate) {
     return Column(
       children: [
         Text(
-          label + ": " + progress,
+          label + ": " + '$progress',
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.height * 0.04,
             fontWeight: FontWeight.bold,
@@ -88,16 +92,13 @@ class MainBody extends StatelessWidget {
             ),
           ),
           child: FlatButton(
-            textColor: Colors.black,
-            child: Text('Start',
-                style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.height * 0.03,
-                ),
-                textAlign: TextAlign.center),
-            onPressed: () {
-              navigate(context);
-            },
-          ),
+              textColor: Colors.black,
+              child: Text('Start',
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.height * 0.03,
+                  ),
+                  textAlign: TextAlign.center),
+              onPressed: progress == 0 ? null : () => navigate(context)),
         )
       ],
     );

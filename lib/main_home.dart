@@ -16,18 +16,24 @@ class _MyHomeState extends State<MyHome> {
   var _reviewMap = List<Map<String, String>>();
   var _lessonMap = List<Map<String, String>>();
 
+  void _reAllocateMaps() {
+    setState(() {
+      _allocateMaps();
+      Hive.box('kanjiBox').put('map', _kanjiMap);
+    });
+  }
+
   void _allocateMaps() {
     print('allocation start');
-    var stringMap;
     _lessonMap.clear();
     _reviewMap.clear();
     for (var i = 0; i < _kanjiMap.length; i++) {
-      if (_kanjiMap[i]['learningStatus'] == 'Review') {
-        stringMap = new Map<String, String>.from(_kanjiMap[i]);
-        _reviewMap.add(stringMap);
-      } else {
-        stringMap = new Map<String, String>.from(_kanjiMap[i]);
-        _lessonMap.add(stringMap);
+      if (_kanjiMap[i]['learningStatus'] == 'Lesson') {
+        _kanjiMap[i] = new Map<String, String>.from(_kanjiMap[i]);
+        _lessonMap.add(_kanjiMap[i]);
+      } else if (_kanjiMap[i]['learningStatus'] == 'Review') {
+        _kanjiMap[i] = new Map<String, String>.from(_kanjiMap[i]);
+        _reviewMap.add(_kanjiMap[i]);
       }
     }
     print('LessonMap size is ' + '${_lessonMap.length}');
@@ -82,7 +88,7 @@ class _MyHomeState extends State<MyHome> {
           kanjiMap: _kanjiMap,
           lessonMap: _lessonMap,
           reviewMap: _reviewMap,
-          allocateMaps: _allocateMaps,
+          reAllocateMaps: _reAllocateMaps,
         ));
   }
 }

@@ -6,11 +6,10 @@ import 'mnemonic_field.dart';
 import 'badges_container.dart';
 
 class LessonManager extends StatefulWidget {
-  final Function allocateMaps;
-  final List<dynamic> kanjiMap;
+  final Function reAllocateMaps;
   final List<Map<String, String>> lessonMap;
 
-  const LessonManager(this.allocateMaps, this.kanjiMap, this.lessonMap);
+  const LessonManager(this.reAllocateMaps, this.lessonMap);
 
   @override
   _LessonManagerState createState() => _LessonManagerState();
@@ -21,18 +20,17 @@ class _LessonManagerState extends State<LessonManager> {
   var _initialTextCleared = false;
 
   void _nextKanji() {
-    if (_queueIndex == 2) {
-      widget.allocateMaps();
+    if (_queueIndex + 1 == widget.lessonMap.length) {
+      print('_queueIndex is $_queueIndex');
+      print(widget.lessonMap[_queueIndex]);
+      widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
+      widget.reAllocateMaps();
       Navigator.pop(context);
     } else {
       setState(() {
+        print('_queueIndex is $_queueIndex');
         print(widget.lessonMap[_queueIndex]);
-        print(widget.kanjiMap);
-
-        int index = widget.kanjiMap.indexOf(widget.lessonMap[_queueIndex]);
-        print(index);
-        widget.kanjiMap[index]['learningStatus'] = 'Review';
-        Hive.box('kanjiBox').put('map', widget.kanjiMap);
+        widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
 
         _initialTextCleared = false;
         _queueIndex = _queueIndex + 1;

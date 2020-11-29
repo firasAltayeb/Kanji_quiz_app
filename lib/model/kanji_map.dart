@@ -1,29 +1,29 @@
 class KanjiMap {
   List<Map<String, String>> _initalMap = [
-    {
-      'keyword': 'Five',
-      'frameNumber': '5',
-      'learningStatus': 'Review',
-      'photoAddress': 'assets/images/17_Kanji_xlg.png',
-    },
-    {
-      'keyword': 'Mouth',
-      'frameNumber': '11',
-      'learningStatus': 'Review',
-      'photoAddress': 'assets/images/18_Kanji_xlg.png',
-    },
-    {
-      'keyword': 'Sun',
-      'frameNumber': '12',
-      'learningStatus': 'Review',
-      'photoAddress': 'assets/images/19_Kanji_xlg.png',
-    },
-    {
-      'keyword': 'Moon',
-      'frameNumber': '13',
-      'learningStatus': 'Review',
-      'photoAddress': 'assets/images/19_Kanji_xlg.png',
-    },
+    // {
+    //   'keyword': 'Five',
+    //   'frameNumber': '5',
+    //   'learningStatus': 'Review',
+    //   'photoAddress': 'assets/images/17_Kanji_xlg.png',
+    // },
+    // {
+    //   'keyword': 'Mouth',
+    //   'frameNumber': '11',
+    //   'learningStatus': 'Review',
+    //   'photoAddress': 'assets/images/18_Kanji_xlg.png',
+    // },
+    // {
+    //   'keyword': 'Sun',
+    //   'frameNumber': '12',
+    //   'learningStatus': 'Review',
+    //   'photoAddress': 'assets/images/19_Kanji_xlg.png',
+    // },
+    // {
+    //   'keyword': 'Moon',
+    //   'frameNumber': '13',
+    //   'learningStatus': 'Review',
+    //   'photoAddress': 'assets/images/19_Kanji_xlg.png',
+    // },
     {
       'keyword': 'Oneself',
       'frameNumber': '17',
@@ -46,7 +46,7 @@ class KanjiMap {
       'learningStatus': 'Lesson',
       'photoAddress': 'assets/images/19_Kanji_xlg.png',
       'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
-      'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
+      'buildingBlockTwo': 'null'
     }
   ];
 
