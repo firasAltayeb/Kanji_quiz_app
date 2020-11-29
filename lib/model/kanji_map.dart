@@ -7,8 +7,8 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/5_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/5_Kanji_xl.png',
-      'buildingBlockOne': 'empty',
-      'buildingBlockTwo': 'empty'
+      'buildingBlockOne': '',
+      'buildingBlockTwo': ''
     },
     {
       'keyword': 'Mouth',
@@ -17,8 +17,8 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/11_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/11_Kanji_xl.png',
-      'buildingBlockOne': 'empty',
-      'buildingBlockTwo': 'empty'
+      'buildingBlockOne': '',
+      'buildingBlockTwo': ''
     },
     {
       'keyword': 'Sun',
@@ -27,8 +27,8 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/12_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/12_Kanji_xl.png',
-      'buildingBlockOne': 'empty',
-      'buildingBlockTwo': 'empty'
+      'buildingBlockOne': '',
+      'buildingBlockTwo': ''
     },
     {
       'keyword': 'Moon',
@@ -37,8 +37,8 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/13_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/13_Kanji_xl.png',
-      'buildingBlockOne': 'empty',
-      'buildingBlockTwo': 'empty'
+      'buildingBlockOne': '',
+      'buildingBlockTwo': ''
     },
     {
       'keyword': 'Oneself',
@@ -68,7 +68,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/19_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/19_Kanji_xl.png',
       'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
-      'buildingBlockTwo': 'empty'
+      'buildingBlockTwo': ''
     }
   ];
 

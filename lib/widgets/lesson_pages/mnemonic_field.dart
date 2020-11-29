@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MnemonicField extends StatelessWidget {
   final int queueIndex;
-  final List<Map<String, Object>> learnQueue;
+  final List<Map<String, String>> lessonMap;
 
   final Function nextKanji;
   final bool initialtextCleared;
@@ -10,7 +10,7 @@ class MnemonicField extends StatelessWidget {
   final mnemonicController = TextEditingController();
 
   MnemonicField({
-    @required this.learnQueue,
+    @required this.lessonMap,
     @required this.queueIndex,
     @required this.nextKanji,
     @required this.initialtextCleared,
@@ -19,14 +19,22 @@ class MnemonicField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String keyword = learnQueue[queueIndex]['keyword'];
+    String keyword = lessonMap[queueIndex]['keyword'];
+    String mnemonicStory = lessonMap[queueIndex]['mnemonicStory'];
     String intialText =
         'Please create a mnemonic for the above kanji $keyword' +
             ' using its bulidng blocks a and b';
 
-    initialtextCleared
-        ? mnemonicController.text = ''
-        : mnemonicController.text = intialText;
+    // print(keyword);
+    // print(mnemonicStory);
+
+    if (mnemonicStory != '') {
+      mnemonicController.text = mnemonicStory;
+    } else if (initialtextCleared) {
+      mnemonicController.text = '';
+    } else {
+      mnemonicController.text = intialText;
+    }
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.15,
@@ -44,7 +52,8 @@ class MnemonicField extends StatelessWidget {
         maxLines: null,
         controller: mnemonicController,
         onSubmitted: (_) {
-          print(mnemonicController.text);
+          print('mnemonicController.text is ' + mnemonicController.text);
+          lessonMap[queueIndex]['mnemonicStory'] = mnemonicController.text;
           nextKanji();
         },
         onTap: () => clearInitialText(),

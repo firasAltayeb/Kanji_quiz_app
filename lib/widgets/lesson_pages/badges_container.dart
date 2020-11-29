@@ -102,7 +102,7 @@ class BadgesContainer extends StatelessWidget {
             'Building blocks: ',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          learnQueue[queueIndex]['buildingBlockOne'] == 'empty'
+          learnQueue[queueIndex]['buildingBlockOne'] == ''
               ? SizedBox(
                   width: MediaQuery.of(context).size.width * desiredWidth,
                   height: MediaQuery.of(context).size.height * desiredheight,
@@ -113,7 +113,7 @@ class BadgesContainer extends StatelessWidget {
                   width: desiredWidth,
                   height: desiredheight,
                 ),
-          learnQueue[queueIndex]['buildingBlockTwo'] == 'empty'
+          learnQueue[queueIndex]['buildingBlockTwo'] == ''
               ? SizedBox(
                   width: MediaQuery.of(context).size.width * desiredWidth,
                   height: MediaQuery.of(context).size.height * desiredheight,
