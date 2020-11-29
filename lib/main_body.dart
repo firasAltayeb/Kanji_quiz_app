@@ -47,20 +47,21 @@ class _MainBodyState extends State<MainBody> {
       print('hive is not null');
     }
 
-    allocateMaps();
+    //allocateMaps();
 
-    //print('The kanji map is ' + _kanjiMap.toString());
+    // print('The kanji map is ' + _kanjiMap.toString());
 
-    // Map<String, String> initalMap = {
-    //   'keyword': 'Goods',
-    //   'frameNumber': '23',
-    //   'learningStatus': 'Review',
-    //   'photoAddress': 'assets/images/19_Kanji_xlg.png',
-    //   'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
-    //   'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
-    // };
+    Map<String, String> initalMap = {
+      'keyword': 'Goods',
+      'frameNumber': '23',
+      'learningStatus': 'Review',
+      'photoAddress': 'assets/images/19_Kanji_xlg.png',
+      'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
+      'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
+    };
 
-    // _kanjiMap.add(initalMap);
+    _kanjiMap.add(initalMap);
+    Hive.box('kanjiMap').put('map', _kanjiMap);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -74,6 +75,7 @@ class _MainBodyState extends State<MainBody> {
                 navigateToReviewPage),
           ],
         ),
+        TextField()
       ],
     );
   }
