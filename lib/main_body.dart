@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-
 import 'widgets/lesson_pages/lesson_manager.dart';
 import 'widgets/review_pages/review_manager.dart';
 
@@ -37,22 +35,6 @@ class MainBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Map<String, String> initalMap = {
-    //   'keyword': 'Goods',
-    //   'frameNumber': '23',
-    //   'learningStatus': 'Lesson',
-    //   'photoAddress': 'assets/images/19_Kanji_xlg.png',
-    //   'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
-    //   'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
-    // };
-
-    // kanjiMap[0]['keyword'] = 'kanjiMap0';
-    // kanjiMap[1]['keyword'] = 'kanjiMap1';
-    //Hive.box('kanjiBox').put('map', lessonMap);
-
-    // print('kanjibox is ' + '${Hive.box('kanjiBox').get('map')}');
-    // print(Hive.box('kanjiBox').get('map').length);
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[

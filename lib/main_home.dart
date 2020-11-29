@@ -16,6 +16,23 @@ class _MyHomeState extends State<MyHome> {
   var _reviewMap = List<Map<String, String>>();
   var _lessonMap = List<Map<String, String>>();
 
+  @override
+  void initState() {
+    print('initializing box');
+    super.initState();
+    _kanjiBox = Hive.box('kanjiBox');
+    _kanjiMap = _kanjiBox.get('map');
+
+    if (_kanjiMap == null) {
+      print('kanjimap is null');
+      _kanjiMap = KanjiMap().initialKanjiMap;
+      Hive.box('kanjiBox').put('map', _kanjiMap);
+    } else {
+      print('kanjimap is not null');
+    }
+    _allocateMaps();
+  }
+
   void _reAllocateMaps() {
     setState(() {
       _allocateMaps();
@@ -38,23 +55,6 @@ class _MyHomeState extends State<MyHome> {
     }
     print('LessonMap size is ' + '${_lessonMap.length}');
     print('ReviewMap size is ' + '${_reviewMap.length}');
-  }
-
-  @override
-  void initState() {
-    print('initializing box');
-    super.initState();
-    _kanjiBox = Hive.box('kanjiBox');
-    _kanjiMap = _kanjiBox.get('map');
-
-    if (_kanjiMap == null) {
-      print('kanjimap is null');
-      _kanjiMap = KanjiMap().initialKanjiMap;
-      Hive.box('kanjiBox').put('map', _kanjiMap);
-    } else {
-      print('kanjimap is not null');
-    }
-    _allocateMaps();
   }
 
   @override

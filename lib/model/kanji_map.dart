@@ -27,26 +27,32 @@ class KanjiMap {
     {
       'keyword': 'Oneself',
       'frameNumber': '17',
+      'mnemonicStory': '',
       'learningStatus': 'Lesson',
-      'photoAddress': 'assets/images/17_Kanji_xlg.png',
+      'greyPhotoAddress': 'assets/images/17_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/17_Kanji_xl.png',
       'buildingBlockOne': 'assets/images/5_Kanji_xl.png',
       'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
     },
     {
       'keyword': 'Bright',
       'frameNumber': '20',
+      'mnemonicStory': '',
       'learningStatus': 'Lesson',
-      'photoAddress': 'assets/images/18_Kanji_xlg.png',
+      'greyPhotoAddress': 'assets/images/18_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/18_Kanji_xl.png',
       'buildingBlockOne': 'assets/images/12_Kanji_xl.png',
       'buildingBlockTwo': 'assets/images/13_Kanji_xl.png'
     },
     {
       'keyword': 'Goods',
       'frameNumber': '23',
+      'mnemonicStory': '',
       'learningStatus': 'Lesson',
-      'photoAddress': 'assets/images/19_Kanji_xlg.png',
+      'greyPhotoAddress': 'assets/images/19_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/19_Kanji_xl.png',
       'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
-      'buildingBlockTwo': 'null'
+      'buildingBlockTwo': 'empty'
     }
   ];
 

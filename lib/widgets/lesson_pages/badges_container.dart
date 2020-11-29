@@ -42,7 +42,7 @@ class BadgesContainer extends StatelessWidget {
         ),
         kanjiPicture(
           context: context,
-          photoAddress: learnQueue[queueIndex]['photoAddress'],
+          photoAddress: learnQueue[queueIndex]['greyPhotoAddress'],
           requestedwidth: 0.4,
           requestedheight: 0.3,
         ),
@@ -111,7 +111,7 @@ class BadgesContainer extends StatelessWidget {
             requestedwidth: 0.19,
             requestedheight: 0.19,
           ),
-          learnQueue[queueIndex]['buildingBlockTwo'] == 'null'
+          learnQueue[queueIndex]['buildingBlockTwo'] == 'empty'
               ? SizedBox()
               : kanjiPicture(
                   context: context,

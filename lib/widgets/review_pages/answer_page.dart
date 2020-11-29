@@ -45,7 +45,7 @@ class AnswerPage extends StatelessWidget {
         ),
         kanjiPicture(
           context: context,
-          photoAddress: questionQueue[questionIndex]['photoAddress'],
+          photoAddress: questionQueue[questionIndex]['colorPhotoAddress'],
           requestedwidth: 0.4,
           requestedheight: 0.35,
         ),

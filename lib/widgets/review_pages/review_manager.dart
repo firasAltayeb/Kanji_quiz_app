@@ -47,8 +47,9 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   @override
   Widget build(BuildContext context) {
-    final _learnQueue = widget.reviewMap;
     Widget page;
+    final _learnQueue = widget.reviewMap;
+
     if (_queueIndex < _learnQueue.length) {
       if (_recallButtonVisible) {
         page = RecallPage(
