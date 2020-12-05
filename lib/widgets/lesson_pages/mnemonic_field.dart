@@ -8,18 +8,17 @@ class MnemonicField extends StatelessWidget {
   final bool initialtextCleared;
   final Function clearInitialText;
   final Function updateTempText;
-  final mnemonicController = TextEditingController();
   final String textFieldtemp;
+  final mnemonicController = TextEditingController();
 
-  MnemonicField({
-    @required this.lessonMap,
-    @required this.queueIndex,
-    @required this.nextKanji,
-    @required this.initialtextCleared,
-    @required this.clearInitialText,
-    @required this.textFieldtemp,
-    @required this.updateTempText,
-  });
+  MnemonicField(
+      {@required this.lessonMap,
+      @required this.queueIndex,
+      @required this.nextKanji,
+      @required this.initialtextCleared,
+      @required this.clearInitialText,
+      @required this.updateTempText,
+      @required this.textFieldtemp});
 
   @override
   Widget build(BuildContext context) {
