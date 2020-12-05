@@ -7,7 +7,9 @@ class MnemonicField extends StatelessWidget {
   final Function nextKanji;
   final bool initialtextCleared;
   final Function clearInitialText;
+  final Function updateTempText;
   final mnemonicController = TextEditingController();
+  final String textFieldtemp;
 
   MnemonicField({
     @required this.lessonMap,
@@ -15,6 +17,8 @@ class MnemonicField extends StatelessWidget {
     @required this.nextKanji,
     @required this.initialtextCleared,
     @required this.clearInitialText,
+    @required this.textFieldtemp,
+    @required this.updateTempText,
   });
 
   @override
@@ -31,7 +35,11 @@ class MnemonicField extends StatelessWidget {
     if (mnemonicStory != '') {
       mnemonicController.text = mnemonicStory;
     } else if (initialtextCleared) {
-      mnemonicController.text = '';
+      if (textFieldtemp != '') {
+        mnemonicController.text = textFieldtemp;
+      } else {
+        mnemonicController.text = '';
+      }
     } else {
       mnemonicController.text = intialText;
     }
@@ -57,6 +65,7 @@ class MnemonicField extends StatelessWidget {
           nextKanji();
         },
         onTap: () => clearInitialText(),
+        onChanged: (_) => updateTempText(mnemonicController.text),
       ),
     );
   }

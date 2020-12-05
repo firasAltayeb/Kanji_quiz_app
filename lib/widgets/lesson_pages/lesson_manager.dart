@@ -17,6 +17,7 @@ class LessonManager extends StatefulWidget {
 class _LessonManagerState extends State<LessonManager> {
   var _queueIndex = 0;
   var _initialTextCleared = false;
+  var _textFieldtemp = '';
 
   void _nextKanji() {
     if (_queueIndex + 1 == widget.lessonMap.length) {
@@ -56,6 +57,12 @@ class _LessonManagerState extends State<LessonManager> {
     }
   }
 
+  void _updateTempText(String text) {
+    setState(() {
+      _textFieldtemp = text;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final _learnQueue = widget.lessonMap;
@@ -91,6 +98,8 @@ class _LessonManagerState extends State<LessonManager> {
                     nextKanji: _nextKanji,
                     initialtextCleared: _initialTextCleared,
                     clearInitialText: _clearInitialText,
+                    textFieldtemp: _textFieldtemp,
+                    updateTempText: _updateTempText,
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.0125,
