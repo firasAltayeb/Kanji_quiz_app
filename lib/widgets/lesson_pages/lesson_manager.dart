@@ -19,13 +19,10 @@ class _LessonManagerState extends State<LessonManager> {
   var _initialTextCleared = false;
   var _textFieldtemp = '';
 
-  void _nextKanji([String mnemonic]) {
+  void _nextKanji() {
     if (_queueIndex + 1 == widget.lessonMap.length) {
       // print('if _queueIndex is $_queueIndex');
       //print(widget.lessonMap[_queueIndex]);
-      if (mnemonic != null)
-        widget.lessonMap[_queueIndex]['mnemonicStory'] = mnemonic;
-
       widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
       widget.reAllocateMaps();
       Navigator.pop(context);
@@ -33,11 +30,9 @@ class _LessonManagerState extends State<LessonManager> {
       setState(() {
         // print('else _queueIndex is $_queueIndex');
         // print(widget.lessonMap[_queueIndex]);
-        if (mnemonic != null)
-          widget.lessonMap[_queueIndex]['mnemonicStory'] = mnemonic;
-
         widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
         _queueIndex = _queueIndex + 1;
+        _initialTextCleared = false;
       });
     }
   }
@@ -48,6 +43,7 @@ class _LessonManagerState extends State<LessonManager> {
     } else {
       setState(() {
         _queueIndex = _queueIndex - 1;
+        _initialTextCleared = false;
       });
     }
   }
