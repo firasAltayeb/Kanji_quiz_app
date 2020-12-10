@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/misc_pages/kanji_top_row.dart';
 import 'package:flutter/material.dart';
 
 class RecallPage extends StatelessWidget {
@@ -18,9 +19,19 @@ class RecallPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var itemCounter =
+        (questionIndex + 1).toString() + '/ ${questionQueue.length}';
+    var spriteAddress = questionQueue[questionIndex]['colorPhotoAddress'];
+
     return Column(
       children: [
-        topRow(context),
+        KanjiTopRow(
+          kanjiSpriteAddress: spriteAddress,
+          leftWidgetText: itemCounter,
+          rightWidgetText: "Undo",
+          leftWidgerHandler: null,
+          rightWidgerHandler: null,
+        ),
         infoBox(context),
         Expanded(child: SizedBox()),
         recallButtonVisible
@@ -32,51 +43,6 @@ class RecallPage extends StatelessWidget {
                 ],
               ),
       ],
-    );
-  }
-
-  Widget topRow(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
-          child: Text(
-            (questionIndex + 1).toString() + '/ ${questionQueue.length}',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-        ),
-        kanjiPicture(
-          context: context,
-          address: questionQueue[questionIndex]['colorPhotoAddress'],
-          width: 0.4,
-          height: 0.35,
-        ),
-        FlatButton(
-          padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-          textColor: Colors.black,
-          child: Text(
-            "Undo",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-          onPressed: null,
-        ),
-      ],
-    );
-  }
-
-  Widget kanjiPicture(
-      {BuildContext context, String address, double width, double height}) {
-    return Container(
-      width: MediaQuery.of(context).size.width * width,
-      height: MediaQuery.of(context).size.height * height,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(address),
-          fit: BoxFit.fill,
-        ),
-      ),
     );
   }
 

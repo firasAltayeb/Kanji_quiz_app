@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
 class KanjiTopRow extends StatelessWidget {
-  final String text;
-  final String address;
-  final Function handler;
+  final String leftWidgetText;
+  final String rightWidgetText;
+  final Function leftWidgerHandler;
+  final Function rightWidgerHandler;
+  final String kanjiSpriteAddress;
 
-  KanjiTopRow(
-    this.text,
-    this.handler,
-    this.address,
-  );
+  KanjiTopRow({
+    @required this.leftWidgetText,
+    @required this.rightWidgetText,
+    @required this.leftWidgerHandler,
+    @required this.rightWidgerHandler,
+    @required this.kanjiSpriteAddress,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +25,14 @@ class KanjiTopRow extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
           textColor: Colors.black,
           child: Text(
-            text,
+            leftWidgetText,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          onPressed: handler,
+          onPressed: leftWidgerHandler,
         ),
         kanjiPicture(
           context: context,
-          address: address,
+          address: kanjiSpriteAddress,
           width: 0.4,
           height: 0.3,
         ),
@@ -36,10 +40,10 @@ class KanjiTopRow extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           textColor: Colors.black,
           child: Text(
-            "Next",
+            rightWidgetText,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          onPressed: handler,
+          onPressed: rightWidgerHandler,
         ),
       ],
     );
