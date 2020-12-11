@@ -16,7 +16,7 @@ class LessonManager extends StatefulWidget {
 
 class _LessonManagerState extends State<LessonManager> {
   var _queueIndex = 0;
-  var _initialTextCleared = false;
+  var _clearTempText = false;
   var _textFieldtemp = '';
 
   void _nextKanji() {
@@ -32,7 +32,8 @@ class _LessonManagerState extends State<LessonManager> {
         // print(widget.lessonMap[_queueIndex]);
         widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
         _queueIndex = _queueIndex + 1;
-        _initialTextCleared = false;
+        _clearTempText = false;
+        _textFieldtemp = '';
       });
     }
   }
@@ -43,23 +44,22 @@ class _LessonManagerState extends State<LessonManager> {
     } else {
       setState(() {
         _queueIndex = _queueIndex - 1;
-        _initialTextCleared = false;
+        _clearTempText = false;
+        _textFieldtemp = '';
       });
     }
   }
 
   void _clearInitialText() {
-    if (_initialTextCleared == false) {
+    if (_clearTempText == false) {
       setState(() {
-        _initialTextCleared = true;
+        _clearTempText = true;
       });
     }
   }
 
   void _updateTempText(String text) {
-    setState(() {
-      _textFieldtemp = text;
-    });
+    _textFieldtemp = text;
   }
 
   @override
@@ -95,7 +95,7 @@ class _LessonManagerState extends State<LessonManager> {
                     lessonMap: _learnQueue,
                     queueIndex: _queueIndex,
                     nextKanji: _nextKanji,
-                    initialtextCleared: _initialTextCleared,
+                    clearText: _clearTempText,
                     clearInitialText: _clearInitialText,
                     textFieldtemp: _textFieldtemp,
                     updateTempText: _updateTempText,

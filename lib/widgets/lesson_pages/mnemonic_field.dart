@@ -5,7 +5,7 @@ class MnemonicField extends StatelessWidget {
   final List<Map<String, String>> lessonMap;
 
   final Function nextKanji;
-  final bool initialtextCleared;
+  final bool clearText;
   final Function clearInitialText;
   final Function updateTempText;
   final String textFieldtemp;
@@ -15,7 +15,7 @@ class MnemonicField extends StatelessWidget {
     @required this.lessonMap,
     @required this.queueIndex,
     @required this.nextKanji,
-    @required this.initialtextCleared,
+    @required this.clearText,
     @required this.clearInitialText,
     @required this.updateTempText,
     @required this.textFieldtemp,
@@ -29,19 +29,19 @@ class MnemonicField extends StatelessWidget {
         'Please create a mnemonic for the above kanji $keyword' +
             ' using its bulidng blocks a and b';
 
-    // print(keyword);
-    // print(mnemonicStory);
+    print("Keyword is " + keyword);
+    print("mnemonicStory is " + mnemonicStory);
+    print("textFieldtemp is " + textFieldtemp);
+    print("clearText is " + clearText.toString());
 
-    if (mnemonicStory != '') {
+    if (textFieldtemp != '') {
+      mnemonicController.text = textFieldtemp;
+    } else if (mnemonicStory != '') {
       mnemonicController.text = mnemonicStory;
-    } else if (initialtextCleared) {
-      if (textFieldtemp != '') {
-        mnemonicController.text = textFieldtemp;
-      } else {
-        mnemonicController.text = '';
-      }
-    } else {
+    } else if (!clearText) {
       mnemonicController.text = intialText;
+    } else {
+      mnemonicController.text = '';
     }
 
     return Container(
@@ -64,8 +64,12 @@ class MnemonicField extends StatelessWidget {
           lessonMap[queueIndex]['mnemonicStory'] = mnemonicController.text;
           nextKanji();
         },
-        onTap: () => clearInitialText(),
-        onChanged: (_) => updateTempText(mnemonicController.text),
+        onTap: () => textFieldtemp == '' && mnemonicStory == ''
+            ? clearInitialText()
+            : null,
+        onChanged: (_) => mnemonicController.text != intialText
+            ? updateTempText(mnemonicController.text)
+            : null,
       ),
     );
   }
