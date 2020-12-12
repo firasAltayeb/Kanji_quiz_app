@@ -55,6 +55,8 @@ class BadgesContainer extends StatelessWidget {
   Widget buildBlockRow(BuildContext context) {
     var desiredWidth = 0.19;
     var desiredheight = 0.19;
+    var buildBlockOne = learnQueue[queueIndex]['buildingBlockOne'];
+    var buildBlockTwo = learnQueue[queueIndex]['buildingBlockTwo'];
     return Padding(
       padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
       child: Row(
@@ -67,12 +69,13 @@ class BadgesContainer extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width * desiredWidth,
             height: MediaQuery.of(context).size.height * desiredheight,
-            decoration: learnQueue[queueIndex]['buildingBlockOne'] == ''
+            decoration: buildBlockOne == ''
                 ? null
                 : BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          learnQueue[queueIndex]['buildingBlockOne']),
+                        buildBlockOne,
+                      ),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -80,12 +83,13 @@ class BadgesContainer extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width * desiredWidth,
             height: MediaQuery.of(context).size.height * desiredheight,
-            decoration: learnQueue[queueIndex]['buildingBlockTwo'] == ''
+            decoration: buildBlockTwo == ''
                 ? null
                 : BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          learnQueue[queueIndex]['buildingBlockTwo']),
+                        buildBlockTwo,
+                      ),
                       fit: BoxFit.fill,
                     ),
                   ),
