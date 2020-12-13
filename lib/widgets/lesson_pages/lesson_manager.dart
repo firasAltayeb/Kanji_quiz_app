@@ -6,7 +6,7 @@ import 'badges_container.dart';
 
 class LessonManager extends StatefulWidget {
   final Function reAllocateMaps;
-  final List<Map<String, String>> lessonMap;
+  final List<Map<String, Object>> lessonMap;
 
   const LessonManager(this.reAllocateMaps, this.lessonMap);
 

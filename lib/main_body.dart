@@ -5,8 +5,8 @@ import 'widgets/review_pages/review_manager.dart';
 class MainBody extends StatelessWidget {
   final Function reAllocateMaps;
   final List<dynamic> kanjiMap;
-  final List<Map<String, String>> lessonMap;
-  final List<Map<String, String>> reviewMap;
+  final List<Map<String, Object>> lessonMap;
+  final List<Map<String, Object>> reviewMap;
 
   MainBody({
     @required this.kanjiMap,

@@ -13,8 +13,8 @@ class MyHome extends StatefulWidget {
 class _MyHomeState extends State<MyHome> {
   Box<dynamic> _kanjiBox;
   List<dynamic> _kanjiMap;
-  var _reviewMap = List<Map<String, String>>();
-  var _lessonMap = List<Map<String, String>>();
+  var _reviewMap = List<Map<String, Object>>();
+  var _lessonMap = List<Map<String, Object>>();
 
   @override
   void initState() {
@@ -46,10 +46,10 @@ class _MyHomeState extends State<MyHome> {
     _reviewMap.clear();
     for (var i = 0; i < _kanjiMap.length; i++) {
       if (_kanjiMap[i]['learningStatus'] == 'Lesson') {
-        _kanjiMap[i] = new Map<String, String>.from(_kanjiMap[i]);
+        _kanjiMap[i] = new Map<String, Object>.from(_kanjiMap[i]);
         _lessonMap.add(_kanjiMap[i]);
       } else if (_kanjiMap[i]['learningStatus'] == 'Review') {
-        _kanjiMap[i] = new Map<String, String>.from(_kanjiMap[i]);
+        _kanjiMap[i] = new Map<String, Object>.from(_kanjiMap[i]);
         _reviewMap.add(_kanjiMap[i]);
       }
     }

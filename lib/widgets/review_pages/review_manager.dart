@@ -5,7 +5,7 @@ import 'recall_page.dart';
 
 class ReviewManager extends StatefulWidget {
   final Function reAllocateMaps;
-  final List<Map<String, String>> reviewMap;
+  final List<Map<String, Object>> reviewMap;
 
   const ReviewManager(this.reAllocateMaps, this.reviewMap);
 

@@ -1,5 +1,5 @@
 class KanjiMap {
-  List<Map<String, String>> _initalMap = [
+  List<Map<String, Object>> _initalMap = [
     {
       'keyword': 'Five',
       'frameNumber': '5',
@@ -72,7 +72,7 @@ class KanjiMap {
     }
   ];
 
-  List<Map<String, String>> get initialKanjiMap {
+  List<Map<String, Object>> get initialKanjiMap {
     return _initalMap;
   }
 }
