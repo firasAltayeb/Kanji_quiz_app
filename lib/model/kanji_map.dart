@@ -7,8 +7,7 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/5_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/5_Kanji_xl.png',
-      'buildingBlockOne': '',
-      'buildingBlockTwo': ''
+      'buildingBlocks': [],
     },
     {
       'keyword': 'Mouth',
@@ -17,8 +16,7 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/11_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/11_Kanji_xl.png',
-      'buildingBlockOne': '',
-      'buildingBlockTwo': ''
+      'buildingBlocks': [],
     },
     {
       'keyword': 'Sun',
@@ -27,8 +25,7 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/12_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/12_Kanji_xl.png',
-      'buildingBlockOne': '',
-      'buildingBlockTwo': ''
+      'buildingBlocks': [],
     },
     {
       'keyword': 'Moon',
@@ -37,8 +34,7 @@ class KanjiMap {
       'learningStatus': 'Review',
       'greyPhotoAddress': 'assets/images/13_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/13_Kanji_xl.png',
-      'buildingBlockOne': '',
-      'buildingBlockTwo': ''
+      'buildingBlocks': [],
     },
     {
       'keyword': 'Oneself',
@@ -47,8 +43,10 @@ class KanjiMap {
       'learningStatus': 'Lesson',
       'greyPhotoAddress': 'assets/images/17_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/17_Kanji_xl.png',
-      'buildingBlockOne': 'assets/images/5_Kanji_xl.png',
-      'buildingBlockTwo': 'assets/images/11_Kanji_xl.png'
+      'buildingBlocks': [
+        'assets/images/5_Kanji_xl.png',
+        'assets/images/11_Kanji_xl.png'
+      ],
     },
     {
       'keyword': 'Bright',
@@ -57,8 +55,10 @@ class KanjiMap {
       'learningStatus': 'Lesson',
       'greyPhotoAddress': 'assets/images/18_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/18_Kanji_xl.png',
-      'buildingBlockOne': 'assets/images/12_Kanji_xl.png',
-      'buildingBlockTwo': 'assets/images/13_Kanji_xl.png'
+      'buildingBlocks': [
+        'assets/images/12_Kanji_xl.png',
+        'assets/images/13_Kanji_xl.png'
+      ],
     },
     {
       'keyword': 'Goods',
@@ -67,8 +67,7 @@ class KanjiMap {
       'learningStatus': 'Lesson',
       'greyPhotoAddress': 'assets/images/19_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/19_Kanji_xl.png',
-      'buildingBlockOne': 'assets/images/11_Kanji_xl.png',
-      'buildingBlockTwo': ''
+      'buildingBlocks': ['assets/images/11_Kanji_xl.png'],
     }
   ];
 

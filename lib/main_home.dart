@@ -69,7 +69,7 @@ class _MyHomeState extends State<MyHome> {
               icon: Icon(
                 Icons.search_rounded,
                 color: Colors.white,
-                size: MediaQuery.of(context).size.height * 0.05,
+                size: 35,
               ),
               onPressed: null,
             ),
@@ -77,7 +77,7 @@ class _MyHomeState extends State<MyHome> {
               icon: Icon(
                 Icons.account_circle_outlined,
                 color: Colors.white,
-                size: MediaQuery.of(context).size.height * 0.05,
+                size: 35,
               ),
               onPressed: () => Navigator.push(
                   context, MaterialPageRoute(builder: (context) => UserPage())),

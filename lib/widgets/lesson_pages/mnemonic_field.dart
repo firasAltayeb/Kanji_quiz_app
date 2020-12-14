@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MnemonicField extends StatelessWidget {
   final int queueIndex;
-  final List<Map<String, String>> lessonMap;
+  final List<Map<String, Object>> lessonMap;
 
   final Function nextKanji;
   final bool clearText;

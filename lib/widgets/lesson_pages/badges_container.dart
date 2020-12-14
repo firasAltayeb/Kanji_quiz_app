@@ -53,10 +53,8 @@ class BadgesContainer extends StatelessWidget {
   }
 
   Widget buildBlockRow(BuildContext context) {
-    var desiredWidth = 0.19;
-    var desiredheight = 0.19;
-    var buildBlockOne = learnQueue[queueIndex]['buildingBlockOne'];
-    var buildBlockTwo = learnQueue[queueIndex]['buildingBlockTwo'];
+    //List<dynamic> buildingBlocks = learnQueue[queueIndex]['buildingBlocks'];
+    //print('buildingBlocks is $buildingBlocks');
     return Padding(
       padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
       child: Row(
@@ -66,34 +64,20 @@ class BadgesContainer extends StatelessWidget {
             'Building blocks: ',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width * desiredWidth,
-            height: MediaQuery.of(context).size.height * desiredheight,
-            decoration: buildBlockOne == ''
-                ? null
-                : BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        buildBlockOne,
-                      ),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width * desiredWidth,
-            height: MediaQuery.of(context).size.height * desiredheight,
-            decoration: buildBlockTwo == ''
-                ? null
-                : BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        buildBlockTwo,
-                      ),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-          ),
+          ...(learnQueue[queueIndex]['buildingBlocks'] as List<dynamic>)
+              .map((blockAddress) {
+            print('blockAddress');
+            return blockAddress = Container(
+              width: MediaQuery.of(context).size.width * 0.19,
+              height: MediaQuery.of(context).size.height * 0.19,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(blockAddress),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            );
+          }).toList()
         ],
       ),
     );
