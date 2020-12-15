@@ -17,19 +17,26 @@ class KanjiTopRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var textWidget = Text(
+      leftWidgetText,
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    );
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        FlatButton(
-          padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
-          textColor: Colors.black,
-          child: Text(
-            leftWidgetText,
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-          onPressed: leftWidgerHandler,
-        ),
+        leftWidgetText == 'Prev'
+            ? FlatButton(
+                padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
+                textColor: Colors.black,
+                child: textWidget,
+                onPressed: leftWidgerHandler,
+              )
+            : Padding(
+                padding: const EdgeInsets.fromLTRB(0, 15, 40, 0),
+                child: textWidget,
+              ),
         kanjiPicture(
           context: context,
           address: kanjiSpriteAddress,
@@ -37,7 +44,7 @@ class KanjiTopRow extends StatelessWidget {
           height: 0.3,
         ),
         FlatButton(
-          padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+          padding: const EdgeInsets.fromLTRB(30, 5, 0, 0),
           textColor: Colors.black,
           child: Text(
             rightWidgetText,
