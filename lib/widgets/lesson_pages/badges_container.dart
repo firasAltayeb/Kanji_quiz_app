@@ -1,4 +1,3 @@
-import 'package:Kanji_quiz_app/widgets/misc_pages/kanji_top_row.dart';
 import 'package:flutter/material.dart';
 
 class BadgesContainer extends StatelessWidget {
@@ -18,19 +17,16 @@ class BadgesContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var spriteAddress = learnQueue[queueIndex]['greyPhotoAddress'];
-
     return Column(
       children: [
-        KanjiTopRow(
-          kanjiSpriteAddress: spriteAddress,
-          leftWidgetText: "Prev",
-          rightWidgetText: "Next",
-          leftWidgerHandler: previousKanji,
-          rightWidgerHandler: nextKanji,
-        ),
         keywordArea(context),
-        buildBlockRow(context),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.19,
+            child: buildBlockRow(context),
+          ),
+        ),
       ],
     );
   }
@@ -53,33 +49,27 @@ class BadgesContainer extends StatelessWidget {
   }
 
   Widget buildBlockRow(BuildContext context) {
-    //List<dynamic> buildingBlocks = learnQueue[queueIndex]['buildingBlocks'];
-    //print('buildingBlocks is $buildingBlocks');
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            'Building blocks: ',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-          ...(learnQueue[queueIndex]['buildingBlocks'] as List<dynamic>)
-              .map((blockAddress) {
-            print('blockAddress');
-            return blockAddress = Container(
-              width: MediaQuery.of(context).size.width * 0.19,
-              height: MediaQuery.of(context).size.height * 0.19,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(blockAddress),
-                  fit: BoxFit.fill,
-                ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Text(
+          'Building blocks: ',
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        ...(learnQueue[queueIndex]['buildingBlocks'] as List<dynamic>)
+            .map((blockAddress) {
+          print('blockAddress is $blockAddress');
+          return blockAddress = Container(
+            width: MediaQuery.of(context).size.width * 0.19,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(blockAddress),
+                fit: BoxFit.fill,
               ),
-            );
-          }).toList()
-        ],
-      ),
+            ),
+          );
+        }).toList()
+      ],
     );
   }
 }

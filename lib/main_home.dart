@@ -59,7 +59,6 @@ class _MyHomeState extends State<MyHome> {
 
   @override
   Widget build(BuildContext context) {
-    print('Home build is called');
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,

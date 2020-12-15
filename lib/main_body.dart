@@ -35,6 +35,7 @@ class MainBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Main body build is called');
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[

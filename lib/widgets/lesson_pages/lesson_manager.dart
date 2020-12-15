@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/misc_pages/kanji_top_row.dart';
 import 'package:flutter/material.dart';
 
 import 'fetch_button.dart';
@@ -85,6 +86,14 @@ class _LessonManagerState extends State<LessonManager> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
+                  KanjiTopRow(
+                    kanjiSpriteAddress: _learnQueue[_queueIndex]
+                        ['greyPhotoAddress'],
+                    leftWidgetText: "Prev",
+                    rightWidgetText: "Next",
+                    leftWidgerHandler: _previousKanji,
+                    rightWidgerHandler: _nextKanji,
+                  ),
                   BadgesContainer(
                     learnQueue: _learnQueue,
                     queueIndex: _queueIndex,
