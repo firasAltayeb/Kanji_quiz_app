@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/widgets/misc_pages/kanji_top_row.dart';
+import '../misc_pages/kanji_top_row.dart';
 import 'package:flutter/material.dart';
 
 import 'fetch_button.dart';
@@ -31,6 +31,9 @@ class _LessonManagerState extends State<LessonManager> {
       setState(() {
         // print('else _queueIndex is $_queueIndex');
         // print(widget.lessonMap[_queueIndex]);
+        if (_textFieldtemp.isNotEmpty)
+          widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
+
         widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
         _queueIndex = _queueIndex + 1;
         _clearTempText = false;
@@ -91,7 +94,7 @@ class _LessonManagerState extends State<LessonManager> {
                         ['greyPhotoAddress'],
                     leftWidgetText: "Prev",
                     rightWidgetText: "Next",
-                    leftWidgerHandler: _previousKanji,
+                    leftWidgerHandler: _queueIndex == 0 ? null : _previousKanji,
                     rightWidgerHandler: _nextKanji,
                   ),
                   BadgesContainer(

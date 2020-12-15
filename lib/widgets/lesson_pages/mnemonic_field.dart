@@ -60,11 +60,7 @@ class MnemonicField extends StatelessWidget {
         keyboardType: TextInputType.multiline,
         maxLines: null,
         controller: mnemonicController,
-        onSubmitted: (_) {
-          print('mnemonicController.text is ' + mnemonicController.text);
-          lessonMap[queueIndex]['mnemonicStory'] = mnemonicController.text;
-          nextKanji();
-        },
+        onSubmitted: (_) => nextKanji(),
         onTap: () => textFieldtemp == '' && mnemonicStory == ''
             ? clearInitialText()
             : null,
