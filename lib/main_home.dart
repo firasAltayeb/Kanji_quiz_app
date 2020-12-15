@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
+import './widgets/misc_pages/main_app_bar.dart';
 import 'package:Kanji_quiz_app/main_body.dart';
-import 'widgets/misc_pages/user_page.dart';
 import 'model/kanji_map.dart';
 
 class MyHome extends StatefulWidget {
@@ -60,28 +60,9 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Text('Kanji Quiz App'),
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.search_rounded,
-                color: Colors.white,
-                size: 35,
-              ),
-              onPressed: null,
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.account_circle_outlined,
-                color: Colors.white,
-                size: 35,
-              ),
-              onPressed: () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => UserPage())),
-            ),
-          ],
+        appBar: MainAppBar(
+          title: 'Kanji App',
+          appBar: AppBar(),
         ),
         body: MainBody(
           kanjiMap: _kanjiMap,

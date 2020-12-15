@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/misc_pages/main_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'result_page.dart';
@@ -52,9 +53,9 @@ class _ReviewManagerState extends State<ReviewManager> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Review Page'),
-        backgroundColor: Colors.black,
+      appBar: MainAppBar(
+        title: 'Review page',
+        appBar: AppBar(),
       ),
       body: _queueIndex < _learnQueue.length
           ? RecallPage(

@@ -1,3 +1,4 @@
+import '../misc_pages/main_app_bar.dart';
 import '../misc_pages/kanji_top_row.dart';
 import 'package:flutter/material.dart';
 
@@ -72,19 +73,9 @@ class _LessonManagerState extends State<LessonManager> {
     return _learnQueue.isEmpty == true
         ? Scaffold()
         : Scaffold(
-            appBar: AppBar(
-              title: Text('Lesson Page'),
-              backgroundColor: Colors.black,
-              actions: [
-                IconButton(
-                  icon: Icon(
-                    Icons.search_rounded,
-                    color: Colors.white,
-                    size: MediaQuery.of(context).size.height * 0.05,
-                  ),
-                  onPressed: null,
-                ),
-              ],
+            appBar: MainAppBar(
+              title: 'Lesson Page',
+              appBar: AppBar(),
             ),
             body: SingleChildScrollView(
               child: Column(
