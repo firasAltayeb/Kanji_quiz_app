@@ -50,26 +50,32 @@ class BadgesContainer extends StatelessWidget {
 
   Widget buildBlockRow(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
           'Building blocks: ',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         ...(learnQueue[queueIndex]['buildBlocksAddress'] as List<dynamic>)
-            .map((blockAddress) {
-          print('buildBlockAddress is $blockAddress');
-          return blockAddress = Container(
-            width: MediaQuery.of(context).size.width * 0.19,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(blockAddress),
-                fit: BoxFit.fill,
-              ),
-            ),
-          );
-        }).toList()
+            .map(
+              (blockAddress) => widgetListItem(blockAddress),
+            )
+            .toList()
       ],
+    );
+  }
+
+  Widget widgetListItem(var blockAddress) {
+    print('buildBlockAddress is $blockAddress');
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(blockAddress),
+            fit: BoxFit.fill,
+          ),
+        ),
+      ),
     );
   }
 }

@@ -63,6 +63,7 @@ class KanjiMap {
       'colorPhotoAddress': 'assets/images/18_Kanji_xl.png',
       'buildBlocksAddress': [
         'assets/images/12_Kanji_xl.png',
+        'assets/images/12_Kanji_xl.png',
         'assets/images/13_Kanji_xl.png'
       ],
     },
