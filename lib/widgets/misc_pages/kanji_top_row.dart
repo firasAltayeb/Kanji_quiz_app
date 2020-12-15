@@ -19,7 +19,7 @@ class KanjiTopRow extends StatelessWidget {
   Widget build(BuildContext context) {
     var textWidget = Text(
       leftWidgetText,
-      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
     );
 
     return Row(
@@ -48,7 +48,7 @@ class KanjiTopRow extends StatelessWidget {
           textColor: Colors.black,
           child: Text(
             rightWidgetText,
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
           onPressed: rightWidgerHandler,
         ),

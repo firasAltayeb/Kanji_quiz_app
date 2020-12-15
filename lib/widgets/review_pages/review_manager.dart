@@ -62,7 +62,7 @@ class _ReviewManagerState extends State<ReviewManager> {
               questionIndex: _queueIndex,
               questionQueue: _learnQueue,
               hideRecallButton: _hideRecallButton,
-              selectHandler: _answerQuestion,
+              answerQuestion: _answerQuestion,
               recallButtonVisible: _recallButtonVisible,
             )
           : ResultPage(
