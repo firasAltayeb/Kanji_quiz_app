@@ -56,9 +56,9 @@ class BadgesContainer extends StatelessWidget {
           'Building blocks: ',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
-        ...(learnQueue[queueIndex]['buildingBlocks'] as List<dynamic>)
+        ...(learnQueue[queueIndex]['buildBlocksAddress'] as List<dynamic>)
             .map((blockAddress) {
-          print('blockAddress is $blockAddress');
+          print('buildBlockAddress is $blockAddress');
           return blockAddress = Container(
             width: MediaQuery.of(context).size.width * 0.19,
             decoration: BoxDecoration(

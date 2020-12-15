@@ -23,11 +23,12 @@ class MnemonicField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String keyword = lessonMap[queueIndex]['keyword'];
-    String mnemonicStory = lessonMap[queueIndex]['mnemonicStory'];
+    var keyword = lessonMap[queueIndex]['keyword'];
+    var mnemonicStory = lessonMap[queueIndex]['mnemonicStory'];
+    var buildingBlocks = lessonMap[queueIndex]['buildingBlocks'];
     String intialText =
         'Please create a mnemonic for the above kanji $keyword' +
-            ' using its bulidng blocks a and b';
+            ' using its bulidng blocks: $buildingBlocks';
 
     print("Keyword is " + keyword);
     print("mnemonicStory is " + mnemonicStory);
