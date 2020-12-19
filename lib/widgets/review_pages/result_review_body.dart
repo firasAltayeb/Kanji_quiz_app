@@ -18,32 +18,34 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double spaceWidth = MediaQuery.of(context).size.width;
     double spaceHeight = MediaQuery.of(context).size.height;
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Your session score is ${scoreToDisplay.toString()}',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-          Container(
-            height: spaceHeight * 0.19,
-            width: correctRecallList.length > 2 ? spaceWidth : spaceWidth / 2,
-            child: KanjiBlockRow(correctRecallList),
-          ),
-          Container(
-            height: spaceHeight * 0.19,
-            width: incorrectRecallList.length > 2 ? spaceWidth : spaceWidth / 2,
-            child: KanjiBlockRow(incorrectRecallList),
-          ),
-          RaisedButton(
-            child: Text('Return to home page'),
-            textColor: Colors.blue,
-            onPressed: resetHandler,
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          'Your session score is ${scoreToDisplay.toString()}',
+          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+        ),
+        Container(
+          height: spaceHeight * 0.19,
+          width: correctRecallList.length > 2 ? spaceWidth : spaceWidth / 2,
+          child: KanjiBlockRow(correctRecallList),
+        ),
+        SizedBox(
+          height: spaceHeight * 0.05,
+          width: spaceWidth,
+        ),
+        Container(
+          height: spaceHeight * 0.19,
+          width: incorrectRecallList.length > 2 ? spaceWidth : spaceWidth / 2,
+          child: KanjiBlockRow(incorrectRecallList),
+        ),
+        RaisedButton(
+          child: Text('Return to home page'),
+          textColor: Colors.blue,
+          onPressed: resetHandler,
+        ),
+      ],
     );
   }
 }
