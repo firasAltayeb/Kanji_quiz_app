@@ -49,31 +49,39 @@ class BadgesContainer extends StatelessWidget {
   }
 
   Widget buildBlockRow(BuildContext context) {
+    List<dynamic> blockAddresses = learnQueue[queueIndex]['buildBlocksAddress'];
+    print('blockAddresses length is ${blockAddresses.length}');
     return Row(
-      //mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
           'Building blocks: ',
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
-        ...(learnQueue[queueIndex]['buildBlocksAddress'] as List<dynamic>)
-            .map(
-              (blockAddress) => widgetListItem(blockAddress),
-            )
-            .toList()
+        if (blockAddresses.length == 1)
+          widgetListItem(
+            blockAddresses[0],
+            MediaQuery.of(context).size.height * 0.19,
+          ),
+        if (blockAddresses.length > 1)
+          ...(blockAddresses)
+              .map(
+                (blockAddress) =>
+                    Expanded(child: widgetListItem(blockAddress, null)),
+              )
+              .toList()
       ],
     );
   }
 
-  Widget widgetListItem(var blockAddress) {
-    print('buildBlockAddress is $blockAddress');
-    return Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(blockAddress),
-            fit: BoxFit.fill,
-          ),
+  Widget widgetListItem(var blockAddress, var providedWidth) {
+    // print('buildBlockAddress is $blockAddress');
+    return Container(
+      width: providedWidth,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(blockAddress),
+          fit: BoxFit.fill,
         ),
       ),
     );
