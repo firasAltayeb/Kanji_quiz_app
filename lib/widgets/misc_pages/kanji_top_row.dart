@@ -17,11 +17,6 @@ class KanjiTopRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textWidget = Text(
-      leftWidgetText,
-      style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-    );
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,12 +25,20 @@ class KanjiTopRow extends StatelessWidget {
             ? FlatButton(
                 padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
                 textColor: Colors.black,
-                child: textWidget,
+                child: Text(
+                  leftWidgetText,
+                  style: const TextStyle(
+                      fontSize: 25, fontWeight: FontWeight.bold),
+                ),
                 onPressed: leftWidgerHandler,
               )
             : Padding(
                 padding: const EdgeInsets.fromLTRB(0, 15, 40, 0),
-                child: textWidget,
+                child: Text(
+                  leftWidgetText,
+                  style: const TextStyle(
+                      fontSize: 25, fontWeight: FontWeight.bold),
+                ),
               ),
         kanjiPicture(
           context: context,

@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/misc_pages/kanji_block_row.dart';
 import 'package:flutter/material.dart';
 
 class BadgesContainer extends StatelessWidget {
@@ -20,13 +21,7 @@ class BadgesContainer extends StatelessWidget {
     return Column(
       children: [
         keywordArea(context),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.19,
-            child: buildBlockRow(context),
-          ),
-        ),
+        buildBlockRow(context),
       ],
     );
   }
@@ -51,38 +46,21 @@ class BadgesContainer extends StatelessWidget {
   Widget buildBlockRow(BuildContext context) {
     List<dynamic> blockAddresses = learnQueue[queueIndex]['buildBlocksAddress'];
     print('blockAddresses length is ${blockAddresses.length}');
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Text(
-          'Building blocks: ',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-        ),
-        if (blockAddresses.length == 1)
-          widgetListItem(
-            blockAddresses[0],
-            MediaQuery.of(context).size.height * 0.19,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Text(
+            'Building blocks: ',
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
           ),
-        if (blockAddresses.length > 1)
-          ...(blockAddresses)
-              .map(
-                (blockAddress) =>
-                    Expanded(child: widgetListItem(blockAddress, null)),
-              )
-              .toList()
-      ],
-    );
-  }
-
-  Widget widgetListItem(var blockAddress, var providedWidth) {
-    // print('buildBlockAddress is $blockAddress');
-    return Container(
-      width: providedWidth,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(blockAddress),
-          fit: BoxFit.fill,
-        ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.19,
+            width: MediaQuery.of(context).size.width / 2,
+            child: KanjiBlockRow(blockAddresses),
+          ),
+        ],
       ),
     );
   }
