@@ -33,6 +33,7 @@ class RecallPage extends StatelessWidget {
           leftWidgerHandler: null,
           rightWidgerHandler: null,
         ),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         infoBox(context),
         Expanded(child: SizedBox()),
         recallButtonVisible

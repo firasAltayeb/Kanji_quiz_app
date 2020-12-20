@@ -32,8 +32,9 @@ class KanjiTopRow extends StatelessWidget {
                 ),
                 onPressed: leftWidgerHandler,
               )
-            : Padding(
-                padding: const EdgeInsets.fromLTRB(0, 15, 40, 0),
+            : Container(
+                width: MediaQuery.of(context).size.width * 0.25,
+                padding: const EdgeInsets.only(top: 15),
                 child: Text(
                   leftWidgetText,
                   style: const TextStyle(

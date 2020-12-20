@@ -12,7 +12,7 @@ class KanjiBlockRow extends StatelessWidget {
       children: [
         ...(kanjiAddresses)
             .map(
-              (blockAddress) => Expanded(child: widgetListItem(blockAddress)),
+              (blockAddress) => widgetListItem(blockAddress),
             )
             .toList()
       ],
@@ -20,11 +20,13 @@ class KanjiBlockRow extends StatelessWidget {
   }
 
   Widget widgetListItem(var blockAddress) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(blockAddress),
-          fit: BoxFit.fill,
+    return Expanded(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(blockAddress),
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );
