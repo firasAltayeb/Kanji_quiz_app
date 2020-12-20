@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
-import './widgets/misc_pages/main_app_bar.dart';
+import './widgets/misc_widgets/main_app_bar.dart';
 import 'package:Kanji_quiz_app/main_body.dart';
 import 'model/kanji_map.dart';
 

@@ -1,5 +1,5 @@
-import '../misc_pages/main_app_bar.dart';
-import '../misc_pages/kanji_top_row.dart';
+import '../misc_widgets/main_app_bar.dart';
+import '../misc_widgets/kanji_top_row.dart';
 import 'package:flutter/material.dart';
 
 import 'fetch_button.dart';

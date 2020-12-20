@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/widgets/misc_pages/main_app_bar.dart';
+import 'package:Kanji_quiz_app/widgets/misc_widgets/main_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'result_page.dart';

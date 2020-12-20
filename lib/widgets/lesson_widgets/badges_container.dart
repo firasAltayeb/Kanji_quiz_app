@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/widgets/misc_pages/kanji_block_row.dart';
+import 'package:Kanji_quiz_app/widgets/misc_widgets/kanji_block_row.dart';
 import 'package:flutter/material.dart';
 
 class BadgesContainer extends StatelessWidget {
