@@ -29,7 +29,7 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   void _answerQuestion(bool answerChoice) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
-    print('reviewMap[progressLevel] is ${reviewMap['progressLevel']}');
+    //print('reviewMap[progressLevel] is ${reviewMap['progressLevel']}');
     // int currentProgressLevel =
     //     int.parse(reviewMap['progressLevel']) ?? reviewMap['progressLevel'];
     if (answerChoice) {

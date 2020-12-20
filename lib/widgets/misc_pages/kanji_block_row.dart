@@ -10,24 +10,17 @@ class KanjiBlockRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        if (kanjiAddresses.length == 1)
-          widgetListItem(
-            kanjiAddresses[0],
-            MediaQuery.of(context).size.height * 0.19,
-          ),
-        if (kanjiAddresses.length > 1)
-          ...(kanjiAddresses)
-              .map(
-                (blockAddress) =>
-                    Expanded(child: widgetListItem(blockAddress, null)),
-              )
-              .toList()
+        ...(kanjiAddresses)
+            .map(
+              (blockAddress) =>
+                  Expanded(child: widgetListItem(blockAddress, null)),
+            )
+            .toList()
       ],
     );
   }
 
   Widget widgetListItem(var blockAddress, var providedWidth) {
-    // print('buildBlockAddress is $blockAddress');
     return Container(
       width: providedWidth,
       decoration: BoxDecoration(

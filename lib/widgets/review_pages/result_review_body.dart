@@ -18,68 +18,94 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double spaceWidth = MediaQuery.of(context).size.width;
     double spaceHeight = MediaQuery.of(context).size.height;
+
+    final children = <Widget>[
+      SizedBox(height: spaceHeight * 0.05),
+      wrapUpButton(spaceWidth),
+      SizedBox(height: spaceHeight * 0.05),
+      Text(
+        'Your session score is ${scoreToDisplay.toString()}',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+      ),
+      SizedBox(height: spaceHeight * 0.05),
+      textContainer('Recalled Correctly', Colors.green),
+    ];
+
+    updateChildren(children, correctRecallList, spaceHeight, spaceWidth);
+    children.add(textContainer('Recalled Incorrectly', Colors.red));
+    updateChildren(children, incorrectRecallList, spaceHeight, spaceWidth);
+
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(height: spaceHeight * 0.05),
-          ButtonTheme(
-            minWidth: spaceWidth * 0.6,
-            splashColor: Colors.green,
-            child: RaisedButton(
-              child: Text(
-                'Wrap up session',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              onPressed: resetHandler,
-              color: Colors.yellow,
-              shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(30.0),
-                side: BorderSide(color: Colors.black, width: 2),
-              ),
-            ),
+      child: Column(children: children),
+    );
+  }
+
+  void updateChildren(
+      List<Widget> children, List<String> list, double schigt, double sWdth) {
+    for (int index = 0; index <= list.length; index++) {
+      var reminder = index % 4;
+      if (index > 0 && reminder == 0) {
+        children
+            .add(rowContainer(schigt, sWdth, list.sublist(index - 4, index)));
+      } else if (index == list.length) {
+        children.add(rowContainer(
+            schigt, sWdth * 0.5, list.sublist((index - reminder), index)));
+      }
+    }
+  }
+
+  Widget wrapUpButton(double spaceWidth) {
+    return ButtonTheme(
+      minWidth: spaceWidth * 0.6,
+      splashColor: Colors.green,
+      child: RaisedButton(
+        child: Text(
+          'Wrap up session',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
           ),
-          SizedBox(height: spaceHeight * 0.05),
-          Text(
-            'Your session score is ${scoreToDisplay.toString()}',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: spaceHeight * 0.05),
-          Container(
-            width: spaceWidth,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.black,
-                width: 3,
-              ),
-              color: Colors.green,
-            ),
-            padding: const EdgeInsets.all(10),
-            child: Text(
-              'Recalled Correctly',
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          Container(
-            height: spaceHeight * 0.19,
-            width: correctRecallList.length > 2 ? spaceWidth : spaceWidth / 2,
-            child: KanjiBlockRow(correctRecallList),
-          ),
-          SizedBox(
-            height: spaceHeight * 0.1,
-          ),
-          Container(
-            height: spaceHeight * 0.19,
-            width: incorrectRecallList.length > 2 ? spaceWidth : spaceWidth / 2,
-            child: KanjiBlockRow(incorrectRecallList),
-          ),
-        ],
+        ),
+        onPressed: resetHandler,
+        color: Colors.yellow,
+        shape: RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(30.0),
+          side: BorderSide(color: Colors.black, width: 2),
+        ),
+      ),
+    );
+  }
+
+  Widget textContainer(String txt, Color backColor) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: backColor,
+      ),
+      padding: const EdgeInsets.all(10),
+      child: Text(
+        txt,
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  Widget rowContainer(double schigt, double sWdth, List<String> list) {
+    print('row container provided list is $list provided height is $schigt');
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Container(
+        width: sWdth,
+        height: schigt * 0.19,
+        child: KanjiBlockRow(list),
       ),
     );
   }

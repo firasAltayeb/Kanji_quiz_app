@@ -52,14 +52,29 @@ class BadgesContainer extends StatelessWidget {
         children: [
           Text(
             'Building blocks: ',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.19,
-            width: MediaQuery.of(context).size.width / 2,
-            child: KanjiBlockRow(blockAddresses),
-          ),
+          blockAddresses.length == 1
+              ? widgetListItem(blockAddresses[0], context)
+              : Container(
+                  height: MediaQuery.of(context).size.height * 0.19,
+                  width: MediaQuery.of(context).size.width * 0.55,
+                  child: KanjiBlockRow(blockAddresses),
+                ),
         ],
+      ),
+    );
+  }
+
+  Widget widgetListItem(var blockAddress, var context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.19,
+      width: MediaQuery.of(context).size.width * 0.25,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(blockAddress),
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }
