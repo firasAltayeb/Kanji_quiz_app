@@ -38,7 +38,6 @@ class BadgesContainer extends StatelessWidget {
       child: Text(
         'Keyword: ' + learnQueue[queueIndex]['keyword'],
         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-        textAlign: TextAlign.left,
       ),
     );
   }
