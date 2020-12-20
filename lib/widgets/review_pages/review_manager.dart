@@ -1,8 +1,8 @@
 import 'package:Kanji_quiz_app/widgets/misc_pages/main_app_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'result_review_body.dart';
-import 'recall_review_body.dart';
+import 'result_page.dart';
+import 'recall_page.dart';
 
 class ReviewManager extends StatefulWidget {
   final Function reAllocateMaps;
