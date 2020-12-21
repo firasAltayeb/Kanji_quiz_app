@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class RecallAnswerButton extends StatelessWidget {
+class ChooseAnswerButton extends StatelessWidget {
   final Color buttonColor;
   final String buttonText;
   final bool selectChoice;
   final Function selectHandler;
 
-  RecallAnswerButton({
+  ChooseAnswerButton({
     @required this.buttonColor,
     @required this.buttonText,
     @required this.selectChoice,
@@ -36,7 +36,9 @@ class RecallAnswerButton extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: () => selectHandler(selectChoice),
+        onPressed: () {
+          return selectHandler(selectChoice, context);
+        },
       ),
     );
   }

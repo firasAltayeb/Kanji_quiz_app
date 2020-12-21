@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class RecallButton extends StatelessWidget {
+class ShowAnswerButton extends StatelessWidget {
   final Function selectHandler;
 
-  RecallButton({
+  ShowAnswerButton({
     @required this.selectHandler,
   });
 

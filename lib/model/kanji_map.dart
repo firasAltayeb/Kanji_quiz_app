@@ -1,6 +1,7 @@
 class KanjiMap {
   List<Map<String, Object>> _initalMap = [
     {
+      'kanjiId': '五',
       'keyword': 'Five',
       'frameNumber': '5',
       'mnemonicStory': '',
@@ -12,6 +13,7 @@ class KanjiMap {
       'buildBlocksAddress': [],
     },
     {
+      'kanjiId': '口',
       'keyword': 'Mouth',
       'frameNumber': '11',
       'mnemonicStory': '',
@@ -23,6 +25,7 @@ class KanjiMap {
       'buildBlocksAddress': [],
     },
     {
+      'kanjiId': '日',
       'keyword': 'Sun',
       'frameNumber': '12',
       'mnemonicStory': '',
@@ -34,6 +37,7 @@ class KanjiMap {
       'buildBlocksAddress': [],
     },
     {
+      'kanjiId': '月',
       'keyword': 'Moon',
       'frameNumber': '13',
       'mnemonicStory': '',
@@ -45,6 +49,7 @@ class KanjiMap {
       'buildBlocksAddress': [],
     },
     {
+      'kanjiId': '吾',
       'keyword': 'Oneself',
       'frameNumber': '17',
       'mnemonicStory': '',
@@ -59,6 +64,7 @@ class KanjiMap {
       ],
     },
     {
+      'kanjiId': '明',
       'keyword': 'Bright',
       'frameNumber': '20',
       'mnemonicStory': '',
@@ -74,6 +80,7 @@ class KanjiMap {
       ],
     },
     {
+      'kanjiId': '品',
       'keyword': 'Goods',
       'frameNumber': '23',
       'mnemonicStory': '',

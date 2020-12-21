@@ -37,16 +37,16 @@ class RecallPage extends StatelessWidget {
         infoBox(context),
         Expanded(child: SizedBox()),
         recallButtonVisible
-            ? RecallButton(selectHandler: hideRecallButton)
+            ? ShowAnswerButton(selectHandler: hideRecallButton)
             : Row(
                 children: [
-                  RecallAnswerButton(
+                  ChooseAnswerButton(
                     buttonColor: Colors.green,
                     buttonText: "Correct",
                     selectChoice: true,
                     selectHandler: answerQuestion,
                   ),
-                  RecallAnswerButton(
+                  ChooseAnswerButton(
                     buttonColor: Colors.red,
                     buttonText: "Incorrect",
                     selectChoice: false,
