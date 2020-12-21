@@ -45,11 +45,9 @@ class ResultPage extends StatelessWidget {
     for (int index = 0; index <= list.length; index++) {
       var reminder = index % 4;
       if (index > 0 && reminder == 0) {
-        print('index is $index');
         children.add(
             kanjiRowContainer(schigt, sWdth, list.sublist(index - 4, index)));
       } else if (index == list.length) {
-        print('index is $index');
         if (index % 4 == 3) {
           children.add(kanjiRowContainer(
               schigt, sWdth * 0.7, list.sublist((index - reminder), index)));

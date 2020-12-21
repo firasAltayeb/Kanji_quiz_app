@@ -29,18 +29,20 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   void _answerQuestion(bool answerChoice) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
-    //print('reviewMap[progressLevel] is ${reviewMap['progressLevel']}');
-    // int currentProgressLevel =
-    //     int.parse(reviewMap['progressLevel']) ?? reviewMap['progressLevel'];
+    print('current items[progressLevel] is ${reviewMap['progressLevel']}');
+    int currentProgressLevel = reviewMap['progressLevel'];
     if (answerChoice) {
       _sessionScore += 5;
       _correctRecallList.add(reviewMap['colorPhotoAddress']);
-      // reviewMap['progressLevel'] = currentProgressLevel++;
-      reviewMap['learningStatus'] = 'Pratice';
+      if (currentProgressLevel < 5)
+        reviewMap['progressLevel'] = ++currentProgressLevel;
+      print('currentProgressLevel now is $currentProgressLevel');
+      //reviewMap['learningStatus'] = 'Pratice';
     } else {
-      _incorrectRecallList.add(reviewMap['colorPhotoAddress']);
-      // reviewMap['progressLevel'] = currentProgressLevel--;
-      reviewMap['learningStatus'] = 'Lesson';
+      if (currentProgressLevel > 1)
+        reviewMap['progressLevel'] = --currentProgressLevel;
+      print('currentProgressLevel now is $currentProgressLevel');
+      //reviewMap['learningStatus'] = 'Lesson';
     }
     setState(() {
       _recallButtonVisible = true;

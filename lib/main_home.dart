@@ -18,8 +18,8 @@ class _MyHomeState extends State<MyHome> {
 
   @override
   void initState() {
-    print('initializing box');
     super.initState();
+    print('initializing box');
     _kanjiBox = Hive.box('kanjiBox');
     _kanjiMap = _kanjiBox.get('map');
 
@@ -41,7 +41,7 @@ class _MyHomeState extends State<MyHome> {
   }
 
   void _allocateMaps() {
-    print('allocation start');
+    print('allocate map called');
     _lessonMap.clear();
     _reviewMap.clear();
     for (var i = 0; i < _kanjiMap.length; i++) {
