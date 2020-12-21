@@ -62,8 +62,7 @@ class KanjiTopRow extends StatelessWidget {
 
   Widget kanjiPicture(
       {BuildContext context, String address, double width, double height}) {
-    return AnimatedContainer(
-      duration: Duration(seconds: 2),
+    return Container(
       width: MediaQuery.of(context).size.width * width,
       height: MediaQuery.of(context).size.height * height,
       decoration: BoxDecoration(

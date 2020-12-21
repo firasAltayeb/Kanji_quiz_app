@@ -9,6 +9,7 @@ class RecallPage extends StatelessWidget {
 
   final Function hideRecallButton;
   final Function answerQuestion;
+  final Function undoLastAnswer;
   final bool recallButtonVisible;
 
   RecallPage({
@@ -16,6 +17,7 @@ class RecallPage extends StatelessWidget {
     @required this.questionQueue,
     @required this.questionIndex,
     @required this.hideRecallButton,
+    @required this.undoLastAnswer,
     @required this.recallButtonVisible,
   });
 
@@ -31,7 +33,7 @@ class RecallPage extends StatelessWidget {
           leftWidgetText: itemCounter,
           rightWidgetText: "Undo",
           leftWidgerHandler: null,
-          rightWidgerHandler: null,
+          rightWidgerHandler: undoLastAnswer,
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         infoBox(context),

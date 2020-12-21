@@ -56,11 +56,10 @@ class _LessonManagerState extends State<LessonManager> {
   }
 
   void _clearInitialText() {
-    if (_clearTempText == false) {
+    if (_clearTempText == false)
       setState(() {
         _clearTempText = true;
       });
-    }
   }
 
   void _updateTempText(String text) {

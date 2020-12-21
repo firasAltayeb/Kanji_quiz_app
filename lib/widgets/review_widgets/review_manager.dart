@@ -20,6 +20,7 @@ class _ReviewManagerState extends State<ReviewManager> {
   var _recallButtonVisible = true;
   var _sessionScore = 0;
   var _queueIndex = 0;
+  var _answerChoice;
 
   void _hideRecallButton() {
     setState(() {
@@ -29,27 +30,53 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   void _answerQuestion(bool answerChoice, BuildContext context) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
-    print('current items[progressLevel] is ${reviewMap['progressLevel']}');
-    String itemId = reviewMap['kanjiId'];
     int currentProgressLevel = reviewMap['progressLevel'];
-    if (answerChoice) {
+    var itemId = reviewMap['kanjiId'];
+    _answerChoice = answerChoice;
+    if (_answerChoice) {
+      print('_answerChoice is $_answerChoice');
       _sessionScore += 5;
       _correctRecallList.add(reviewMap['colorPhotoAddress']);
       if (currentProgressLevel < 5)
-        reviewMap['progressLevel'] = ++currentProgressLevel;
-      var dialogText = '$itemId\'s progress level is now $currentProgressLevel';
+        reviewMap['progressLevel'] = currentProgressLevel + 1;
+      var dialogText =
+          '$itemId\'s progress level is now ${reviewMap['progressLevel']}';
       _openCustomDialog(context, dialogText, Colors.green);
       //reviewMap['learningStatus'] = 'Pratice';
     } else {
+      print('_answerChoice is $_answerChoice');
+      _incorrectRecallList.add(reviewMap['colorPhotoAddress']);
       if (currentProgressLevel > 1)
-        reviewMap['progressLevel'] = --currentProgressLevel;
-      var dialogText = '$itemId progress level is now $currentProgressLevel';
+        reviewMap['progressLevel'] = currentProgressLevel - 1;
+      var dialogText =
+          '$itemId\'s progress level is now ${reviewMap['progressLevel']}';
       _openCustomDialog(context, dialogText, Colors.red);
       //reviewMap['learningStatus'] = 'Lesson';
     }
     setState(() {
       _recallButtonVisible = true;
       _queueIndex = _queueIndex + 1;
+    });
+  }
+
+  void _undoAnswer() {
+    Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex - 1];
+    int currentProgressLevel = reviewMap['progressLevel'];
+    var itemId = reviewMap['kanjiId'];
+    if (_answerChoice == true) {
+      print('$itemId progress level is now $currentProgressLevel');
+      _correctRecallList.removeAt(_queueIndex - 1);
+      if (currentProgressLevel > 0)
+        reviewMap['progressLevel'] = currentProgressLevel - 1;
+    } else {
+      _incorrectRecallList.removeAt(_queueIndex - 1);
+      print('$itemId progress level is now $currentProgressLevel');
+      if (currentProgressLevel < 5)
+        reviewMap['progressLevel'] = currentProgressLevel + 1;
+    }
+    setState(() {
+      _queueIndex = _queueIndex - 1;
+      _recallButtonVisible = true;
     });
   }
 
@@ -112,6 +139,7 @@ class _ReviewManagerState extends State<ReviewManager> {
               questionIndex: _queueIndex,
               questionQueue: _learnQueue,
               hideRecallButton: _hideRecallButton,
+              undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
               answerQuestion: _answerQuestion,
               recallButtonVisible: _recallButtonVisible,
             )
