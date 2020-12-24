@@ -3,28 +3,38 @@ import 'package:Kanji_quiz_app/widgets/review_widgets/choose_answer_button.dart'
 import 'package:Kanji_quiz_app/widgets/review_widgets/show_answer_button.dart';
 import 'package:flutter/material.dart';
 
-class RecallPage extends StatelessWidget {
-  final List<Map<String, Object>> questionQueue;
+class RecallPage extends StatefulWidget {
   final int questionIndex;
-
-  final Function hideRecallButton;
   final Function answerQuestion;
   final Function undoLastAnswer;
-  final bool recallButtonVisible;
+  final List<Map<String, Object>> questionQueue;
 
   RecallPage({
     @required this.answerQuestion,
     @required this.questionQueue,
     @required this.questionIndex,
-    @required this.hideRecallButton,
     @required this.undoLastAnswer,
-    @required this.recallButtonVisible,
   });
 
   @override
+  _RecallPageState createState() => _RecallPageState();
+}
+
+class _RecallPageState extends State<RecallPage> {
+  var _recallButtonVisible = true;
+
+  void _flipRecallButton() {
+    setState(() {
+      _recallButtonVisible = !_recallButtonVisible;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    var itemCounter = '${(questionIndex + 1)}/${questionQueue.length}';
-    var spriteAddress = questionQueue[questionIndex]['colorPhotoAddress'];
+    var itemCounter =
+        '${(widget.questionIndex + 1)}/${widget.questionQueue.length}';
+    var spriteAddress =
+        widget.questionQueue[widget.questionIndex]['colorPhotoAddress'];
 
     return Column(
       children: [
@@ -33,26 +43,28 @@ class RecallPage extends StatelessWidget {
           leftWidgetText: itemCounter,
           rightWidgetText: "Undo",
           leftWidgerHandler: null,
-          rightWidgerHandler: undoLastAnswer,
+          rightWidgerHandler: widget.undoLastAnswer,
         ),
         SizedBox(height: MediaQuery.of(context).size.height * 0.02),
         infoBox(context),
         Expanded(child: SizedBox()),
-        recallButtonVisible
-            ? ShowAnswerButton(selectHandler: hideRecallButton)
+        _recallButtonVisible
+            ? ShowAnswerButton(selectHandler: _flipRecallButton)
             : Row(
                 children: [
                   ChooseAnswerButton(
                     buttonColor: Colors.green,
                     buttonText: "Correct",
                     selectChoice: true,
-                    selectHandler: answerQuestion,
+                    showRecallButton: _flipRecallButton,
+                    answerQuestion: widget.answerQuestion,
                   ),
                   ChooseAnswerButton(
                     buttonColor: Colors.red,
                     buttonText: "Incorrect",
                     selectChoice: false,
-                    selectHandler: answerQuestion,
+                    showRecallButton: _flipRecallButton,
+                    answerQuestion: widget.answerQuestion,
                   ),
                 ],
               ),
@@ -69,12 +81,12 @@ class RecallPage extends StatelessWidget {
           color: Colors.black,
           width: 3,
         ),
-        color: recallButtonVisible ? Colors.red : Colors.yellow,
+        color: _recallButtonVisible ? Colors.red : Colors.yellow,
       ),
       padding: const EdgeInsets.all(10),
       child: FittedBox(
-        fit: recallButtonVisible ? BoxFit.fitWidth : BoxFit.fill,
-        child: recallButtonVisible
+        fit: _recallButtonVisible ? BoxFit.fitWidth : BoxFit.fill,
+        child: _recallButtonVisible
             ? Text('Can you recall this character?',
                 textAlign: TextAlign.center)
             : checkText(),
@@ -91,7 +103,7 @@ class RecallPage extends StatelessWidget {
         children: <TextSpan>[
           new TextSpan(text: 'The correct keyword is: '),
           new TextSpan(
-            text: '${questionQueue[questionIndex]['keyword']}',
+            text: '${widget.questionQueue[widget.questionIndex]['keyword']}',
             style: new TextStyle(fontWeight: FontWeight.bold),
           ),
           new TextSpan(text: '. \n Did you remember correctly?'),

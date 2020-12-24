@@ -4,13 +4,15 @@ class ChooseAnswerButton extends StatelessWidget {
   final Color buttonColor;
   final String buttonText;
   final bool selectChoice;
-  final Function selectHandler;
+  final Function showRecallButton;
+  final Function answerQuestion;
 
   ChooseAnswerButton({
     @required this.buttonColor,
     @required this.buttonText,
     @required this.selectChoice,
-    @required this.selectHandler,
+    @required this.showRecallButton,
+    @required this.answerQuestion,
   });
 
   @override
@@ -37,7 +39,8 @@ class ChooseAnswerButton extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          return selectHandler(selectChoice, context);
+          showRecallButton();
+          return answerQuestion(selectChoice, context);
         },
       ),
     );

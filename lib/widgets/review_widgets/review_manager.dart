@@ -17,16 +17,9 @@ class ReviewManager extends StatefulWidget {
 class _ReviewManagerState extends State<ReviewManager> {
   List<String> _correctRecallList = List<String>();
   List<String> _incorrectRecallList = List<String>();
-  var _recallButtonVisible = true;
   var _sessionScore = 0;
   var _queueIndex = 0;
   var _answerChoice;
-
-  void _hideRecallButton() {
-    setState(() {
-      _recallButtonVisible = false;
-    });
-  }
 
   void _answerQuestion(bool answerChoice, BuildContext context) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
@@ -54,7 +47,6 @@ class _ReviewManagerState extends State<ReviewManager> {
       //reviewMap['learningStatus'] = 'Lesson';
     }
     setState(() {
-      _recallButtonVisible = true;
       _queueIndex = _queueIndex + 1;
     });
   }
@@ -76,7 +68,6 @@ class _ReviewManagerState extends State<ReviewManager> {
     }
     setState(() {
       _queueIndex = _queueIndex - 1;
-      _recallButtonVisible = true;
     });
   }
 
@@ -138,10 +129,8 @@ class _ReviewManagerState extends State<ReviewManager> {
           ? RecallPage(
               questionIndex: _queueIndex,
               questionQueue: _learnQueue,
-              hideRecallButton: _hideRecallButton,
               undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
               answerQuestion: _answerQuestion,
-              recallButtonVisible: _recallButtonVisible,
             )
           : ResultPage(
               scoreToDisplay: _sessionScore,
