@@ -23,15 +23,11 @@ class _LessonManagerState extends State<LessonManager> {
 
   void _nextKanji() {
     if (_queueIndex + 1 == widget.lessonMap.length) {
-      // print('if _queueIndex is $_queueIndex');
-      //print(widget.lessonMap[_queueIndex]);
       widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
       widget.reAllocateMaps();
       Navigator.pop(context);
     } else {
       setState(() {
-        // print('else _queueIndex is $_queueIndex');
-        // print(widget.lessonMap[_queueIndex]);
         if (_textFieldtemp.isNotEmpty)
           widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
 
@@ -48,6 +44,9 @@ class _LessonManagerState extends State<LessonManager> {
       Navigator.pop(context);
     } else {
       setState(() {
+        if (_textFieldtemp.isNotEmpty)
+          widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
+
         _queueIndex = _queueIndex - 1;
         _clearTempText = false;
         _textFieldtemp = '';
