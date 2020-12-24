@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 class ChooseAnswerButton extends StatelessWidget {
   final Color buttonColor;
   final String buttonText;
-  final int progressLevel;
   final bool selectChoice;
-  final Function showRecallButton;
   final Function answerQuestion;
+  final Function showRecallButton;
+  final Map<String, Object> questionItem;
 
   ChooseAnswerButton({
     @required this.buttonColor,
     @required this.buttonText,
     @required this.selectChoice,
-    @required this.progressLevel,
-    @required this.showRecallButton,
     @required this.answerQuestion,
+    @required this.showRecallButton,
+    @required this.questionItem,
   });
 
   @override
@@ -41,9 +41,10 @@ class ChooseAnswerButton extends StatelessWidget {
           ),
         ),
         onPressed: () {
+          answerQuestion(selectChoice, context);
+          _openCustomDialog(
+              context, '${questionItem['progressLevel']}', buttonColor);
           showRecallButton();
-          _openCustomDialog(context, '$progressLevel', buttonColor);
-          return answerQuestion(selectChoice, context);
         },
       ),
     );

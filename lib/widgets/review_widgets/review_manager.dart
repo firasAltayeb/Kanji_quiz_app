@@ -15,30 +15,33 @@ class ReviewManager extends StatefulWidget {
 }
 
 class _ReviewManagerState extends State<ReviewManager> {
-  List<String> _correctRecallList = List<String>();
-  List<String> _incorrectRecallList = List<String>();
+  var _correctRecallList = List<String>();
+  var _incorrectRecallList = List<String>();
   var _sessionScore = 0;
   var _queueIndex = 0;
-  var _answerChoice;
 
-  void _answerQuestion(bool answerChoice, BuildContext context) {
+  void _processAnswer(bool answerChoice, BuildContext context) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
     int currentProgressLevel = reviewMap['progressLevel'];
-    _answerChoice = answerChoice;
-    if (_answerChoice) {
-      print('_answerChoice is $_answerChoice');
+    if (answerChoice) {
       _sessionScore += 5;
+      print('answerChoice is $answerChoice');
+      reviewMap['learningStatus'] = 'Pratice';
       _correctRecallList.add(reviewMap['colorPhotoAddress']);
+
       if (currentProgressLevel < 5)
         reviewMap['progressLevel'] = currentProgressLevel + 1;
-      //reviewMap['learningStatus'] = 'Pratice';
     } else {
-      print('_answerChoice is $_answerChoice');
+      print('answerChoice is $answerChoice');
+      reviewMap['learningStatus'] = 'Lesson';
       _incorrectRecallList.add(reviewMap['colorPhotoAddress']);
+
       if (currentProgressLevel > 1)
         reviewMap['progressLevel'] = currentProgressLevel - 1;
-      //reviewMap['learningStatus'] = 'Lesson';
     }
+    print(
+        '${reviewMap['kanjiId']} progress level is now ${reviewMap['progressLevel']}');
+
     setState(() {
       _queueIndex = _queueIndex + 1;
     });
@@ -47,24 +50,27 @@ class _ReviewManagerState extends State<ReviewManager> {
   void _undoAnswer() {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex - 1];
     int currentProgressLevel = reviewMap['progressLevel'];
-    var itemId = reviewMap['kanjiId'];
-    if (_answerChoice == true) {
-      print('$itemId progress level is now $currentProgressLevel');
-      _correctRecallList.removeAt(_queueIndex - 1);
-      if (currentProgressLevel > 0)
+    if (reviewMap['learningStatus'] == 'Pratice') {
+      _sessionScore -= 5;
+      print('_answerChoice is ${reviewMap['learningStatus']}');
+      _correctRecallList.removeLast();
+      if (currentProgressLevel > 1)
         reviewMap['progressLevel'] = currentProgressLevel - 1;
     } else {
-      _incorrectRecallList.removeAt(_queueIndex - 1);
-      print('$itemId progress level is now $currentProgressLevel');
-      if (currentProgressLevel < 5)
+      print('_answerChoice is ${reviewMap['learningStatus']}');
+      _incorrectRecallList.removeLast();
+      if (currentProgressLevel > 1 && currentProgressLevel < 5)
         reviewMap['progressLevel'] = currentProgressLevel + 1;
     }
+    print(
+        '${reviewMap['kanjiId']} progress level is now ${reviewMap['progressLevel']}');
+
     setState(() {
       _queueIndex = _queueIndex - 1;
     });
   }
 
-  void _resetQuiz() {
+  void _wrapSession() {
     _queueIndex = 0;
     _sessionScore = 0;
     widget.reAllocateMaps();
@@ -73,8 +79,8 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   @override
   Widget build(BuildContext context) {
-    final _learnQueue = widget.reviewListMap;
-    if (_learnQueue.isEmpty == true) {
+    final _questionQueue = widget.reviewListMap;
+    if (_questionQueue.isEmpty == true) {
       return Scaffold();
     }
 
@@ -83,16 +89,16 @@ class _ReviewManagerState extends State<ReviewManager> {
         title: 'Review page',
         appBar: AppBar(),
       ),
-      body: _queueIndex < _learnQueue.length
+      body: _queueIndex < _questionQueue.length
           ? RecallPage(
               questionIndex: _queueIndex,
-              questionQueue: _learnQueue,
+              questionQueue: _questionQueue,
               undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
-              answerQuestion: _answerQuestion,
+              answerQuestion: _processAnswer,
             )
           : ResultPage(
               scoreToDisplay: _sessionScore,
-              resetHandler: _resetQuiz,
+              wrapSession: _wrapSession,
               correctRecallList: _correctRecallList,
               incorrectRecallList: _incorrectRecallList,
             ),

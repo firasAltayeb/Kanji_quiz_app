@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
   final int scoreToDisplay;
-  final Function resetHandler;
+  final Function wrapSession;
   final List<String> correctRecallList;
   final List<String> incorrectRecallList;
 
   ResultPage({
-    @required this.resetHandler,
+    @required this.wrapSession,
     @required this.scoreToDisplay,
     @required this.correctRecallList,
     @required this.incorrectRecallList,
@@ -49,7 +49,7 @@ class ResultPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: resetHandler,
+        onPressed: wrapSession,
         color: Colors.yellow,
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(30.0),

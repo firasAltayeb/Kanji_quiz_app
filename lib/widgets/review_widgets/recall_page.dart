@@ -10,10 +10,10 @@ class RecallPage extends StatefulWidget {
   final List<Map<String, Object>> questionQueue;
 
   RecallPage({
-    @required this.answerQuestion,
     @required this.questionQueue,
     @required this.questionIndex,
     @required this.undoLastAnswer,
+    @required this.answerQuestion,
   });
 
   @override
@@ -31,18 +31,15 @@ class _RecallPageState extends State<RecallPage> {
 
   @override
   Widget build(BuildContext context) {
-    var itemCounter =
+    var _itemCounter =
         '${(widget.questionIndex + 1)}/${widget.questionQueue.length}';
-    var spriteAddress =
-        widget.questionQueue[widget.questionIndex]['colorPhotoAddress'];
-    var progressLevel =
-        widget.questionQueue[widget.questionIndex]['progressLevel'];
+    var _questionItem = widget.questionQueue[widget.questionIndex];
 
     return Column(
       children: [
         KanjiTopRow(
-          kanjiSpriteAddress: spriteAddress,
-          leftWidgetText: itemCounter,
+          kanjiSpriteAddress: _questionItem['colorPhotoAddress'],
+          leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
           leftWidgerHandler: null,
           rightWidgerHandler: widget.undoLastAnswer,
@@ -60,7 +57,7 @@ class _RecallPageState extends State<RecallPage> {
                     selectChoice: true,
                     showRecallButton: _flipRecallButton,
                     answerQuestion: widget.answerQuestion,
-                    progressLevel: progressLevel,
+                    questionItem: _questionItem,
                   ),
                   ChooseAnswerButton(
                     buttonColor: Colors.red,
@@ -68,7 +65,7 @@ class _RecallPageState extends State<RecallPage> {
                     selectChoice: false,
                     showRecallButton: _flipRecallButton,
                     answerQuestion: widget.answerQuestion,
-                    progressLevel: progressLevel,
+                    questionItem: _questionItem,
                   ),
                 ],
               ),
