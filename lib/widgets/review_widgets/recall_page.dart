@@ -35,6 +35,8 @@ class _RecallPageState extends State<RecallPage> {
         '${(widget.questionIndex + 1)}/${widget.questionQueue.length}';
     var spriteAddress =
         widget.questionQueue[widget.questionIndex]['colorPhotoAddress'];
+    var progressLevel =
+        widget.questionQueue[widget.questionIndex]['progressLevel'];
 
     return Column(
       children: [
@@ -45,7 +47,7 @@ class _RecallPageState extends State<RecallPage> {
           leftWidgerHandler: null,
           rightWidgerHandler: widget.undoLastAnswer,
         ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+        Expanded(child: SizedBox()),
         infoBox(context),
         Expanded(child: SizedBox()),
         _recallButtonVisible
@@ -58,6 +60,7 @@ class _RecallPageState extends State<RecallPage> {
                     selectChoice: true,
                     showRecallButton: _flipRecallButton,
                     answerQuestion: widget.answerQuestion,
+                    progressLevel: progressLevel,
                   ),
                   ChooseAnswerButton(
                     buttonColor: Colors.red,
@@ -65,6 +68,7 @@ class _RecallPageState extends State<RecallPage> {
                     selectChoice: false,
                     showRecallButton: _flipRecallButton,
                     answerQuestion: widget.answerQuestion,
+                    progressLevel: progressLevel,
                   ),
                 ],
               ),
@@ -73,23 +77,26 @@ class _RecallPageState extends State<RecallPage> {
   }
 
   Widget infoBox(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.95,
-      height: MediaQuery.of(context).size.height * 0.125,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.95,
+        height: MediaQuery.of(context).size.height * 0.125,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.black,
+            width: 3,
+          ),
+          color: _recallButtonVisible ? Colors.red : Colors.yellow,
         ),
-        color: _recallButtonVisible ? Colors.red : Colors.yellow,
-      ),
-      padding: const EdgeInsets.all(10),
-      child: FittedBox(
-        fit: _recallButtonVisible ? BoxFit.fitWidth : BoxFit.fill,
-        child: _recallButtonVisible
-            ? Text('Can you recall this character?',
-                textAlign: TextAlign.center)
-            : checkText(),
+        padding: const EdgeInsets.all(10),
+        child: FittedBox(
+          fit: _recallButtonVisible ? BoxFit.fitWidth : BoxFit.fill,
+          child: _recallButtonVisible
+              ? Text('Can you recall this character?',
+                  textAlign: TextAlign.center)
+              : checkText(),
+        ),
       ),
     );
   }

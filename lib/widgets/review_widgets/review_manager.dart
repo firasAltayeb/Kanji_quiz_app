@@ -24,7 +24,6 @@ class _ReviewManagerState extends State<ReviewManager> {
   void _answerQuestion(bool answerChoice, BuildContext context) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
     int currentProgressLevel = reviewMap['progressLevel'];
-    var itemId = reviewMap['kanjiId'];
     _answerChoice = answerChoice;
     if (_answerChoice) {
       print('_answerChoice is $_answerChoice');
@@ -32,18 +31,12 @@ class _ReviewManagerState extends State<ReviewManager> {
       _correctRecallList.add(reviewMap['colorPhotoAddress']);
       if (currentProgressLevel < 5)
         reviewMap['progressLevel'] = currentProgressLevel + 1;
-      var dialogText =
-          '$itemId\'s progress level is now ${reviewMap['progressLevel']}';
-      _openCustomDialog(context, dialogText, Colors.green);
       //reviewMap['learningStatus'] = 'Pratice';
     } else {
       print('_answerChoice is $_answerChoice');
       _incorrectRecallList.add(reviewMap['colorPhotoAddress']);
       if (currentProgressLevel > 1)
         reviewMap['progressLevel'] = currentProgressLevel - 1;
-      var dialogText =
-          '$itemId\'s progress level is now ${reviewMap['progressLevel']}';
-      _openCustomDialog(context, dialogText, Colors.red);
       //reviewMap['learningStatus'] = 'Lesson';
     }
     setState(() {
@@ -76,41 +69,6 @@ class _ReviewManagerState extends State<ReviewManager> {
     _sessionScore = 0;
     widget.reAllocateMaps();
     Navigator.pop(context);
-  }
-
-  void _openCustomDialog(
-      BuildContext context, String dialogText, Color dialogColor) {
-    showGeneralDialog(
-      context: context,
-      barrierColor: Colors.black.withOpacity(0.2),
-      barrierDismissible: true,
-      barrierLabel: '',
-      pageBuilder: (context, animation1, animation2) {
-        return null;
-      },
-      transitionBuilder: (context, a1, a2, widget) {
-        return Transform.scale(
-          scale: a1.value,
-          child: Opacity(
-            opacity: a1.value,
-            child: AlertDialog(
-              backgroundColor: dialogColor,
-              shape:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
-              content: Text(
-                dialogText,
-                style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-      transitionDuration: Duration(milliseconds: 100),
-    );
   }
 
   @override
