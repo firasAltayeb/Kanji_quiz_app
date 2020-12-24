@@ -15,26 +15,48 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double spaceWidth = MediaQuery.of(context).size.width;
-    double spaceHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
 
     final children = <Widget>[
-      SizedBox(height: spaceHeight * 0.03),
-      wrapUpButton(spaceWidth * 0.6),
-      SizedBox(height: spaceHeight * 0.03),
+      SizedBox(height: screenHeight * 0.03),
+      wrapUpButton(screenWidth * 0.6),
+      SizedBox(height: screenHeight * 0.03),
       Text(
         'Your session score is ${scoreToDisplay.toString()}',
         style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
       ),
-      SizedBox(height: spaceHeight * 0.03),
+      SizedBox(height: screenHeight * 0.03),
       textContainer('Recalled Correctly', Colors.green),
     ];
 
-    kanjiChildrenRow(children, correctRecallList, spaceHeight);
+    kanjiChildrenRow(children, correctRecallList, screenHeight);
     children.add(textContainer('Recalled Incorrectly', Colors.red));
-    kanjiChildrenRow(children, incorrectRecallList, spaceHeight);
+    kanjiChildrenRow(children, incorrectRecallList, screenHeight);
 
     return Column(children: children);
+  }
+
+  Widget wrapUpButton(double width) {
+    return ButtonTheme(
+      minWidth: width,
+      splashColor: Colors.green,
+      child: RaisedButton(
+        child: Text(
+          'Wrap up session',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onPressed: resetHandler,
+        color: Colors.yellow,
+        shape: RoundedRectangleBorder(
+          borderRadius: new BorderRadius.circular(30.0),
+          side: BorderSide(color: Colors.black, width: 2),
+        ),
+      ),
+    );
   }
 
   void kanjiChildrenRow(
@@ -65,28 +87,6 @@ class ResultPage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
               ),
             ),
-    );
-  }
-
-  Widget wrapUpButton(double spaceWidth) {
-    return ButtonTheme(
-      minWidth: spaceWidth,
-      splashColor: Colors.green,
-      child: RaisedButton(
-        child: Text(
-          'Wrap up session',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        onPressed: resetHandler,
-        color: Colors.yellow,
-        shape: RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(30.0),
-          side: BorderSide(color: Colors.black, width: 2),
-        ),
-      ),
     );
   }
 
