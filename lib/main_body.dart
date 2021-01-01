@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'widgets/lesson_widgets/lesson_manager.dart';
-import 'widgets/review_widgets/review_manager.dart';
+import 'widgets/lesson_widgets/lesson_mgr_screen.dart';
+import 'widgets/review_widgets/review_mgr_screen.dart';
 
 class MainBody extends StatelessWidget {
   final Function reAllocateMaps;
