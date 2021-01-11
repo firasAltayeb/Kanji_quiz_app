@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/widgets/misc_widgets/kanji_top_row.dart';
+import 'package:Kanji_quiz_app/widgets/misc_widgets/button_kanji_row.dart';
 import 'package:Kanji_quiz_app/widgets/review_widgets/choose_answer_button.dart';
 import 'package:Kanji_quiz_app/widgets/review_widgets/show_answer_button.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class _RecallPageState extends State<RecallPage> {
 
     return Column(
       children: [
-        KanjiTopRow(
+        ButtonKanjiRow(
           kanjiSpriteAddress: _questionItem['colorPhotoAddress'],
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",

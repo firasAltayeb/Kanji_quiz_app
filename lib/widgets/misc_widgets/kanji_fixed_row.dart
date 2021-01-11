@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class KanjiBlockRow extends StatelessWidget {
+class KanjiFixedkRow extends StatelessWidget {
   final List<dynamic> kanjiAddresses;
 
-  KanjiBlockRow(this.kanjiAddresses);
+  KanjiFixedkRow(this.kanjiAddresses);
 
   @override
   Widget build(BuildContext context) {

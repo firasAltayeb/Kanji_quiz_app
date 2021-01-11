@@ -1,5 +1,5 @@
 import '../misc_widgets/main_app_bar.dart';
-import '../misc_widgets/kanji_top_row.dart';
+import '../misc_widgets/button_kanji_row.dart';
 import 'package:flutter/material.dart';
 
 import 'fetch_button.dart';
@@ -78,7 +78,7 @@ class _LessonManagerState extends State<LessonManager> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  KanjiTopRow(
+                  ButtonKanjiRow(
                     kanjiSpriteAddress: _learnQueue[_queueIndex]
                         ['greyPhotoAddress'],
                     leftWidgetText: "Prev",

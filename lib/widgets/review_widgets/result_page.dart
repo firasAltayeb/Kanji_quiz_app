@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/misc_widgets/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
@@ -29,13 +30,19 @@ class ResultPage extends StatelessWidget {
     ];
 
     correctRecallList.length > 0
-        ? children.add(kanjiChildrenRow(correctRecallList, screenHeight))
+        ? children.add(KanjiInteractiveRow(
+            widgetHeight: screenHeight * 0.24,
+            kanjiAddresses: correctRecallList,
+          ))
         : children.add(SizedBox(height: screenHeight * 0.24));
 
     children.add(textContainer('Recalled Incorrectly', Colors.red));
 
     incorrectRecallList.length > 0
-        ? children.add(kanjiChildrenRow(incorrectRecallList, screenHeight))
+        ? children.add(KanjiInteractiveRow(
+            widgetHeight: screenHeight * 0.24,
+            kanjiAddresses: incorrectRecallList,
+          ))
         : children.add(SizedBox(height: screenHeight * 0.24));
 
     return Column(children: children);
@@ -62,31 +69,6 @@ class ResultPage extends StatelessWidget {
           borderRadius: new BorderRadius.circular(30.0),
           side: BorderSide(color: Colors.black, width: 2),
         ),
-      ),
-    );
-  }
-
-  Widget kanjiChildrenRow(List<String> list, double height) {
-    return SizedBox(
-      height: height * 0.24,
-      child: GridView(
-        children: (list)
-            .map(
-              (blockAddress) => Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(blockAddress),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            )
-            .toList(),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 200,
-          childAspectRatio: 1.25,
-        ),
-        scrollDirection: Axis.horizontal,
       ),
     );
   }

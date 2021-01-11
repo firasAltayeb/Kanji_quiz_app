@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class KanjiTopRow extends StatelessWidget {
+class ButtonKanjiRow extends StatelessWidget {
   final String leftWidgetText;
   final String rightWidgetText;
   final Function leftWidgerHandler;
   final Function rightWidgerHandler;
   final String kanjiSpriteAddress;
 
-  KanjiTopRow({
+  ButtonKanjiRow({
     @required this.leftWidgetText,
     @required this.rightWidgetText,
     @required this.leftWidgerHandler,
