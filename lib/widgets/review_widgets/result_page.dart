@@ -24,13 +24,19 @@ class ResultPage extends StatelessWidget {
         'Your session score is ${scoreToDisplay.toString()}',
         style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
       ),
-      SizedBox(height: screenHeight * 0.03),
+      Expanded(child: SizedBox()),
       textContainer('Recalled Correctly', Colors.green),
     ];
 
-    kanjiChildrenRow(children, correctRecallList, screenHeight);
+    correctRecallList.length > 0
+        ? children.add(kanjiChildrenRow(correctRecallList, screenHeight))
+        : children.add(SizedBox(height: screenHeight * 0.24));
+
     children.add(textContainer('Recalled Incorrectly', Colors.red));
-    kanjiChildrenRow(children, incorrectRecallList, screenHeight);
+
+    incorrectRecallList.length > 0
+        ? children.add(kanjiChildrenRow(incorrectRecallList, screenHeight))
+        : children.add(SizedBox(height: screenHeight * 0.24));
 
     return Column(children: children);
   }
@@ -60,34 +66,28 @@ class ResultPage extends StatelessWidget {
     );
   }
 
-  void kanjiChildrenRow(
-      List<Widget> children, List<String> list, double height) {
-    children.add(
-      list.length == 0
-          ? SizedBox()
-          : SizedBox(
-              width: double.infinity,
-              height: height * 0.25,
-              child: GridView(
-                children: (list)
-                    .map(
-                      (blockAddress) => Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(blockAddress),
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    )
-                    .toList(),
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
-                  childAspectRatio: 1.25,
+  Widget kanjiChildrenRow(List<String> list, double height) {
+    return SizedBox(
+      height: height * 0.24,
+      child: GridView(
+        children: (list)
+            .map(
+              (blockAddress) => Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(blockAddress),
+                    fit: BoxFit.fill,
+                  ),
                 ),
-                scrollDirection: Axis.horizontal,
               ),
-            ),
+            )
+            .toList(),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 1.25,
+        ),
+        scrollDirection: Axis.horizontal,
+      ),
     );
   }
 

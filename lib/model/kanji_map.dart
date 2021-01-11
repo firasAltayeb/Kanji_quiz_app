@@ -13,6 +13,18 @@ class KanjiMap {
       'buildBlocksAddress': [],
     },
     {
+      'kanjiId': '十',
+      'keyword': 'Ten',
+      'frameNumber': '10',
+      'mnemonicStory': '',
+      'progressLevel': 1,
+      'learningStatus': 'Lesson',
+      'buildingBlocks': [],
+      'greyPhotoAddress': 'assets/images/10_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/10_Kanji_xl.png',
+      'buildBlocksAddress': [],
+    },
+    {
       'kanjiId': '口',
       'keyword': 'Mouth',
       'frameNumber': '11',
@@ -75,7 +87,6 @@ class KanjiMap {
       'colorPhotoAddress': 'assets/images/18_Kanji_xl.png',
       'buildBlocksAddress': [
         'assets/images/12_Kanji_xl.png',
-        'assets/images/12_Kanji_xl.png',
         'assets/images/13_Kanji_xl.png'
       ],
     },
@@ -90,6 +101,46 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/19_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/19_Kanji_xl.png',
       'buildBlocksAddress': ['assets/images/11_Kanji_xl.png'],
+    },
+    {
+      'kanjiId': '亠',
+      'keyword': 'Top hat',
+      'frameNumber': '20128',
+      'mnemonicStory': '',
+      'progressLevel': 1,
+      'learningStatus': 'Review',
+      'buildingBlocks': [],
+      'greyPhotoAddress': 'assets/images/218_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/218_Kanji_xl.png',
+      'buildBlocksAddress': [],
+    },
+    {
+      'kanjiId': '衣',
+      'keyword': 'Garment',
+      'frameNumber': '423',
+      'mnemonicStory': '',
+      'progressLevel': 1,
+      'learningStatus': 'Review',
+      'buildingBlocks': ['Top hat'],
+      'greyPhotoAddress': 'assets/images/284_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/284_Kanji_xl.png',
+      'buildBlocksAddress': ['assets/images/218_Kanji_xl.png'],
+    },
+    {
+      'kanjiId': '哀',
+      'keyword': 'Pathetic',
+      'frameNumber': '428',
+      'mnemonicStory': '',
+      'progressLevel': 1,
+      'learningStatus': 'Lesson',
+      'buildingBlocks': ['Top hat, Mouth, Garment'],
+      'greyPhotoAddress': 'assets/images/287_Kanji_xlg.png',
+      'colorPhotoAddress': 'assets/images/287_Kanji_xl.png',
+      'buildBlocksAddress': [
+        'assets/images/218_Kanji_xl.png',
+        'assets/images/11_Kanji_xl.png',
+        'assets/images/284_Kanji_xl.png',
+      ],
     }
   ];
 
