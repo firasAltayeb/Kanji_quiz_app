@@ -43,7 +43,10 @@ class ChooseAnswerButton extends StatelessWidget {
         onPressed: () {
           answerQuestion(selectChoice, context);
           _openCustomDialog(
-              context, '${questionItem['progressLevel']}', buttonColor);
+              context,
+              'The item ${questionItem['itemId']} SRS' +
+                  ' level is now ${questionItem['progressLevel']}',
+              buttonColor);
           showRecallButton();
         },
       ),

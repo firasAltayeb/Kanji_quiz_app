@@ -33,6 +33,5 @@ class KanjiInteractiveRow extends StatelessWidget {
         scrollDirection: Axis.horizontal,
       ),
     );
-    ;
   }
 }

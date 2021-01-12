@@ -24,6 +24,7 @@ class _LessonManagerState extends State<LessonManager> {
   void _nextKanji() {
     if (_queueIndex + 1 == widget.lessonMap.length) {
       widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
+      widget.lessonMap[_queueIndex]['progressLevel'] = 1;
       widget.reAllocateMaps();
       Navigator.pop(context);
     } else {
@@ -32,6 +33,7 @@ class _LessonManagerState extends State<LessonManager> {
           widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
 
         widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
+        widget.lessonMap[_queueIndex]['progressLevel'] = 1;
         _queueIndex = _queueIndex + 1;
         _clearTempText = false;
         _textFieldtemp = '';

@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'widgets/lesson_widgets/lesson_mgr_screen.dart';
 import 'widgets/review_widgets/review_mgr_screen.dart';
+import 'widgets/misc_widgets/kanji_interactive_row.dart';
 
 class MainBody extends StatelessWidget {
   final Function reAllocateMaps;
   final List<dynamic> kanjiMap;
   final List<Map<String, Object>> lessonMap;
   final List<Map<String, Object>> reviewMap;
+  final srsLevelOneMap = List<String>();
+  final srsLevelTwoMap = List<String>();
+  final srsLevelThreeMap = List<String>();
+  final srsLevelFourMap = List<String>();
+  final srsLevelFiveMap = List<String>();
 
   MainBody({
     @required this.kanjiMap,
@@ -33,22 +39,80 @@ class MainBody extends StatelessWidget {
     );
   }
 
+  void assignSrsLists() {
+    for (int index = 0; index < kanjiMap.length; index++) {
+      print('index is $index');
+      switch (kanjiMap[index]['progressLevel']) {
+        case 1:
+          srsLevelOneMap.add(kanjiMap[index]['colorPhotoAddress']);
+          break;
+        case 2:
+          srsLevelTwoMap.add(kanjiMap[index]['colorPhotoAddress']);
+          break;
+        case 3:
+          srsLevelThreeMap.add(kanjiMap[index]['colorPhotoAddress']);
+          break;
+        case 4:
+          srsLevelFourMap.add(kanjiMap[index]['colorPhotoAddress']);
+          break;
+        case 5:
+          srsLevelFiveMap.add(kanjiMap[index]['colorPhotoAddress']);
+          break;
+        default:
+          break;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     print('Main body build is called');
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            progressButton(
-                context, "Lesson", lessonMap.length, navigateToLessonPage),
-            progressButton(
-                context, "Review", reviewMap.length, navigateToReviewPage),
-          ],
-        ),
-      ],
+    assignSrsLists();
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.1,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              progressButton(
+                  context, "Lesson", lessonMap.length, navigateToLessonPage),
+              progressButton(
+                  context, "Review", reviewMap.length, navigateToReviewPage),
+            ],
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.1,
+          ),
+          textContainer('SRS Level One Items'),
+          KanjiInteractiveRow(
+            widgetHeight: MediaQuery.of(context).size.height * 0.2,
+            kanjiAddresses: srsLevelOneMap,
+          ),
+          textContainer('SRS Level Two Items'),
+          KanjiInteractiveRow(
+            widgetHeight: MediaQuery.of(context).size.height * 0.2,
+            kanjiAddresses: srsLevelTwoMap,
+          ),
+          textContainer('SRS Level Three Items'),
+          KanjiInteractiveRow(
+            widgetHeight: MediaQuery.of(context).size.height * 0.2,
+            kanjiAddresses: srsLevelThreeMap,
+          ),
+          textContainer('SRS Level Four Items'),
+          KanjiInteractiveRow(
+            widgetHeight: MediaQuery.of(context).size.height * 0.2,
+            kanjiAddresses: srsLevelFourMap,
+          ),
+          textContainer('SRS Level Five Items'),
+          KanjiInteractiveRow(
+            widgetHeight: MediaQuery.of(context).size.height * 0.2,
+            kanjiAddresses: srsLevelFiveMap,
+          ),
+        ],
+      ),
     );
   }
 
@@ -75,15 +139,37 @@ class MainBody extends StatelessWidget {
             ),
           ),
           child: FlatButton(
-              textColor: Colors.black,
-              child: Text('Start',
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.03,
-                  ),
-                  textAlign: TextAlign.center),
-              onPressed: progress == 0 ? null : () => navigate(context)),
+            textColor: Colors.black,
+            child: Text('Start',
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                ),
+                textAlign: TextAlign.center),
+            onPressed: progress == 0 ? null : () => navigate(context),
+          ),
         )
       ],
+    );
+  }
+
+  Widget textContainer(String txt) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: Colors.yellow,
+      ),
+      padding: const EdgeInsets.all(5),
+      child: Text(
+        txt,
+        style: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }

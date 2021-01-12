@@ -33,7 +33,7 @@ class _ReviewManagerState extends State<ReviewManager> {
         reviewMap['progressLevel'] = currentProgressLevel + 1;
     } else {
       print('answerChoice is $answerChoice');
-      reviewMap['learningStatus'] = 'Lesson';
+      reviewMap['learningStatus'] = 'Review+';
       _incorrectRecallList.add(reviewMap['colorPhotoAddress']);
 
       if (currentProgressLevel > 1)
