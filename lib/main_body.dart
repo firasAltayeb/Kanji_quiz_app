@@ -86,27 +86,27 @@ class MainBody extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-          textContainer('SRS Level One Items'),
+          textContainer('SRS Level 1 Items'),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelOneMap,
           ),
-          textContainer('SRS Level Two Items'),
+          textContainer('SRS Level 2 Items'),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelTwoMap,
           ),
-          textContainer('SRS Level Three Items'),
+          textContainer('SRS Level 3 Items'),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelThreeMap,
           ),
-          textContainer('SRS Level Four Items'),
+          textContainer('SRS Level 4 Items'),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelFourMap,
           ),
-          textContainer('SRS Level Five Items'),
+          textContainer('SRS Level 5 Items (Learned)'),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelFiveMap,
@@ -131,6 +131,7 @@ class MainBody extends StatelessWidget {
           height: MediaQuery.of(context).size.height * 0.02,
         ),
         Container(
+          width: MediaQuery.of(context).size.height * 0.2,
           decoration: BoxDecoration(
             color: Colors.yellow,
             border: Border.all(
@@ -142,7 +143,8 @@ class MainBody extends StatelessWidget {
             textColor: Colors.black,
             child: Text('Start',
                 style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  fontSize: MediaQuery.of(context).size.height * 0.04,
+                  fontStyle: FontStyle.italic,
                 ),
                 textAlign: TextAlign.center),
             onPressed: progress == 0 ? null : () => navigate(context),
@@ -160,7 +162,7 @@ class MainBody extends StatelessWidget {
           color: Colors.black,
           width: 3,
         ),
-        color: Colors.yellow,
+        color: Colors.green,
       ),
       padding: const EdgeInsets.all(5),
       child: Text(
