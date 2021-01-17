@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,15 @@ class SrsLevelColumn extends StatelessWidget {
   final srsLevelThreeMap = List<String>();
   final srsLevelFourMap = List<String>();
   final srsLevelFiveMap = List<String>();
+
+  Future pushToItemScreen(context) async {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ItemDetailScreen(),
+      ),
+    );
+  }
 
   SrsLevelColumn({
     @required this.kanjiMap,
@@ -47,26 +57,31 @@ class SrsLevelColumn extends StatelessWidget {
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelOneMap,
+          selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 2 Items', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelTwoMap,
+          selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 3 Items', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelThreeMap,
+          selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 4 Items', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelFourMap,
+          selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 5 Items (Learned)', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelFiveMap,
+          selectHandler: pushToItemScreen,
         ),
       ],
     );

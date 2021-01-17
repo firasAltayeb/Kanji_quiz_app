@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class KanjiInteractiveRow extends StatelessWidget {
   final double widgetHeight;
   final List<String> kanjiAddresses;
+  final Function selectHandler;
 
   KanjiInteractiveRow({
     @required this.widgetHeight,
     @required this.kanjiAddresses,
+    @required this.selectHandler,
   });
 
   @override
@@ -22,7 +24,8 @@ class KanjiInteractiveRow extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (ctx, i) {
             return InkWell(
-              onTap: () {},
+              onTap:
+                  selectHandler == null ? null : () => selectHandler(context),
               child: Ink(
                 decoration: BoxDecoration(
                   image: DecorationImage(

@@ -86,12 +86,14 @@ class MainBody extends StatelessWidget {
           ),
           child: FlatButton(
             textColor: Colors.black,
-            child: Text('Start',
-                style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.height * 0.04,
-                  fontStyle: FontStyle.italic,
-                ),
-                textAlign: TextAlign.center),
+            child: Text(
+              'Start',
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.04,
+                fontStyle: FontStyle.italic,
+              ),
+              textAlign: TextAlign.center,
+            ),
             onPressed: progress == 0 ? null : () => navigate(context),
           ),
         )

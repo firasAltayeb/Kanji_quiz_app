@@ -34,6 +34,7 @@ class ResultPage extends StatelessWidget {
         ? children.add(KanjiInteractiveRow(
             widgetHeight: screenHeight * 0.24,
             kanjiAddresses: correctRecallList,
+            selectHandler: null,
           ))
         : children.add(SizedBox(height: screenHeight * 0.24));
 
@@ -44,6 +45,7 @@ class ResultPage extends StatelessWidget {
         ? children.add(KanjiInteractiveRow(
             widgetHeight: screenHeight * 0.24,
             kanjiAddresses: incorrectRecallList,
+            selectHandler: null,
           ))
         : children.add(SizedBox(height: screenHeight * 0.24));
 
