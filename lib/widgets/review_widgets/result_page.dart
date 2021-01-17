@@ -29,6 +29,7 @@ class ResultPage extends StatelessWidget {
       textContainer('Recalled Correctly', Colors.green),
     ];
 
+    //if correct answers exists, create sprites
     correctRecallList.length > 0
         ? children.add(KanjiInteractiveRow(
             widgetHeight: screenHeight * 0.24,
@@ -38,6 +39,7 @@ class ResultPage extends StatelessWidget {
 
     children.add(textContainer('Recalled Incorrectly', Colors.red));
 
+    //if incorrect answers exists, create sprites
     incorrectRecallList.length > 0
         ? children.add(KanjiInteractiveRow(
             widgetHeight: screenHeight * 0.24,

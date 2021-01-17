@@ -13,24 +13,21 @@ class KanjiInteractiveRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: widgetHeight,
-      child: GridView(
-        children: (kanjiAddresses)
-            .map(
-              (blockAddress) => Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(blockAddress),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            )
-            .toList(),
+      child: GridView.builder(
+        itemCount: kanjiAddresses.length,
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 1.25,
         ),
         scrollDirection: Axis.horizontal,
+        itemBuilder: (ctx, i) => Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(kanjiAddresses[i]),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
       ),
     );
   }
