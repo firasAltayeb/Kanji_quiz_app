@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ButtonKanjiRow extends StatelessWidget {
+class TopKanjiRow extends StatelessWidget {
   final String leftWidgetText;
   final String rightWidgetText;
   final Function leftWidgetHandler;
   final Function rightWidgetHandler;
   final String kanjiSpriteAddress;
 
-  ButtonKanjiRow({
+  TopKanjiRow({
     @required this.leftWidgetText,
     @required this.rightWidgetText,
     @required this.leftWidgetHandler,
@@ -32,10 +32,12 @@ class ButtonKanjiRow extends StatelessWidget {
           MediaQuery.of(context).size.width * 0.4,
           MediaQuery.of(context).size.height * 0.3,
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
-          child: cornerButton(rightWidgetText, rightWidgetHandler),
-        )
+        (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
+            ? Padding(
+                padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
+                child: cornerButton(rightWidgetText, rightWidgetHandler),
+              )
+            : cornerWidget(rightWidgetText),
       ],
     );
   }

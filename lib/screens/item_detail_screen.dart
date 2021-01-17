@@ -1,4 +1,5 @@
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
+import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetailScreen extends StatelessWidget {
@@ -15,30 +16,14 @@ class ItemDetailScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              kanjiPicture(
-                selectedItem['colorPhotoAddress'],
-                MediaQuery.of(context).size.width * 0.4,
-                MediaQuery.of(context).size.height * 0.3,
-              ),
-            ],
+          TopKanjiRow(
+            kanjiSpriteAddress: selectedItem['colorPhotoAddress'],
+            leftWidgetText: "",
+            rightWidgetText: "",
+            leftWidgetHandler: null,
+            rightWidgetHandler: null,
           ),
         ],
-      ),
-    );
-  }
-
-  Widget kanjiPicture(String address, double width, double height) {
-    return Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(address),
-          fit: BoxFit.fill,
-        ),
       ),
     );
   }

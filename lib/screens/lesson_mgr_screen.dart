@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/lesson/fetch_button.dart';
 import '../widgets/lesson/mnemonic_field.dart';
-import '../widgets/lesson/badges_container.dart';
+import '../widgets/lesson/known_info_column.dart';
 
 class LessonManager extends StatefulWidget {
   final Function reAllocateMaps;
@@ -80,7 +80,7 @@ class _LessonManagerState extends State<LessonManager> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  ButtonKanjiRow(
+                  TopKanjiRow(
                     kanjiSpriteAddress: _learnQueue[_queueIndex]
                         ['greyPhotoAddress'],
                     leftWidgetText: "Prev",
@@ -88,7 +88,7 @@ class _LessonManagerState extends State<LessonManager> {
                     leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
                     rightWidgetHandler: _nextKanji,
                   ),
-                  BadgesContainer(
+                  KnownInfoColumn(
                     learnQueue: _learnQueue,
                     queueIndex: _queueIndex,
                     nextKanji: _nextKanji,

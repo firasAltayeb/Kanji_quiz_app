@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BadgesContainer extends StatelessWidget {
+class KnownInfoColumn extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
 
@@ -8,7 +8,7 @@ class BadgesContainer extends StatelessWidget {
   final Function previousKanji;
   final mnemonicController = TextEditingController();
 
-  BadgesContainer({
+  KnownInfoColumn({
     @required this.learnQueue,
     @required this.queueIndex,
     @required this.nextKanji,
@@ -27,7 +27,7 @@ class BadgesContainer extends StatelessWidget {
 
   Widget keywordArea(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: double.infinity,
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(width: 3.0, color: Colors.black),
