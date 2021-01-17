@@ -51,11 +51,38 @@ class _MyHomeState extends State<MyHome> {
         _lessonMap.add(_kanjiMapList[i]);
       } else if (_kanjiMapList[i]['learningStatus'] == 'Review') {
         _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
-        _reviewMap.add(_kanjiMapList[i]);
+        _addToReview(_kanjiMapList[i]);
       }
     }
     print('LessonMap size is ' + '${_lessonMap.length}');
     print('ReviewMap size is ' + '${_reviewMap.length}');
+  }
+
+  void _addToReview(dynamic kanjiMap) {
+    switch (kanjiMap['progressLevel']) {
+      case 1:
+        if (kanjiMap['dateLastLevelChanged']
+            .isBefore(DateTime.now().subtract(Duration(hours: 4))))
+          _reviewMap.add(kanjiMap);
+        break;
+      case 2:
+        if (kanjiMap['dateLastLevelChanged']
+            .isBefore(DateTime.now().subtract(Duration(hours: 12))))
+          _reviewMap.add(kanjiMap);
+        break;
+      case 3:
+        if (kanjiMap['dateLastLevelChanged']
+            .isBefore(DateTime.now().subtract(Duration(days: 2))))
+          _reviewMap.add(kanjiMap);
+        break;
+      case 4:
+        if (kanjiMap['dateLastLevelChanged']
+            .isBefore(DateTime.now().subtract(Duration(days: 4))))
+          _reviewMap.add(kanjiMap);
+        break;
+      default:
+        break;
+    }
   }
 
   @override
@@ -65,7 +92,7 @@ class _MyHomeState extends State<MyHome> {
           title: 'Home Page',
           appBar: AppBar(),
         ),
-        drawer: MainAppDrawer(),
+        drawer: MainAppDrawer(_reAllocateMaps),
         body: MainBody(
           kanjiMapList: _kanjiMapList,
           lessonMap: _lessonMap,

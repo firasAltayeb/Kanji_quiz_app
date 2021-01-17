@@ -17,31 +17,31 @@ class ReviewManager extends StatefulWidget {
 class _ReviewManagerState extends State<ReviewManager> {
   var _correctRecallList = List<String>();
   var _incorrectRecallList = List<String>();
+  var _answerChoices = List<bool>();
   var _sessionScore = 0;
   var _queueIndex = 0;
 
   void _processAnswer(bool answerChoice, BuildContext context) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
     int currentProgressLevel = reviewMap['progressLevel'];
+    reviewMap['dateLastLevelChanged'] = DateTime.now();
+    _answerChoices.add(answerChoice);
+    print('answerChoice is $answerChoice');
+
     if (answerChoice) {
       _sessionScore += 5;
-      print('answerChoice is $answerChoice');
-      reviewMap['learningStatus'] = 'Pratice';
       _correctRecallList.add(reviewMap['colorPhotoAddress']);
-
-      if (currentProgressLevel < 5)
+      if (currentProgressLevel < 4) {
         reviewMap['progressLevel'] = currentProgressLevel + 1;
+      } else {
+        reviewMap['learningStatus'] = 'Pratice';
+      }
     } else {
-      print('answerChoice is $answerChoice');
-      reviewMap['learningStatus'] = 'Review+';
       _incorrectRecallList.add(reviewMap['colorPhotoAddress']);
 
       if (currentProgressLevel > 1)
         reviewMap['progressLevel'] = currentProgressLevel - 1;
     }
-    print(
-        '${reviewMap['itemId']} progress level is now ${reviewMap['progressLevel']}');
-
     setState(() {
       _queueIndex = _queueIndex + 1;
     });
@@ -50,21 +50,19 @@ class _ReviewManagerState extends State<ReviewManager> {
   void _undoAnswer() {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex - 1];
     int currentProgressLevel = reviewMap['progressLevel'];
-    if (reviewMap['learningStatus'] == 'Pratice') {
+    print('_lastAnswer is ${_answerChoices[_queueIndex - 1]}');
+
+    if (_answerChoices[_queueIndex - 1]) {
       _sessionScore -= 5;
-      print('_answerChoice is ${reviewMap['learningStatus']}');
       _correctRecallList.removeLast();
       if (currentProgressLevel > 1)
         reviewMap['progressLevel'] = currentProgressLevel - 1;
     } else {
-      print('_answerChoice is ${reviewMap['learningStatus']}');
       _incorrectRecallList.removeLast();
       if (currentProgressLevel > 1 && currentProgressLevel < 5)
         reviewMap['progressLevel'] = currentProgressLevel + 1;
     }
-    print(
-        '${reviewMap['itemId']} progress level is now ${reviewMap['progressLevel']}');
-
+    _answerChoices.remove(_queueIndex - 1);
     setState(() {
       _queueIndex = _queueIndex - 1;
     });

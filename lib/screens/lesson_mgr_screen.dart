@@ -1,9 +1,7 @@
-import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
-
+import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/main_app_bar.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import 'package:flutter/material.dart';
-
 import '../widgets/lesson/fetch_button.dart';
 import '../widgets/lesson/mnemonic_field.dart';
 import '../widgets/lesson/building_block_row.dart';
@@ -24,9 +22,10 @@ class _LessonManagerState extends State<LessonManager> {
   var _textFieldtemp = '';
 
   void _nextKanji() {
+    widget.lessonMap[_queueIndex]['progressLevel'] = 1;
+    widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
+    widget.lessonMap[_queueIndex]['dateLastLevelChanged'] = DateTime.now();
     if (_queueIndex + 1 == widget.lessonMap.length) {
-      widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
-      widget.lessonMap[_queueIndex]['progressLevel'] = 1;
       widget.reAllocateMaps();
       Navigator.pop(context);
     } else {
@@ -34,8 +33,6 @@ class _LessonManagerState extends State<LessonManager> {
         if (_textFieldtemp.isNotEmpty)
           widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
 
-        widget.lessonMap[_queueIndex]['learningStatus'] = 'Review';
-        widget.lessonMap[_queueIndex]['progressLevel'] = 1;
         _queueIndex = _queueIndex + 1;
         _clearTempText = false;
         _textFieldtemp = '';

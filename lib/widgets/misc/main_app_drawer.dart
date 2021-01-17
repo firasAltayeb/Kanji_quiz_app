@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MainAppDrawer extends StatelessWidget {
+  final Function selectHandler;
+
+  MainAppDrawer(this.selectHandler);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -25,26 +29,31 @@ class MainAppDrawer extends StatelessWidget {
             height: 20,
           ),
           buildListTile(
+            context,
             'Sync now',
             Icons.sync,
-            null,
+            selectHandler,
           ),
           buildListTile(
+            context,
             'Settings',
             Icons.settings,
             null,
           ),
           buildListTile(
+            context,
             'Badges',
             Icons.badge,
             null,
           ),
           buildListTile(
+            context,
             'Feedback',
             Icons.feedback,
             null,
           ),
           buildListTile(
+            context,
             'Tutorial',
             Icons.help,
             null,
@@ -54,7 +63,8 @@ class MainAppDrawer extends StatelessWidget {
     );
   }
 
-  Widget buildListTile(String title, IconData icon, Function tapHandler) {
+  Widget buildListTile(
+      BuildContext context, String title, IconData icon, Function tapHandler) {
     return ListTile(
       title: Text(
         title,
@@ -67,7 +77,11 @@ class MainAppDrawer extends StatelessWidget {
         icon,
         size: 26,
       ),
-      onTap: () {},
+      onTap: () {
+        // ignore: unnecessary_statements
+        tapHandler == null ? null : tapHandler();
+        Navigator.pop(context);
+      },
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ItemDetailScreen extends StatelessWidget {
   final dynamic selectedItem;
@@ -10,6 +11,8 @@ class ItemDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String formattedDate = DateFormat('dd/MM/yyyy hh:mm')
+        .format(selectedItem['dateLastLevelChanged']);
     return Scaffold(
       appBar: MainAppBar(
         title: 'Item Details',
@@ -35,8 +38,7 @@ class ItemDetailScreen extends StatelessWidget {
             height: 40,
           ),
           KeyTextContainer(
-            passedText:
-                'SRS Level change date: ${selectedItem['dateLastLevelChanged']}',
+            passedText: 'SRS Level change date: $formattedDate',
             fontSize: 20,
           ),
           SizedBox(

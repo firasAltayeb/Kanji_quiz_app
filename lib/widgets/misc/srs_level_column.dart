@@ -16,7 +16,6 @@ class SrsLevelColumn extends StatelessWidget {
 
   void assignSrsLists() {
     for (int index = 0; index < kanjiMapList.length; index++) {
-      print('index is $index');
       switch (kanjiMapList[index]['progressLevel']) {
         case 1:
           srsLevelOneMap.add(kanjiMapList[index]['colorPhotoAddress']);
