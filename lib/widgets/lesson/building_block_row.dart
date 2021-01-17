@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class KnownInfoColumn extends StatelessWidget {
+class BuildingBlockRow extends StatelessWidget {
   final int queueIndex;
   final List<Map<String, Object>> learnQueue;
 
@@ -8,7 +8,7 @@ class KnownInfoColumn extends StatelessWidget {
   final Function previousKanji;
   final mnemonicController = TextEditingController();
 
-  KnownInfoColumn({
+  BuildingBlockRow({
     @required this.learnQueue,
     @required this.queueIndex,
     @required this.nextKanji,
@@ -17,31 +17,6 @@ class KnownInfoColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        keywordArea(context),
-        buildBlockRow(context),
-      ],
-    );
-  }
-
-  Widget keywordArea(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(width: 3.0, color: Colors.black),
-        ),
-      ),
-      padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-      child: Text(
-        'Keyword: ' + learnQueue[queueIndex]['keyword'],
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-
-  Widget buildBlockRow(BuildContext context) {
     List<dynamic> blockAddresses = learnQueue[queueIndex]['buildBlocksAddress'];
     print('blockAddresses length is ${blockAddresses.length}');
     return Padding(

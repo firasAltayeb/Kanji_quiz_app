@@ -1,10 +1,12 @@
+import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
+
 import '../widgets/shared/main_app_bar.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/lesson/fetch_button.dart';
 import '../widgets/lesson/mnemonic_field.dart';
-import '../widgets/lesson/known_info_column.dart';
+import '../widgets/lesson/building_block_row.dart';
 
 class LessonManager extends StatefulWidget {
   final Function reAllocateMaps;
@@ -88,7 +90,10 @@ class _LessonManagerState extends State<LessonManager> {
                     leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
                     rightWidgetHandler: _nextKanji,
                   ),
-                  KnownInfoColumn(
+                  KeyTextContainer(
+                    'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
+                  ),
+                  BuildingBlockRow(
                     learnQueue: _learnQueue,
                     queueIndex: _queueIndex,
                     nextKanji: _nextKanji,
