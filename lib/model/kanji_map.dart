@@ -11,6 +11,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/5_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/5_Kanji_xl.png',
       'buildBlocksAddress': [],
+      'dateLastLevelChanged': '18/01/2020 02:20',
     },
     {
       'itemId': '口',
@@ -23,6 +24,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/11_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/11_Kanji_xl.png',
       'buildBlocksAddress': [],
+      'dateLastLevelChanged': '18/01/2020 02:20',
     },
     {
       'itemId': '日',
@@ -35,6 +37,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/12_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/12_Kanji_xl.png',
       'buildBlocksAddress': [],
+      'dateLastLevelChanged': '18/01/2020 02:20',
     },
     {
       'itemId': '月',
@@ -47,6 +50,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/13_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/13_Kanji_xl.png',
       'buildBlocksAddress': [],
+      'dateLastLevelChanged': '18/01/2020 02:20',
     },
     {
       'itemId': '亠',
@@ -59,6 +63,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/218_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/218_Kanji_xl.png',
       'buildBlocksAddress': [],
+      'dateLastLevelChanged': '18/01/2020 02:20',
     },
     {
       'itemId': '衣',
@@ -71,6 +76,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/284_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/284_Kanji_xl.png',
       'buildBlocksAddress': ['assets/images/218_Kanji_xl.png'],
+      'dateLastLevelChanged': '18/01/2020 02:20',
     },
     {
       'itemId': '十',
@@ -83,6 +89,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/10_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/10_Kanji_xl.png',
       'buildBlocksAddress': [],
+      'dateLastLevelChanged': '',
     },
     {
       'itemId': '吾',
@@ -98,6 +105,7 @@ class KanjiMap {
         'assets/images/5_Kanji_xl.png',
         'assets/images/11_Kanji_xl.png'
       ],
+      'dateLastLevelChanged': '',
     },
     {
       'itemId': '明',
@@ -113,6 +121,7 @@ class KanjiMap {
         'assets/images/12_Kanji_xl.png',
         'assets/images/13_Kanji_xl.png'
       ],
+      'dateLastLevelChanged': '',
     },
     {
       'itemId': '品',
@@ -125,6 +134,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/19_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/19_Kanji_xl.png',
       'buildBlocksAddress': ['assets/images/11_Kanji_xl.png'],
+      'dateLastLevelChanged': '',
     },
     {
       'itemId': '哀',
@@ -141,6 +151,7 @@ class KanjiMap {
         'assets/images/11_Kanji_xl.png',
         'assets/images/284_Kanji_xl.png',
       ],
+      'dateLastLevelChanged': '',
     }
   ];
 

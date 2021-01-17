@@ -28,15 +28,45 @@ class ItemDetailScreen extends StatelessWidget {
             height: 20,
           ),
           KeyTextContainer(
-            'Keyword: ' + selectedItem['keyword'],
+            passedText: 'Keyword: ' + selectedItem['keyword'],
+            alignment: TextAlign.center,
           ),
           SizedBox(
-            height: 50,
+            height: 40,
           ),
           KeyTextContainer(
-            'Keyword: ' + selectedItem['keyword'],
+            passedText:
+                'SRS Level change date: ${selectedItem['dateLastLevelChanged']}',
+            fontSize: 20,
           ),
+          SizedBox(
+            height: 40,
+          ),
+          textContainer('Current SRS level is ${selectedItem['progressLevel']}',
+              Theme.of(context).accentColor),
         ],
+      ),
+    );
+  }
+
+  Widget textContainer(String txt, Color accentColor) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: accentColor,
+      ),
+      padding: const EdgeInsets.all(5),
+      child: Text(
+        txt,
+        style: TextStyle(
+          fontSize: 25,
+          fontFamily: 'Anton',
+        ),
+        textAlign: TextAlign.center,
       ),
     );
   }

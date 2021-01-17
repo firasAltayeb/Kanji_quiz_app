@@ -91,7 +91,8 @@ class _LessonManagerState extends State<LessonManager> {
                     rightWidgetHandler: _nextKanji,
                   ),
                   KeyTextContainer(
-                    'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
+                    passedText:
+                        'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
                   ),
                   BuildingBlockRow(
                     learnQueue: _learnQueue,

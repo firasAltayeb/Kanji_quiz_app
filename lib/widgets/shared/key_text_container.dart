@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
 class KeyTextContainer extends StatelessWidget {
-  final passedText;
+  final String passedText;
+  final double fontSize;
+  final TextAlign alignment;
 
-  KeyTextContainer(this.passedText);
+  KeyTextContainer({
+    @required this.passedText,
+    this.fontSize = 30,
+    this.alignment = TextAlign.left,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -11,13 +17,20 @@ class KeyTextContainer extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 3.0, color: Colors.black),
+          bottom: BorderSide(
+            width: 3.0,
+            color: Colors.black,
+          ),
         ),
       ),
       padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
       child: Text(
         passedText,
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: FontWeight.bold,
+        ),
+        textAlign: alignment,
       ),
     );
   }

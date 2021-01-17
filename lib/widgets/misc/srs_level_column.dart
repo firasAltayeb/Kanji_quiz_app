@@ -42,33 +42,34 @@ class SrsLevelColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     assignSrsLists();
+    var accentColor = Theme.of(context).accentColor;
     return Column(
       children: [
-        textContainer('SRS Level 1 Items', context),
+        textContainer('SRS Level 1 Items', accentColor),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelOneMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 2 Items', context),
+        textContainer('SRS Level 2 Items', accentColor),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelTwoMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 3 Items', context),
+        textContainer('SRS Level 3 Items', accentColor),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelThreeMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 4 Items', context),
+        textContainer('SRS Level 4 Items', accentColor),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelFourMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 5 Items (Learned)', context),
+        textContainer('SRS Level 5 Items (Learned)', accentColor),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelFiveMap,
@@ -89,7 +90,7 @@ class SrsLevelColumn extends StatelessWidget {
     );
   }
 
-  Widget textContainer(String txt, BuildContext context) {
+  Widget textContainer(String txt, Color accentColor) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -97,7 +98,7 @@ class SrsLevelColumn extends StatelessWidget {
           color: Colors.black,
           width: 3,
         ),
-        color: Theme.of(context).accentColor,
+        color: accentColor,
       ),
       padding: const EdgeInsets.all(5),
       child: Text(
