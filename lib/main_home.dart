@@ -12,7 +12,7 @@ class MyHome extends StatefulWidget {
 
 class _MyHomeState extends State<MyHome> {
   Box<dynamic> _kanjiBox;
-  List<dynamic> _kanjiMap;
+  List<dynamic> _kanjiMapList;
   var _reviewMap = List<Map<String, Object>>();
   var _lessonMap = List<Map<String, Object>>();
 
@@ -21,12 +21,12 @@ class _MyHomeState extends State<MyHome> {
     super.initState();
     print('initializing box');
     _kanjiBox = Hive.box('kanjiBox');
-    _kanjiMap = _kanjiBox.get('map');
+    _kanjiMapList = _kanjiBox.get('map');
 
-    if (_kanjiMap == null) {
+    if (_kanjiMapList == null) {
       print('kanjimap is null');
-      _kanjiMap = KanjiMap().initialKanjiMap;
-      Hive.box('kanjiBox').put('map', _kanjiMap);
+      _kanjiMapList = KanjiMap().initialKanjiMap;
+      Hive.box('kanjiBox').put('map', _kanjiMapList);
     } else {
       print('kanjimap is not null');
     }
@@ -36,7 +36,7 @@ class _MyHomeState extends State<MyHome> {
   void _reAllocateMaps() {
     setState(() {
       _allocateMaps();
-      Hive.box('kanjiBox').put('map', _kanjiMap);
+      Hive.box('kanjiBox').put('map', _kanjiMapList);
     });
   }
 
@@ -44,13 +44,13 @@ class _MyHomeState extends State<MyHome> {
     print('allocate map called');
     _lessonMap.clear();
     _reviewMap.clear();
-    for (var i = 0; i < _kanjiMap.length; i++) {
-      if (_kanjiMap[i]['learningStatus'] == 'Lesson') {
-        _kanjiMap[i] = new Map<String, Object>.from(_kanjiMap[i]);
-        _lessonMap.add(_kanjiMap[i]);
-      } else if (_kanjiMap[i]['learningStatus'] == 'Review') {
-        _kanjiMap[i] = new Map<String, Object>.from(_kanjiMap[i]);
-        _reviewMap.add(_kanjiMap[i]);
+    for (var i = 0; i < _kanjiMapList.length; i++) {
+      if (_kanjiMapList[i]['learningStatus'] == 'Lesson') {
+        _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
+        _lessonMap.add(_kanjiMapList[i]);
+      } else if (_kanjiMapList[i]['learningStatus'] == 'Review') {
+        _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
+        _reviewMap.add(_kanjiMapList[i]);
       }
     }
     print('LessonMap size is ' + '${_lessonMap.length}');
@@ -65,7 +65,7 @@ class _MyHomeState extends State<MyHome> {
           appBar: AppBar(),
         ),
         body: MainBody(
-          kanjiMap: _kanjiMap,
+          kanjiMapList: _kanjiMapList,
           lessonMap: _lessonMap,
           reviewMap: _reviewMap,
           reAllocateMaps: _reAllocateMaps,

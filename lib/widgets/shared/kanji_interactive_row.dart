@@ -24,8 +24,12 @@ class KanjiInteractiveRow extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (ctx, i) {
             return InkWell(
-              onTap:
-                  selectHandler == null ? null : () => selectHandler(context),
+              onTap: selectHandler == null
+                  ? null
+                  : () => selectHandler(
+                        context,
+                        kanjiAddresses[i],
+                      ),
               child: Ink(
                 decoration: BoxDecoration(
                   image: DecorationImage(

@@ -85,8 +85,8 @@ class _LessonManagerState extends State<LessonManager> {
                         ['greyPhotoAddress'],
                     leftWidgetText: "Prev",
                     rightWidgetText: "Next",
-                    leftWidgerHandler: _queueIndex == 0 ? null : _previousKanji,
-                    rightWidgerHandler: _nextKanji,
+                    leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
+                    rightWidgetHandler: _nextKanji,
                   ),
                   BadgesContainer(
                     learnQueue: _learnQueue,

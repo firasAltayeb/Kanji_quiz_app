@@ -16,11 +16,10 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
     final children = <Widget>[
-      wrapUpButton(screenHeight, screenWidth),
+      wrapUpButton(context),
       Text(
         'Your session score is ${scoreToDisplay.toString()}',
         style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
@@ -52,13 +51,13 @@ class ResultPage extends StatelessWidget {
     return Column(children: children);
   }
 
-  Widget wrapUpButton(double height, double width) {
+  Widget wrapUpButton(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        top: height * 0.05,
-        bottom: height * 0.03,
+        top: MediaQuery.of(context).size.height * 0.05,
+        bottom: MediaQuery.of(context).size.height * 0.03,
       ),
-      width: width * 0.8,
+      width: MediaQuery.of(context).size.width * 0.8,
       child: RaisedButton(
         child: Text(
           'Wrap up session',
@@ -68,7 +67,7 @@ class ResultPage extends StatelessWidget {
           ),
         ),
         onPressed: wrapSession,
-        color: Colors.yellow,
+        color: Theme.of(context).accentColor,
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(30.0),
           side: BorderSide(color: Colors.black, width: 2),

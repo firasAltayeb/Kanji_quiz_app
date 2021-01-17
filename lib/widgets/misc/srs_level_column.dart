@@ -3,44 +3,35 @@ import 'package:Kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
 class SrsLevelColumn extends StatelessWidget {
-  final List<dynamic> kanjiMap;
+  final List<dynamic> kanjiMapList;
   final srsLevelOneMap = List<String>();
   final srsLevelTwoMap = List<String>();
   final srsLevelThreeMap = List<String>();
   final srsLevelFourMap = List<String>();
   final srsLevelFiveMap = List<String>();
 
-  Future pushToItemScreen(context) async {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ItemDetailScreen(),
-      ),
-    );
-  }
-
   SrsLevelColumn({
-    @required this.kanjiMap,
+    @required this.kanjiMapList,
   });
 
   void assignSrsLists() {
-    for (int index = 0; index < kanjiMap.length; index++) {
+    for (int index = 0; index < kanjiMapList.length; index++) {
       print('index is $index');
-      switch (kanjiMap[index]['progressLevel']) {
+      switch (kanjiMapList[index]['progressLevel']) {
         case 1:
-          srsLevelOneMap.add(kanjiMap[index]['colorPhotoAddress']);
+          srsLevelOneMap.add(kanjiMapList[index]['colorPhotoAddress']);
           break;
         case 2:
-          srsLevelTwoMap.add(kanjiMap[index]['colorPhotoAddress']);
+          srsLevelTwoMap.add(kanjiMapList[index]['colorPhotoAddress']);
           break;
         case 3:
-          srsLevelThreeMap.add(kanjiMap[index]['colorPhotoAddress']);
+          srsLevelThreeMap.add(kanjiMapList[index]['colorPhotoAddress']);
           break;
         case 4:
-          srsLevelFourMap.add(kanjiMap[index]['colorPhotoAddress']);
+          srsLevelFourMap.add(kanjiMapList[index]['colorPhotoAddress']);
           break;
         case 5:
-          srsLevelFiveMap.add(kanjiMap[index]['colorPhotoAddress']);
+          srsLevelFiveMap.add(kanjiMapList[index]['colorPhotoAddress']);
           break;
         default:
           break;
@@ -84,6 +75,17 @@ class SrsLevelColumn extends StatelessWidget {
           selectHandler: pushToItemScreen,
         ),
       ],
+    );
+  }
+
+  Future pushToItemScreen(BuildContext context, String address) async {
+    var kanjiIndex = kanjiMapList
+        .indexWhere((kanjiMap) => kanjiMap['colorPhotoAddress'] == address);
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ItemDetailScreen(kanjiMapList[kanjiIndex]),
+      ),
     );
   }
 

@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 class ButtonKanjiRow extends StatelessWidget {
   final String leftWidgetText;
   final String rightWidgetText;
-  final Function leftWidgerHandler;
-  final Function rightWidgerHandler;
+  final Function leftWidgetHandler;
+  final Function rightWidgetHandler;
   final String kanjiSpriteAddress;
 
   ButtonKanjiRow({
     @required this.leftWidgetText,
     @required this.rightWidgetText,
-    @required this.leftWidgerHandler,
-    @required this.rightWidgerHandler,
+    @required this.leftWidgetHandler,
+    @required this.rightWidgetHandler,
     @required this.kanjiSpriteAddress,
   });
 
@@ -22,53 +22,62 @@ class ButtonKanjiRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         leftWidgetText == 'Prev'
-            ? FlatButton(
-                padding: const EdgeInsets.fromLTRB(0, 10, 40, 0),
-                textColor: Colors.black,
-                child: Text(
-                  leftWidgetText,
-                  style: const TextStyle(
-                      fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                onPressed: leftWidgerHandler,
+            ? Padding(
+                padding: const EdgeInsets.fromLTRB(0, 10, 30, 0),
+                child: cornerButton(leftWidgetText, leftWidgetHandler),
               )
-            : Container(
-                width: MediaQuery.of(context).size.width * 0.25,
-                padding: const EdgeInsets.only(top: 15),
-                child: Text(
-                  leftWidgetText,
-                  style: const TextStyle(
-                      fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-              ),
+            : cornerWidget(leftWidgetText),
         kanjiPicture(
-          context: context,
-          address: kanjiSpriteAddress,
-          width: 0.4,
-          height: 0.3,
+          kanjiSpriteAddress,
+          MediaQuery.of(context).size.width * 0.4,
+          MediaQuery.of(context).size.height * 0.3,
         ),
-        FlatButton(
-          padding: const EdgeInsets.fromLTRB(30, 5, 0, 0),
-          textColor: Colors.black,
-          child: Text(
-            rightWidgetText,
-            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-          ),
-          onPressed: rightWidgerHandler,
-        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
+          child: cornerButton(rightWidgetText, rightWidgetHandler),
+        )
       ],
     );
   }
 
-  Widget kanjiPicture(
-      {BuildContext context, String address, double width, double height}) {
+  Widget cornerButton(String passedText, Function handler) {
+    return FlatButton(
+      textColor: Colors.black,
+      child: Text(
+        passedText,
+        style: const TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      onPressed: handler,
+    );
+  }
+
+  Widget kanjiPicture(String address, double width, double height) {
     return Container(
-      width: MediaQuery.of(context).size.width * width,
-      height: MediaQuery.of(context).size.height * height,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(address),
           fit: BoxFit.fill,
+        ),
+      ),
+    );
+  }
+
+  Widget cornerWidget(String passedText) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+        child: Text(
+          passedText,
+          style: const TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
         ),
       ),
     );

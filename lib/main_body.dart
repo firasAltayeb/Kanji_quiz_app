@@ -5,18 +5,18 @@ import 'screens/review_mgr_screen.dart';
 
 class MainBody extends StatelessWidget {
   final Function reAllocateMaps;
-  final List<dynamic> kanjiMap;
+  final List<dynamic> kanjiMapList;
   final List<Map<String, Object>> lessonMap;
   final List<Map<String, Object>> reviewMap;
 
   MainBody({
-    @required this.kanjiMap,
     @required this.lessonMap,
     @required this.reviewMap,
+    @required this.kanjiMapList,
     @required this.reAllocateMaps,
   });
 
-  Future navigateToLessonPage(context) async {
+  Future navigateToLessonPage(BuildContext context) async {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -25,7 +25,7 @@ class MainBody extends StatelessWidget {
     );
   }
 
-  Future navigateToReviewPage(context) async {
+  Future navigateToReviewPage(BuildContext context) async {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -55,7 +55,7 @@ class MainBody extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-          SrsLevelColumn(kanjiMap: kanjiMap)
+          SrsLevelColumn(kanjiMapList: kanjiMapList)
         ],
       ),
     );

@@ -40,7 +40,7 @@ class _ReviewManagerState extends State<ReviewManager> {
         reviewMap['progressLevel'] = currentProgressLevel - 1;
     }
     print(
-        '${reviewMap['kanjiId']} progress level is now ${reviewMap['progressLevel']}');
+        '${reviewMap['itemId']} progress level is now ${reviewMap['progressLevel']}');
 
     setState(() {
       _queueIndex = _queueIndex + 1;
@@ -63,7 +63,7 @@ class _ReviewManagerState extends State<ReviewManager> {
         reviewMap['progressLevel'] = currentProgressLevel + 1;
     }
     print(
-        '${reviewMap['kanjiId']} progress level is now ${reviewMap['progressLevel']}');
+        '${reviewMap['itemId']} progress level is now ${reviewMap['progressLevel']}');
 
     setState(() {
       _queueIndex = _queueIndex - 1;
