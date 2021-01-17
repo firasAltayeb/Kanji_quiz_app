@@ -1,3 +1,4 @@
+import 'widgets/misc/main_app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
@@ -61,9 +62,10 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: MainAppBar(
-          title: 'Kanji App',
+          title: 'Home Page',
           appBar: AppBar(),
         ),
+        drawer: MainAppDrawer(),
         body: MainBody(
           kanjiMapList: _kanjiMapList,
           lessonMap: _lessonMap,
