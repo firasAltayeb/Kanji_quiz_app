@@ -1,10 +1,10 @@
-import '../misc_widgets/main_app_bar.dart';
-import '../misc_widgets/button_kanji_row.dart';
+import '../widgets/shared/main_app_bar.dart';
+import '../widgets/shared/top_kanji_row.dart';
 import 'package:flutter/material.dart';
 
-import 'fetch_button.dart';
-import 'mnemonic_field.dart';
-import 'badges_container.dart';
+import '../widgets/lesson/fetch_button.dart';
+import '../widgets/lesson/mnemonic_field.dart';
+import '../widgets/lesson/badges_container.dart';
 
 class LessonManager extends StatefulWidget {
   final Function reAllocateMaps;

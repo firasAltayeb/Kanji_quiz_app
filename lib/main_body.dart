@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'widgets/lesson_widgets/lesson_mgr_screen.dart';
-import 'widgets/review_widgets/review_mgr_screen.dart';
-import 'widgets/misc_widgets/kanji_interactive_row.dart';
+import 'screens/lesson_mgr_screen.dart';
+import 'screens/review_mgr_screen.dart';
+import 'widgets/shared/kanji_interactive_row.dart';
 
 class MainBody extends StatelessWidget {
   final Function reAllocateMaps;

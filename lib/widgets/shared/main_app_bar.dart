@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'user_page.dart';
+import '../../screens/user_page_screen.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;

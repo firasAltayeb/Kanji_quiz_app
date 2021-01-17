@@ -1,6 +1,6 @@
-import 'package:Kanji_quiz_app/widgets/misc_widgets/button_kanji_row.dart';
-import 'package:Kanji_quiz_app/widgets/review_widgets/choose_answer_button.dart';
-import 'package:Kanji_quiz_app/widgets/review_widgets/show_answer_button.dart';
+import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
+import 'package:Kanji_quiz_app/widgets/review/choose_answer_button.dart';
+import 'package:Kanji_quiz_app/widgets/review/show_answer_button.dart';
 import 'package:flutter/material.dart';
 
 class RecallPage extends StatefulWidget {

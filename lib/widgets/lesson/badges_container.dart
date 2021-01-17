@@ -1,4 +1,3 @@
-import 'package:Kanji_quiz_app/widgets/misc_widgets/kanji_fixed_row.dart';
 import 'package:flutter/material.dart';
 
 class BadgesContainer extends StatelessWidget {
@@ -59,10 +58,32 @@ class BadgesContainer extends StatelessWidget {
             width: blockAddresses.length == 1
                 ? MediaQuery.of(context).size.width * 0.25
                 : MediaQuery.of(context).size.width * 0.55,
-            child: KanjiFixedkRow(blockAddresses),
+            child: kanjiBlockRow(blockAddresses),
           ),
         ],
       ),
+    );
+  }
+
+  Widget kanjiBlockRow(List<dynamic> blockAddresses) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        ...(blockAddresses)
+            .map(
+              (blockAddress) => Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(blockAddress),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+            )
+            .toList()
+      ],
     );
   }
 }

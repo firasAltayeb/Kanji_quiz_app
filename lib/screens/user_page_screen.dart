@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'main_app_bar.dart';
+import '../widgets/shared/main_app_bar.dart';
 
 class UserPage extends StatefulWidget {
   @override

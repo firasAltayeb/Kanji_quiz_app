@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/widgets/misc_widgets/kanji_interactive_row.dart';
+import 'package:Kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
