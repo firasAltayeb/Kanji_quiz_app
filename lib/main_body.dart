@@ -1,18 +1,13 @@
+import 'package:Kanji_quiz_app/widgets/misc/srs_level_column.dart';
 import 'package:flutter/material.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
-import 'widgets/shared/kanji_interactive_row.dart';
 
 class MainBody extends StatelessWidget {
   final Function reAllocateMaps;
   final List<dynamic> kanjiMap;
   final List<Map<String, Object>> lessonMap;
   final List<Map<String, Object>> reviewMap;
-  final srsLevelOneMap = List<String>();
-  final srsLevelTwoMap = List<String>();
-  final srsLevelThreeMap = List<String>();
-  final srsLevelFourMap = List<String>();
-  final srsLevelFiveMap = List<String>();
 
   MainBody({
     @required this.kanjiMap,
@@ -39,35 +34,9 @@ class MainBody extends StatelessWidget {
     );
   }
 
-  void assignSrsLists() {
-    for (int index = 0; index < kanjiMap.length; index++) {
-      print('index is $index');
-      switch (kanjiMap[index]['progressLevel']) {
-        case 1:
-          srsLevelOneMap.add(kanjiMap[index]['colorPhotoAddress']);
-          break;
-        case 2:
-          srsLevelTwoMap.add(kanjiMap[index]['colorPhotoAddress']);
-          break;
-        case 3:
-          srsLevelThreeMap.add(kanjiMap[index]['colorPhotoAddress']);
-          break;
-        case 4:
-          srsLevelFourMap.add(kanjiMap[index]['colorPhotoAddress']);
-          break;
-        case 5:
-          srsLevelFiveMap.add(kanjiMap[index]['colorPhotoAddress']);
-          break;
-        default:
-          break;
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     print('Main body build is called');
-    assignSrsLists();
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -86,31 +55,7 @@ class MainBody extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-          textContainer('SRS Level 1 Items', context),
-          KanjiInteractiveRow(
-            widgetHeight: MediaQuery.of(context).size.height * 0.2,
-            kanjiAddresses: srsLevelOneMap,
-          ),
-          textContainer('SRS Level 2 Items', context),
-          KanjiInteractiveRow(
-            widgetHeight: MediaQuery.of(context).size.height * 0.2,
-            kanjiAddresses: srsLevelTwoMap,
-          ),
-          textContainer('SRS Level 3 Items', context),
-          KanjiInteractiveRow(
-            widgetHeight: MediaQuery.of(context).size.height * 0.2,
-            kanjiAddresses: srsLevelThreeMap,
-          ),
-          textContainer('SRS Level 4 Items', context),
-          KanjiInteractiveRow(
-            widgetHeight: MediaQuery.of(context).size.height * 0.2,
-            kanjiAddresses: srsLevelFourMap,
-          ),
-          textContainer('SRS Level 5 Items (Learned)', context),
-          KanjiInteractiveRow(
-            widgetHeight: MediaQuery.of(context).size.height * 0.2,
-            kanjiAddresses: srsLevelFiveMap,
-          ),
+          SrsLevelColumn(kanjiMap: kanjiMap)
         ],
       ),
     );
@@ -151,28 +96,6 @@ class MainBody extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-
-  Widget textContainer(String txt, BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-        color: Theme.of(context).accentColor,
-      ),
-      padding: const EdgeInsets.all(5),
-      child: Text(
-        txt,
-        style: TextStyle(
-          fontSize: 25,
-          fontFamily: 'Anton',
-          fontStyle: FontStyle.italic,
-        ),
-      ),
     );
   }
 }
