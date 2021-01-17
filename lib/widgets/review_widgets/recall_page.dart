@@ -84,7 +84,8 @@ class _RecallPageState extends State<RecallPage> {
             color: Colors.black,
             width: 3,
           ),
-          color: _recallButtonVisible ? Colors.red : Colors.yellow,
+          color:
+              _recallButtonVisible ? Colors.red : Theme.of(context).accentColor,
         ),
         padding: const EdgeInsets.all(10),
         child: FittedBox(

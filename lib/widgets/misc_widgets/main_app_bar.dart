@@ -15,11 +15,11 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.black,
       title: Text(
         title,
         style: TextStyle(
           fontSize: 24,
+          fontFamily: 'Anton',
         ),
       ),
       actions: [

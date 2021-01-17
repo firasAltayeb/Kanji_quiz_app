@@ -86,27 +86,27 @@ class MainBody extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-          textContainer('SRS Level 1 Items'),
+          textContainer('SRS Level 1 Items', context),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelOneMap,
           ),
-          textContainer('SRS Level 2 Items'),
+          textContainer('SRS Level 2 Items', context),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelTwoMap,
           ),
-          textContainer('SRS Level 3 Items'),
+          textContainer('SRS Level 3 Items', context),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelThreeMap,
           ),
-          textContainer('SRS Level 4 Items'),
+          textContainer('SRS Level 4 Items', context),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelFourMap,
           ),
-          textContainer('SRS Level 5 Items (Learned)'),
+          textContainer('SRS Level 5 Items (Learned)', context),
           KanjiInteractiveRow(
             widgetHeight: MediaQuery.of(context).size.height * 0.2,
             kanjiAddresses: srsLevelFiveMap,
@@ -133,7 +133,7 @@ class MainBody extends StatelessWidget {
         Container(
           width: MediaQuery.of(context).size.height * 0.2,
           decoration: BoxDecoration(
-            color: Colors.yellow,
+            color: Theme.of(context).accentColor,
             border: Border.all(
               color: Colors.black,
               width: 3,
@@ -154,7 +154,7 @@ class MainBody extends StatelessWidget {
     );
   }
 
-  Widget textContainer(String txt) {
+  Widget textContainer(String txt, BuildContext context) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -162,14 +162,15 @@ class MainBody extends StatelessWidget {
           color: Colors.black,
           width: 3,
         ),
-        color: Colors.green,
+        color: Theme.of(context).accentColor,
       ),
       padding: const EdgeInsets.all(5),
       child: Text(
         txt,
         style: TextStyle(
           fontSize: 25,
-          fontWeight: FontWeight.bold,
+          fontFamily: 'Anton',
+          fontStyle: FontStyle.italic,
         ),
       ),
     );

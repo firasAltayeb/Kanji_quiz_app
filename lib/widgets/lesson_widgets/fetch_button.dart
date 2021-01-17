@@ -15,7 +15,7 @@ class FetchButton extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.14,
       width: MediaQuery.of(context).size.width * 0.95,
       decoration: BoxDecoration(
-        color: Colors.yellow,
+        color: Theme.of(context).accentColor,
         border: Border(
           top: BorderSide(width: 3.0, color: Colors.black),
           right: BorderSide(width: 3.0, color: Colors.black),

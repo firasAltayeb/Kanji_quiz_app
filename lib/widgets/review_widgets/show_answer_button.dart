@@ -13,7 +13,7 @@ class ShowAnswerButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * 0.38,
       decoration: BoxDecoration(
-        color: Colors.yellow,
+        color: Theme.of(context).accentColor,
         border: Border.all(
           color: Colors.black,
           width: 3,

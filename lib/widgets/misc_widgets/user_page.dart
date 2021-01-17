@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main_app_bar.dart';
+
 class UserPage extends StatefulWidget {
   @override
   _UserPageState createState() => _UserPageState();
@@ -9,19 +11,9 @@ class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('User Page'),
-        backgroundColor: Colors.black,
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.search_rounded,
-              color: Colors.white,
-              size: MediaQuery.of(context).size.height * 0.05,
-            ),
-            onPressed: null,
-          ),
-        ],
+      appBar: MainAppBar(
+        title: 'User Page',
+        appBar: AppBar(),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
