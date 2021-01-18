@@ -83,26 +83,53 @@ class _ReviewManagerState extends State<ReviewManager> {
     });
   }
 
-  Future<bool> _onBackPressed() {
+  Future<bool> _onBackPressed(Color color) {
     return showDialog(
           context: context,
-          builder: (context) => new AlertDialog(
-            title: new Text('Are you sure?'),
-            content: new Text('Do you want to exit an App'),
-            actions: <Widget>[
-              new GestureDetector(
-                onTap: () => Navigator.of(context).pop(false),
-                child: Text("NO"),
+          builder: (context) => AlertDialog(
+            contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            actionsPadding: const EdgeInsets.only(right: 75),
+            shape: RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(10.0),
+              side: BorderSide(color: Colors.black, width: 2),
+            ),
+            title: Text(
+              'Are you sure?',
+              style: TextStyle(
+                fontSize: 28,
+                fontFamily: 'Anton',
               ),
-              SizedBox(height: 16),
-              new GestureDetector(
-                onTap: () => Navigator.of(context).pop(true),
-                child: Text("YES"),
+            ),
+            content: Text(
+              "You will lose all the progress for the current session!!",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
               ),
+            ),
+            backgroundColor: color,
+            actions: [
+              dialogButton('No', false),
+              SizedBox(width: 20),
+              dialogButton('Yes', true),
             ],
           ),
         ) ??
         false;
+  }
+
+  Widget dialogButton(String displayedText, bool choice) {
+    return RaisedButton(
+      color: Colors.black,
+      onPressed: () => Navigator.of(context).pop(choice),
+      child: Text(
+        displayedText,
+        style: TextStyle(
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
   }
 
   @override
@@ -113,7 +140,7 @@ class _ReviewManagerState extends State<ReviewManager> {
     }
 
     return WillPopScope(
-      onWillPop: _onBackPressed,
+      onWillPop: () => _onBackPressed(Theme.of(context).accentColor),
       child: Scaffold(
         appBar: MainAppBar(
           title: 'Review page',

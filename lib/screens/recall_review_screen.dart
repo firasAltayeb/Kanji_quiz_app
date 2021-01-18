@@ -1,5 +1,5 @@
 import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
-import 'package:Kanji_quiz_app/widgets/review/choose_answer_button.dart';
+import 'package:Kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
 import 'package:Kanji_quiz_app/widgets/review/show_answer_button.dart';
 import 'package:flutter/material.dart';
 
@@ -51,17 +51,13 @@ class _RecallPageState extends State<RecallPage> {
             ? ShowAnswerButton(selectHandler: _flipRecallButton)
             : Row(
                 children: [
-                  ChooseAnswerButton(
-                    buttonColor: Colors.green,
-                    buttonText: "Correct",
+                  CorrectIncorrectButton(
                     selectChoice: true,
                     showRecallButton: _flipRecallButton,
                     answerQuestion: widget.answerQuestion,
                     questionItem: _questionItem,
                   ),
-                  ChooseAnswerButton(
-                    buttonColor: Colors.red,
-                    buttonText: "Incorrect",
+                  CorrectIncorrectButton(
                     selectChoice: false,
                     showRecallButton: _flipRecallButton,
                     answerQuestion: widget.answerQuestion,

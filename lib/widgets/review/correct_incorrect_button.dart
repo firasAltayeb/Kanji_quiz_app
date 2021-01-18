@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ChooseAnswerButton extends StatelessWidget {
-  final Color buttonColor;
-  final String buttonText;
+class CorrectIncorrectButton extends StatelessWidget {
   final bool selectChoice;
   final Function answerQuestion;
   final Function showRecallButton;
   final Map<String, Object> questionItem;
 
-  ChooseAnswerButton({
-    @required this.buttonColor,
-    @required this.buttonText,
+  CorrectIncorrectButton({
     @required this.selectChoice,
     @required this.answerQuestion,
     @required this.showRecallButton,
@@ -23,7 +19,7 @@ class ChooseAnswerButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.5,
       height: MediaQuery.of(context).size.height * 0.38,
       decoration: BoxDecoration(
-        color: buttonColor,
+        color: selectChoice ? Colors.green : Colors.red,
         border: Border(
           top: BorderSide(width: 3.0, color: Colors.black),
           left: BorderSide(width: 1.0, color: Colors.black),
@@ -34,7 +30,7 @@ class ChooseAnswerButton extends StatelessWidget {
       child: FlatButton(
         textColor: Colors.white,
         child: Text(
-          buttonText,
+          selectChoice ? "Correct" : "Incorrect",
           style: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
@@ -45,16 +41,14 @@ class ChooseAnswerButton extends StatelessWidget {
           _openCustomDialog(
               context,
               'The item ${questionItem['itemId']} SRS' +
-                  ' level is now ${questionItem['progressLevel']}',
-              buttonColor);
+                  ' level is now ${questionItem['progressLevel']}');
           showRecallButton();
         },
       ),
     );
   }
 
-  void _openCustomDialog(
-      BuildContext context, String dialogText, Color dialogColor) {
+  void _openCustomDialog(BuildContext context, String dialogText) {
     showGeneralDialog(
       context: context,
       barrierColor: Colors.black.withOpacity(0.2),
@@ -69,7 +63,8 @@ class ChooseAnswerButton extends StatelessWidget {
           child: Opacity(
             opacity: a1.value,
             child: AlertDialog(
-              backgroundColor: dialogColor,
+              backgroundColor:
+                  selectChoice ? Colors.green[700] : Colors.red[700],
               shape:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
               content: Text(
