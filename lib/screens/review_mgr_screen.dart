@@ -83,6 +83,28 @@ class _ReviewManagerState extends State<ReviewManager> {
     });
   }
 
+  Future<bool> _onBackPressed() {
+    return showDialog(
+          context: context,
+          builder: (context) => new AlertDialog(
+            title: new Text('Are you sure?'),
+            content: new Text('Do you want to exit an App'),
+            actions: <Widget>[
+              new GestureDetector(
+                onTap: () => Navigator.of(context).pop(false),
+                child: Text("NO"),
+              ),
+              SizedBox(height: 16),
+              new GestureDetector(
+                onTap: () => Navigator.of(context).pop(true),
+                child: Text("YES"),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
   @override
   Widget build(BuildContext context) {
     final _questionQueue = widget.reviewListMap;
@@ -90,24 +112,27 @@ class _ReviewManagerState extends State<ReviewManager> {
       return Scaffold();
     }
 
-    return Scaffold(
-      appBar: MainAppBar(
-        title: 'Review page',
-        appBar: AppBar(),
+    return WillPopScope(
+      onWillPop: _onBackPressed,
+      child: Scaffold(
+        appBar: MainAppBar(
+          title: 'Review page',
+          appBar: AppBar(),
+        ),
+        body: _queueIndex < _questionQueue.length
+            ? RecallPage(
+                questionIndex: _queueIndex,
+                questionQueue: _questionQueue,
+                undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
+                answerQuestion: _processAnswer,
+              )
+            : ResultPage(
+                scoreToDisplay: _sessionScore,
+                wrapSession: _wrapSession,
+                correctRecallList: _correctRecallList,
+                incorrectRecallList: _incorrectRecallList,
+              ),
       ),
-      body: _queueIndex < _questionQueue.length
-          ? RecallPage(
-              questionIndex: _queueIndex,
-              questionQueue: _questionQueue,
-              undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
-              answerQuestion: _processAnswer,
-            )
-          : ResultPage(
-              scoreToDisplay: _sessionScore,
-              wrapSession: _wrapSession,
-              correctRecallList: _correctRecallList,
-              incorrectRecallList: _incorrectRecallList,
-            ),
     );
   }
 }
