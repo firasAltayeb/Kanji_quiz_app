@@ -98,8 +98,7 @@ class _LessonManagerState extends State<LessonManager> {
                     previousKanji: _previousKanji,
                   ),
                   MnemonicField(
-                    lessonMap: _learnQueue,
-                    queueIndex: _queueIndex,
+                    lessonMap: _learnQueue[_queueIndex],
                     nextKanji: _nextKanji,
                     clearText: _clearTempText,
                     clearInitialText: _clearInitialText,
