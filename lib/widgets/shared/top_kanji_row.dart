@@ -18,14 +18,10 @@ class TopKanjiRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         leftWidgetText == 'Prev'
-            ? Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 30, 0),
-                child: cornerButton(leftWidgetText, leftWidgetHandler),
-              )
+            ? cornerButton(leftWidgetText, leftWidgetHandler)
             : cornerWidget(leftWidgetText, 'left'),
         kanjiPicture(
           kanjiSpriteAddress,
@@ -33,26 +29,26 @@ class TopKanjiRow extends StatelessWidget {
           MediaQuery.of(context).size.height * 0.3,
         ),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
-            ? Padding(
-                padding: const EdgeInsets.fromLTRB(30, 10, 0, 0),
-                child: cornerButton(rightWidgetText, rightWidgetHandler),
-              )
+            ? cornerButton(rightWidgetText, rightWidgetHandler)
             : cornerWidget(rightWidgetText, 'right'),
       ],
     );
   }
 
   Widget cornerButton(String passedText, Function handler) {
-    return FlatButton(
-      textColor: Colors.black,
-      child: Text(
-        passedText,
-        style: const TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
+    return Expanded(
+      child: FlatButton(
+        padding: const EdgeInsets.only(top: 20),
+        textColor: Colors.black,
+        child: Text(
+          passedText,
+          style: const TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
         ),
+        onPressed: handler,
       ),
-      onPressed: handler,
     );
   }
 
@@ -70,8 +66,8 @@ class TopKanjiRow extends StatelessWidget {
   }
 
   Widget cornerWidget(String passedText, String area) {
-    double paddingRight = area == 'right' ? 0 : 40;
-    double paddingLeft = area == 'left' ? 0 : 40;
+    double paddingRight = area == 'right' ? 0 : 30;
+    double paddingLeft = area == 'left' ? 0 : 30;
     return Expanded(
       child: Container(
         padding: EdgeInsets.fromLTRB(paddingLeft, 20, paddingRight, 0),

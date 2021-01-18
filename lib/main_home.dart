@@ -62,7 +62,7 @@ class _MyHomeState extends State<MyHome> {
     switch (kanjiMap['progressLevel']) {
       case 1:
         if (kanjiMap['dateLastLevelChanged']
-            .isBefore(DateTime.now().subtract(Duration(hours: 4))))
+            .isBefore(DateTime.now().subtract(Duration(seconds: 30))))
           _reviewMap.add(kanjiMap);
         break;
       case 2:

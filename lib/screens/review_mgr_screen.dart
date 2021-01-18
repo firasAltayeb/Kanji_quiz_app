@@ -17,16 +17,16 @@ class ReviewManager extends StatefulWidget {
 class _ReviewManagerState extends State<ReviewManager> {
   var _correctRecallList = List<String>();
   var _incorrectRecallList = List<String>();
-  var _answerChoices = List<bool>();
+  var _answerChoiceList = List<bool>();
   var _sessionScore = 0;
   var _queueIndex = 0;
 
   void _processAnswer(bool answerChoice, BuildContext context) {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
     int currentProgressLevel = reviewMap['progressLevel'];
-    reviewMap['dateLastLevelChanged'] = DateTime.now();
-    _answerChoices.add(answerChoice);
-    print('answerChoice is $answerChoice');
+
+    _answerChoiceList.add(answerChoice);
+    print('_answerChoiceList is $_answerChoiceList');
 
     if (answerChoice) {
       _sessionScore += 5;
@@ -50,9 +50,8 @@ class _ReviewManagerState extends State<ReviewManager> {
   void _undoAnswer() {
     Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex - 1];
     int currentProgressLevel = reviewMap['progressLevel'];
-    print('_lastAnswer is ${_answerChoices[_queueIndex - 1]}');
 
-    if (_answerChoices[_queueIndex - 1]) {
+    if (_answerChoiceList[_queueIndex - 1]) {
       _sessionScore -= 5;
       _correctRecallList.removeLast();
       if (currentProgressLevel > 1)
@@ -62,7 +61,9 @@ class _ReviewManagerState extends State<ReviewManager> {
       if (currentProgressLevel > 1 && currentProgressLevel < 5)
         reviewMap['progressLevel'] = currentProgressLevel + 1;
     }
-    _answerChoices.remove(_queueIndex - 1);
+    _answerChoiceList.removeAt(_queueIndex - 1);
+    print('_answerChoiceList is $_answerChoiceList');
+
     setState(() {
       _queueIndex = _queueIndex - 1;
     });
@@ -71,8 +72,15 @@ class _ReviewManagerState extends State<ReviewManager> {
   void _wrapSession() {
     _queueIndex = 0;
     _sessionScore = 0;
+    _updateLevelChangeDate();
     widget.reAllocateMaps();
     Navigator.pop(context);
+  }
+
+  void _updateLevelChangeDate() {
+    widget.reviewListMap.forEach((element) {
+      element['dateLastLevelChanged'] = DateTime.now();
+    });
   }
 
   @override
