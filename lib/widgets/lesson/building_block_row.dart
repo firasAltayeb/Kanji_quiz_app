@@ -1,48 +1,50 @@
 import 'package:flutter/material.dart';
 
 class BuildingBlockRow extends StatelessWidget {
-  final int queueIndex;
-  final List<Map<String, Object>> learnQueue;
-
-  final Function nextKanji;
-  final Function previousKanji;
-  final mnemonicController = TextEditingController();
+  final Map<String, Object> kanjiMap;
 
   BuildingBlockRow({
-    @required this.learnQueue,
-    @required this.queueIndex,
-    @required this.nextKanji,
-    @required this.previousKanji,
+    @required this.kanjiMap,
   });
 
   @override
   Widget build(BuildContext context) {
-    List<dynamic> blockAddresses = learnQueue[queueIndex]['buildBlocksAddress'];
-    print('blockAddresses length is ${blockAddresses.length}');
-    return Padding(
+    List<dynamic> addressList = kanjiMap['buildBlocksAddress'];
+    return Container(
       padding: const EdgeInsets.fromLTRB(5, 0, 5, 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Text(
-            'Building blocks: ',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.19,
-            width: blockAddresses.length == 1
-                ? MediaQuery.of(context).size.width * 0.25
-                : MediaQuery.of(context).size.width * 0.55,
-            child: kanjiBlockRow(blockAddresses),
-          ),
-        ],
+      height: MediaQuery.of(context).size.height * 0.19,
+      alignment: Alignment.center,
+      child: addressList.isEmpty
+          ? textWidget('Item type:  ${kanjiMap['itemType']}')
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                textWidget(
+                  'Building blocks: ',
+                ),
+                Container(
+                  width: addressList.length == 1
+                      ? MediaQuery.of(context).size.width * 0.25
+                      : MediaQuery.of(context).size.width * 0.55,
+                  child: kanjiBlockRow(addressList),
+                ),
+              ],
+            ),
+    );
+  }
+
+  Widget textWidget(String displayedText) {
+    return Text(
+      displayedText,
+      style: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
 
   Widget kanjiBlockRow(List<dynamic> blockAddresses) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         ...(blockAddresses)
             .map(

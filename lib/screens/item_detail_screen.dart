@@ -11,7 +11,7 @@ class ItemDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String formattedDate = DateFormat('dd/MM/yyyy hh:mm')
+    String formattedDate = DateFormat('dd/MM/yyyy HH:mm')
         .format(selectedItem['dateLastLevelChanged']);
     return Scaffold(
       appBar: MainAppBar(

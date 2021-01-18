@@ -3,6 +3,7 @@ class KanjiMap {
     {
       'itemId': '五',
       'keyword': 'Five',
+      'itemType': 'Primitive Kanji',
       'frameNumber': '5',
       'mnemonicStory': '',
       'progressLevel': 5,
@@ -16,6 +17,7 @@ class KanjiMap {
     {
       'itemId': '口',
       'keyword': 'Mouth',
+      'itemType': 'Primitive Kanji',
       'frameNumber': '11',
       'mnemonicStory': '',
       'progressLevel': 1,
@@ -29,6 +31,7 @@ class KanjiMap {
     {
       'itemId': '日',
       'keyword': 'Sun',
+      'itemType': 'Primitive Kanji',
       'frameNumber': '12',
       'mnemonicStory': '',
       'progressLevel': 1,
@@ -42,6 +45,7 @@ class KanjiMap {
     {
       'itemId': '月',
       'keyword': 'Moon',
+      'itemType': 'Primitive Kanji',
       'frameNumber': '13',
       'mnemonicStory': '',
       'progressLevel': 1,
@@ -55,6 +59,7 @@ class KanjiMap {
     {
       'itemId': '亠',
       'keyword': 'Top hat',
+      'itemType': 'Radical',
       'frameNumber': '20128',
       'mnemonicStory': '',
       'progressLevel': 1,
@@ -68,6 +73,7 @@ class KanjiMap {
     {
       'itemId': '衣',
       'keyword': 'Garment',
+      'itemType': 'Kanji',
       'frameNumber': '423',
       'mnemonicStory': '',
       'progressLevel': 1,
@@ -81,6 +87,7 @@ class KanjiMap {
     {
       'itemId': '十',
       'keyword': 'Ten',
+      'itemType': 'Primitive Kanji',
       'frameNumber': '10',
       'mnemonicStory': '',
       'progressLevel': 0,
@@ -94,6 +101,7 @@ class KanjiMap {
     {
       'itemId': '吾',
       'keyword': 'Oneself',
+      'itemType': 'Kanji',
       'frameNumber': '17',
       'mnemonicStory': '',
       'progressLevel': 0,
@@ -110,6 +118,7 @@ class KanjiMap {
     {
       'itemId': '明',
       'keyword': 'Bright',
+      'itemType': 'Kanji',
       'frameNumber': '20',
       'mnemonicStory': '',
       'progressLevel': 0,
@@ -126,6 +135,7 @@ class KanjiMap {
     {
       'itemId': '品',
       'keyword': 'Goods',
+      'itemType': 'Kanji',
       'frameNumber': '23',
       'mnemonicStory': '',
       'progressLevel': 0,
@@ -139,6 +149,7 @@ class KanjiMap {
     {
       'itemId': '哀',
       'keyword': 'Pathetic',
+      'itemType': 'Kanji',
       'frameNumber': '428',
       'mnemonicStory': '',
       'progressLevel': 0,

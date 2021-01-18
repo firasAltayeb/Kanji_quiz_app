@@ -92,10 +92,7 @@ class _LessonManagerState extends State<LessonManager> {
                         'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
                   ),
                   BuildingBlockRow(
-                    learnQueue: _learnQueue,
-                    queueIndex: _queueIndex,
-                    nextKanji: _nextKanji,
-                    previousKanji: _previousKanji,
+                    kanjiMap: _learnQueue[_queueIndex],
                   ),
                   MnemonicField(
                     lessonMap: _learnQueue[_queueIndex],
