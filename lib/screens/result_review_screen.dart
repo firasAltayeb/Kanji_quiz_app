@@ -1,13 +1,13 @@
 import 'package:Kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
-class ResultPage extends StatelessWidget {
+class ResultScreen extends StatelessWidget {
   final int scoreToDisplay;
   final Function wrapSession;
   final List<String> correctRecallList;
   final List<String> incorrectRecallList;
 
-  ResultPage({
+  ResultScreen({
     @required this.wrapSession,
     @required this.scoreToDisplay,
     @required this.correctRecallList,

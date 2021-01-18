@@ -46,9 +46,9 @@ class MainBody extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              progressButton(
+              progressColumn(
                   context, "Lesson", lessonMap.length, navigateToLessonPage),
-              progressButton(
+              progressColumn(
                   context, "Review", reviewMap.length, navigateToReviewPage),
             ],
           ),
@@ -61,12 +61,12 @@ class MainBody extends StatelessWidget {
     );
   }
 
-  Widget progressButton(
-      context, String label, int progress, Function navigate) {
+  Widget progressColumn(
+      context, String label, int mapLength, Function navigate) {
     return Column(
       children: [
         Text(
-          label + ": " + '$progress',
+          label + ": " + '$mapLength',
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.height * 0.04,
             fontWeight: FontWeight.bold,
@@ -94,7 +94,7 @@ class MainBody extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            onPressed: progress == 0 ? null : () => navigate(context),
+            onPressed: mapLength == 0 ? null : () => navigate(context),
           ),
         )
       ],

@@ -3,13 +3,13 @@ import 'package:Kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
 import 'package:Kanji_quiz_app/widgets/review/show_answer_button.dart';
 import 'package:flutter/material.dart';
 
-class RecallPage extends StatefulWidget {
+class RecallScreen extends StatefulWidget {
   final int questionIndex;
   final Function answerQuestion;
   final Function undoLastAnswer;
   final List<Map<String, Object>> questionQueue;
 
-  RecallPage({
+  RecallScreen({
     @required this.questionQueue,
     @required this.questionIndex,
     @required this.undoLastAnswer,
@@ -17,10 +17,10 @@ class RecallPage extends StatefulWidget {
   });
 
   @override
-  _RecallPageState createState() => _RecallPageState();
+  _RecallScreenState createState() => _RecallScreenState();
 }
 
-class _RecallPageState extends State<RecallPage> {
+class _RecallScreenState extends State<RecallScreen> {
   var _recallButtonVisible = true;
 
   void _flipRecallButton() {
@@ -70,32 +70,32 @@ class _RecallPageState extends State<RecallPage> {
   }
 
   Widget infoBox(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.95,
-        height: MediaQuery.of(context).size.height * 0.125,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black,
-            width: 3,
-          ),
-          color:
-              _recallButtonVisible ? Colors.red : Theme.of(context).accentColor,
+    return Container(
+      padding: const EdgeInsets.all(10),
+      width: MediaQuery.of(context).size.width * 0.95,
+      height: MediaQuery.of(context).size.height * 0.125,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
         ),
-        padding: const EdgeInsets.all(10),
-        child: FittedBox(
-          fit: _recallButtonVisible ? BoxFit.fitWidth : BoxFit.fill,
-          child: _recallButtonVisible
-              ? Text('Can you recall this character?',
-                  textAlign: TextAlign.center)
-              : checkText(),
-        ),
+        color: _recallButtonVisible
+            ? Colors.red[400]
+            : Theme.of(context).accentColor,
+      ),
+      child: FittedBox(
+        fit: _recallButtonVisible ? BoxFit.fitWidth : BoxFit.fill,
+        child: _recallButtonVisible
+            ? Text(
+                'Can you recall this character?',
+                textAlign: TextAlign.center,
+              )
+            : keywordRichText(),
       ),
     );
   }
 
-  RichText checkText() {
+  RichText keywordRichText() {
     return new RichText(
       text: new TextSpan(
         style: new TextStyle(

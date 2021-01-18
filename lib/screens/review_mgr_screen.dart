@@ -88,7 +88,7 @@ class _ReviewManagerState extends State<ReviewManager> {
           context: context,
           builder: (context) => AlertDialog(
             contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-            actionsPadding: const EdgeInsets.only(right: 75),
+            actionsPadding: const EdgeInsets.fromLTRB(0, 0, 65, 20),
             shape: RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(10.0),
               side: BorderSide(color: Colors.black, width: 2),
@@ -110,7 +110,7 @@ class _ReviewManagerState extends State<ReviewManager> {
             backgroundColor: color,
             actions: [
               dialogButton('No', false),
-              SizedBox(width: 20),
+              SizedBox(width: 30),
               dialogButton('Yes', true),
             ],
           ),
@@ -125,7 +125,7 @@ class _ReviewManagerState extends State<ReviewManager> {
       child: Text(
         displayedText,
         style: TextStyle(
-          fontSize: 28,
+          fontSize: 38,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -147,13 +147,13 @@ class _ReviewManagerState extends State<ReviewManager> {
           appBar: AppBar(),
         ),
         body: _queueIndex < _questionQueue.length
-            ? RecallPage(
+            ? RecallScreen(
                 questionIndex: _queueIndex,
                 questionQueue: _questionQueue,
                 undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
                 answerQuestion: _processAnswer,
               )
-            : ResultPage(
+            : ResultScreen(
                 scoreToDisplay: _sessionScore,
                 wrapSession: _wrapSession,
                 correctRecallList: _correctRecallList,
