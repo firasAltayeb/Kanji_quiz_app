@@ -18,7 +18,7 @@ class KanjiMap {
       'keyword': 'Mouth',
       'frameNumber': '11',
       'mnemonicStory': '',
-      'progressLevel': 2,
+      'progressLevel': 1,
       'learningStatus': 'Review',
       'buildingBlocks': [],
       'greyPhotoAddress': 'assets/images/11_Kanji_xlg.png',
@@ -31,7 +31,7 @@ class KanjiMap {
       'keyword': 'Sun',
       'frameNumber': '12',
       'mnemonicStory': '',
-      'progressLevel': 3,
+      'progressLevel': 1,
       'learningStatus': 'Review',
       'buildingBlocks': [],
       'greyPhotoAddress': 'assets/images/12_Kanji_xlg.png',
@@ -44,7 +44,7 @@ class KanjiMap {
       'keyword': 'Moon',
       'frameNumber': '13',
       'mnemonicStory': '',
-      'progressLevel': 4,
+      'progressLevel': 1,
       'learningStatus': 'Review',
       'buildingBlocks': [],
       'greyPhotoAddress': 'assets/images/13_Kanji_xlg.png',
@@ -89,7 +89,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/10_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/10_Kanji_xl.png',
       'buildBlocksAddress': [],
-      'dateLastLevelChanged': null,
+      'dateLastLevelChanged': DateTime.now().add(Duration(days: 100)),
     },
     {
       'itemId': '吾',
@@ -105,7 +105,7 @@ class KanjiMap {
         'assets/images/5_Kanji_xl.png',
         'assets/images/11_Kanji_xl.png'
       ],
-      'dateLastLevelChanged': null,
+      'dateLastLevelChanged': DateTime.now().add(Duration(days: 100)),
     },
     {
       'itemId': '明',
@@ -121,7 +121,7 @@ class KanjiMap {
         'assets/images/12_Kanji_xl.png',
         'assets/images/13_Kanji_xl.png'
       ],
-      'dateLastLevelChanged': null,
+      'dateLastLevelChanged': DateTime.now().add(Duration(days: 100)),
     },
     {
       'itemId': '品',
@@ -134,7 +134,7 @@ class KanjiMap {
       'greyPhotoAddress': 'assets/images/19_Kanji_xlg.png',
       'colorPhotoAddress': 'assets/images/19_Kanji_xl.png',
       'buildBlocksAddress': ['assets/images/11_Kanji_xl.png'],
-      'dateLastLevelChanged': null,
+      'dateLastLevelChanged': DateTime.now().add(Duration(days: 100)),
     },
     {
       'itemId': '哀',
@@ -151,7 +151,7 @@ class KanjiMap {
         'assets/images/11_Kanji_xl.png',
         'assets/images/284_Kanji_xl.png',
       ],
-      'dateLastLevelChanged': null,
+      'dateLastLevelChanged': DateTime.now().add(Duration(days: 100)),
     }
   ];
 

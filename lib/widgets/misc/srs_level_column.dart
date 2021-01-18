@@ -15,27 +15,27 @@ class SrsLevelColumn extends StatelessWidget {
   });
 
   void assignSrsLists() {
-    for (int index = 0; index < kanjiMapList.length; index++) {
-      switch (kanjiMapList[index]['progressLevel']) {
+    kanjiMapList.forEach((kanjiMap) {
+      switch (kanjiMap['progressLevel']) {
         case 1:
-          srsLevelOneMap.add(kanjiMapList[index]['colorPhotoAddress']);
+          srsLevelOneMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 2:
-          srsLevelTwoMap.add(kanjiMapList[index]['colorPhotoAddress']);
+          srsLevelTwoMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 3:
-          srsLevelThreeMap.add(kanjiMapList[index]['colorPhotoAddress']);
+          srsLevelThreeMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 4:
-          srsLevelFourMap.add(kanjiMapList[index]['colorPhotoAddress']);
+          srsLevelFourMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 5:
-          srsLevelFiveMap.add(kanjiMapList[index]['colorPhotoAddress']);
+          srsLevelFiveMap.add(kanjiMap['colorPhotoAddress']);
           break;
         default:
           break;
       }
-    }
+    });
   }
 
   @override

@@ -61,7 +61,7 @@ class _ReviewManagerState extends State<ReviewManager> {
       if (currentProgressLevel > 1 && currentProgressLevel < 5)
         reviewMap['progressLevel'] = currentProgressLevel + 1;
     }
-    _answerChoiceList.removeAt(_queueIndex - 1);
+    _answerChoiceList.removeLast();
     print('_answerChoiceList is $_answerChoiceList');
 
     setState(() {

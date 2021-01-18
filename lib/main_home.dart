@@ -45,15 +45,15 @@ class _MyHomeState extends State<MyHome> {
     print('allocate map called');
     _lessonMap.clear();
     _reviewMap.clear();
-    for (var i = 0; i < _kanjiMapList.length; i++) {
-      if (_kanjiMapList[i]['learningStatus'] == 'Lesson') {
-        _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
-        _lessonMap.add(_kanjiMapList[i]);
-      } else if (_kanjiMapList[i]['learningStatus'] == 'Review') {
-        _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
-        _addToReview(_kanjiMapList[i]);
+    _kanjiMapList.forEach((kanjiMap) {
+      if (kanjiMap['learningStatus'] == 'Lesson') {
+        kanjiMap = new Map<String, Object>.from(kanjiMap);
+        _lessonMap.add(kanjiMap);
+      } else if (kanjiMap['learningStatus'] == 'Review') {
+        kanjiMap = new Map<String, Object>.from(kanjiMap);
+        _addToReview(kanjiMap);
       }
-    }
+    });
     print('LessonMap size is ' + '${_lessonMap.length}');
     print('ReviewMap size is ' + '${_reviewMap.length}');
   }
