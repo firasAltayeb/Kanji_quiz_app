@@ -39,6 +39,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: primaryBlack,
         accentColor: Colors.yellow[700],
         fontFamily: 'Lato',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            side: BorderSide(width: 3, color: Colors.black),
+            primary: Colors.yellow[700],
+            padding: const EdgeInsets.all(10),
+            minimumSize: Size(30, 30),
+            onPrimary: Colors.black,
+          ),
+        ),
       ),
       home: MyHome(),
     );

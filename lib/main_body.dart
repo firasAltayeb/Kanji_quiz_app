@@ -75,17 +75,9 @@ class MainBody extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.02,
         ),
-        Container(
+        SizedBox(
           width: MediaQuery.of(context).size.height * 0.2,
-          decoration: BoxDecoration(
-            color: Theme.of(context).accentColor,
-            border: Border.all(
-              color: Colors.black,
-              width: 3,
-            ),
-          ),
-          child: FlatButton(
-            textColor: Colors.black,
+          child: ElevatedButton(
             child: Text(
               'Start',
               style: TextStyle(
@@ -96,7 +88,7 @@ class MainBody extends StatelessWidget {
             ),
             onPressed: mapLength == 0 ? null : () => navigate(context),
           ),
-        )
+        ),
       ],
     );
   }

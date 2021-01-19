@@ -37,9 +37,10 @@ class TopKanjiRow extends StatelessWidget {
 
   Widget cornerButton(String passedText, Function handler) {
     return Expanded(
-      child: FlatButton(
-        padding: const EdgeInsets.only(top: 20),
-        textColor: Colors.black,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.only(top: 20),
+        ),
         child: Text(
           passedText,
           style: const TextStyle(

@@ -58,7 +58,13 @@ class ResultScreen extends StatelessWidget {
         bottom: MediaQuery.of(context).size.height * 0.03,
       ),
       width: MediaQuery.of(context).size.width * 0.8,
-      child: RaisedButton(
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(30.0),
+            side: BorderSide(color: Colors.black, width: 2),
+          ),
+        ),
         child: Text(
           'Wrap up session',
           style: TextStyle(
@@ -67,12 +73,6 @@ class ResultScreen extends StatelessWidget {
           ),
         ),
         onPressed: wrapSession,
-        splashColor: Colors.green,
-        color: Theme.of(context).accentColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: new BorderRadius.circular(30.0),
-          side: BorderSide(color: Colors.black, width: 2),
-        ),
       ),
     );
   }

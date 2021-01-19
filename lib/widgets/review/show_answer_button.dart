@@ -9,18 +9,10 @@ class ShowAnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
+    return SizedBox(
+      width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.38,
-      decoration: BoxDecoration(
-        color: Theme.of(context).accentColor,
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-      ),
-      child: FlatButton(
-        textColor: Colors.black,
+      child: ElevatedButton(
         child: Text(
           "Show Answer",
           style: TextStyle(

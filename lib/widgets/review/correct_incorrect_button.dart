@@ -27,11 +27,11 @@ class CorrectIncorrectButton extends StatelessWidget {
           bottom: BorderSide(width: 3.0, color: Colors.black),
         ),
       ),
-      child: FlatButton(
-        textColor: Colors.white,
+      child: TextButton(
         child: Text(
           selectChoice ? "Correct" : "Incorrect",
           style: TextStyle(
+            color: Colors.white,
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),

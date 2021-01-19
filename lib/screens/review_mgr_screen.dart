@@ -1,5 +1,5 @@
-import 'package:Kanji_quiz_app/widgets/shared/back_pressed_alert.dart';
-import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
+import '../widgets/shared/back_pressed_alert.dart';
+import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'result_review_screen.dart';

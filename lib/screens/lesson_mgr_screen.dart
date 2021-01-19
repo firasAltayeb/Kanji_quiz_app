@@ -1,11 +1,10 @@
-import 'package:Kanji_quiz_app/widgets/shared/back_pressed_alert.dart';
-
+import '../widgets/shared/back_pressed_alert.dart';
 import '../widgets/shared/key_text_container.dart';
+import '../widgets/lesson/building_block_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/lesson/fetch_button.dart';
 import '../widgets/lesson/mnemonic_field.dart';
-import '../widgets/lesson/building_block_row.dart';
 
 import 'package:flutter/material.dart';
 
@@ -110,8 +109,7 @@ class _LessonManagerState extends State<LessonManager> {
                 height: MediaQuery.of(context).size.height * 0.0125,
               ),
               FetchButton(
-                learnQueue: _learnQueue,
-                queueIndex: _queueIndex,
+                itemDetails: _learnQueue[_queueIndex],
               ),
             ],
           ),

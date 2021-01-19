@@ -36,18 +36,21 @@ class BackPressedAlert {
   }
 
   Widget _dialogButton(String displayedText, Function selectHandler) {
-    return RaisedButton(
-      shape: CircleBorder(
-        side: BorderSide(color: Colors.black, width: 2),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.black,
+        padding: EdgeInsets.all(15),
+        shape: CircleBorder(
+          side: BorderSide(color: Colors.black, width: 2),
+        ),
       ),
-      padding: EdgeInsets.all(15),
-      color: Colors.black,
       onPressed: () => selectHandler(),
       child: Text(
         displayedText,
         style: TextStyle(
           fontSize: 38,
           fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
       ),
     );
