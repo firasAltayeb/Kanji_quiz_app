@@ -25,7 +25,6 @@ class TopKanjiRow extends StatelessWidget {
             : cornerWidget(leftWidgetText, 'left'),
         kanjiPicture(
           kanjiSpriteAddress,
-          MediaQuery.of(context).size.width * 0.45,
           MediaQuery.of(context).size.height * 0.3,
         ),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
@@ -37,6 +36,7 @@ class TopKanjiRow extends StatelessWidget {
 
   Widget cornerButton(String passedText, Function handler) {
     return Expanded(
+      flex: 3,
       child: TextButton(
         style: TextButton.styleFrom(
           padding: const EdgeInsets.only(top: 20),
@@ -53,14 +53,16 @@ class TopKanjiRow extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture(String address, double width, double height) {
-    return Container(
-      width: width,
-      height: height,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(address),
-          fit: BoxFit.fill,
+  Widget kanjiPicture(String address, double height) {
+    return Expanded(
+      flex: 4,
+      child: Container(
+        height: height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(address),
+            fit: BoxFit.fill,
+          ),
         ),
       ),
     );
@@ -70,6 +72,7 @@ class TopKanjiRow extends StatelessWidget {
     double paddingRight = area == 'right' ? 0 : 0;
     double paddingLeft = area == 'left' ? 0 : 0;
     return Expanded(
+      flex: 3,
       child: Container(
         padding: EdgeInsets.fromLTRB(paddingLeft, 20, paddingRight, 0),
         child: Text(

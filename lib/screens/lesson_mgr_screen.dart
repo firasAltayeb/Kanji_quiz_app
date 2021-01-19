@@ -24,7 +24,7 @@ class _LessonManagerState extends State<LessonManager> {
   var _textFieldtemp = '';
 
   void _nextKanji() {
-    if (_queueIndex < widget.lessonMap.length) {
+    if (_queueIndex + 1 < widget.lessonMap.length) {
       setState(() {
         if (_textFieldtemp.isNotEmpty)
           widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
@@ -106,10 +106,13 @@ class _LessonManagerState extends State<LessonManager> {
                 updateTempText: _updateTempText,
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.0125,
+                height: MediaQuery.of(context).size.height * 0.01,
               ),
-              FetchButton(
-                itemDetails: _learnQueue[_queueIndex],
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: FetchButton(
+                  itemDetails: _learnQueue[_queueIndex],
+                ),
               ),
             ],
           ),

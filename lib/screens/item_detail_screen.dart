@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/lesson/fetch_button.dart';
 import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
@@ -46,12 +47,16 @@ class ItemDetailScreen extends StatelessWidget {
           ),
           textContainer('Current SRS level is ${selectedItem['progressLevel']}',
               Theme.of(context).accentColor),
+          SizedBox(
+            height: 30,
+          ),
+          Expanded(child: FetchButton(itemDetails: selectedItem)),
         ],
       ),
     );
   }
 
-  Widget textContainer(String txt, Color accentColor) {
+  Widget textContainer(String displayedText, Color accentColor) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -63,7 +68,7 @@ class ItemDetailScreen extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(5),
       child: Text(
-        txt,
+        displayedText,
         style: TextStyle(
           fontSize: 25,
           fontFamily: 'Anton',
