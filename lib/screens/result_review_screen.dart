@@ -67,6 +67,7 @@ class ResultScreen extends StatelessWidget {
           ),
         ),
         onPressed: wrapSession,
+        splashColor: Colors.green,
         color: Theme.of(context).accentColor,
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(30.0),

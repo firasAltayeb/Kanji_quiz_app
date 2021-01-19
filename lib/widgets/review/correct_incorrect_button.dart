@@ -37,7 +37,7 @@ class CorrectIncorrectButton extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          answerQuestion(selectChoice, context);
+          answerQuestion(selectChoice);
           _openCustomDialog(
               context,
               'The item ${questionItem['itemId']} SRS' +

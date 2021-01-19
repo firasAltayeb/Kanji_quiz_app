@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/widgets/shared/back_pressed_alert.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -15,32 +16,23 @@ class ReviewManager extends StatefulWidget {
 }
 
 class _ReviewManagerState extends State<ReviewManager> {
-  var _correctRecallList = List<String>();
   var _incorrectRecallList = List<String>();
+  var _correctRecallList = List<String>();
   var _answerChoiceList = List<bool>();
   var _sessionScore = 0;
   var _queueIndex = 0;
 
-  void _processAnswer(bool answerChoice, BuildContext context) {
-    Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex];
-    int currentProgressLevel = reviewMap['progressLevel'];
-
+  void _recordAnswer(bool answerChoice) {
     _answerChoiceList.add(answerChoice);
-    print('_answerChoiceList is $_answerChoiceList');
+    print('choice list: $_answerChoiceList');
 
     if (answerChoice) {
       _sessionScore += 5;
-      _correctRecallList.add(reviewMap['colorPhotoAddress']);
-      if (currentProgressLevel < 4) {
-        reviewMap['progressLevel'] = currentProgressLevel + 1;
-      } else {
-        reviewMap['learningStatus'] = 'Pratice';
-      }
+      _correctRecallList
+          .add(widget.reviewListMap[_queueIndex]['colorPhotoAddress']);
     } else {
-      _incorrectRecallList.add(reviewMap['colorPhotoAddress']);
-
-      if (currentProgressLevel > 1)
-        reviewMap['progressLevel'] = currentProgressLevel - 1;
+      _incorrectRecallList
+          .add(widget.reviewListMap[_queueIndex]['colorPhotoAddress']);
     }
     setState(() {
       _queueIndex = _queueIndex + 1;
@@ -48,21 +40,14 @@ class _ReviewManagerState extends State<ReviewManager> {
   }
 
   void _undoAnswer() {
-    Map<String, Object> reviewMap = widget.reviewListMap[_queueIndex - 1];
-    int currentProgressLevel = reviewMap['progressLevel'];
-
     if (_answerChoiceList[_queueIndex - 1]) {
       _sessionScore -= 5;
       _correctRecallList.removeLast();
-      if (currentProgressLevel > 1)
-        reviewMap['progressLevel'] = currentProgressLevel - 1;
     } else {
       _incorrectRecallList.removeLast();
-      if (currentProgressLevel > 1 && currentProgressLevel < 5)
-        reviewMap['progressLevel'] = currentProgressLevel + 1;
     }
     _answerChoiceList.removeLast();
-    print('_answerChoiceList is $_answerChoiceList');
+    print('choice list: $_answerChoiceList');
 
     setState(() {
       _queueIndex = _queueIndex - 1;
@@ -72,64 +57,28 @@ class _ReviewManagerState extends State<ReviewManager> {
   void _wrapSession() {
     _queueIndex = 0;
     _sessionScore = 0;
-    _updateLevelChangeDate();
+    _updateItemDetails();
     widget.reAllocateMaps();
     Navigator.pop(context);
   }
 
-  void _updateLevelChangeDate() {
-    widget.reviewListMap.forEach((element) {
-      element['dateLastLevelChanged'] = DateTime.now();
-    });
-  }
+  void _updateItemDetails() {
+    for (var index = 0; index < _answerChoiceList.length; index++) {
+      Map<String, Object> reviewMap = widget.reviewListMap[index];
+      int currentProgressLevel = reviewMap['progressLevel'];
+      reviewMap['dateLastLevelChanged'] = DateTime.now();
 
-  Future<bool> _onBackPressed(Color color) {
-    return showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-            actionsPadding: const EdgeInsets.fromLTRB(0, 0, 65, 20),
-            shape: RoundedRectangleBorder(
-              borderRadius: new BorderRadius.circular(10.0),
-              side: BorderSide(color: Colors.black, width: 2),
-            ),
-            title: Text(
-              'Are you sure?',
-              style: TextStyle(
-                fontSize: 28,
-                fontFamily: 'Anton',
-              ),
-            ),
-            content: Text(
-              "You will lose all the progress for the current session!!",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            backgroundColor: color,
-            actions: [
-              dialogButton('No', false),
-              SizedBox(width: 30),
-              dialogButton('Yes', true),
-            ],
-          ),
-        ) ??
-        false;
-  }
-
-  Widget dialogButton(String displayedText, bool choice) {
-    return RaisedButton(
-      color: Colors.black,
-      onPressed: () => Navigator.of(context).pop(choice),
-      child: Text(
-        displayedText,
-        style: TextStyle(
-          fontSize: 38,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
+      if (_answerChoiceList[index]) {
+        if (currentProgressLevel < 4) {
+          reviewMap['progressLevel'] = currentProgressLevel + 1;
+        } else {
+          reviewMap['learningStatus'] = 'Pratice';
+        }
+      } else {
+        if (currentProgressLevel > 1)
+          reviewMap['progressLevel'] = currentProgressLevel - 1;
+      }
+    }
   }
 
   @override
@@ -140,7 +89,7 @@ class _ReviewManagerState extends State<ReviewManager> {
     }
 
     return WillPopScope(
-      onWillPop: () => _onBackPressed(Theme.of(context).accentColor),
+      onWillPop: () => BackPressedAlert().dialog(context) ?? false,
       child: Scaffold(
         appBar: MainAppBar(
           title: 'Review page',
@@ -151,7 +100,7 @@ class _ReviewManagerState extends State<ReviewManager> {
                 questionIndex: _queueIndex,
                 questionQueue: _questionQueue,
                 undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
-                answerQuestion: _processAnswer,
+                answerQuestion: _recordAnswer,
               )
             : ResultScreen(
                 scoreToDisplay: _sessionScore,
