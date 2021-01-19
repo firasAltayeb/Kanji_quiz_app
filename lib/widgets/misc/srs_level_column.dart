@@ -15,6 +15,11 @@ class SrsLevelColumn extends StatelessWidget {
   });
 
   void assignSrsLists() {
+    srsLevelOneMap.clear();
+    srsLevelTwoMap.clear();
+    srsLevelThreeMap.clear();
+    srsLevelFourMap.clear();
+    srsLevelFiveMap.clear();
     kanjiMapList.forEach((kanjiMap) {
       switch (kanjiMap['progressLevel']) {
         case 1:
