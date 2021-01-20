@@ -2,14 +2,8 @@ import 'package:flutter/material.dart';
 
 class KeyTextContainer extends StatelessWidget {
   final String passedText;
-  final double fontSize;
-  final TextAlign alignment;
 
-  KeyTextContainer({
-    @required this.passedText,
-    this.fontSize = 30,
-    this.alignment = TextAlign.left,
-  });
+  KeyTextContainer(this.passedText);
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +18,13 @@ class KeyTextContainer extends StatelessWidget {
         ),
       ),
       padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-      child: Text(
-        passedText,
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: FontWeight.bold,
+      child: FittedBox(
+        child: Text(
+          passedText,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        textAlign: alignment,
       ),
     );
   }

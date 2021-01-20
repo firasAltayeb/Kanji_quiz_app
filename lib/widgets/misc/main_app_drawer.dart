@@ -17,11 +17,10 @@ class MainAppDrawer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             color: Theme.of(context).accentColor,
             child: Text(
-              'Kanji App!',
+              'Kanji Master!!',
               style: TextStyle(
-                fontWeight: FontWeight.w900,
+                fontFamily: 'Anton',
                 fontSize: 35,
-                color: Theme.of(context).primaryColor,
               ),
             ),
           ),

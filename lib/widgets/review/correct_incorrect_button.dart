@@ -16,8 +16,8 @@ class CorrectIncorrectButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.5,
       height: MediaQuery.of(context).size.height * 0.38,
+      width: MediaQuery.of(context).size.width * 0.5,
       decoration: BoxDecoration(
         color: selectChoice ? Colors.green : Colors.red,
         border: Border(

@@ -1,4 +1,5 @@
-import 'package:Kanji_quiz_app/widgets/lesson/fetch_button.dart';
+import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_handler.dart';
+import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_field.dart';
 import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
@@ -19,44 +20,84 @@ class ItemDetailScreen extends StatelessWidget {
         title: 'Item Details',
         appBar: AppBar(),
       ),
-      body: Column(
-        children: [
-          TopKanjiRow(
-            kanjiSpriteAddress: selectedItem['colorPhotoAddress'],
-            leftWidgetText: "Prev",
-            rightWidgetText: "Next",
-            leftWidgetHandler: null,
-            rightWidgetHandler: null,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          KeyTextContainer(
-            passedText: 'Keyword: ' + selectedItem['keyword'],
-            alignment: TextAlign.center,
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          KeyTextContainer(
-            passedText: 'SRS Level change date: $formattedDate',
-            fontSize: 20,
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          textContainer('Current SRS level is ${selectedItem['progressLevel']}',
-              Theme.of(context).accentColor),
-          SizedBox(
-            height: 30,
-          ),
-          Expanded(child: FetchButton(itemDetails: selectedItem)),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TopKanjiRow(
+              kanjiSpriteAddress: selectedItem['colorPhotoAddress'],
+              leftWidgetText: "Prev",
+              rightWidgetText: "Next",
+              leftWidgetHandler: null,
+              rightWidgetHandler: null,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.08,
+              child: KeyTextContainer(
+                'Keyword: ' + selectedItem['keyword'],
+              ),
+            ),
+            SizedBox(height: 20),
+            KeyTextContainer(
+              'SRS Level change date: $formattedDate',
+            ),
+            SizedBox(height: 20),
+            coloredTextContainer(context),
+            SizedBox(height: 10),
+            srsDifficultyRow(),
+            SizedBox(height: 10),
+            MnemonicScrollDisplay(selectedItem),
+            SizedBox(height: 20),
+            MnemonicHandler(selectedItem),
+          ],
+        ),
       ),
     );
   }
 
-  Widget textContainer(String displayedText, Color accentColor) {
+  Widget srsDifficultyRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Text(
+          'SRS difficulty is: Easy',
+          style: TextStyle(
+            fontSize: 24,
+            fontFamily: 'Anton',
+          ),
+        ),
+        CircleAvatar(
+          radius: 23,
+          backgroundColor: Colors.black,
+          child: CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.green,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.arrow_downward,
+              ),
+            ),
+          ),
+        ),
+        CircleAvatar(
+          radius: 23,
+          backgroundColor: Colors.black,
+          child: CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.red,
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.arrow_upward,
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget coloredTextContainer(BuildContext context) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -64,11 +105,11 @@ class ItemDetailScreen extends StatelessWidget {
           color: Colors.black,
           width: 3,
         ),
-        color: accentColor,
+        color: Theme.of(context).accentColor,
       ),
       padding: const EdgeInsets.all(5),
       child: Text(
-        displayedText,
+        'Current SRS level is ${selectedItem['progressLevel']}',
         style: TextStyle(
           fontSize: 25,
           fontFamily: 'Anton',

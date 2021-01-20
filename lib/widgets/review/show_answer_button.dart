@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 class ShowAnswerButton extends StatelessWidget {
   final Function selectHandler;
 
-  ShowAnswerButton({
-    @required this.selectHandler,
-  });
+  ShowAnswerButton(this.selectHandler);
 
   @override
   Widget build(BuildContext context) {

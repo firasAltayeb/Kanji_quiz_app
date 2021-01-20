@@ -1,9 +1,10 @@
+import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_handler.dart';
+
 import '../widgets/shared/back_pressed_alert.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import '../widgets/shared/top_kanji_row.dart';
-import '../widgets/lesson/fetch_button.dart';
 import '../widgets/lesson/mnemonic_field.dart';
 
 import 'package:flutter/material.dart';
@@ -20,18 +21,11 @@ class LessonManager extends StatefulWidget {
 
 class _LessonManagerState extends State<LessonManager> {
   var _queueIndex = 0;
-  var _clearTempText = false;
-  var _textFieldtemp = '';
 
   void _nextKanji() {
     if (_queueIndex + 1 < widget.lessonMap.length) {
       setState(() {
-        if (_textFieldtemp.isNotEmpty)
-          widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
-
         _queueIndex = _queueIndex + 1;
-        _clearTempText = false;
-        _textFieldtemp = '';
       });
     } else {
       widget.lessonMap.forEach((element) {
@@ -46,24 +40,8 @@ class _LessonManagerState extends State<LessonManager> {
 
   void _previousKanji() {
     setState(() {
-      if (_textFieldtemp.isNotEmpty)
-        widget.lessonMap[_queueIndex]['mnemonicStory'] = _textFieldtemp;
-
       _queueIndex = _queueIndex - 1;
-      _clearTempText = false;
-      _textFieldtemp = '';
     });
-  }
-
-  void _clearInitialText() {
-    if (_clearTempText == false)
-      setState(() {
-        _clearTempText = true;
-      });
-  }
-
-  void _updateTempText(String text) {
-    _textFieldtemp = text;
   }
 
   @override
@@ -95,18 +73,16 @@ class _LessonManagerState extends State<LessonManager> {
               leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
               rightWidgetHandler: _nextKanji,
             ),
-            KeyTextContainer(
-              passedText: 'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.075,
+              child: KeyTextContainer(
+                'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
+              ),
             ),
             BuildingBlockRow(_learnQueue[_queueIndex]),
-            MnemonicField(
-              lessonMap: _learnQueue[_queueIndex],
-              nextKanji: _nextKanji,
-              clearText: _clearTempText,
-              clearInitialText: _clearInitialText,
-              textFieldtemp: _textFieldtemp,
-              updateTempText: _updateTempText,
-            ),
+            MnemonicScrollDisplay(_learnQueue[_queueIndex]),
+            Expanded(child: SizedBox()),
+            MnemonicHandler(_learnQueue[_queueIndex]),
           ],
         ),
       ),

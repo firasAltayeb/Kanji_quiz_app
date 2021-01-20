@@ -48,7 +48,7 @@ class _RecallScreenState extends State<RecallScreen> {
         infoBox(context),
         Expanded(child: SizedBox()),
         _recallButtonVisible
-            ? ShowAnswerButton(selectHandler: _flipRecallButton)
+            ? ShowAnswerButton(_flipRecallButton)
             : Row(
                 children: [
                   CorrectIncorrectButton(
