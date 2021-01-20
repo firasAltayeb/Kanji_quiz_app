@@ -74,48 +74,40 @@ class _LessonManagerState extends State<LessonManager> {
     }
 
     return WillPopScope(
-      onWillPop: () => BackPressedAlert().dialog(context) ?? false,
+      onWillPop: () =>
+          BackPressedAlert().dialog(
+            parentContext: context,
+            alertMessage:
+                "Any mnemonic stories you have written will not be lost!!",
+          ) ??
+          false,
       child: Scaffold(
         appBar: MainAppBar(
           title: 'Lesson Page',
           appBar: AppBar(),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              TopKanjiRow(
-                kanjiSpriteAddress: _learnQueue[_queueIndex]
-                    ['greyPhotoAddress'],
-                leftWidgetText: "Prev",
-                rightWidgetText: "Next",
-                leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
-                rightWidgetHandler: _nextKanji,
-              ),
-              KeyTextContainer(
-                passedText: 'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
-              ),
-              BuildingBlockRow(
-                kanjiMap: _learnQueue[_queueIndex],
-              ),
-              MnemonicField(
-                lessonMap: _learnQueue[_queueIndex],
-                nextKanji: _nextKanji,
-                clearText: _clearTempText,
-                clearInitialText: _clearInitialText,
-                textFieldtemp: _textFieldtemp,
-                updateTempText: _updateTempText,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.01,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
-                child: FetchButton(
-                  itemDetails: _learnQueue[_queueIndex],
-                ),
-              ),
-            ],
-          ),
+        body: Column(
+          children: [
+            TopKanjiRow(
+              kanjiSpriteAddress: _learnQueue[_queueIndex]['greyPhotoAddress'],
+              leftWidgetText: "Prev",
+              rightWidgetText: "Next",
+              leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
+              rightWidgetHandler: _nextKanji,
+            ),
+            KeyTextContainer(
+              passedText: 'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
+            ),
+            BuildingBlockRow(_learnQueue[_queueIndex]),
+            MnemonicField(
+              lessonMap: _learnQueue[_queueIndex],
+              nextKanji: _nextKanji,
+              clearText: _clearTempText,
+              clearInitialText: _clearInitialText,
+              textFieldtemp: _textFieldtemp,
+              updateTempText: _updateTempText,
+            ),
+          ],
         ),
       ),
     );

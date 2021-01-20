@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 class BuildingBlockRow extends StatelessWidget {
   final Map<String, Object> kanjiMap;
 
-  BuildingBlockRow({
-    @required this.kanjiMap,
-  });
+  BuildingBlockRow(this.kanjiMap);
 
   @override
   Widget build(BuildContext context) {

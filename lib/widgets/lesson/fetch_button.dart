@@ -9,7 +9,7 @@ class FetchButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       child: Text(
-        "Fetch From KanjiKoohii",
+        "KanjiKoohii",
         style: TextStyle(
           fontSize: 30,
           fontWeight: FontWeight.bold,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fetch_button.dart';
+
 class MnemonicField extends StatelessWidget {
   final Function nextKanji;
   final Function updateTempText;
@@ -18,54 +20,106 @@ class MnemonicField extends StatelessWidget {
     @required this.clearInitialText,
   });
 
+  RichText keywordRichText() {
+    return new RichText(
+      text: new TextSpan(
+        style: new TextStyle(
+          color: Colors.black,
+          fontSize: 24,
+        ),
+        children: <TextSpan>[
+          new TextSpan(text: 'Please create a mnemonic for the above kanji '),
+          new TextSpan(
+            text: '${lessonMap['keyword']} ',
+            style: new TextStyle(
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          new TextSpan(text: 'using its bulidng blocks: '),
+          new TextSpan(
+            text: '${lessonMap['buildingBlocks']}',
+            style: new TextStyle(
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget mnemonicTextWidget() {
+    return Text(
+      lessonMap['mnemonicStory'],
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    var keyword = lessonMap['keyword'];
     var mnemonicStory = lessonMap['mnemonicStory'];
-    var buildingBlocks = lessonMap['buildingBlocks'];
-    var mnemonicController = TextEditingController();
-    String intialText =
-        'Please create a mnemonic for the above kanji $keyword' +
-            ' using its bulidng blocks: $buildingBlocks';
+    //var mnemonicController = TextEditingController();
 
-    print("Keyword is " + keyword);
+    print("Keyword is " + lessonMap['keyword']);
     print("mnemonicStory is " + mnemonicStory);
     print("textFieldtemp is " + textFieldtemp);
     print("clearText is " + clearText.toString());
 
-    if (textFieldtemp != '') {
-      mnemonicController.text = textFieldtemp;
-    } else if (mnemonicStory != '') {
-      mnemonicController.text = mnemonicStory;
-    } else if (clearText) {
-      mnemonicController.text = '';
-    } else {
-      mnemonicController.text = intialText;
-    }
+    // if (textFieldtemp != '') {
+    //   mnemonicController.text = textFieldtemp;
+    // } else if (mnemonicStory != '') {
+    //   mnemonicController.text = mnemonicStory;
+    // } else if (clearText) {
+    //   mnemonicController.text = '';
+    // } else {
+    //   mnemonicController.text = intialText;
+    // }
 
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.2,
-      width: MediaQuery.of(context).size.width * 0.95,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
+    return Column(
+      children: [
+        SingleChildScrollView(
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.2,
+            width: MediaQuery.of(context).size.width * 0.95,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.green[900],
+                width: 3,
+              ),
+            ),
+            padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+            child: lessonMap['mnemonicStory'] == ''
+                ? keywordRichText()
+                : mnemonicTextWidget(),
+            // TextField(
+            //   textInputAction: TextInputAction.go,
+            //   keyboardType: TextInputType.multiline,
+            //   maxLines: null,
+            //   controller: mnemonicController,
+            //   onSubmitted: (_) => nextKanji(),
+            //   onTap: () => (textFieldtemp == '' && mnemonicStory == '')
+            //       ? clearInitialText()
+            //       : null,
+            //   onChanged: (_) => mnemonicController.text != intialText
+            //       ? updateTempText(mnemonicController.text)
+            //       : null,
+            // ),
+          ),
         ),
-      ),
-      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-      child: TextField(
-        textInputAction: TextInputAction.go,
-        keyboardType: TextInputType.multiline,
-        maxLines: null,
-        controller: mnemonicController,
-        onSubmitted: (_) => nextKanji(),
-        onTap: () => (textFieldtemp == '' && mnemonicStory == '')
-            ? clearInitialText()
-            : null,
-        onChanged: (_) => mnemonicController.text != intialText
-            ? updateTempText(mnemonicController.text)
-            : null,
-      ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.01,
+        ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.1,
+          child: FetchButton(
+            itemDetails: lessonMap,
+          ),
+        ),
+      ],
     );
   }
 }

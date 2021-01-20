@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BackPressedAlert {
-  Future<bool> dialog(BuildContext parentContext) {
+  Future<bool> dialog({
+    @required BuildContext parentContext,
+    @required String alertMessage,
+  }) {
     return showDialog(
       context: parentContext,
       builder: (context) => AlertDialog(
@@ -19,7 +22,7 @@ class BackPressedAlert {
           ),
         ),
         content: Text(
-          "Your current session changes will not be saved!!",
+          alertMessage,
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
