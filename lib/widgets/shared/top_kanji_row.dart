@@ -25,7 +25,7 @@ class TopKanjiRow extends StatelessWidget {
             : cornerWidget(leftWidgetText, 'left'),
         kanjiPicture(
           kanjiSpriteAddress,
-          MediaQuery.of(context).size.height * 0.3,
+          MediaQuery.of(context).size.height * 0.275,
         ),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? cornerButton(rightWidgetText, rightWidgetHandler)

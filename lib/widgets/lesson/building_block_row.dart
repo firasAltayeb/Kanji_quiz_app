@@ -10,7 +10,7 @@ class BuildingBlockRow extends StatelessWidget {
     List<dynamic> addressList = kanjiMap['buildBlocksAddress'];
     return Container(
       alignment: Alignment.center,
-      height: MediaQuery.of(context).size.height * 0.19,
+      height: MediaQuery.of(context).size.height * 0.175,
       child: addressList.isEmpty
           ? textWidget('Item type:  ${kanjiMap['itemType']}')
           : Row(

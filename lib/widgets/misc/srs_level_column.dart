@@ -83,14 +83,13 @@ class SrsLevelColumn extends StatelessWidget {
     );
   }
 
-  Future pushToItemScreen(BuildContext context, String address) async {
+  void pushToItemScreen(BuildContext context, String address) async {
     var kanjiIndex = kanjiMapList
         .indexWhere((kanjiMap) => kanjiMap['colorPhotoAddress'] == address);
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ItemDetailScreen(kanjiMapList[kanjiIndex]),
-      ),
+
+    Navigator.of(context).pushNamed(
+      ItemDetailScreen.routeName,
+      arguments: kanjiMapList[kanjiIndex],
     );
   }
 

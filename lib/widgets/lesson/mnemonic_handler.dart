@@ -12,7 +12,7 @@ class MnemonicHandler extends StatelessWidget {
         GestureDetector(
           onTap: launchURL,
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.14,
+            height: MediaQuery.of(context).size.height * 0.175,
             width: MediaQuery.of(context).size.width * 0.5,
             padding: const EdgeInsets.all(15),
             decoration: BoxDecoration(
@@ -37,7 +37,7 @@ class MnemonicHandler extends StatelessWidget {
         GestureDetector(
           onTap: null,
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.14,
+            height: MediaQuery.of(context).size.height * 0.175,
             width: MediaQuery.of(context).size.width * 0.5,
             padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(

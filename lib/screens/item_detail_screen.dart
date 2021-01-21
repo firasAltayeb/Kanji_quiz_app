@@ -7,14 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ItemDetailScreen extends StatelessWidget {
-  final dynamic selectedItem;
-
-  ItemDetailScreen(this.selectedItem);
+  static const routeName = '/item-details';
 
   @override
   Widget build(BuildContext context) {
+    final selectedItem =
+        ModalRoute.of(context).settings.arguments as Map<String, Object>;
     String formattedDate = DateFormat('dd/MM/yyyy HH:mm')
         .format(selectedItem['dateLastLevelChanged']);
+
     return Scaffold(
       appBar: MainAppBar(
         title: 'Item Details',
@@ -41,7 +42,7 @@ class ItemDetailScreen extends StatelessWidget {
               'SRS Level change date: $formattedDate',
             ),
             SizedBox(height: 20),
-            coloredTextContainer(context),
+            coloredTextContainer(context, selectedItem),
             SizedBox(height: 10),
             srsDifficultyRow(),
             SizedBox(height: 10),
@@ -97,7 +98,7 @@ class ItemDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget coloredTextContainer(BuildContext context) {
+  Widget coloredTextContainer(BuildContext context, var selectedItem) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(

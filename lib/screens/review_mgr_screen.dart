@@ -2,10 +2,12 @@ import '../widgets/shared/back_pressed_alert.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'result_review_screen.dart';
-import 'recall_review_screen.dart';
+import '../widgets/review/result_review_page.dart';
+import '../widgets/review/recall_review_page.dart';
 
 class ReviewManager extends StatefulWidget {
+  static const routeName = '/review-screen';
+
   final Function reAllocateMaps;
   final List<Map<String, Object>> reviewListMap;
 
@@ -101,13 +103,13 @@ class _ReviewManagerState extends State<ReviewManager> {
           appBar: AppBar(),
         ),
         body: _queueIndex < _questionQueue.length
-            ? RecallScreen(
+            ? RecallPage(
                 questionIndex: _queueIndex,
                 questionQueue: _questionQueue,
                 undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,
                 answerQuestion: _recordAnswer,
               )
-            : ResultScreen(
+            : ResultPage(
                 scoreToDisplay: _sessionScore,
                 wrapSession: _wrapSession,
                 correctRecallList: _correctRecallList,

@@ -1,68 +1,59 @@
+import 'package:Kanji_quiz_app/widgets/misc/main_app_drawer.dart';
 import 'package:Kanji_quiz_app/widgets/misc/srs_level_column.dart';
+import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
 
-class MainBody extends StatelessWidget {
+class MainScreen extends StatelessWidget {
   final Function reAllocateMaps;
   final List<dynamic> kanjiMapList;
   final List<Map<String, Object>> lessonMap;
   final List<Map<String, Object>> reviewMap;
 
-  MainBody({
+  MainScreen({
     @required this.lessonMap,
     @required this.reviewMap,
     @required this.kanjiMapList,
     @required this.reAllocateMaps,
   });
 
-  Future navigateToLessonPage(BuildContext context) async {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => LessonManager(reAllocateMaps, lessonMap),
-      ),
-    );
-  }
-
-  Future navigateToReviewPage(BuildContext context) async {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ReviewManager(reAllocateMaps, reviewMap),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     print('Main body build is called');
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.1,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              progressColumn(
-                  context, "Lesson", lessonMap.length, navigateToLessonPage),
-              progressColumn(
-                  context, "Review", reviewMap.length, navigateToReviewPage),
-            ],
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.1,
-          ),
-          SrsLevelColumn(kanjiMapList: kanjiMapList)
-        ],
+    return Scaffold(
+      appBar: MainAppBar(
+        title: 'Home Page',
+        appBar: AppBar(),
+      ),
+      drawer: MainAppDrawer(reAllocateMaps),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                progressColumn(context, "Lesson", lessonMap.length,
+                    LessonManager.routeName),
+                progressColumn(context, "Review", reviewMap.length,
+                    ReviewManager.routeName),
+              ],
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+            ),
+            SrsLevelColumn(kanjiMapList: kanjiMapList)
+          ],
+        ),
       ),
     );
   }
 
   Widget progressColumn(
-      context, String label, int mapLength, Function navigate) {
+      context, String label, int mapLength, String routeName) {
     return Column(
       children: [
         Text(
@@ -86,7 +77,11 @@ class MainBody extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            onPressed: mapLength == 0 ? null : () => navigate(context),
+            onPressed: mapLength == 0
+                ? null
+                : () {
+                    Navigator.of(context).pushNamed(routeName);
+                  },
           ),
         ),
       ],

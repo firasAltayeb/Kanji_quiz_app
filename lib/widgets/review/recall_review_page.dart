@@ -3,13 +3,13 @@ import 'package:Kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
 import 'package:Kanji_quiz_app/widgets/review/show_answer_button.dart';
 import 'package:flutter/material.dart';
 
-class RecallScreen extends StatefulWidget {
+class RecallPage extends StatefulWidget {
   final int questionIndex;
   final Function answerQuestion;
   final Function undoLastAnswer;
   final List<Map<String, Object>> questionQueue;
 
-  RecallScreen({
+  RecallPage({
     @required this.questionQueue,
     @required this.questionIndex,
     @required this.undoLastAnswer,
@@ -17,10 +17,10 @@ class RecallScreen extends StatefulWidget {
   });
 
   @override
-  _RecallScreenState createState() => _RecallScreenState();
+  _RecallPageState createState() => _RecallPageState();
 }
 
-class _RecallScreenState extends State<RecallScreen> {
+class _RecallPageState extends State<RecallPage> {
   var _recallButtonVisible = true;
 
   void _flipRecallButton() {

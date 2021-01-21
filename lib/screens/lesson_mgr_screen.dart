@@ -10,6 +10,8 @@ import '../widgets/lesson/mnemonic_field.dart';
 import 'package:flutter/material.dart';
 
 class LessonManager extends StatefulWidget {
+  static const routeName = '/lesson-screen';
+
   final Function reAllocateMaps;
   final List<Map<String, Object>> lessonMap;
 
