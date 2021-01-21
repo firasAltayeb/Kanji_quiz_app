@@ -80,7 +80,12 @@ class _LessonManagerState extends State<LessonManager> {
               ),
             ),
             BuildingBlockRow(_learnQueue[_queueIndex]),
-            MnemonicHandler(_learnQueue[_queueIndex], widget.reAllocateMaps),
+            Expanded(
+              child: MnemonicHandler(
+                _learnQueue[_queueIndex],
+                widget.reAllocateMaps,
+              ),
+            ),
           ],
         ),
       ),

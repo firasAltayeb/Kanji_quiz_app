@@ -72,22 +72,22 @@ class _MyAppState extends State<MyApp> {
     switch (kanjiMap['progressLevel']) {
       case 1:
         if (kanjiMap['dateLastLevelChanged']
-            .isBefore(DateTime.now().subtract(Duration(minutes: 4))))
+            .isBefore(DateTime.now().subtract(Duration(seconds: 4))))
           _reviewMap.add(kanjiMap);
         break;
       case 2:
         if (kanjiMap['dateLastLevelChanged']
-            .isBefore(DateTime.now().subtract(Duration(minutes: 12))))
+            .isBefore(DateTime.now().subtract(Duration(seconds: 12))))
           _reviewMap.add(kanjiMap);
         break;
       case 3:
         if (kanjiMap['dateLastLevelChanged']
-            .isBefore(DateTime.now().subtract(Duration(hours: 2))))
+            .isBefore(DateTime.now().subtract(Duration(days: 2))))
           _reviewMap.add(kanjiMap);
         break;
       case 4:
         if (kanjiMap['dateLastLevelChanged']
-            .isBefore(DateTime.now().subtract(Duration(hours: 4))))
+            .isBefore(DateTime.now().subtract(Duration(days: 4))))
           _reviewMap.add(kanjiMap);
         break;
       default:

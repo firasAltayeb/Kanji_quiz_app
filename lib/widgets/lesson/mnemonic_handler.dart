@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'bottom_model_sheet.dart';
 import 'mnemonic_scroll_display.dart';
 
 class MnemonicHandler extends StatefulWidget {
@@ -20,13 +21,12 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
     return Column(
       children: [
         MnemonicScrollDisplay(widget._itemDetails),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.024,
-        ),
+        Expanded(child: SizedBox()),
         Row(
           children: [
             gestureContainer(context, _launchURL, "Kanji Koohii"),
-            gestureContainer(context, _editMnemonicField, "Edit Mnemonic"),
+            gestureContainer(context, () => BottomModelSheet().show(context),
+                "Edit Mnemonic"),
           ],
         ),
       ],
@@ -35,7 +35,7 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
 
   Widget gestureContainer(BuildContext ctx, Function handler, String btnText) {
     return GestureDetector(
-      onTap: btnText == "Kanji Koohii" ? handler : () => handler(ctx),
+      onTap: handler,
       child: Container(
         height: MediaQuery.of(ctx).size.height * 0.175,
         width: MediaQuery.of(ctx).size.width * 0.5,
@@ -72,60 +72,5 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
     } else {
       throw 'Could not launch $url';
     }
-  }
-
-  void _editMnemonicField(BuildContext ctx) {
-    showModalBottomSheet(
-      context: ctx,
-      builder: (_) {
-        return GestureDetector(
-          onTap: () {},
-          //behavior: HitTestBehavior.opaque,
-          child: SingleChildScrollView(
-            child: Card(
-              elevation: 5,
-              child: Container(
-                padding: EdgeInsets.only(
-                  top: 10,
-                  left: 10,
-                  right: 10,
-                  bottom: MediaQuery.of(context).viewInsets.bottom + 50,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    TextField(
-                      textInputAction: TextInputAction.go,
-                      keyboardType: TextInputType.multiline,
-                      maxLines: null,
-                      controller: mnemonicController,
-                      onSubmitted: (_) {},
-                      onChanged: (_) {},
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.05,
-                    ),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Submit',
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * 0.04,
-                          fontStyle: FontStyle.italic,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.3,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-    );
   }
 }

@@ -9,7 +9,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.17,
+      height: MediaQuery.of(context).size.height * 0.165,
       width: MediaQuery.of(context).size.width * 0.95,
       alignment: Alignment.center,
       decoration: BoxDecoration(

@@ -9,7 +9,7 @@ class BackPressedAlert {
       context: parentContext,
       builder: (context) => AlertDialog(
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-        actionsPadding: const EdgeInsets.fromLTRB(0, 0, 45, 20),
+        actionsPadding: const EdgeInsets.fromLTRB(0, 0, 70, 20),
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(10.0),
           side: BorderSide(color: Colors.black, width: 2),
@@ -51,7 +51,7 @@ class BackPressedAlert {
       child: Text(
         displayedText,
         style: TextStyle(
-          fontSize: 38,
+          fontSize: 24,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),

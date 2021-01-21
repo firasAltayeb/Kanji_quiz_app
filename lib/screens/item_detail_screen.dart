@@ -49,7 +49,10 @@ class ItemDetailScreen extends StatelessWidget {
             SizedBox(height: 10),
             srsDifficultyRow(),
             SizedBox(height: 10),
-            MnemonicHandler(selectedItem, reAllocateMaps),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.375,
+              child: MnemonicHandler(selectedItem, reAllocateMaps),
+            ),
           ],
         ),
       ),
