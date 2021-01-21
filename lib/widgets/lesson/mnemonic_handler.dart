@@ -3,17 +3,23 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'mnemonic_scroll_display.dart';
 
-class MnemonicHandler extends StatelessWidget {
+class MnemonicHandler extends StatefulWidget {
+  final Function reAllocateMaps;
   final Map<String, Object> _itemDetails;
 
-  final Function reAllocateMaps;
-
   MnemonicHandler(this._itemDetails, this.reAllocateMaps);
+
+  @override
+  _MnemonicHandlerState createState() => _MnemonicHandlerState();
+}
+
+class _MnemonicHandlerState extends State<MnemonicHandler> {
+  final mnemonicController = TextEditingController();
 
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MnemonicScrollDisplay(_itemDetails),
+        MnemonicScrollDisplay(widget._itemDetails),
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.024,
         ),
@@ -60,7 +66,7 @@ class MnemonicHandler extends StatelessWidget {
 
   void _launchURL() async {
     String url = 'https://kanji.koohii.com/study/kanji/' +
-        '${_itemDetails['frameNumber']}';
+        '${widget._itemDetails['frameNumber']}';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -74,7 +80,50 @@ class MnemonicHandler extends StatelessWidget {
       builder: (_) {
         return GestureDetector(
           onTap: () {},
-          child: Text('edit'),
+          //behavior: HitTestBehavior.opaque,
+          child: SingleChildScrollView(
+            child: Card(
+              elevation: 5,
+              child: Container(
+                padding: EdgeInsets.only(
+                  top: 10,
+                  left: 10,
+                  right: 10,
+                  bottom: MediaQuery.of(context).viewInsets.bottom + 50,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    TextField(
+                      textInputAction: TextInputAction.go,
+                      keyboardType: TextInputType.multiline,
+                      maxLines: null,
+                      controller: mnemonicController,
+                      onSubmitted: (_) {},
+                      onChanged: (_) {},
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.05,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.height * 0.04,
+                          fontStyle: FontStyle.italic,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.3,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         );
       },
     );
