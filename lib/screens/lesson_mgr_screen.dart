@@ -1,11 +1,9 @@
-import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_handler.dart';
-
 import '../widgets/shared/back_pressed_alert.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
-import '../widgets/shared/main_app_bar.dart';
+import '../widgets/lesson/mnemonic_handler.dart';
 import '../widgets/shared/top_kanji_row.dart';
-import '../widgets/lesson/mnemonic_field.dart';
+import '../widgets/shared/main_app_bar.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,7 +13,7 @@ class LessonManager extends StatefulWidget {
   final Function reAllocateMaps;
   final List<Map<String, Object>> lessonMap;
 
-  const LessonManager(this.reAllocateMaps, this.lessonMap);
+  LessonManager(this.reAllocateMaps, this.lessonMap);
 
   @override
   _LessonManagerState createState() => _LessonManagerState();
@@ -82,9 +80,7 @@ class _LessonManagerState extends State<LessonManager> {
               ),
             ),
             BuildingBlockRow(_learnQueue[_queueIndex]),
-            MnemonicScrollDisplay(_learnQueue[_queueIndex]),
-            Expanded(child: SizedBox()),
-            MnemonicHandler(_learnQueue[_queueIndex]),
+            MnemonicHandler(_learnQueue[_queueIndex], widget.reAllocateMaps),
           ],
         ),
       ),

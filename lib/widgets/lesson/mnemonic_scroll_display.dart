@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MnemonicScrollDisplay extends StatelessWidget {
-  final Map<String, Object> _lessonMap;
+  final Map<String, Object> _itemDetails;
   final ScrollController _scrollController = ScrollController();
 
-  MnemonicScrollDisplay(this._lessonMap);
+  MnemonicScrollDisplay(this._itemDetails);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
         controller: _scrollController,
         child: SingleChildScrollView(
           controller: _scrollController,
-          child: _lessonMap['mnemonicStory'] == ''
+          child: _itemDetails['mnemonicStory'] == ''
               ? keywordRichText()
               : mnemonicTextWidget(),
         ),
@@ -42,7 +42,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
         children: <TextSpan>[
           TextSpan(text: 'Please create a mnemonic for the above kanji '),
           TextSpan(
-            text: '${_lessonMap['keyword']} ',
+            text: '${_itemDetails['keyword']} ',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic,
@@ -50,7 +50,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
           ),
           TextSpan(text: 'using its bulidng blocks: '),
           TextSpan(
-            text: '${_lessonMap['buildingBlocks']}',
+            text: '${_itemDetails['buildingBlocks']}',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic,
@@ -63,7 +63,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
 
   Widget mnemonicTextWidget() {
     return Text(
-      _lessonMap['mnemonicStory'],
+      _itemDetails['mnemonicStory'],
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.black,

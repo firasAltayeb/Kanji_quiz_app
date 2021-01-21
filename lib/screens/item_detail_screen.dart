@@ -1,5 +1,5 @@
 import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_handler.dart';
-import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_field.dart';
+import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_scroll_display.dart';
 import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
@@ -8,6 +8,10 @@ import 'package:intl/intl.dart';
 
 class ItemDetailScreen extends StatelessWidget {
   static const routeName = '/item-details';
+
+  final Function reAllocateMaps;
+
+  ItemDetailScreen(this.reAllocateMaps);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +52,7 @@ class ItemDetailScreen extends StatelessWidget {
             SizedBox(height: 10),
             MnemonicScrollDisplay(selectedItem),
             SizedBox(height: 20),
-            MnemonicHandler(selectedItem),
+            MnemonicHandler(selectedItem, reAllocateMaps),
           ],
         ),
       ),
