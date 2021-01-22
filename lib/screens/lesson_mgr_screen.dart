@@ -1,4 +1,4 @@
-import '../widgets/shared/back_pressed_alert.dart';
+import '../model/back_pressed_alert.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/mnemonic_handler.dart';

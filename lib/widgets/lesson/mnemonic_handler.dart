@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'bottom_model_sheet.dart';
+import '../../model/bottom_model_sheet.dart';
 import 'mnemonic_scroll_display.dart';
 
 class MnemonicHandler extends StatefulWidget {
@@ -37,7 +37,7 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
     return GestureDetector(
       onTap: handler,
       child: Container(
-        height: MediaQuery.of(ctx).size.height * 0.175,
+        height: MediaQuery.of(ctx).size.height * 0.15,
         width: MediaQuery.of(ctx).size.width * 0.5,
         padding:
             btnText == "Kanji Koohii" ? EdgeInsets.all(15) : EdgeInsets.all(5),

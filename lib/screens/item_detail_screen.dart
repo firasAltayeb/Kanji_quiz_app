@@ -1,9 +1,11 @@
+import 'dart:collection';
+import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
+
 import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_handler.dart';
 import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 class ItemDetailScreen extends StatelessWidget {
   static const routeName = '/item-details';
@@ -14,10 +16,11 @@ class ItemDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final selectedItem =
-        ModalRoute.of(context).settings.arguments as Map<String, Object>;
+    Map<String, Object> selectedItem =
+        HashMap.from(ModalRoute.of(context).settings.arguments);
     String formattedDate = DateFormat('dd/MM/yyyy HH:mm')
         .format(selectedItem['dateLastLevelChanged']);
+    var screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: MainAppBar(
@@ -35,7 +38,7 @@ class ItemDetailScreen extends StatelessWidget {
               rightWidgetHandler: null,
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.08,
+              height: screenHeight * 0.08,
               child: KeyTextContainer(
                 'Keyword: ' + selectedItem['keyword'],
               ),
@@ -45,9 +48,9 @@ class ItemDetailScreen extends StatelessWidget {
               'SRS Level change date: $formattedDate',
             ),
             SizedBox(height: 20),
-            coloredTextContainer(context, selectedItem),
+            coloredTextContainer(context, selectedItem['progressLevel']),
             SizedBox(height: 10),
-            srsDifficultyRow(),
+            srsDifficultyRow(screenHeight),
             SizedBox(height: 10),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.375,
@@ -59,14 +62,14 @@ class ItemDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget srsDifficultyRow() {
+  Widget srsDifficultyRow(double height) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Text(
           'SRS difficulty is: Easy',
           style: TextStyle(
-            fontSize: 24,
+            fontSize: height * 0.035,
             fontFamily: 'Anton',
           ),
         ),
@@ -102,7 +105,7 @@ class ItemDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget coloredTextContainer(BuildContext context, var selectedItem) {
+  Widget coloredTextContainer(BuildContext context, var itemLvl) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -114,9 +117,9 @@ class ItemDetailScreen extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(5),
       child: Text(
-        'Current SRS level is ${selectedItem['progressLevel']}',
+        'Current SRS level is $itemLvl',
         style: TextStyle(
-          fontSize: 25,
+          fontSize: MediaQuery.of(context).size.height * 0.035,
           fontFamily: 'Anton',
         ),
         textAlign: TextAlign.center,

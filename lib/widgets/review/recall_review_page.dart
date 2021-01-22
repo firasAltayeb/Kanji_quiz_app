@@ -34,6 +34,12 @@ class _RecallPageState extends State<RecallPage> {
     var _itemCounter =
         '${(widget.questionIndex + 1)}/${widget.questionQueue.length}';
     var _questionItem = widget.questionQueue[widget.questionIndex];
+    var undoAction = widget.questionIndex < 1
+        ? null
+        : () {
+            _recallButtonVisible = true;
+            widget.undoLastAnswer();
+          };
 
     return Column(
       children: [
@@ -42,7 +48,7 @@ class _RecallPageState extends State<RecallPage> {
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
           leftWidgetHandler: null,
-          rightWidgetHandler: widget.undoLastAnswer,
+          rightWidgetHandler: undoAction,
         ),
         Expanded(child: SizedBox()),
         infoBox(context),

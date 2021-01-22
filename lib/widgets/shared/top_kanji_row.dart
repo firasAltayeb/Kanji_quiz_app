@@ -17,45 +17,42 @@ class TopKanjiRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height * 0.275;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         leftWidgetText == 'Prev'
-            ? cornerButton(leftWidgetText, leftWidgetHandler)
-            : cornerWidget(leftWidgetText, 'left'),
-        kanjiPicture(
-          kanjiSpriteAddress,
-          MediaQuery.of(context).size.height * 0.275,
-        ),
+            ? cornerButton(leftWidgetText, leftWidgetHandler, screenHeight)
+            : cornerWidget(leftWidgetText, 'left', screenHeight),
+        kanjiPicture(kanjiSpriteAddress, screenHeight),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
-            ? cornerButton(rightWidgetText, rightWidgetHandler)
-            : cornerWidget(rightWidgetText, 'right'),
+            ? cornerButton(rightWidgetText, rightWidgetHandler, screenHeight)
+            : cornerWidget(rightWidgetText, 'right', screenHeight),
       ],
     );
   }
 
-  Widget cornerButton(String passedText, Function handler) {
+  Widget cornerButton(String passedText, Function handler, double height) {
     return Expanded(
-      flex: 3,
-      child: TextButton(
-        style: TextButton.styleFrom(
-          padding: const EdgeInsets.only(top: 20),
-        ),
-        child: Text(
-          passedText,
-          style: const TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: TextButton(
+          child: Text(
+            passedText,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: height / 6,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          onPressed: handler,
         ),
-        onPressed: handler,
       ),
     );
   }
 
   Widget kanjiPicture(String address, double height) {
     return Expanded(
-      flex: 4,
       child: Container(
         height: height,
         decoration: BoxDecoration(
@@ -68,20 +65,19 @@ class TopKanjiRow extends StatelessWidget {
     );
   }
 
-  Widget cornerWidget(String passedText, String area) {
+  Widget cornerWidget(String passedText, String area, double height) {
     double paddingRight = area == 'right' ? 0 : 0;
     double paddingLeft = area == 'left' ? 0 : 0;
     return Expanded(
-      flex: 3,
       child: Container(
-        padding: EdgeInsets.fromLTRB(paddingLeft, 20, paddingRight, 0),
+        padding: EdgeInsets.fromLTRB(paddingLeft, 30, paddingRight, 0),
         child: Text(
           passedText,
-          style: const TextStyle(
-            fontSize: 28,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: height / 6,
             fontWeight: FontWeight.bold,
           ),
-          textAlign: TextAlign.center,
         ),
       ),
     );

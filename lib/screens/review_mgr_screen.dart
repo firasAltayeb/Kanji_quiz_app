@@ -1,4 +1,4 @@
-import '../widgets/shared/back_pressed_alert.dart';
+import '../model/back_pressed_alert.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -57,14 +57,6 @@ class _ReviewManagerState extends State<ReviewManager> {
   }
 
   void _wrapSession() {
-    _queueIndex = 0;
-    _sessionScore = 0;
-    _updateItemDetails();
-    widget.reAllocateMaps();
-    Navigator.pop(context);
-  }
-
-  void _updateItemDetails() {
     for (var index = 0; index < _answerChoiceList.length; index++) {
       Map<String, Object> reviewMap = widget.reviewListMap[index];
       int currentProgressLevel = reviewMap['progressLevel'];
@@ -81,6 +73,9 @@ class _ReviewManagerState extends State<ReviewManager> {
           reviewMap['progressLevel'] = currentProgressLevel - 1;
       }
     }
+
+    widget.reAllocateMaps();
+    Navigator.pop(context);
   }
 
   @override

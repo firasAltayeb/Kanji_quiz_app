@@ -46,40 +46,61 @@ class SrsLevelColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     assignSrsLists();
-    var accentColor = Theme.of(context).accentColor;
     return Column(
       children: [
-        textContainer('SRS Level 1 Items', accentColor),
+        textContainer('SRS Level 1 Items', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelOneMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 2 Items', accentColor),
+        textContainer('SRS Level 2 Items', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelTwoMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 3 Items', accentColor),
+        textContainer('SRS Level 3 Items', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelThreeMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 4 Items', accentColor),
+        textContainer('SRS Level 4 Items', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelFourMap,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 5 Items (Learned)', accentColor),
+        textContainer('SRS Level 5 Items (Learned)', context),
         KanjiInteractiveRow(
           widgetHeight: MediaQuery.of(context).size.height * 0.2,
           kanjiAddresses: srsLevelFiveMap,
           selectHandler: pushToItemScreen,
         ),
       ],
+    );
+  }
+
+  Widget textContainer(String txt, BuildContext context) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: Theme.of(context).accentColor,
+      ),
+      padding: const EdgeInsets.all(5),
+      child: Text(
+        txt,
+        style: TextStyle(
+          fontSize: MediaQuery.of(context).size.height * 0.04,
+          fontFamily: 'Anton',
+          fontStyle: FontStyle.italic,
+        ),
+      ),
     );
   }
 
@@ -90,28 +111,6 @@ class SrsLevelColumn extends StatelessWidget {
     Navigator.of(context).pushNamed(
       ItemDetailScreen.routeName,
       arguments: kanjiMapList[kanjiIndex],
-    );
-  }
-
-  Widget textContainer(String txt, Color accentColor) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-        color: accentColor,
-      ),
-      padding: const EdgeInsets.all(5),
-      child: Text(
-        txt,
-        style: TextStyle(
-          fontSize: 25,
-          fontFamily: 'Anton',
-          fontStyle: FontStyle.italic,
-        ),
-      ),
     );
   }
 }

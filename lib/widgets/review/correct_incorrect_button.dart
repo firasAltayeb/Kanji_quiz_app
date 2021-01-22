@@ -32,7 +32,7 @@ class CorrectIncorrectButton extends StatelessWidget {
           selectChoice ? "Correct" : "Incorrect",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 30,
+            fontSize: MediaQuery.of(context).size.height * 0.05,
             fontWeight: FontWeight.bold,
           ),
         ),

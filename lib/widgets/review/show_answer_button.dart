@@ -7,14 +7,15 @@ class ShowAnswerButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    var screenHeight = MediaQuery.of(context).size.height * 0.35;
+    return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.38,
+      height: screenHeight,
       child: ElevatedButton(
         child: Text(
           "Show Answer",
           style: TextStyle(
-            fontSize: 30,
+            fontSize: screenHeight / 6,
             fontWeight: FontWeight.bold,
           ),
         ),

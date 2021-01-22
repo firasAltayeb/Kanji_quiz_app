@@ -19,30 +19,39 @@ class ResultPage extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
 
     final children = <Widget>[
-      wrapUpButton(context),
+      wrapUpButton(context, screenHeight),
       Text(
         'Your session score is ${scoreToDisplay.toString()}',
-        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          fontSize: screenHeight * 0.05,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       Expanded(child: SizedBox()),
-      textContainer('Recalled Correctly', Colors.green),
+      textContainer(
+        'Recalled Correctly',
+        Colors.green,
+        screenHeight,
+      ),
     ];
 
-    //if correct answers exists, create sprites
     correctRecallList.length > 0
         ? children.add(KanjiInteractiveRow(
-            widgetHeight: screenHeight * 0.24,
+            widgetHeight: screenHeight * 0.2,
             kanjiAddresses: correctRecallList,
             selectHandler: null,
           ))
         : children.add(SizedBox(height: screenHeight * 0.24));
 
-    children.add(textContainer('Recalled Incorrectly', Colors.red));
+    children.add(textContainer(
+      'Recalled Incorrectly',
+      Colors.red,
+      screenHeight,
+    ));
 
-    //if incorrect answers exists, create sprites
     incorrectRecallList.length > 0
         ? children.add(KanjiInteractiveRow(
-            widgetHeight: screenHeight * 0.24,
+            widgetHeight: screenHeight * 0.2,
             kanjiAddresses: incorrectRecallList,
             selectHandler: null,
           ))
@@ -51,13 +60,12 @@ class ResultPage extends StatelessWidget {
     return Column(children: children);
   }
 
-  Widget wrapUpButton(BuildContext context) {
+  Widget wrapUpButton(BuildContext context, double screenHeight) {
     return Container(
       padding: EdgeInsets.only(
-        top: MediaQuery.of(context).size.height * 0.05,
-        bottom: MediaQuery.of(context).size.height * 0.03,
+        top: screenHeight * 0.05,
+        bottom: screenHeight * 0.03,
       ),
-      width: MediaQuery.of(context).size.width * 0.8,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -66,7 +74,7 @@ class ResultPage extends StatelessWidget {
           ),
         ),
         child: Text(
-          'Wrap up session',
+          ' Wrap up session ',
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -77,7 +85,7 @@ class ResultPage extends StatelessWidget {
     );
   }
 
-  Widget textContainer(String txt, Color backColor) {
+  Widget textContainer(String txt, Color backColor, double height) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -91,7 +99,7 @@ class ResultPage extends StatelessWidget {
       child: Text(
         txt,
         style: TextStyle(
-          fontSize: 25,
+          fontSize: height * 0.035,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),

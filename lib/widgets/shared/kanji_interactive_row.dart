@@ -18,7 +18,7 @@ class KanjiInteractiveRow extends StatelessWidget {
       child: GridView.builder(
           itemCount: kanjiAddresses.length,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
+            maxCrossAxisExtent: widgetHeight,
             childAspectRatio: 1.25,
           ),
           scrollDirection: Axis.horizontal,

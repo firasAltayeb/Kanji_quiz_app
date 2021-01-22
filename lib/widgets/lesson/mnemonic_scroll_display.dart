@@ -25,19 +25,19 @@ class MnemonicScrollDisplay extends StatelessWidget {
         child: SingleChildScrollView(
           controller: _scrollController,
           child: _itemDetails['mnemonicStory'] == ''
-              ? keywordRichText()
-              : mnemonicTextWidget(),
+              ? keywordRichText(context)
+              : mnemonicTextWidget(context),
         ),
       ),
     );
   }
 
-  RichText keywordRichText() {
+  RichText keywordRichText(BuildContext context) {
     return RichText(
       text: TextSpan(
         style: TextStyle(
           color: Colors.black,
-          fontSize: 22,
+          fontSize: MediaQuery.of(context).size.height * 0.035,
         ),
         children: <TextSpan>[
           TextSpan(text: 'Please create a mnemonic for the above kanji '),
@@ -61,13 +61,13 @@ class MnemonicScrollDisplay extends StatelessWidget {
     );
   }
 
-  Widget mnemonicTextWidget() {
+  Widget mnemonicTextWidget(BuildContext context) {
     return Text(
       _itemDetails['mnemonicStory'],
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.black,
-        fontSize: 22,
+        fontSize: MediaQuery.of(context).size.height * 0.035,
       ),
     );
   }

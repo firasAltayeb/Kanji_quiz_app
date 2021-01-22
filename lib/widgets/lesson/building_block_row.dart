@@ -12,12 +12,16 @@ class BuildingBlockRow extends StatelessWidget {
       alignment: Alignment.center,
       height: MediaQuery.of(context).size.height * 0.175,
       child: addressList.isEmpty
-          ? textWidget('Item type:  ${kanjiMap['itemType']}')
+          ? textWidget(
+              'Item type:  ${kanjiMap['itemType']}',
+              MediaQuery.of(context).size.height * 0.04,
+            )
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 textWidget(
                   'Building blocks: ',
+                  MediaQuery.of(context).size.height * 0.035,
                 ),
                 Container(
                   width: addressList.length == 1
@@ -30,11 +34,11 @@ class BuildingBlockRow extends StatelessWidget {
     );
   }
 
-  Widget textWidget(String displayedText) {
+  Widget textWidget(String displayedText, double height) {
     return Text(
       displayedText,
       style: TextStyle(
-        fontSize: 22,
+        fontSize: height,
         fontWeight: FontWeight.bold,
       ),
     );
