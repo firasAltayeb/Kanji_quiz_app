@@ -6,7 +6,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final AppBar appBar;
 
-  const MainAppBar({
+  MainAppBar({
     Key key,
     this.title,
     this.appBar,
@@ -14,11 +14,12 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
     return AppBar(
       title: Text(
         title,
         style: TextStyle(
-          fontSize: 24,
+          fontSize: screenHeight * 0.03,
           fontFamily: 'Anton',
         ),
       ),
@@ -27,7 +28,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: Icon(
             Icons.search_rounded,
             color: Colors.white,
-            size: 35,
+            size: screenHeight * 0.035,
           ),
           onPressed: null,
         ),
@@ -35,15 +36,17 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: Icon(
             Icons.account_circle_outlined,
             color: Colors.white,
-            size: 35,
+            size: screenHeight * 0.035,
           ),
           onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => UserPage())),
+            context,
+            MaterialPageRoute(builder: (context) => UserPage()),
+          ),
         ),
       ],
     );
   }
 
   @override
-  Size get preferredSize => new Size.fromHeight(appBar.preferredSize.height);
+  Size get preferredSize => Size.fromHeight(appBar.preferredSize.height);
 }

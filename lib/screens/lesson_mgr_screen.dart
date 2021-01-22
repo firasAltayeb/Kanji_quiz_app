@@ -1,4 +1,6 @@
-import '../model/back_pressed_alert.dart';
+import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_scroll_display.dart';
+
+import '../widgets/misc/back_pressed_alert.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/mnemonic_handler.dart';
@@ -80,11 +82,11 @@ class _LessonManagerState extends State<LessonManager> {
               ),
             ),
             BuildingBlockRow(_learnQueue[_queueIndex]),
-            Expanded(
-              child: MnemonicHandler(
-                _learnQueue[_queueIndex],
-                widget.reAllocateMaps,
-              ),
+            MnemonicScrollDisplay(_learnQueue[_queueIndex]),
+            Expanded(child: SizedBox()),
+            MnemonicHandler(
+              _learnQueue[_queueIndex],
+              widget.reAllocateMaps,
             ),
           ],
         ),

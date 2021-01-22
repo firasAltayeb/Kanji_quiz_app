@@ -1,4 +1,4 @@
-import '../model/back_pressed_alert.dart';
+import '../widgets/misc/back_pressed_alert.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 

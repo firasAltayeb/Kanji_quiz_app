@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'package:Kanji_quiz_app/widgets/lesson/mnemonic_scroll_display.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 
@@ -18,8 +19,9 @@ class ItemDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Map<String, Object> selectedItem =
         HashMap.from(ModalRoute.of(context).settings.arguments);
-    String formattedDate = DateFormat('dd/MM/yyyy HH:mm')
-        .format(selectedItem['dateLastLevelChanged']);
+    var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
+    var levelChangeDate =
+        dateFormater.format(selectedItem['dateLastLevelChanged']);
     var screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -45,20 +47,27 @@ class ItemDetailScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             KeyTextContainer(
-              'SRS Level change date: $formattedDate',
+              'SRS Level change date: $levelChangeDate',
             ),
             SizedBox(height: 20),
             coloredTextContainer(context, selectedItem['progressLevel']),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
+            nextReviewDate(selectedItem, dateFormater),
+            SizedBox(height: 20),
             srsDifficultyRow(screenHeight),
-            SizedBox(height: 10),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.375,
-              child: MnemonicHandler(selectedItem, reAllocateMaps),
-            ),
+            SizedBox(height: 20),
+            MnemonicScrollDisplay(selectedItem),
+            SizedBox(height: 20),
+            MnemonicHandler(selectedItem, reAllocateMaps),
           ],
         ),
       ),
+    );
+  }
+
+  Widget nextReviewDate(var selectedItem, var dateFormater) {
+    return KeyTextContainer(
+      'Next review date: ${dateFormater.format(selectedItem['dateLastLevelChanged'])}',
     );
   }
 
@@ -69,15 +78,15 @@ class ItemDetailScreen extends StatelessWidget {
         Text(
           'SRS difficulty is: Easy',
           style: TextStyle(
-            fontSize: height * 0.035,
+            fontSize: height * 0.04,
             fontFamily: 'Anton',
           ),
         ),
         CircleAvatar(
-          radius: 23,
+          radius: (height * 0.01) + 23,
           backgroundColor: Colors.black,
           child: CircleAvatar(
-            radius: 20,
+            radius: (height * 0.01) + 20,
             backgroundColor: Colors.green,
             child: IconButton(
               onPressed: () {},
@@ -88,10 +97,10 @@ class ItemDetailScreen extends StatelessWidget {
           ),
         ),
         CircleAvatar(
-          radius: 23,
+          radius: (height * 0.01) + 23,
           backgroundColor: Colors.black,
           child: CircleAvatar(
-            radius: 20,
+            radius: (height * 0.01) + 20,
             backgroundColor: Colors.red,
             child: IconButton(
               onPressed: () {},

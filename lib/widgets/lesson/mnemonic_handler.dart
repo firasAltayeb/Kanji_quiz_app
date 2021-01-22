@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../model/bottom_model_sheet.dart';
-import 'mnemonic_scroll_display.dart';
+import '../misc/bottom_model_sheet.dart';
 
 class MnemonicHandler extends StatefulWidget {
   final Function reAllocateMaps;
@@ -18,17 +17,11 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
   final mnemonicController = TextEditingController();
 
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        MnemonicScrollDisplay(widget._itemDetails),
-        Expanded(child: SizedBox()),
-        Row(
-          children: [
-            gestureContainer(context, _launchURL, "Kanji Koohii"),
-            gestureContainer(context, () => BottomModelSheet().show(context),
-                "Edit Mnemonic"),
-          ],
-        ),
+        gestureContainer(context, _launchURL, "Kanji Koohii"),
+        gestureContainer(
+            context, () => BottomModelSheet().show(context), "Edit Mnemonic"),
       ],
     );
   }
@@ -37,7 +30,7 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
     return GestureDetector(
       onTap: handler,
       child: Container(
-        height: MediaQuery.of(ctx).size.height * 0.15,
+        height: MediaQuery.of(ctx).size.height * 0.2,
         width: MediaQuery.of(ctx).size.width * 0.5,
         padding:
             btnText == "Kanji Koohii" ? EdgeInsets.all(15) : EdgeInsets.all(5),

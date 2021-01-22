@@ -7,12 +7,12 @@ class MainAppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
     return Drawer(
       child: Column(
         children: <Widget>[
           Container(
-            height: 100,
-            width: double.infinity,
+            height: screenHeight * 0.15,
             padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
             alignment: Alignment.centerLeft,
             color: Theme.of(context).accentColor,
@@ -20,67 +20,73 @@ class MainAppDrawer extends StatelessWidget {
               'Kanji Master!!',
               style: TextStyle(
                 fontFamily: 'Anton',
-                fontSize: 35,
+                fontSize: screenHeight * 0.04,
               ),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          buildListTile(
-            context,
-            'Sync now',
-            Icons.sync,
-            selectHandler,
-          ),
-          buildListTile(
-            context,
-            'Settings',
-            Icons.settings,
-            null,
-          ),
-          buildListTile(
-            context,
-            'Badges',
-            Icons.badge,
-            null,
-          ),
-          buildListTile(
-            context,
-            'Feedback',
-            Icons.feedback,
-            null,
-          ),
-          buildListTile(
-            context,
-            'Tutorial',
-            Icons.help,
-            null,
+          Expanded(
+            child: drawerListView(context, screenHeight),
           ),
         ],
       ),
     );
   }
 
-  Widget buildListTile(
-      BuildContext context, String title, IconData icon, Function tapHandler) {
+  Widget drawerListView(BuildContext context, double height) {
+    return ListView(
+      children: ListTile.divideTiles(
+        context: context,
+        tiles: [
+          buildListTile(
+            height,
+            'Sync now',
+            Icons.sync,
+            selectHandler,
+          ),
+          buildListTile(
+            height,
+            'Settings',
+            Icons.settings,
+            selectHandler,
+          ),
+          buildListTile(
+            height,
+            'Badges',
+            Icons.badge,
+            null,
+          ),
+          buildListTile(
+            height,
+            'Feedback',
+            Icons.feedback,
+            null,
+          ),
+          buildListTile(
+            height,
+            'Tutorial',
+            Icons.help,
+            null,
+          ),
+        ],
+      ).toList(),
+    );
+  }
+
+  Widget buildListTile(var height, var title, var icon, var tapHandler) {
     return ListTile(
+      contentPadding: EdgeInsets.all(20),
       title: Text(
         title,
         style: TextStyle(
-          fontSize: 24,
+          fontSize: height * 0.03,
           fontWeight: FontWeight.bold,
         ),
       ),
       trailing: Icon(
         icon,
-        size: 26,
+        size: height * 0.03,
       ),
-      onTap: () {
-        // ignore: unnecessary_statements
-        tapHandler == null ? null : tapHandler();
-        Navigator.pop(context);
-      },
+      onTap: tapHandler,
     );
   }
 }

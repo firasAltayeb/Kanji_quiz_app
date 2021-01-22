@@ -34,6 +34,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
 
   RichText keywordRichText(BuildContext context) {
     return RichText(
+      textAlign: TextAlign.center,
       text: TextSpan(
         style: TextStyle(
           color: Colors.black,
@@ -48,14 +49,16 @@ class MnemonicScrollDisplay extends StatelessWidget {
               fontStyle: FontStyle.italic,
             ),
           ),
-          TextSpan(text: 'using its bulidng blocks: '),
-          TextSpan(
-            text: '${_itemDetails['buildingBlocks']}',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
+          if (_itemDetails['itemType'] == 'Kanji')
+            TextSpan(text: 'using its bulidng blocks: '),
+          if (_itemDetails['itemType'] == 'Kanji')
+            TextSpan(
+              text: '${_itemDetails['buildingBlocks']}',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+              ),
             ),
-          ),
         ],
       ),
     );

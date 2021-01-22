@@ -15,9 +15,11 @@ class CorrectIncorrectButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      height: MediaQuery.of(context).size.height * 0.38,
-      width: MediaQuery.of(context).size.width * 0.5,
+      height: screenHeight * 0.38,
+      width: screenWidth * 0.5,
       decoration: BoxDecoration(
         color: selectChoice ? Colors.green : Colors.red,
         border: Border(
@@ -32,23 +34,20 @@ class CorrectIncorrectButton extends StatelessWidget {
           selectChoice ? "Correct" : "Incorrect",
           style: TextStyle(
             color: Colors.white,
-            fontSize: MediaQuery.of(context).size.height * 0.05,
+            fontSize: screenHeight * 0.05,
             fontWeight: FontWeight.bold,
           ),
         ),
         onPressed: () {
           answerQuestion(selectChoice);
-          _openCustomDialog(
-              context,
-              'The item ${questionItem['itemId']} SRS' +
-                  ' level is now ${questionItem['progressLevel']}');
+          _openCustomDialog(context, questionItem, screenHeight);
           showRecallButton();
         },
       ),
     );
   }
 
-  void _openCustomDialog(BuildContext context, String dialogText) {
+  void _openCustomDialog(var context, var questionItem, var height) {
     showGeneralDialog(
       context: context,
       barrierColor: Colors.black.withOpacity(0.2),
@@ -68,9 +67,10 @@ class CorrectIncorrectButton extends StatelessWidget {
               shape:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
               content: Text(
-                dialogText,
+                'The item ${questionItem['itemId']} SRS' +
+                    ' level is now ${questionItem['progressLevel']}',
                 style: TextStyle(
-                  fontSize: 28,
+                  fontSize: height * 0.04,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
