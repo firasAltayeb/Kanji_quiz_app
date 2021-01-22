@@ -8,25 +8,27 @@ class BuildingBlockRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<dynamic> addressList = kanjiMap['buildBlocksAddress'];
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
-      height: MediaQuery.of(context).size.height * 0.175,
+      height: screenHeight * 0.175,
       child: addressList.isEmpty
           ? textWidget(
               'Item type:  ${kanjiMap['itemType']}',
-              MediaQuery.of(context).size.height * 0.04,
+              screenHeight * 0.04,
             )
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 textWidget(
                   'Building blocks: ',
-                  MediaQuery.of(context).size.height * 0.035,
+                  screenHeight * 0.035,
                 ),
                 Container(
                   width: addressList.length == 1
-                      ? MediaQuery.of(context).size.width * 0.25
-                      : MediaQuery.of(context).size.width * 0.55,
+                      ? screenWidth * 0.25
+                      : screenWidth * 0.55,
                   child: kanjiBlockRow(addressList),
                 ),
               ],

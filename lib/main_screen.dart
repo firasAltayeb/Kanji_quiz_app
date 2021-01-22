@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/widgets/misc/main_app_drawer.dart';
+import 'package:Kanji_quiz_app/widgets/misc/drawer_main.dart';
 import 'package:Kanji_quiz_app/widgets/misc/srs_level_column.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -20,30 +20,35 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     print('Main body build is called');
     return Scaffold(
       appBar: MainAppBar(
         title: 'Home Page',
         appBar: AppBar(),
       ),
-      drawer: MainAppDrawer(reAllocateMaps),
+      drawer: SizedBox(
+        width: screenWidth * 0.65,
+        child: MainAppDrawer(reAllocateMaps),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
+              height: screenHeight * 0.1,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                progressColumn(context, "Lesson", lessonMap.length,
-                    LessonManager.routeName),
-                progressColumn(context, "Review", reviewMap.length,
-                    ReviewManager.routeName),
+                progressColumn(context, screenHeight, "Lesson",
+                    lessonMap.length, LessonManager.routeName),
+                progressColumn(context, screenHeight, "Review",
+                    reviewMap.length, ReviewManager.routeName),
               ],
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.1,
+              height: screenHeight * 0.1,
             ),
             SrsLevelColumn(kanjiMapList: kanjiMapList)
           ],
@@ -52,27 +57,26 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget progressColumn(
-      context, String label, int mapLength, String routeName) {
+  Widget progressColumn(context, screenHeight, label, mapLength, routeName) {
     return Column(
       children: [
         Text(
           label + ": " + '$mapLength',
           style: TextStyle(
-            fontSize: MediaQuery.of(context).size.height * 0.04,
+            fontSize: screenHeight * 0.04,
             fontWeight: FontWeight.bold,
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
+          height: screenHeight * 0.02,
         ),
         SizedBox(
-          width: MediaQuery.of(context).size.height * 0.2,
+          width: screenHeight * 0.2,
           child: ElevatedButton(
             child: Text(
               'Start',
               style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.04,
+                fontSize: screenHeight * 0.04,
                 fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,

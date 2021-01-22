@@ -30,7 +30,7 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
     return GestureDetector(
       onTap: handler,
       child: Container(
-        height: MediaQuery.of(ctx).size.height * 0.2,
+        height: MediaQuery.of(ctx).size.height * 0.135,
         width: MediaQuery.of(ctx).size.width * 0.5,
         padding:
             btnText == "Kanji Koohii" ? EdgeInsets.all(15) : EdgeInsets.all(5),

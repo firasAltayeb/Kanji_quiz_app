@@ -15,7 +15,7 @@ class ShowAnswerButton extends StatelessWidget {
         child: Text(
           "Show Answer",
           style: TextStyle(
-            fontSize: screenHeight / 6,
+            fontSize: screenHeight * 0.15,
             fontWeight: FontWeight.bold,
           ),
         ),

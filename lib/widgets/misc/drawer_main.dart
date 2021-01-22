@@ -41,31 +41,34 @@ class MainAppDrawer extends StatelessWidget {
             height,
             'Sync now',
             Icons.sync,
-            selectHandler,
+            () {
+              selectHandler();
+              Navigator.pop(context);
+            },
           ),
           buildListTile(
             height,
             'Settings',
             Icons.settings,
-            selectHandler,
+            () => Navigator.pop(context),
           ),
           buildListTile(
             height,
             'Badges',
             Icons.badge,
-            null,
+            () => Navigator.pop(context),
           ),
           buildListTile(
             height,
             'Feedback',
             Icons.feedback,
-            null,
+            () => Navigator.pop(context),
           ),
           buildListTile(
             height,
             'Tutorial',
             Icons.help,
-            null,
+            () => Navigator.pop(context),
           ),
         ],
       ).toList(),
@@ -74,7 +77,12 @@ class MainAppDrawer extends StatelessWidget {
 
   Widget buildListTile(var height, var title, var icon, var tapHandler) {
     return ListTile(
-      contentPadding: EdgeInsets.all(20),
+      contentPadding: EdgeInsets.fromLTRB(
+        10,
+        height * 0.025,
+        10,
+        height * 0.025,
+      ),
       title: Text(
         title,
         style: TextStyle(

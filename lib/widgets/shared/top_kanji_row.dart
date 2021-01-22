@@ -35,13 +35,13 @@ class TopKanjiRow extends StatelessWidget {
   Widget cornerButton(String passedText, Function handler, double height) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.only(top: 20),
+        padding: EdgeInsets.only(top: height * 0.075),
         child: TextButton(
           child: Text(
             passedText,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: height / 6,
+              fontSize: height * 0.15,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -66,16 +66,14 @@ class TopKanjiRow extends StatelessWidget {
   }
 
   Widget cornerWidget(String passedText, String area, double height) {
-    double paddingRight = area == 'right' ? 0 : 0;
-    double paddingLeft = area == 'left' ? 0 : 0;
     return Expanded(
       child: Container(
-        padding: EdgeInsets.fromLTRB(paddingLeft, 30, paddingRight, 0),
+        padding: EdgeInsets.fromLTRB(0, height * 0.1, 0, 0),
         child: Text(
           passedText,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: height / 6,
+            fontSize: height * 0.15,
             fontWeight: FontWeight.bold,
           ),
         ),

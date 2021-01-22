@@ -8,9 +8,11 @@ class MnemonicScrollDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      height: MediaQuery.of(context).size.height * 0.165,
-      width: MediaQuery.of(context).size.width * 0.95,
+      height: screenHeight * 0.175,
+      width: screenWidth * 0.95,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(
@@ -25,23 +27,24 @@ class MnemonicScrollDisplay extends StatelessWidget {
         child: SingleChildScrollView(
           controller: _scrollController,
           child: _itemDetails['mnemonicStory'] == ''
-              ? keywordRichText(context)
-              : mnemonicTextWidget(context),
+              ? keywordRichText(screenHeight)
+              : mnemonicTextWidget(screenHeight),
         ),
       ),
     );
   }
 
-  RichText keywordRichText(BuildContext context) {
+  RichText keywordRichText(var screenHeight) {
+    var itemType = _itemDetails['itemType'];
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
         style: TextStyle(
           color: Colors.black,
-          fontSize: MediaQuery.of(context).size.height * 0.035,
+          fontSize: screenHeight * 0.035,
         ),
         children: <TextSpan>[
-          TextSpan(text: 'Please create a mnemonic for the above kanji '),
+          TextSpan(text: 'Please create a mnemonic for the above $itemType '),
           TextSpan(
             text: '${_itemDetails['keyword']} ',
             style: TextStyle(
@@ -51,26 +54,27 @@ class MnemonicScrollDisplay extends StatelessWidget {
           ),
           if (_itemDetails['itemType'] == 'Kanji')
             TextSpan(text: 'using its bulidng blocks: '),
-          if (_itemDetails['itemType'] == 'Kanji')
+          if (itemType == 'Kanji')
             TextSpan(
-              text: '${_itemDetails['buildingBlocks']}',
+              text: '${_itemDetails['buildingBlocks']} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
               ),
             ),
+          TextSpan(text: 'by clicking on the green below button'),
         ],
       ),
     );
   }
 
-  Widget mnemonicTextWidget(BuildContext context) {
+  Widget mnemonicTextWidget(var screenHeight) {
     return Text(
       _itemDetails['mnemonicStory'],
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.black,
-        fontSize: MediaQuery.of(context).size.height * 0.035,
+        fontSize: screenHeight * 0.035,
       ),
     );
   }

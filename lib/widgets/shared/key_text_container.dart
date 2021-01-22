@@ -17,7 +17,7 @@ class KeyTextContainer extends StatelessWidget {
           ),
         ),
       ),
-      padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
       child: FittedBox(
         child: Text(
           passedText,

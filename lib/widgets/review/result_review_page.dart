@@ -17,54 +17,55 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-
-    final children = <Widget>[
-      wrapUpButton(context, screenHeight),
+    return Column(children: [
+      SizedBox(height: screenHeight * 0.05),
       Text(
         'Your session score is ${scoreToDisplay.toString()}',
         style: TextStyle(
-          fontSize: screenHeight * 0.05,
+          fontSize: screenHeight * 0.04,
           fontWeight: FontWeight.bold,
         ),
       ),
-      Expanded(child: SizedBox()),
+      SizedBox(height: screenHeight * 0.05),
       textContainer(
         'Recalled Correctly',
         Colors.green,
         screenHeight,
       ),
-    ];
-
-    correctRecallList.length > 0
-        ? children.add(KanjiInteractiveRow(
-            widgetHeight: screenHeight * 0.2,
-            kanjiAddresses: correctRecallList,
-            selectHandler: null,
-          ))
-        : children.add(SizedBox(height: screenHeight * 0.24));
-
-    children.add(textContainer(
-      'Recalled Incorrectly',
-      Colors.red,
-      screenHeight,
-    ));
-
-    incorrectRecallList.length > 0
-        ? children.add(KanjiInteractiveRow(
-            widgetHeight: screenHeight * 0.2,
-            kanjiAddresses: incorrectRecallList,
-            selectHandler: null,
-          ))
-        : children.add(SizedBox(height: screenHeight * 0.24));
-
-    return Column(children: children);
+      if (correctRecallList.length > 0)
+        KanjiInteractiveRow(
+          widgetHeight: screenHeight * 0.175,
+          kanjiAddresses: correctRecallList,
+          selectHandler: null,
+        ),
+      if (correctRecallList.length == 0)
+        SizedBox(
+          height: screenHeight * 0.175,
+        ),
+      textContainer(
+        'Recalled Incorrectly',
+        Colors.red,
+        screenHeight,
+      ),
+      if (incorrectRecallList.length > 0)
+        KanjiInteractiveRow(
+          widgetHeight: screenHeight * 0.175,
+          kanjiAddresses: incorrectRecallList,
+          selectHandler: null,
+        ),
+      if (incorrectRecallList.length == 0)
+        SizedBox(
+          height: screenHeight * 0.175,
+        ),
+      wrapUpButton(screenHeight),
+    ]);
   }
 
-  Widget wrapUpButton(BuildContext context, double screenHeight) {
+  Widget wrapUpButton(double screenHeight) {
     return Container(
       padding: EdgeInsets.only(
-        top: screenHeight * 0.05,
-        bottom: screenHeight * 0.03,
+        top: screenHeight * 0.04,
+        bottom: screenHeight * 0.04,
       ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -76,7 +77,7 @@ class ResultPage extends StatelessWidget {
         child: Text(
           ' Wrap up session ',
           style: TextStyle(
-            fontSize: 22,
+            fontSize: screenHeight * 0.04,
             fontWeight: FontWeight.bold,
           ),
         ),
