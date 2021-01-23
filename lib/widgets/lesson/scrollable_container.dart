@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MnemonicScrollDisplay extends StatelessWidget {
+class ScrollableContainer extends StatelessWidget {
   final Map<String, Object> _itemDetails;
   final ScrollController _scrollController = ScrollController();
 
-  MnemonicScrollDisplay(this._itemDetails);
+  ScrollableContainer(this._itemDetails);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,6 @@ class MnemonicScrollDisplay extends StatelessWidget {
     return Container(
       height: screenHeight * 0.175,
       width: screenWidth * 0.95,
-      alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green[900],
@@ -22,7 +21,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
       ),
       padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
       child: Scrollbar(
-        isAlwaysShown: true,
+        //isAlwaysShown: true,
         controller: _scrollController,
         child: SingleChildScrollView(
           controller: _scrollController,
@@ -62,7 +61,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
                 fontStyle: FontStyle.italic,
               ),
             ),
-          TextSpan(text: 'by clicking on the green below button'),
+          TextSpan(text: 'by clicking on the green button below'),
         ],
       ),
     );
@@ -71,6 +70,7 @@ class MnemonicScrollDisplay extends StatelessWidget {
   Widget mnemonicTextWidget(var screenHeight) {
     return Text(
       _itemDetails['mnemonicStory'],
+      textAlign: TextAlign.center,
       style: TextStyle(
         fontWeight: FontWeight.bold,
         color: Colors.black,

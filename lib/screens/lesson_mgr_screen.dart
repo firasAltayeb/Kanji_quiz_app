@@ -1,5 +1,4 @@
-import '../widgets/lesson/mnemonic_scroll_display.dart';
-import '../widgets/misc/back_pressed_alert.dart';
+import '../widgets/lesson/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/mnemonic_handler.dart';
@@ -46,9 +45,11 @@ class _LessonManagerState extends State<LessonManager> {
   }
 
   void updateMnemonicField(String input) {
-    setState(() {
-      widget.lessonMap[_queueIndex]['mnemonicStory'] = input;
-    });
+    if (input == null || input != '')
+      setState(() {
+        widget.lessonMap[_queueIndex]['mnemonicStory'] = input;
+        widget.reAllocateMaps();
+      });
   }
 
   @override
@@ -58,45 +59,36 @@ class _LessonManagerState extends State<LessonManager> {
       return Scaffold();
     }
 
-    return WillPopScope(
-      onWillPop: () =>
-          BackPressedAlert().dialog(
-            parentContext: context,
-            alertMessage: "Any mnemonic stories you have written " +
-                "will be lost when you quit the app!!",
-          ) ??
-          false,
-      child: Scaffold(
-        appBar: MainAppBar(
-          title: 'Lesson Page',
-          appBar: AppBar(),
-        ),
-        body: Column(
-          children: [
-            TopKanjiRow(
-              kanjiSpriteAddress: _learnQueue[_queueIndex]['greyPhotoAddress'],
-              leftWidgetText: "Prev",
-              rightWidgetText: "Next",
-              leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
-              rightWidgetHandler: _nextKanji,
+    return Scaffold(
+      appBar: MainAppBar(
+        title: 'Lesson Page',
+        appBar: AppBar(),
+      ),
+      body: Column(
+        children: [
+          TopKanjiRow(
+            kanjiSpriteAddress: _learnQueue[_queueIndex]['greyPhotoAddress'],
+            leftWidgetText: "Prev",
+            rightWidgetText: "Next",
+            leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
+            rightWidgetHandler: _nextKanji,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.075,
+            child: KeyTextContainer(
+              'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.075,
-              child: KeyTextContainer(
-                'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
-              ),
-            ),
-            Expanded(child: SizedBox()),
-            BuildingBlockRow(_learnQueue[_queueIndex]),
-            Expanded(child: SizedBox()),
-            MnemonicScrollDisplay(_learnQueue[_queueIndex]),
-            Expanded(child: SizedBox()),
-            MnemonicHandler(
-              _learnQueue[_queueIndex],
-              updateMnemonicField,
-            ),
-          ],
-        ),
+          ),
+          Expanded(child: SizedBox()),
+          BuildingBlockRow(_learnQueue[_queueIndex]),
+          Expanded(child: SizedBox()),
+          ScrollableContainer(_learnQueue[_queueIndex]),
+          Expanded(child: SizedBox()),
+          MnemonicHandler(
+            _learnQueue[_queueIndex],
+            updateMnemonicField,
+          ),
+        ],
       ),
     );
   }

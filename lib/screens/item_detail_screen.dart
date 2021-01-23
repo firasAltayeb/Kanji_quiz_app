@@ -1,14 +1,14 @@
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/details/next_review_date.dart';
-import '../widgets/details/srs_difficulty_row.dart';
+import '../widgets/item_details/next_review_date.dart';
+import '../widgets/item_details/srs_difficulty_row.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/mnemonic_handler.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/main_app_bar.dart';
 import '../widgets/shared/top_kanji_row.dart';
-import '../widgets/lesson/mnemonic_scroll_display.dart';
+import '../widgets/lesson/scrollable_container.dart';
 
 class ItemDetailScreen extends StatefulWidget {
   static const routeName = '/item-details';
@@ -26,11 +26,12 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   Map<String, Object> selectedItem;
 
   void updateMnemonicField(String input) {
-    setState(() {
-      selectedItem['mnemonicStory'] = input;
-      print('mnemonicStory input is ${selectedItem['mnemonicStory']}');
-      widget.reAllocateMaps();
-    });
+    if (input == null || input != '')
+      setState(() {
+        selectedItem['mnemonicStory'] = input;
+        print('mnemonicStory input is ${selectedItem['mnemonicStory']}');
+        widget.reAllocateMaps();
+      });
   }
 
   @override
@@ -83,7 +84,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 20),
             SrsDifficultyRow(),
             SizedBox(height: 20),
-            MnemonicScrollDisplay(selectedItem),
+            ScrollableContainer(selectedItem),
             SizedBox(height: 30),
             BuildingBlockRow(selectedItem),
             SizedBox(height: 30),

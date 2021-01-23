@@ -1,5 +1,5 @@
-import 'package:Kanji_quiz_app/widgets/misc/drawer_main.dart';
-import 'package:Kanji_quiz_app/widgets/misc/srs_level_column.dart';
+import 'package:Kanji_quiz_app/widgets/main_screen/main_drawer.dart';
+import 'package:Kanji_quiz_app/widgets/main_screen/srs_level_column.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'screens/lesson_mgr_screen.dart';

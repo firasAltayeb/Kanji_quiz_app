@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:Kanji_quiz_app/screens/input_dialog_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../misc/bottom_model_sheet.dart';
+import 'package:flutter/material.dart';
 
 class MnemonicHandler extends StatelessWidget {
   final Function updateHandler;
@@ -15,10 +14,14 @@ class MnemonicHandler extends StatelessWidget {
     return Row(
       children: [
         gestureContainer(context, _launchURL, "Kanji Koohii"),
-        gestureContainer(
-            context,
-            () => BottomModelSheet().show(context, updateHandler),
-            "Edit Mnemonic"),
+        gestureContainer(context, () {
+          Navigator.of(context).push(
+            PageRouteBuilder(
+              opaque: false,
+              pageBuilder: (BuildContext context, _, __) => InputDialogScreen(),
+            ),
+          );
+        }, "Edit Mnemonic"),
       ],
     );
   }
