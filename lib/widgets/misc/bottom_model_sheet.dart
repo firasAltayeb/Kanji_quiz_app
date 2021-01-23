@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BottomModelSheet {
   final mnemonicController = TextEditingController();
 
-  Future<bool> show(BuildContext parentContext) {
+  Future<bool> show(BuildContext parentContext, Function updateField) {
     var screenHeight = MediaQuery.of(parentContext).size.height;
     return showModalBottomSheet(
       context: parentContext,
@@ -55,7 +55,12 @@ class BottomModelSheet {
                           width: 10,
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: mnemonicController.text == ''
+                              ? null
+                              : () {
+                                  Navigator.pop(context);
+                                  updateField(mnemonicController.text);
+                                },
                           style: ElevatedButton.styleFrom(
                             primary: Colors.green,
                           ),

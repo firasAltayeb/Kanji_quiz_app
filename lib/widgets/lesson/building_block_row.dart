@@ -23,14 +23,17 @@ class BuildingBlockRow extends StatelessWidget {
               children: [
                 textWidget(
                   'Building blocks: ',
-                  screenHeight * 0.035,
+                  screenHeight * 0.03,
                 ),
-                Container(
-                  width: addressList.length == 1
-                      ? screenWidth * 0.25
-                      : screenWidth * 0.55,
-                  child: kanjiBlockRow(addressList),
-                ),
+                if (addressList.length == 1)
+                  Container(
+                    width: screenWidth * 0.3,
+                    child: kanjiBlockRow(addressList),
+                  ),
+                if (addressList.length > 1)
+                  Expanded(
+                    child: kanjiBlockRow(addressList),
+                  ),
               ],
             ),
     );

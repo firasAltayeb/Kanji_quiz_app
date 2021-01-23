@@ -3,17 +3,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../misc/bottom_model_sheet.dart';
 
-class MnemonicHandler extends StatefulWidget {
-  final Function reAllocateMaps;
-  final Map<String, Object> _itemDetails;
+class MnemonicHandler extends StatelessWidget {
+  final Function updateHandler;
+  final Map<String, Object> itemDetails;
 
-  MnemonicHandler(this._itemDetails, this.reAllocateMaps);
+  MnemonicHandler(this.itemDetails, this.updateHandler);
 
-  @override
-  _MnemonicHandlerState createState() => _MnemonicHandlerState();
-}
-
-class _MnemonicHandlerState extends State<MnemonicHandler> {
   final mnemonicController = TextEditingController();
 
   Widget build(BuildContext context) {
@@ -21,7 +16,9 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
       children: [
         gestureContainer(context, _launchURL, "Kanji Koohii"),
         gestureContainer(
-            context, () => BottomModelSheet().show(context), "Edit Mnemonic"),
+            context,
+            () => BottomModelSheet().show(context, updateHandler),
+            "Edit Mnemonic"),
       ],
     );
   }
@@ -59,7 +56,7 @@ class _MnemonicHandlerState extends State<MnemonicHandler> {
 
   void _launchURL() async {
     String url = 'https://kanji.koohii.com/study/kanji/' +
-        '${widget._itemDetails['frameNumber']}';
+        '${itemDetails['frameNumber']}';
     if (await canLaunch(url)) {
       await launch(url);
     } else {

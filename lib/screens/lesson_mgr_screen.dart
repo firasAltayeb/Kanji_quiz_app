@@ -45,6 +45,12 @@ class _LessonManagerState extends State<LessonManager> {
     });
   }
 
+  void updateMnemonicField(String input) {
+    setState(() {
+      widget.lessonMap[_queueIndex]['mnemonicStory'] = input;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final _learnQueue = widget.lessonMap;
@@ -56,8 +62,8 @@ class _LessonManagerState extends State<LessonManager> {
       onWillPop: () =>
           BackPressedAlert().dialog(
             parentContext: context,
-            alertMessage:
-                "Any mnemonic stories you have written will not be lost!!",
+            alertMessage: "Any mnemonic stories you have written " +
+                "will be lost when you quit the app!!",
           ) ??
           false,
       child: Scaffold(
@@ -87,7 +93,7 @@ class _LessonManagerState extends State<LessonManager> {
             Expanded(child: SizedBox()),
             MnemonicHandler(
               _learnQueue[_queueIndex],
-              widget.reAllocateMaps,
+              updateMnemonicField,
             ),
           ],
         ),

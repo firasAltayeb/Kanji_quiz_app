@@ -1,4 +1,3 @@
-import 'dart:collection';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 
@@ -9,21 +8,39 @@ import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
 import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
 
-class ItemDetailScreen extends StatelessWidget {
+class ItemDetailScreen extends StatefulWidget {
   static const routeName = '/item-details';
 
   final Function reAllocateMaps;
+  final List<dynamic> kanjiMapList;
 
-  ItemDetailScreen(this.reAllocateMaps);
+  ItemDetailScreen(this.reAllocateMaps, this.kanjiMapList);
+
+  @override
+  _ItemDetailScreenState createState() => _ItemDetailScreenState();
+}
+
+class _ItemDetailScreenState extends State<ItemDetailScreen> {
+  Map<String, Object> selectedItem;
+
+  void updateMnemonicField(String input) {
+    setState(() {
+      selectedItem['mnemonicStory'] = input;
+      print('mnemonicStory input is ${selectedItem['mnemonicStory']}');
+      widget.reAllocateMaps();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    Map<String, Object> selectedItem =
-        HashMap.from(ModalRoute.of(context).settings.arguments);
+    var selectedIndex = ModalRoute.of(context).settings.arguments;
     var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
+    var screenHeight = MediaQuery.of(context).size.height;
+
+    selectedItem = widget.kanjiMapList[selectedIndex];
+
     var levelChangeDate =
         dateFormater.format(selectedItem['dateLastLevelChanged']);
-    var screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: MainAppBar(
@@ -68,7 +85,7 @@ class ItemDetailScreen extends StatelessWidget {
             SizedBox(height: 30),
             BuildingBlockRow(selectedItem),
             SizedBox(height: 30),
-            MnemonicHandler(selectedItem, reAllocateMaps),
+            MnemonicHandler(selectedItem, updateMnemonicField),
           ],
         ),
       ),

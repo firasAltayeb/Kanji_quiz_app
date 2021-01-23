@@ -34,6 +34,7 @@ class TopKanjiRow extends StatelessWidget {
 
   Widget cornerButton(String passedText, Function handler, double height) {
     return Expanded(
+      flex: 2,
       child: Padding(
         padding: EdgeInsets.only(top: height * 0.075),
         child: TextButton(
@@ -53,6 +54,7 @@ class TopKanjiRow extends StatelessWidget {
 
   Widget kanjiPicture(String address, double height) {
     return Expanded(
+      flex: 3,
       child: Container(
         height: height,
         decoration: BoxDecoration(
@@ -67,6 +69,7 @@ class TopKanjiRow extends StatelessWidget {
 
   Widget cornerWidget(String passedText, String area, double height) {
     return Expanded(
+      flex: 2,
       child: Container(
         padding: EdgeInsets.fromLTRB(0, height * 0.1, 0, 0),
         child: Text(

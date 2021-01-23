@@ -125,9 +125,8 @@ class _MyAppState extends State<MyApp> {
             LessonManager(_reAllocateMaps, _lessonMap),
         ReviewManager.routeName: (ctx) =>
             ReviewManager(_reAllocateMaps, _reviewMap),
-        ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
-              _reAllocateMaps,
-            ),
+        ItemDetailScreen.routeName: (ctx) =>
+            ItemDetailScreen(_reAllocateMaps, _kanjiMapList),
       },
     );
   }
