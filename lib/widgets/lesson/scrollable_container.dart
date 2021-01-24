@@ -13,6 +13,7 @@ class ScrollableContainer extends StatelessWidget {
     return Container(
       height: screenHeight * 0.175,
       width: screenWidth * 0.95,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.green[900],

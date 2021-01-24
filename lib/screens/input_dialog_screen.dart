@@ -1,14 +1,43 @@
 import 'package:flutter/material.dart';
 
-class InputDialogScreen extends StatelessWidget {
-  final mnemonicController = TextEditingController();
-  final String textToEdit;
+class InputDialogScreen extends StatefulWidget {
+  final Map<String, Object> itemDetails;
 
-  InputDialogScreen(this.textToEdit);
+  InputDialogScreen(this.itemDetails);
+
+  @override
+  _InputDialogScreenState createState() => _InputDialogScreenState();
+}
+
+class _InputDialogScreenState extends State<InputDialogScreen> {
+  final mnemonicController = TextEditingController();
+  bool disposeClicked = false;
+  bool clickable = false;
+
+  void _updateSubmitClickability() {
+    setState(() {
+      disposeClicked = true;
+      mnemonicController.text = '';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
+    var hintText = '';
+
+    if (widget.itemDetails['itemType'] == 'Kanji') {
+      hintText = 'Please create a mnemonic for the kanji ' +
+          '${widget.itemDetails['itemId']} using its bulidng blocks: ' +
+          '${widget.itemDetails['buildingBlocks']}';
+    } else if (widget.itemDetails['itemType'] == 'Primitive Kanji') {
+      hintText = 'Please create a mnemonic for the kanji ' +
+          '${widget.itemDetails['itemId']}';
+    } else {
+      hintText = 'Please create a mnemonic for the item ' +
+          '${widget.itemDetails['itemId']}';
+    }
+
     return Scaffold(
       backgroundColor: Colors.black.withOpacity(0.3),
       resizeToAvoidBottomPadding: false,
@@ -23,10 +52,10 @@ class InputDialogScreen extends StatelessWidget {
               autofocus: true,
               showCursor: true,
               decoration: InputDecoration(
-                hintText: "$textToEdit",
+                hintText: hintText,
                 hintMaxLines: 10,
                 hintStyle: TextStyle(
-                  fontSize: screenHeight * 0.03,
+                  fontSize: screenHeight * 0.04,
                   color: Colors.blue,
                 ),
                 contentPadding: EdgeInsets.all(20.0),
@@ -39,8 +68,9 @@ class InputDialogScreen extends StatelessWidget {
               minLines: 10,
               maxLines: null,
               controller: mnemonicController,
-              onSubmitted: (_) {},
-              onChanged: (_) {},
+              onTap: () {
+                disposeClicked = false;
+              },
             ),
           ),
           Row(
@@ -50,7 +80,11 @@ class InputDialogScreen extends StatelessWidget {
                 'Dispose',
                 Colors.red,
                 screenHeight,
-                () => mnemonicController.clear(),
+                disposeClicked
+                    ? () => Navigator.pop(context)
+                    : () {
+                        _updateSubmitClickability();
+                      },
               ),
               _myMaterialButton(
                 'Submit',
@@ -59,7 +93,7 @@ class InputDialogScreen extends StatelessWidget {
                 mnemonicController.text == ''
                     ? null
                     : () {
-                        Navigator.pop(context);
+                        Navigator.pop(context, mnemonicController.text);
                       },
               ),
             ],

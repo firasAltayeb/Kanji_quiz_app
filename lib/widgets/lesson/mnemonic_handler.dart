@@ -3,13 +3,16 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class MnemonicHandler extends StatelessWidget {
-  final Function hideHandler;
   final Function updateHandler;
+  final Function hideShowHandler;
   final Map<String, Object> itemDetails;
-
-  MnemonicHandler(this.itemDetails, this.updateHandler, this.hideHandler);
-
   final mnemonicController = TextEditingController();
+
+  MnemonicHandler(
+    this.itemDetails,
+    this.updateHandler,
+    this.hideShowHandler,
+  );
 
   Widget build(BuildContext context) {
     return Row(
@@ -63,32 +66,20 @@ class MnemonicHandler extends StatelessWidget {
   }
 
   void _editMnemonicClicked(BuildContext context) {
-    hideHandler();
-    if (itemDetails['mnemonicStory'] == '') {
-      if (itemDetails['itemType'] == 'Kanji') {
-        updateHandler('Please create a mnemonic for the kanji ' +
-            '${itemDetails['itemId']} using its bulidng blocks: ' +
-            '${itemDetails['buildingBlocks']}');
-      } else if (itemDetails['itemType'] == 'Primitive Kanji') {
-        updateHandler('Please create a mnemonic for the kanji ' +
-            '${itemDetails['itemId']}');
-      } else {
-        updateHandler('Please create a mnemonic for the item ' +
-            '${itemDetails['itemId']}');
-      }
-    }
+    hideShowHandler();
     Navigator.of(context)
         .push(
       PageRouteBuilder(
           opaque: false,
           pageBuilder: (BuildContext context, _, __) {
-            return InputDialogScreen(
-              itemDetails['mnemonicStory'],
-            );
+            return InputDialogScreen(itemDetails);
           }),
     )
-        .then((_) {
-      hideHandler();
+        .then((passedText) {
+      if (passedText != null) {
+        updateHandler(passedText);
+      }
+      hideShowHandler();
     });
   }
 }
