@@ -60,6 +60,7 @@ class _LessonManagerState extends State<LessonManager> {
     }
 
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       appBar: MainAppBar(
         title: 'Lesson Page',
         appBar: AppBar(),

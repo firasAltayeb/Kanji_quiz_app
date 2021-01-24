@@ -30,7 +30,12 @@ class BuildingBlockRow extends StatelessWidget {
                     width: screenWidth * 0.3,
                     child: kanjiBlockRow(addressList),
                   ),
-                if (addressList.length > 1)
+                if (addressList.length == 2)
+                  Container(
+                    width: screenWidth * 0.6,
+                    child: kanjiBlockRow(addressList),
+                  ),
+                if (addressList.length > 2)
                   Expanded(
                     child: kanjiBlockRow(addressList),
                   ),
