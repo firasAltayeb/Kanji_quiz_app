@@ -1,4 +1,5 @@
 import 'package:Kanji_quiz_app/screens/input_dialog_screen.dart';
+import 'package:Kanji_quiz_app/widgets/misc/back_pressed_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
@@ -8,27 +9,52 @@ class MnemonicHandler extends StatelessWidget {
   final Map<String, Object> itemDetails;
   final mnemonicController = TextEditingController();
 
-  MnemonicHandler(
-    this.itemDetails,
-    this.updateHandler,
-    this.hideShowHandler,
-  );
+  final Function resetItemStatus;
+
+  MnemonicHandler({
+    @required this.itemDetails,
+    @required this.updateHandler,
+    @required this.hideShowHandler,
+    this.resetItemStatus,
+  });
 
   Widget build(BuildContext context) {
     return Row(
       children: [
-        gestureContainer(context, _launchURL, "Kanji Koohii"),
-        gestureContainer(context, _editMnemonicClicked, "Edit Mnemonic"),
+        if (resetItemStatus != null)
+          Expanded(
+            child: gestureContainer(
+              context,
+              _resetItem,
+              "Reset item",
+              Colors.red,
+            ),
+          ),
+        Expanded(
+          child: gestureContainer(
+            context,
+            _launchURL,
+            "Kanji Koohii",
+            Colors.green,
+          ),
+        ),
+        Expanded(
+          child: gestureContainer(
+            context,
+            _editMnemonicClicked,
+            "Edit Mnemonic",
+            Theme.of(context).accentColor,
+          ),
+        ),
       ],
     );
   }
 
-  Widget gestureContainer(ctx, handler, btnText) {
+  Widget gestureContainer(ctx, handler, btnText, color) {
     return GestureDetector(
       onTap: () => handler(ctx),
       child: Container(
         height: MediaQuery.of(ctx).size.height * 0.135,
-        width: MediaQuery.of(ctx).size.width * 0.5,
         padding: btnText == "Kanji Koohii"
             ? const EdgeInsets.all(15)
             : const EdgeInsets.all(5),
@@ -39,9 +65,7 @@ class MnemonicHandler extends StatelessWidget {
             right: BorderSide(width: 1.0, color: Colors.black),
             bottom: BorderSide(width: 3.0, color: Colors.black),
           ),
-          color: btnText == "Kanji Koohii"
-              ? Theme.of(ctx).accentColor
-              : Colors.green,
+          color: color,
         ),
         child: FittedBox(
           child: Text(
@@ -53,6 +77,18 @@ class MnemonicHandler extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _resetItem(BuildContext context) async {
+    var dialogChoice = await BackPressedAlert().dialog(
+          parentCtx: context,
+          alertMsg: "The item will be sent back to the lesson queue!!",
+        ) ??
+        false;
+    if (dialogChoice) {
+      resetItemStatus(itemDetails);
+      Navigator.of(context).pop();
+    }
   }
 
   void _launchURL(BuildContext context) async {

@@ -92,9 +92,9 @@ class _LessonManagerState extends State<LessonManager> {
           Expanded(child: SizedBox()),
           if (_showHandler)
             MnemonicHandler(
-              _learnQueue[_queueIndex],
-              updateMnemonicField,
-              _hideMnemonicHandler,
+              itemDetails: _learnQueue[_queueIndex],
+              updateHandler: updateMnemonicField,
+              hideShowHandler: _hideMnemonicHandler,
             ),
         ],
       ),

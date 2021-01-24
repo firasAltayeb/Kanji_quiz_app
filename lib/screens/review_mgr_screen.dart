@@ -88,8 +88,8 @@ class _ReviewManagerState extends State<ReviewManager> {
     return WillPopScope(
       onWillPop: () =>
           BackPressedAlert().dialog(
-            parentContext: context,
-            alertMessage: "Your progress will be lost!!",
+            parentCtx: context,
+            alertMsg: "Your progress will be lost!!",
           ) ??
           false,
       child: Scaffold(

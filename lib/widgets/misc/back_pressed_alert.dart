@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BackPressedAlert {
-  Future<bool> dialog({
-    @required BuildContext parentContext,
-    @required String alertMessage,
-  }) {
+  Future<bool> dialog(
+      {@required BuildContext parentCtx, @required String alertMsg}) {
     return showDialog(
-      context: parentContext,
+      context: parentCtx,
       builder: (context) => AlertDialog(
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         actionsPadding: const EdgeInsets.fromLTRB(0, 0, 20, 10),
@@ -22,7 +20,7 @@ class BackPressedAlert {
           ),
         ),
         content: Text(
-          alertMessage,
+          alertMsg,
           style: TextStyle(
             fontSize: MediaQuery.of(context).size.height * 0.04,
             fontWeight: FontWeight.bold,

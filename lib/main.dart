@@ -95,6 +95,15 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  void _resetItem(Map<String, Object> itemDetails) {
+    setState(() {
+      itemDetails['learningStatus'] = 'Lesson';
+      itemDetails['progressLevel'] = '0';
+      itemDetails['mnemonicStory'] = '';
+      _reAllocateMaps();
+    });
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Kanji Quiz App',
@@ -125,8 +134,13 @@ class _MyAppState extends State<MyApp> {
             LessonManager(_reAllocateMaps, _lessonMap),
         ReviewManager.routeName: (ctx) =>
             ReviewManager(_reAllocateMaps, _reviewMap),
-        ItemDetailScreen.routeName: (ctx) =>
-            ItemDetailScreen(_reAllocateMaps, _kanjiMapList),
+        ItemDetailScreen.routeName: (ctx) {
+          return ItemDetailScreen(
+            reAllocateMaps: _reAllocateMaps,
+            kanjiMapList: _kanjiMapList,
+            resetItemStatus: _resetItem,
+          );
+        }
       },
     );
   }

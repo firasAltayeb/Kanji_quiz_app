@@ -14,9 +14,14 @@ class ItemDetailScreen extends StatefulWidget {
   static const routeName = '/item-details';
 
   final Function reAllocateMaps;
+  final Function resetItemStatus;
   final List<dynamic> kanjiMapList;
 
-  ItemDetailScreen(this.reAllocateMaps, this.kanjiMapList);
+  ItemDetailScreen({
+    @required this.kanjiMapList,
+    @required this.reAllocateMaps,
+    @required this.resetItemStatus,
+  });
 
   @override
   _ItemDetailScreenState createState() => _ItemDetailScreenState();
@@ -97,9 +102,10 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 30),
             if (_showHandler)
               MnemonicHandler(
-                selectedItem,
-                updateMnemonicField,
-                _hideMnemonicHandler,
+                itemDetails: selectedItem,
+                updateHandler: updateMnemonicField,
+                hideShowHandler: _hideMnemonicHandler,
+                resetItemStatus: widget.resetItemStatus,
               ),
             if (!_showHandler)
               SizedBox(
