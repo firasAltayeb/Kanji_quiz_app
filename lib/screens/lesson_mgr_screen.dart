@@ -21,6 +21,7 @@ class LessonManager extends StatefulWidget {
 
 class _LessonManagerState extends State<LessonManager> {
   var _queueIndex = 0;
+  var _showHandler = true;
 
   void _nextKanji() {
     if (_queueIndex + 1 < widget.lessonMap.length) {
@@ -52,6 +53,12 @@ class _LessonManagerState extends State<LessonManager> {
       });
   }
 
+  void _hideMnemonicHandler() {
+    setState(() {
+      _showHandler = !_showHandler;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final _learnQueue = widget.lessonMap;
@@ -80,15 +87,15 @@ class _LessonManagerState extends State<LessonManager> {
               'Keyword: ' + _learnQueue[_queueIndex]['keyword'],
             ),
           ),
-          Expanded(child: SizedBox()),
           BuildingBlockRow(_learnQueue[_queueIndex]),
-          Expanded(child: SizedBox()),
           ScrollableContainer(_learnQueue[_queueIndex]),
           Expanded(child: SizedBox()),
-          MnemonicHandler(
-            _learnQueue[_queueIndex],
-            updateMnemonicField,
-          ),
+          if (_showHandler)
+            MnemonicHandler(
+              _learnQueue[_queueIndex],
+              updateMnemonicField,
+              _hideMnemonicHandler,
+            ),
         ],
       ),
     );

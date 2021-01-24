@@ -23,6 +23,7 @@ class ItemDetailScreen extends StatefulWidget {
 }
 
 class _ItemDetailScreenState extends State<ItemDetailScreen> {
+  var _showHandler = true;
   Map<String, Object> selectedItem;
 
   void updateMnemonicField(String input) {
@@ -32,6 +33,12 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         print('mnemonicStory input is ${selectedItem['mnemonicStory']}');
         widget.reAllocateMaps();
       });
+  }
+
+  void _hideMnemonicHandler() {
+    setState(() {
+      _showHandler = !_showHandler;
+    });
   }
 
   @override
@@ -88,7 +95,16 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 30),
             BuildingBlockRow(selectedItem),
             SizedBox(height: 30),
-            MnemonicHandler(selectedItem, updateMnemonicField),
+            if (_showHandler)
+              MnemonicHandler(
+                selectedItem,
+                updateMnemonicField,
+                _hideMnemonicHandler,
+              ),
+            if (!_showHandler)
+              SizedBox(
+                height: screenHeight * 0.135,
+              ),
           ],
         ),
       ),

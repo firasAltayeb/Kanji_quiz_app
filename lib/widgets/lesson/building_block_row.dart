@@ -16,14 +16,14 @@ class BuildingBlockRow extends StatelessWidget {
       child: addressList.isEmpty
           ? textWidget(
               'Item type:  ${kanjiMap['itemType']}',
-              screenHeight * 0.04,
+              screenWidth * 0.08,
             )
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 textWidget(
                   'Building blocks: ',
-                  screenHeight * 0.03,
+                  screenWidth * 0.06,
                 ),
                 if (addressList.length == 1)
                   Container(
@@ -32,7 +32,7 @@ class BuildingBlockRow extends StatelessWidget {
                   ),
                 if (addressList.length == 2)
                   Container(
-                    width: screenWidth * 0.6,
+                    width: screenWidth * 0.5,
                     child: kanjiBlockRow(addressList),
                   ),
                 if (addressList.length > 2)

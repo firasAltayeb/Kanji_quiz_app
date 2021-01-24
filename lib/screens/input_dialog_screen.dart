@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 class InputDialogScreen extends StatelessWidget {
   final mnemonicController = TextEditingController();
+  final String textToEdit;
+
+  InputDialogScreen(this.textToEdit);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +23,10 @@ class InputDialogScreen extends StatelessWidget {
               autofocus: true,
               showCursor: true,
               decoration: InputDecoration(
-                hintText: "",
+                hintText: "$textToEdit",
+                hintMaxLines: 10,
                 hintStyle: TextStyle(
-                  fontSize: screenHeight * 0.04,
+                  fontSize: screenHeight * 0.03,
                   color: Colors.blue,
                 ),
                 contentPadding: EdgeInsets.all(20.0),

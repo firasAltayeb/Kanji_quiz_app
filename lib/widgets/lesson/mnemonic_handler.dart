@@ -3,10 +3,11 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class MnemonicHandler extends StatelessWidget {
+  final Function hideHandler;
   final Function updateHandler;
   final Map<String, Object> itemDetails;
 
-  MnemonicHandler(this.itemDetails, this.updateHandler);
+  MnemonicHandler(this.itemDetails, this.updateHandler, this.hideHandler);
 
   final mnemonicController = TextEditingController();
 
@@ -14,26 +15,20 @@ class MnemonicHandler extends StatelessWidget {
     return Row(
       children: [
         gestureContainer(context, _launchURL, "Kanji Koohii"),
-        gestureContainer(context, () {
-          Navigator.of(context).push(
-            PageRouteBuilder(
-              opaque: false,
-              pageBuilder: (BuildContext context, _, __) => InputDialogScreen(),
-            ),
-          );
-        }, "Edit Mnemonic"),
+        gestureContainer(context, _editMnemonicClicked, "Edit Mnemonic"),
       ],
     );
   }
 
-  Widget gestureContainer(BuildContext ctx, Function handler, String btnText) {
+  Widget gestureContainer(ctx, handler, btnText) {
     return GestureDetector(
-      onTap: handler,
+      onTap: () => handler(ctx),
       child: Container(
         height: MediaQuery.of(ctx).size.height * 0.135,
         width: MediaQuery.of(ctx).size.width * 0.5,
-        padding:
-            btnText == "Kanji Koohii" ? EdgeInsets.all(15) : EdgeInsets.all(5),
+        padding: btnText == "Kanji Koohii"
+            ? const EdgeInsets.all(15)
+            : const EdgeInsets.all(5),
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(width: 3.0, color: Colors.black),
@@ -57,7 +52,7 @@ class MnemonicHandler extends StatelessWidget {
     );
   }
 
-  void _launchURL() async {
+  void _launchURL(BuildContext context) async {
     String url = 'https://kanji.koohii.com/study/kanji/' +
         '${itemDetails['frameNumber']}';
     if (await canLaunch(url)) {
@@ -65,5 +60,35 @@ class MnemonicHandler extends StatelessWidget {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  void _editMnemonicClicked(BuildContext context) {
+    hideHandler();
+    if (itemDetails['mnemonicStory'] == '') {
+      if (itemDetails['itemType'] == 'Kanji') {
+        updateHandler('Please create a mnemonic for the kanji ' +
+            '${itemDetails['itemId']} using its bulidng blocks: ' +
+            '${itemDetails['buildingBlocks']}');
+      } else if (itemDetails['itemType'] == 'Primitive Kanji') {
+        updateHandler('Please create a mnemonic for the kanji ' +
+            '${itemDetails['itemId']}');
+      } else {
+        updateHandler('Please create a mnemonic for the item ' +
+            '${itemDetails['itemId']}');
+      }
+    }
+    Navigator.of(context)
+        .push(
+      PageRouteBuilder(
+          opaque: false,
+          pageBuilder: (BuildContext context, _, __) {
+            return InputDialogScreen(
+              itemDetails['mnemonicStory'],
+            );
+          }),
+    )
+        .then((_) {
+      hideHandler();
+    });
   }
 }
