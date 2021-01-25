@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BackPressedAlert {
-  Future<bool> dialog(
-      {@required BuildContext parentCtx, @required String alertMsg}) {
+  Future<bool> dialog({@required parentCtx, @required alertMsg}) {
+    var screenHeight = MediaQuery.of(parentCtx).size.height;
     return showDialog(
       context: parentCtx,
       builder: (context) => AlertDialog(
@@ -15,32 +15,31 @@ class BackPressedAlert {
         title: Text(
           'Are you sure?',
           style: TextStyle(
-            fontSize: MediaQuery.of(context).size.height * 0.05,
+            fontSize: screenHeight * 0.05,
             fontFamily: 'Anton',
           ),
         ),
         content: Text(
           alertMsg,
           style: TextStyle(
-            fontSize: MediaQuery.of(context).size.height * 0.04,
+            fontSize: screenHeight * 0.04,
             fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: Theme.of(context).accentColor,
         actions: [
-          _dialogButton('No', context, false),
-          _dialogButton('Yes', context, true),
+          _dialogButton('No', context, false, screenHeight),
+          _dialogButton('Yes', context, true, screenHeight),
         ],
       ),
     );
   }
 
-  Widget _dialogButton(
-      String displayedText, BuildContext context, bool choice) {
+  Widget _dialogButton(displayedText, context, choice, height) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: Colors.black,
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(height * 0.02),
         shape: CircleBorder(
           side: BorderSide(color: Colors.black, width: 2),
         ),
@@ -49,7 +48,7 @@ class BackPressedAlert {
       child: Text(
         displayedText,
         style: TextStyle(
-          fontSize: MediaQuery.of(context).size.height * 0.04,
+          fontSize: height * 0.035,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),

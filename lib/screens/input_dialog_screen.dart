@@ -12,12 +12,19 @@ class InputDialogScreen extends StatefulWidget {
 class _InputDialogScreenState extends State<InputDialogScreen> {
   final mnemonicController = TextEditingController();
   bool disposeClicked = false;
+  bool showButtonsRow = true;
   bool clickable = false;
 
   void _updateSubmitClickability() {
     setState(() {
       disposeClicked = true;
       mnemonicController.text = '';
+    });
+  }
+
+  void _hideBottomButton() {
+    setState(() {
+      showButtonsRow = false;
     });
   }
 
@@ -73,31 +80,36 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
               },
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              _myMaterialButton(
-                'Dispose',
-                Colors.red,
-                screenHeight,
-                disposeClicked
-                    ? () => Navigator.pop(context)
-                    : () {
-                        _updateSubmitClickability();
-                      },
-              ),
-              _myMaterialButton(
-                'Submit',
-                Colors.green,
-                screenHeight,
-                mnemonicController.text == ''
-                    ? null
-                    : () {
-                        Navigator.pop(context, mnemonicController.text);
-                      },
-              ),
-            ],
-          ),
+          if (showButtonsRow)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                _myMaterialButton(
+                  'Dispose',
+                  Colors.red,
+                  screenHeight,
+                  disposeClicked
+                      ? () {
+                          _hideBottomButton();
+                          Navigator.pop(context);
+                        }
+                      : () {
+                          _updateSubmitClickability();
+                        },
+                ),
+                _myMaterialButton(
+                  'Submit',
+                  Colors.green,
+                  screenHeight,
+                  mnemonicController.text == ''
+                      ? null
+                      : () {
+                          _hideBottomButton();
+                          Navigator.pop(context, mnemonicController.text);
+                        },
+                ),
+              ],
+            ),
         ],
       ),
     );
