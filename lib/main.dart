@@ -116,12 +116,10 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _resetItem(Map<String, Object> itemDetails) {
-    setState(() {
-      itemDetails['learningStatus'] = 'Lesson';
-      itemDetails['progressLevel'] = '0';
-      itemDetails['mnemonicStory'] = '';
-      _reAllocateMaps();
-    });
+    itemDetails['learningStatus'] = 'Lesson';
+    itemDetails['progressLevel'] = '0';
+    itemDetails['mnemonicStory'] = '';
+    _reAllocateMaps();
   }
 
   Widget build(BuildContext context) {

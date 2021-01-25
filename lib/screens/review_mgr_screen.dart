@@ -105,8 +105,8 @@ class _ReviewManagerState extends State<ReviewManager> {
                 answerQuestion: _recordAnswer,
               )
             : ResultPage(
-                scoreToDisplay: _sessionScore,
                 wrapSession: _wrapSession,
+                scoreToDisplay: _sessionScore,
                 correctRecallList: _correctRecallList,
                 incorrectRecallList: _incorrectRecallList,
               ),

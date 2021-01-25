@@ -11,7 +11,6 @@ class InputDialogScreen extends StatefulWidget {
 
 class _InputDialogScreenState extends State<InputDialogScreen> {
   TextEditingController mnemonicController;
-  bool disposeClicked = false;
   bool showButtonsRow = true;
   bool clickable = false;
 
@@ -25,9 +24,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
       mnemonicController.text = widget.itemDetails['mnemonicStory'];
   }
 
-  void _updateSubmitClickability() {
+  void _clearController() {
     setState(() {
-      disposeClicked = true;
       mnemonicController.text = '';
     });
   }
@@ -36,6 +34,13 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
     setState(() {
       showButtonsRow = false;
     });
+  }
+
+  Future<bool> _onBackPressed() async {
+    setState(() {
+      showButtonsRow = false;
+    });
+    return true;
   }
 
   @override
@@ -55,72 +60,72 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
           '${widget.itemDetails['itemId']}';
     }
 
-    return Scaffold(
-      backgroundColor: Colors.black.withOpacity(0.3),
-      resizeToAvoidBottomPadding: false,
-      body: Column(
-        children: [
-          SizedBox(
-            height: screenHeight * 0.1,
-          ),
-          Container(
-            color: Colors.white.withOpacity(0.95),
-            child: TextField(
-              autofocus: true,
-              showCursor: true,
-              decoration: InputDecoration(
-                hintText: hintText,
-                hintMaxLines: 10,
-                hintStyle: TextStyle(
+    return WillPopScope(
+      onWillPop: _onBackPressed,
+      child: Scaffold(
+        backgroundColor: Colors.black.withOpacity(0.3),
+        resizeToAvoidBottomPadding: false,
+        body: Column(
+          children: [
+            SizedBox(
+              height: screenHeight * 0.1,
+            ),
+            Container(
+              color: Colors.white.withOpacity(0.95),
+              child: TextField(
+                autofocus: true,
+                showCursor: true,
+                decoration: InputDecoration(
+                  hintText: hintText,
+                  hintMaxLines: 10,
+                  hintStyle: TextStyle(
+                    fontSize: screenHeight * 0.04,
+                    color: Colors.blue,
+                  ),
+                  contentPadding: EdgeInsets.all(20.0),
+                ),
+                style: TextStyle(
                   fontSize: screenHeight * 0.04,
-                  color: Colors.blue,
                 ),
-                contentPadding: EdgeInsets.all(20.0),
+                textInputAction: TextInputAction.go,
+                keyboardType: TextInputType.multiline,
+                minLines: 10,
+                maxLines: null,
+                controller: mnemonicController,
               ),
-              style: TextStyle(
-                fontSize: screenHeight * 0.04,
+            ),
+            if (showButtonsRow)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  _myMaterialButton(
+                    mnemonicController.text == '' ? 'Return' : 'Dispose',
+                    Colors.red,
+                    screenHeight,
+                    mnemonicController.text == ''
+                        ? () {
+                            _hideBottomButton();
+                            Navigator.pop(context);
+                          }
+                        : () {
+                            _clearController();
+                          },
+                  ),
+                  _myMaterialButton(
+                    'Submit',
+                    Colors.green,
+                    screenHeight,
+                    mnemonicController.text == ''
+                        ? null
+                        : () {
+                            _hideBottomButton();
+                            Navigator.pop(context, mnemonicController.text);
+                          },
+                  ),
+                ],
               ),
-              textInputAction: TextInputAction.go,
-              keyboardType: TextInputType.multiline,
-              minLines: 10,
-              maxLines: null,
-              controller: mnemonicController,
-              onTap: () {
-                disposeClicked = false;
-              },
-            ),
-          ),
-          if (showButtonsRow)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                _myMaterialButton(
-                  'Dispose',
-                  Colors.red,
-                  screenHeight,
-                  disposeClicked
-                      ? () {
-                          _hideBottomButton();
-                          Navigator.pop(context);
-                        }
-                      : () {
-                          _updateSubmitClickability();
-                        },
-                ),
-                _myMaterialButton(
-                  'Submit',
-                  Colors.green,
-                  screenHeight,
-                  mnemonicController.text == ''
-                      ? null
-                      : () {
-                          _hideBottomButton();
-                          Navigator.pop(context, mnemonicController.text);
-                        },
-                ),
-              ],
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

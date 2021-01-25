@@ -30,13 +30,13 @@ class ItemDetailScreen extends StatefulWidget {
 
 class _ItemDetailScreenState extends State<ItemDetailScreen> {
   var _showHandler = true;
-  Map<String, Object> selectedItem;
+  Map<String, Object> _selectedItem;
 
   void updateMnemonicField(String input) {
     if (input == null || input != '')
       setState(() {
-        selectedItem['mnemonicStory'] = input;
-        print('mnemonicStory input is ${selectedItem['mnemonicStory']}');
+        _selectedItem['mnemonicStory'] = input;
+        print('mnemonicStory input is ${_selectedItem['mnemonicStory']}');
         widget.reAllocateMaps();
       });
   }
@@ -53,8 +53,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
     var screenHeight = MediaQuery.of(context).size.height;
 
-    selectedItem = widget.kanjiMapList[selectedIndex];
-    var levelChangeDate = _fixTimeZone(selectedItem);
+    _selectedItem = widget.kanjiMapList[selectedIndex];
+    var levelChangeDate = _fixTimeZone(_selectedItem);
 
     return Scaffold(
       appBar: MainAppBar(
@@ -65,7 +65,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         child: Column(
           children: [
             TopKanjiRow(
-              kanjiSpriteAddress: selectedItem['colorPhotoAddress'],
+              kanjiSpriteAddress: _selectedItem['colorPhotoAddress'],
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               leftWidgetHandler: null,
@@ -74,7 +74,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(
               height: screenHeight * 0.08,
               child: KeyTextContainer(
-                'Keyword: ' + selectedItem['keyword'],
+                'Keyword: ' + _selectedItem['keyword'],
               ),
             ),
             SizedBox(height: 20),
@@ -85,27 +85,27 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 20),
             coloredTextContainer(
               screenHeight,
-              selectedItem['progressLevel'],
+              _selectedItem['progressLevel'],
               Theme.of(context).accentColor,
             ),
             SizedBox(height: 20),
             Container(
               height: screenHeight * 0.06,
               child: NextReviewDate(
-                selectedItem,
+                _selectedItem,
                 levelChangeDate,
               ),
             ),
             SizedBox(height: 20),
             SrsDifficultyRow(),
             SizedBox(height: 20),
-            ScrollableContainer(selectedItem),
+            ScrollableContainer(_selectedItem),
             SizedBox(height: 30),
-            BuildingBlockRow(selectedItem),
+            BuildingBlockRow(_selectedItem),
             SizedBox(height: 30),
             if (_showHandler)
               MnemonicHandler(
-                itemDetails: selectedItem,
+                itemDetails: _selectedItem,
                 updateHandler: updateMnemonicField,
                 hideShowHandler: _hideMnemonicHandler,
                 resetItemStatus: widget.resetItemStatus,
@@ -127,7 +127,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         DateTime.now().timeZoneName != 'JST') {
       return DateTime.now().add(Duration(hours: 9));
     }
-    return selectedItem['dateLastLevelChanged'];
+    return _selectedItem['dateLastLevelChanged'];
   }
 
   Widget coloredTextContainer(height, itemLvl, color) {
