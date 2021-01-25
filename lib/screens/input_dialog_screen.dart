@@ -10,10 +10,20 @@ class InputDialogScreen extends StatefulWidget {
 }
 
 class _InputDialogScreenState extends State<InputDialogScreen> {
-  final mnemonicController = TextEditingController();
+  TextEditingController mnemonicController;
   bool disposeClicked = false;
   bool showButtonsRow = true;
   bool clickable = false;
+
+  @override
+  void initState() {
+    super.initState();
+    mnemonicController = TextEditingController();
+    String mnemonicStory = widget.itemDetails['mnemonicStory'];
+    var clearStory = mnemonicStory.split(" ").join("");
+    if (clearStory != '')
+      mnemonicController.text = widget.itemDetails['mnemonicStory'];
+  }
 
   void _updateSubmitClickability() {
     setState(() {
