@@ -1,6 +1,8 @@
+import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:Kanji_quiz_app/screens/review_mgr_screen.dart';
+import 'package:flutter/services.dart';
 
 import 'main_screen.dart';
 import 'model/kanji_map.dart';
@@ -24,6 +26,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Box<dynamic> _kanjiBox;
   List<dynamic> _kanjiMapList;
+  String _timezone = 'Unknown';
   var _reviewMap = List<Map<String, Object>>();
   var _lessonMap = List<Map<String, Object>>();
 
@@ -41,7 +44,24 @@ class _MyAppState extends State<MyApp> {
     } else {
       print('kanjimap is not null');
     }
+
     _allocateMaps();
+    _initTimeZone();
+  }
+
+  Future<void> _initTimeZone() async {
+    String timezone;
+    try {
+      timezone = await FlutterNativeTimezone.getLocalTimezone();
+    } on PlatformException {
+      timezone = 'Failed to get the timezone.';
+    }
+
+    if (!mounted) return;
+
+    setState(() {
+      _timezone = timezone;
+    });
   }
 
   void _reAllocateMaps() {
@@ -52,7 +72,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _allocateMaps() {
-    print('allocate map called');
     _lessonMap.clear();
     _reviewMap.clear();
     for (var i = 0; i < _kanjiMapList.length; i++) {
@@ -64,6 +83,7 @@ class _MyAppState extends State<MyApp> {
         _addToReview(_kanjiMapList[i]);
       }
     }
+    print('allocate map called');
     print('LessonMap size is ' + '${_lessonMap.length}');
     print('ReviewMap size is ' + '${_reviewMap.length}');
   }
@@ -77,7 +97,7 @@ class _MyAppState extends State<MyApp> {
         break;
       case 2:
         if (kanjiMap['dateLastLevelChanged']
-            .isBefore(DateTime.now().subtract(Duration(seconds: 12))))
+            .isBefore(DateTime.now().subtract(Duration(hours: 12))))
           _reviewMap.add(kanjiMap);
         break;
       case 3:
@@ -105,6 +125,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget build(BuildContext context) {
+    print('Material app is built');
     return MaterialApp(
       title: 'Kanji Quiz App',
       theme: ThemeData(
@@ -130,17 +151,20 @@ class _MyAppState extends State<MyApp> {
               reviewMap: _reviewMap,
               reAllocateMaps: _reAllocateMaps,
             ),
-        LessonManager.routeName: (ctx) =>
-            LessonManager(_reAllocateMaps, _lessonMap),
-        ReviewManager.routeName: (ctx) =>
-            ReviewManager(_reAllocateMaps, _reviewMap),
-        ItemDetailScreen.routeName: (ctx) {
-          return ItemDetailScreen(
-            reAllocateMaps: _reAllocateMaps,
-            kanjiMapList: _kanjiMapList,
-            resetItemStatus: _resetItem,
-          );
-        }
+        LessonManager.routeName: (ctx) => LessonManager(
+              reAllocateMaps: _reAllocateMaps,
+              lessonMap: _lessonMap,
+            ),
+        ReviewManager.routeName: (ctx) => ReviewManager(
+              reAllocateMaps: _reAllocateMaps,
+              reviewListMap: _reviewMap,
+            ),
+        ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
+              reAllocateMaps: _reAllocateMaps,
+              kanjiMapList: _kanjiMapList,
+              resetItemStatus: _resetItem,
+              currentTimeZone: _timezone,
+            ),
       },
     );
   }

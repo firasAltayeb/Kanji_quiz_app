@@ -1,18 +1,18 @@
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/item_details/next_review_date.dart';
-import '../widgets/item_details/srs_difficulty_row.dart';
-import '../widgets/lesson/building_block_row.dart';
-import '../widgets/lesson/mnemonic_handler.dart';
-import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/main_app_bar.dart';
 import '../widgets/shared/top_kanji_row.dart';
+import '../widgets/lesson/mnemonic_handler.dart';
+import '../widgets/shared/key_text_container.dart';
+import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/scrollable_container.dart';
+import '../widgets/item_details/next_review_date.dart';
+import '../widgets/item_details/srs_difficulty_row.dart';
 
 class ItemDetailScreen extends StatefulWidget {
   static const routeName = '/item-details';
 
+  final String currentTimeZone;
   final Function reAllocateMaps;
   final Function resetItemStatus;
   final List<dynamic> kanjiMapList;
@@ -21,6 +21,7 @@ class ItemDetailScreen extends StatefulWidget {
     @required this.kanjiMapList,
     @required this.reAllocateMaps,
     @required this.resetItemStatus,
+    @required this.currentTimeZone,
   });
 
   @override
@@ -53,9 +54,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     var screenHeight = MediaQuery.of(context).size.height;
 
     selectedItem = widget.kanjiMapList[selectedIndex];
-
-    var levelChangeDate =
-        dateFormater.format(selectedItem['dateLastLevelChanged']);
+    var levelChangeDate = _fixTimeZone(selectedItem);
 
     return Scaffold(
       appBar: MainAppBar(
@@ -80,7 +79,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             ),
             SizedBox(height: 20),
             KeyTextContainer(
-              'SRS Level change date: $levelChangeDate',
+              'SRS Level change date: ' +
+                  '${dateFormater.format(levelChangeDate)}',
             ),
             SizedBox(height: 20),
             coloredTextContainer(
@@ -89,9 +89,12 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               Theme.of(context).accentColor,
             ),
             SizedBox(height: 20),
-            SizedBox(
+            Container(
               height: screenHeight * 0.06,
-              child: NextReviewDate(selectedItem),
+              child: NextReviewDate(
+                selectedItem,
+                levelChangeDate,
+              ),
             ),
             SizedBox(height: 20),
             SrsDifficultyRow(),
@@ -115,6 +118,16 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         ),
       ),
     );
+  }
+
+  DateTime _fixTimeZone(itemDetails) {
+    print('${widget.currentTimeZone}');
+    print('${DateTime.now().timeZoneName}');
+    if (widget.currentTimeZone == 'Asia/Tokyo' &&
+        DateTime.now().timeZoneName != 'JST') {
+      return DateTime.now().add(Duration(hours: 9));
+    }
+    return selectedItem['dateLastLevelChanged'];
   }
 
   Widget coloredTextContainer(height, itemLvl, color) {

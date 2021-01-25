@@ -1,9 +1,8 @@
+import '../widgets/review/result_review_page.dart';
+import '../widgets/review/recall_review_page.dart';
 import '../widgets/misc/back_pressed_alert.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/review/result_review_page.dart';
-import '../widgets/review/recall_review_page.dart';
 
 class ReviewManager extends StatefulWidget {
   static const routeName = '/review-screen';
@@ -11,7 +10,7 @@ class ReviewManager extends StatefulWidget {
   final Function reAllocateMaps;
   final List<Map<String, Object>> reviewListMap;
 
-  const ReviewManager(this.reAllocateMaps, this.reviewListMap);
+  ReviewManager({@required this.reAllocateMaps, @required this.reviewListMap});
 
   @override
   _ReviewManagerState createState() => _ReviewManagerState();
@@ -80,6 +79,7 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   @override
   Widget build(BuildContext context) {
+    print('Review mgr build called');
     final _questionQueue = widget.reviewListMap;
     if (_questionQueue.isEmpty == true) {
       return Scaffold();

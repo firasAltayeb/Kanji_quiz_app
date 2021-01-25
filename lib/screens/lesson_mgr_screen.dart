@@ -13,7 +13,10 @@ class LessonManager extends StatefulWidget {
   final Function reAllocateMaps;
   final List<Map<String, Object>> lessonMap;
 
-  LessonManager(this.reAllocateMaps, this.lessonMap);
+  LessonManager({
+    @required this.reAllocateMaps,
+    @required this.lessonMap,
+  });
 
   @override
   _LessonManagerState createState() => _LessonManagerState();
