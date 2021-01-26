@@ -4,11 +4,11 @@ import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:Kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:flutter/services.dart';
 
-import 'main_screen.dart';
-import 'model/kanji_map.dart';
-import 'package:hive/hive.dart';
-import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'model/kanji_map.dart';
+import 'main_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

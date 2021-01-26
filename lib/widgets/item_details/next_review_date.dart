@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
 
 class NextReviewDate extends StatelessWidget {
-  final DateTime dateChanged;
-  final Map<String, Object> selectedItem;
+  final Map<String, Object> _selectedItem;
+  final DateTime _dateChanged;
 
-  NextReviewDate(this.selectedItem, this.dateChanged);
+  NextReviewDate(this._selectedItem, this._dateChanged);
 
   @override
   Widget build(BuildContext context) {
@@ -14,29 +14,29 @@ class NextReviewDate extends StatelessWidget {
     var leadingText = 'Next review date: ';
     var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
 
-    switch (selectedItem['progressLevel']) {
+    switch (_selectedItem['progressLevel']) {
       case 1:
         textContainer = KeyTextContainer(
           '$leadingText' +
-              '${dateFormater.format(dateChanged.add(Duration(hours: 4)))}',
+              '${dateFormater.format(_dateChanged.add(Duration(hours: 4)))}',
         );
         break;
       case 2:
         textContainer = KeyTextContainer(
           '$leadingText' +
-              '${dateFormater.format(dateChanged.add(Duration(hours: 12)))}',
+              '${dateFormater.format(_dateChanged.add(Duration(hours: 12)))}',
         );
         break;
       case 3:
         textContainer = KeyTextContainer(
           '$leadingText' +
-              '${dateFormater.format(dateChanged.add(Duration(days: 2)))}',
+              '${dateFormater.format(_dateChanged.add(Duration(days: 2)))}',
         );
         break;
       case 4:
         textContainer = KeyTextContainer(
           '$leadingText' +
-              '${dateFormater.format(dateChanged.add(Duration(days: 4)))}',
+              '${dateFormater.format(_dateChanged.add(Duration(days: 4)))}',
         );
         break;
       default:

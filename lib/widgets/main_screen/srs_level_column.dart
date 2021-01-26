@@ -4,38 +4,38 @@ import 'package:flutter/material.dart';
 
 class SrsLevelColumn extends StatelessWidget {
   final List<dynamic> kanjiMapList;
-  final srsLevelOneMap = List<String>();
-  final srsLevelTwoMap = List<String>();
-  final srsLevelThreeMap = List<String>();
-  final srsLevelFourMap = List<String>();
-  final srsLevelFiveMap = List<String>();
+  final _srsLevelOneMap = List<String>();
+  final _srsLevelTwoMap = List<String>();
+  final _srsLevelThreeMap = List<String>();
+  final _srsLevelFourMap = List<String>();
+  final _srsLevelFiveMap = List<String>();
 
   SrsLevelColumn({
     @required this.kanjiMapList,
   });
 
   void assignSrsLists() {
-    srsLevelOneMap.clear();
-    srsLevelTwoMap.clear();
-    srsLevelThreeMap.clear();
-    srsLevelFourMap.clear();
-    srsLevelFiveMap.clear();
+    _srsLevelOneMap.clear();
+    _srsLevelTwoMap.clear();
+    _srsLevelThreeMap.clear();
+    _srsLevelFourMap.clear();
+    _srsLevelFiveMap.clear();
     kanjiMapList.forEach((kanjiMap) {
       switch (kanjiMap['progressLevel']) {
         case 1:
-          srsLevelOneMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelOneMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 2:
-          srsLevelTwoMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelTwoMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 3:
-          srsLevelThreeMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelThreeMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 4:
-          srsLevelFourMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelFourMap.add(kanjiMap['colorPhotoAddress']);
           break;
         case 5:
-          srsLevelFiveMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelFiveMap.add(kanjiMap['colorPhotoAddress']);
           break;
         default:
           break;
@@ -54,25 +54,25 @@ class SrsLevelColumn extends StatelessWidget {
         textContainer('SRS Level 1 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: srsLevelOneMap,
+          kanjiAddresses: _srsLevelOneMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 2 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: srsLevelTwoMap,
+          kanjiAddresses: _srsLevelTwoMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 3 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: srsLevelThreeMap,
+          kanjiAddresses: _srsLevelThreeMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 4 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: srsLevelFourMap,
+          kanjiAddresses: _srsLevelFourMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer(
@@ -82,7 +82,7 @@ class SrsLevelColumn extends StatelessWidget {
         ),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: srsLevelFiveMap,
+          kanjiAddresses: _srsLevelFiveMap,
           selectHandler: pushToItemScreen,
         ),
       ],

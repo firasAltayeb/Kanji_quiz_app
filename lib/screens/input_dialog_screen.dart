@@ -10,35 +10,34 @@ class InputDialogScreen extends StatefulWidget {
 }
 
 class _InputDialogScreenState extends State<InputDialogScreen> {
-  TextEditingController mnemonicController;
-  bool showButtonsRow = true;
-  bool clickable = false;
+  TextEditingController _mnemonicController;
+  bool _showButtonsRow = true;
 
   @override
   void initState() {
     super.initState();
-    mnemonicController = TextEditingController();
+    _mnemonicController = TextEditingController();
     String mnemonicStory = widget.itemDetails['mnemonicStory'];
     var clearStory = mnemonicStory.split(" ").join("");
     if (clearStory != '')
-      mnemonicController.text = widget.itemDetails['mnemonicStory'];
+      _mnemonicController.text = widget.itemDetails['mnemonicStory'];
   }
 
   void _clearController() {
     setState(() {
-      mnemonicController.text = '';
+      _mnemonicController.text = '';
     });
   }
 
   void _hideBottomButton() {
     setState(() {
-      showButtonsRow = false;
+      _showButtonsRow = false;
     });
   }
 
   Future<bool> _onBackPressed() async {
     setState(() {
-      showButtonsRow = false;
+      _showButtonsRow = false;
     });
     return true;
   }
@@ -91,18 +90,18 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                 keyboardType: TextInputType.multiline,
                 minLines: 10,
                 maxLines: null,
-                controller: mnemonicController,
+                controller: _mnemonicController,
               ),
             ),
-            if (showButtonsRow)
+            if (_showButtonsRow)
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   _myMaterialButton(
-                    mnemonicController.text == '' ? 'Return' : 'Dispose',
+                    _mnemonicController.text == '' ? 'Return' : 'Dispose',
                     Colors.red,
                     screenHeight,
-                    mnemonicController.text == ''
+                    _mnemonicController.text == ''
                         ? () {
                             _hideBottomButton();
                             Navigator.pop(context);
@@ -115,11 +114,11 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                     'Submit',
                     Colors.green,
                     screenHeight,
-                    mnemonicController.text == ''
+                    _mnemonicController.text == ''
                         ? null
                         : () {
                             _hideBottomButton();
-                            Navigator.pop(context, mnemonicController.text);
+                            Navigator.pop(context, _mnemonicController.text);
                           },
                   ),
                 ],

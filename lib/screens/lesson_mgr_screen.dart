@@ -48,7 +48,7 @@ class _LessonManagerState extends State<LessonManager> {
     });
   }
 
-  void updateMnemonicField(String input) {
+  void _updateMnemonicField(String input) {
     if (input == null || input != '')
       setState(() {
         widget.lessonMap[_queueIndex]['mnemonicStory'] = input;
@@ -96,7 +96,7 @@ class _LessonManagerState extends State<LessonManager> {
           if (_showHandler)
             MnemonicHandler(
               itemDetails: _learnQueue[_queueIndex],
-              updateHandler: updateMnemonicField,
+              updateHandler: _updateMnemonicField,
               hideShowHandler: _hideMnemonicHandler,
             ),
         ],

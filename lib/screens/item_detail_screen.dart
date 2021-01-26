@@ -29,10 +29,10 @@ class ItemDetailScreen extends StatefulWidget {
 }
 
 class _ItemDetailScreenState extends State<ItemDetailScreen> {
-  var _showHandler = true;
   Map<String, Object> _selectedItem;
+  var _showHandler = true;
 
-  void updateMnemonicField(String input) {
+  void _updateMnemonicField(String input) {
     if (input == null || input != '')
       setState(() {
         _selectedItem['mnemonicStory'] = input;
@@ -83,7 +83,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                   '${dateFormater.format(levelChangeDate)}',
             ),
             SizedBox(height: 20),
-            coloredTextContainer(
+            _coloredTextContainer(
               screenHeight,
               _selectedItem['progressLevel'],
               Theme.of(context).accentColor,
@@ -106,7 +106,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             if (_showHandler)
               MnemonicHandler(
                 itemDetails: _selectedItem,
-                updateHandler: updateMnemonicField,
+                updateHandler: _updateMnemonicField,
                 hideShowHandler: _hideMnemonicHandler,
                 resetItemStatus: widget.resetItemStatus,
               ),
@@ -130,7 +130,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     return _selectedItem['dateLastLevelChanged'];
   }
 
-  Widget coloredTextContainer(height, itemLvl, color) {
+  Widget _coloredTextContainer(height, itemLvl, color) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
