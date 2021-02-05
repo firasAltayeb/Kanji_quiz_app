@@ -91,7 +91,11 @@ class _LessonManagerState extends State<LessonManager> {
             ),
           ),
           BuildingBlockRow(_learnQueue[_queueIndex]),
-          ScrollableContainer(_learnQueue[_queueIndex]),
+          ScrollableContainer(
+            itemDetails: _learnQueue[_queueIndex],
+            updateHandler: _updateMnemonicField,
+            hideShowHandler: _hideMnemonicHandler,
+          ),
           Expanded(child: SizedBox()),
           if (_showHandler)
             MnemonicHandler(

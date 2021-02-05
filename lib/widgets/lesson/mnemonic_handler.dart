@@ -23,7 +23,7 @@ class MnemonicHandler extends StatelessWidget {
       children: [
         if (resetItemStatus != null)
           Expanded(
-            child: gestureContainer(
+            child: bottomButton(
               context,
               _resetItem,
               "Reset item",
@@ -31,7 +31,7 @@ class MnemonicHandler extends StatelessWidget {
             ),
           ),
         Expanded(
-          child: gestureContainer(
+          child: bottomButton(
             context,
             _launchURL,
             "Kanji Koohii",
@@ -39,9 +39,9 @@ class MnemonicHandler extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: gestureContainer(
+          child: bottomButton(
             context,
-            _editMnemonicClicked,
+            _editMnemonicHandler,
             "Edit Mnemonic",
             Theme.of(context).accentColor,
           ),
@@ -50,7 +50,7 @@ class MnemonicHandler extends StatelessWidget {
     );
   }
 
-  Widget gestureContainer(ctx, handler, btnText, color) {
+  Widget bottomButton(ctx, handler, btnText, color) {
     return GestureDetector(
       onTap: () => handler(ctx),
       child: Container(
@@ -101,7 +101,7 @@ class MnemonicHandler extends StatelessWidget {
     }
   }
 
-  void _editMnemonicClicked(BuildContext context) {
+  void _editMnemonicHandler(BuildContext context) {
     hideShowHandler();
     Navigator.of(context)
         .push(

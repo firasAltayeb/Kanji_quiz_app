@@ -99,7 +99,11 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 20),
             SrsDifficultyRow(),
             SizedBox(height: 20),
-            ScrollableContainer(_selectedItem),
+            ScrollableContainer(
+              itemDetails: _selectedItem,
+              updateHandler: _updateMnemonicField,
+              hideShowHandler: _hideMnemonicHandler,
+            ),
             SizedBox(height: 30),
             BuildingBlockRow(_selectedItem),
             SizedBox(height: 30),
