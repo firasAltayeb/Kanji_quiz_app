@@ -2,12 +2,14 @@ import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:Kanji_quiz_app/screens/review_mgr_screen.dart';
+import 'package:Kanji_quiz_app/model/kanji_services.dart';
 import 'package:flutter/services.dart';
+import 'model/kanji_model.dart';
+import 'model/kanji_map.dart';
 
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'model/kanji_map.dart';
 import 'main_screen.dart';
 
 void main() async {
@@ -24,6 +26,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  List<Kanji> _kanjiList;
   Box<dynamic> _kanjiBox;
   List<dynamic> _kanjiMapList;
   String _timezone = 'Unknown';
@@ -47,6 +50,12 @@ class _MyAppState extends State<MyApp> {
 
     _allocateMaps();
     _initTimeZone();
+    _retrieveJsonData();
+  }
+
+  Future<void> _retrieveJsonData() async {
+    _kanjiList = await loadKanjiList();
+    print(_kanjiList[1].buildingBlocks);
   }
 
   Future<void> _initTimeZone() async {

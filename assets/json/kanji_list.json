@@ -1,0 +1,22 @@
+[
+    {
+        "itemId": "五",
+        "keyword": "Five",
+        "itemType": "Primitive Kanji",
+        "frameNumber": 5,
+        "mnemonicStory": "",
+        "progressLevel": 5,
+        "learningStatus": "Learned",
+        "buildingBlocks": []
+    },
+    {
+        "itemId": "口",
+        "keyword": "Mouth",
+        "itemType": "Primitive Kanji",
+        "frameNumber": 11,
+        "mnemonicStory": "",
+        "progressLevel": 4,
+        "learningStatus": "Review",
+        "buildingBlocks": ["chesse", "lover"]
+    }
+]
