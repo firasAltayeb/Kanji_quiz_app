@@ -57,8 +57,8 @@ class _ReviewManagerState extends State<ReviewManager> {
     for (var index = 0; index < _answerChoiceList.length; index++) {
       Map<String, Object> reviewMap = widget.reviewListMap[index];
       int currentProgressLevel = reviewMap['progressLevel'];
-      //reviewMap['dateLastLevelChanged'] = DateTime.now();
-      reviewMap['learningStatus'] = 'Pratice';
+      reviewMap['dateLastLevelChanged'] = DateTime.now();
+
       if (_answerChoiceList[index]) {
         if (currentProgressLevel < 4) {
           reviewMap['progressLevel'] = currentProgressLevel + 1;

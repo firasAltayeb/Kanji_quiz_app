@@ -7,13 +7,13 @@ class BuildingBlockRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<dynamic> addressList = kanjiMap['buildBlocksId'];
+    List<dynamic> buildingBlocks = kanjiMap['buildBlocksId'];
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
       alignment: Alignment.center,
       height: screenHeight * 0.175,
-      child: addressList.isEmpty
+      child: buildingBlocks.isEmpty
           ? textWidget(
               'Item type:  ${kanjiMap['itemType']}',
               screenWidth * 0.08,
@@ -25,19 +25,19 @@ class BuildingBlockRow extends StatelessWidget {
                   'Building blocks: ',
                   screenWidth * 0.06,
                 ),
-                if (addressList.length == 1)
+                if (buildingBlocks.length == 1)
                   Container(
                     width: screenWidth * 0.3,
-                    child: kanjiBlockRow(addressList, screenHeight * 0.125),
+                    child: kanjiBlockRow(buildingBlocks, screenHeight * 0.125),
                   ),
-                if (addressList.length == 2)
+                if (buildingBlocks.length == 2)
                   Container(
                     width: screenWidth * 0.5,
-                    child: kanjiBlockRow(addressList, screenHeight * 0.1),
+                    child: kanjiBlockRow(buildingBlocks, screenHeight * 0.1),
                   ),
-                if (addressList.length > 2)
+                if (buildingBlocks.length > 2)
                   Expanded(
-                    child: kanjiBlockRow(addressList, screenHeight * 0.1),
+                    child: kanjiBlockRow(buildingBlocks, screenHeight * 0.1),
                   ),
               ],
             ),
@@ -54,12 +54,12 @@ class BuildingBlockRow extends StatelessWidget {
     );
   }
 
-  Widget kanjiBlockRow(blockAddresses, containerHeight) {
+  Widget kanjiBlockRow(blockIds, containerHeight) {
     return Row(
       children: [
-        ...(blockAddresses)
+        ...(blockIds)
             .map(
-              (blockAddress) => Expanded(
+              (buildingBlockId) => Expanded(
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
@@ -76,7 +76,7 @@ class BuildingBlockRow extends StatelessWidget {
                     Container(
                       height: containerHeight,
                       child: Text(
-                        blockAddress,
+                        buildingBlockId,
                         style: TextStyle(
                           fontSize: containerHeight * 0.6,
                           fontFamily: 'Lato',

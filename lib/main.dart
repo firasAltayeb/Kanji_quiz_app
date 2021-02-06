@@ -84,13 +84,17 @@ class _MyAppState extends State<MyApp> {
     _lessonMap.clear();
     _reviewMap.clear();
     for (var i = 0; i < _kanjiMapList.length; i++) {
+      if (_kanjiMapList[i]['dateLastLevelChanged'] == '') {
+        _kanjiMapList[i]['dateLastLevelChanged'] =
+            DateTime.now().subtract(Duration(days: 5));
+        print(_kanjiMapList[i]);
+      }
       if (_kanjiMapList[i]['learningStatus'] == 'Lesson') {
         _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
         _lessonMap.add(_kanjiMapList[i]);
       } else if (_kanjiMapList[i]['learningStatus'] == 'Review') {
         _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
-        _reviewMap.add(_kanjiMapList[i]);
-        //_addToReview(_kanjiMapList[i]);
+        _addToReview(_kanjiMapList[i]);
       }
     }
     print('allocate map called');

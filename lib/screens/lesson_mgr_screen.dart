@@ -35,7 +35,7 @@ class _LessonManagerState extends State<LessonManager> {
       widget.lessonMap.forEach((element) {
         element['progressLevel'] = 1;
         element['learningStatus'] = 'Review';
-        //element['dateLastLevelChanged'] = DateTime.now();
+        element['dateLastLevelChanged'] = DateTime.now();
       });
       widget.reAllocateMaps();
       Navigator.pop(context);

@@ -54,7 +54,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     var screenHeight = MediaQuery.of(context).size.height;
 
     _selectedItem = widget.kanjiMapList[selectedIndex];
-    //var levelChangeDate = _fixTimeZone(_selectedItem);
+    var levelChangeDate = _fixTimeZone(_selectedItem);
 
     return Scaffold(
       appBar: MainAppBar(
@@ -79,10 +79,10 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               ),
             ),
             SizedBox(height: 20),
-            // KeyTextContainer(
-            //   'SRS Level change date: ' +
-            //       '${dateFormater.format(levelChangeDate)}',
-            // ),
+            KeyTextContainer(
+              'SRS Level change date: ' +
+                  '${dateFormater.format(levelChangeDate)}',
+            ),
             SizedBox(height: 20),
             _coloredTextContainer(
               screenHeight,
@@ -90,13 +90,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               Theme.of(context).accentColor,
             ),
             SizedBox(height: 20),
-            // Container(
-            //   height: screenHeight * 0.06,
-            //   child: NextReviewDate(
-            //     _selectedItem,
-            //     levelChangeDate,
-            //   ),
-            // ),
+            Container(
+              height: screenHeight * 0.06,
+              child: NextReviewDate(
+                _selectedItem,
+                levelChangeDate,
+              ),
+            ),
             SizedBox(height: 20),
             SrsDifficultyRow(),
             SizedBox(height: 20),
