@@ -7,7 +7,7 @@ class BuildingBlockRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<dynamic> addressList = kanjiMap['buildBlocksAddress'];
+    List<dynamic> addressList = kanjiMap['buildBlocksId'];
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
@@ -28,16 +28,16 @@ class BuildingBlockRow extends StatelessWidget {
                 if (addressList.length == 1)
                   Container(
                     width: screenWidth * 0.3,
-                    child: kanjiBlockRow(addressList),
+                    child: kanjiBlockRow(addressList, screenHeight * 0.125),
                   ),
                 if (addressList.length == 2)
                   Container(
                     width: screenWidth * 0.5,
-                    child: kanjiBlockRow(addressList),
+                    child: kanjiBlockRow(addressList, screenHeight * 0.1),
                   ),
                 if (addressList.length > 2)
                   Expanded(
-                    child: kanjiBlockRow(addressList),
+                    child: kanjiBlockRow(addressList, screenHeight * 0.1),
                   ),
               ],
             ),
@@ -54,19 +54,37 @@ class BuildingBlockRow extends StatelessWidget {
     );
   }
 
-  Widget kanjiBlockRow(List<dynamic> blockAddresses) {
+  Widget kanjiBlockRow(blockAddresses, containerHeight) {
     return Row(
       children: [
         ...(blockAddresses)
             .map(
               (blockAddress) => Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(blockAddress),
-                      fit: BoxFit.fill,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                              "assets/images/Colored_template_xl.png"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ),
-                  ),
+                    Container(
+                      height: containerHeight,
+                      child: Text(
+                        blockAddress,
+                        style: TextStyle(
+                          fontSize: containerHeight * 0.6,
+                          fontFamily: 'Lato',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             )
