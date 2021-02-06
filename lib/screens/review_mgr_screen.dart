@@ -29,11 +29,9 @@ class _ReviewManagerState extends State<ReviewManager> {
 
     if (answerChoice) {
       _sessionScore += 5;
-      _correctRecallList
-          .add(widget.reviewListMap[_queueIndex]['colorPhotoAddress']);
+      _correctRecallList.add(widget.reviewListMap[_queueIndex]['itemId']);
     } else {
-      _incorrectRecallList
-          .add(widget.reviewListMap[_queueIndex]['colorPhotoAddress']);
+      _incorrectRecallList.add(widget.reviewListMap[_queueIndex]['itemId']);
     }
     setState(() {
       _queueIndex = _queueIndex + 1;
@@ -59,8 +57,8 @@ class _ReviewManagerState extends State<ReviewManager> {
     for (var index = 0; index < _answerChoiceList.length; index++) {
       Map<String, Object> reviewMap = widget.reviewListMap[index];
       int currentProgressLevel = reviewMap['progressLevel'];
-      reviewMap['dateLastLevelChanged'] = DateTime.now();
-
+      //reviewMap['dateLastLevelChanged'] = DateTime.now();
+      reviewMap['learningStatus'] = 'Pratice';
       if (_answerChoiceList[index]) {
         if (currentProgressLevel < 4) {
           reviewMap['progressLevel'] = currentProgressLevel + 1;

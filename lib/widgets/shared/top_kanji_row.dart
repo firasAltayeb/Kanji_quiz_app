@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 
 class TopKanjiRow extends StatelessWidget {
+  final String kanjiId;
+  final String templateAddress;
+
   final String leftWidgetText;
   final String rightWidgetText;
   final Function leftWidgetHandler;
   final Function rightWidgetHandler;
-  final String kanjiSpriteAddress;
 
   TopKanjiRow({
+    @required this.kanjiId,
+    @required this.templateAddress,
     @required this.leftWidgetText,
     @required this.rightWidgetText,
     @required this.leftWidgetHandler,
     @required this.rightWidgetHandler,
-    @required this.kanjiSpriteAddress,
   });
 
   @override
@@ -24,7 +27,7 @@ class TopKanjiRow extends StatelessWidget {
         leftWidgetText == 'Prev'
             ? cornerButton(leftWidgetText, leftWidgetHandler, screenHeight)
             : cornerWidget(leftWidgetText, 'left', screenHeight),
-        kanjiPicture(kanjiSpriteAddress, screenHeight),
+        kanjiPicture(kanjiId, screenHeight),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? cornerButton(rightWidgetText, rightWidgetHandler, screenHeight)
             : cornerWidget(rightWidgetText, 'right', screenHeight),
@@ -55,14 +58,31 @@ class TopKanjiRow extends StatelessWidget {
   Widget kanjiPicture(String address, double height) {
     return Expanded(
       flex: 3,
-      child: Container(
-        height: height,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(address),
-            fit: BoxFit.fill,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Container(
+            height: height,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(templateAddress),
+                fit: BoxFit.fill,
+              ),
+            ),
           ),
-        ),
+          Container(
+            height: height * 0.65,
+            child: Text(
+              kanjiId,
+              style: TextStyle(
+                fontSize: height * 0.4,
+                fontFamily: 'Lato',
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class KanjiInteractiveRow extends StatelessWidget {
   final double widgetHeight;
-  final List<String> kanjiAddresses;
+  final List<String> kanjiIds;
   final Function selectHandler;
 
   KanjiInteractiveRow({
     @required this.widgetHeight,
-    @required this.kanjiAddresses,
+    @required this.kanjiIds,
     @required this.selectHandler,
   });
 
@@ -16,7 +16,7 @@ class KanjiInteractiveRow extends StatelessWidget {
     return SizedBox(
       height: widgetHeight,
       child: GridView.builder(
-          itemCount: kanjiAddresses.length,
+          itemCount: kanjiIds.length,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: widgetHeight,
             childAspectRatio: 1.25,
@@ -28,15 +28,33 @@ class KanjiInteractiveRow extends StatelessWidget {
                   ? null
                   : () => selectHandler(
                         context,
-                        kanjiAddresses[i],
+                        kanjiIds[i],
                       ),
-              child: Ink(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(kanjiAddresses[i]),
-                    fit: BoxFit.fill,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Ink(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image:
+                            AssetImage("assets/images/Colored_template_xl.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    height: widgetHeight * 0.65,
+                    child: Text(
+                      kanjiIds[i],
+                      style: TextStyle(
+                        fontSize: widgetHeight * 0.4,
+                        fontFamily: 'Lato',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             );
           }),

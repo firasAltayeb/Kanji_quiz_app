@@ -1,4 +1,4 @@
-import '../widgets/lesson/scrollable_container.dart';
+import '../widgets/lesson/mnemonic_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/mnemonic_handler.dart';
@@ -35,7 +35,7 @@ class _LessonManagerState extends State<LessonManager> {
       widget.lessonMap.forEach((element) {
         element['progressLevel'] = 1;
         element['learningStatus'] = 'Review';
-        element['dateLastLevelChanged'] = DateTime.now();
+        //element['dateLastLevelChanged'] = DateTime.now();
       });
       widget.reAllocateMaps();
       Navigator.pop(context);
@@ -78,7 +78,8 @@ class _LessonManagerState extends State<LessonManager> {
       body: Column(
         children: [
           TopKanjiRow(
-            kanjiSpriteAddress: _learnQueue[_queueIndex]['greyPhotoAddress'],
+            kanjiId: _learnQueue[_queueIndex]['itemId'],
+            templateAddress: "assets/images/Colorless_template_xl.png",
             leftWidgetText: "Prev",
             rightWidgetText: "Next",
             leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,

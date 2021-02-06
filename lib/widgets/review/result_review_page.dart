@@ -35,7 +35,7 @@ class ResultPage extends StatelessWidget {
       if (correctRecallList.length > 0)
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.175,
-          kanjiAddresses: correctRecallList,
+          kanjiIds: correctRecallList,
           selectHandler: null,
         ),
       if (correctRecallList.length == 0)
@@ -50,7 +50,7 @@ class ResultPage extends StatelessWidget {
       if (incorrectRecallList.length > 0)
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.175,
-          kanjiAddresses: incorrectRecallList,
+          kanjiIds: incorrectRecallList,
           selectHandler: null,
         ),
       if (incorrectRecallList.length == 0)

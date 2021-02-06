@@ -89,7 +89,8 @@ class _MyAppState extends State<MyApp> {
         _lessonMap.add(_kanjiMapList[i]);
       } else if (_kanjiMapList[i]['learningStatus'] == 'Review') {
         _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
-        _addToReview(_kanjiMapList[i]);
+        _reviewMap.add(_kanjiMapList[i]);
+        //_addToReview(_kanjiMapList[i]);
       }
     }
     print('allocate map called');

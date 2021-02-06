@@ -67,7 +67,8 @@ class BuildingBlockRow extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                              "assets/images/Colored_template_xl.png"),
+                            "assets/images/Colored_template_xl.png",
+                          ),
                           fit: BoxFit.fill,
                         ),
                       ),

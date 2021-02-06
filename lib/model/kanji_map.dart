@@ -141,8 +141,6 @@ class KanjiMap {
       'progressLevel': 0,
       'learningStatus': 'Lesson',
       'buildingBlocks': ['Mouth'],
-      'greyPhotoAddress': 'assets/images/19_Kanji_xlg.png',
-      'colorPhotoAddress': 'assets/images/19_Kanji_xl.png',
       'buildBlocksId': ['口'],
       'dateLastLevelChanged': DateTime.now().add(Duration(days: 100)),
     },
@@ -155,13 +153,7 @@ class KanjiMap {
       'progressLevel': 0,
       'learningStatus': 'Lesson',
       'buildingBlocks': ['Top hat, Mouth, Garment'],
-      'greyPhotoAddress': 'assets/images/287_Kanji_xlg.png',
-      'colorPhotoAddress': 'assets/images/287_Kanji_xl.png',
-      'buildBlocksId': [
-        '亠',
-        '口',
-        '衣',
-      ],
+      'buildBlocksId': ['亠', '口', '衣'],
       'dateLastLevelChanged': DateTime.now().add(Duration(days: 100)),
     }
   ];

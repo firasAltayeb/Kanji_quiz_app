@@ -23,19 +23,19 @@ class SrsLevelColumn extends StatelessWidget {
     kanjiMapList.forEach((kanjiMap) {
       switch (kanjiMap['progressLevel']) {
         case 1:
-          _srsLevelOneMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelOneMap.add(kanjiMap['itemId']);
           break;
         case 2:
-          _srsLevelTwoMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelTwoMap.add(kanjiMap['itemId']);
           break;
         case 3:
-          _srsLevelThreeMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelThreeMap.add(kanjiMap['itemId']);
           break;
         case 4:
-          _srsLevelFourMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelFourMap.add(kanjiMap['itemId']);
           break;
         case 5:
-          _srsLevelFiveMap.add(kanjiMap['colorPhotoAddress']);
+          _srsLevelFiveMap.add(kanjiMap['itemId']);
           break;
         default:
           break;
@@ -54,25 +54,25 @@ class SrsLevelColumn extends StatelessWidget {
         textContainer('SRS Level 1 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: _srsLevelOneMap,
+          kanjiIds: _srsLevelOneMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 2 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: _srsLevelTwoMap,
+          kanjiIds: _srsLevelTwoMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 3 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: _srsLevelThreeMap,
+          kanjiIds: _srsLevelThreeMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 4 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: _srsLevelFourMap,
+          kanjiIds: _srsLevelFourMap,
           selectHandler: pushToItemScreen,
         ),
         textContainer(
@@ -82,7 +82,7 @@ class SrsLevelColumn extends StatelessWidget {
         ),
         KanjiInteractiveRow(
           widgetHeight: screenHeight * 0.2,
-          kanjiAddresses: _srsLevelFiveMap,
+          kanjiIds: _srsLevelFiveMap,
           selectHandler: pushToItemScreen,
         ),
       ],
@@ -112,8 +112,8 @@ class SrsLevelColumn extends StatelessWidget {
   }
 
   void pushToItemScreen(BuildContext context, String address) {
-    var kanjiIndex = kanjiMapList
-        .indexWhere((kanjiMap) => kanjiMap['colorPhotoAddress'] == address);
+    var kanjiIndex =
+        kanjiMapList.indexWhere((kanjiMap) => kanjiMap['itemId'] == address);
 
     Navigator.of(context).pushNamed(
       ItemDetailScreen.routeName,

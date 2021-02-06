@@ -5,7 +5,7 @@ import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/lesson/mnemonic_handler.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
-import '../widgets/lesson/scrollable_container.dart';
+import '../widgets/lesson/mnemonic_container.dart';
 import '../widgets/item_details/next_review_date.dart';
 import '../widgets/item_details/srs_difficulty_row.dart';
 
@@ -54,7 +54,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     var screenHeight = MediaQuery.of(context).size.height;
 
     _selectedItem = widget.kanjiMapList[selectedIndex];
-    var levelChangeDate = _fixTimeZone(_selectedItem);
+    //var levelChangeDate = _fixTimeZone(_selectedItem);
 
     return Scaffold(
       appBar: MainAppBar(
@@ -65,7 +65,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         child: Column(
           children: [
             TopKanjiRow(
-              kanjiSpriteAddress: _selectedItem['colorPhotoAddress'],
+              kanjiId: _selectedItem['itemId'],
+              templateAddress: "assets/images/Colored_template_xl.png",
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               leftWidgetHandler: null,
@@ -78,10 +79,10 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               ),
             ),
             SizedBox(height: 20),
-            KeyTextContainer(
-              'SRS Level change date: ' +
-                  '${dateFormater.format(levelChangeDate)}',
-            ),
+            // KeyTextContainer(
+            //   'SRS Level change date: ' +
+            //       '${dateFormater.format(levelChangeDate)}',
+            // ),
             SizedBox(height: 20),
             _coloredTextContainer(
               screenHeight,
@@ -89,13 +90,13 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               Theme.of(context).accentColor,
             ),
             SizedBox(height: 20),
-            Container(
-              height: screenHeight * 0.06,
-              child: NextReviewDate(
-                _selectedItem,
-                levelChangeDate,
-              ),
-            ),
+            // Container(
+            //   height: screenHeight * 0.06,
+            //   child: NextReviewDate(
+            //     _selectedItem,
+            //     levelChangeDate,
+            //   ),
+            // ),
             SizedBox(height: 20),
             SrsDifficultyRow(),
             SizedBox(height: 20),

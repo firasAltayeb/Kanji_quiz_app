@@ -44,7 +44,8 @@ class _RecallPageState extends State<RecallPage> {
     return Column(
       children: [
         TopKanjiRow(
-          kanjiSpriteAddress: _questionItem['colorPhotoAddress'],
+          kanjiId: _questionItem['itemId'],
+          templateAddress: "assets/images/Colored_template_xl.png",
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
           leftWidgetHandler: null,
