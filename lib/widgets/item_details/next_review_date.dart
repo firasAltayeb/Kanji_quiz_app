@@ -1,9 +1,10 @@
-import 'package:intl/intl.dart';
-import 'package:flutter/material.dart';
 import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class NextReviewDate extends StatelessWidget {
-  final Map<String, Object> _selectedItem;
+  final Kanji _selectedItem;
   final DateTime _dateChanged;
 
   NextReviewDate(this._selectedItem, this._dateChanged);
@@ -14,7 +15,7 @@ class NextReviewDate extends StatelessWidget {
     var leadingText = 'Next review date: ';
     var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
 
-    switch (_selectedItem['progressLevel']) {
+    switch (_selectedItem.progressLevel) {
       case 1:
         textContainer = KeyTextContainer(
           '$leadingText' +

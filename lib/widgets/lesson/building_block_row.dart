@@ -1,13 +1,14 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class BuildingBlockRow extends StatelessWidget {
-  final Map<String, Object> kanjiMap;
+  final Kanji itemToLearn;
 
-  BuildingBlockRow(this.kanjiMap);
+  BuildingBlockRow(this.itemToLearn);
 
   @override
   Widget build(BuildContext context) {
-    List<dynamic> buildingBlocks = kanjiMap['buildBlocksId'];
+    List<dynamic> buildingBlocks = itemToLearn.buildingBlockIds;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
@@ -15,7 +16,7 @@ class BuildingBlockRow extends StatelessWidget {
       height: screenHeight * 0.175,
       child: buildingBlocks.isEmpty
           ? textWidget(
-              'Item type:  ${kanjiMap['itemType']}',
+              'Item type:  ${itemToLearn.itemType}',
               screenWidth * 0.08,
             )
           : Row(

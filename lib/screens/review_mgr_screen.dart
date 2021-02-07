@@ -1,3 +1,5 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
+
 import '../widgets/review/result_review_page.dart';
 import '../widgets/review/recall_review_page.dart';
 import '../widgets/misc/back_pressed_alert.dart';
@@ -7,10 +9,10 @@ import 'package:flutter/material.dart';
 class ReviewManager extends StatefulWidget {
   static const routeName = '/review-screen';
 
-  final Function reAllocateMaps;
-  final List<Map<String, Object>> reviewListMap;
+  final Function reassignLists;
+  final List<Kanji> reviewList;
 
-  ReviewManager({@required this.reAllocateMaps, @required this.reviewListMap});
+  ReviewManager({@required this.reassignLists, @required this.reviewList});
 
   @override
   _ReviewManagerState createState() => _ReviewManagerState();
@@ -29,9 +31,9 @@ class _ReviewManagerState extends State<ReviewManager> {
 
     if (answerChoice) {
       _sessionScore += 5;
-      _correctRecallList.add(widget.reviewListMap[_queueIndex]['itemId']);
+      _correctRecallList.add(widget.reviewList[_queueIndex].itemId);
     } else {
-      _incorrectRecallList.add(widget.reviewListMap[_queueIndex]['itemId']);
+      _incorrectRecallList.add(widget.reviewList[_queueIndex].itemId);
     }
     setState(() {
       _queueIndex = _queueIndex + 1;
@@ -55,30 +57,30 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   void _wrapSession() {
     for (var index = 0; index < _answerChoiceList.length; index++) {
-      Map<String, Object> reviewMap = widget.reviewListMap[index];
-      int currentProgressLevel = reviewMap['progressLevel'];
-      reviewMap['dateLastLevelChanged'] = DateTime.now();
+      Kanji reviewedItem = widget.reviewList[index];
+      int currentProgressLevel = reviewedItem.progressLevel;
+      reviewedItem.dateLastLevelChanged = DateTime.now();
 
       if (_answerChoiceList[index]) {
         if (currentProgressLevel < 4) {
-          reviewMap['progressLevel'] = currentProgressLevel + 1;
+          reviewedItem.progressLevel = currentProgressLevel + 1;
         } else {
-          reviewMap['learningStatus'] = 'Pratice';
+          reviewedItem.learningStatus = 'Pratice';
         }
       } else {
         if (currentProgressLevel > 1)
-          reviewMap['progressLevel'] = currentProgressLevel - 1;
+          reviewedItem.progressLevel = currentProgressLevel - 1;
       }
     }
 
-    widget.reAllocateMaps();
+    widget.reassignLists();
     Navigator.pop(context);
   }
 
   @override
   Widget build(BuildContext context) {
     print('Review mgr build called');
-    final _questionQueue = widget.reviewListMap;
+    final _questionQueue = widget.reviewList;
     if (_questionQueue.isEmpty == true) {
       return Scaffold();
     }

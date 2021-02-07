@@ -1,13 +1,14 @@
-import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
 import 'package:Kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
 import 'package:Kanji_quiz_app/widgets/review/show_answer_button.dart';
+import 'package:Kanji_quiz_app/widgets/shared/top_kanji_row.dart';
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class RecallPage extends StatefulWidget {
   final int questionIndex;
+  final List<Kanji> questionQueue;
   final Function answerQuestion;
   final Function undoLastAnswer;
-  final List<Map<String, Object>> questionQueue;
 
   RecallPage({
     @required this.questionQueue,
@@ -44,7 +45,7 @@ class _RecallPageState extends State<RecallPage> {
     return Column(
       children: [
         TopKanjiRow(
-          kanjiId: _questionItem['itemId'],
+          kanjiId: _questionItem.itemId,
           templateAddress: "assets/images/Colored_template_xl.png",
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
@@ -111,7 +112,7 @@ class _RecallPageState extends State<RecallPage> {
         children: <TextSpan>[
           new TextSpan(text: 'The correct keyword is: '),
           new TextSpan(
-            text: '${widget.questionQueue[widget.questionIndex]['keyword']}',
+            text: '${widget.questionQueue[widget.questionIndex].keyword}',
             style: new TextStyle(fontWeight: FontWeight.bold),
           ),
           new TextSpan(text: '. \n Did you remember correctly?'),

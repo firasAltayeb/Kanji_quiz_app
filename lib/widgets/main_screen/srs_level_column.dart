@@ -1,9 +1,10 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
 class SrsLevelColumn extends StatelessWidget {
-  final List<dynamic> kanjiMapList;
+  final List<Kanji> kanjiList;
   final _srsLevelOneIds = List<String>();
   final _srsLevelTwoIds = List<String>();
   final _srsLevelThreeIds = List<String>();
@@ -11,7 +12,7 @@ class SrsLevelColumn extends StatelessWidget {
   final _srsLevelFiveIds = List<String>();
 
   SrsLevelColumn({
-    @required this.kanjiMapList,
+    @required this.kanjiList,
   });
 
   void assignSrsLists() {
@@ -20,22 +21,22 @@ class SrsLevelColumn extends StatelessWidget {
     _srsLevelThreeIds.clear();
     _srsLevelFourIds.clear();
     _srsLevelFiveIds.clear();
-    kanjiMapList.forEach((kanjiMap) {
-      switch (kanjiMap['progressLevel']) {
+    kanjiList.forEach((item) {
+      switch (item.progressLevel) {
         case 1:
-          _srsLevelOneIds.add(kanjiMap['itemId']);
+          _srsLevelOneIds.add(item.itemId);
           break;
         case 2:
-          _srsLevelTwoIds.add(kanjiMap['itemId']);
+          _srsLevelTwoIds.add(item.itemId);
           break;
         case 3:
-          _srsLevelThreeIds.add(kanjiMap['itemId']);
+          _srsLevelThreeIds.add(item.itemId);
           break;
         case 4:
-          _srsLevelFourIds.add(kanjiMap['itemId']);
+          _srsLevelFourIds.add(item.itemId);
           break;
         case 5:
-          _srsLevelFiveIds.add(kanjiMap['itemId']);
+          _srsLevelFiveIds.add(item.itemId);
           break;
         default:
           break;
@@ -113,7 +114,7 @@ class SrsLevelColumn extends StatelessWidget {
 
   void pushToItemScreen(BuildContext context, String address) {
     var kanjiIndex =
-        kanjiMapList.indexWhere((kanjiMap) => kanjiMap['itemId'] == address);
+        kanjiList.indexWhere((reviewedItem) => reviewedItem.itemId == address);
 
     Navigator.of(context).pushNamed(
       ItemDetailScreen.routeName,

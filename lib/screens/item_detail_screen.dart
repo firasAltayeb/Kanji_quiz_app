@@ -1,25 +1,26 @@
-import 'package:intl/intl.dart';
-import 'package:flutter/material.dart';
-import '../widgets/shared/main_app_bar.dart';
-import '../widgets/shared/top_kanji_row.dart';
-import '../widgets/lesson/mnemonic_handler.dart';
+import '../widgets/item_details/srs_difficulty_row.dart';
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
+import '../widgets/item_details/next_review_date.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/mnemonic_container.dart';
-import '../widgets/item_details/next_review_date.dart';
-import '../widgets/item_details/srs_difficulty_row.dart';
+import '../widgets/lesson/mnemonic_handler.dart';
+import '../widgets/shared/top_kanji_row.dart';
+import '../widgets/shared/main_app_bar.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class ItemDetailScreen extends StatefulWidget {
   static const routeName = '/item-details';
 
   final String currentTimeZone;
-  final Function reAllocateMaps;
+  final Function reassignLists;
   final Function resetItemStatus;
-  final List<dynamic> kanjiMapList;
+  final List<Kanji> kanjiList;
 
   ItemDetailScreen({
-    @required this.kanjiMapList,
-    @required this.reAllocateMaps,
+    @required this.kanjiList,
+    @required this.reassignLists,
     @required this.resetItemStatus,
     @required this.currentTimeZone,
   });
@@ -29,15 +30,15 @@ class ItemDetailScreen extends StatefulWidget {
 }
 
 class _ItemDetailScreenState extends State<ItemDetailScreen> {
-  Map<String, Object> _selectedItem;
+  Kanji _selectedItem;
   var _showHandler = true;
 
   void _updateMnemonicField(String input) {
     if (input == null || input != '')
       setState(() {
-        _selectedItem['mnemonicStory'] = input;
-        print('mnemonicStory input is ${_selectedItem['mnemonicStory']}');
-        widget.reAllocateMaps();
+        _selectedItem.mnemonicStory = input;
+        print('mnemonicStory input is ${_selectedItem.mnemonicStory}');
+        widget.reassignLists();
       });
   }
 
@@ -53,7 +54,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
     var screenHeight = MediaQuery.of(context).size.height;
 
-    _selectedItem = widget.kanjiMapList[selectedIndex];
+    _selectedItem = widget.kanjiList[selectedIndex];
     var levelChangeDate = _fixTimeZone(_selectedItem);
 
     return Scaffold(
@@ -65,7 +66,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         child: Column(
           children: [
             TopKanjiRow(
-              kanjiId: _selectedItem['itemId'],
+              kanjiId: _selectedItem.itemId,
               templateAddress: "assets/images/Colored_template_xl.png",
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
@@ -75,7 +76,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(
               height: screenHeight * 0.08,
               child: KeyTextContainer(
-                'Keyword: ' + _selectedItem['keyword'],
+                'Keyword: ' + _selectedItem.keyword,
               ),
             ),
             SizedBox(height: 20),
@@ -86,7 +87,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 20),
             _coloredTextContainer(
               screenHeight,
-              _selectedItem['progressLevel'],
+              _selectedItem.progressLevel,
               Theme.of(context).accentColor,
             ),
             SizedBox(height: 20),
@@ -132,7 +133,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         DateTime.now().timeZoneName != 'JST') {
       return DateTime.now().add(Duration(hours: 9));
     }
-    return _selectedItem['dateLastLevelChanged'];
+    return _selectedItem.dateLastLevelChanged;
   }
 
   Widget _coloredTextContainer(height, itemLvl, color) {

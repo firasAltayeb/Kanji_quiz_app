@@ -1,10 +1,12 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class CorrectIncorrectButton extends StatelessWidget {
   final bool selectChoice;
+  final Kanji questionItem;
+
   final Function answerQuestion;
   final Function showRecallButton;
-  final Map<String, Object> questionItem;
 
   CorrectIncorrectButton({
     @required this.selectChoice,
@@ -47,7 +49,7 @@ class CorrectIncorrectButton extends StatelessWidget {
     );
   }
 
-  void _openCustomDialog(var context, var questionItem, var height) {
+  void _openCustomDialog(context, Kanji questionItem, height) {
     showGeneralDialog(
       context: context,
       barrierColor: Colors.black.withOpacity(0.2),
@@ -67,8 +69,8 @@ class CorrectIncorrectButton extends StatelessWidget {
               shape:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
               content: Text(
-                'The item ${questionItem['itemId']} SRS' +
-                    ' level is now ${questionItem['progressLevel']}',
+                'The item ${questionItem.itemId} SRS' +
+                    ' level is now ${questionItem.progressLevel}',
                 style: TextStyle(
                   fontSize: height * 0.04,
                   fontWeight: FontWeight.bold,

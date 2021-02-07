@@ -1,10 +1,11 @@
 import 'package:Kanji_quiz_app/screens/input_dialog_screen.dart';
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class ScrollableContainer extends StatelessWidget {
+  final Kanji itemDetails;
   final Function updateHandler;
   final Function hideShowHandler;
-  final Map<String, Object> itemDetails;
   final ScrollController _scrollController = ScrollController();
 
   ScrollableContainer({
@@ -34,7 +35,7 @@ class ScrollableContainer extends StatelessWidget {
           controller: _scrollController,
           child: SingleChildScrollView(
             controller: _scrollController,
-            child: itemDetails['mnemonicStory'] == ''
+            child: itemDetails.mnemonicStory == ''
                 ? _instructionTextWidget(screenHeight)
                 : _mnemonicTextWidget(screenHeight),
           ),
@@ -62,7 +63,7 @@ class ScrollableContainer extends StatelessWidget {
   }
 
   Widget _instructionTextWidget(var screenHeight) {
-    var itemType = itemDetails['itemType'];
+    var itemType = itemDetails.itemType;
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
@@ -73,17 +74,17 @@ class ScrollableContainer extends StatelessWidget {
         children: <TextSpan>[
           TextSpan(text: 'Please create a mnemonic for the above $itemType '),
           TextSpan(
-            text: '${itemDetails['keyword']} ',
+            text: '${itemDetails.keyword} ',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic,
             ),
           ),
-          if (itemDetails['itemType'] == 'Kanji')
+          if (itemDetails.itemType == 'Kanji')
             TextSpan(text: 'using its bulidng blocks: '),
           if (itemType == 'Kanji')
             TextSpan(
-              text: '${itemDetails['buildingBlocks']} ',
+              text: '${itemDetails.buildingBlocks} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
@@ -97,7 +98,7 @@ class ScrollableContainer extends StatelessWidget {
 
   Widget _mnemonicTextWidget(var screenHeight) {
     return Text(
-      itemDetails['mnemonicStory'],
+      itemDetails.mnemonicStory,
       textAlign: TextAlign.center,
       style: TextStyle(
         fontWeight: FontWeight.bold,

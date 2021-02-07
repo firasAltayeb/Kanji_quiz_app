@@ -3,59 +3,60 @@ import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:Kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:Kanji_quiz_app/model/kanji_services.dart';
-import 'package:flutter/services.dart';
-import 'model/kanji_model.dart';
-import 'model/kanji_map.dart';
-
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'model/kanji_model.dart';
 import 'package:hive/hive.dart';
 import 'main_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final appDocumentDir = await getApplicationDocumentsDirectory();
-  Hive.init(appDocumentDir.path);
-  await Hive.openBox('kanjiBox');
-  runApp(MyApp());
+  // final appDocumentDir = await getApplicationDocumentsDirectory();
+  // Hive.init(appDocumentDir.path);
+  // await Hive.openBox('kanjiBox');
+  print('retrieving json data');
+  List<Kanji> kanjiList = await loadKanjiList();
+  print('finished retrieving json');
+  runApp(MyApp(kanjiList));
 }
 
 class MyApp extends StatefulWidget {
+  final List<Kanji> kanjiList;
+
+  MyApp(this.kanjiList);
+
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Kanji> _kanjiList;
-  Box<dynamic> _kanjiBox;
-  List<dynamic> _kanjiMapList;
+  var _reviewList = List<Kanji>();
+  var _lessonList = List<Kanji>();
   String _timezone = 'Unknown';
-  var _reviewMap = List<Map<String, Object>>();
-  var _lessonMap = List<Map<String, Object>>();
+
+  // Box<dynamic> _kanjiBox;
+  // List<dynamic> _kanjiMapList;
+  // var _reviewMap = List<Map<String, Object>>();
+  // var _lessonMap = List<Map<String, Object>>();
 
   @override
   void initState() {
     super.initState();
-    print('initializing box');
-    _kanjiBox = Hive.box('kanjiBox');
-    _kanjiMapList = _kanjiBox.get('map');
+    // print('initializing box');
+    // _kanjiBox = Hive.box('kanjiBox');
+    // _kanjiMapList = _kanjiBox.get('map');
 
-    if (_kanjiMapList == null) {
-      print('kanjimap is null');
-      _kanjiMapList = KanjiMap().initialKanjiMap;
-      Hive.box('kanjiBox').put('map', _kanjiMapList);
-    } else {
-      print('kanjimap is not null');
-    }
+    // if (_kanjiMapList == null) {
+    //   print('kanjimap is null');
+    //   _kanjiMapList = KanjiMap().initialKanjiMap;
+    //   Hive.box('kanjiBox').put('map', _kanjiMapList);
+    // } else {
+    //   print('kanjimap is not null');
+    // }
 
-    _allocateMaps();
+    _allocateLists();
     _initTimeZone();
-    _retrieveJsonData();
-  }
-
-  Future<void> _retrieveJsonData() async {
-    _kanjiList = await loadKanjiList();
-    print(_kanjiList[5].dateLastLevelChanged);
   }
 
   Future<void> _initTimeZone() async {
@@ -73,56 +74,49 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void _reAllocateMaps() {
+  void _reassignLists() {
     setState(() {
-      _allocateMaps();
-      Hive.box('kanjiBox').put('map', _kanjiMapList);
+      _allocateLists();
+      //Hive.box('kanjiBox').put('map', _kanjiMapList);
     });
   }
 
-  void _allocateMaps() {
-    _lessonMap.clear();
-    _reviewMap.clear();
-    for (var i = 0; i < _kanjiMapList.length; i++) {
-      if (_kanjiMapList[i]['dateLastLevelChanged'] == '') {
-        _kanjiMapList[i]['dateLastLevelChanged'] =
-            DateTime.now().subtract(Duration(days: 5));
-        print(_kanjiMapList[i]);
-      }
-      if (_kanjiMapList[i]['learningStatus'] == 'Lesson') {
-        _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
-        _lessonMap.add(_kanjiMapList[i]);
-      } else if (_kanjiMapList[i]['learningStatus'] == 'Review') {
-        _kanjiMapList[i] = new Map<String, Object>.from(_kanjiMapList[i]);
-        _addToReview(_kanjiMapList[i]);
+  void _allocateLists() {
+    _lessonList.clear();
+    _reviewList.clear();
+    for (var i = 0; i < widget.kanjiList.length; i++) {
+      if (widget.kanjiList[i].learningStatus == 'Lesson') {
+        _lessonList.add(widget.kanjiList[i]);
+      } else if (widget.kanjiList[i].learningStatus == 'Review') {
+        _addToReview(widget.kanjiList[i]);
       }
     }
-    print('allocate map called');
-    print('LessonMap size is ' + '${_lessonMap.length}');
-    print('ReviewMap size is ' + '${_reviewMap.length}');
+    print('allocate lists called');
+    print('LessonList size is ' + '${_lessonList.length}');
+    print('ReviewList size is ' + '${_reviewList.length}');
   }
 
-  void _addToReview(dynamic kanjiMap) {
-    switch (kanjiMap['progressLevel']) {
+  void _addToReview(Kanji kanjiItem) {
+    switch (kanjiItem.progressLevel) {
       case 1:
-        if (kanjiMap['dateLastLevelChanged']
+        if (kanjiItem.dateLastLevelChanged
             .isBefore(DateTime.now().subtract(Duration(seconds: 4))))
-          _reviewMap.add(kanjiMap);
+          _reviewList.add(kanjiItem);
         break;
       case 2:
-        if (kanjiMap['dateLastLevelChanged']
+        if (kanjiItem.dateLastLevelChanged
             .isBefore(DateTime.now().subtract(Duration(hours: 12))))
-          _reviewMap.add(kanjiMap);
+          _reviewList.add(kanjiItem);
         break;
       case 3:
-        if (kanjiMap['dateLastLevelChanged']
+        if (kanjiItem.dateLastLevelChanged
             .isBefore(DateTime.now().subtract(Duration(days: 2))))
-          _reviewMap.add(kanjiMap);
+          _reviewList.add(kanjiItem);
         break;
       case 4:
-        if (kanjiMap['dateLastLevelChanged']
+        if (kanjiItem.dateLastLevelChanged
             .isBefore(DateTime.now().subtract(Duration(days: 4))))
-          _reviewMap.add(kanjiMap);
+          _reviewList.add(kanjiItem);
         break;
       default:
         break;
@@ -133,7 +127,7 @@ class _MyAppState extends State<MyApp> {
     itemDetails['learningStatus'] = 'Lesson';
     itemDetails['progressLevel'] = '0';
     itemDetails['mnemonicStory'] = '';
-    _reAllocateMaps();
+    _reassignLists();
   }
 
   Widget build(BuildContext context) {
@@ -158,22 +152,22 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (ctx) => MainScreen(
-              kanjiMapList: _kanjiMapList,
-              lessonMap: _lessonMap,
-              reviewMap: _reviewMap,
-              reAllocateMaps: _reAllocateMaps,
+              kanjiList: widget.kanjiList,
+              lessonList: _lessonList,
+              reviewList: _reviewList,
+              reassignLists: _reassignLists,
             ),
         LessonManager.routeName: (ctx) => LessonManager(
-              reAllocateMaps: _reAllocateMaps,
-              lessonMap: _lessonMap,
+              reassignList: _reassignLists,
+              lessonList: _lessonList,
             ),
         ReviewManager.routeName: (ctx) => ReviewManager(
-              reAllocateMaps: _reAllocateMaps,
-              reviewListMap: _reviewMap,
+              reassignLists: _reassignLists,
+              reviewList: _reviewList,
             ),
         ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
-              reAllocateMaps: _reAllocateMaps,
-              kanjiMapList: _kanjiMapList,
+              kanjiList: widget.kanjiList,
+              reassignLists: _reassignLists,
               resetItemStatus: _resetItem,
               currentTimeZone: _timezone,
             ),

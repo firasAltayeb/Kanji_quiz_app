@@ -1,7 +1,8 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class InputDialogScreen extends StatefulWidget {
-  final Map<String, Object> itemDetails;
+  final Kanji itemDetails;
 
   InputDialogScreen(this.itemDetails);
 
@@ -17,10 +18,10 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
   void initState() {
     super.initState();
     _mnemonicController = TextEditingController();
-    String mnemonicStory = widget.itemDetails['mnemonicStory'];
+    String mnemonicStory = widget.itemDetails.mnemonicStory;
     var clearStory = mnemonicStory.split(" ").join("");
     if (clearStory != '')
-      _mnemonicController.text = widget.itemDetails['mnemonicStory'];
+      _mnemonicController.text = widget.itemDetails.mnemonicStory;
   }
 
   void _clearController() {
@@ -47,16 +48,16 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
     var screenHeight = MediaQuery.of(context).size.height;
     var hintText = '';
 
-    if (widget.itemDetails['itemType'] == 'Kanji') {
+    if (widget.itemDetails.itemType == 'Kanji') {
       hintText = 'Please create a mnemonic for the kanji ' +
-          '${widget.itemDetails['itemId']} using its bulidng blocks: ' +
-          '${widget.itemDetails['buildingBlocks']}';
-    } else if (widget.itemDetails['itemType'] == 'Primitive Kanji') {
+          '${widget.itemDetails.itemId} using its bulidng blocks: ' +
+          '${widget.itemDetails.buildingBlocks}';
+    } else if (widget.itemDetails.itemType == 'Primitive Kanji') {
       hintText = 'Please create a mnemonic for the kanji ' +
-          '${widget.itemDetails['itemId']}';
+          '${widget.itemDetails.itemId}';
     } else {
       hintText = 'Please create a mnemonic for the item ' +
-          '${widget.itemDetails['itemId']}';
+          '${widget.itemDetails.itemId}';
     }
 
     return WillPopScope(

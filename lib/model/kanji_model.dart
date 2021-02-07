@@ -1,14 +1,14 @@
 class Kanji {
-  final String itemId;
-  final String keyword;
-  final String itemType;
-  final int frameNumber;
-  final int progressLevel;
-  final String mnemonicStory;
-  final String learningStatus;
-  final List<String> buildingBlocks;
-  final List<String> buildingBlockIds;
-  final DateTime dateLastLevelChanged;
+  String itemId;
+  String keyword;
+  String itemType;
+  int frameNumber;
+  int progressLevel;
+  String mnemonicStory;
+  String learningStatus;
+  List<String> buildingBlocks;
+  List<String> buildingBlockIds;
+  DateTime dateLastLevelChanged;
 
   Kanji({
     this.itemId,

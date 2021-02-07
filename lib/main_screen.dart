@@ -4,18 +4,19 @@ import 'package:Kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
+import 'model/kanji_model.dart';
 
 class MainScreen extends StatelessWidget {
-  final Function reAllocateMaps;
-  final List<dynamic> kanjiMapList;
-  final List<Map<String, Object>> lessonMap;
-  final List<Map<String, Object>> reviewMap;
+  final List<Kanji> kanjiList;
+  final List<Kanji> lessonList;
+  final List<Kanji> reviewList;
+  final Function reassignLists;
 
   MainScreen({
-    @required this.lessonMap,
-    @required this.reviewMap,
-    @required this.kanjiMapList,
-    @required this.reAllocateMaps,
+    @required this.kanjiList,
+    @required this.lessonList,
+    @required this.reviewList,
+    @required this.reassignLists,
   });
 
   @override
@@ -30,7 +31,7 @@ class MainScreen extends StatelessWidget {
       ),
       drawer: SizedBox(
         width: screenWidth * 0.65,
-        child: MainAppDrawer(reAllocateMaps),
+        child: MainAppDrawer(reassignLists),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -42,26 +43,26 @@ class MainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 progressColumn(context, screenHeight, "Lesson",
-                    lessonMap.length, LessonManager.routeName),
+                    lessonList.length, LessonManager.routeName),
                 progressColumn(context, screenHeight, "Review",
-                    reviewMap.length, ReviewManager.routeName),
+                    reviewList.length, ReviewManager.routeName),
               ],
             ),
             SizedBox(
               height: screenHeight * 0.1,
             ),
-            SrsLevelColumn(kanjiMapList: kanjiMapList)
+            SrsLevelColumn(kanjiList: kanjiList)
           ],
         ),
       ),
     );
   }
 
-  Widget progressColumn(context, screenHeight, label, mapLength, routeName) {
+  Widget progressColumn(context, screenHeight, label, listLength, routeName) {
     return Column(
       children: [
         Text(
-          label + ": " + '$mapLength',
+          label + ": " + '$listLength',
           style: TextStyle(
             fontSize: screenHeight * 0.04,
             fontWeight: FontWeight.bold,
@@ -81,7 +82,7 @@ class MainScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            onPressed: mapLength == 0
+            onPressed: listLength == 0
                 ? null
                 : () {
                     Navigator.of(context).pushNamed(routeName);
