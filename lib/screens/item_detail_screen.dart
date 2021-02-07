@@ -38,7 +38,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       setState(() {
         _selectedItem.mnemonicStory = input;
         print('mnemonicStory input is ${_selectedItem.mnemonicStory}');
-        widget.reassignLists();
+        widget.reassignLists(widget.kanjiList);
       });
   }
 
