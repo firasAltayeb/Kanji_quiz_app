@@ -9,7 +9,7 @@ class KanjiMap {
       'progressLevel': 5,
       'learningStatus': 'Learned',
       'buildingBlocks': [],
-      'buildBlocksId': [],
+      'buildingBlockIds': [],
       'dateLastLevelChanged': '',
     },
     {
@@ -21,7 +21,7 @@ class KanjiMap {
       'progressLevel': 4,
       'learningStatus': 'Review',
       'buildingBlocks': [],
-      'buildBlocksId': [],
+      'buildingBlockIds': [],
       'dateLastLevelChanged': '',
     },
     {
@@ -33,7 +33,7 @@ class KanjiMap {
       'progressLevel': 3,
       'learningStatus': 'Review',
       'buildingBlocks': [],
-      'buildBlocksId': [],
+      'buildingBlockIds': [],
       'dateLastLevelChanged': '',
     },
     {
@@ -45,7 +45,7 @@ class KanjiMap {
       'progressLevel': 2,
       'learningStatus': 'Review',
       'buildingBlocks': [],
-      'buildBlocksId': [],
+      'buildingBlockIds': [],
       'dateLastLevelChanged': '',
     },
     {
@@ -57,7 +57,7 @@ class KanjiMap {
       'progressLevel': 1,
       'learningStatus': 'Review',
       'buildingBlocks': [],
-      'buildBlocksId': [],
+      'buildingBlockIds': [],
       'dateLastLevelChanged': '',
     },
     {
@@ -69,7 +69,7 @@ class KanjiMap {
       'progressLevel': 1,
       'learningStatus': 'Review',
       'buildingBlocks': ['Top hat'],
-      'buildBlocksId': ['亠'],
+      'buildingBlockIds': ['亠'],
       'dateLastLevelChanged': '',
     },
     {
@@ -81,7 +81,7 @@ class KanjiMap {
       'progressLevel': 0,
       'learningStatus': 'Lesson',
       'buildingBlocks': [],
-      'buildBlocksId': ['亠'],
+      'buildingBlockIds': ['亠'],
       'dateLastLevelChanged': '',
     },
     {
@@ -93,7 +93,7 @@ class KanjiMap {
       'progressLevel': 0,
       'learningStatus': 'Lesson',
       'buildingBlocks': ['Five, Mouth'],
-      'buildBlocksId': ['五', '口'],
+      'buildingBlockIds': ['五', '口'],
       'dateLastLevelChanged': '',
     },
     {
@@ -105,7 +105,7 @@ class KanjiMap {
       'progressLevel': 0,
       'learningStatus': 'Lesson',
       'buildingBlocks': ['Sun, Moon'],
-      'buildBlocksId': ['日', '月'],
+      'buildingBlockIds': ['日', '月'],
       'dateLastLevelChanged': '',
     },
     {
@@ -117,7 +117,7 @@ class KanjiMap {
       'progressLevel': 0,
       'learningStatus': 'Lesson',
       'buildingBlocks': ['Mouth'],
-      'buildBlocksId': ['口'],
+      'buildingBlockIds': ['口'],
       'dateLastLevelChanged': '',
     },
     {
@@ -129,7 +129,7 @@ class KanjiMap {
       'progressLevel': 0,
       'learningStatus': 'Lesson',
       'buildingBlocks': ['Top hat, Mouth, Garment'],
-      'buildBlocksId': ['亠', '口', '衣'],
+      'buildingBlockIds': ['亠', '口', '衣'],
       'dateLastLevelChanged': '',
     }
   ];

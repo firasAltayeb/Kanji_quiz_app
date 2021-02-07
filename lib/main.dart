@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> _retrieveJsonData() async {
     _kanjiList = await loadKanjiList();
-    print(_kanjiList[1].buildingBlocks);
+    print(_kanjiList[5].dateLastLevelChanged);
   }
 
   Future<void> _initTimeZone() async {
