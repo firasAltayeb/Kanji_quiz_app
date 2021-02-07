@@ -3,18 +3,13 @@ import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:Kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:Kanji_quiz_app/model/kanji_services.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'model/kanji_model.dart';
-import 'package:hive/hive.dart';
 import 'main_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // final appDocumentDir = await getApplicationDocumentsDirectory();
-  // Hive.init(appDocumentDir.path);
-  // await Hive.openBox('kanjiBox');
   print('retrieving json data');
   List<Kanji> kanjiList = await loadKanjiList();
   print('finished retrieving json');
@@ -35,26 +30,9 @@ class _MyAppState extends State<MyApp> {
   var _lessonList = List<Kanji>();
   String _timezone = 'Unknown';
 
-  // Box<dynamic> _kanjiBox;
-  // List<dynamic> _kanjiMapList;
-  // var _reviewMap = List<Map<String, Object>>();
-  // var _lessonMap = List<Map<String, Object>>();
-
   @override
   void initState() {
     super.initState();
-    // print('initializing box');
-    // _kanjiBox = Hive.box('kanjiBox');
-    // _kanjiMapList = _kanjiBox.get('map');
-
-    // if (_kanjiMapList == null) {
-    //   print('kanjimap is null');
-    //   _kanjiMapList = KanjiMap().initialKanjiMap;
-    //   Hive.box('kanjiBox').put('map', _kanjiMapList);
-    // } else {
-    //   print('kanjimap is not null');
-    // }
-
     _allocateLists();
     _initTimeZone();
   }
@@ -77,7 +55,6 @@ class _MyAppState extends State<MyApp> {
   void _reassignLists() {
     setState(() {
       _allocateLists();
-      //Hive.box('kanjiBox').put('map', _kanjiMapList);
     });
   }
 
