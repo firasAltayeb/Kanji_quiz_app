@@ -7,13 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'model/kanji_model.dart';
 import 'main_screen.dart';
-import 'dart:convert';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  print('retrieving json data');
-  List<Kanji> kanjiList = await loadKanjiList();
-  print('finished retrieving json');
+  List<Kanji> kanjiList = await readProgressUpdate();
   runApp(MyApp(kanjiList));
 }
 
@@ -54,7 +51,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _reassignLists() {
-    print("encoding");
     writeProgressUpdate(widget.kanjiList);
 
     setState(() {

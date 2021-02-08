@@ -53,13 +53,13 @@ class Kanji {
     String formatedDate = this.dateLastLevelChanged.toIso8601String();
 
     return {
-      'itemId:': this.itemId,
+      'itemId': this.itemId,
       'keyword': this.keyword,
       'itemType': this.itemType,
       'frameNumber': this.frameNumber,
       'progressLevel': this.progressLevel,
       'mnemonicStory': this.mnemonicStory,
-      'learningStatu': this.learningStatus,
+      'learningStatus': this.learningStatus,
       'buildingBlocks': this.buildingBlocks,
       'buildingBlockIds': this.buildingBlockIds,
       'dateLastLevelChanged': formatedDate,
