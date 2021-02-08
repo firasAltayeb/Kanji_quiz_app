@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
@@ -9,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'model/kanji_model.dart';
 import 'main_screen.dart';
+import 'dart:convert';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -55,11 +54,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _reassignLists([List<Kanji> kanjiList]) {
-    // if (kanjiList != null) {
-    //   Map<String, dynamic> map = Kanji().toJson();
-    //   String encoded = jsonEncode(map);
-    //   print(encoded);
-    // }
+    if (kanjiList != null) {
+      print("encoding");
+      String encoded = jsonEncode(kanjiList);
+      print(encoded);
+    }
 
     setState(() {
       _allocateLists();
