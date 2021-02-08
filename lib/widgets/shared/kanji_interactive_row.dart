@@ -36,8 +36,9 @@ class KanjiInteractiveRow extends StatelessWidget {
                   Ink(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:
-                            AssetImage("assets/images/Colored_template_xl.png"),
+                        image: AssetImage(
+                          "assets/images/red_badge_template.png",
+                        ),
                         fit: BoxFit.fill,
                       ),
                     ),

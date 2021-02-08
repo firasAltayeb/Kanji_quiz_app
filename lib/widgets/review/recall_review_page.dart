@@ -46,7 +46,7 @@ class _RecallPageState extends State<RecallPage> {
       children: [
         TopKanjiRow(
           kanjiId: _questionItem.itemId,
-          templateAddress: "assets/images/Colored_template_xl.png",
+          templateAddress: "assets/images/red_badge_template.png",
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
           leftWidgetHandler: null,

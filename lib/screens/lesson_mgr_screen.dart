@@ -79,7 +79,7 @@ class _LessonManagerState extends State<LessonManager> {
         children: [
           TopKanjiRow(
             kanjiId: _learningList[_queueIndex].itemId,
-            templateAddress: "assets/images/Colorless_template_xl.png",
+            templateAddress: "assets/images/colorless_template_xl.png",
             leftWidgetText: "Prev",
             rightWidgetText: "Next",
             leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
