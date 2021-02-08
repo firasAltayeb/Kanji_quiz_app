@@ -92,54 +92,54 @@ class _MyAppState extends State<MyApp> {
 
   Widget build(BuildContext context) {
     print('Material app is built');
-    List<Kanji> kanjiList;
-    return MaterialApp(
-      title: 'Kanji Quiz App',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        accentColor: Colors.yellow[700],
-        fontFamily: 'Lato',
-        appBarTheme: AppBarTheme(color: Colors.black),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            side: BorderSide(width: 3, color: Colors.black),
-            primary: Colors.yellow[700],
-            padding: const EdgeInsets.all(10),
-            minimumSize: Size(30, 30),
-            onPrimary: Colors.black,
-          ),
-        ),
-      ),
-      home: FutureBuilder<List<Kanji>>(
-        future: readProgressUpdate(),
-        builder: (context, list) {
-          if (list.hasData) {
-            kanjiList = list.data;
-            _allocateLists(kanjiList);
-          }
 
-          return list.hasData
-              ? MainScreen(
-                  kanjiList: list.data,
-                  lessonList: _lessonList,
-                  reviewList: _reviewList,
-                  reassignLists: () => _reassignList(list.data),
-                )
-              : Center(child: CircularProgressIndicator());
-        },
-      ),
-      routes: {
-        LessonManager.routeName: (ctx) => LessonManager(
-            lessonList: _lessonList,
-            reassignList: () => _reassignList(kanjiList)),
-        ReviewManager.routeName: (ctx) => ReviewManager(
-            reviewList: _reviewList,
-            reassignList: () => _reassignList(kanjiList)),
-        ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
-              kanjiList: kanjiList,
-              currentTimeZone: _timezone,
-              reassignList: () => _reassignList(kanjiList),
-            ),
+    return FutureBuilder<List<Kanji>>(
+      future: readProgressUpdate(),
+      builder: (context, kanjiList) {
+        if (kanjiList.hasData) _allocateLists(kanjiList.data);
+
+        return kanjiList.hasData
+            ? MaterialApp(
+                title: 'Kanji Quiz App',
+                theme: ThemeData(
+                  scaffoldBackgroundColor: Colors.white,
+                  accentColor: Colors.yellow[700],
+                  fontFamily: 'Lato',
+                  appBarTheme: AppBarTheme(color: Colors.black),
+                  elevatedButtonTheme: ElevatedButtonThemeData(
+                    style: ElevatedButton.styleFrom(
+                      side: BorderSide(width: 3, color: Colors.black),
+                      primary: Colors.yellow[700],
+                      padding: const EdgeInsets.all(10),
+                      minimumSize: Size(30, 30),
+                      onPrimary: Colors.black,
+                    ),
+                  ),
+                ),
+                initialRoute: '/',
+                routes: {
+                  '/': (ctx) => MainScreen(
+                        kanjiList: kanjiList.data,
+                        lessonList: _lessonList,
+                        reviewList: _reviewList,
+                        reassignLists: () => _reassignList(kanjiList.data),
+                      ),
+                  LessonManager.routeName: (ctx) => LessonManager(
+                        lessonList: _lessonList,
+                        reassignList: () => _reassignList(kanjiList.data),
+                      ),
+                  ReviewManager.routeName: (ctx) => ReviewManager(
+                        reviewList: _reviewList,
+                        reassignList: () => _reassignList(kanjiList.data),
+                      ),
+                  ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
+                        kanjiList: kanjiList.data,
+                        currentTimeZone: _timezone,
+                        reassignList: () => _reassignList(kanjiList.data),
+                      ),
+                },
+              )
+            : Center(child: CircularProgressIndicator());
       },
     );
   }
