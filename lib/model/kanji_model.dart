@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart';
-
 class Kanji {
   String itemId;
   String keyword;
@@ -32,12 +30,10 @@ class Kanji {
     var jsonTempTwo = json['buildingBlockIds'];
     List<String> buildingBlockIdList = jsonTempTwo.cast<String>();
 
-    DateFormat dateFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
-
     var jsonTempThree = json['dateLastLevelChanged'];
     DateTime dateLastLevelChanged = jsonTempThree == ''
         ? DateTime.now().subtract(Duration(days: 5))
-        : dateFormat.parse(json['dateLastLevelChanged'].toString());
+        : DateTime.tryParse(json['dateLastLevelChanged']);
 
     return Kanji(
       itemId: json['itemId'] as String,
@@ -54,8 +50,7 @@ class Kanji {
   }
 
   Map<String, dynamic> toJson() {
-    DateFormat dateFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
-    String formatedDate = dateFormat.format(this.dateLastLevelChanged);
+    String formatedDate = this.dateLastLevelChanged.toIso8601String();
 
     return {
       'itemId:': this.itemId,

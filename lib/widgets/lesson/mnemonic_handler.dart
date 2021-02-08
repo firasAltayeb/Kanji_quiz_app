@@ -5,9 +5,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class MnemonicHandler extends StatelessWidget {
+  final Kanji itemDetails;
   final Function updateHandler;
   final Function hideShowHandler;
-  final Kanji itemDetails;
+
   final mnemonicController = TextEditingController();
 
   final Function resetItemStatus;

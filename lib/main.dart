@@ -53,12 +53,9 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void _reassignLists([List<Kanji> kanjiList]) {
-    if (kanjiList != null) {
-      print("encoding");
-      String encoded = jsonEncode(kanjiList);
-      print(encoded);
-    }
+  void _reassignLists() {
+    print("encoding");
+    writeProgressUpdate(widget.kanjiList);
 
     setState(() {
       _allocateLists();
@@ -107,10 +104,10 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  void _resetItem(Map<String, Object> itemDetails) {
-    itemDetails['learningStatus'] = 'Lesson';
-    itemDetails['progressLevel'] = '0';
-    itemDetails['mnemonicStory'] = '';
+  void _resetItem(Kanji itemDetails) {
+    itemDetails.learningStatus = 'Lesson';
+    itemDetails.progressLevel = 0;
+    itemDetails.mnemonicStory = '';
     _reassignLists();
   }
 
