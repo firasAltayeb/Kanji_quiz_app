@@ -2,6 +2,7 @@ import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:Kanji_quiz_app/screens/review_mgr_screen.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:Kanji_quiz_app/model/kanji_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  var _kanjiList = List<Kanji>();
   var _reviewList = List<Kanji>();
   var _lessonList = List<Kanji>();
   String _timezone = 'Unknown';
@@ -25,8 +27,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    //_allocateLists();
     _initTimeZone();
+
+    _requestPermission(Permission.storage);
   }
 
   Future<void> _initTimeZone() async {
@@ -40,8 +43,25 @@ class _MyAppState extends State<MyApp> {
     _timezone = timezone;
   }
 
-  void _reassignList(kanjiList) {
-    writeProgressUpdate(kanjiList);
+  Future<bool> _requestPermission(Permission permission) async {
+    if (await permission.isGranted) {
+      return true;
+    } else {
+      var result = await permission.request();
+      if (result == PermissionStatus.granted) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  void _reassignList(kanjiList) async {
+    var status = await Permission.storage.status;
+    if (status.isGranted) {
+      print("status.isGranted ${status.isGranted}");
+      writeProgressUpdate(kanjiList);
+      _kanjiList = kanjiList;
+    }
 
     setState(() {
       _allocateLists(kanjiList);
@@ -90,13 +110,21 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  Future<List<Kanji>> checkListAlreadyExists() async {
+    return _kanjiList.isNotEmpty ? _kanjiList : readProgressUpdate();
+  }
+
   Widget build(BuildContext context) {
     print('Material app is built');
 
     return FutureBuilder<List<Kanji>>(
-      future: readProgressUpdate(),
+      future: checkListAlreadyExists(),
       builder: (context, kanjiList) {
-        if (kanjiList.hasData) _allocateLists(kanjiList.data);
+        if (_kanjiList.isEmpty && kanjiList.hasData) {
+          print("Kanji list is empty");
+          _kanjiList = kanjiList.data;
+          _allocateLists(_kanjiList);
+        }
 
         return kanjiList.hasData
             ? MaterialApp(
@@ -122,20 +150,20 @@ class _MyAppState extends State<MyApp> {
                         kanjiList: kanjiList.data,
                         lessonList: _lessonList,
                         reviewList: _reviewList,
-                        reassignLists: () => _reassignList(kanjiList.data),
+                        reassignLists: () => _reassignList(_kanjiList),
                       ),
                   LessonManager.routeName: (ctx) => LessonManager(
                         lessonList: _lessonList,
-                        reassignList: () => _reassignList(kanjiList.data),
+                        reassignList: () => _reassignList(_kanjiList),
                       ),
                   ReviewManager.routeName: (ctx) => ReviewManager(
                         reviewList: _reviewList,
-                        reassignList: () => _reassignList(kanjiList.data),
+                        reassignList: () => _reassignList(_kanjiList),
                       ),
                   ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
                         kanjiList: kanjiList.data,
                         currentTimeZone: _timezone,
-                        reassignList: () => _reassignList(kanjiList.data),
+                        reassignList: () => _reassignList(_kanjiList),
                       ),
                 },
               )
