@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
 import 'dart:async' show Future;
+import 'package:flutter/foundation.dart';
 import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:path_provider/path_provider.dart';
@@ -32,7 +33,7 @@ Future<List<Kanji>> readProgressUpdate() async {
     jsonString = await _loadKanjiAsset;
   }
 
-  return loadKanjiList(jsonString);
+  return compute(loadKanjiList, jsonString);
 }
 
 Future<List<Kanji>> loadKanjiList(String jsonString) async {
@@ -47,6 +48,5 @@ Future<File> writeProgressUpdate(List<Kanji> kanjiList) async {
 
   String encoded = jsonEncode(kanjiList);
   print("file found in $file");
-  print("encoded data is $encoded");
   return file.writeAsString(encoded);
 }

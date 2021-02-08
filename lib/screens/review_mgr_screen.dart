@@ -9,10 +9,13 @@ import 'package:flutter/material.dart';
 class ReviewManager extends StatefulWidget {
   static const routeName = '/review-screen';
 
-  final Function reassignLists;
+  final Function reassignList;
   final List<Kanji> reviewList;
 
-  ReviewManager({@required this.reassignLists, @required this.reviewList});
+  ReviewManager({
+    @required this.reassignList,
+    @required this.reviewList,
+  });
 
   @override
   _ReviewManagerState createState() => _ReviewManagerState();
@@ -73,7 +76,7 @@ class _ReviewManagerState extends State<ReviewManager> {
       }
     }
 
-    widget.reassignLists();
+    widget.reassignList();
     Navigator.pop(context);
   }
 

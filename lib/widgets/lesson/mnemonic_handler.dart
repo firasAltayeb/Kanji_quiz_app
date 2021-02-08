@@ -88,7 +88,7 @@ class MnemonicHandler extends StatelessWidget {
         ) ??
         false;
     if (dialogChoice) {
-      resetItemStatus(itemDetails);
+      resetItemStatus();
       Navigator.of(context).pop();
     }
   }

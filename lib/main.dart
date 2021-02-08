@@ -9,16 +9,10 @@ import 'model/kanji_model.dart';
 import 'main_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  List<Kanji> kanjiList = await readProgressUpdate();
-  runApp(MyApp(kanjiList));
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  final List<Kanji> kanjiList;
-
-  MyApp(this.kanjiList);
-
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -31,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _allocateLists();
+    //_allocateLists();
     _initTimeZone();
   }
 
@@ -42,30 +36,26 @@ class _MyAppState extends State<MyApp> {
     } on PlatformException {
       timezone = 'Failed to get the timezone.';
     }
-
     if (!mounted) return;
+    _timezone = timezone;
+  }
+
+  void _reassignList(kanjiList) {
+    writeProgressUpdate(kanjiList);
 
     setState(() {
-      _timezone = timezone;
+      _allocateLists(kanjiList);
     });
   }
 
-  void _reassignLists() {
-    writeProgressUpdate(widget.kanjiList);
-
-    setState(() {
-      _allocateLists();
-    });
-  }
-
-  void _allocateLists() {
+  void _allocateLists(kanjiList) {
     _lessonList.clear();
     _reviewList.clear();
-    for (var i = 0; i < widget.kanjiList.length; i++) {
-      if (widget.kanjiList[i].learningStatus == 'Lesson') {
-        _lessonList.add(widget.kanjiList[i]);
-      } else if (widget.kanjiList[i].learningStatus == 'Review') {
-        _addToReview(widget.kanjiList[i]);
+    for (var i = 0; i < kanjiList.length; i++) {
+      if (kanjiList[i].learningStatus == 'Lesson') {
+        _lessonList.add(kanjiList[i]);
+      } else if (kanjiList[i].learningStatus == 'Review') {
+        _addToReview(kanjiList[i]);
       }
     }
     print('allocate lists called');
@@ -100,15 +90,9 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  void _resetItem(Kanji itemDetails) {
-    itemDetails.learningStatus = 'Lesson';
-    itemDetails.progressLevel = 0;
-    itemDetails.mnemonicStory = '';
-    _reassignLists();
-  }
-
   Widget build(BuildContext context) {
     print('Material app is built');
+    List<Kanji> kanjiList;
     return MaterialApp(
       title: 'Kanji Quiz App',
       theme: ThemeData(
@@ -126,27 +110,35 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
-      initialRoute: '/',
+      home: FutureBuilder<List<Kanji>>(
+        future: readProgressUpdate(),
+        builder: (context, list) {
+          if (list.hasData) {
+            kanjiList = list.data;
+            _allocateLists(kanjiList);
+          }
+
+          return list.hasData
+              ? MainScreen(
+                  kanjiList: list.data,
+                  lessonList: _lessonList,
+                  reviewList: _reviewList,
+                  reassignLists: () => _reassignList(list.data),
+                )
+              : Center(child: CircularProgressIndicator());
+        },
+      ),
       routes: {
-        '/': (ctx) => MainScreen(
-              kanjiList: widget.kanjiList,
-              lessonList: _lessonList,
-              reviewList: _reviewList,
-              reassignLists: _reassignLists,
-            ),
         LessonManager.routeName: (ctx) => LessonManager(
-              reassignList: _reassignLists,
-              lessonList: _lessonList,
-            ),
+            lessonList: _lessonList,
+            reassignList: () => _reassignList(kanjiList)),
         ReviewManager.routeName: (ctx) => ReviewManager(
-              reassignLists: _reassignLists,
-              reviewList: _reviewList,
-            ),
+            reviewList: _reviewList,
+            reassignList: () => _reassignList(kanjiList)),
         ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
-              kanjiList: widget.kanjiList,
-              reassignLists: _reassignLists,
-              resetItemStatus: _resetItem,
+              kanjiList: kanjiList,
               currentTimeZone: _timezone,
+              reassignList: () => _reassignList(kanjiList),
             ),
       },
     );

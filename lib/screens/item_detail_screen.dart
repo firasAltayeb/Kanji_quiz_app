@@ -14,14 +14,12 @@ class ItemDetailScreen extends StatefulWidget {
   static const routeName = '/item-details';
 
   final String currentTimeZone;
-  final Function reassignLists;
-  final Function resetItemStatus;
+  final Function reassignList;
   final List<Kanji> kanjiList;
 
   ItemDetailScreen({
     @required this.kanjiList,
-    @required this.reassignLists,
-    @required this.resetItemStatus,
+    @required this.reassignList,
     @required this.currentTimeZone,
   });
 
@@ -38,7 +36,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
       setState(() {
         _selectedItem.mnemonicStory = input;
         print('mnemonicStory input is ${_selectedItem.mnemonicStory}');
-        widget.reassignLists();
+        widget.reassignList();
       });
   }
 
@@ -114,7 +112,12 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                 itemDetails: _selectedItem,
                 updateHandler: _updateMnemonicField,
                 hideShowHandler: _hideMnemonicHandler,
-                resetItemStatus: widget.resetItemStatus,
+                resetItemStatus: () {
+                  _selectedItem.learningStatus = 'Lesson';
+                  _selectedItem.progressLevel = 0;
+                  _selectedItem.mnemonicStory = '';
+                  widget.reassignList();
+                },
               ),
             if (!_showHandler)
               SizedBox(
