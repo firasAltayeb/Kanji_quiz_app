@@ -28,8 +28,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _initTimeZone();
-
-    _requestPermission(Permission.storage);
+    _requestPermission();
   }
 
   Future<void> _initTimeZone() async {
@@ -43,16 +42,10 @@ class _MyAppState extends State<MyApp> {
     _timezone = timezone;
   }
 
-  Future<bool> _requestPermission(Permission permission) async {
-    if (await permission.isGranted) {
-      return true;
-    } else {
-      var result = await permission.request();
-      if (result == PermissionStatus.granted) {
-        return true;
-      }
+  Future<void> _requestPermission() async {
+    if (!await Permission.storage.isGranted) {
+      await Permission.storage.request();
     }
-    return false;
   }
 
   void _reassignList(kanjiList) async {
