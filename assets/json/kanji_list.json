@@ -1,4 +1,30 @@
 [
+      {
+        "itemId": "Road",
+        "keyword": "Road",
+        "itemType": "Primitive",
+        "frameNumber": 295,
+        "mnemonicStory": "",
+        "progressLevel": 5,
+        "learningStatus": "Learned",
+        "buildingBlocks": [],
+        "buildingBlockIds": [],
+        "dateLastLevelChanged": "2022-02-03T15:05:25.859963",
+        "badgePhotoAddress": "assets/images/badge_295p_xl.png"
+    },
+    {
+      "itemId": "Scarecrow",
+      "keyword": "Scarecrow",
+      "itemType": "Primitive",
+      "frameNumber": 1700,
+      "mnemonicStory": "",
+      "progressLevel": 5,
+      "learningStatus": "Learned",
+      "buildingBlocks": [],
+      "buildingBlockIds": [],
+      "dateLastLevelChanged": "2022-02-03T15:05:25.859963",
+      "badgePhotoAddress": "assets/images/badge_1700p_xl.png"
+    },
     {
         "itemId": "五",
         "keyword": "Five",
@@ -9,7 +35,8 @@
         "learningStatus": "Learned",
         "buildingBlocks": [],
         "buildingBlockIds": [],
-        "dateLastLevelChanged": "2022-02-03T15:05:25.859963"
+        "dateLastLevelChanged": "2022-02-03T15:05:25.859963",
+        "badgePhotoAddress": ""
     },
     {
         "itemId": "口",
@@ -21,7 +48,8 @@
         "learningStatus": "Review",
         "buildingBlocks": [],
         "buildingBlockIds": [],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
     },
     {
         "itemId": "日",
@@ -33,7 +61,8 @@
         "learningStatus": "Review",
         "buildingBlocks": [],
         "buildingBlockIds": [],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "月",
@@ -45,7 +74,8 @@
         "learningStatus": "Review",
         "buildingBlocks": [],
         "buildingBlockIds": [],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "亠",
@@ -57,7 +87,8 @@
         "learningStatus": "Review",
         "buildingBlocks": [],
         "buildingBlockIds": [],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "衣",
@@ -69,7 +100,8 @@
         "learningStatus": "Review",
         "buildingBlocks": ["Top hat"],
         "buildingBlockIds": ["亠"],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "十",
@@ -81,7 +113,8 @@
         "learningStatus": "Lesson",
         "buildingBlocks": [],
         "buildingBlockIds": ["亠"],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "吾",
@@ -93,7 +126,8 @@
         "learningStatus": "Lesson",
         "buildingBlocks": ["Five, Mouth"],
         "buildingBlockIds": ["五", "口"],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "明",
@@ -105,7 +139,8 @@
         "learningStatus": "Lesson",
         "buildingBlocks": ["Sun, Moon"],
         "buildingBlockIds": ["日", "月"],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "品",
@@ -117,7 +152,8 @@
         "learningStatus": "Lesson",
         "buildingBlocks": ["Mouth"],
         "buildingBlockIds": ["口"],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       },
       {
         "itemId": "哀",
@@ -129,7 +165,8 @@
         "learningStatus": "Lesson",
         "buildingBlocks": ["Top hat, Mouth, Garment"],
         "buildingBlockIds": ["亠", "口", "衣"],
-        "dateLastLevelChanged": ""
+        "dateLastLevelChanged": "",
+        "badgePhotoAddress": ""
       }
   
 ]

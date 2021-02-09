@@ -2,13 +2,30 @@ import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class BuildingBlockRow extends StatelessWidget {
+  final List<Kanji> kanjiList;
   final Kanji itemToLearn;
 
-  BuildingBlockRow(this.itemToLearn);
+  BuildingBlockRow(
+    this.kanjiList,
+    this.itemToLearn,
+  );
+
+  String determineTemplateAddress(buildingBlockId) {
+    var buildingBlockIndex =
+        kanjiList.indexWhere((element) => element.itemId == buildingBlockId);
+    switch (kanjiList[buildingBlockIndex].itemType) {
+      case "Radical":
+        return "assets/images/blue_badge_template.png";
+      case "Primitive":
+        return kanjiList[buildingBlockIndex].badgePhotoAddress;
+      default:
+        return "assets/images/red_badge_template.png";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<dynamic> buildingBlocks = itemToLearn.buildingBlockIds;
+    List<String> buildingBlocks = itemToLearn.buildingBlockIds;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
@@ -68,7 +85,7 @@ class BuildingBlockRow extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                            "assets/images/red_badge_template.png",
+                            determineTemplateAddress(buildingBlockId),
                           ),
                           fit: BoxFit.fill,
                         ),

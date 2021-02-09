@@ -46,6 +46,17 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     });
   }
 
+  String determineTemplateAddress() {
+    switch (_selectedItem.itemType) {
+      case "Radical":
+        return "assets/images/blue_badge_template.png";
+      case "Primitive":
+        return _selectedItem.badgePhotoAddress;
+      default:
+        return "assets/images/red_badge_template.png";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var selectedIndex = ModalRoute.of(context).settings.arguments;
@@ -65,7 +76,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
           children: [
             TopKanjiRow(
               kanjiId: _selectedItem.itemId,
-              templateAddress: "assets/images/Colored_template_xl.png",
+              templateAddress: determineTemplateAddress(),
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               leftWidgetHandler: null,
@@ -105,7 +116,10 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               hideShowHandler: _hideMnemonicHandler,
             ),
             SizedBox(height: 30),
-            BuildingBlockRow(_selectedItem),
+            BuildingBlockRow(
+              widget.kanjiList,
+              _selectedItem,
+            ),
             SizedBox(height: 30),
             if (_showHandler)
               MnemonicHandler(

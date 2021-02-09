@@ -1,22 +1,42 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class KanjiInteractiveRow extends StatelessWidget {
   final double widgetHeight;
-  final List<String> kanjiIds;
+  final List<String> itemIds;
   final Function selectHandler;
+  final List<Kanji> kanjiList;
 
   KanjiInteractiveRow({
+    @required this.kanjiList,
     @required this.widgetHeight,
-    @required this.kanjiIds,
+    @required this.itemIds,
     @required this.selectHandler,
   });
+
+  String determineTemplateAddress(itemId) {
+    var itemIndex = kanjiList.indexWhere((element) => element.itemId == itemId);
+    switch (kanjiList[itemIndex].itemType) {
+      case "Radical":
+        return "assets/images/blue_badge_template.png";
+      case "Primitive":
+        return kanjiList[itemIndex].badgePhotoAddress;
+      default:
+        return "assets/images/red_badge_template.png";
+    }
+  }
+
+  bool isPrimitiveType(itemId) {
+    var itemIndex = kanjiList.indexWhere((element) => element.itemId == itemId);
+    return kanjiList[itemIndex].itemType == "Primitive";
+  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: widgetHeight,
       child: GridView.builder(
-          itemCount: kanjiIds.length,
+          itemCount: itemIds.length,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: widgetHeight,
             childAspectRatio: 1.25,
@@ -28,7 +48,7 @@ class KanjiInteractiveRow extends StatelessWidget {
                   ? null
                   : () => selectHandler(
                         context,
-                        kanjiIds[i],
+                        itemIds[i],
                       ),
               child: Stack(
                 alignment: Alignment.center,
@@ -37,24 +57,25 @@ class KanjiInteractiveRow extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          "assets/images/red_badge_template.png",
+                          determineTemplateAddress(itemIds[i]),
                         ),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
-                  Container(
-                    height: widgetHeight * 0.65,
-                    child: Text(
-                      kanjiIds[i],
-                      style: TextStyle(
-                        fontSize: widgetHeight * 0.4,
-                        fontFamily: 'Lato',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                  if (!isPrimitiveType(itemIds[i]))
+                    Container(
+                      height: widgetHeight * 0.65,
+                      child: Text(
+                        itemIds[i],
+                        style: TextStyle(
+                          fontSize: widgetHeight * 0.4,
+                          fontFamily: 'Lato',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
                 ],
               ),
             );

@@ -146,10 +146,12 @@ class _MyAppState extends State<MyApp> {
                         reassignLists: () => _reassignList(_kanjiList),
                       ),
                   LessonManager.routeName: (ctx) => LessonManager(
+                        kanjiList: kanjiList.data,
                         lessonList: _lessonList,
                         reassignList: () => _reassignList(_kanjiList),
                       ),
                   ReviewManager.routeName: (ctx) => ReviewManager(
+                        kanjiList: kanjiList.data,
                         reviewList: _reviewList,
                         reassignList: () => _reassignList(_kanjiList),
                       ),

@@ -1,3 +1,4 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:Kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,10 @@ class ResultPage extends StatelessWidget {
   final List<String> correctRecallList;
   final List<String> incorrectRecallList;
 
+  final List<Kanji> kanjiList;
+
   ResultPage({
+    @required this.kanjiList,
     @required this.wrapSession,
     @required this.scoreToDisplay,
     @required this.correctRecallList,
@@ -34,8 +38,9 @@ class ResultPage extends StatelessWidget {
       ),
       if (correctRecallList.length > 0)
         KanjiInteractiveRow(
+          kanjiList: kanjiList,
           widgetHeight: screenHeight * 0.175,
-          kanjiIds: correctRecallList,
+          itemIds: correctRecallList,
           selectHandler: null,
         ),
       if (correctRecallList.length == 0)
@@ -49,8 +54,9 @@ class ResultPage extends StatelessWidget {
       ),
       if (incorrectRecallList.length > 0)
         KanjiInteractiveRow(
+          kanjiList: kanjiList,
           widgetHeight: screenHeight * 0.175,
-          kanjiIds: incorrectRecallList,
+          itemIds: incorrectRecallList,
           selectHandler: null,
         ),
       if (incorrectRecallList.length == 0)

@@ -12,8 +12,10 @@ class LessonManager extends StatefulWidget {
 
   final Function reassignList;
   final List<Kanji> lessonList;
+  final List<Kanji> kanjiList;
 
   LessonManager({
+    @required this.kanjiList,
     @required this.reassignList,
     @required this.lessonList,
   });
@@ -62,6 +64,17 @@ class _LessonManagerState extends State<LessonManager> {
     });
   }
 
+  String determineTemplateAddress() {
+    switch (widget.lessonList[_queueIndex].itemType) {
+      case "Radical":
+        return "assets/images/blue_badge_template.png";
+      case "Primitive":
+        return widget.lessonList[_queueIndex].badgePhotoAddress;
+      default:
+        return "assets/images/red_badge_template.png";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final _learningList = widget.lessonList;
@@ -79,7 +92,7 @@ class _LessonManagerState extends State<LessonManager> {
         children: [
           TopKanjiRow(
             kanjiId: _learningList[_queueIndex].itemId,
-            templateAddress: "assets/images/colorless_template_xl.png",
+            templateAddress: determineTemplateAddress(),
             leftWidgetText: "Prev",
             rightWidgetText: "Next",
             leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
@@ -91,7 +104,10 @@ class _LessonManagerState extends State<LessonManager> {
               'Keyword: ' + _learningList[_queueIndex].keyword,
             ),
           ),
-          BuildingBlockRow(_learningList[_queueIndex]),
+          BuildingBlockRow(
+            widget.kanjiList,
+            _learningList[_queueIndex],
+          ),
           ScrollableContainer(
             itemDetails: _learningList[_queueIndex],
             updateHandler: _updateMnemonicField,

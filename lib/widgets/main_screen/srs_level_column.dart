@@ -54,26 +54,30 @@ class SrsLevelColumn extends StatelessWidget {
       children: [
         textContainer('SRS Level 1 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
+          kanjiList: kanjiList,
           widgetHeight: screenHeight * 0.2,
-          kanjiIds: _srsLevelOneIds,
+          itemIds: _srsLevelOneIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 2 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
+          kanjiList: kanjiList,
           widgetHeight: screenHeight * 0.2,
-          kanjiIds: _srsLevelTwoIds,
+          itemIds: _srsLevelTwoIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 3 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
+          kanjiList: kanjiList,
           widgetHeight: screenHeight * 0.2,
-          kanjiIds: _srsLevelThreeIds,
+          itemIds: _srsLevelThreeIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 4 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
+          kanjiList: kanjiList,
           widgetHeight: screenHeight * 0.2,
-          kanjiIds: _srsLevelFourIds,
+          itemIds: _srsLevelFourIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer(
@@ -82,8 +86,9 @@ class SrsLevelColumn extends StatelessWidget {
           accentColor,
         ),
         KanjiInteractiveRow(
+          kanjiList: kanjiList,
           widgetHeight: screenHeight * 0.2,
-          kanjiIds: _srsLevelFiveIds,
+          itemIds: _srsLevelFiveIds,
           selectHandler: pushToItemScreen,
         ),
       ],

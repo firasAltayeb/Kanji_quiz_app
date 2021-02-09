@@ -9,6 +9,7 @@ class Kanji {
   List<String> buildingBlocks;
   List<String> buildingBlockIds;
   DateTime dateLastLevelChanged;
+  String badgePhotoAddress;
 
   Kanji({
     this.itemId,
@@ -21,6 +22,7 @@ class Kanji {
     this.buildingBlocks,
     this.buildingBlockIds,
     this.dateLastLevelChanged,
+    this.badgePhotoAddress,
   });
 
   factory Kanji.fromJson(Map<String, dynamic> json) {
@@ -46,6 +48,7 @@ class Kanji {
       buildingBlocks: buildingBlocksList,
       buildingBlockIds: buildingBlockIdList,
       dateLastLevelChanged: dateLastLevelChanged,
+      badgePhotoAddress: json['badgePhotoAddress'] as String,
     );
   }
 
@@ -63,6 +66,7 @@ class Kanji {
       'buildingBlocks': this.buildingBlocks,
       'buildingBlockIds': this.buildingBlockIds,
       'dateLastLevelChanged': formatedDate,
+      'badgePhotoAddress': this.badgePhotoAddress,
     };
   }
 }

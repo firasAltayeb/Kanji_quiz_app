@@ -11,8 +11,10 @@ class ReviewManager extends StatefulWidget {
 
   final Function reassignList;
   final List<Kanji> reviewList;
+  final List<Kanji> kanjiList;
 
   ReviewManager({
+    @required this.kanjiList,
     @required this.reassignList,
     @required this.reviewList,
   });
@@ -108,6 +110,7 @@ class _ReviewManagerState extends State<ReviewManager> {
                 answerQuestion: _recordAnswer,
               )
             : ResultPage(
+                kanjiList: widget.kanjiList,
                 wrapSession: _wrapSession,
                 scoreToDisplay: _sessionScore,
                 correctRecallList: _correctRecallList,
