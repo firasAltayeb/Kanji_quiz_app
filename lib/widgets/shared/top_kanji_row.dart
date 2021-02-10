@@ -1,8 +1,9 @@
+import 'package:Kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class TopKanjiRow extends StatelessWidget {
   final String kanjiId;
-  final String templateAddress;
+  final List<Kanji> kanjiList;
 
   final String leftWidgetText;
   final String rightWidgetText;
@@ -11,12 +12,29 @@ class TopKanjiRow extends StatelessWidget {
 
   TopKanjiRow({
     @required this.kanjiId,
-    @required this.templateAddress,
+    @required this.kanjiList,
     @required this.leftWidgetText,
     @required this.rightWidgetText,
     @required this.leftWidgetHandler,
     @required this.rightWidgetHandler,
   });
+
+  String determineTemplateAddress(itemId) {
+    var itemIndex = kanjiList.indexWhere((element) => element.itemId == itemId);
+    switch (kanjiList[itemIndex].itemType) {
+      case "Radical":
+        return "assets/images/blue_badge_template.png";
+      case "Primitive":
+        return kanjiList[itemIndex].badgePhotoAddress;
+      default:
+        return "assets/images/red_badge_template.png";
+    }
+  }
+
+  bool isPrimitiveType(itemId) {
+    var itemIndex = kanjiList.indexWhere((element) => element.itemId == itemId);
+    return kanjiList[itemIndex].itemType == "Primitive";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +45,7 @@ class TopKanjiRow extends StatelessWidget {
         leftWidgetText == 'Prev'
             ? cornerButton(leftWidgetText, leftWidgetHandler, screenHeight)
             : cornerWidget(leftWidgetText, 'left', screenHeight),
-        kanjiPicture(kanjiId, screenHeight),
+        kanjiPicture(screenHeight),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? cornerButton(rightWidgetText, rightWidgetHandler, screenHeight)
             : cornerWidget(rightWidgetText, 'right', screenHeight),
@@ -55,7 +73,7 @@ class TopKanjiRow extends StatelessWidget {
     );
   }
 
-  Widget kanjiPicture(String address, double height) {
+  Widget kanjiPicture(double height) {
     return Expanded(
       flex: 3,
       child: Stack(
@@ -65,23 +83,26 @@ class TopKanjiRow extends StatelessWidget {
             height: height,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(templateAddress),
+                image: AssetImage(
+                  determineTemplateAddress(kanjiId),
+                ),
                 fit: BoxFit.fill,
               ),
             ),
           ),
-          Container(
-            height: height * 0.65,
-            child: Text(
-              kanjiId,
-              style: TextStyle(
-                fontSize: height * 0.4,
-                fontFamily: 'Lato',
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+          if (!isPrimitiveType(kanjiId))
+            Container(
+              height: height * 0.65,
+              child: Text(
+                kanjiId,
+                style: TextStyle(
+                  fontSize: height * 0.4,
+                  fontFamily: 'Lato',
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
         ],
       ),
     );

@@ -104,6 +104,7 @@ class _ReviewManagerState extends State<ReviewManager> {
         ),
         body: _queueIndex < _questionQueue.length
             ? RecallPage(
+                kanjiList: widget.kanjiList,
                 questionIndex: _queueIndex,
                 questionQueue: _questionQueue,
                 undoLastAnswer: _queueIndex < 1 ? null : _undoAnswer,

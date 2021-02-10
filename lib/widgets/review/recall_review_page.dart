@@ -9,12 +9,14 @@ class RecallPage extends StatefulWidget {
   final List<Kanji> questionQueue;
   final Function answerQuestion;
   final Function undoLastAnswer;
+  final List<Kanji> kanjiList;
 
   RecallPage({
     @required this.questionQueue,
     @required this.questionIndex,
     @required this.undoLastAnswer,
     @required this.answerQuestion,
+    @required this.kanjiList,
   });
 
   @override
@@ -30,17 +32,6 @@ class _RecallPageState extends State<RecallPage> {
     });
   }
 
-  String determineTemplateAddress() {
-    switch (widget.questionQueue[widget.questionIndex].itemType) {
-      case "Radical":
-        return "assets/images/blue_badge_template.png";
-      case "Primitive":
-        return widget.questionQueue[widget.questionIndex].badgePhotoAddress;
-      default:
-        return "assets/images/red_badge_template.png";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     var _itemCounter =
@@ -52,13 +43,11 @@ class _RecallPageState extends State<RecallPage> {
             _recallButtonVisible = true;
             widget.undoLastAnswer();
           };
-    var badgeTemplateAddress = determineTemplateAddress();
-
     return Column(
       children: [
         TopKanjiRow(
           kanjiId: _questionItem.itemId,
-          templateAddress: badgeTemplateAddress,
+          kanjiList: widget.kanjiList,
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
           leftWidgetHandler: null,

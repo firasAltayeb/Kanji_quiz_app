@@ -64,17 +64,6 @@ class _LessonManagerState extends State<LessonManager> {
     });
   }
 
-  String determineTemplateAddress() {
-    switch (widget.lessonList[_queueIndex].itemType) {
-      case "Radical":
-        return "assets/images/blue_badge_template.png";
-      case "Primitive":
-        return widget.lessonList[_queueIndex].badgePhotoAddress;
-      default:
-        return "assets/images/red_badge_template.png";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final _learningList = widget.lessonList;
@@ -92,7 +81,7 @@ class _LessonManagerState extends State<LessonManager> {
         children: [
           TopKanjiRow(
             kanjiId: _learningList[_queueIndex].itemId,
-            templateAddress: determineTemplateAddress(),
+            kanjiList: widget.kanjiList,
             leftWidgetText: "Prev",
             rightWidgetText: "Next",
             leftWidgetHandler: _queueIndex == 0 ? null : _previousKanji,
