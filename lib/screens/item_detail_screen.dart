@@ -64,7 +64,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         child: Column(
           children: [
             TopKanjiRow(
-              kanjiId: _selectedItem.itemId,
+              kanjiId: _selectedItem.characterLook,
               kanjiList: widget.kanjiList,
               leftWidgetText: "Prev",
               rightWidgetText: "Next",

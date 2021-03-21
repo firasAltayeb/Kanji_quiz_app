@@ -11,13 +11,13 @@ class BuildingBlockRow extends StatelessWidget {
   );
 
   String determineTemplateAddress(buildingBlockId) {
-    var buildingBlockIndex =
-        kanjiList.indexWhere((element) => element.itemId == buildingBlockId);
+    var buildingBlockIndex = kanjiList
+        .indexWhere((element) => element.characterLook == buildingBlockId);
     switch (kanjiList[buildingBlockIndex].itemType) {
       case "Radical":
         return "assets/images/blue_badge_template.png";
       case "Primitive":
-        return kanjiList[buildingBlockIndex].badgePhotoAddress;
+        return kanjiList[buildingBlockIndex].characterLook;
       default:
         return "assets/images/red_badge_template.png";
     }
@@ -25,7 +25,7 @@ class BuildingBlockRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> buildingBlocks = itemToLearn.buildingBlockIds;
+    List<String> buildingBlocks = itemToLearn.buildingBlockChatacters;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(

@@ -84,7 +84,7 @@ class ScrollableContainer extends StatelessWidget {
             TextSpan(text: 'using its bulidng blocks: '),
           if (itemType == 'Kanji')
             TextSpan(
-              text: '${itemDetails.buildingBlocks} ',
+              text: '${itemDetails.buildingBlockKeywords} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,

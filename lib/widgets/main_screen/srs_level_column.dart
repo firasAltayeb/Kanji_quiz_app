@@ -25,19 +25,19 @@ class SrsLevelColumn extends StatelessWidget {
     kanjiList.forEach((item) {
       switch (item.progressLevel) {
         case 1:
-          _srsLevelOneIds.add(item.itemId);
+          _srsLevelOneIds.add(item.characterLook);
           break;
         case 2:
-          _srsLevelTwoIds.add(item.itemId);
+          _srsLevelTwoIds.add(item.characterLook);
           break;
         case 3:
-          _srsLevelThreeIds.add(item.itemId);
+          _srsLevelThreeIds.add(item.characterLook);
           break;
         case 4:
-          _srsLevelFourIds.add(item.itemId);
+          _srsLevelFourIds.add(item.characterLook);
           break;
         case 5:
-          _srsLevelFiveIds.add(item.itemId);
+          _srsLevelFiveIds.add(item.characterLook);
           break;
         default:
           break;
@@ -119,8 +119,8 @@ class SrsLevelColumn extends StatelessWidget {
   }
 
   void pushToItemScreen(BuildContext context, String address) {
-    var kanjiIndex =
-        kanjiList.indexWhere((reviewedItem) => reviewedItem.itemId == address);
+    var kanjiIndex = kanjiList
+        .indexWhere((reviewedItem) => reviewedItem.characterLook == address);
 
     Navigator.of(context).pushNamed(
       ItemDetailScreen.routeName,

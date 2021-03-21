@@ -36,9 +36,9 @@ class _ReviewManagerState extends State<ReviewManager> {
 
     if (answerChoice) {
       _sessionScore += 5;
-      _correctRecallList.add(widget.reviewList[_queueIndex].itemId);
+      _correctRecallList.add(widget.reviewList[_queueIndex].characterLook);
     } else {
-      _incorrectRecallList.add(widget.reviewList[_queueIndex].itemId);
+      _incorrectRecallList.add(widget.reviewList[_queueIndex].characterLook);
     }
     setState(() {
       _queueIndex = _queueIndex + 1;

@@ -69,7 +69,7 @@ class CorrectIncorrectButton extends StatelessWidget {
               shape:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
               content: Text(
-                'The item ${questionItem.itemId} SRS' +
+                'The item ${questionItem.characterLook} SRS' +
                     ' level is now ${questionItem.progressLevel}',
                 style: TextStyle(
                   fontSize: height * 0.04,

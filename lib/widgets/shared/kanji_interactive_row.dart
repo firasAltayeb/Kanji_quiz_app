@@ -15,19 +15,21 @@ class KanjiInteractiveRow extends StatelessWidget {
   });
 
   String determineTemplateAddress(itemId) {
-    var itemIndex = kanjiList.indexWhere((element) => element.itemId == itemId);
+    var itemIndex =
+        kanjiList.indexWhere((element) => element.characterLook == itemId);
     switch (kanjiList[itemIndex].itemType) {
       case "Radical":
         return "assets/images/blue_badge_template.png";
       case "Primitive":
-        return kanjiList[itemIndex].badgePhotoAddress;
+        return kanjiList[itemIndex].characterLook;
       default:
         return "assets/images/red_badge_template.png";
     }
   }
 
   bool isPrimitiveType(itemId) {
-    var itemIndex = kanjiList.indexWhere((element) => element.itemId == itemId);
+    var itemIndex =
+        kanjiList.indexWhere((element) => element.characterLook == itemId);
     return kanjiList[itemIndex].itemType == "Primitive";
   }
 

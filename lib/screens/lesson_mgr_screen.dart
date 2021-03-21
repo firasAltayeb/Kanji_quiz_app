@@ -80,7 +80,7 @@ class _LessonManagerState extends State<LessonManager> {
       body: Column(
         children: [
           TopKanjiRow(
-            kanjiId: _learningList[_queueIndex].itemId,
+            kanjiId: _learningList[_queueIndex].characterLook,
             kanjiList: widget.kanjiList,
             leftWidgetText: "Prev",
             rightWidgetText: "Next",

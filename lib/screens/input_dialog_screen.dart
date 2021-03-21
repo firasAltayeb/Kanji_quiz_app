@@ -50,14 +50,14 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
     if (widget.itemDetails.itemType == 'Kanji') {
       hintText = 'Please create a mnemonic for the kanji ' +
-          '${widget.itemDetails.itemId} using its bulidng blocks: ' +
-          '${widget.itemDetails.buildingBlocks}';
+          '${widget.itemDetails.characterLook} using its bulidng blocks: ' +
+          '${widget.itemDetails.buildingBlockKeywords}';
     } else if (widget.itemDetails.itemType == 'Primitive Kanji') {
       hintText = 'Please create a mnemonic for the kanji ' +
-          '${widget.itemDetails.itemId}';
+          '${widget.itemDetails.characterLook}';
     } else {
       hintText = 'Please create a mnemonic for the item ' +
-          '${widget.itemDetails.itemId}';
+          '${widget.itemDetails.characterLook}';
     }
 
     return WillPopScope(

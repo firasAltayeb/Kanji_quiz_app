@@ -1,36 +1,36 @@
 class Kanji {
-  String itemId;
   String keyword;
   String itemType;
   int frameNumber;
+  int koohiiNumber;
   int progressLevel;
+  String characterLook;
   String mnemonicStory;
   String learningStatus;
-  List<String> buildingBlocks;
-  List<String> buildingBlockIds;
+  List<String> buildingBlockKeywords;
+  List<String> buildingBlockChatacters;
   DateTime dateLastLevelChanged;
-  String badgePhotoAddress;
 
   Kanji({
-    this.itemId,
     this.keyword,
     this.itemType,
     this.frameNumber,
+    this.koohiiNumber,
+    this.characterLook,
     this.progressLevel,
     this.mnemonicStory,
     this.learningStatus,
-    this.buildingBlocks,
-    this.buildingBlockIds,
+    this.buildingBlockKeywords,
+    this.buildingBlockChatacters,
     this.dateLastLevelChanged,
-    this.badgePhotoAddress,
   });
 
   factory Kanji.fromJson(Map<String, dynamic> json) {
-    var jsonTempOne = json['buildingBlocks'];
-    List<String> buildingBlocksList = jsonTempOne.cast<String>();
+    var jsonTempOne = json['buildingBlockKeywords'];
+    List<String> buildingBlocksKeyList = jsonTempOne.cast<String>();
 
-    var jsonTempTwo = json['buildingBlockIds'];
-    List<String> buildingBlockIdList = jsonTempTwo.cast<String>();
+    var jsonTempTwo = json['buildingBlockChatacters'];
+    List<String> buildingBlockCharaList = jsonTempTwo.cast<String>();
 
     var jsonTempThree = json['dateLastLevelChanged'];
     DateTime dateLastLevelChanged = jsonTempThree == ''
@@ -38,17 +38,17 @@ class Kanji {
         : DateTime.tryParse(json['dateLastLevelChanged']);
 
     return Kanji(
-      itemId: json['itemId'] as String,
       keyword: json['keyword'] as String,
       itemType: json['itemType'] as String,
       frameNumber: json['frameNumber'] as int,
+      koohiiNumber: json['koohiiNumber'] as int,
       progressLevel: json['progressLevel'] as int,
+      characterLook: json['characterLook'] as String,
       mnemonicStory: json['mnemonicStory'] as String,
       learningStatus: json['learningStatus'] as String,
-      buildingBlocks: buildingBlocksList,
-      buildingBlockIds: buildingBlockIdList,
+      buildingBlockKeywords: buildingBlocksKeyList,
+      buildingBlockChatacters: buildingBlockCharaList,
       dateLastLevelChanged: dateLastLevelChanged,
-      badgePhotoAddress: json['badgePhotoAddress'] as String,
     );
   }
 
@@ -56,17 +56,17 @@ class Kanji {
     String formatedDate = this.dateLastLevelChanged.toIso8601String();
 
     return {
-      'itemId': this.itemId,
       'keyword': this.keyword,
       'itemType': this.itemType,
       'frameNumber': this.frameNumber,
+      'koohiiNumber': this.koohiiNumber,
       'progressLevel': this.progressLevel,
+      'characterLook': this.characterLook,
       'mnemonicStory': this.mnemonicStory,
       'learningStatus': this.learningStatus,
-      'buildingBlocks': this.buildingBlocks,
-      'buildingBlockIds': this.buildingBlockIds,
+      'buildingBlockKeywords': this.buildingBlockKeywords,
+      'buildingBlockChatacters': this.buildingBlockChatacters,
       'dateLastLevelChanged': formatedDate,
-      'badgePhotoAddress': this.badgePhotoAddress,
     };
   }
 }
