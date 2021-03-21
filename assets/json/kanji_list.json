@@ -1,7 +1,7 @@
 [
     {
         "keyword": "Five",
-        "itemType": "Primitive Kanji",          
+        "itemType": "Kanji",          
         "jlptLevel": "N5",
         "frameNumber": 5,
         "koohiiNumber": 5,
@@ -12,7 +12,7 @@
         "buildingBlocksLook": [],  
         "buildingBlockKeywords": [],      
         "similarCharactersLook": ["吾", "悟"], 
-        "similarCharactersKeyword": ["i", "enlightenment"],       
+        "similarCharactersKeyword": ["I", "Enlightenment"],       
         "dateLastLevelChanged": "2022-02-03T15:05:25.859963",        
         "frequencyInAozora": 71
     },
@@ -29,13 +29,13 @@
       "buildingBlocksLook": [],
       "buildingBlockKeywords": [],
       "similarCharactersLook": ["干", "千"],  
-      "similarCharactersKeyword": ["dry", "thousand"], 
+      "similarCharactersKeyword": ["Dry", "Thousand"], 
       "dateLastLevelChanged": "",        
       "frequencyInAozora": 32
     },
     {
         "keyword": "Mouth",
-        "itemType": "Primitive Kanji",         
+        "itemType": "Kanji",         
         "jlptLevel": "N4",
         "frameNumber": 11,
         "koohiiNumber": 11,
@@ -46,13 +46,13 @@
         "buildingBlocksLook": [],
         "buildingBlockKeywords": [],
         "similarCharactersLook": ["回", "固"],  
-        "similarCharactersKeyword": ["times", "harden"],
+        "similarCharactersKeyword": ["Times", "Harden"],
         "dateLastLevelChanged": "",        
         "frequencyInAozora": 89
     },
     {
         "keyword": "Sun",
-        "itemType": "Primitive Kanji",         
+        "itemType": "Kanji",         
         "jlptLevel": "N5",
         "frameNumber": 12,
         "koohiiNumber": 12,
@@ -63,13 +63,13 @@
         "buildingBlocksLook": [],
         "buildingBlockKeywords": [],
         "similarCharactersLook": ["旧", "旦"],  
-        "similarCharactersKeyword": ["old times", "daybreak"],
+        "similarCharactersKeyword": ["Old times", "Daybreak"],
         "dateLastLevelChanged": "",        
         "frequencyInAozora": 5
       },
       {
         "keyword": "Moon",
-        "itemType": "Primitive Kanji",         
+        "itemType": "Kanji",         
         "jlptLevel": "N5",
         "frameNumber": 13,
         "koohiiNumber": 13,
@@ -80,7 +80,7 @@
         "buildingBlocksLook": [],
         "buildingBlockKeywords": [],
         "similarCharactersLook": ["朋", "肌"],  
-        "similarCharactersKeyword": ["companion", "texture"],
+        "similarCharactersKeyword": ["Companion", "Texture"],
         "dateLastLevelChanged": "",        
         "frequencyInAozora": 47
       },
@@ -97,7 +97,7 @@
         "buildingBlocksLook": ["五", "口"],
         "buildingBlockKeywords": ["Five", "Mouth"],
         "similarCharactersLook": ["悟"],  
-        "similarCharactersKeyword": ["enlightenment"],
+        "similarCharactersKeyword": ["Enlightenment"],
         "dateLastLevelChanged": "",
         "frequencyInAozora": 553
       },
@@ -114,7 +114,7 @@
         "buildingBlocksLook": ["日", "月"],
         "buildingBlockKeywords": ["Sun", "Moon"],
         "similarCharactersLook": ["胆", "脂"],  
-        "similarCharactersKeyword": ["gall bladder", "fat"],
+        "similarCharactersKeyword": ["Gall bladder", "Fat"],
         "dateLastLevelChanged": "",        
         "frequencyInAozora": 72
       },
@@ -165,7 +165,7 @@
         "buildingBlocksLook": ["亠"],
         "buildingBlockKeywords": ["Top hat"],
         "similarCharactersLook": ["衰", "依"],  
-        "similarCharactersKeyword": ["decline", "reliant"],
+        "similarCharactersKeyword": ["Decline", "Reliant"],
         "dateLastLevelChanged": "",    
         "frequencyInAozora": 627
       },
