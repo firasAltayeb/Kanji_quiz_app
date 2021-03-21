@@ -14,7 +14,8 @@
         "similarCharactersLook": ["吾", "悟"], 
         "similarCharactersKeyword": ["I", "Enlightenment"],       
         "dateLastLevelChanged": "2022-02-03T15:05:25.859963",        
-        "frequencyInAozora": 71
+        "frequencyInAozora": 71,
+        "kanjiMeanings": ["Five"]
     },
     {
       "keyword": "Ten",
@@ -31,7 +32,8 @@
       "similarCharactersLook": ["干", "千"],  
       "similarCharactersKeyword": ["Dry", "Thousand"], 
       "dateLastLevelChanged": "",        
-      "frequencyInAozora": 32
+      "frequencyInAozora": 32,
+      "kanjiMeanings": ["Ten"]
     },
     {
         "keyword": "Mouth",
@@ -48,7 +50,8 @@
         "similarCharactersLook": ["回", "固"],  
         "similarCharactersKeyword": ["Times", "Harden"],
         "dateLastLevelChanged": "",        
-        "frequencyInAozora": 89
+        "frequencyInAozora": 89,
+        "kanjiMeanings": ["Mouth"]
     },
     {
         "keyword": "Sun",
@@ -65,7 +68,8 @@
         "similarCharactersLook": ["旧", "旦"],  
         "similarCharactersKeyword": ["Old times", "Daybreak"],
         "dateLastLevelChanged": "",        
-        "frequencyInAozora": 5
+        "frequencyInAozora": 5,
+        "kanjiMeanings": ["day", "sun", "Japan", "counter for days"]
       },
       {
         "keyword": "Moon",
@@ -82,7 +86,8 @@
         "similarCharactersLook": ["朋", "肌"],  
         "similarCharactersKeyword": ["Companion", "Texture"],
         "dateLastLevelChanged": "",        
-        "frequencyInAozora": 47
+        "frequencyInAozora": 47,
+        "kanjiMeanings": ["month", "moon"]
       },
       {
         "keyword": "Oneself",
@@ -99,7 +104,8 @@
         "similarCharactersLook": ["悟"],  
         "similarCharactersKeyword": ["Enlightenment"],
         "dateLastLevelChanged": "",
-        "frequencyInAozora": 553
+        "frequencyInAozora": 553,
+        "kanjiMeanings": ["I", "my", "our", "one's own"]
       },
       {
         "keyword": "Bright",
@@ -116,7 +122,8 @@
         "similarCharactersLook": ["胆", "脂"],  
         "similarCharactersKeyword": ["Gall bladder", "Fat"],
         "dateLastLevelChanged": "",        
-        "frequencyInAozora": 72
+        "frequencyInAozora": 72,
+        "kanjiMeanings": ["bright", "light"]
       },
       {
         "keyword": "Goods",
@@ -133,7 +140,8 @@
         "similarCharactersLook": [],  
         "similarCharactersKeyword": [],
         "dateLastLevelChanged": "",        
-        "frequencyInAozora": 282
+        "frequencyInAozora": 282,
+        "kanjiMeanings": ["goods", "refinement", "dignity", "article"]
       },
       {
         "keyword": "Top hat",
@@ -150,7 +158,8 @@
         "similarCharactersLook": [],  
         "similarCharactersKeyword": [],
         "dateLastLevelChanged": "",            
-        "frequencyInAozora": 4759
+        "frequencyInAozora": 4759,
+        "kanjiMeanings": []
       },
       {
         "keyword": "Garment",
@@ -167,7 +176,8 @@
         "similarCharactersLook": ["衰", "依"],  
         "similarCharactersKeyword": ["Decline", "Reliant"],
         "dateLastLevelChanged": "",    
-        "frequencyInAozora": 627
+        "frequencyInAozora": 627,
+        "kanjiMeanings": ["garment", "clothes", "dressing"]
       },
       {
         "keyword": "Pathetic",
@@ -184,7 +194,8 @@
         "similarCharactersLook": ["喪", "衰"],  
         "similarCharactersKeyword": ["Mourning", "Decline"],
         "dateLastLevelChanged": "",        
-        "frequencyInAozora": 971
+        "frequencyInAozora": 971,
+        "kanjiMeanings": ["pathetic","grief", "sorrow","pathos", "pity", "sympathize"]
       },
       {
         "keyword": "Road",
@@ -201,7 +212,8 @@
         "similarCharactersLook": [],  
         "similarCharactersKeyword": [],
         "dateLastLevelChanged": "2022-02-03T15:05:25.859963",
-        "frequencyInAozora": 0
+        "frequencyInAozora": 0,
+        "kanjiMeanings": []
     },
     {
       "keyword": "Scarecrow",
@@ -218,6 +230,7 @@
       "similarCharactersLook": [],  
       "similarCharactersKeyword": [],
       "dateLastLevelChanged": "2022-02-03T15:05:25.859963",
-      "frequencyInAozora": 0
+      "frequencyInAozora": 0,
+      "kanjiMeanings": []
     }
 ]
