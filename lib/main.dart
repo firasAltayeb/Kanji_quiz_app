@@ -19,9 +19,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _kanjiList = List<Kanji>();
-  var _reviewList = List<Kanji>();
-  var _lessonList = List<Kanji>();
+  List<Kanji> _kanjiList = [];
+  List<Kanji> _reviewList = [];
+  List<Kanji> _lessonList = [];
   String _timezone = 'Unknown';
 
   @override

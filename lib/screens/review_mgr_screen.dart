@@ -24,9 +24,9 @@ class ReviewManager extends StatefulWidget {
 }
 
 class _ReviewManagerState extends State<ReviewManager> {
-  var _incorrectRecallList = List<String>();
-  var _correctRecallList = List<String>();
-  var _answerChoiceList = List<bool>();
+  List<String> _incorrectRecallList = [];
+  List<String> _correctRecallList = [];
+  List<bool> _answerChoiceList = [];
   var _sessionScore = 0;
   var _queueIndex = 0;
 
