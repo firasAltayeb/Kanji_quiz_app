@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class InputDialogScreen extends StatefulWidget {
@@ -64,7 +64,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
       onWillPop: _onBackPressed,
       child: Scaffold(
         backgroundColor: Colors.black.withOpacity(0.3),
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         body: Column(
           children: [
             SizedBox(

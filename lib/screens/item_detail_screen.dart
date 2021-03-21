@@ -1,5 +1,5 @@
 import '../widgets/item_details/srs_difficulty_row.dart';
-import 'package:Kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/item_details/next_review_date.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';

@@ -1,6 +1,6 @@
-import 'package:Kanji_quiz_app/model/kanji_model.dart';
-import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
-import 'package:Kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
+import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
 class SrsLevelColumn extends StatelessWidget {

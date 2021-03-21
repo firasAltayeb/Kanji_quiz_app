@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class CorrectIncorrectButton extends StatelessWidget {

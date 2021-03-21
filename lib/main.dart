@@ -1,9 +1,9 @@
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
-import 'package:Kanji_quiz_app/screens/item_detail_screen.dart';
-import 'package:Kanji_quiz_app/screens/lesson_mgr_screen.dart';
-import 'package:Kanji_quiz_app/screens/review_mgr_screen.dart';
+import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
+import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
+import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:Kanji_quiz_app/model/kanji_services.dart';
+import 'package:kanji_quiz_app/model/kanji_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'model/kanji_model.dart';

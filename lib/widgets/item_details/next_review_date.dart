@@ -1,5 +1,5 @@
-import 'package:Kanji_quiz_app/widgets/shared/key_text_container.dart';
-import 'package:Kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/widgets/shared/key_text_container.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 

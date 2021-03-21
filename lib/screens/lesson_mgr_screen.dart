@@ -1,4 +1,4 @@
-import 'package:Kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/lesson/mnemonic_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
@@ -72,7 +72,7 @@ class _LessonManagerState extends State<LessonManager> {
     }
 
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       appBar: MainAppBar(
         title: 'Lesson Page',
         appBar: AppBar(),
