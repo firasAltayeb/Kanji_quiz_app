@@ -7,8 +7,8 @@ class Kanji {
   String characterLook;
   String mnemonicStory;
   String learningStatus;
+  List<String> buildingBlocksLook;
   List<String> buildingBlockKeywords;
-  List<String> buildingBlockChatacters;
   DateTime dateLastLevelChanged;
 
   Kanji({
@@ -20,17 +20,17 @@ class Kanji {
     this.progressLevel,
     this.mnemonicStory,
     this.learningStatus,
+    this.buildingBlocksLook,
     this.buildingBlockKeywords,
-    this.buildingBlockChatacters,
     this.dateLastLevelChanged,
   });
 
   factory Kanji.fromJson(Map<String, dynamic> json) {
-    var jsonTempOne = json['buildingBlockKeywords'];
-    List<String> buildingBlocksKeyList = jsonTempOne.cast<String>();
+    var jsonTempOne = json['buildingBlocksLook'];
+    List<String> buildingBlocksList = jsonTempOne.cast<String>();
 
-    var jsonTempTwo = json['buildingBlockChatacters'];
-    List<String> buildingBlockCharaList = jsonTempTwo.cast<String>();
+    var jsonTempTwo = json['buildingBlockKeywords'];
+    List<String> buildingBlocksKeyList = jsonTempTwo.cast<String>();
 
     var jsonTempThree = json['dateLastLevelChanged'];
     DateTime dateLastLevelChanged = jsonTempThree == ''
@@ -46,8 +46,8 @@ class Kanji {
       characterLook: json['characterLook'] as String,
       mnemonicStory: json['mnemonicStory'] as String,
       learningStatus: json['learningStatus'] as String,
+      buildingBlocksLook: buildingBlocksList,
       buildingBlockKeywords: buildingBlocksKeyList,
-      buildingBlockChatacters: buildingBlockCharaList,
       dateLastLevelChanged: dateLastLevelChanged,
     );
   }
@@ -64,8 +64,8 @@ class Kanji {
       'characterLook': this.characterLook,
       'mnemonicStory': this.mnemonicStory,
       'learningStatus': this.learningStatus,
+      'buildingBlocksLook': this.buildingBlocksLook,
       'buildingBlockKeywords': this.buildingBlockKeywords,
-      'buildingBlockChatacters': this.buildingBlockChatacters,
       'dateLastLevelChanged': formatedDate,
     };
   }

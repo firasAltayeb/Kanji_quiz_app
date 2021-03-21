@@ -25,7 +25,7 @@ class BuildingBlockRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> buildingBlocks = itemToLearn.buildingBlockChatacters;
+    List<String> buildingBlocks = itemToLearn.buildingBlocksLook;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Container(
