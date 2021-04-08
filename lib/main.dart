@@ -53,7 +53,6 @@ class _MyAppState extends State<MyApp> {
     if (status.isGranted) {
       print("status.isGranted ${status.isGranted}");
       writeProgressUpdate(kanjiList);
-      _kanjiList = kanjiList;
     }
 
     setState(() {

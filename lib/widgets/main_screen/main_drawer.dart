@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MainAppDrawer extends StatelessWidget {
-  final Function selectHandler;
+  final Function reassignList;
 
-  MainAppDrawer(this.selectHandler);
+  MainAppDrawer(this.reassignList);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class MainAppDrawer extends StatelessWidget {
             'Sync now',
             Icons.sync,
             () {
-              selectHandler();
+              reassignList();
               Navigator.pop(context);
             },
           ),
