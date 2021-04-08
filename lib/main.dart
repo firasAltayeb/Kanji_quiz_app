@@ -1,4 +1,5 @@
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
@@ -10,43 +11,30 @@ import 'model/progress_model.dart';
 import 'main_screen.dart';
 
 void main() async {
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
+final timeZoneProvider = FutureProvider<String>((_) async {
+  String timezone;
+  try {
+    timezone = await FlutterNativeTimezone.getLocalTimezone();
+  } on PlatformException {
+    timezone = 'Failed to get the timezone.';
+  }
+  return timezone;
+});
 
-class _MyAppState extends State<MyApp> {
+final progressProvider = FutureProvider<List<Progress>>((ref) async {
+  if (!await Permission.storage.isGranted) {
+    await Permission.storage.request();
+  }
+  return readProgressUpdate();
+});
+
+class MyApp extends ConsumerWidget {
   List<Progress> _kanjiList = [];
   List<Progress> _reviewList = [];
   List<Progress> _lessonList = [];
-  String _timezone = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    _initTimeZone();
-    _requestPermission();
-  }
-
-  Future<void> _initTimeZone() async {
-    String timezone;
-    try {
-      timezone = await FlutterNativeTimezone.getLocalTimezone();
-    } on PlatformException {
-      timezone = 'Failed to get the timezone.';
-    }
-    if (!mounted) return;
-    _timezone = timezone;
-  }
-
-  Future<void> _requestPermission() async {
-    if (!await Permission.storage.isGranted) {
-      await Permission.storage.request();
-    }
-  }
 
   void _reassignList(kanjiList) async {
     var status = await Permission.storage.status;
@@ -54,10 +42,7 @@ class _MyAppState extends State<MyApp> {
       print("status.isGranted ${status.isGranted}");
       writeProgressUpdate(kanjiList);
     }
-
-    setState(() {
-      _allocateLists(kanjiList);
-    });
+    _allocateLists(kanjiList);
   }
 
   void _allocateLists(kanjiList) {
@@ -102,67 +87,58 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  Future<List<Progress>> checkListAlreadyExists() async {
-    return _kanjiList.isNotEmpty ? _kanjiList : readProgressUpdate();
-  }
-
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
     print('Material app is built');
+    AsyncValue<List<Progress>> progressList = watch(progressProvider);
 
-    return FutureBuilder<List<Progress>>(
-      future: checkListAlreadyExists(),
-      builder: (context, kanjiList) {
-        if (_kanjiList.isEmpty && kanjiList.hasData) {
-          print("Kanji list is empty");
-          _kanjiList = kanjiList.data;
-          _allocateLists(_kanjiList);
-        }
-
-        return kanjiList.hasData
-            ? MaterialApp(
-                title: 'Kanji Quiz App',
-                theme: ThemeData(
-                  scaffoldBackgroundColor: Colors.white,
-                  accentColor: Colors.yellow[700],
-                  fontFamily: 'Lato',
-                  appBarTheme: AppBarTheme(color: Colors.black),
-                  elevatedButtonTheme: ElevatedButtonThemeData(
-                    style: ElevatedButton.styleFrom(
-                      side: BorderSide(width: 3, color: Colors.black),
-                      primary: Colors.yellow[700],
-                      padding: const EdgeInsets.all(10),
-                      minimumSize: Size(30, 30),
-                      onPrimary: Colors.black,
-                    ),
-                  ),
+    return progressList.when(
+      data: (progressData) {
+        _reassignList(progressData);
+        return MaterialApp(
+          title: 'Kanji Quiz App',
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
+            accentColor: Colors.yellow[700],
+            fontFamily: 'Lato',
+            appBarTheme: AppBarTheme(color: Colors.black),
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ElevatedButton.styleFrom(
+                side: BorderSide(width: 3, color: Colors.black),
+                primary: Colors.yellow[700],
+                padding: const EdgeInsets.all(10),
+                minimumSize: Size(30, 30),
+                onPrimary: Colors.black,
+              ),
+            ),
+          ),
+          initialRoute: '/',
+          routes: {
+            '/': (ctx) => MainScreen(
+                  kanjiList: progressData,
+                  lessonList: _lessonList,
+                  reviewList: _reviewList,
+                  reassignLists: () => {},
                 ),
-                initialRoute: '/',
-                routes: {
-                  '/': (ctx) => MainScreen(
-                        kanjiList: kanjiList.data,
-                        lessonList: _lessonList,
-                        reviewList: _reviewList,
-                        reassignLists: () => _reassignList(_kanjiList),
-                      ),
-                  LessonManager.routeName: (ctx) => LessonManager(
-                        kanjiList: kanjiList.data,
-                        lessonList: _lessonList,
-                        reassignList: () => _reassignList(_kanjiList),
-                      ),
-                  ReviewManager.routeName: (ctx) => ReviewManager(
-                        kanjiList: kanjiList.data,
-                        reviewList: _reviewList,
-                        reassignList: () => _reassignList(_kanjiList),
-                      ),
-                  ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
-                        kanjiList: kanjiList.data,
-                        currentTimeZone: _timezone,
-                        reassignList: () => _reassignList(_kanjiList),
-                      ),
-                },
-              )
-            : Center(child: CircularProgressIndicator());
+            LessonManager.routeName: (ctx) => LessonManager(
+                  kanjiList: progressData,
+                  lessonList: _lessonList,
+                  reassignList: () => {},
+                ),
+            ReviewManager.routeName: (ctx) => ReviewManager(
+                  kanjiList: progressData,
+                  reviewList: _reviewList,
+                  reassignList: () => {},
+                ),
+            ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
+                  kanjiList: progressData,
+                  currentTimeZone: "",
+                  reassignList: () => {},
+                ),
+          },
+        );
       },
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (err, stack) => Text('Error: $err'),
     );
   }
 }
