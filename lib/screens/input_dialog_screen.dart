@@ -1,8 +1,8 @@
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:flutter/material.dart';
 
 class InputDialogScreen extends StatefulWidget {
-  final Kanji itemDetails;
+  final Progress itemDetails;
 
   InputDialogScreen(this.itemDetails);
 

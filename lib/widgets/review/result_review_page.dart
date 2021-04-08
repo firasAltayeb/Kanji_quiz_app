@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,7 @@ class ResultPage extends StatelessWidget {
   final List<String> correctRecallList;
   final List<String> incorrectRecallList;
 
-  final List<Kanji> kanjiList;
+  final List<Progress> kanjiList;
 
   ResultPage({
     @required this.kanjiList,

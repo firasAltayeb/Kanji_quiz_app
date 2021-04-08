@@ -2,8 +2,8 @@ import 'dart:io';
 import 'dart:convert';
 import 'dart:async' show Future;
 import 'package:flutter/foundation.dart';
+import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:permission_handler/permission_handler.dart';
 
@@ -23,13 +23,13 @@ Future<File> get _localFile async {
   return File('$path/kanji_progress.json');
 }
 
-Future<List<Kanji>> loadKanjiList(String jsonString) async {
+Future<List<Progress>> loadProgressList(String jsonString) async {
   List<dynamic> jsonResponse = json.decode(jsonString);
   //print("jsonResponse is \n" + "$jsonResponse");
-  return jsonResponse.map((i) => Kanji.fromJson(i)).toList();
+  return jsonResponse.map((i) => Progress.fromJson(i)).toList();
 }
 
-Future<List<Kanji>> readProgressUpdate() async {
+Future<List<Progress>> readProgressUpdate() async {
   String jsonString;
   final file = await _localFile;
   final jsonFileExist = await file.exists();
@@ -43,10 +43,10 @@ Future<List<Kanji>> readProgressUpdate() async {
     jsonString = await _loadKanjiAsset;
   }
 
-  return compute(loadKanjiList, jsonString);
+  return compute(loadProgressList, jsonString);
 }
 
-Future<File> writeProgressUpdate(List<Kanji> kanjiList) async {
+Future<File> writeProgressUpdate(List<Progress> kanjiList) async {
   final path = await _localPath;
   final directory = Directory(path);
 

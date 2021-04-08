@@ -1,11 +1,11 @@
 import 'package:kanji_quiz_app/widgets/misc/back_pressed_alert.dart';
 import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class MnemonicHandler extends StatelessWidget {
-  final Kanji itemDetails;
+  final Progress itemDetails;
   final Function updateHandler;
   final Function hideShowHandler;
 

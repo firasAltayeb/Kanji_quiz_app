@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/progress_model.dart';
 
 import '../widgets/review/result_review_page.dart';
 import '../widgets/review/recall_review_page.dart';
@@ -10,8 +10,8 @@ class ReviewManager extends StatefulWidget {
   static const routeName = '/review-screen';
 
   final Function reassignList;
-  final List<Kanji> reviewList;
-  final List<Kanji> kanjiList;
+  final List<Progress> reviewList;
+  final List<Progress> kanjiList;
 
   ReviewManager({
     @required this.kanjiList,
@@ -62,7 +62,7 @@ class _ReviewManagerState extends State<ReviewManager> {
 
   void _wrapSession() {
     for (var index = 0; index < _answerChoiceList.length; index++) {
-      Kanji reviewedItem = widget.reviewList[index];
+      Progress reviewedItem = widget.reviewList[index];
       int currentProgressLevel = reviewedItem.progressLevel;
       reviewedItem.dateLastLevelChanged = DateTime.now();
 

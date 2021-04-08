@@ -3,10 +3,10 @@ import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:kanji_quiz_app/model/kanji_services.dart';
+import 'package:kanji_quiz_app/model/progress_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'model/kanji_model.dart';
+import 'model/progress_model.dart';
 import 'main_screen.dart';
 
 void main() async {
@@ -19,9 +19,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Kanji> _kanjiList = [];
-  List<Kanji> _reviewList = [];
-  List<Kanji> _lessonList = [];
+  List<Progress> _kanjiList = [];
+  List<Progress> _reviewList = [];
+  List<Progress> _lessonList = [];
   String _timezone = 'Unknown';
 
   @override
@@ -75,7 +75,7 @@ class _MyAppState extends State<MyApp> {
     print('ReviewList size is ' + '${_reviewList.length}');
   }
 
-  void _addToReview(Kanji kanjiItem) {
+  void _addToReview(Progress kanjiItem) {
     switch (kanjiItem.progressLevel) {
       case 1:
         if (kanjiItem.dateLastLevelChanged
@@ -102,14 +102,14 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  Future<List<Kanji>> checkListAlreadyExists() async {
+  Future<List<Progress>> checkListAlreadyExists() async {
     return _kanjiList.isNotEmpty ? _kanjiList : readProgressUpdate();
   }
 
   Widget build(BuildContext context) {
     print('Material app is built');
 
-    return FutureBuilder<List<Kanji>>(
+    return FutureBuilder<List<Progress>>(
       future: checkListAlreadyExists(),
       builder: (context, kanjiList) {
         if (_kanjiList.isEmpty && kanjiList.hasData) {

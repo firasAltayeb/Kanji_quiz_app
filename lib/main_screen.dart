@@ -4,12 +4,12 @@ import 'package:kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
-import 'model/kanji_model.dart';
+import 'model/progress_model.dart';
 
 class MainScreen extends StatelessWidget {
-  final List<Kanji> kanjiList;
-  final List<Kanji> lessonList;
-  final List<Kanji> reviewList;
+  final List<Progress> kanjiList;
+  final List<Progress> lessonList;
+  final List<Progress> reviewList;
   final Function reassignLists;
 
   MainScreen({
