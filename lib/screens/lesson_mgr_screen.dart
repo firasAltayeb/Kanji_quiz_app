@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/lesson/mnemonic_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
@@ -11,8 +11,8 @@ class LessonManager extends StatefulWidget {
   static const routeName = '/lesson-screen';
 
   final Function reassignList;
-  final List<Progress> lessonList;
-  final List<Progress> kanjiList;
+  final List<Kanji> lessonList;
+  final List<Kanji> kanjiList;
 
   LessonManager({
     @required this.kanjiList,

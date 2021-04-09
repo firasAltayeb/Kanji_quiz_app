@@ -1,9 +1,9 @@
-import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class BuildingBlockRow extends StatelessWidget {
-  final List<Progress> kanjiList;
-  final Progress itemToLearn;
+  final List<Kanji> kanjiList;
+  final Kanji itemToLearn;
 
   BuildingBlockRow(
     this.kanjiList,

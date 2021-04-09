@@ -35,6 +35,6 @@ class Kanji {
     this.progressLevel = 1,
     this.mnemonicStory = "",
     this.learningStatus = "Lesson",
-    @required this.dateLastLevelChanged,
+    this.dateLastLevelChanged,
   });
 }

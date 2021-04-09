@@ -1,6 +1,6 @@
 import '../widgets/item_details/srs_difficulty_row.dart';
-import 'package:kanji_quiz_app/model/progress_model.dart';
 import '../widgets/item_details/next_review_date.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
 import '../widgets/lesson/mnemonic_container.dart';
@@ -15,7 +15,7 @@ class ItemDetailScreen extends StatefulWidget {
 
   final String currentTimeZone;
   final Function reassignList;
-  final List<Progress> kanjiList;
+  final List<Kanji> kanjiList;
 
   ItemDetailScreen({
     @required this.kanjiList,
@@ -28,7 +28,7 @@ class ItemDetailScreen extends StatefulWidget {
 }
 
 class _ItemDetailScreenState extends State<ItemDetailScreen> {
-  Progress _selectedItem;
+  Kanji _selectedItem;
   var _showHandler = true;
 
   void _updateMnemonicField(String input) {

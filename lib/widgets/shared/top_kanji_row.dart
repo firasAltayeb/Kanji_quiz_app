@@ -1,9 +1,9 @@
-import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class TopKanjiRow extends StatelessWidget {
   final String kanjiId;
-  final List<Progress> kanjiList;
+  final List<Kanji> kanjiList;
 
   final String leftWidgetText;
   final String rightWidgetText;

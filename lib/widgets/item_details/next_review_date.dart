@@ -1,10 +1,10 @@
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/widgets/shared/key_text_container.dart';
-import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class NextReviewDate extends StatelessWidget {
-  final Progress _selectedItem;
+  final Kanji _selectedItem;
   final DateTime _dateChanged;
 
   NextReviewDate(this._selectedItem, this._dateChanged);

@@ -1,9 +1,9 @@
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
-import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:flutter/material.dart';
 
 class ScrollableContainer extends StatelessWidget {
-  final Progress itemDetails;
+  final Kanji itemDetails;
   final Function updateHandler;
   final Function hideShowHandler;
   final ScrollController _scrollController = ScrollController();

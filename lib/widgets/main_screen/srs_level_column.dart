@@ -1,11 +1,11 @@
-import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class SrsLevelColumn extends StatelessWidget {
-  final List<Progress> kanjiList;
+  final List<Kanji> kanjiList;
   List<String> _srsLevelOneIds = [];
   List<String> _srsLevelTwoIds = [];
   List<String> _srsLevelThreeIds = [];

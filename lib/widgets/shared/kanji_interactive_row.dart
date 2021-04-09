@@ -1,11 +1,11 @@
-import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
 class KanjiInteractiveRow extends StatelessWidget {
   final double widgetHeight;
   final List<String> itemIds;
   final Function selectHandler;
-  final List<Progress> kanjiList;
+  final List<Kanji> kanjiList;
 
   KanjiInteractiveRow({
     @required this.kanjiList,

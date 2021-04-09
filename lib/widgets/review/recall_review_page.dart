@@ -1,15 +1,15 @@
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
 import 'package:kanji_quiz_app/widgets/review/show_answer_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/top_kanji_row.dart';
-import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:flutter/material.dart';
 
 class RecallPage extends StatefulWidget {
   final int questionIndex;
-  final List<Progress> questionQueue;
+  final List<Kanji> questionQueue;
   final Function answerQuestion;
   final Function undoLastAnswer;
-  final List<Progress> kanjiList;
+  final List<Kanji> kanjiList;
 
   RecallPage({
     @required this.questionQueue,
