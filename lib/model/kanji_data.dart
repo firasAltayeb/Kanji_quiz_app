@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 
-class KanjiData with ChangeNotifier {
+class KanjiData {
   List<Kanji> _items = [
     Kanji(
       keyword: "Five",
