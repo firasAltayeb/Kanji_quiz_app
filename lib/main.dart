@@ -5,26 +5,34 @@ import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'model/progress_model.dart';
 import 'main_screen.dart';
 
 void main() async {
-  // String timezone;
-  // try {
-  //   timezone = await FlutterNativeTimezone.getLocalTimezone();
-  // } on PlatformException {
-  //   timezone = 'Failed to get the timezone.';
-  // }
-  runApp(ProviderScope(child: MyApp()));
+  String timezone = await getTimezone();
+  runApp(ProviderScope(child: MyApp(timezone)));
+}
+
+Future<String> getTimezone() async {
+  String timezone;
+  try {
+    timezone = await FlutterNativeTimezone.getLocalTimezone();
+  } catch (e) {
+    print('Could not get the local timezone');
+  }
+  return timezone;
 }
 
 class MyApp extends ConsumerWidget {
+  final String timezone;
+
+  MyApp(this.timezone);
+
   Widget build(BuildContext context, ScopedReader watch) {
     print('Material app is built');
     AsyncValue<List<Progress>> progressList = watch(progressProvider);
     final kanjiListState = watch(kanjiListProvider);
-    final kanjiListNotifier = watch(kanjiListProvider.notifier);
+    // final kanjiListNotifier = watch(kanjiListProvider.notifier);
 
     return progressList.when(
       data: (progressData) {
@@ -70,7 +78,7 @@ class MyApp extends ConsumerWidget {
                 ),
             ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
                   kanjiList: kanjiListState,
-                  currentTimeZone: "",
+                  currentTimeZone: timezone,
                   reassignList: () {},
                 ),
           },
