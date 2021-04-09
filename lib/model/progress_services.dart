@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:permission_handler/permission_handler.dart';
 
-Future<String> get _loadKanjiAsset async {
+Future<String> get _loadJsonString async {
   return await rootBundle.loadString('assets/json/kanji_list.json');
 }
 
@@ -40,7 +40,7 @@ Future<List<Progress>> readProgressUpdate() async {
     jsonString = await file.readAsString();
   } else {
     print("local json file doesn't exists");
-    jsonString = await _loadKanjiAsset;
+    jsonString = await _loadJsonString;
   }
 
   return compute(loadProgressList, jsonString);

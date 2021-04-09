@@ -1,28 +1,24 @@
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:kanji_quiz_app/model/progress_services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'model/progress_model.dart';
 import 'main_screen.dart';
 
 void main() async {
-  runApp(ProviderScope(child: MyApp()));
-}
-
-final timeZoneProvider = FutureProvider<String>((_) async {
   String timezone;
   try {
     timezone = await FlutterNativeTimezone.getLocalTimezone();
   } on PlatformException {
     timezone = 'Failed to get the timezone.';
   }
-  return timezone;
-});
+  runApp(ProviderScope(child: MyApp(timezone)));
+}
 
 final progressProvider = FutureProvider<List<Progress>>((ref) async {
   if (!await Permission.storage.isGranted) {
@@ -32,9 +28,11 @@ final progressProvider = FutureProvider<List<Progress>>((ref) async {
 });
 
 class MyApp extends ConsumerWidget {
-  List<Progress> _kanjiList = [];
+  final String timezone;
   List<Progress> _reviewList = [];
   List<Progress> _lessonList = [];
+
+  MyApp(this.timezone);
 
   void _reassignList(kanjiList) async {
     var status = await Permission.storage.status;
