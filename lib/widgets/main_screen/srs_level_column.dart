@@ -1,20 +1,18 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
 // ignore: must_be_immutable
-class SrsLevelColumn extends StatelessWidget {
-  final List<Kanji> kanjiList;
+class SrsLevelColumn extends ConsumerWidget {
   List<String> _srsLevelOneIds = [];
   List<String> _srsLevelTwoIds = [];
   List<String> _srsLevelThreeIds = [];
   List<String> _srsLevelFourIds = [];
   List<String> _srsLevelFiveIds = [];
-
-  SrsLevelColumn({
-    @required this.kanjiList,
-  });
+  List<Kanji> kanjiList;
 
   void assignSrsLists() {
     _srsLevelOneIds.clear();
@@ -45,11 +43,12 @@ class SrsLevelColumn extends StatelessWidget {
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    assignSrsLists();
+  Widget build(BuildContext context, ScopedReader watch) {
+    final kanjiListState = watch(kanjiListProvider);
     var accentColor = Theme.of(context).accentColor;
     var screenHeight = MediaQuery.of(context).size.height;
+    kanjiList = kanjiListState;
+    assignSrsLists();
 
     return Column(
       children: [

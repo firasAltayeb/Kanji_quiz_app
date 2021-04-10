@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
 class MainAppDrawer extends StatelessWidget {
-  final Function reassignList;
-
-  MainAppDrawer(this.reassignList);
-
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -42,7 +38,6 @@ class MainAppDrawer extends StatelessWidget {
             'Sync now',
             Icons.sync,
             () {
-              reassignList();
               Navigator.pop(context);
             },
           ),

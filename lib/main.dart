@@ -3,7 +3,7 @@ import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/providers.dart';
+import 'package:kanji_quiz_app/main_providers.dart';
 import 'package:flutter/material.dart';
 import 'model/progress_model.dart';
 import 'main_screen.dart';
@@ -32,11 +32,11 @@ class MyApp extends ConsumerWidget {
     print('Material app is built');
     AsyncValue<List<Progress>> progressList = watch(progressProvider);
     final kanjiListState = watch(kanjiListProvider);
-    // final kanjiListNotifier = watch(kanjiListProvider.notifier);
+    final lessonList = watch(lessonListProvider);
+    final reviewList = watch(reviewListProvider);
 
     return progressList.when(
       data: (_) {
-        // kanjiListNotifier.updateProgress(progressData);
         return MaterialApp(
           title: 'Kanji Quiz App',
           theme: ThemeData(
@@ -56,24 +56,15 @@ class MyApp extends ConsumerWidget {
           ),
           initialRoute: '/',
           routes: {
-            '/': (ctx) => MainScreen(
-                  kanjiList: kanjiListState,
-                  lessonList:
-                      context.read(kanjiListProvider.notifier).lessonList,
-                  reviewList:
-                      context.read(kanjiListProvider.notifier).reviewList,
-                  reassignList: () {},
-                ),
+            '/': (ctx) => MainScreen(),
             LessonManager.routeName: (ctx) => LessonManager(
                   kanjiList: kanjiListState,
-                  lessonList:
-                      context.read(kanjiListProvider.notifier).lessonList,
+                  lessonList: lessonList,
                   reassignList: () {},
                 ),
             ReviewManager.routeName: (ctx) => ReviewManager(
                   kanjiList: kanjiListState,
-                  reviewList:
-                      context.read(kanjiListProvider.notifier).reviewList,
+                  reviewList: reviewList,
                   reassignList: () {},
                 ),
             ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(

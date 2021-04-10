@@ -19,3 +19,19 @@ final progressProvider = FutureProvider<List<Progress>>((ref) async {
 final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
   return KanjiList(kanjiStaticData);
 });
+
+final lessonListProvider = Provider<List<Kanji>>((ref) {
+  final kanjiMainList = ref.watch(kanjiListProvider);
+  final lessonList = kanjiMainList
+      .where((kanjiItem) => kanjiItem.learningStatus == "Lesson")
+      .toList();
+  return lessonList;
+});
+
+final reviewListProvider = Provider<List<Kanji>>((ref) {
+  final kanjiMainList = ref.watch(kanjiListProvider);
+  final reviewList = kanjiMainList
+      .where((kanjiItem) => kanjiItem.learningStatus == "Review")
+      .toList();
+  return reviewList;
+});

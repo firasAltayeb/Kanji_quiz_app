@@ -1,29 +1,19 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/main_drawer.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/srs_level_column.dart';
 import 'package:kanji_quiz_app/widgets/shared/main_app_bar.dart';
-import 'package:flutter/material.dart';
+import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
-import 'model/kanji_model.dart';
+import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
-  final List<Kanji> kanjiList;
-  final List<Kanji> lessonList;
-  final List<Kanji> reviewList;
-  final Function reassignList;
-
-  MainScreen({
-    @required this.kanjiList,
-    @required this.lessonList,
-    @required this.reviewList,
-    @required this.reassignList,
-  });
-
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     print('Main body build is called');
+
     return Scaffold(
       appBar: MainAppBar(
         title: 'Home Page',
@@ -31,30 +21,34 @@ class MainScreen extends StatelessWidget {
       ),
       drawer: SizedBox(
         width: screenWidth * 0.65,
-        child: MainAppDrawer(reassignList),
+        child: MainAppDrawer(),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: screenHeight * 0.1,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                progressColumn(context, screenHeight, "Lesson",
-                    lessonList.length, LessonManager.routeName),
-                progressColumn(context, screenHeight, "Review",
-                    reviewList.length, ReviewManager.routeName),
-              ],
-            ),
-            SizedBox(
-              height: screenHeight * 0.1,
-            ),
-            SrsLevelColumn(kanjiList: kanjiList)
-          ],
-        ),
-      ),
+      body: Consumer(builder: (context, watch, _) {
+        final lessonList = watch(lessonListProvider);
+        final reviewList = watch(reviewListProvider);
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: screenHeight * 0.1,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  progressColumn(context, screenHeight, "Lesson",
+                      lessonList.length, LessonManager.routeName),
+                  progressColumn(context, screenHeight, "Review",
+                      reviewList.length, ReviewManager.routeName),
+                ],
+              ),
+              SizedBox(
+                height: screenHeight * 0.1,
+              ),
+              SrsLevelColumn()
+            ],
+          ),
+        );
+      }),
     );
   }
 

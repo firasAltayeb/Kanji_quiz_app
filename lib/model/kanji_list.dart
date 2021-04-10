@@ -40,17 +40,21 @@ class KanjiList extends StateNotifier<List<Kanji>> {
     ];
   }
 
-  List<Kanji> get lessonList {
-    return state
-        .where((kanjiItem) => kanjiItem.learningStatus == "Lesson")
-        .toList();
-  }
+  // List<Kanji> get kanjiList {
+  //   return state;
+  // }
 
-  List<Kanji> get reviewList {
-    return state
-        .where((kanjiItem) => kanjiItem.learningStatus == "Review")
-        .toList();
-  }
+  // List<Kanji> get lessonList {
+  //   return state
+  //       .where((kanjiItem) => kanjiItem.learningStatus == "Lesson")
+  //       .toList();
+  // }
+
+  // List<Kanji> get reviewList {
+  //   return state
+  //       .where((kanjiItem) => kanjiItem.learningStatus == "Review")
+  //       .toList();
+  // }
 
   // void _reassignList(kanjiList) async {
   //   var status = await Permission.storage.status;
