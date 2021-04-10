@@ -5,8 +5,8 @@
     "progressLevel": 5,
     "learningStatus": "Learned",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Ten",
@@ -14,8 +14,8 @@
     "progressLevel": 0,
     "learningStatus": "Lesson",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Mouth",
@@ -23,8 +23,8 @@
     "progressLevel": 4,
     "learningStatus": "Review",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Sun",
@@ -32,8 +32,8 @@
     "progressLevel": 3,
     "learningStatus": "Review",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Moon",
@@ -41,8 +41,8 @@
     "progressLevel": 2,
     "learningStatus": "Review",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Oneself",
@@ -50,8 +50,8 @@
     "progressLevel": 0,
     "learningStatus": "Lesson",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Bright",
@@ -59,8 +59,8 @@
     "progressLevel": 0,
     "learningStatus": "Lesson",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Goods",
@@ -68,8 +68,8 @@
     "progressLevel": 0,
     "learningStatus": "Lesson",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Top hat",
@@ -77,8 +77,8 @@
     "progressLevel": 1,
     "learningStatus": "Review",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Garment",
@@ -86,8 +86,8 @@
     "progressLevel": 1,
     "learningStatus": "Review",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Pathetic",
@@ -95,8 +95,8 @@
     "progressLevel": 0,
     "learningStatus": "Lesson",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Road",
@@ -104,8 +104,8 @@
     "progressLevel": 5,
     "learningStatus": "Learned",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   },
   {
     "keyword": "Scarecrow",
@@ -113,7 +113,7 @@
     "progressLevel": 5,
     "learningStatus": "Learned",
     "dateLastLevelChanged": "",
-    "incorrectReviewCounter": "",
-    "chosenDifficulty": ""
+    "incorrectReviewCounter": 0,
+    "chosenDifficulty": 0
   }
 ]

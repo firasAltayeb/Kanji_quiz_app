@@ -35,7 +35,7 @@ class MyApp extends ConsumerWidget {
     // final kanjiListNotifier = watch(kanjiListProvider.notifier);
 
     return progressList.when(
-      data: (progressData) {
+      data: (_) {
         // kanjiListNotifier.updateProgress(progressData);
         return MaterialApp(
           title: 'Kanji Quiz App',

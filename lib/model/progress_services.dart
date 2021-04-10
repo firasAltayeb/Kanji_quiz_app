@@ -8,7 +8,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:permission_handler/permission_handler.dart';
 
 Future<String> get _loadJsonString async {
-  return await rootBundle.loadString('assets/json/kanji_list.json');
+  return await rootBundle.loadString('assets/json/progress_list.json');
 }
 
 Future<String> get _localPath async {

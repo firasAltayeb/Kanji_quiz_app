@@ -6,10 +6,6 @@ import 'model/progress_services.dart';
 import 'model/progress_model.dart';
 import 'model/kanji_model.dart';
 
-final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
-  return KanjiList(kanjiStaticData);
-});
-
 final progressProvider = FutureProvider<List<Progress>>((ref) async {
   if (!await Permission.storage.isGranted) {
     await Permission.storage.request();
@@ -18,4 +14,8 @@ final progressProvider = FutureProvider<List<Progress>>((ref) async {
   ref.watch(kanjiListProvider.notifier).updateProgress(progressList);
 
   return progressList;
+});
+
+final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
+  return KanjiList(kanjiStaticData);
 });
