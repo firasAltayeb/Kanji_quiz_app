@@ -1,5 +1,8 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+
+import '../main_providers.dart';
 
 class InputDialogScreen extends StatefulWidget {
   final Kanji itemDetails;
@@ -95,35 +98,39 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
               ),
             ),
             if (_showButtonsRow)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  _myMaterialButton(
-                    _mnemonicController.text == '' ? 'Return' : 'Dispose',
-                    Colors.red,
-                    screenHeight,
-                    _mnemonicController.text == ''
-                        ? () {
-                            _hideBottomButton();
-                            Navigator.pop(context);
-                          }
-                        : () {
-                            _clearController();
-                          },
-                  ),
-                  _myMaterialButton(
-                    'Submit',
-                    Colors.green,
-                    screenHeight,
-                    _mnemonicController.text == ''
-                        ? null
-                        : () {
-                            _hideBottomButton();
-                            Navigator.pop(context, _mnemonicController.text);
-                          },
-                  ),
-                ],
-              ),
+              Consumer(builder: (context, watch, _) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    _myMaterialButton(
+                      _mnemonicController.text == '' ? 'Return' : 'Dispose',
+                      Colors.red,
+                      screenHeight,
+                      _mnemonicController.text == ''
+                          ? () {
+                              _hideBottomButton();
+                              context.read(btnBottomRowProvider).state = true;
+                              Navigator.pop(context);
+                            }
+                          : () {
+                              _clearController();
+                            },
+                    ),
+                    _myMaterialButton(
+                      'Submit',
+                      Colors.green,
+                      screenHeight,
+                      _mnemonicController.text == ''
+                          ? null
+                          : () {
+                              _hideBottomButton();
+                              context.read(btnBottomRowProvider).state = true;
+                              Navigator.pop(context, _mnemonicController.text);
+                            },
+                    ),
+                  ],
+                );
+              }),
           ],
         ),
       ),

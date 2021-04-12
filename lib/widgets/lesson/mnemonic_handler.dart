@@ -1,13 +1,15 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/widgets/misc/back_pressed_alert.dart';
 import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
 class MnemonicHandler extends StatelessWidget {
   final Kanji itemDetails;
   final Function updateHandler;
-  final Function hideShowHandler;
+  final Function showHandler;
 
   final mnemonicController = TextEditingController();
 
@@ -16,7 +18,7 @@ class MnemonicHandler extends StatelessWidget {
   MnemonicHandler({
     @required this.itemDetails,
     @required this.updateHandler,
-    @required this.hideShowHandler,
+    @required this.showHandler,
     this.resetItemStatus,
   });
 
@@ -40,14 +42,19 @@ class MnemonicHandler extends StatelessWidget {
             Colors.green,
           ),
         ),
-        Expanded(
-          child: bottomButton(
-            context,
-            _editMnemonicHandler,
-            "Edit Mnemonic",
-            Theme.of(context).accentColor,
-          ),
-        ),
+        Consumer(builder: (context, watch, _) {
+          return Expanded(
+            child: bottomButton(
+              context,
+              (ctx) {
+                context.read(btnBottomRowProvider).state = false;
+                _editMnemonicHandler(ctx);
+              },
+              "Edit Mnemonic",
+              Theme.of(context).accentColor,
+            ),
+          );
+        }),
       ],
     );
   }
@@ -104,7 +111,6 @@ class MnemonicHandler extends StatelessWidget {
   }
 
   void _editMnemonicHandler(BuildContext context) {
-    hideShowHandler();
     Navigator.of(context)
         .push(
       PageRouteBuilder(
@@ -117,7 +123,7 @@ class MnemonicHandler extends StatelessWidget {
       if (passedText != null) {
         updateHandler(passedText);
       }
-      hideShowHandler();
+      showHandler();
     });
   }
 }

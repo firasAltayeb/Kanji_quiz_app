@@ -3,7 +3,7 @@ import '../widgets/item_details/next_review_date.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/lesson/building_block_row.dart';
-import '../widgets/lesson/mnemonic_container.dart';
+import '../widgets/lesson/scrollable_container.dart';
 import '../widgets/lesson/mnemonic_handler.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/shared/main_app_bar.dart';
@@ -38,12 +38,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         print('mnemonicStory input is ${_selectedItem.mnemonicStory}');
         widget.reassignList();
       });
-  }
-
-  void _hideMnemonicHandler() {
-    setState(() {
-      _showHandler = !_showHandler;
-    });
   }
 
   @override
@@ -102,7 +96,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             ScrollableContainer(
               itemDetails: _selectedItem,
               updateHandler: _updateMnemonicField,
-              hideShowHandler: _hideMnemonicHandler,
             ),
             SizedBox(height: 30),
             BuildingBlockRow(
@@ -114,7 +107,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
               MnemonicHandler(
                 itemDetails: _selectedItem,
                 updateHandler: _updateMnemonicField,
-                hideShowHandler: _hideMnemonicHandler,
                 resetItemStatus: () {
                   _selectedItem.learningStatus = 'Lesson';
                   _selectedItem.progressLevel = 0;

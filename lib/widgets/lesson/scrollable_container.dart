@@ -1,51 +1,57 @@
-import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
 class ScrollableContainer extends StatelessWidget {
   final Kanji itemDetails;
+  final Function showHandler;
   final Function updateHandler;
-  final Function hideShowHandler;
   final ScrollController _scrollController = ScrollController();
 
   ScrollableContainer({
     @required this.itemDetails,
+    @required this.showHandler,
     @required this.updateHandler,
-    @required this.hideShowHandler,
   });
 
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
-    return InkWell(
-      onLongPress: () => _editMnemonicHandler(context),
-      child: Container(
-        height: screenHeight * 0.175,
-        width: screenWidth * 0.95,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.green[900],
-            width: 3,
+    return Consumer(builder: (context, watch, _) {
+      return InkWell(
+        onLongPress: () {
+          context.read(btnBottomRowProvider).state = false;
+          _editMnemonicHandler(context);
+        },
+        child: Container(
+          height: screenHeight * 0.175,
+          width: screenWidth * 0.95,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.green[900],
+              width: 3,
+            ),
           ),
-        ),
-        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-        child: Scrollbar(
-          controller: _scrollController,
-          child: SingleChildScrollView(
+          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+          child: Scrollbar(
             controller: _scrollController,
-            child: itemDetails.mnemonicStory == ''
-                ? _instructionTextWidget(screenHeight)
-                : _mnemonicTextWidget(screenHeight),
+            child: SingleChildScrollView(
+              controller: _scrollController,
+              child: itemDetails.mnemonicStory == ''
+                  ? _instructionTextWidget(screenHeight)
+                  : _mnemonicTextWidget(screenHeight),
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   void _editMnemonicHandler(BuildContext context) {
-    hideShowHandler();
     Navigator.of(context)
         .push(
       PageRouteBuilder(
@@ -58,7 +64,7 @@ class ScrollableContainer extends StatelessWidget {
       if (passedText != null) {
         updateHandler(passedText);
       }
-      hideShowHandler();
+      showHandler();
     });
   }
 

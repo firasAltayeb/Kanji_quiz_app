@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
@@ -32,8 +33,9 @@ class MyApp extends ConsumerWidget {
     print('Material app is built');
     AsyncValue<List<Progress>> progressList = watch(progressProvider);
     final kanjiListState = watch(kanjiListProvider);
-    final lessonList = watch(lessonListProvider);
     final reviewList = watch(reviewListProvider);
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Colors.white));
 
     return progressList.when(
       data: (_) {
@@ -57,11 +59,7 @@ class MyApp extends ConsumerWidget {
           initialRoute: '/',
           routes: {
             '/': (ctx) => MainScreen(),
-            LessonManager.routeName: (ctx) => LessonManager(
-                  kanjiList: kanjiListState,
-                  lessonList: lessonList,
-                  reassignList: () {},
-                ),
+            LessonManager.routeName: (ctx) => LessonManager(),
             ReviewManager.routeName: (ctx) => ReviewManager(
                   kanjiList: kanjiListState,
                   reviewList: reviewList,

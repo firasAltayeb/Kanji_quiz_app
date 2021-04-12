@@ -35,3 +35,5 @@ final reviewListProvider = Provider<List<Kanji>>((ref) {
       .toList();
   return reviewList;
 });
+
+final btnBottomRowProvider = StateProvider<bool>((ref) => true);
