@@ -40,21 +40,32 @@ class KanjiList extends StateNotifier<List<Kanji>> {
     ];
   }
 
-  // List<Kanji> get kanjiList {
-  //   return state;
-  // }
-
-  // List<Kanji> get lessonList {
-  //   return state
-  //       .where((kanjiItem) => kanjiItem.learningStatus == "Lesson")
-  //       .toList();
-  // }
-
-  // List<Kanji> get reviewList {
-  //   return state
-  //       .where((kanjiItem) => kanjiItem.learningStatus == "Review")
-  //       .toList();
-  // }
+  void editKanji(Kanji updatedKanji) {
+    state = [
+      for (final kanji in state)
+        if (kanji.keyword == updatedKanji.keyword)
+          Kanji(
+            keyword: updatedKanji.keyword,
+            itemType: updatedKanji.itemType,
+            jlptLevel: updatedKanji.jlptLevel,
+            frameNumber: updatedKanji.frameNumber,
+            koohiiNumber: updatedKanji.koohiiNumber,
+            characterLook: updatedKanji.characterLook,
+            buildingBlocksLook: updatedKanji.buildingBlocksLook,
+            buildingBlockKeywords: updatedKanji.buildingBlockKeywords,
+            similarCharactersLook: updatedKanji.similarCharactersLook,
+            similarCharactersKeyword: updatedKanji.similarCharactersKeyword,
+            frequencyInAozora: updatedKanji.frequencyInAozora,
+            kanjiMeanings: updatedKanji.kanjiMeanings,
+            progressLevel: updatedKanji.progressLevel,
+            mnemonicStory: updatedKanji.mnemonicStory,
+            learningStatus: updatedKanji.learningStatus,
+            dateLastLevelChanged: updatedKanji.dateLastLevelChanged,
+          )
+        else
+          kanji,
+    ];
+  }
 
   // void _reassignList(kanjiList) async {
   //   var status = await Permission.storage.status;

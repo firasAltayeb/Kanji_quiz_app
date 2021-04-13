@@ -95,7 +95,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 20),
             ScrollableContainer(
               itemDetails: _selectedItem,
-              updateHandler: _updateMnemonicField,
             ),
             SizedBox(height: 30),
             BuildingBlockRow(
@@ -106,7 +105,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             if (_showHandler)
               MnemonicHandler(
                 itemDetails: _selectedItem,
-                updateHandler: _updateMnemonicField,
                 resetItemStatus: () {
                   _selectedItem.learningStatus = 'Lesson';
                   _selectedItem.progressLevel = 0;

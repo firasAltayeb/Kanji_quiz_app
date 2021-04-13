@@ -125,7 +125,12 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                           : () {
                               _hideBottomButton();
                               context.read(btnBottomRowProvider).state = true;
-                              Navigator.pop(context, _mnemonicController.text);
+                              widget.itemDetails.mnemonicStory =
+                                  _mnemonicController.text;
+                              context
+                                  .read(kanjiListProvider.notifier)
+                                  .editKanji(widget.itemDetails);
+                              Navigator.pop(context);
                             },
                     ),
                   ],

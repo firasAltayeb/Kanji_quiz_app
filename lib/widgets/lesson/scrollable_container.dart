@@ -7,13 +7,11 @@ import '../../main_providers.dart';
 class ScrollableContainer extends StatelessWidget {
   final Kanji itemDetails;
   final Function showHandler;
-  final Function updateHandler;
   final ScrollController _scrollController = ScrollController();
 
   ScrollableContainer({
     @required this.itemDetails,
     @required this.showHandler,
-    @required this.updateHandler,
   });
 
   @override
@@ -23,7 +21,7 @@ class ScrollableContainer extends StatelessWidget {
     return Consumer(builder: (context, watch, _) {
       return InkWell(
         onLongPress: () {
-          context.read(btnBottomRowProvider).state = false;
+          showHandler(false);
           _editMnemonicHandler(context);
         },
         child: Container(
@@ -61,10 +59,7 @@ class ScrollableContainer extends StatelessWidget {
           }),
     )
         .then((passedText) {
-      if (passedText != null) {
-        updateHandler(passedText);
-      }
-      showHandler();
+      showHandler(true);
     });
   }
 

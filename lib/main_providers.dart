@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_list.dart';
@@ -11,7 +12,7 @@ final progressProvider = FutureProvider<List<Progress>>((ref) async {
     await Permission.storage.request();
   }
   final progressList = await readProgressUpdate();
-  ref.watch(kanjiListProvider.notifier).updateProgress(progressList);
+  ref.read(kanjiListProvider.notifier).updateProgress(progressList);
 
   return progressList;
 });
@@ -37,3 +38,5 @@ final reviewListProvider = Provider<List<Kanji>>((ref) {
 });
 
 final btnBottomRowProvider = StateProvider<bool>((ref) => true);
+
+final queueIndexProvider = StateProvider<int>((ref) => 0);

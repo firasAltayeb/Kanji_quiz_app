@@ -8,7 +8,6 @@ import '../../main_providers.dart';
 
 class MnemonicHandler extends StatelessWidget {
   final Kanji itemDetails;
-  final Function updateHandler;
   final Function showHandler;
 
   final mnemonicController = TextEditingController();
@@ -17,7 +16,6 @@ class MnemonicHandler extends StatelessWidget {
 
   MnemonicHandler({
     @required this.itemDetails,
-    @required this.updateHandler,
     @required this.showHandler,
     this.resetItemStatus,
   });
@@ -47,7 +45,7 @@ class MnemonicHandler extends StatelessWidget {
             child: bottomButton(
               context,
               (ctx) {
-                context.read(btnBottomRowProvider).state = false;
+                showHandler(false);
                 _editMnemonicHandler(ctx);
               },
               "Edit Mnemonic",
@@ -120,10 +118,7 @@ class MnemonicHandler extends StatelessWidget {
           }),
     )
         .then((passedText) {
-      if (passedText != null) {
-        updateHandler(passedText);
-      }
-      showHandler();
+      showHandler(true);
     });
   }
 }
