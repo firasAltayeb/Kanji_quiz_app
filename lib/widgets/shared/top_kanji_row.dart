@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
 class TopKanjiRow extends ConsumerWidget {
   final Kanji targetKanji;
@@ -17,26 +18,16 @@ class TopKanjiRow extends ConsumerWidget {
     @required this.rightWidgetHandler,
   });
 
-  String determineTemplateAddress(Kanji targetkanji) {
-    switch (targetkanji.itemType) {
-      case "Radical":
-        return "assets/images/blue_badge_template.png";
-      case "Primitive":
-        return targetkanji.characterLook;
-      default:
-        return "assets/images/red_badge_template.png";
-    }
-  }
-
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height * 0.275;
+    final templateAddress = watch(templateAddressProvider(targetKanji));
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         leftWidgetText == 'Prev'
             ? cornerButton(leftWidgetText, leftWidgetHandler, screenHeight)
             : cornerWidget(leftWidgetText, screenHeight),
-        kanjiPicture(screenHeight),
+        kanjiPicture(screenHeight, templateAddress),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? cornerButton(rightWidgetText, rightWidgetHandler, screenHeight)
             : cornerWidget(rightWidgetText, screenHeight),
@@ -64,7 +55,7 @@ class TopKanjiRow extends ConsumerWidget {
     );
   }
 
-  Widget kanjiPicture(double height) {
+  Widget kanjiPicture(double height, String templateAddress) {
     return Expanded(
       flex: 3,
       child: Stack(
@@ -75,7 +66,7 @@ class TopKanjiRow extends ConsumerWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  determineTemplateAddress(targetKanji),
+                  templateAddress,
                 ),
                 fit: BoxFit.fill,
               ),

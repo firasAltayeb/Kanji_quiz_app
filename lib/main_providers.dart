@@ -23,7 +23,9 @@ final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
 
 final btnBottomRowProvider = StateProvider<bool>((ref) => true);
 
-final queueIndexProvider = StateProvider<int>((ref) => 0);
+final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
+
+final reviewQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final lessonListProvider = Provider<List<Kanji>>((ref) {
   final kanjiMainList = ref.watch(kanjiListProvider);
@@ -42,13 +44,25 @@ final reviewListProvider = Provider<List<Kanji>>((ref) {
 });
 
 final templateAddressProvider =
-    Provider.family<String, Kanji>((ref, targetkanji) {
-  switch (targetkanji.itemType) {
+    Provider.autoDispose.family<String, Kanji>((ref, targetKanji) {
+  switch (targetKanji.itemType) {
     case "Radical":
       return "assets/images/blue_badge_template.png";
     case "Primitive":
-      return targetkanji.characterLook;
+      return targetKanji.characterLook;
     default:
       return "assets/images/red_badge_template.png";
   }
+});
+
+final buildingBlocksProvider =
+    Provider.autoDispose.family<List<Kanji>, Kanji>((ref, targetKanji) {
+  final kanjiList = kanjiStaticData;
+  List<String> bbkeywords = targetKanji.buildingBlockKeywords;
+
+  List<Kanji> buildingBlocks = kanjiList
+      .where((element) => bbkeywords.contains(element.keyword))
+      .toList();
+
+  return buildingBlocks;
 });

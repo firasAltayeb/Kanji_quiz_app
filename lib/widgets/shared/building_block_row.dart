@@ -1,34 +1,12 @@
-import 'package:kanji_quiz_app/model/kanji_static_data.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
 class BuildingBlockRow extends ConsumerWidget {
   final Kanji targetKanji;
 
   BuildingBlockRow(this.targetKanji);
-
-  String determineTemplateAddress(Kanji targetkanji) {
-    switch (targetkanji.itemType) {
-      case "Radical":
-        return "assets/images/blue_badge_template.png";
-      case "Primitive":
-        return targetkanji.characterLook;
-      default:
-        return "assets/images/red_badge_template.png";
-    }
-  }
-
-  List<Kanji> buildingBlocksProvider() {
-    final kanjiList = kanjiStaticData;
-    List<String> bbkeywords = targetKanji.buildingBlockKeywords;
-
-    List<Kanji> buildingBlocks = kanjiList
-        .where((element) => bbkeywords.contains(element.keyword))
-        .toList();
-
-    return buildingBlocks;
-  }
 
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -52,16 +30,16 @@ class BuildingBlockRow extends ConsumerWidget {
                 if (bbKanjiList.length == 1)
                   Container(
                     width: screenWidth * 0.3,
-                    child: kanjiBlockRow(screenHeight * 0.1),
+                    child: kanjiBlockRow(screenHeight * 0.1, watch),
                   ),
                 if (bbKanjiList.length == 2)
                   Container(
                     width: screenWidth * 0.5,
-                    child: kanjiBlockRow(screenHeight * 0.1),
+                    child: kanjiBlockRow(screenHeight * 0.1, watch),
                   ),
                 if (bbKanjiList.length > 2)
                   Expanded(
-                    child: kanjiBlockRow(screenHeight * 0.1),
+                    child: kanjiBlockRow(screenHeight * 0.1, watch),
                   ),
               ],
             ),
@@ -78,10 +56,10 @@ class BuildingBlockRow extends ConsumerWidget {
     );
   }
 
-  Widget kanjiBlockRow(double height) {
+  Widget kanjiBlockRow(double height, ScopedReader watch) {
     return Row(
       children: [
-        ...(buildingBlocksProvider())
+        ...(watch(buildingBlocksProvider(targetKanji)))
             .map(
               (bbKanji) => Expanded(
                 child: Stack(
@@ -91,7 +69,7 @@ class BuildingBlockRow extends ConsumerWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                            determineTemplateAddress(bbKanji),
+                            watch(templateAddressProvider(bbKanji)),
                           ),
                           fit: BoxFit.fill,
                         ),

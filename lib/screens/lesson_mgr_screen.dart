@@ -13,9 +13,9 @@ class LessonManager extends ConsumerWidget {
 
   void _nextKanji(BuildContext context, queueIndex, lessonList) {
     if (queueIndex < lessonList.length - 1) {
-      context.read(queueIndexProvider).state++;
+      context.read(lessonQueueIdxProvider).state++;
     } else {
-      context.read(queueIndexProvider).state = 0;
+      context.read(lessonQueueIdxProvider).state = 0;
       lessonList.forEach((element) {
         element.progressLevel = 1;
         element.learningStatus = 'Review';
@@ -27,7 +27,7 @@ class LessonManager extends ConsumerWidget {
   }
 
   void _previousKanji(BuildContext context) {
-    context.read(queueIndexProvider).state--;
+    context.read(lessonQueueIdxProvider).state--;
   }
 
   void _showHandler(BuildContext context, bool trueFalse) {
@@ -36,7 +36,7 @@ class LessonManager extends ConsumerWidget {
 
   Widget build(BuildContext bldCtx, ScopedReader watch) {
     final lessonList = watch(lessonListProvider);
-    final queueIndex = watch(queueIndexProvider).state;
+    final queueIndex = watch(lessonQueueIdxProvider).state;
     final showButtonRow = watch(btnBottomRowProvider).state;
 
     if (lessonList.isEmpty) {
