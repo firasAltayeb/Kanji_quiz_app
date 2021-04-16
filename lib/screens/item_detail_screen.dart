@@ -2,9 +2,9 @@ import '../widgets/item_details/srs_difficulty_row.dart';
 import '../widgets/item_details/next_review_date.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/shared/key_text_container.dart';
-import '../widgets/lesson/building_block_row.dart';
-import '../widgets/lesson/scrollable_container.dart';
-import '../widgets/lesson/mnemonic_handler.dart';
+import '../widgets/shared/building_block_row.dart';
+import '../widgets/shared/scrollable_container.dart';
+import '../widgets/shared/mnemonic_handler.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -30,15 +30,6 @@ class ItemDetailScreen extends StatefulWidget {
 class _ItemDetailScreenState extends State<ItemDetailScreen> {
   Kanji _selectedItem;
   var _showHandler = true;
-
-  void _updateMnemonicField(String input) {
-    if (input == null || input != '')
-      setState(() {
-        _selectedItem.mnemonicStory = input;
-        print('mnemonicStory input is ${_selectedItem.mnemonicStory}');
-        widget.reassignList();
-      });
-  }
 
   @override
   Widget build(BuildContext context) {

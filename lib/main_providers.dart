@@ -6,7 +6,8 @@ import 'model/progress_services.dart';
 import 'model/progress_model.dart';
 import 'model/kanji_model.dart';
 
-final progressProvider = FutureProvider<List<Progress>>((ref) async {
+final progressProvider =
+    FutureProvider.autoDispose<List<Progress>>((ref) async {
   if (!await Permission.storage.isGranted) {
     await Permission.storage.request();
   }
@@ -38,4 +39,16 @@ final reviewListProvider = Provider<List<Kanji>>((ref) {
       .where((kanjiItem) => kanjiItem.learningStatus == "Review")
       .toList();
   return reviewList;
+});
+
+final templateAddressProvider =
+    Provider.family<String, Kanji>((ref, targetkanji) {
+  switch (targetkanji.itemType) {
+    case "Radical":
+      return "assets/images/blue_badge_template.png";
+    case "Primitive":
+      return targetkanji.characterLook;
+    default:
+      return "assets/images/red_badge_template.png";
+  }
 });
