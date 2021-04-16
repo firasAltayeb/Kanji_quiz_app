@@ -5,79 +5,34 @@ import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
-// ignore: must_be_immutable
 class SrsLevelColumn extends ConsumerWidget {
-  List<String> _srsLevelOneIds = [];
-  List<String> _srsLevelTwoIds = [];
-  List<String> _srsLevelThreeIds = [];
-  List<String> _srsLevelFourIds = [];
-  List<String> _srsLevelFiveIds = [];
-  List<Kanji> kanjiList;
-
-  void assignSrsLists() {
-    _srsLevelOneIds.clear();
-    _srsLevelTwoIds.clear();
-    _srsLevelThreeIds.clear();
-    _srsLevelFourIds.clear();
-    _srsLevelFiveIds.clear();
-    kanjiList.forEach((item) {
-      switch (item.progressLevel) {
-        case 1:
-          _srsLevelOneIds.add(item.characterLook);
-          break;
-        case 2:
-          _srsLevelTwoIds.add(item.characterLook);
-          break;
-        case 3:
-          _srsLevelThreeIds.add(item.characterLook);
-          break;
-        case 4:
-          _srsLevelFourIds.add(item.characterLook);
-          break;
-        case 5:
-          _srsLevelFiveIds.add(item.characterLook);
-          break;
-        default:
-          break;
-      }
-    });
-  }
-
   Widget build(BuildContext context, ScopedReader watch) {
-    final kanjiListState = watch(kanjiListProvider);
     var accentColor = Theme.of(context).accentColor;
     var screenHeight = MediaQuery.of(context).size.height;
-    kanjiList = kanjiListState;
-    assignSrsLists();
-
     return Column(
       children: [
         textContainer('SRS Level 1 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: kanjiList,
+          kanjiList: watch(srsLvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
-          itemIds: _srsLevelOneIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 2 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: kanjiList,
+          kanjiList: watch(srsLvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
-          itemIds: _srsLevelTwoIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 3 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: kanjiList,
+          kanjiList: watch(srsLvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
-          itemIds: _srsLevelThreeIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 4 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: kanjiList,
+          kanjiList: watch(srsLvlListProvider(4)),
           widgetHeight: screenHeight * 0.2,
-          itemIds: _srsLevelFourIds,
           selectHandler: pushToItemScreen,
         ),
         textContainer(
@@ -86,9 +41,8 @@ class SrsLevelColumn extends ConsumerWidget {
           accentColor,
         ),
         KanjiInteractiveRow(
-          kanjiList: kanjiList,
+          kanjiList: watch(srsLvlListProvider(5)),
           widgetHeight: screenHeight * 0.2,
-          itemIds: _srsLevelFiveIds,
           selectHandler: pushToItemScreen,
         ),
       ],
@@ -117,13 +71,10 @@ class SrsLevelColumn extends ConsumerWidget {
     );
   }
 
-  void pushToItemScreen(BuildContext context, String address) {
-    var kanjiIndex = kanjiList
-        .indexWhere((reviewedItem) => reviewedItem.characterLook == address);
-
+  void pushToItemScreen(BuildContext context, Kanji clickedKanji) {
     Navigator.of(context).pushNamed(
       ItemDetailScreen.routeName,
-      arguments: kanjiIndex,
+      arguments: clickedKanji,
     );
   }
 }

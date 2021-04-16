@@ -1,13 +1,11 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
-class ShowAnswerButton extends StatelessWidget {
-  final Function selectHandler;
-
-  ShowAnswerButton(this.selectHandler);
-
+class ShowAnswerButton extends ConsumerWidget {
   @override
-  Widget build(BuildContext context) {
-    var screenHeight = MediaQuery.of(context).size.height * 0.35;
+  Widget build(BuildContext bldCtx, ScopedReader watch) {
+    var screenHeight = MediaQuery.of(bldCtx).size.height * 0.35;
     return Container(
       width: double.infinity,
       height: screenHeight,
@@ -19,7 +17,7 @@ class ShowAnswerButton extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: selectHandler,
+        onPressed: () => bldCtx.read(recallButtonVisibleProvider).state = false,
       ),
     );
   }

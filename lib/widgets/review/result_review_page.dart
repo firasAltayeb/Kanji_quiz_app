@@ -1,30 +1,25 @@
 import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
-class ResultPage extends StatelessWidget {
-  final int scoreToDisplay;
+class ResultPage extends ConsumerWidget {
   final Function wrapSession;
-  final List<String> correctRecallList;
-  final List<String> incorrectRecallList;
-
-  final List<Kanji> kanjiList;
 
   ResultPage({
-    @required this.kanjiList,
     @required this.wrapSession,
-    @required this.scoreToDisplay,
-    @required this.correctRecallList,
-    @required this.incorrectRecallList,
   });
 
-  @override
-  Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
+  Widget build(BuildContext bldCtx, ScopedReader watch) {
+    final incorrectRecallList = watch(incorrectRecallListProvider).state;
+    final correctRecallList = watch(correctRecallListProvider).state;
+    final sessionScore = watch(sessionScoreProvider).state;
+    final screenHeight = MediaQuery.of(bldCtx).size.height;
+
     return Column(children: [
       SizedBox(height: screenHeight * 0.05),
       Text(
-        'Your session score is ${scoreToDisplay.toString()}',
+        'Your session score is $sessionScore',
         style: TextStyle(
           fontSize: screenHeight * 0.04,
           fontWeight: FontWeight.bold,
@@ -38,9 +33,8 @@ class ResultPage extends StatelessWidget {
       ),
       if (correctRecallList.length > 0)
         KanjiInteractiveRow(
-          kanjiList: kanjiList,
+          kanjiList: correctRecallList,
           widgetHeight: screenHeight * 0.175,
-          itemIds: correctRecallList,
           selectHandler: null,
         ),
       if (correctRecallList.length == 0)
@@ -54,9 +48,8 @@ class ResultPage extends StatelessWidget {
       ),
       if (incorrectRecallList.length > 0)
         KanjiInteractiveRow(
-          kanjiList: kanjiList,
+          kanjiList: incorrectRecallList,
           widgetHeight: screenHeight * 0.175,
-          itemIds: incorrectRecallList,
           selectHandler: null,
         ),
       if (incorrectRecallList.length == 0)

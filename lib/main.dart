@@ -32,8 +32,6 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     print('Material app is built');
     AsyncValue<List<Progress>> progressList = watch(progressProvider);
-    final kanjiListState = watch(kanjiListProvider);
-    final reviewList = watch(reviewListProvider);
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: Colors.white));
 
@@ -60,15 +58,9 @@ class MyApp extends ConsumerWidget {
           routes: {
             '/': (ctx) => MainScreen(),
             LessonManager.routeName: (ctx) => LessonManager(),
-            ReviewManager.routeName: (ctx) => ReviewManager(
-                  kanjiList: kanjiListState,
-                  reviewList: reviewList,
-                  reassignList: () {},
-                ),
+            ReviewManager.routeName: (ctx) => ReviewManager(),
             ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
-                  kanjiList: kanjiListState,
                   currentTimeZone: timezone,
-                  reassignList: () {},
                 ),
           },
         );

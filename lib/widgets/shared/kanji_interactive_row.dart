@@ -1,44 +1,24 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
-class KanjiInteractiveRow extends StatelessWidget {
+class KanjiInteractiveRow extends ConsumerWidget {
   final double widgetHeight;
-  final List<String> itemIds;
-  final Function selectHandler;
   final List<Kanji> kanjiList;
+  final Function selectHandler;
 
   KanjiInteractiveRow({
     @required this.kanjiList,
     @required this.widgetHeight,
-    @required this.itemIds,
     @required this.selectHandler,
   });
 
-  String determineTemplateAddress(itemId) {
-    var itemIndex =
-        kanjiList.indexWhere((element) => element.characterLook == itemId);
-    switch (kanjiList[itemIndex].itemType) {
-      case "Radical":
-        return "assets/images/blue_badge_template.png";
-      case "Primitive":
-        return kanjiList[itemIndex].characterLook;
-      default:
-        return "assets/images/red_badge_template.png";
-    }
-  }
-
-  bool isPrimitiveType(itemId) {
-    var itemIndex =
-        kanjiList.indexWhere((element) => element.characterLook == itemId);
-    return kanjiList[itemIndex].itemType == "Primitive";
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
     return SizedBox(
       height: widgetHeight,
       child: GridView.builder(
-          itemCount: itemIds.length,
+          itemCount: kanjiList.length,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: widgetHeight,
             childAspectRatio: 1.25,
@@ -50,7 +30,7 @@ class KanjiInteractiveRow extends StatelessWidget {
                   ? null
                   : () => selectHandler(
                         context,
-                        itemIds[i],
+                        kanjiList[i],
                       ),
               child: Stack(
                 alignment: Alignment.center,
@@ -59,17 +39,17 @@ class KanjiInteractiveRow extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          determineTemplateAddress(itemIds[i]),
+                          watch(templateAddressProvider(kanjiList[i])),
                         ),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
-                  if (!isPrimitiveType(itemIds[i]))
+                  if (kanjiList[i].itemType != "Primitive")
                     Container(
                       height: widgetHeight * 0.65,
                       child: Text(
-                        itemIds[i],
+                        kanjiList[i].characterLook,
                         style: TextStyle(
                           fontSize: widgetHeight * 0.4,
                           fontFamily: 'Lato',

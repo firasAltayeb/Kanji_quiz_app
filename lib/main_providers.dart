@@ -21,11 +21,21 @@ final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
   return KanjiList(kanjiStaticData);
 });
 
-final btnBottomRowProvider = StateProvider<bool>((ref) => true);
-
 final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
 
+final btnBottomRowProvider = StateProvider<bool>((ref) => true);
+
 final reviewQueueIdxProvider = StateProvider<int>((ref) => 0);
+
+final sessionScoreProvider = StateProvider<int>((ref) => 0);
+
+final recallButtonVisibleProvider = StateProvider<bool>((ref) => true);
+
+final answerChoiceListProvider = StateProvider<List<bool>>((ref) => []);
+
+final correctRecallListProvider = StateProvider<List<Kanji>>((ref) => []);
+
+final incorrectRecallListProvider = StateProvider<List<Kanji>>((ref) => []);
 
 final lessonListProvider = Provider<List<Kanji>>((ref) {
   final kanjiMainList = ref.watch(kanjiListProvider);
@@ -41,6 +51,15 @@ final reviewListProvider = Provider<List<Kanji>>((ref) {
       .where((kanjiItem) => kanjiItem.learningStatus == "Review")
       .toList();
   return reviewList;
+});
+
+final srsLvlListProvider =
+    Provider.autoDispose.family<List<Kanji>, int>((ref, level) {
+  final kanjiMainList = ref.watch(kanjiListProvider);
+  final srsLvlList = kanjiMainList
+      .where((kanjiItem) => kanjiItem.progressLevel == level)
+      .toList();
+  return srsLvlList;
 });
 
 final templateAddressProvider =

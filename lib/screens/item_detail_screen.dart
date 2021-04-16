@@ -12,14 +12,9 @@ import 'package:intl/intl.dart';
 
 class ItemDetailScreen extends StatefulWidget {
   static const routeName = '/item-details';
-
   final String currentTimeZone;
-  final Function reassignList;
-  final List<Kanji> kanjiList;
 
   ItemDetailScreen({
-    @required this.kanjiList,
-    @required this.reassignList,
     @required this.currentTimeZone,
   });
 
@@ -28,17 +23,14 @@ class ItemDetailScreen extends StatefulWidget {
 }
 
 class _ItemDetailScreenState extends State<ItemDetailScreen> {
-  Kanji _selectedItem;
   var _showHandler = true;
 
   @override
   Widget build(BuildContext context) {
-    var selectedIndex = ModalRoute.of(context).settings.arguments;
+    Kanji selectedKanji = ModalRoute.of(context).settings.arguments;
     var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
     var screenHeight = MediaQuery.of(context).size.height;
-
-    _selectedItem = widget.kanjiList[selectedIndex];
-    var levelChangeDate = _fixTimeZone(_selectedItem);
+    var levelChangeDate = _fixTimeZone(selectedKanji);
 
     return Scaffold(
       appBar: MainAppBar(
@@ -49,7 +41,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         child: Column(
           children: [
             TopKanjiRow(
-              targetKanji: _selectedItem,
+              targetKanji: selectedKanji,
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               leftWidgetHandler: null,
@@ -58,7 +50,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(
               height: screenHeight * 0.08,
               child: KeyTextContainer(
-                'Keyword: ' + _selectedItem.keyword,
+                'Keyword: ' + selectedKanji.keyword,
               ),
             ),
             SizedBox(height: 20),
@@ -69,14 +61,14 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 20),
             _coloredTextContainer(
               screenHeight,
-              _selectedItem.progressLevel,
+              selectedKanji.progressLevel,
               Theme.of(context).accentColor,
             ),
             SizedBox(height: 20),
             Container(
               height: screenHeight * 0.06,
               child: NextReviewDate(
-                _selectedItem,
+                selectedKanji,
                 levelChangeDate,
               ),
             ),
@@ -84,21 +76,20 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SrsDifficultyRow(),
             SizedBox(height: 20),
             ScrollableContainer(
-              itemDetails: _selectedItem,
+              itemDetails: selectedKanji,
             ),
             SizedBox(height: 30),
             BuildingBlockRow(
-              _selectedItem,
+              selectedKanji,
             ),
             SizedBox(height: 30),
             if (_showHandler)
               MnemonicHandler(
-                itemDetails: _selectedItem,
+                itemDetails: selectedKanji,
                 resetItemStatus: () {
-                  _selectedItem.learningStatus = 'Lesson';
-                  _selectedItem.progressLevel = 0;
-                  _selectedItem.mnemonicStory = '';
-                  widget.reassignList();
+                  selectedKanji.learningStatus = 'Lesson';
+                  selectedKanji.progressLevel = 0;
+                  selectedKanji.mnemonicStory = '';
                 },
               ),
             if (!_showHandler)
@@ -111,14 +102,14 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
     );
   }
 
-  DateTime _fixTimeZone(itemDetails) {
+  DateTime _fixTimeZone(selectedKanji) {
     print('${widget.currentTimeZone}');
     print('${DateTime.now().timeZoneName}');
     if (widget.currentTimeZone == 'Asia/Tokyo' &&
         DateTime.now().timeZoneName != 'JST') {
       return DateTime.now().add(Duration(hours: 9));
     }
-    return _selectedItem.dateLastLevelChanged;
+    return selectedKanji.dateLastLevelChanged;
   }
 
   Widget _coloredTextContainer(height, itemLvl, color) {
