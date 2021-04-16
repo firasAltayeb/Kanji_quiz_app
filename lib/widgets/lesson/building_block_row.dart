@@ -1,39 +1,45 @@
+import 'package:kanji_quiz_app/model/kanji_static_data.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
-class BuildingBlockRow extends StatelessWidget {
-  final List<Kanji> kanjiList;
-  final Kanji itemToLearn;
+class BuildingBlockRow extends ConsumerWidget {
+  final Kanji targetKanji;
 
-  BuildingBlockRow(
-    this.kanjiList,
-    this.itemToLearn,
-  );
+  BuildingBlockRow(this.targetKanji);
 
-  String determineTemplateAddress(buildingBlockId) {
-    var buildingBlockIndex = kanjiList
-        .indexWhere((element) => element.characterLook == buildingBlockId);
-    switch (kanjiList[buildingBlockIndex].itemType) {
+  String determineTemplateAddress(Kanji targetkanji) {
+    switch (targetkanji.itemType) {
       case "Radical":
         return "assets/images/blue_badge_template.png";
       case "Primitive":
-        return kanjiList[buildingBlockIndex].characterLook;
+        return targetkanji.characterLook;
       default:
         return "assets/images/red_badge_template.png";
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    List<String> buildingBlocks = itemToLearn.buildingBlocksLook;
+  List<Kanji> buildingBlocksProvider() {
+    final kanjiList = kanjiStaticData;
+    List<String> bbkeywords = targetKanji.buildingBlockKeywords;
+
+    List<Kanji> buildingBlocks = kanjiList
+        .where((element) => bbkeywords.contains(element.keyword))
+        .toList();
+
+    return buildingBlocks;
+  }
+
+  Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
+    var bbKanjiList = targetKanji.buildingBlockKeywords;
     return Container(
       alignment: Alignment.center,
       height: screenHeight * 0.175,
-      child: buildingBlocks.isEmpty
+      child: bbKanjiList.isEmpty
           ? textWidget(
-              'Item type:  ${itemToLearn.itemType}',
+              'Item type: ${targetKanji.itemType}',
               screenWidth * 0.08,
             )
           : Row(
@@ -43,19 +49,19 @@ class BuildingBlockRow extends StatelessWidget {
                   'Building blocks: ',
                   screenWidth * 0.06,
                 ),
-                if (buildingBlocks.length == 1)
+                if (bbKanjiList.length == 1)
                   Container(
                     width: screenWidth * 0.3,
-                    child: kanjiBlockRow(buildingBlocks, screenHeight * 0.125),
+                    child: kanjiBlockRow(screenHeight * 0.1),
                   ),
-                if (buildingBlocks.length == 2)
+                if (bbKanjiList.length == 2)
                   Container(
                     width: screenWidth * 0.5,
-                    child: kanjiBlockRow(buildingBlocks, screenHeight * 0.1),
+                    child: kanjiBlockRow(screenHeight * 0.1),
                   ),
-                if (buildingBlocks.length > 2)
+                if (bbKanjiList.length > 2)
                   Expanded(
-                    child: kanjiBlockRow(buildingBlocks, screenHeight * 0.1),
+                    child: kanjiBlockRow(screenHeight * 0.1),
                   ),
               ],
             ),
@@ -72,12 +78,12 @@ class BuildingBlockRow extends StatelessWidget {
     );
   }
 
-  Widget kanjiBlockRow(blockIds, containerHeight) {
+  Widget kanjiBlockRow(double height) {
     return Row(
       children: [
-        ...(blockIds)
+        ...(buildingBlocksProvider())
             .map(
-              (buildingBlockId) => Expanded(
+              (bbKanji) => Expanded(
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
@@ -85,24 +91,25 @@ class BuildingBlockRow extends StatelessWidget {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                            determineTemplateAddress(buildingBlockId),
+                            determineTemplateAddress(bbKanji),
                           ),
                           fit: BoxFit.fill,
                         ),
                       ),
                     ),
-                    Container(
-                      height: containerHeight,
-                      child: Text(
-                        buildingBlockId,
-                        style: TextStyle(
-                          fontSize: containerHeight * 0.6,
-                          fontFamily: 'Lato',
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                    if (bbKanji.itemType != "Primitive")
+                      Container(
+                        height: height,
+                        child: Text(
+                          bbKanji.characterLook,
+                          style: TextStyle(
+                            fontSize: height * 0.6,
+                            fontFamily: 'Lato',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                    ),
                   ],
                 ),
               ),

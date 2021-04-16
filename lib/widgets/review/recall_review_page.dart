@@ -46,8 +46,7 @@ class _RecallPageState extends State<RecallPage> {
     return Column(
       children: [
         TopKanjiRow(
-          kanjiId: _questionItem.characterLook,
-          kanjiList: widget.kanjiList,
+          targetKanji: _questionItem,
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
           leftWidgetHandler: null,

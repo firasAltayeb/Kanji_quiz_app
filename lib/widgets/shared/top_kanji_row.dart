@@ -1,56 +1,45 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
-class TopKanjiRow extends StatelessWidget {
-  final String kanjiId;
-  final List<Kanji> kanjiList;
-
+class TopKanjiRow extends ConsumerWidget {
+  final Kanji targetKanji;
   final String leftWidgetText;
   final String rightWidgetText;
   final Function leftWidgetHandler;
   final Function rightWidgetHandler;
 
   TopKanjiRow({
-    @required this.kanjiId,
-    @required this.kanjiList,
+    @required this.targetKanji,
     @required this.leftWidgetText,
     @required this.rightWidgetText,
     @required this.leftWidgetHandler,
     @required this.rightWidgetHandler,
   });
 
-  String determineTemplateAddress(itemId) {
-    var itemIndex =
-        kanjiList.indexWhere((element) => element.characterLook == itemId);
-    switch (kanjiList[itemIndex].itemType) {
+  String determineTemplateAddress(Kanji targetkanji) {
+    switch (targetkanji.itemType) {
       case "Radical":
         return "assets/images/blue_badge_template.png";
       case "Primitive":
-        return kanjiList[itemIndex].characterLook;
+        return targetkanji.characterLook;
       default:
         return "assets/images/red_badge_template.png";
     }
   }
 
-  bool isPrimitiveType(itemId) {
-    var itemIndex =
-        kanjiList.indexWhere((element) => element.characterLook == itemId);
-    return kanjiList[itemIndex].itemType == "Primitive";
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height * 0.275;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         leftWidgetText == 'Prev'
             ? cornerButton(leftWidgetText, leftWidgetHandler, screenHeight)
-            : cornerWidget(leftWidgetText, 'left', screenHeight),
+            : cornerWidget(leftWidgetText, screenHeight),
         kanjiPicture(screenHeight),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? cornerButton(rightWidgetText, rightWidgetHandler, screenHeight)
-            : cornerWidget(rightWidgetText, 'right', screenHeight),
+            : cornerWidget(rightWidgetText, screenHeight),
       ],
     );
   }
@@ -86,17 +75,17 @@ class TopKanjiRow extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  determineTemplateAddress(kanjiId),
+                  determineTemplateAddress(targetKanji),
                 ),
                 fit: BoxFit.fill,
               ),
             ),
           ),
-          if (!isPrimitiveType(kanjiId))
+          if (targetKanji.itemType != "Primitive")
             Container(
               height: height * 0.65,
               child: Text(
-                kanjiId,
+                targetKanji.characterLook,
                 style: TextStyle(
                   fontSize: height * 0.4,
                   fontFamily: 'Lato',
@@ -110,7 +99,7 @@ class TopKanjiRow extends StatelessWidget {
     );
   }
 
-  Widget cornerWidget(String passedText, String area, double height) {
+  Widget cornerWidget(String passedText, double height) {
     return Expanded(
       flex: 2,
       child: Container(

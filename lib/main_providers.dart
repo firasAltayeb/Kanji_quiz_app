@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_list.dart';
@@ -21,6 +20,10 @@ final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
   return KanjiList(kanjiStaticData);
 });
 
+final btnBottomRowProvider = StateProvider<bool>((ref) => true);
+
+final queueIndexProvider = StateProvider<int>((ref) => 0);
+
 final lessonListProvider = Provider<List<Kanji>>((ref) {
   final kanjiMainList = ref.watch(kanjiListProvider);
   final lessonList = kanjiMainList
@@ -36,7 +39,3 @@ final reviewListProvider = Provider<List<Kanji>>((ref) {
       .toList();
   return reviewList;
 });
-
-final btnBottomRowProvider = StateProvider<bool>((ref) => true);
-
-final queueIndexProvider = StateProvider<int>((ref) => 0);

@@ -12,7 +12,6 @@ class LessonManager extends ConsumerWidget {
   static const routeName = '/lesson-screen';
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final kanjiList = watch(kanjiListProvider);
     final lessonList = watch(lessonListProvider);
     final queueIndex = watch(queueIndexProvider).state;
     final showButtonRow = watch(btnBottomRowProvider).state;
@@ -30,8 +29,7 @@ class LessonManager extends ConsumerWidget {
       body: Column(
         children: [
           TopKanjiRow(
-            kanjiId: lessonList[queueIndex].characterLook,
-            kanjiList: kanjiList,
+            targetKanji: lessonList[queueIndex],
             leftWidgetText: "Prev",
             rightWidgetText: "Next",
             leftWidgetHandler: queueIndex == 0
@@ -41,10 +39,9 @@ class LessonManager extends ConsumerWidget {
                   },
             rightWidgetHandler: () {
               if (queueIndex < lessonList.length - 1) {
-                print("queue index is ${lessonList.length}");
                 context.read(queueIndexProvider).state++;
-                print("queue index increased to $queueIndex");
               } else {
+                context.read(queueIndexProvider).state = 0;
                 lessonList.forEach((element) {
                   element.progressLevel = 1;
                   element.learningStatus = 'Review';
@@ -61,10 +58,7 @@ class LessonManager extends ConsumerWidget {
               'Keyword: ' + lessonList[queueIndex].keyword,
             ),
           ),
-          BuildingBlockRow(
-            kanjiList,
-            lessonList[queueIndex],
-          ),
+          BuildingBlockRow(lessonList[queueIndex]),
           ScrollableContainer(
             itemDetails: lessonList[queueIndex],
             showHandler: (trueFalse) {

@@ -58,8 +58,7 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         child: Column(
           children: [
             TopKanjiRow(
-              kanjiId: _selectedItem.characterLook,
-              kanjiList: widget.kanjiList,
+              targetKanji: _selectedItem,
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               leftWidgetHandler: null,
@@ -98,7 +97,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             ),
             SizedBox(height: 30),
             BuildingBlockRow(
-              widget.kanjiList,
               _selectedItem,
             ),
             SizedBox(height: 30),
