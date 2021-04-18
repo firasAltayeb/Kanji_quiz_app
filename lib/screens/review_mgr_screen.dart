@@ -69,6 +69,8 @@ class ReviewManager extends ConsumerWidget {
           : ResultPage(
               wrapSession: () =>
                   _wrapSession(bldCtx, _ansChoiceList, _reviewList),
+              undoLastAnswer: () =>
+                  _undoAnswer(bldCtx, _ansChoiceList, _queueIndex),
             ),
     );
   }

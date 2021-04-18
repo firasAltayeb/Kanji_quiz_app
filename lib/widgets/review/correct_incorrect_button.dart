@@ -39,7 +39,16 @@ class CorrectIncorrectButton extends ConsumerWidget {
           ),
         ),
         onPressed: () {
-          //_openCustomDialog(bldCtx, reviewItem, screenHeight);
+          var kanjiLook = reviewItem.characterLook;
+          var currentProgressLevel = reviewItem.progressLevel;
+          currentProgressLevel += selectChoice ? 1 : -1;
+          if (currentProgressLevel == 0) currentProgressLevel = 1;
+          _openCustomDialog(
+            bldCtx,
+            kanjiLook,
+            currentProgressLevel,
+            screenHeight,
+          );
           bldCtx.read(recallButtonVisibleProvider).state = true;
           answerQuestion(selectChoice);
         },
@@ -47,39 +56,38 @@ class CorrectIncorrectButton extends ConsumerWidget {
     );
   }
 
-  // void _openCustomDialog(context, Kanji questionItem, height) {
-  //   showGeneralDialog(
-  //     context: context,
-  //     barrierColor: Colors.black.withOpacity(0.2),
-  //     barrierDismissible: true,
-  //     barrierLabel: '',
-  //     pageBuilder: (context, animation1, animation2) {
-  //       return null;
-  //     },
-  //     transitionBuilder: (context, a1, a2, widget) {
-  //       return Transform.scale(
-  //         scale: a1.value,
-  //         child: Opacity(
-  //           opacity: a1.value,
-  //           child: AlertDialog(
-  //             backgroundColor:
-  //                 selectChoice ? Colors.green[700] : Colors.red[700],
-  //             shape:
-  //                 OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
-  //             content: Text(
-  //               'The item ${questionItem.characterLook} SRS' +
-  //                   ' level is now ${questionItem.progressLevel}',
-  //               style: TextStyle(
-  //                 fontSize: height * 0.04,
-  //                 fontWeight: FontWeight.bold,
-  //                 color: Colors.white,
-  //               ),
-  //             ),
-  //           ),
-  //         ),
-  //       );
-  //     },
-  //     transitionDuration: Duration(milliseconds: 100),
-  //   );
-  // }
+  void _openCustomDialog(context, kanjiLook, newLvl, height) {
+    showGeneralDialog(
+      context: context,
+      barrierColor: Colors.black.withOpacity(0.2),
+      barrierDismissible: true,
+      barrierLabel: '',
+      pageBuilder: (context, animation1, animation2) {
+        return null;
+      },
+      transitionBuilder: (context, a1, a2, widget) {
+        return Transform.scale(
+          scale: a1.value,
+          child: Opacity(
+            opacity: a1.value,
+            child: AlertDialog(
+              backgroundColor:
+                  selectChoice ? Colors.green[700] : Colors.red[700],
+              shape:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
+              content: Text(
+                'The item $kanjiLook SRS' + ' level is now $newLvl',
+                style: TextStyle(
+                  fontSize: height * 0.04,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+      transitionDuration: Duration(milliseconds: 100),
+    );
+  }
 }

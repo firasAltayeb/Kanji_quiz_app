@@ -5,9 +5,11 @@ import '../../main_providers.dart';
 
 class ResultPage extends ConsumerWidget {
   final Function wrapSession;
+  final Function undoLastAnswer;
 
   ResultPage({
     @required this.wrapSession,
+    @required this.undoLastAnswer,
   });
 
   Widget build(BuildContext bldCtx, ScopedReader watch) {
@@ -17,13 +19,30 @@ class ResultPage extends ConsumerWidget {
     final screenHeight = MediaQuery.of(bldCtx).size.height;
 
     return Column(children: [
-      SizedBox(height: screenHeight * 0.05),
-      Text(
-        'Your session score is $sessionScore',
-        style: TextStyle(
-          fontSize: screenHeight * 0.04,
-          fontWeight: FontWeight.bold,
-        ),
+      SizedBox(height: screenHeight * 0.03),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          SizedBox(),
+          Text(
+            'Your session score is $sessionScore',
+            style: TextStyle(
+              fontSize: screenHeight * 0.035,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          TextButton(
+            child: Text(
+              "Undo",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: screenHeight * 0.035,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            onPressed: undoLastAnswer,
+          ),
+        ],
       ),
       SizedBox(height: screenHeight * 0.05),
       textContainer(
@@ -62,10 +81,7 @@ class ResultPage extends ConsumerWidget {
 
   Widget wrapUpButton(double screenHeight) {
     return Container(
-      padding: EdgeInsets.only(
-        top: screenHeight * 0.04,
-        bottom: screenHeight * 0.04,
-      ),
+      padding: EdgeInsets.only(top: screenHeight * 0.08),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
@@ -76,7 +92,7 @@ class ResultPage extends ConsumerWidget {
         child: Text(
           ' Wrap up session ',
           style: TextStyle(
-            fontSize: screenHeight * 0.04,
+            fontSize: screenHeight * 0.05,
             fontWeight: FontWeight.bold,
           ),
         ),
