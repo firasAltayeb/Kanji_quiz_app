@@ -49,11 +49,38 @@ final lessonListProvider = Provider<List<Kanji>>((ref) {
 
 final reviewListProvider = Provider<List<Kanji>>((ref) {
   final kanjiMainList = ref.watch(kanjiListProvider);
-  final reviewList = kanjiMainList
-      .where((kanjiItem) => kanjiItem.learningStatus == "Review")
-      .toList();
+  final reviewList =
+      kanjiMainList.where((kanjiItem) => srsReviewReady(kanjiItem)).toList();
   return reviewList;
 });
+
+bool srsReviewReady(Kanji kanjiItem) {
+  if (kanjiItem.learningStatus == "Review")
+    switch (kanjiItem.progressLevel) {
+      case 1:
+        if (kanjiItem.dateLastLevelChanged
+            .isBefore(DateTime.now().subtract(Duration(seconds: 10))))
+          return true;
+        break;
+      case 2:
+        if (kanjiItem.dateLastLevelChanged
+            .isBefore(DateTime.now().subtract(Duration(seconds: 15))))
+          return true;
+        break;
+      case 3:
+        if (kanjiItem.dateLastLevelChanged
+            .isBefore(DateTime.now().subtract(Duration(days: 2)))) return true;
+        break;
+      case 4:
+        if (kanjiItem.dateLastLevelChanged
+            .isBefore(DateTime.now().subtract(Duration(days: 4)))) return true;
+        break;
+      default:
+        return false;
+        break;
+    }
+  return false;
+}
 
 final srsLvlListProvider =
     Provider.autoDispose.family<List<Kanji>, int>((ref, level) {
