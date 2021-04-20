@@ -39,6 +39,8 @@ final correctRecallListProvider = StateProvider<List<Kanji>>((ref) => []);
 
 final incorrectRecallListProvider = StateProvider<List<Kanji>>((ref) => []);
 
+final syncNowProvider = StateProvider<int>((ref) => 0);
+
 final lessonListProvider = Provider<List<Kanji>>((ref) {
   final kanjiMainList = ref.watch(kanjiListProvider);
   final lessonList = kanjiMainList
@@ -49,9 +51,18 @@ final lessonListProvider = Provider<List<Kanji>>((ref) {
 
 final reviewListProvider = Provider<List<Kanji>>((ref) {
   final kanjiMainList = ref.watch(kanjiListProvider);
-  final reviewList =
-      kanjiMainList.where((kanjiItem) => srsReviewReady(kanjiItem)).toList();
+  final reviewList = kanjiMainList
+      .where((kanjiItem) => kanjiItem.learningStatus == "Review")
+      .toList();
   return reviewList;
+});
+
+final reviewReadyListProvider = Provider<List<Kanji>>((ref) {
+  final syncNow = ref.watch(syncNowProvider);
+  final reviewList = ref.watch(reviewListProvider);
+  final readyList =
+      reviewList.where((kanjiItem) => srsReviewReady(kanjiItem)).toList();
+  return readyList;
 });
 
 bool srsReviewReady(Kanji kanjiItem) {

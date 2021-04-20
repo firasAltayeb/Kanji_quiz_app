@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
       ),
       body: Consumer(builder: (bldContext, watch, _) {
         final lessonList = watch(lessonListProvider);
-        final reviewList = watch(reviewListProvider);
+        final reviewList = watch(reviewReadyListProvider);
         return SingleChildScrollView(
           child: Column(
             children: [

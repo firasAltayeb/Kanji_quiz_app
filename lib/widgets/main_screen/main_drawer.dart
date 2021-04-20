@@ -1,8 +1,9 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
-class MainAppDrawer extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+class MainAppDrawer extends ConsumerWidget {
+  Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
     return Drawer(
       child: Column(
@@ -38,6 +39,7 @@ class MainAppDrawer extends StatelessWidget {
             'Sync now',
             Icons.sync,
             () {
+              context.read(syncNowProvider).state++;
               Navigator.pop(context);
             },
           ),
