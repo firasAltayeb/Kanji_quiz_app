@@ -1,109 +1,31 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../widgets/item_details/srs_difficulty_row.dart';
 import '../widgets/item_details/next_review_date.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
-import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/mnemonic_handler.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
+import '../model/kanji_model.dart';
+import '../main_providers.dart';
 import 'package:intl/intl.dart';
 
-class ItemDetailScreen extends StatefulWidget {
+class ItemDetailScreen extends StatelessWidget {
   static const routeName = '/item-details';
   final String currentTimeZone;
 
-  ItemDetailScreen({
-    @required this.currentTimeZone,
-  });
+  ItemDetailScreen({@required this.currentTimeZone});
 
-  @override
-  _ItemDetailScreenState createState() => _ItemDetailScreenState();
-}
-
-class _ItemDetailScreenState extends State<ItemDetailScreen> {
-  var _showHandler = true;
-
-  @override
-  Widget build(BuildContext context) {
-    Kanji selectedKanji = ModalRoute.of(context).settings.arguments;
-    var dateFormater = DateFormat('dd/MM/yyyy HH:mm');
-    var screenHeight = MediaQuery.of(context).size.height;
-    var levelChangeDate = _fixTimeZone(selectedKanji);
-
-    return Scaffold(
-      appBar: MainAppBar(
-        title: 'Item Details',
-        appBar: AppBar(),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TopKanjiRow(
-              leftWidgetText: "Prev",
-              rightWidgetText: "Next",
-              leftWidgetHandler: null,
-              rightWidgetHandler: null,
-            ),
-            SizedBox(
-              height: screenHeight * 0.08,
-              child: KeyTextContainer(
-                'Keyword: ' + selectedKanji.keyword,
-              ),
-            ),
-            SizedBox(height: 20),
-            KeyTextContainer(
-              'SRS Level change date: ' +
-                  '${dateFormater.format(levelChangeDate)}',
-            ),
-            SizedBox(height: 20),
-            _coloredTextContainer(
-              screenHeight,
-              selectedKanji.progressLevel,
-              Theme.of(context).accentColor,
-            ),
-            SizedBox(height: 20),
-            Container(
-              height: screenHeight * 0.06,
-              child: NextReviewDate(
-                selectedKanji,
-                levelChangeDate,
-              ),
-            ),
-            SizedBox(height: 20),
-            SrsDifficultyRow(),
-            SizedBox(height: 20),
-            ScrollableContainer(),
-            SizedBox(height: 30),
-            BuildingBlockRow(),
-            SizedBox(height: 30),
-            if (_showHandler)
-              MnemonicHandler(
-                resetItemStatus: () {
-                  selectedKanji.learningStatus = 'Lesson';
-                  selectedKanji.progressLevel = 0;
-                  selectedKanji.mnemonicStory = '';
-                },
-              ),
-            if (!_showHandler)
-              SizedBox(
-                height: screenHeight * 0.135,
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  DateTime _fixTimeZone(selectedKanji) {
-    print('${widget.currentTimeZone}');
+  DateTime _fixTimeZone(Kanji targetKanji) {
+    print('$currentTimeZone');
     print('${DateTime.now().timeZoneName}');
-    if (widget.currentTimeZone == 'Asia/Tokyo' &&
+    if (currentTimeZone == 'Asia/Tokyo' &&
         DateTime.now().timeZoneName != 'JST') {
       return DateTime.now().add(Duration(hours: 9));
     }
-    return selectedKanji.dateLastLevelChanged;
+    return targetKanji.dateLastLevelChanged;
   }
 
   Widget _coloredTextContainer(height, itemLvl, color) {
@@ -125,6 +47,89 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         ),
         textAlign: TextAlign.center,
       ),
+    );
+  }
+
+  void _showHandler(BuildContext context, bool trueFalse) {
+    context.read(btnBottomRowProvider).state = trueFalse;
+  }
+
+  Widget build(BuildContext context) {
+    final _dateFormater = DateFormat('dd/MM/yyyy HH:mm');
+    final _screenHeight = MediaQuery.of(context).size.height;
+
+    return Scaffold(
+      appBar: MainAppBar(
+        title: 'Item Details',
+        appBar: AppBar(),
+      ),
+      body: Consumer(builder: (bldCtx, watch, _) {
+        final _showButtonRow = watch(btnBottomRowProvider).state;
+        final _targetKanji = watch(targetKanjiProvider).state;
+        final _levelChangeDate = _fixTimeZone(_targetKanji);
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              TopKanjiRow(
+                leftWidgetText: "Prev",
+                rightWidgetText: "Next",
+                leftWidgetHandler: null,
+                rightWidgetHandler: null,
+              ),
+              SizedBox(
+                height: _screenHeight * 0.08,
+                child: KeyTextContainer(
+                  'Keyword: ' + _targetKanji.keyword,
+                ),
+              ),
+              SizedBox(height: 20),
+              KeyTextContainer(
+                'SRS Level change date: ' +
+                    '${_dateFormater.format(_levelChangeDate)}',
+              ),
+              SizedBox(height: 20),
+              _coloredTextContainer(
+                _screenHeight,
+                _targetKanji.progressLevel,
+                Theme.of(context).accentColor,
+              ),
+              SizedBox(height: 20),
+              Container(
+                height: _screenHeight * 0.06,
+                child: NextReviewDate(
+                  _targetKanji,
+                  _levelChangeDate,
+                ),
+              ),
+              SizedBox(height: 20),
+              SrsDifficultyRow(),
+              SizedBox(height: 20),
+              ScrollableContainer(
+                showHandler: (trueFalse) => _showHandler(context, trueFalse),
+              ),
+              SizedBox(height: 30),
+              BuildingBlockRow(),
+              SizedBox(height: 30),
+              if (_showButtonRow)
+                MnemonicHandler(
+                  showHandler: (trueFalse) => _showHandler(context, trueFalse),
+                  resetItemStatus: () {
+                    _targetKanji.learningStatus = 'Lesson';
+                    _targetKanji.progressLevel = 0;
+                    _targetKanji.mnemonicStory = '';
+                    context
+                        .read(kanjiListProvider.notifier)
+                        .editKanji(_targetKanji);
+                  },
+                ),
+              if (!_showButtonRow)
+                SizedBox(
+                  height: _screenHeight * 0.135,
+                ),
+            ],
+          ),
+        );
+      }),
     );
   }
 }
