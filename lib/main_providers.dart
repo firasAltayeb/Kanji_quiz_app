@@ -21,6 +21,8 @@ final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
   return KanjiList(kanjiStaticData);
 });
 
+final targetKanjiProvider = StateProvider<Kanji>((ref) => kanjiStaticData[0]);
+
 final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final btnBottomRowProvider = StateProvider<bool>((ref) => true);

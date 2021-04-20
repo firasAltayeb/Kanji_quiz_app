@@ -1,11 +1,12 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/widgets/main_screen/main_drawer.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/srs_level_column.dart';
+import 'package:kanji_quiz_app/widgets/main_screen/main_drawer.dart';
 import 'package:kanji_quiz_app/widgets/shared/main_app_bar.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
 import 'package:flutter/material.dart';
+import 'model/kanji_model.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class MainScreen extends StatelessWidget {
         width: screenWidth * 0.65,
         child: MainAppDrawer(),
       ),
-      body: Consumer(builder: (context, watch, _) {
+      body: Consumer(builder: (bldContext, watch, _) {
         final lessonList = watch(lessonListProvider);
         final reviewList = watch(reviewListProvider);
         return SingleChildScrollView(
@@ -35,10 +36,10 @@ class MainScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  progressColumn(context, screenHeight, "Lesson",
-                      lessonList.length, LessonManager.routeName),
-                  progressColumn(context, screenHeight, "Review",
-                      reviewList.length, ReviewManager.routeName),
+                  progressColumn(bldContext, screenHeight, "Lesson", lessonList,
+                      LessonManager.routeName),
+                  progressColumn(bldContext, screenHeight, "Review", reviewList,
+                      ReviewManager.routeName),
                 ],
               ),
               SizedBox(
@@ -52,11 +53,12 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget progressColumn(context, screenHeight, label, listLength, routeName) {
+  Widget progressColumn(BuildContext bldCtx, screenHeight, label,
+      List<Kanji> kanjiList, routeName) {
     return Column(
       children: [
         Text(
-          label + ": " + '$listLength',
+          label + ": " + '${kanjiList.length}',
           style: TextStyle(
             fontSize: screenHeight * 0.04,
             fontWeight: FontWeight.bold,
@@ -76,10 +78,12 @@ class MainScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            onPressed: listLength == 0
+            onPressed: kanjiList.length == 0
                 ? null
                 : () {
-                    Navigator.of(context).pushNamed(routeName);
+                    bldCtx.read(targetKanjiProvider).state = kanjiList[0];
+                    Navigator.of(bldCtx)
+                        .pushNamed(routeName, arguments: kanjiList);
                   },
           ),
         ),

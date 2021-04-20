@@ -7,42 +7,41 @@ import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class RecallPage extends ConsumerWidget {
-  final int questionIndex;
+  final int queueIndex;
   final List<Kanji> reviewQueue;
   final Function undoLastAnswer;
 
   RecallPage({
+    @required this.queueIndex,
     @required this.reviewQueue,
-    @required this.questionIndex,
     @required this.undoLastAnswer,
   });
 
-  void _recordAnswer(BuildContext context, reviewedKanji, answerChoice) {
-    context.read(answerChoiceListProvider).state.add(answerChoice);
+  void _recordAnswer(BuildContext ctx, answerChoice) {
+    ctx.read(answerChoiceListProvider).state.add(answerChoice);
 
     if (answerChoice) {
-      context.read(sessionScoreProvider).state += 5;
-      context.read(correctRecallListProvider).state.add(reviewedKanji);
+      ctx.read(sessionScoreProvider).state += 5;
+      ctx.read(correctRecallListProvider).state.add(reviewQueue[queueIndex]);
     } else {
-      context.read(incorrectRecallListProvider).state.add(reviewedKanji);
+      ctx.read(incorrectRecallListProvider).state.add(reviewQueue[queueIndex]);
     }
-
-    context.read(reviewQueueIdxProvider).state++;
+    if (queueIndex < reviewQueue.length - 1)
+      ctx.read(targetKanjiProvider).state = reviewQueue[queueIndex + 1];
+    ctx.read(reviewQueueIdxProvider).state++;
   }
 
   Widget build(BuildContext bldCtx, ScopedReader watch) {
     final _recallButtonVisible = watch(recallButtonVisibleProvider).state;
-    final _itemCounter = '${(questionIndex + 1)}/${reviewQueue.length}';
-    final _reviewItem = reviewQueue[questionIndex];
+    final _itemCounter = '${(queueIndex + 1)}/${reviewQueue.length}';
 
     return Column(
       children: [
         TopKanjiRow(
-          targetKanji: _reviewItem,
           leftWidgetText: _itemCounter,
           rightWidgetText: "Undo",
           leftWidgetHandler: null,
-          rightWidgetHandler: questionIndex < 1
+          rightWidgetHandler: queueIndex < 1
               ? null
               : () {
                   bldCtx.read(recallButtonVisibleProvider).state = true;
@@ -58,15 +57,11 @@ class RecallPage extends ConsumerWidget {
                 children: [
                   CorrectIncorrectButton(
                     selectChoice: true,
-                    answerQuestion: (answer) =>
-                        _recordAnswer(bldCtx, _reviewItem, answer),
-                    reviewItem: _reviewItem,
+                    answerQuestion: (answer) => _recordAnswer(bldCtx, answer),
                   ),
                   CorrectIncorrectButton(
                     selectChoice: false,
-                    answerQuestion: (answer) =>
-                        _recordAnswer(bldCtx, _reviewItem, answer),
-                    reviewItem: _reviewItem,
+                    answerQuestion: (answer) => _recordAnswer(bldCtx, answer),
                   ),
                 ],
               ),
@@ -108,7 +103,7 @@ class RecallPage extends ConsumerWidget {
         children: <TextSpan>[
           new TextSpan(text: 'The correct keyword is: '),
           new TextSpan(
-            text: '${reviewQueue[questionIndex].keyword}',
+            text: '${reviewQueue[queueIndex].keyword}',
             style: new TextStyle(fontWeight: FontWeight.bold),
           ),
           new TextSpan(text: '. \n Did you remember correctly?'),

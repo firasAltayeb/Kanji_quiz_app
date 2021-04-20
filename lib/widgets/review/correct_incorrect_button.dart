@@ -1,20 +1,18 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class CorrectIncorrectButton extends ConsumerWidget {
-  final Kanji reviewItem;
   final bool selectChoice;
   final Function answerQuestion;
 
   CorrectIncorrectButton({
-    @required this.reviewItem,
     @required this.selectChoice,
     @required this.answerQuestion,
   });
 
   Widget build(BuildContext bldCtx, ScopedReader watch) {
+    final targetKanji = watch(targetKanjiProvider).state;
     var screenHeight = MediaQuery.of(bldCtx).size.height;
     var screenWidth = MediaQuery.of(bldCtx).size.width;
     return Container(
@@ -39,8 +37,8 @@ class CorrectIncorrectButton extends ConsumerWidget {
           ),
         ),
         onPressed: () {
-          var kanjiLook = reviewItem.characterLook;
-          var currentProgressLevel = reviewItem.progressLevel;
+          var kanjiLook = targetKanji.characterLook;
+          var currentProgressLevel = targetKanji.progressLevel;
           currentProgressLevel += selectChoice ? 1 : -1;
           if (currentProgressLevel == 0) currentProgressLevel = 1;
           _openCustomDialog(
@@ -56,9 +54,9 @@ class CorrectIncorrectButton extends ConsumerWidget {
     );
   }
 
-  void _openCustomDialog(context, kanjiLook, newLvl, height) {
+  void _openCustomDialog(BuildContext ctx, kanjiLook, newLvl, height) {
     showGeneralDialog(
-      context: context,
+      context: ctx,
       barrierColor: Colors.black.withOpacity(0.2),
       barrierDismissible: true,
       barrierLabel: '',

@@ -4,29 +4,29 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
-class MnemonicHandler extends StatelessWidget {
-  final Kanji itemDetails;
+class MnemonicHandler extends ConsumerWidget {
   final Function showHandler;
-
+  final Function resetItemStatus;
   final mnemonicController = TextEditingController();
 
-  final Function resetItemStatus;
-
   MnemonicHandler({
-    @required this.itemDetails,
     @required this.showHandler,
     this.resetItemStatus,
   });
 
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
+    final targetKanji = watch(targetKanjiProvider).state;
     return Row(
       children: [
         if (resetItemStatus != null)
           Expanded(
             child: bottomButton(
               context,
-              _resetItem,
+              (ctx) {
+                _resetItem(ctx);
+              },
               "Reset item",
               Colors.red,
             ),
@@ -34,24 +34,24 @@ class MnemonicHandler extends StatelessWidget {
         Expanded(
           child: bottomButton(
             context,
-            _launchURL,
+            (_) {
+              _launchURL(targetKanji);
+            },
             "Kanji Koohii",
             Colors.green,
           ),
         ),
-        Consumer(builder: (context, watch, _) {
-          return Expanded(
-            child: bottomButton(
-              context,
-              (ctx) {
-                showHandler(false);
-                _editMnemonicHandler(ctx);
-              },
-              "Edit Mnemonic",
-              Theme.of(context).accentColor,
-            ),
-          );
-        }),
+        Expanded(
+          child: bottomButton(
+            context,
+            (ctx) {
+              showHandler(false);
+              _editMnemonicHandler(ctx, targetKanji);
+            },
+            "Edit Mnemonic",
+            Theme.of(context).accentColor,
+          ),
+        ),
       ],
     );
   }
@@ -97,9 +97,9 @@ class MnemonicHandler extends StatelessWidget {
     }
   }
 
-  void _launchURL(BuildContext context) async {
+  void _launchURL(Kanji targetKanji) async {
     String url =
-        'https://kanji.koohii.com/study/kanji/' + '${itemDetails.frameNumber}';
+        'https://kanji.koohii.com/study/kanji/' + '${targetKanji.frameNumber}';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -107,13 +107,13 @@ class MnemonicHandler extends StatelessWidget {
     }
   }
 
-  void _editMnemonicHandler(BuildContext context) {
+  void _editMnemonicHandler(BuildContext context, Kanji targetKanji) {
     Navigator.of(context)
         .push(
       PageRouteBuilder(
           opaque: false,
           pageBuilder: (BuildContext context, _, __) {
-            return InputDialogScreen(itemDetails);
+            return InputDialogScreen(targetKanji);
           }),
     )
         .then((passedText) {

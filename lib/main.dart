@@ -32,18 +32,20 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     print('Material app is built');
     AsyncValue<List<Progress>> progressList = watch(progressProvider);
-    SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Colors.white));
 
     return progressList.when(
       data: (_) {
         return MaterialApp(
           title: 'Kanji Quiz App',
+          themeMode: ThemeMode.dark,
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,
             accentColor: Colors.yellow[700],
             fontFamily: 'Lato',
-            appBarTheme: AppBarTheme(color: Colors.black),
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.black,
+              brightness: Brightness.dark,
+            ),
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                 side: BorderSide(width: 3, color: Colors.black),

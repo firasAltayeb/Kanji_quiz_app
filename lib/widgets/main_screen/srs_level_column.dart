@@ -72,9 +72,7 @@ class SrsLevelColumn extends ConsumerWidget {
   }
 
   void pushToItemScreen(BuildContext context, Kanji clickedKanji) {
-    Navigator.of(context).pushNamed(
-      ItemDetailScreen.routeName,
-      arguments: clickedKanji,
-    );
+    context.read(targetKanjiProvider).state = clickedKanji;
+    Navigator.of(context).pushNamed(ItemDetailScreen.routeName);
   }
 }

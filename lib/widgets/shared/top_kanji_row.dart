@@ -4,14 +4,12 @@ import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class TopKanjiRow extends ConsumerWidget {
-  final Kanji targetKanji;
   final String leftWidgetText;
   final String rightWidgetText;
   final Function leftWidgetHandler;
   final Function rightWidgetHandler;
 
   TopKanjiRow({
-    @required this.targetKanji,
     @required this.leftWidgetText,
     @required this.rightWidgetText,
     @required this.leftWidgetHandler,
@@ -19,7 +17,8 @@ class TopKanjiRow extends ConsumerWidget {
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
-    var screenHeight = MediaQuery.of(context).size.height * 0.275;
+    final targetKanji = watch(targetKanjiProvider).state;
+    final screenHeight = MediaQuery.of(context).size.height * 0.275;
     final templateAddress = watch(templateAddressProvider(targetKanji));
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +26,7 @@ class TopKanjiRow extends ConsumerWidget {
         leftWidgetText == 'Prev'
             ? cornerButton(leftWidgetText, leftWidgetHandler, screenHeight)
             : cornerWidget(leftWidgetText, screenHeight),
-        kanjiPicture(screenHeight, templateAddress),
+        kanjiPicture(screenHeight, templateAddress, targetKanji),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? cornerButton(rightWidgetText, rightWidgetHandler, screenHeight)
             : cornerWidget(rightWidgetText, screenHeight),
@@ -55,7 +54,8 @@ class TopKanjiRow extends ConsumerWidget {
     );
   }
 
-  Widget kanjiPicture(double height, String templateAddress) {
+  Widget kanjiPicture(
+      double height, String templateAddress, Kanji targetKanji) {
     return Expanded(
       flex: 3,
       child: Stack(

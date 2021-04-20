@@ -3,25 +3,23 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 
-class ScrollableContainer extends StatelessWidget {
-  final Kanji itemDetails;
+import '../../main_providers.dart';
+
+class ScrollableContainer extends ConsumerWidget {
   final Function showHandler;
   final ScrollController _scrollController = ScrollController();
 
-  ScrollableContainer({
-    @required this.itemDetails,
-    @required this.showHandler,
-  });
+  ScrollableContainer({@required this.showHandler});
 
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
+    final targetKanji = watch(targetKanjiProvider).state;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Consumer(builder: (context, watch, _) {
       return InkWell(
         onLongPress: () {
           showHandler(false);
-          _editMnemonicHandler(context);
+          _editMnemonicHandler(context, targetKanji);
         },
         child: Container(
           height: screenHeight * 0.175,
@@ -38,9 +36,9 @@ class ScrollableContainer extends StatelessWidget {
             controller: _scrollController,
             child: SingleChildScrollView(
               controller: _scrollController,
-              child: itemDetails.mnemonicStory == ''
-                  ? _instructionTextWidget(screenHeight)
-                  : _mnemonicTextWidget(screenHeight),
+              child: targetKanji.mnemonicStory == ''
+                  ? _instructionTextWidget(screenHeight, targetKanji)
+                  : _mnemonicTextWidget(screenHeight, targetKanji),
             ),
           ),
         ),
@@ -48,13 +46,13 @@ class ScrollableContainer extends StatelessWidget {
     });
   }
 
-  void _editMnemonicHandler(BuildContext context) {
+  void _editMnemonicHandler(BuildContext context, Kanji targetKanji) {
     Navigator.of(context)
         .push(
       PageRouteBuilder(
           opaque: false,
           pageBuilder: (BuildContext context, _, __) {
-            return InputDialogScreen(itemDetails);
+            return InputDialogScreen(targetKanji);
           }),
     )
         .then((passedText) {
@@ -62,8 +60,8 @@ class ScrollableContainer extends StatelessWidget {
     });
   }
 
-  Widget _instructionTextWidget(var screenHeight) {
-    var itemType = itemDetails.itemType;
+  Widget _instructionTextWidget(screenHeight, Kanji targetKanji) {
+    var itemType = targetKanji.itemType;
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
@@ -74,17 +72,17 @@ class ScrollableContainer extends StatelessWidget {
         children: <TextSpan>[
           TextSpan(text: 'Please create a mnemonic for the above $itemType '),
           TextSpan(
-            text: '${itemDetails.keyword} ',
+            text: '${targetKanji.keyword} ',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontStyle: FontStyle.italic,
             ),
           ),
-          if (itemDetails.itemType == 'Kanji')
+          if (targetKanji.itemType == 'Kanji')
             TextSpan(text: 'using its bulidng blocks: '),
           if (itemType == 'Kanji')
             TextSpan(
-              text: '${itemDetails.buildingBlockKeywords} ',
+              text: '${targetKanji.buildingBlockKeywords} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
@@ -96,9 +94,9 @@ class ScrollableContainer extends StatelessWidget {
     );
   }
 
-  Widget _mnemonicTextWidget(var screenHeight) {
+  Widget _mnemonicTextWidget(var screenHeight, Kanji targetKanji) {
     return Text(
-      itemDetails.mnemonicStory,
+      targetKanji.mnemonicStory,
       textAlign: TextAlign.center,
       style: TextStyle(
         fontWeight: FontWeight.bold,

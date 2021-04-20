@@ -6,18 +6,19 @@ import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 import '../main_providers.dart';
 
-class ReviewManager extends ConsumerWidget {
+class ReviewManager extends StatelessWidget {
   static const routeName = '/review-screen';
 
-  void _undoAnswer(BuildContext context, answerChoiceList, queueIdx) {
-    if (answerChoiceList[queueIdx - 1]) {
-      context.read(sessionScoreProvider).state -= 5;
-      context.read(correctRecallListProvider).state.removeLast();
+  void _undoAnswer(BuildContext ctx, ansChoiceList, queueIdx, reviewList) {
+    if (ansChoiceList[queueIdx - 1]) {
+      ctx.read(sessionScoreProvider).state -= 5;
+      ctx.read(correctRecallListProvider).state.removeLast();
     } else {
-      context.read(incorrectRecallListProvider).state.removeLast();
+      ctx.read(incorrectRecallListProvider).state.removeLast();
     }
-    context.read(answerChoiceListProvider).state.removeLast();
-    context.read(reviewQueueIdxProvider).state--;
+    ctx.read(targetKanjiProvider).state = reviewList[queueIdx - 1];
+    ctx.read(answerChoiceListProvider).state.removeLast();
+    ctx.read(reviewQueueIdxProvider).state--;
   }
 
   void _wrapSession(BuildContext context, answerChoiceList, reviewList) {
@@ -44,10 +45,9 @@ class ReviewManager extends ConsumerWidget {
     Navigator.pop(context);
   }
 
-  Widget build(BuildContext bldCtx, ScopedReader watch) {
-    final _reviewList = watch(reviewListProvider);
-    final _queueIndex = watch(reviewQueueIdxProvider).state;
-    final _ansChoiceList = watch(answerChoiceListProvider).state;
+  Widget build(BuildContext context) {
+    List<Kanji> _reviewList = ModalRoute.of(context).settings.arguments;
+
     print('Review mgr build called');
 
     if (_reviewList.isEmpty == true) {
@@ -59,19 +59,23 @@ class ReviewManager extends ConsumerWidget {
         title: 'Review page',
         appBar: AppBar(),
       ),
-      body: _queueIndex < _reviewList.length
-          ? RecallPage(
-              questionIndex: _queueIndex,
-              reviewQueue: _reviewList,
-              undoLastAnswer: () =>
-                  _undoAnswer(bldCtx, _ansChoiceList, _queueIndex),
-            )
-          : ResultPage(
-              wrapSession: () =>
-                  _wrapSession(bldCtx, _ansChoiceList, _reviewList),
-              undoLastAnswer: () =>
-                  _undoAnswer(bldCtx, _ansChoiceList, _queueIndex),
-            ),
+      body: Consumer(builder: (bldCtx, watch, _) {
+        final _queueIndex = watch(reviewQueueIdxProvider).state;
+        final _ansChoiceList = watch(answerChoiceListProvider).state;
+        return _queueIndex < _reviewList.length
+            ? RecallPage(
+                queueIndex: _queueIndex,
+                reviewQueue: _reviewList,
+                undoLastAnswer: () => _undoAnswer(
+                    bldCtx, _ansChoiceList, _queueIndex, _reviewList),
+              )
+            : ResultPage(
+                wrapSession: () =>
+                    _wrapSession(bldCtx, _ansChoiceList, _reviewList),
+                undoLastAnswer: () => _undoAnswer(
+                    bldCtx, _ansChoiceList, _queueIndex, _reviewList),
+              );
+      }),
     );
   }
 }

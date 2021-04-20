@@ -41,7 +41,6 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
         child: Column(
           children: [
             TopKanjiRow(
-              targetKanji: selectedKanji,
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               leftWidgetHandler: null,
@@ -75,17 +74,12 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
             SizedBox(height: 20),
             SrsDifficultyRow(),
             SizedBox(height: 20),
-            ScrollableContainer(
-              itemDetails: selectedKanji,
-            ),
+            ScrollableContainer(),
             SizedBox(height: 30),
-            BuildingBlockRow(
-              selectedKanji,
-            ),
+            BuildingBlockRow(),
             SizedBox(height: 30),
             if (_showHandler)
               MnemonicHandler(
-                itemDetails: selectedKanji,
                 resetItemStatus: () {
                   selectedKanji.learningStatus = 'Lesson';
                   selectedKanji.progressLevel = 0;

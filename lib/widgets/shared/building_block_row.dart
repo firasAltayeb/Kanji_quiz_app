@@ -4,11 +4,8 @@ import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class BuildingBlockRow extends ConsumerWidget {
-  final Kanji targetKanji;
-
-  BuildingBlockRow(this.targetKanji);
-
   Widget build(BuildContext context, ScopedReader watch) {
+    final targetKanji = watch(targetKanjiProvider).state;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     var bbKanjiList = targetKanji.buildingBlockKeywords;
@@ -30,16 +27,19 @@ class BuildingBlockRow extends ConsumerWidget {
                 if (bbKanjiList.length == 1)
                   Container(
                     width: screenWidth * 0.3,
-                    child: kanjiBlockRow(screenHeight * 0.1, watch),
+                    child:
+                        kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
                   ),
                 if (bbKanjiList.length == 2)
                   Container(
                     width: screenWidth * 0.5,
-                    child: kanjiBlockRow(screenHeight * 0.1, watch),
+                    child:
+                        kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
                   ),
                 if (bbKanjiList.length > 2)
                   Expanded(
-                    child: kanjiBlockRow(screenHeight * 0.1, watch),
+                    child:
+                        kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
                   ),
               ],
             ),
@@ -56,7 +56,7 @@ class BuildingBlockRow extends ConsumerWidget {
     );
   }
 
-  Widget kanjiBlockRow(double height, ScopedReader watch) {
+  Widget kanjiBlockRow(double height, ScopedReader watch, Kanji targetKanji) {
     return Row(
       children: [
         ...(watch(buildingBlocksProvider(targetKanji)))
