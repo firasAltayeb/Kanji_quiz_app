@@ -17,7 +17,7 @@ class ShowAnswerButton extends ConsumerWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: () => bldCtx.read(recallButtonVisibleProvider).state = false,
+        onPressed: () => bldCtx.read(showAnsBtnVisibleProvider).state = false,
       ),
     );
   }

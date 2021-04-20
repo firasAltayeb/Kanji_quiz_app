@@ -47,7 +47,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
             currentProgressLevel,
             screenHeight,
           );
-          bldCtx.read(recallButtonVisibleProvider).state = true;
+          bldCtx.read(showAnsBtnVisibleProvider).state = true;
           answerQuestion(selectChoice);
         },
       ),

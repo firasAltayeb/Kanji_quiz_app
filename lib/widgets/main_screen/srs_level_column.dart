@@ -13,25 +13,25 @@ class SrsLevelColumn extends ConsumerWidget {
       children: [
         textContainer('SRS Level 1 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: watch(srsLvlListProvider(1)),
+          kanjiList: watch(srsXlvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 2 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: watch(srsLvlListProvider(2)),
+          kanjiList: watch(srsXlvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 3 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: watch(srsLvlListProvider(3)),
+          kanjiList: watch(srsXlvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
         textContainer('SRS Level 4 Items', screenHeight, accentColor),
         KanjiInteractiveRow(
-          kanjiList: watch(srsLvlListProvider(4)),
+          kanjiList: watch(srsXlvlListProvider(4)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -41,7 +41,7 @@ class SrsLevelColumn extends ConsumerWidget {
           accentColor,
         ),
         KanjiInteractiveRow(
-          kanjiList: watch(srsLvlListProvider(5)),
+          kanjiList: watch(srsXlvlListProvider(5)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),

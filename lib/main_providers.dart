@@ -31,7 +31,7 @@ final reviewQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final sessionScoreProvider = StateProvider<int>((ref) => 0);
 
-final recallButtonVisibleProvider = StateProvider<bool>((ref) => true);
+final showAnsBtnVisibleProvider = StateProvider<bool>((ref) => true);
 
 final answerChoiceListProvider = StateProvider<List<bool>>((ref) => []);
 
@@ -93,7 +93,7 @@ bool srsReviewReady(Kanji kanjiItem) {
   return false;
 }
 
-final srsLvlListProvider =
+final srsXlvlListProvider =
     Provider.autoDispose.family<List<Kanji>, int>((ref, level) {
   final kanjiMainList = ref.watch(kanjiListProvider);
   final srsLvlList = kanjiMainList

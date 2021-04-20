@@ -17,22 +17,8 @@ class RecallPage extends ConsumerWidget {
     @required this.undoLastAnswer,
   });
 
-  void _recordAnswer(BuildContext ctx, answerChoice) {
-    ctx.read(answerChoiceListProvider).state.add(answerChoice);
-
-    if (answerChoice) {
-      ctx.read(sessionScoreProvider).state += 5;
-      ctx.read(correctRecallListProvider).state.add(reviewQueue[queueIndex]);
-    } else {
-      ctx.read(incorrectRecallListProvider).state.add(reviewQueue[queueIndex]);
-    }
-    if (queueIndex < reviewQueue.length - 1)
-      ctx.read(targetKanjiProvider).state = reviewQueue[queueIndex + 1];
-    ctx.read(reviewQueueIdxProvider).state++;
-  }
-
   Widget build(BuildContext bldCtx, ScopedReader watch) {
-    final _recallButtonVisible = watch(recallButtonVisibleProvider).state;
+    final _recallButtonVisible = watch(showAnsBtnVisibleProvider).state;
     final _itemCounter = '${(queueIndex + 1)}/${reviewQueue.length}';
 
     return Column(
@@ -44,12 +30,12 @@ class RecallPage extends ConsumerWidget {
           rightWidgetHandler: queueIndex < 1
               ? null
               : () {
-                  bldCtx.read(recallButtonVisibleProvider).state = true;
+                  bldCtx.read(showAnsBtnVisibleProvider).state = true;
                   undoLastAnswer();
                 },
         ),
         Expanded(child: SizedBox()),
-        infoBox(bldCtx, _recallButtonVisible),
+        _infoBox(bldCtx, _recallButtonVisible),
         Expanded(child: SizedBox()),
         _recallButtonVisible
             ? ShowAnswerButton()
@@ -69,7 +55,21 @@ class RecallPage extends ConsumerWidget {
     );
   }
 
-  Widget infoBox(BuildContext context, recallBtnVisible) {
+  void _recordAnswer(BuildContext ctx, answerChoice) {
+    ctx.read(answerChoiceListProvider).state.add(answerChoice);
+
+    if (answerChoice) {
+      ctx.read(sessionScoreProvider).state += 5;
+      ctx.read(correctRecallListProvider).state.add(reviewQueue[queueIndex]);
+    } else {
+      ctx.read(incorrectRecallListProvider).state.add(reviewQueue[queueIndex]);
+    }
+    if (queueIndex < reviewQueue.length - 1)
+      ctx.read(targetKanjiProvider).state = reviewQueue[queueIndex + 1];
+    ctx.read(reviewQueueIdxProvider).state++;
+  }
+
+  Widget _infoBox(BuildContext context, recallBtnVisible) {
     return Container(
       padding: const EdgeInsets.all(10),
       width: MediaQuery.of(context).size.width * 0.95,
@@ -89,12 +89,12 @@ class RecallPage extends ConsumerWidget {
                 'Can you recall this character?',
                 textAlign: TextAlign.center,
               )
-            : keywordRichText(),
+            : _keywordRichText(),
       ),
     );
   }
 
-  RichText keywordRichText() {
+  RichText _keywordRichText() {
     return new RichText(
       text: new TextSpan(
         style: new TextStyle(

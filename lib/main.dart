@@ -59,9 +59,9 @@ class MyApp extends ConsumerWidget {
           initialRoute: '/',
           routes: {
             '/': (ctx) => MainScreen(),
-            LessonManager.routeName: (ctx) => LessonManager(),
-            ReviewManager.routeName: (ctx) => ReviewManager(),
-            ItemDetailScreen.routeName: (ctx) => ItemDetailScreen(
+            LessonManager.routeName: (_) => LessonManager(),
+            ReviewManager.routeName: (_) => ReviewManager(),
+            ItemDetailScreen.routeName: (_) => ItemDetailScreen(
                   currentTimeZone: timezone,
                 ),
           },

@@ -36,10 +36,10 @@ class MainScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  progressColumn(bldContext, screenHeight, "Lesson", lessonList,
-                      LessonManager.routeName),
-                  progressColumn(bldContext, screenHeight, "Review", reviewList,
-                      ReviewManager.routeName),
+                  screenNavigateColumn(bldContext, screenHeight, "Lesson",
+                      lessonList, LessonManager.routeName),
+                  screenNavigateColumn(bldContext, screenHeight, "Review",
+                      reviewList, ReviewManager.routeName),
                 ],
               ),
               SizedBox(
@@ -53,7 +53,7 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget progressColumn(BuildContext bldCtx, screenHeight, label,
+  Widget screenNavigateColumn(BuildContext bldCtx, screenHeight, label,
       List<Kanji> kanjiList, routeName) {
     return Column(
       children: [
