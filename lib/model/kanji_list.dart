@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:kanji_quiz_app/model/progress_services.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class KanjiList extends StateNotifier<List<Kanji>> {
   KanjiList([List<Kanji> kanjiList]) : super(kanjiList ?? []);
@@ -34,6 +36,12 @@ class KanjiList extends StateNotifier<List<Kanji>> {
             dateLastLevelChanged: progressList
                 .firstWhere((element) => element.keyword == kanji.keyword)
                 .dateLastLevelChanged,
+            incorrectReviewCounter: progressList
+                .firstWhere((element) => element.keyword == kanji.keyword)
+                .incorrectReviewCounter,
+            chosenDifficulty: progressList
+                .firstWhere((element) => element.keyword == kanji.keyword)
+                .chosenDifficulty,
           )
         else
           kanji,
@@ -61,20 +69,32 @@ class KanjiList extends StateNotifier<List<Kanji>> {
             mnemonicStory: updatedKanji.mnemonicStory,
             learningStatus: updatedKanji.learningStatus,
             dateLastLevelChanged: updatedKanji.dateLastLevelChanged,
+            incorrectReviewCounter: updatedKanji.incorrectReviewCounter,
+            chosenDifficulty: updatedKanji.chosenDifficulty,
           )
         else
           kanji,
     ];
   }
 
-  // void _reassignList(kanjiList) async {
-  //   var status = await Permission.storage.status;
-  //   if (status.isGranted) {
-  //     print("status.isGranted ${status.isGranted}");
-  //     writeProgressUpdate(kanjiList);
-  //   }
-  //   _allocateLists(kanjiList);
-  // }
+  void saveProgress() async {
+    List<Progress> newProgress = state
+        .map((kanji) => Progress(
+              keyword: kanji.keyword,
+              progressLevel: kanji.progressLevel,
+              mnemonicStory: kanji.mnemonicStory,
+              learningStatus: kanji.learningStatus,
+              dateLastLevelChanged: kanji.dateLastLevelChanged,
+              incorrectReviewCounter: kanji.incorrectReviewCounter,
+              chosenDifficulty: kanji.chosenDifficulty,
+            ))
+        .toList();
+    var status = await Permission.storage.status;
+    if (status.isGranted) {
+      print("status.isGranted ${status.isGranted}");
+      writeProgressUpdate(newProgress);
+    }
+  }
 
   // void _allocateLists(kanjiList) {
   //   _lessonList.clear();

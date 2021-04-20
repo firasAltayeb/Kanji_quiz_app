@@ -120,6 +120,7 @@ class ItemDetailScreen extends StatelessWidget {
                     context
                         .read(kanjiListProvider.notifier)
                         .editKanji(_targetKanji);
+                    context.read(kanjiListProvider.notifier).saveProgress();
                   },
                 ),
               if (!_showButtonRow)

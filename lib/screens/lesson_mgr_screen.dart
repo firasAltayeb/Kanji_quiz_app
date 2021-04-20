@@ -24,6 +24,7 @@ class LessonManager extends StatelessWidget {
         element.dateLastLevelChanged = DateTime.now();
         context.read(kanjiListProvider.notifier).editKanji(element);
       });
+      context.read(kanjiListProvider.notifier).saveProgress();
       Navigator.pop(context);
     }
   }

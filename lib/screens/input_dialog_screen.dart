@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
-
 import '../main_providers.dart';
 
 class InputDialogScreen extends StatefulWidget {
@@ -55,12 +54,11 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
       hintText = 'Please create a mnemonic for the kanji ' +
           '${widget.itemDetails.characterLook} using its bulidng blocks: ' +
           '${widget.itemDetails.buildingBlockKeywords}';
-    } else if (widget.itemDetails.itemType == 'Primitive Kanji') {
-      hintText = 'Please create a mnemonic for the kanji ' +
+    } else if (widget.itemDetails.itemType == 'Radical') {
+      hintText = 'Please create a mnemonic for the Radical ' +
           '${widget.itemDetails.characterLook}';
     } else {
-      hintText = 'Please create a mnemonic for the item ' +
-          '${widget.itemDetails.characterLook}';
+      hintText = 'Please create a mnemonic';
     }
 
     return WillPopScope(
@@ -130,6 +128,9 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               context
                                   .read(kanjiListProvider.notifier)
                                   .editKanji(widget.itemDetails);
+                              context
+                                  .read(kanjiListProvider.notifier)
+                                  .saveProgress();
                               Navigator.pop(context);
                             },
                     ),

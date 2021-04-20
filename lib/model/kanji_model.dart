@@ -18,6 +18,8 @@ class Kanji {
   String mnemonicStory;
   String learningStatus;
   DateTime dateLastLevelChanged;
+  int incorrectReviewCounter;
+  int chosenDifficulty;
 
   Kanji({
     @required this.keyword,
@@ -36,5 +38,7 @@ class Kanji {
     this.mnemonicStory = "",
     this.learningStatus = "Lesson",
     this.dateLastLevelChanged,
+    this.incorrectReviewCounter = 0,
+    this.chosenDifficulty = 1,
   });
 }

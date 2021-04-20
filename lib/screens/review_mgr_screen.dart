@@ -42,6 +42,7 @@ class ReviewManager extends StatelessWidget {
     context.read(answerChoiceListProvider).state.clear();
     context.read(correctRecallListProvider).state.clear();
     context.read(incorrectRecallListProvider).state.clear();
+    context.read(kanjiListProvider.notifier).saveProgress();
     Navigator.pop(context);
   }
 
