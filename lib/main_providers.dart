@@ -61,11 +61,11 @@ final reviewReadyListProvider = Provider<List<Kanji>>((ref) {
   final syncNow = ref.watch(syncNowProvider);
   final reviewList = ref.watch(reviewListProvider);
   final readyList =
-      reviewList.where((kanjiItem) => srsReviewReady(kanjiItem)).toList();
+      reviewList.where((kanjiItem) => isReviewReady(kanjiItem)).toList();
   return readyList;
 });
 
-bool srsReviewReady(Kanji kanjiItem) {
+bool isReviewReady(Kanji kanjiItem) {
   if (kanjiItem.learningStatus == "Review")
     switch (kanjiItem.progressLevel) {
       case 1:
