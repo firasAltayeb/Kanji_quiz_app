@@ -5,15 +5,22 @@ import '../../main_providers.dart';
 class ItemDifficultyRow extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
-    final targetKanji = watch(targetKanjiProvider).state;
+    var screenWidth = MediaQuery.of(context).size.width;
+    final targetK = watch(targetKanjiProvider).state;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Text(
-          'Item difficulty is: ${targetKanji.difficultyMeaning()}',
-          style: TextStyle(
-            fontSize: screenHeight * 0.035,
-            fontFamily: 'Anton',
+        Container(
+          height: screenHeight * 0.05,
+          width: screenWidth * 0.6,
+          child: FittedBox(
+            fit: BoxFit.fill,
+            child: Text(
+              'Item difficulty is: ${targetK.difficultyMeaning()}',
+              style: TextStyle(
+                fontFamily: 'Anton',
+              ),
+            ),
           ),
         ),
         CircleAvatar(
@@ -24,13 +31,10 @@ class ItemDifficultyRow extends ConsumerWidget {
             backgroundColor: Colors.green,
             child: IconButton(
               onPressed: () {
-                if (targetKanji.chosenDifficulty > 1) {
-                  targetKanji.chosenDifficulty--;
-
-                  context.read(targetKanjiProvider).state = targetKanji;
-                  context
-                      .read(kanjiListProvider.notifier)
-                      .editKanji(targetKanji);
+                if (targetK.chosenDifficulty > 1) {
+                  targetK.chosenDifficulty--;
+                  context.read(targetKanjiProvider).state = targetK;
+                  context.read(kanjiListProvider.notifier).editKanji(targetK);
                 }
               },
               iconSize: screenHeight * 0.04,
@@ -49,12 +53,10 @@ class ItemDifficultyRow extends ConsumerWidget {
             backgroundColor: Colors.red,
             child: IconButton(
               onPressed: () {
-                if (targetKanji.chosenDifficulty < 4) {
-                  targetKanji.chosenDifficulty++;
-                  context.read(targetKanjiProvider).state = targetKanji;
-                  context
-                      .read(kanjiListProvider.notifier)
-                      .editKanji(targetKanji);
+                if (targetK.chosenDifficulty < 4) {
+                  targetK.chosenDifficulty++;
+                  context.read(targetKanjiProvider).state = targetK;
+                  context.read(kanjiListProvider.notifier).editKanji(targetK);
                 }
               },
               iconSize: screenHeight * 0.04,

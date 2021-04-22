@@ -2,8 +2,8 @@
   {
     "keyword": "Five",
     "mnemonicStory": "",
-    "progressLevel": 5,
-    "learningStatus": "Learned",
+    "progressLevel": 6,
+    "learningStatus": "Pratice",
     "dateLastLevelChanged": "",
     "recallHistory": [],
     "chosenDifficulty": 1
@@ -11,8 +11,8 @@
   {
     "keyword": "Ten",
     "mnemonicStory": "",
-    "progressLevel": 0,
-    "learningStatus": "Lesson",
+    "progressLevel": 6,
+    "learningStatus": "Pratice",
     "dateLastLevelChanged": "",
     "recallHistory": [],
     "chosenDifficulty": 1
@@ -102,7 +102,7 @@
     "keyword": "Road",
     "mnemonicStory": "",
     "progressLevel": 5,
-    "learningStatus": "Learned",
+    "learningStatus": "Review",
     "dateLastLevelChanged": "",
     "recallHistory": [],
     "chosenDifficulty": 1
@@ -110,8 +110,8 @@
   {
     "keyword": "Scarecrow",
     "mnemonicStory": "",
-    "progressLevel": 5,
-    "learningStatus": "Learned",
+    "progressLevel": 6,
+    "learningStatus": "Pratice",
     "dateLastLevelChanged": "",
     "recallHistory": [],
     "chosenDifficulty": 1

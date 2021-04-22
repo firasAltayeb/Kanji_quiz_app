@@ -29,7 +29,7 @@ class ReviewManager extends StatelessWidget {
       if (answerChoiceList[index]) {
         //if answer was correct
         reviewedItem.progressLevel++; // = currentProgressLevel + 1;
-        if (reviewedItem.progressLevel >= 5)
+        if (reviewedItem.progressLevel > 5)
           reviewedItem.learningStatus = 'Pratice';
       } else {
         //if answer was incorrect

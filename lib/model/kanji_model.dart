@@ -34,7 +34,7 @@ class Kanji {
     @required this.similarCharactersKeyword,
     @required this.frequencyInAozora,
     @required this.kanjiMeanings,
-    this.progressLevel = 1,
+    this.progressLevel = 0,
     this.mnemonicStory = "",
     this.learningStatus = "Lesson",
     this.dateLastLevelChanged,
@@ -75,12 +75,8 @@ class Kanji {
         return dateLastLevelChanged
             .add(Duration(hours: 12 + difficultyFactor()));
         break;
-      case 4:
-        return dateLastLevelChanged
-            .add(Duration(hours: 24 + difficultyFactor()));
-        break;
     }
-    return dateLastLevelChanged;
+    return dateLastLevelChanged.add(Duration(hours: 24 + difficultyFactor()));
   }
 
   int difficultyFactor() {
@@ -89,16 +85,13 @@ class Kanji {
         return 0;
         break;
       case 2:
-        return -4;
+        return -2;
         break;
       case 3:
-        return -8;
-        break;
-      case 4:
-        return -12;
+        return -4;
         break;
     }
-    return 0;
+    return -6;
   }
 
   String difficultyMeaning() {
@@ -112,10 +105,7 @@ class Kanji {
       case 3:
         return "Hard";
         break;
-      case 4:
-        return "Challenging";
-        break;
     }
-    return "Easy";
+    return "Challenging";
   }
 }

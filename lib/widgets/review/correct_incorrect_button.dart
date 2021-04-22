@@ -11,10 +11,10 @@ class CorrectIncorrectButton extends ConsumerWidget {
     @required this.answerQuestion,
   });
 
-  Widget build(BuildContext bldCtx, ScopedReader watch) {
+  Widget build(BuildContext buildContex, ScopedReader watch) {
     final targetKanji = watch(targetKanjiProvider).state;
-    var screenHeight = MediaQuery.of(bldCtx).size.height;
-    var screenWidth = MediaQuery.of(bldCtx).size.width;
+    var screenHeight = MediaQuery.of(buildContex).size.height;
+    var screenWidth = MediaQuery.of(buildContex).size.width;
     return Container(
       height: screenHeight * 0.38,
       width: screenWidth * 0.5,
@@ -37,17 +37,19 @@ class CorrectIncorrectButton extends ConsumerWidget {
           ),
         ),
         onPressed: () {
-          var kanjiLook = targetKanji.characterLook;
-          var currentProgressLevel = targetKanji.progressLevel;
-          currentProgressLevel += selectChoice ? 1 : -1;
-          if (currentProgressLevel == 0) currentProgressLevel = 1;
+          var characterLook = targetKanji.itemType != "Primitive"
+              ? targetKanji.characterLook
+              : "";
+          var currentProgressLevel = selectChoice
+              ? targetKanji.progressLevel + 1
+              : targetKanji.newProgressLevel();
           _openCustomDialog(
-            bldCtx,
-            kanjiLook,
+            buildContex,
+            characterLook,
             currentProgressLevel,
             screenHeight,
           );
-          bldCtx.read(showAnsBtnVisibleProvider).state = true;
+          buildContex.read(showAnsBtnVisibleProvider).state = true;
           answerQuestion(selectChoice);
         },
       ),
@@ -74,7 +76,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
               shape:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(16.0)),
               content: Text(
-                'The item $kanjiLook SRS' + ' level is now $newLvl',
+                'The item $kanjiLook SRS level is now $newLvl',
                 style: TextStyle(
                   fontSize: height * 0.04,
                   fontWeight: FontWeight.bold,

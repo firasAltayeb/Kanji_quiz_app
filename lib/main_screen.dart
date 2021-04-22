@@ -83,7 +83,18 @@ class MainScreen extends StatelessWidget {
                 : () {
                     bldCtx.read(targetKanjiProvider).state = kanjiList[0];
                     Navigator.of(bldCtx)
-                        .pushNamed(routeName, arguments: kanjiList);
+                        .pushNamed(routeName, arguments: kanjiList)
+                        .then((_) {
+                      if (label == "Lesson")
+                        bldCtx.read(lessonQueueIdxProvider).state = 0;
+                      else {
+                        bldCtx.read(reviewQueueIdxProvider).state = 0;
+                        bldCtx.read(answerChoiceListProvider).state.clear();
+                        bldCtx.read(correctRecallListProvider).state.clear();
+                        bldCtx.read(incorrectRecallListProvider).state.clear();
+                      }
+                      bldCtx.read(kanjiListProvider.notifier).saveProgress();
+                    });
                   },
           ),
         ),

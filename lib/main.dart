@@ -10,8 +10,7 @@ import 'model/progress_model.dart';
 import 'main_screen.dart';
 
 void main() async {
-  String timezone = await getTimezone();
-  runApp(ProviderScope(child: MyApp(timezone)));
+  runApp(ProviderScope(child: MyApp()));
 }
 
 Future<String> getTimezone() async {
@@ -25,10 +24,6 @@ Future<String> getTimezone() async {
 }
 
 class MyApp extends ConsumerWidget {
-  final String timezone;
-
-  MyApp(this.timezone);
-
   Widget build(BuildContext context, ScopedReader watch) {
     print('Material app is built');
     AsyncValue<List<Progress>> progressList = watch(progressProvider);
@@ -62,7 +57,7 @@ class MyApp extends ConsumerWidget {
             LessonManager.routeName: (_) => LessonManager(),
             ReviewManager.routeName: (_) => ReviewManager(),
             ItemDetailScreen.routeName: (_) => ItemDetailScreen(
-                  currentTimeZone: timezone,
+                  currentTimeZone: "",
                 ),
           },
         );

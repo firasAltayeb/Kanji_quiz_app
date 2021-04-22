@@ -1,7 +1,7 @@
+import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
+import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
-import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
-import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
@@ -36,12 +36,22 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
         textContainer(
-          'SRS Level 5 Items (Learned)',
+          'SRS Level 5 Items',
           screenHeight,
           accentColor,
         ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(5)),
+          widgetHeight: screenHeight * 0.2,
+          selectHandler: pushToItemScreen,
+        ),
+        textContainer(
+          'Learned Items',
+          screenHeight,
+          accentColor,
+        ),
+        KanjiInteractiveRow(
+          kanjiList: watch(srsXlvlListProvider(6)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -73,6 +83,10 @@ class SrsLevelColumn extends ConsumerWidget {
 
   void pushToItemScreen(BuildContext context, Kanji clickedKanji) {
     context.read(targetKanjiProvider).state = clickedKanji;
-    Navigator.of(context).pushNamed(ItemDetailScreen.routeName);
+    Navigator.of(context).pushNamed(ItemDetailScreen.routeName).then(
+      (_) {
+        context.read(kanjiListProvider.notifier).saveProgress();
+      },
+    );
   }
 }
