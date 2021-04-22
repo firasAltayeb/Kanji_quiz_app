@@ -4,7 +4,7 @@ class Progress {
   String mnemonicStory;
   String learningStatus;
   DateTime dateLastLevelChanged;
-  int incorrectReviewCounter;
+  List<String> recallHistory;
   int chosenDifficulty;
 
   Progress({
@@ -13,13 +13,16 @@ class Progress {
     this.mnemonicStory,
     this.learningStatus,
     this.dateLastLevelChanged,
-    this.incorrectReviewCounter,
+    this.recallHistory,
     this.chosenDifficulty,
   });
 
   factory Progress.fromJson(Map<String, dynamic> json) {
-    var jsonTempThree = json['dateLastLevelChanged'];
-    DateTime dateLastLevelChanged = jsonTempThree == ''
+    var jsonTempOne = json['recallHistory'];
+    List<String> recallHistoryList = jsonTempOne.cast<String>();
+
+    var jsonTempTwo = json['dateLastLevelChanged'];
+    DateTime dateLastLevelChanged = jsonTempTwo == ''
         ? DateTime.now().subtract(Duration(days: 5))
         : DateTime.tryParse(json['dateLastLevelChanged']);
 
@@ -28,8 +31,8 @@ class Progress {
       progressLevel: json['progressLevel'] as int,
       mnemonicStory: json['mnemonicStory'] as String,
       learningStatus: json['learningStatus'] as String,
+      recallHistory: recallHistoryList,
       dateLastLevelChanged: dateLastLevelChanged,
-      incorrectReviewCounter: json['incorrectReviewCounter'] as int,
       chosenDifficulty: json['chosenDifficulty'] as int,
     );
   }
@@ -43,7 +46,7 @@ class Progress {
       'mnemonicStory': this.mnemonicStory,
       'learningStatus': this.learningStatus,
       'dateLastLevelChanged': formatedDate,
-      'incorrectReviewCounter': incorrectReviewCounter,
+      'recallHistory': recallHistory,
       'chosenDifficulty': chosenDifficulty,
     };
   }

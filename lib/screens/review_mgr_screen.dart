@@ -24,16 +24,16 @@ class ReviewManager extends StatelessWidget {
   void _wrapSession(BuildContext context, answerChoiceList, reviewList) {
     for (var index = 0; index < answerChoiceList.length; index++) {
       Kanji reviewedItem = reviewList[index];
-      int currentProgressLevel = reviewedItem.progressLevel;
       reviewedItem.dateLastLevelChanged = DateTime.now();
 
       if (answerChoiceList[index]) {
-        reviewedItem.progressLevel = currentProgressLevel + 1;
+        //if answer was correct
+        reviewedItem.progressLevel++; // = currentProgressLevel + 1;
         if (reviewedItem.progressLevel >= 5)
           reviewedItem.learningStatus = 'Pratice';
       } else {
-        if (currentProgressLevel > 1)
-          reviewedItem.progressLevel = currentProgressLevel - 1;
+        //if answer was incorrect
+        reviewedItem.progressLevel = reviewedItem.newProgressLevel();
       }
       context.read(kanjiListProvider.notifier).editKanji(reviewedItem);
     }

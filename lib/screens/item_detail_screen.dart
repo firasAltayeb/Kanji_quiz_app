@@ -1,6 +1,5 @@
+import '../widgets/item_details/item_difficulty_row.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/item_details/srs_difficulty_row.dart';
-import '../widgets/item_details/next_review_date.dart';
 import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
@@ -73,8 +72,6 @@ class ItemDetailScreen extends StatelessWidget {
               TopKanjiRow(
                 leftWidgetText: "Prev",
                 rightWidgetText: "Next",
-                leftWidgetHandler: null,
-                rightWidgetHandler: null,
               ),
               SizedBox(
                 height: _screenHeight * 0.08,
@@ -84,7 +81,7 @@ class ItemDetailScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               KeyTextContainer(
-                'SRS Level change date: ' +
+                'Last level change date: ' +
                     '${_dateFormater.format(_levelChangeDate)}',
               ),
               SizedBox(height: 20),
@@ -94,15 +91,12 @@ class ItemDetailScreen extends StatelessWidget {
                 Theme.of(context).accentColor,
               ),
               SizedBox(height: 20),
-              Container(
-                height: _screenHeight * 0.06,
-                child: NextReviewDate(
-                  _targetKanji,
-                  _levelChangeDate,
-                ),
+              KeyTextContainer(
+                'Next review date: ' +
+                    '${_dateFormater.format(_levelChangeDate)}',
               ),
               SizedBox(height: 20),
-              SrsDifficultyRow(),
+              ItemDifficultyRow(),
               SizedBox(height: 20),
               ScrollableContainer(
                 showHandler: (trueFalse) => _showHandler(context, trueFalse),

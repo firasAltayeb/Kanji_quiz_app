@@ -75,16 +75,18 @@ bool isReviewReady(Kanji kanjiItem) {
         break;
       case 2:
         if (kanjiItem.dateLastLevelChanged
-            .isBefore(DateTime.now().subtract(Duration(seconds: 15))))
+            .isBefore(DateTime.now().subtract(Duration(seconds: 20))))
           return true;
         break;
       case 3:
         if (kanjiItem.dateLastLevelChanged
-            .isBefore(DateTime.now().subtract(Duration(days: 2)))) return true;
+            .isBefore(DateTime.now().subtract(Duration(seconds: 30))))
+          return true;
         break;
       case 4:
         if (kanjiItem.dateLastLevelChanged
-            .isBefore(DateTime.now().subtract(Duration(days: 4)))) return true;
+            .isBefore(DateTime.now().subtract(Duration(seconds: 45))))
+          return true;
         break;
       default:
         return false;

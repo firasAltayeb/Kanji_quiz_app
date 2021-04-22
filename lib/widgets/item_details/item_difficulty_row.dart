@@ -1,14 +1,16 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import '../../main_providers.dart';
 
-class SrsDifficultyRow extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+class ItemDifficultyRow extends ConsumerWidget {
+  Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
+    final targetKanji = watch(targetKanjiProvider).state;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Text(
-          'SRS difficulty is: Easy',
+          'Item difficulty is: Easy',
           style: TextStyle(
             fontSize: screenHeight * 0.035,
             fontFamily: 'Anton',

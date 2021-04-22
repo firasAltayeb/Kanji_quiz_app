@@ -12,8 +12,8 @@ class TopKanjiRow extends ConsumerWidget {
   TopKanjiRow({
     @required this.leftWidgetText,
     @required this.rightWidgetText,
-    @required this.leftWidgetHandler,
-    @required this.rightWidgetHandler,
+    this.leftWidgetHandler,
+    this.rightWidgetHandler,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
