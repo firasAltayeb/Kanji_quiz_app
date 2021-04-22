@@ -7,7 +7,6 @@ import '../widgets/shared/mnemonic_handler.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
-import '../model/kanji_model.dart';
 import '../main_providers.dart';
 import 'package:intl/intl.dart';
 
@@ -17,36 +16,16 @@ class ItemDetailScreen extends StatelessWidget {
 
   ItemDetailScreen({@required this.currentTimeZone});
 
-  DateTime _fixTimeZone(Kanji targetKanji) {
+  String _fixTimeZone(DateTime time) {
     print('$currentTimeZone');
     print('${DateTime.now().timeZoneName}');
+    final _dateFormater = DateFormat('dd/MM/yyyy HH:mm');
+
     if (currentTimeZone == 'Asia/Tokyo' &&
         DateTime.now().timeZoneName != 'JST') {
-      return DateTime.now().add(Duration(hours: 9));
+      time.add(Duration(hours: 9));
     }
-    return targetKanji.dateLastLevelChanged;
-  }
-
-  Widget _coloredTextContainer(height, itemLvl, color) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-        color: color,
-      ),
-      padding: const EdgeInsets.all(5),
-      child: Text(
-        'Current SRS level is $itemLvl',
-        style: TextStyle(
-          fontSize: height * 0.04,
-          fontFamily: 'Anton',
-        ),
-        textAlign: TextAlign.center,
-      ),
-    );
+    return _dateFormater.format(time);
   }
 
   void _showHandler(BuildContext context, bool trueFalse) {
@@ -54,7 +33,6 @@ class ItemDetailScreen extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
-    final _dateFormater = DateFormat('dd/MM/yyyy HH:mm');
     final _screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -65,7 +43,6 @@ class ItemDetailScreen extends StatelessWidget {
       body: Consumer(builder: (bldCtx, watch, _) {
         final _showButtonRow = watch(btnBottomRowProvider).state;
         final _targetKanji = watch(targetKanjiProvider).state;
-        final _levelChangeDate = _fixTimeZone(_targetKanji);
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -82,7 +59,7 @@ class ItemDetailScreen extends StatelessWidget {
               SizedBox(height: 20),
               KeyTextContainer(
                 'Last level change date: ' +
-                    '${_dateFormater.format(_levelChangeDate)}',
+                    '${_fixTimeZone(_targetKanji.dateLastLevelChanged)}',
               ),
               SizedBox(height: 20),
               _coloredTextContainer(
@@ -93,7 +70,7 @@ class ItemDetailScreen extends StatelessWidget {
               SizedBox(height: 20),
               KeyTextContainer(
                 'Next review date: ' +
-                    '${_dateFormater.format(_levelChangeDate)}',
+                    '${_fixTimeZone(_targetKanji.nextReviewDate())}',
               ),
               SizedBox(height: 20),
               ItemDifficultyRow(),
@@ -125,6 +102,28 @@ class ItemDetailScreen extends StatelessWidget {
           ),
         );
       }),
+    );
+  }
+
+  Widget _coloredTextContainer(height, itemLvl, color) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: color,
+      ),
+      padding: const EdgeInsets.all(5),
+      child: Text(
+        'Current SRS level is $itemLvl',
+        style: TextStyle(
+          fontSize: height * 0.04,
+          fontFamily: 'Anton',
+        ),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

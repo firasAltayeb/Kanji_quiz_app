@@ -10,7 +10,7 @@ class ItemDifficultyRow extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Text(
-          'Item difficulty is: Easy',
+          'Item difficulty is: ${targetKanji.difficultyMeaning()}',
           style: TextStyle(
             fontSize: screenHeight * 0.035,
             fontFamily: 'Anton',
@@ -23,10 +23,20 @@ class ItemDifficultyRow extends ConsumerWidget {
             radius: (screenHeight * 0.03) + 4,
             backgroundColor: Colors.green,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (targetKanji.chosenDifficulty > 1) {
+                  targetKanji.chosenDifficulty--;
+
+                  context.read(targetKanjiProvider).state = targetKanji;
+                  context
+                      .read(kanjiListProvider.notifier)
+                      .editKanji(targetKanji);
+                }
+              },
               iconSize: screenHeight * 0.04,
               icon: Icon(
                 Icons.arrow_downward,
+                color: Colors.white,
               ),
             ),
           ),
@@ -38,10 +48,19 @@ class ItemDifficultyRow extends ConsumerWidget {
             radius: (screenHeight * 0.03) + 4,
             backgroundColor: Colors.red,
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (targetKanji.chosenDifficulty < 4) {
+                  targetKanji.chosenDifficulty++;
+                  context.read(targetKanjiProvider).state = targetKanji;
+                  context
+                      .read(kanjiListProvider.notifier)
+                      .editKanji(targetKanji);
+                }
+              },
               iconSize: screenHeight * 0.04,
               icon: Icon(
                 Icons.arrow_upward,
+                color: Colors.white,
               ),
             ),
           ),

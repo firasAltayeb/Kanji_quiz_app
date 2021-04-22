@@ -43,6 +43,7 @@ class Kanji {
   });
 
   int newProgressLevel() {
+    //what happens when item lapse
     switch (chosenDifficulty) {
       case 1:
         if (progressLevel > 1) return progressLevel - 1;
@@ -58,5 +59,63 @@ class Kanji {
         break;
     }
     return 1;
+  }
+
+  DateTime nextReviewDate() {
+    switch (progressLevel) {
+      case 1:
+        return dateLastLevelChanged
+            .add(Duration(hours: 4 + difficultyFactor()));
+        break;
+      case 2:
+        return dateLastLevelChanged
+            .add(Duration(hours: 8 + difficultyFactor()));
+        break;
+      case 3:
+        return dateLastLevelChanged
+            .add(Duration(hours: 12 + difficultyFactor()));
+        break;
+      case 4:
+        return dateLastLevelChanged
+            .add(Duration(hours: 24 + difficultyFactor()));
+        break;
+    }
+    return dateLastLevelChanged;
+  }
+
+  int difficultyFactor() {
+    switch (chosenDifficulty) {
+      case 1:
+        return 0;
+        break;
+      case 2:
+        return -4;
+        break;
+      case 3:
+        return -8;
+        break;
+      case 4:
+        return -12;
+        break;
+    }
+    return 0;
+  }
+
+  String difficultyMeaning() {
+    switch (chosenDifficulty) {
+      case 1:
+        return "Easy";
+        break;
+      case 2:
+        return "Moderate";
+        break;
+      case 3:
+        return "Hard";
+        break;
+      case 4:
+        return "Challenging";
+        break;
+    }
+    return "Easy";
   }
 }

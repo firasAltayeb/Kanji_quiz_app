@@ -66,33 +66,7 @@ final reviewReadyListProvider = Provider<List<Kanji>>((ref) {
 });
 
 bool isReviewReady(Kanji kanjiItem) {
-  if (kanjiItem.learningStatus == "Review")
-    switch (kanjiItem.progressLevel) {
-      case 1:
-        if (kanjiItem.dateLastLevelChanged
-            .isBefore(DateTime.now().subtract(Duration(seconds: 10))))
-          return true;
-        break;
-      case 2:
-        if (kanjiItem.dateLastLevelChanged
-            .isBefore(DateTime.now().subtract(Duration(seconds: 20))))
-          return true;
-        break;
-      case 3:
-        if (kanjiItem.dateLastLevelChanged
-            .isBefore(DateTime.now().subtract(Duration(seconds: 30))))
-          return true;
-        break;
-      case 4:
-        if (kanjiItem.dateLastLevelChanged
-            .isBefore(DateTime.now().subtract(Duration(seconds: 45))))
-          return true;
-        break;
-      default:
-        return false;
-        break;
-    }
-  return false;
+  return DateTime.now().isAfter(kanjiItem.nextReviewDate()) ? true : false;
 }
 
 final srsXlvlListProvider =
