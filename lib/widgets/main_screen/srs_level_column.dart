@@ -46,7 +46,7 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
         textContainer(
-          'Learned Items',
+          'Ready to Practice',
           screenHeight,
           accentColor,
         ),

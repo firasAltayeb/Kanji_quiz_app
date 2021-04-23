@@ -1,6 +1,7 @@
 import 'package:kanji_quiz_app/widgets/main_screen/srs_level_column.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/main_drawer.dart';
 import 'package:kanji_quiz_app/widgets/shared/main_app_bar.dart';
+import 'package:kanji_quiz_app/screens/practice_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/lesson_mgr_screen.dart';
@@ -24,9 +25,13 @@ class MainScreen extends StatelessWidget {
         width: screenWidth * 0.65,
         child: MainAppDrawer(),
       ),
-      body: Consumer(builder: (bldContext, watch, _) {
+      body: Consumer(builder: (buildContext, watch, _) {
         final lessonList = watch(lessonListProvider);
         final reviewList = watch(reviewReadyListProvider);
+        final pracitceList = watch(practiceListProvider);
+        final lsnqueueIdx = watch(lessonQueueIdxProvider).state;
+        final revnqueueIdx = watch(reviewQueueIdxProvider).state;
+        final pracnqueueIdx = watch(practiceQueueIdxProvider).state;
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -36,12 +41,35 @@ class MainScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  screenNavigateColumn(bldContext, screenHeight, "Lesson",
-                      lessonList, LessonManager.routeName),
-                  screenNavigateColumn(bldContext, screenHeight, "Review",
-                      reviewList, ReviewManager.routeName),
+                  screenNavigateColumn(
+                      buildContext,
+                      screenHeight,
+                      screenWidth,
+                      "Lesson",
+                      lessonList,
+                      LessonManager.routeName,
+                      lsnqueueIdx),
+                  screenNavigateColumn(
+                      buildContext,
+                      screenHeight,
+                      screenWidth,
+                      "Review",
+                      reviewList,
+                      ReviewManager.routeName,
+                      revnqueueIdx),
                 ],
               ),
+              SizedBox(
+                height: screenHeight * 0.1,
+              ),
+              screenNavigateColumn(
+                  buildContext,
+                  screenHeight,
+                  screenWidth * 2,
+                  "Practice",
+                  pracitceList,
+                  PracticeManager.routeName,
+                  pracnqueueIdx),
               SizedBox(
                 height: screenHeight * 0.1,
               ),
@@ -53,8 +81,8 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget screenNavigateColumn(BuildContext bldCtx, screenHeight, label,
-      List<Kanji> kanjiList, routeName) {
+  Widget screenNavigateColumn(BuildContext bldCtx, screenHeight, screenWidth,
+      label, List<Kanji> kanjiList, routeName, queueIdx) {
     return Column(
       children: [
         Text(
@@ -67,8 +95,8 @@ class MainScreen extends StatelessWidget {
         SizedBox(
           height: screenHeight * 0.02,
         ),
-        SizedBox(
-          width: screenHeight * 0.2,
+        Container(
+          width: screenWidth * 0.4,
           child: ElevatedButton(
             child: Text(
               'Start',
@@ -81,20 +109,10 @@ class MainScreen extends StatelessWidget {
             onPressed: kanjiList.length == 0
                 ? null
                 : () {
-                    bldCtx.read(targetKanjiProvider).state = kanjiList[0];
+                    bldCtx.read(targetKanjiProvider).state =
+                        kanjiList[queueIdx];
                     Navigator.of(bldCtx)
-                        .pushNamed(routeName, arguments: kanjiList)
-                        .then((_) {
-                      if (label == "Lesson")
-                        bldCtx.read(lessonQueueIdxProvider).state = 0;
-                      else {
-                        bldCtx.read(reviewQueueIdxProvider).state = 0;
-                        bldCtx.read(answerChoiceListProvider).state.clear();
-                        bldCtx.read(correctRecallListProvider).state.clear();
-                        bldCtx.read(incorrectRecallListProvider).state.clear();
-                      }
-                      bldCtx.read(kanjiListProvider.notifier).saveProgress();
-                    });
+                        .pushNamed(routeName, arguments: kanjiList);
                   },
           ),
         ),

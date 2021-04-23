@@ -1,7 +1,8 @@
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
-import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
+import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
+import 'package:kanji_quiz_app/screens/practice_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'package:flutter/material.dart';
@@ -56,6 +57,7 @@ class MyApp extends ConsumerWidget {
             '/': (ctx) => MainScreen(),
             LessonManager.routeName: (_) => LessonManager(),
             ReviewManager.routeName: (_) => ReviewManager(),
+            PracticeManager.routeName: (_) => PracticeManager(),
             ItemDetailScreen.routeName: (_) => ItemDetailScreen(
                   currentTimeZone: "",
                 ),

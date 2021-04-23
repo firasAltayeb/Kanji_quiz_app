@@ -23,6 +23,8 @@ final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
 
 final targetKanjiProvider = StateProvider<Kanji>((ref) => kanjiStaticData[0]);
 
+final practiceQueueIdxProvider = StateProvider<int>((ref) => 0);
+
 final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final btnBottomRowProvider = StateProvider<bool>((ref) => true);
@@ -57,6 +59,14 @@ final reviewListProvider = Provider<List<Kanji>>((ref) {
   return reviewList;
 });
 
+final practiceListProvider = Provider<List<Kanji>>((ref) {
+  final kanjiMainList = ref.watch(kanjiListProvider);
+  final reviewList = kanjiMainList
+      .where((kanjiItem) => kanjiItem.learningStatus == "Practice")
+      .toList();
+  return reviewList;
+});
+
 final reviewReadyListProvider = Provider<List<Kanji>>((ref) {
   final syncNow = ref.watch(syncNowProvider);
   final reviewList = ref.watch(reviewListProvider);
@@ -72,9 +82,12 @@ bool isReviewReady(Kanji kanjiItem) {
 final srsXlvlListProvider =
     Provider.autoDispose.family<List<Kanji>, int>((ref, level) {
   final kanjiMainList = ref.watch(kanjiListProvider);
-  final srsLvlList = kanjiMainList
-      .where((kanjiItem) => kanjiItem.progressLevel == level)
-      .toList();
+  final srsLvlList = kanjiMainList.where((item) {
+    if (level < 6)
+      return item.progressLevel == level;
+    else
+      return item.progressLevel == level && item.itemType == "Kanji";
+  }).toList();
   return srsLvlList;
 });
 
