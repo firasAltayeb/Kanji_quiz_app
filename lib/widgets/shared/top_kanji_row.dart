@@ -18,7 +18,7 @@ class TopKanjiRow extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     final targetKanji = watch(targetKanjiProvider).state;
-    final screenHeight = MediaQuery.of(context).size.height * 0.275;
+    final screenHeight = MediaQuery.of(context).size.height;
     final templateAddress = watch(templateAddressProvider(targetKanji));
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,13 +38,13 @@ class TopKanjiRow extends ConsumerWidget {
     return Expanded(
       flex: 2,
       child: Padding(
-        padding: EdgeInsets.only(top: height * 0.075),
+        padding: EdgeInsets.only(top: height * 0.02),
         child: TextButton(
           child: Text(
             passedText,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: height * 0.15,
+              fontSize: height * 0.04,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -62,7 +62,7 @@ class TopKanjiRow extends ConsumerWidget {
         alignment: Alignment.center,
         children: [
           Container(
-            height: height,
+            height: height * 0.275,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -74,11 +74,11 @@ class TopKanjiRow extends ConsumerWidget {
           ),
           if (targetKanji.itemType != "Primitive")
             Container(
-              height: height * 0.65,
+              height: height * 0.18,
               child: Text(
                 targetKanji.characterLook,
                 style: TextStyle(
-                  fontSize: height * 0.4,
+                  fontSize: height * 0.11,
                   fontFamily: 'Lato',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -94,12 +94,12 @@ class TopKanjiRow extends ConsumerWidget {
     return Expanded(
       flex: 2,
       child: Container(
-        padding: EdgeInsets.fromLTRB(0, height * 0.1, 0, 0),
+        padding: EdgeInsets.fromLTRB(0, height * 0.03, 0, 0),
         child: Text(
           passedText,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: height * 0.15,
+            fontSize: height * 0.04,
             fontWeight: FontWeight.bold,
           ),
         ),

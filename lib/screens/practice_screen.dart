@@ -13,6 +13,7 @@ class PracticeManager extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     List<Kanji> _practiceList = ModalRoute.of(context).settings.arguments;
 
     print('Practice mgr build called');
@@ -29,14 +30,13 @@ class PracticeManager extends StatelessWidget {
       body: Consumer(builder: (bldCtx, watch, _) {
         final _queueIndex = watch(practiceQueueIdxProvider).state;
         return Column(
-          // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: SizedBox(
                 width: double.infinity,
               ),
             ),
-            _answerButton(bldCtx),
+            _answerButton(bldCtx, screenHeight),
             Expanded(child: SizedBox()),
           ],
         );
@@ -44,19 +44,23 @@ class PracticeManager extends StatelessWidget {
     );
   }
 
-  Widget _answerButton(BuildContext context) {
+  Widget _answerButton(BuildContext context, screenHeight) {
     return Container(
-      padding: const EdgeInsets.all(10),
-      width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.height * 0.04,
+      padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
+      width: MediaQuery.of(context).size.width * 0.95,
+      height: MediaQuery.of(context).size.height * 0.1,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: 3,
+        ),
+        color: Theme.of(context).accentColor,
+      ),
       child: FittedBox(
-        fit: BoxFit.fitWidth,
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text(
-            'Answer Choice',
-            textAlign: TextAlign.center,
-          ),
+        fit: BoxFit.fill,
+        child: Text(
+          "Can you recall this character? \n Did you remember correctly?",
+          textAlign: TextAlign.center,
         ),
       ),
     );

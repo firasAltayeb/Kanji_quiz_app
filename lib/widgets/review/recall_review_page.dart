@@ -18,7 +18,7 @@ class RecallPage extends ConsumerWidget {
   });
 
   Widget build(BuildContext bldCtx, ScopedReader watch) {
-    final _recallButtonVisible = watch(showAnsBtnVisibleProvider).state;
+    final _showBtnVisible = watch(showAnsBtnVisibleProvider).state;
     final _itemCounter = '${(queueIndex + 1)}/${reviewQueue.length}';
 
     return Column(
@@ -35,9 +35,9 @@ class RecallPage extends ConsumerWidget {
                 },
         ),
         Expanded(child: SizedBox()),
-        _infoBox(bldCtx, _recallButtonVisible),
+        _infoBox(bldCtx, _showBtnVisible),
         Expanded(child: SizedBox()),
-        _recallButtonVisible
+        _showBtnVisible
             ? ShowAnswerButton()
             : Row(
                 children: [
@@ -69,7 +69,7 @@ class RecallPage extends ConsumerWidget {
     ctx.read(reviewQueueIdxProvider).state++;
   }
 
-  Widget _infoBox(BuildContext context, recallBtnVisible) {
+  Widget _infoBox(BuildContext context, showBtnVisible) {
     return Container(
       padding: const EdgeInsets.all(10),
       width: MediaQuery.of(context).size.width * 0.95,
@@ -79,12 +79,11 @@ class RecallPage extends ConsumerWidget {
           color: Colors.black,
           width: 3,
         ),
-        color:
-            recallBtnVisible ? Colors.red[400] : Theme.of(context).accentColor,
+        color: showBtnVisible ? Colors.red[400] : Theme.of(context).accentColor,
       ),
       child: FittedBox(
-        fit: recallBtnVisible ? BoxFit.fitWidth : BoxFit.fill,
-        child: recallBtnVisible
+        fit: showBtnVisible ? BoxFit.fitWidth : BoxFit.fill,
+        child: showBtnVisible
             ? Text(
                 'Can you recall this character?',
                 textAlign: TextAlign.center,
