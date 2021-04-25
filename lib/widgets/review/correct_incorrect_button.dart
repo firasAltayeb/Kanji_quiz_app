@@ -42,7 +42,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
               : "";
           var currentProgressLevel = selectChoice
               ? targetKanji.progressLevel + 1
-              : targetKanji.newProgressLevel();
+              : targetKanji.lapsePenalty();
           _openCustomDialog(
             buildContex,
             characterLook,

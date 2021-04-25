@@ -42,7 +42,7 @@ class Kanji {
     this.chosenDifficulty = 1,
   });
 
-  int newProgressLevel() {
+  int lapsePenalty() {
     //what happens when item lapse
     switch (chosenDifficulty) {
       case 1:
@@ -107,5 +107,36 @@ class Kanji {
         break;
     }
     return "Challenging";
+  }
+
+  void difficultyAdjustment() {
+    recallHistory.add("Incorrect");
+    var lastIndex = recallHistory.lastIndexOf("Incorrect");
+    switch (chosenDifficulty) {
+      case 1:
+        if (recallHistory.length > 1) {
+          if ("Incorrect" == recallHistory[lastIndex - 1]) {
+            chosenDifficulty++;
+          }
+        }
+        break;
+      case 2:
+        if (recallHistory.length > 2) {
+          if (("Incorrect" == recallHistory[lastIndex - 1]) &&
+              ("Incorrect" == recallHistory[lastIndex - 2])) {
+            chosenDifficulty++;
+          }
+        }
+        break;
+      case 3:
+        if (recallHistory.length > 3) {
+          if (("Incorrect" == recallHistory[lastIndex - 1]) &&
+              ("Incorrect" == recallHistory[lastIndex - 2]) &&
+              ("Incorrect" == recallHistory[lastIndex - 3])) {
+            chosenDifficulty++;
+          }
+        }
+        break;
+    }
   }
 }

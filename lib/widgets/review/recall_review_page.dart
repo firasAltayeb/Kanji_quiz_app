@@ -17,6 +17,20 @@ class RecallPage extends ConsumerWidget {
     @required this.undoLastAnswer,
   });
 
+  void _recordAnswer(BuildContext ctx, answerChoice) {
+    ctx.read(answerChoiceListProvider).state.add(answerChoice);
+
+    if (answerChoice) {
+      ctx.read(sessionScoreProvider).state += 5;
+      ctx.read(correctRecallListProvider).state.add(reviewQueue[queueIndex]);
+    } else {
+      ctx.read(incorrectRecallListProvider).state.add(reviewQueue[queueIndex]);
+    }
+    if (queueIndex < reviewQueue.length - 1)
+      ctx.read(targetKanjiProvider).state = reviewQueue[queueIndex + 1];
+    ctx.read(reviewQueueIdxProvider).state++;
+  }
+
   Widget build(BuildContext bldCtx, ScopedReader watch) {
     final _showBtnVisible = watch(showAnsBtnVisibleProvider).state;
     final _itemCounter = '${(queueIndex + 1)}/${reviewQueue.length}';
@@ -53,20 +67,6 @@ class RecallPage extends ConsumerWidget {
               ),
       ],
     );
-  }
-
-  void _recordAnswer(BuildContext ctx, answerChoice) {
-    ctx.read(answerChoiceListProvider).state.add(answerChoice);
-
-    if (answerChoice) {
-      ctx.read(sessionScoreProvider).state += 5;
-      ctx.read(correctRecallListProvider).state.add(reviewQueue[queueIndex]);
-    } else {
-      ctx.read(incorrectRecallListProvider).state.add(reviewQueue[queueIndex]);
-    }
-    if (queueIndex < reviewQueue.length - 1)
-      ctx.read(targetKanjiProvider).state = reviewQueue[queueIndex + 1];
-    ctx.read(reviewQueueIdxProvider).state++;
   }
 
   Widget _infoBox(BuildContext context, showBtnVisible) {
