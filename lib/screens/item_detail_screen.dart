@@ -33,7 +33,7 @@ class ItemDetailScreen extends StatelessWidget {
   }
 
   Widget build(BuildContext context) {
-    final _screenHeight = MediaQuery.of(context).size.height;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: MainAppBar(
@@ -51,7 +51,7 @@ class ItemDetailScreen extends StatelessWidget {
                 rightWidgetText: "Next",
               ),
               SizedBox(
-                height: _screenHeight * 0.08,
+                height: screenHeight * 0.08,
                 child: KeyTextContainer(
                   'Keyword: ' + _targetKanji.keyword,
                 ),
@@ -63,7 +63,7 @@ class ItemDetailScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               _coloredTextContainer(
-                _screenHeight,
+                screenHeight,
                 _targetKanji.progressLevel,
                 Theme.of(context).accentColor,
               ),
@@ -82,21 +82,13 @@ class ItemDetailScreen extends StatelessWidget {
               BuildingBlockRow(),
               SizedBox(height: 30),
               if (_showButtonRow)
-                MnemonicHandler(
+                ItemBottomRow(
+                  showResetButton: true,
                   showHandler: (value) => _showHandler(context, value),
-                  resetItemStatus: () {
-                    _targetKanji.learningStatus = 'Lesson';
-                    _targetKanji.progressLevel = 0;
-                    _targetKanji.mnemonicStory = '';
-                    context
-                        .read(kanjiListProvider.notifier)
-                        .editKanji(_targetKanji);
-                    context.read(kanjiListProvider.notifier).saveProgress();
-                  },
                 ),
               if (!_showButtonRow)
                 SizedBox(
-                  height: _screenHeight * 0.135,
+                  height: screenHeight * 0.135,
                 ),
             ],
           ),

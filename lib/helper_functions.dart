@@ -1,9 +1,45 @@
+import 'package:kanji_quiz_app/widgets/misc/back_pressed_alert.dart';
 import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+
+void openChoiceDialog(
+  BuildContext context,
+  Kanji targetKanji,
+  Function bottomRowHandler,
+  String alertMessage,
+) async {
+  var dialogChoice = await BackPressedAlert().dialog(
+        parentCtx: context,
+        alertMsg: alertMessage,
+      ) ??
+      false;
+  if (dialogChoice) {
+    bottomRowHandler(context, targetKanji);
+    Navigator.of(context).pop();
+  }
+}
+
+void itemAlreadyLearned(BuildContext context, Kanji targetKanji) {
+  targetKanji.progressLevel = 6;
+  if (targetKanji.itemType == "Kanji")
+    targetKanji.learningStatus = 'Practice';
+  else if (targetKanji.itemType != "Kanji")
+    targetKanji.learningStatus = 'Learned';
+  context.read(kanjiListProvider.notifier).editKanji(targetKanji);
+  context.read(kanjiListProvider.notifier).saveProgress();
+}
+
+void resetItemStatus(BuildContext context, Kanji targetKanji) {
+  targetKanji.learningStatus = 'Lesson';
+  targetKanji.progressLevel = 0;
+  targetKanji.mnemonicStory = '';
+  context.read(kanjiListProvider.notifier).editKanji(targetKanji);
+  context.read(kanjiListProvider.notifier).saveProgress();
+}
 
 void launchURL(Kanji targetKanji) async {
   String url =

@@ -66,17 +66,32 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
             if (passedTitle == "Home")
               PopupMenuItem(
                 value: VertOptions.User,
-                child: Text('User page'),
+                child: Text(
+                  'User page',
+                  style: TextStyle(
+                    fontSize: screenHeight * 0.03,
+                  ),
+                ),
               ),
             if (passedTitle == "Review")
               PopupMenuItem(
                 value: VertOptions.WrapUp,
-                child: Text('Wrap up session'),
+                child: Text(
+                  'Wrap up session',
+                  style: TextStyle(
+                    fontSize: screenHeight * 0.03,
+                  ),
+                ),
               ),
             if (passedTitle == "Lesson" || passedTitle == "Item Detail")
               PopupMenuItem(
                 value: VertOptions.Koohii,
-                child: Text('Search in Koohii'),
+                child: Text(
+                  'Search in Koohii',
+                  style: TextStyle(
+                    fontSize: screenHeight * 0.03,
+                  ),
+                ),
               ),
           ],
         ),

@@ -77,7 +77,8 @@ class LessonManager extends StatelessWidget {
             ),
             Expanded(child: SizedBox()),
             if (_showButtonRow)
-              MnemonicHandler(
+              ItemBottomRow(
+                showResetButton: false,
                 showHandler: (trueFalse) => _showHandler(bldCtx, trueFalse),
               ),
           ],

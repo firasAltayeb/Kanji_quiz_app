@@ -1,17 +1,16 @@
-import 'package:kanji_quiz_app/widgets/misc/back_pressed_alert.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
-class MnemonicHandler extends ConsumerWidget {
+class ItemBottomRow extends ConsumerWidget {
+  final bool showResetButton;
   final Function showHandler;
-  final Function resetItemStatus;
   final mnemonicController = TextEditingController();
 
-  MnemonicHandler({
+  ItemBottomRow({
     @required this.showHandler,
-    this.resetItemStatus,
+    @required this.showResetButton,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
@@ -19,11 +18,16 @@ class MnemonicHandler extends ConsumerWidget {
     var screenHeight = MediaQuery.of(context).size.height;
     return Row(
       children: [
-        if (resetItemStatus != null)
+        if (showResetButton)
           Expanded(
             child: _bottomButton(
               screenHeight,
-              () => _resetItem(context),
+              () => openChoiceDialog(
+                context,
+                targetKanji,
+                resetItemStatus,
+                "This item will be sent back to the lesson queue!!",
+              ),
               "Reset item",
               Colors.red,
             ),
@@ -31,8 +35,13 @@ class MnemonicHandler extends ConsumerWidget {
         Expanded(
           child: _bottomButton(
             screenHeight,
-            () => launchURL(targetKanji),
-            "Kanji Koohii",
+            () => openChoiceDialog(
+              context,
+              targetKanji,
+              itemAlreadyLearned,
+              "This item will be sent to the practice queue!!",
+            ),
+            "Item Learned",
             Colors.green,
           ),
         ),
@@ -82,17 +91,5 @@ class MnemonicHandler extends ConsumerWidget {
         ),
       ),
     );
-  }
-
-  void _resetItem(BuildContext context) async {
-    var dialogChoice = await BackPressedAlert().dialog(
-          parentCtx: context,
-          alertMsg: "The item will be sent back to the lesson queue!!",
-        ) ??
-        false;
-    if (dialogChoice) {
-      resetItemStatus();
-      Navigator.of(context).pop();
-    }
   }
 }
