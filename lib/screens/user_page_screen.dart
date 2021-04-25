@@ -2,17 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../widgets/shared/main_app_bar.dart';
 
-class UserPage extends StatefulWidget {
-  @override
-  _UserPageState createState() => _UserPageState();
-}
+class UserPage extends StatelessWidget {
+  static const routeName = '/user-screen';
 
-class _UserPageState extends State<UserPage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainAppBar(
-        title: 'User Page',
+        passedTitle: 'User',
         appBar: AppBar(),
       ),
       body: Column(

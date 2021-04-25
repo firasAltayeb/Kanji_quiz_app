@@ -18,7 +18,7 @@ class MainScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: MainAppBar(
-        title: 'Home Page',
+        passedTitle: 'Home',
         appBar: AppBar(),
       ),
       drawer: SizedBox(
@@ -41,7 +41,7 @@ class MainScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  screenNavigateColumn(
+                  _screenNavigateColumn(
                       buildContext,
                       screenHeight,
                       screenWidth,
@@ -49,7 +49,7 @@ class MainScreen extends StatelessWidget {
                       lessonList,
                       LessonManager.routeName,
                       lsnqueueIdx),
-                  screenNavigateColumn(
+                  _screenNavigateColumn(
                       buildContext,
                       screenHeight,
                       screenWidth,
@@ -62,7 +62,7 @@ class MainScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.1,
               ),
-              screenNavigateColumn(
+              _screenNavigateColumn(
                   buildContext,
                   screenHeight,
                   screenWidth * 2,
@@ -81,7 +81,7 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget screenNavigateColumn(BuildContext bldCtx, screenHeight, screenWidth,
+  Widget _screenNavigateColumn(BuildContext bldCtx, screenHeight, screenWidth,
       label, List<Kanji> kanjiList, routeName, queueIdx) {
     return Column(
       children: [

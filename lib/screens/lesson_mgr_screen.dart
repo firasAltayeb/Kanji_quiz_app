@@ -3,7 +3,7 @@ import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
-import '../widgets/shared/mnemonic_handler.dart';
+import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +48,7 @@ class LessonManager extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: MainAppBar(
-        title: 'Lesson Page',
+        passedTitle: 'Lesson',
         appBar: AppBar(),
       ),
       body: Consumer(builder: (bldCtx, watch, _) {

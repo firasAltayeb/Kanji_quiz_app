@@ -4,6 +4,7 @@ import '../widgets/review/result_review_page.dart';
 import '../widgets/review/recall_review_page.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
+import '../helper_functions.dart';
 import '../main_providers.dart';
 
 class ReviewManager extends StatelessWidget {
@@ -21,37 +22,6 @@ class ReviewManager extends StatelessWidget {
     ctx.read(reviewQueueIdxProvider).state--;
   }
 
-  void _wrapSession(BuildContext context, answerChoiceList, reviewList) {
-    for (var index = 0; index < answerChoiceList.length; index++) {
-      Kanji reviewedItem = reviewList[index];
-      reviewedItem.dateLastLevelChanged = DateTime.now();
-      //if answer was correct
-      if (answerChoiceList[index]) {
-        // current progress + 1
-        reviewedItem.progressLevel++;
-        reviewedItem.recallHistory.add("Correct");
-        //when lvl is 5 practice if kanji else learned
-        if (reviewedItem.progressLevel > 5) {
-          if (reviewedItem.itemType == "Kanji")
-            reviewedItem.learningStatus = 'Practice';
-          else if (reviewedItem.itemType != "Kanji")
-            reviewedItem.learningStatus = 'Learned';
-        }
-      } /*if answer was incorrect*/ else {
-        reviewedItem.difficultyAdjustment();
-        reviewedItem.progressLevel = reviewedItem.lapsePenalty();
-      }
-      context.read(kanjiListProvider.notifier).editKanji(reviewedItem);
-    }
-    context.read(sessionScoreProvider).state = 0;
-    context.read(reviewQueueIdxProvider).state = 0;
-    context.read(answerChoiceListProvider).state.clear();
-    context.read(correctRecallListProvider).state.clear();
-    context.read(incorrectRecallListProvider).state.clear();
-    context.read(kanjiListProvider.notifier).saveProgress();
-    Navigator.pop(context);
-  }
-
   Widget build(BuildContext context) {
     List<Kanji> _reviewList = ModalRoute.of(context).settings.arguments;
 
@@ -63,7 +33,7 @@ class ReviewManager extends StatelessWidget {
 
     return Scaffold(
       appBar: MainAppBar(
-        title: 'Review page',
+        passedTitle: 'Review',
         appBar: AppBar(),
       ),
       body: Consumer(builder: (bldCtx, watch, _) {
@@ -78,7 +48,7 @@ class ReviewManager extends StatelessWidget {
               )
             : ResultPage(
                 wrapSession: () =>
-                    _wrapSession(bldCtx, _ansChoiceList, _reviewList),
+                    wrapSession(bldCtx, _ansChoiceList, _reviewList),
                 undoLastAnswer: () => _undoAnswer(
                     bldCtx, _ansChoiceList, _queueIndex, _reviewList),
               );

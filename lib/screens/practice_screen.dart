@@ -24,7 +24,7 @@ class PracticeManager extends StatelessWidget {
 
     return Scaffold(
       appBar: MainAppBar(
-        title: 'Pratice page',
+        passedTitle: 'Pratice',
         appBar: AppBar(),
       ),
       body: Consumer(builder: (bldCtx, watch, _) {

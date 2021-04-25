@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
+import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,11 @@ class ScrollableContainer extends ConsumerWidget {
       return InkWell(
         onLongPress: () {
           showHandler(false);
-          _editMnemonicHandler(context, targetKanji);
+          editMnemonicHandler(
+            context,
+            targetKanji,
+            showHandler,
+          );
         },
         child: Container(
           height: screenHeight * 0.175,
@@ -43,20 +47,6 @@ class ScrollableContainer extends ConsumerWidget {
           ),
         ),
       );
-    });
-  }
-
-  void _editMnemonicHandler(BuildContext context, Kanji targetKanji) {
-    Navigator.of(context)
-        .push(
-      PageRouteBuilder(
-          opaque: false,
-          pageBuilder: (BuildContext context, _, __) {
-            return InputDialogScreen(targetKanji);
-          }),
-    )
-        .then((passedText) {
-      showHandler(true);
     });
   }
 

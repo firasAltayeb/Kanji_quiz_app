@@ -1,5 +1,5 @@
-import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
+import 'package:kanji_quiz_app/screens/user_page_screen.dart';
 import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
 import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
 import 'package:kanji_quiz_app/screens/practice_screen.dart';
@@ -12,16 +12,6 @@ import 'main_screen.dart';
 
 void main() async {
   runApp(ProviderScope(child: MyApp()));
-}
-
-Future<String> getTimezone() async {
-  String timezone;
-  try {
-    timezone = await FlutterNativeTimezone.getLocalTimezone();
-  } catch (e) {
-    print('Could not get the local timezone');
-  }
-  return timezone;
 }
 
 class MyApp extends ConsumerWidget {
@@ -55,6 +45,7 @@ class MyApp extends ConsumerWidget {
           initialRoute: '/',
           routes: {
             '/': (ctx) => MainScreen(),
+            UserPage.routeName: (_) => UserPage(),
             LessonManager.routeName: (_) => LessonManager(),
             ReviewManager.routeName: (_) => ReviewManager(),
             PracticeManager.routeName: (_) => PracticeManager(),

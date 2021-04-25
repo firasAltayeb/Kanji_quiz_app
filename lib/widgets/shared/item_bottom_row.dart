@@ -1,8 +1,6 @@
 import 'package:kanji_quiz_app/widgets/misc/back_pressed_alert.dart';
-import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
@@ -18,35 +16,36 @@ class MnemonicHandler extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     final targetKanji = watch(targetKanjiProvider).state;
+    var screenHeight = MediaQuery.of(context).size.height;
     return Row(
       children: [
         if (resetItemStatus != null)
           Expanded(
-            child: bottomButton(
-              context,
-              (ctx) {
-                _resetItem(ctx);
-              },
+            child: _bottomButton(
+              screenHeight,
+              () => _resetItem(context),
               "Reset item",
               Colors.red,
             ),
           ),
         Expanded(
-          child: bottomButton(
-            context,
-            (_) {
-              _launchURL(targetKanji);
-            },
+          child: _bottomButton(
+            screenHeight,
+            () => launchURL(targetKanji),
             "Kanji Koohii",
             Colors.green,
           ),
         ),
         Expanded(
-          child: bottomButton(
-            context,
-            (ctx) {
+          child: _bottomButton(
+            screenHeight,
+            () {
               showHandler(false);
-              _editMnemonicHandler(ctx, targetKanji);
+              editMnemonicHandler(
+                context,
+                targetKanji,
+                showHandler,
+              );
             },
             "Edit Mnemonic",
             Theme.of(context).accentColor,
@@ -56,11 +55,11 @@ class MnemonicHandler extends ConsumerWidget {
     );
   }
 
-  Widget bottomButton(ctx, handler, btnText, color) {
+  Widget _bottomButton(screenHeight, handler, btnText, color) {
     return GestureDetector(
-      onTap: () => handler(ctx),
+      onTap: () => handler(),
       child: Container(
-        height: MediaQuery.of(ctx).size.height * 0.135,
+        height: screenHeight * 0.135,
         padding: btnText == "Kanji Koohii"
             ? const EdgeInsets.all(15)
             : const EdgeInsets.all(5),
@@ -95,29 +94,5 @@ class MnemonicHandler extends ConsumerWidget {
       resetItemStatus();
       Navigator.of(context).pop();
     }
-  }
-
-  void _launchURL(Kanji targetKanji) async {
-    String url =
-        'https://kanji.koohii.com/study/kanji/' + '${targetKanji.frameNumber}';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  void _editMnemonicHandler(BuildContext context, Kanji targetKanji) {
-    Navigator.of(context)
-        .push(
-      PageRouteBuilder(
-          opaque: false,
-          pageBuilder: (BuildContext context, _, __) {
-            return InputDialogScreen(targetKanji);
-          }),
-    )
-        .then((passedText) {
-      showHandler(true);
-    });
   }
 }

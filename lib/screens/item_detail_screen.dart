@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
-import '../widgets/shared/mnemonic_handler.dart';
+import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class ItemDetailScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: MainAppBar(
-        title: 'Item Details',
+        passedTitle: 'Item Detail',
         appBar: AppBar(),
       ),
       body: Consumer(builder: (bldCtx, watch, _) {
@@ -76,14 +76,14 @@ class ItemDetailScreen extends StatelessWidget {
               ItemDifficultyRow(),
               SizedBox(height: 20),
               ScrollableContainer(
-                showHandler: (trueFalse) => _showHandler(context, trueFalse),
+                showHandler: (value) => _showHandler(context, value),
               ),
               SizedBox(height: 30),
               BuildingBlockRow(),
               SizedBox(height: 30),
               if (_showButtonRow)
                 MnemonicHandler(
-                  showHandler: (trueFalse) => _showHandler(context, trueFalse),
+                  showHandler: (value) => _showHandler(context, value),
                   resetItemStatus: () {
                     _targetKanji.learningStatus = 'Lesson';
                     _targetKanji.progressLevel = 0;
