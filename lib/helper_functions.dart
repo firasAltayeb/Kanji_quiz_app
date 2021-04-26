@@ -23,7 +23,7 @@ void openChoiceDialog(
   }
 }
 
-void itemAlreadyLearned(BuildContext context, Kanji targetKanji) {
+void markAsComplete(BuildContext context, Kanji targetKanji) {
   targetKanji.progressLevel = 6;
   if (targetKanji.itemType == "Kanji")
     targetKanji.learningStatus = 'Practice';

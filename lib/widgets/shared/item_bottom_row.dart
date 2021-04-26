@@ -15,7 +15,7 @@ class ItemBottomRow extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     final targetKanji = watch(targetKanjiProvider).state;
-    var screenHeight = MediaQuery.of(context).size.height;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Row(
       children: [
         if (showResetButton)
@@ -28,21 +28,25 @@ class ItemBottomRow extends ConsumerWidget {
                 resetItemStatus,
                 "This item will be sent back to the lesson queue!!",
               ),
-              "Reset item",
+              "Reset status",
               Colors.red,
             ),
           ),
         Expanded(
           child: _bottomButton(
             screenHeight,
-            () => openChoiceDialog(
-              context,
-              targetKanji,
-              itemAlreadyLearned,
-              "This item will be sent to the practice queue!!",
-            ),
-            "Item Learned",
-            Colors.green,
+            targetKanji.progressLevel == 6
+                ? null
+                : () => openChoiceDialog(
+                      context,
+                      targetKanji,
+                      markAsComplete,
+                      targetKanji.itemType != "Kanji"
+                          ? "This item will be marked as learned"
+                          : "This item will be sent to the practice queue!!",
+                    ),
+            "Mark Complete",
+            targetKanji.progressLevel == 6 ? Colors.grey : Colors.green,
           ),
         ),
         Expanded(
