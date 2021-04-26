@@ -40,7 +40,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     return AppBar(
       title: Text(
-        passedTitle + "Page",
+        passedTitle + ' Page',
         style: TextStyle(
           fontSize: screenHeight * 0.03,
           fontFamily: 'Anton',

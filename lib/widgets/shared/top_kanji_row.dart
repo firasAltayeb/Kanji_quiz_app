@@ -1,3 +1,5 @@
+import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
+import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
@@ -24,33 +26,27 @@ class TopKanjiRow extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         leftWidgetText == 'Prev'
-            ? cornerButton(leftWidgetText, leftWidgetHandler, screenHeight)
-            : cornerWidget(leftWidgetText, screenHeight),
+            ? CornerButton(
+                passedText: leftWidgetText,
+                handler: leftWidgetHandler,
+                height: screenHeight,
+              )
+            : CornerWidget(
+                passedText: leftWidgetText,
+                height: screenHeight,
+              ),
         kanjiPicture(screenHeight, templateAddress, targetKanji),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
-            ? cornerButton(rightWidgetText, rightWidgetHandler, screenHeight)
-            : cornerWidget(rightWidgetText, screenHeight),
+            ? CornerButton(
+                passedText: rightWidgetText,
+                handler: rightWidgetHandler,
+                height: screenHeight,
+              )
+            : CornerWidget(
+                passedText: rightWidgetText,
+                height: screenHeight,
+              ),
       ],
-    );
-  }
-
-  Widget cornerButton(String passedText, Function handler, double height) {
-    return Expanded(
-      flex: 2,
-      child: Padding(
-        padding: EdgeInsets.only(top: height * 0.02),
-        child: TextButton(
-          child: Text(
-            passedText,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: height * 0.04,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          onPressed: handler,
-        ),
-      ),
     );
   }
 
@@ -86,23 +82,6 @@ class TopKanjiRow extends ConsumerWidget {
               ),
             ),
         ],
-      ),
-    );
-  }
-
-  Widget cornerWidget(String passedText, double height) {
-    return Expanded(
-      flex: 2,
-      child: Container(
-        padding: EdgeInsets.fromLTRB(0, height * 0.03, 0, 0),
-        child: Text(
-          passedText,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: height * 0.04,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
       ),
     );
   }

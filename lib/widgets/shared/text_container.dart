@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 
 class TextContainer extends StatelessWidget {
   final String passedText;
+  final double screenHeight;
 
-  TextContainer({@required this.passedText});
+  TextContainer({
+    @required this.passedText,
+    @required this.screenHeight,
+  });
 
   @override
   Widget build(BuildContext context) {
-    var screenHeight = MediaQuery.of(context).size.height;
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(

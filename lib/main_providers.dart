@@ -70,6 +70,7 @@ final practiceListProvider = Provider<List<Kanji>>((ref) {
 });
 
 final reviewReadyListProvider = Provider<List<Kanji>>((ref) {
+  // ignore: unused_local_variable
   final syncNow = ref.watch(syncNowProvider);
   final reviewList = ref.watch(reviewListProvider);
   final readyList =

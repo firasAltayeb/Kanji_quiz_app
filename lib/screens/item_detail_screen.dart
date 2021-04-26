@@ -66,6 +66,7 @@ class ItemDetailScreen extends StatelessWidget {
               TextContainer(
                 passedText:
                     'Current SRS level is ${_targetKanji.progressLevel}',
+                screenHeight: screenHeight,
               ),
               SizedBox(height: 20),
               KeyTextContainer(

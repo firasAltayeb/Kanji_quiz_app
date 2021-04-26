@@ -1,3 +1,5 @@
+import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
+import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import '../widgets/shared/main_app_bar.dart';
@@ -7,12 +9,24 @@ import '../main_providers.dart';
 class PracticeManager extends StatelessWidget {
   static const routeName = '/practice-screen';
 
-  void _undoAnswer(BuildContext ctx, ansChoiceList, queueIdx, practiceList) {
+  void _undoAnswer(BuildContext ctx, queueIdx, practiceList) {
     ctx.read(targetKanjiProvider).state = practiceList[queueIdx - 1];
     ctx.read(practiceQueueIdxProvider).state--;
   }
 
+  void _nextKanji(BuildContext ctx, queueIdx, practiceList) {
+    if (queueIdx < practiceList.length - 1) {
+      ctx.read(targetKanjiProvider).state = practiceList[queueIdx + 1];
+      ctx.read(practiceQueueIdxProvider).state++;
+    } else {
+      ctx.read(practiceQueueIdxProvider).state = 0;
+      ctx.read(kanjiListProvider.notifier).saveProgress();
+      Navigator.pop(ctx);
+    }
+  }
+
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     List<Kanji> _practiceList = ModalRoute.of(context).settings.arguments;
 
@@ -28,15 +42,45 @@ class PracticeManager extends StatelessWidget {
         appBar: AppBar(),
       ),
       body: Consumer(builder: (bldCtx, watch, _) {
+        final _targetKanji = watch(targetKanjiProvider).state;
         final _queueIndex = watch(practiceQueueIdxProvider).state;
         return Column(
           children: [
-            Expanded(
-              child: SizedBox(
-                width: double.infinity,
-              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CornerButton(
+                  passedText: "Undo",
+                  handler: _queueIndex == 0
+                      ? null
+                      : () => _undoAnswer(
+                            bldCtx,
+                            _queueIndex,
+                            _practiceList,
+                          ),
+                  height: screenHeight,
+                ),
+                CornerWidget(
+                  passedText: _targetKanji.characterLook + " 01/15",
+                  height: screenHeight,
+                ),
+                CornerButton(
+                  passedText: "Skip",
+                  handler: () => _nextKanji(
+                    bldCtx,
+                    _queueIndex,
+                    _practiceList,
+                  ),
+                  height: screenHeight,
+                ),
+              ],
             ),
-            _answerButton(bldCtx, screenHeight),
+            Expanded(child: SizedBox()),
+            _answerButton(bldCtx, screenHeight, screenWidth),
+            Expanded(child: SizedBox()),
+            _answerButton(bldCtx, screenHeight, screenWidth),
+            Expanded(child: SizedBox()),
+            _answerButton(bldCtx, screenHeight, screenWidth),
             Expanded(child: SizedBox()),
           ],
         );
@@ -44,11 +88,11 @@ class PracticeManager extends StatelessWidget {
     );
   }
 
-  Widget _answerButton(BuildContext context, screenHeight) {
+  Widget _answerButton(BuildContext context, screenHeight, screenWidth) {
     return Container(
       padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
-      width: MediaQuery.of(context).size.width * 0.95,
-      height: MediaQuery.of(context).size.height * 0.1,
+      width: screenWidth * 0.95,
+      height: screenHeight * 0.1,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -59,7 +103,7 @@ class PracticeManager extends StatelessWidget {
       child: FittedBox(
         fit: BoxFit.fill,
         child: Text(
-          "Can you recall this character? \n Did you remember correctly?",
+          "Answer sentence \n button",
           textAlign: TextAlign.center,
         ),
       ),

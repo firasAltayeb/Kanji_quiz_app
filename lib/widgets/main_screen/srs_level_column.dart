@@ -11,31 +11,46 @@ class SrsLevelColumn extends ConsumerWidget {
     var screenHeight = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        TextContainer(passedText: 'SRS Level 1 Items'),
+        TextContainer(
+          passedText: 'SRS Level 1 Items',
+          screenHeight: screenHeight,
+        ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        TextContainer(passedText: 'SRS Level 2 Items'),
+        TextContainer(
+          passedText: 'SRS Level 2 Items',
+          screenHeight: screenHeight,
+        ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        TextContainer(passedText: 'SRS Level 3 Items'),
+        TextContainer(
+          passedText: 'SRS Level 3 Items',
+          screenHeight: screenHeight,
+        ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        TextContainer(passedText: 'SRS Level 4 Items'),
+        TextContainer(
+          passedText: 'SRS Level 4 Items',
+          screenHeight: screenHeight,
+        ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(4)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        TextContainer(passedText: 'SRS Level 5 Items'),
+        TextContainer(
+          passedText: 'SRS Level 5 Items',
+          screenHeight: screenHeight,
+        ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(5)),
           widgetHeight: screenHeight * 0.2,
@@ -43,6 +58,7 @@ class SrsLevelColumn extends ConsumerWidget {
         ),
         TextContainer(
           passedText: 'Ready to Practice',
+          screenHeight: screenHeight,
         ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(6)),
