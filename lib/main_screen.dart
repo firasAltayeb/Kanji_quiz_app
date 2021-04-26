@@ -63,14 +63,22 @@ class MainScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.1,
               ),
-              _screenNavigateColumn(
-                  buildContext,
-                  screenHeight,
-                  screenWidth * 2,
-                  "Practice",
-                  pracitceList,
-                  PracticeManager.routeName,
-                  pracnqueueIdx),
+              Listener(
+                onPointerMove: (moveEvent) {
+                  if (moveEvent.delta.dy > 0) {
+                    context.read(syncNowProvider).state++;
+                    print("swipe down");
+                  }
+                },
+                child: _screenNavigateColumn(
+                    buildContext,
+                    screenHeight,
+                    screenWidth * 2,
+                    "Practice",
+                    pracitceList,
+                    PracticeManager.routeName,
+                    pracnqueueIdx),
+              ),
               SizedBox(
                 height: screenHeight * 0.1,
               ),

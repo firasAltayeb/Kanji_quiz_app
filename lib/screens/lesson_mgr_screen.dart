@@ -17,13 +17,13 @@ class LessonManager extends StatelessWidget {
       context.read(targetKanjiProvider).state = lessonList[queueIndex + 1];
       context.read(lessonQueueIdxProvider).state++;
     } else {
-      context.read(lessonQueueIdxProvider).state = 0;
       lessonList.forEach((element) {
         element.progressLevel = 1;
         element.learningStatus = 'Review';
         element.dateLastLevelChanged = DateTime.now();
         context.read(kanjiListProvider.notifier).editKanji(element);
       });
+      context.read(lessonQueueIdxProvider).state = 0;
       context.read(kanjiListProvider.notifier).saveProgress();
       Navigator.pop(context);
     }
@@ -54,34 +54,43 @@ class LessonManager extends StatelessWidget {
       body: Consumer(builder: (bldCtx, watch, _) {
         final _queueIndex = watch(lessonQueueIdxProvider).state;
         final _showButtonRow = watch(btnBottomRowProvider).state;
-        return Column(
-          children: [
-            TopKanjiRow(
-              leftWidgetText: "Prev",
-              rightWidgetText: "Next",
-              leftWidgetHandler: _queueIndex == 0
-                  ? null
-                  : () => _previousKanji(bldCtx, _queueIndex, _lessonList),
-              rightWidgetHandler: () =>
-                  _nextKanji(bldCtx, _queueIndex, _lessonList),
-            ),
-            SizedBox(
-              height: MediaQuery.of(bldCtx).size.height * 0.075,
-              child: KeyTextContainer(
-                'Keyword: ' + _lessonList[_queueIndex].keyword,
+        return GestureDetector(
+          onHorizontalDragEnd: (DragEndDetails details) {
+            if (details.primaryVelocity > 0) {
+              _previousKanji(bldCtx, _queueIndex, _lessonList);
+            } else if (details.primaryVelocity < 0) {
+              _nextKanji(bldCtx, _queueIndex, _lessonList);
+            }
+          },
+          child: Column(
+            children: [
+              TopKanjiRow(
+                leftWidgetText: "Prev",
+                rightWidgetText: "Next",
+                leftWidgetHandler: _queueIndex == 0
+                    ? null
+                    : () => _previousKanji(bldCtx, _queueIndex, _lessonList),
+                rightWidgetHandler: () =>
+                    _nextKanji(bldCtx, _queueIndex, _lessonList),
               ),
-            ),
-            BuildingBlockRow(),
-            ScrollableContainer(
-              showHandler: (trueFalse) => _showHandler(bldCtx, trueFalse),
-            ),
-            Expanded(child: SizedBox()),
-            if (_showButtonRow)
-              ItemBottomRow(
-                showResetButton: false,
+              SizedBox(
+                height: MediaQuery.of(bldCtx).size.height * 0.075,
+                child: KeyTextContainer(
+                  'Keyword: ' + _lessonList[_queueIndex].keyword,
+                ),
+              ),
+              BuildingBlockRow(),
+              ScrollableContainer(
                 showHandler: (trueFalse) => _showHandler(bldCtx, trueFalse),
               ),
-          ],
+              Expanded(child: SizedBox()),
+              if (_showButtonRow)
+                ItemBottomRow(
+                  showResetButton: false,
+                  showHandler: (trueFalse) => _showHandler(bldCtx, trueFalse),
+                ),
+            ],
+          ),
         );
       }),
     );

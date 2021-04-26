@@ -18,8 +18,8 @@ class ItemDetailScreen extends StatelessWidget {
   ItemDetailScreen({@required this.currentTimeZone});
 
   String _fixTimeZone(DateTime time) {
-    print('$currentTimeZone');
-    print('${DateTime.now().timeZoneName}');
+    // print('$currentTimeZone');
+    // print('${DateTime.now().timeZoneName}');
     final _dateFormater = DateFormat('dd/MM/yyyy HH:mm');
 
     if (currentTimeZone == 'Asia/Tokyo' &&

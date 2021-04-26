@@ -35,6 +35,7 @@ class ItemDifficultyRow extends ConsumerWidget {
                   targetK.chosenDifficulty--;
                   context.read(targetKanjiProvider).state = targetK;
                   context.read(kanjiListProvider.notifier).editKanji(targetK);
+                  context.read(kanjiListProvider.notifier).saveProgress();
                 }
               },
               iconSize: screenHeight * 0.04,
@@ -57,6 +58,7 @@ class ItemDifficultyRow extends ConsumerWidget {
                   targetK.chosenDifficulty++;
                   context.read(targetKanjiProvider).state = targetK;
                   context.read(kanjiListProvider.notifier).editKanji(targetK);
+                  context.read(kanjiListProvider.notifier).saveProgress();
                 }
               },
               iconSize: screenHeight * 0.04,

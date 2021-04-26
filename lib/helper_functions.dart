@@ -31,6 +31,7 @@ void markAsComplete(BuildContext context, Kanji targetKanji) {
     targetKanji.learningStatus = 'Learned';
   context.read(kanjiListProvider.notifier).editKanji(targetKanji);
   context.read(kanjiListProvider.notifier).saveProgress();
+  context.read(lessonQueueIdxProvider).state = 0;
 }
 
 void resetItemStatus(BuildContext context, Kanji targetKanji) {
