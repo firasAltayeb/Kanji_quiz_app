@@ -1,4 +1,5 @@
 import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
+import 'package:kanji_quiz_app/widgets/shared/text_container.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
@@ -7,48 +8,41 @@ import '../../main_providers.dart';
 
 class SrsLevelColumn extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
-    var accentColor = Theme.of(context).accentColor;
     var screenHeight = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        textContainer('SRS Level 1 Items', screenHeight, accentColor),
+        TextContainer(passedText: 'SRS Level 1 Items'),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 2 Items', screenHeight, accentColor),
+        TextContainer(passedText: 'SRS Level 2 Items'),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 3 Items', screenHeight, accentColor),
+        TextContainer(passedText: 'SRS Level 3 Items'),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        textContainer('SRS Level 4 Items', screenHeight, accentColor),
+        TextContainer(passedText: 'SRS Level 4 Items'),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(4)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        textContainer(
-          'SRS Level 5 Items',
-          screenHeight,
-          accentColor,
-        ),
+        TextContainer(passedText: 'SRS Level 5 Items'),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(5)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
-        textContainer(
-          'Ready to Practice',
-          screenHeight,
-          accentColor,
+        TextContainer(
+          passedText: 'Ready to Practice',
         ),
         KanjiInteractiveRow(
           kanjiList: watch(srsXlvlListProvider(6)),
@@ -56,28 +50,6 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
       ],
-    );
-  }
-
-  Widget textContainer(displayedText, height, color) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-        color: color,
-      ),
-      padding: const EdgeInsets.all(5),
-      child: Text(
-        displayedText,
-        style: TextStyle(
-          fontSize: height * 0.04,
-          fontFamily: 'Anton',
-          fontStyle: FontStyle.italic,
-        ),
-      ),
     );
   }
 

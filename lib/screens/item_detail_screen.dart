@@ -1,3 +1,4 @@
+import 'package:kanji_quiz_app/widgets/shared/text_container.dart';
 import '../widgets/item_details/item_difficulty_row.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../widgets/shared/scrollable_container.dart';
@@ -62,10 +63,9 @@ class ItemDetailScreen extends StatelessWidget {
                     '${_fixTimeZone(_targetKanji.dateLastLevelChanged)}',
               ),
               SizedBox(height: 20),
-              _coloredTextContainer(
-                screenHeight,
-                _targetKanji.progressLevel,
-                Theme.of(context).accentColor,
+              TextContainer(
+                passedText:
+                    'Current SRS level is ${_targetKanji.progressLevel}',
               ),
               SizedBox(height: 20),
               KeyTextContainer(
@@ -94,28 +94,6 @@ class ItemDetailScreen extends StatelessWidget {
           ),
         );
       }),
-    );
-  }
-
-  Widget _coloredTextContainer(height, itemLvl, color) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-        color: color,
-      ),
-      padding: const EdgeInsets.all(5),
-      child: Text(
-        'Current SRS level is $itemLvl',
-        style: TextStyle(
-          fontSize: height * 0.04,
-          fontFamily: 'Anton',
-        ),
-        textAlign: TextAlign.center,
-      ),
     );
   }
 }
