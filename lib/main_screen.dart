@@ -32,6 +32,7 @@ class MainScreen extends StatelessWidget {
         final lsnqueueIdx = watch(lessonQueueIdxProvider).state;
         final revnqueueIdx = watch(reviewQueueIdxProvider).state;
         final pracnqueueIdx = watch(practiceQueueIdxProvider).state;
+        final lvlColumnVisible = watch(lvlColumnVisibleProvider).state;
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -73,7 +74,7 @@ class MainScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.1,
               ),
-              SrsLevelColumn()
+              if (lvlColumnVisible) SrsLevelColumn()
             ],
           ),
         );

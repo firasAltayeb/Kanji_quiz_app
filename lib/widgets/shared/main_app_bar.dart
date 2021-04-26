@@ -5,7 +5,7 @@ import 'package:kanji_quiz_app/main_providers.dart';
 import '../../screens/user_page_screen.dart';
 import 'package:flutter/material.dart';
 
-enum VertOptions { User, WrapUp, Koohii }
+enum VertOptions { User, WrapUp, Koohii, SrsColumn }
 
 class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final AppBar appBar;
@@ -19,6 +19,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     Kanji targetKanji,
     List<bool> ansChoiceList,
     List<Kanji> reviewList,
+    bool lvlColumnVisible,
   ) {
     if (choice == VertOptions.User) {
       Navigator.of(context).pushNamed(UserPage.routeName);
@@ -26,14 +27,17 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
       launchURL(targetKanji);
     } else if (choice == VertOptions.WrapUp) {
       wrapSession(context, ansChoiceList, reviewList);
+    } else if (choice == VertOptions.SrsColumn) {
+      context.read(lvlColumnVisibleProvider).state = !lvlColumnVisible;
     }
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final screenHeight = MediaQuery.of(context).size.height;
+    final reviewList = watch(reviewReadyListProvider);
     final targetKanji = watch(targetKanjiProvider).state;
     final ansChoiceList = watch(answerChoiceListProvider).state;
-    final reviewList = watch(reviewReadyListProvider);
+    final showSrsVisible = watch(lvlColumnVisibleProvider).state;
+    final screenHeight = MediaQuery.of(context).size.height;
     return AppBar(
       title: Text(
         passedTitle + "Page",
@@ -58,6 +62,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
             targetKanji,
             ansChoiceList,
             reviewList,
+            showSrsVisible,
           ),
           icon: Icon(
             Icons.more_vert,
@@ -68,6 +73,16 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
                 value: VertOptions.User,
                 child: Text(
                   'User page',
+                  style: TextStyle(
+                    fontSize: screenHeight * 0.03,
+                  ),
+                ),
+              ),
+            if (passedTitle == "Home")
+              PopupMenuItem(
+                value: VertOptions.SrsColumn,
+                child: Text(
+                  showSrsVisible ? 'Hide SRS column' : 'Show SRS column',
                   style: TextStyle(
                     fontSize: screenHeight * 0.03,
                   ),

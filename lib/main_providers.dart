@@ -35,6 +35,8 @@ final sessionScoreProvider = StateProvider<int>((ref) => 0);
 
 final showAnsBtnVisibleProvider = StateProvider<bool>((ref) => true);
 
+final lvlColumnVisibleProvider = StateProvider<bool>((ref) => true);
+
 final answerChoiceListProvider = StateProvider<List<bool>>((ref) => []);
 
 final correctRecallListProvider = StateProvider<List<Kanji>>((ref) => []);
