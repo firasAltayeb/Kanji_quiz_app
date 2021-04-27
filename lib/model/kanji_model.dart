@@ -17,8 +17,9 @@ class Kanji {
   int progressLevel;
   String mnemonicStory;
   String learningStatus;
-  DateTime dateLastLevelChanged;
   List<String> recallHistory;
+  List<String> practiceHistory;
+  DateTime dateLastLevelChanged;
   int chosenDifficulty;
 
   Kanji({
@@ -37,8 +38,9 @@ class Kanji {
     this.progressLevel = 0,
     this.mnemonicStory = "",
     this.learningStatus = "Lesson",
-    this.dateLastLevelChanged,
     this.recallHistory,
+    this.practiceHistory,
+    this.dateLastLevelChanged,
     this.chosenDifficulty = 1,
   });
 

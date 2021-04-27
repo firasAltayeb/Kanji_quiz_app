@@ -39,6 +39,9 @@ class KanjiList extends StateNotifier<List<Kanji>> {
             recallHistory: progressList
                 .firstWhere((element) => element.keyword == kanji.keyword)
                 .recallHistory,
+            practiceHistory: progressList
+                .firstWhere((element) => element.keyword == kanji.keyword)
+                .practiceHistory,
             chosenDifficulty: progressList
                 .firstWhere((element) => element.keyword == kanji.keyword)
                 .chosenDifficulty,
@@ -70,6 +73,7 @@ class KanjiList extends StateNotifier<List<Kanji>> {
             learningStatus: updatedKanji.learningStatus,
             dateLastLevelChanged: updatedKanji.dateLastLevelChanged,
             recallHistory: updatedKanji.recallHistory,
+            practiceHistory: updatedKanji.practiceHistory,
             chosenDifficulty: updatedKanji.chosenDifficulty,
           )
         else
@@ -86,6 +90,7 @@ class KanjiList extends StateNotifier<List<Kanji>> {
               learningStatus: kanji.learningStatus,
               dateLastLevelChanged: kanji.dateLastLevelChanged,
               recallHistory: kanji.recallHistory,
+              practiceHistory: kanji.practiceHistory,
               chosenDifficulty: kanji.chosenDifficulty,
             ))
         .toList();

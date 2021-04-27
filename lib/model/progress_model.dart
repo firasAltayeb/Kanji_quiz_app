@@ -3,8 +3,9 @@ class Progress {
   int progressLevel;
   String mnemonicStory;
   String learningStatus;
-  DateTime dateLastLevelChanged;
   List<String> recallHistory;
+  List<String> practiceHistory;
+  DateTime dateLastLevelChanged;
   int chosenDifficulty;
 
   Progress({
@@ -12,8 +13,9 @@ class Progress {
     this.progressLevel,
     this.mnemonicStory,
     this.learningStatus,
-    this.dateLastLevelChanged,
     this.recallHistory,
+    this.practiceHistory,
+    this.dateLastLevelChanged,
     this.chosenDifficulty,
   });
 
@@ -21,8 +23,11 @@ class Progress {
     var jsonTempOne = json['recallHistory'];
     List<String> recallHistoryList = jsonTempOne.cast<String>();
 
-    var jsonTempTwo = json['dateLastLevelChanged'];
-    DateTime dateLastLevelChanged = jsonTempTwo == ''
+    var jsonTempTwo = json['practiceHistory'];
+    List<String> practiceHistoryList = jsonTempTwo.cast<String>();
+
+    var jsonTempThree = json['dateLastLevelChanged'];
+    DateTime dateLastLevelChanged = jsonTempThree == ''
         ? DateTime.now().subtract(Duration(days: 5))
         : DateTime.tryParse(json['dateLastLevelChanged']);
 
@@ -32,6 +37,7 @@ class Progress {
       mnemonicStory: json['mnemonicStory'] as String,
       learningStatus: json['learningStatus'] as String,
       recallHistory: recallHistoryList,
+      practiceHistory: practiceHistoryList,
       dateLastLevelChanged: dateLastLevelChanged,
       chosenDifficulty: json['chosenDifficulty'] as int,
     );
@@ -46,8 +52,9 @@ class Progress {
       'mnemonicStory': this.mnemonicStory,
       'learningStatus': this.learningStatus,
       'dateLastLevelChanged': formatedDate,
-      'recallHistory': recallHistory,
-      'chosenDifficulty': chosenDifficulty,
+      'recallHistory': this.recallHistory,
+      'practiceHistory': this.practiceHistory,
+      'chosenDifficulty': this.chosenDifficulty,
     };
   }
 }

@@ -30,8 +30,10 @@ class LessonManager extends StatelessWidget {
   }
 
   void _previousKanji(BuildContext context, queueIndex, lessonList) {
-    context.read(targetKanjiProvider).state = lessonList[queueIndex - 1];
-    context.read(lessonQueueIdxProvider).state--;
+    if (queueIndex > 0) {
+      context.read(targetKanjiProvider).state = lessonList[queueIndex - 1];
+      context.read(lessonQueueIdxProvider).state--;
+    }
   }
 
   void _showHandler(BuildContext context, bool trueFalse) {
@@ -58,8 +60,10 @@ class LessonManager extends StatelessWidget {
           onHorizontalDragEnd: (DragEndDetails details) {
             if (details.primaryVelocity > 0) {
               _previousKanji(bldCtx, _queueIndex, _lessonList);
+              print("Swiped left in lesson screen");
             } else if (details.primaryVelocity < 0) {
               _nextKanji(bldCtx, _queueIndex, _lessonList);
+              print("Swiped right in lesson screen");
             }
           },
           child: Column(

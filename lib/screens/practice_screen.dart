@@ -10,8 +10,10 @@ class PracticeManager extends StatelessWidget {
   static const routeName = '/practice-screen';
 
   void _undoAnswer(BuildContext ctx, queueIdx, practiceList) {
-    ctx.read(targetKanjiProvider).state = practiceList[queueIdx - 1];
-    ctx.read(practiceQueueIdxProvider).state--;
+    if (queueIdx > 0) {
+      ctx.read(targetKanjiProvider).state = practiceList[queueIdx - 1];
+      ctx.read(practiceQueueIdxProvider).state--;
+    }
   }
 
   void _nextKanji(BuildContext ctx, queueIdx, practiceList) {
