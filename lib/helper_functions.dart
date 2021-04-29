@@ -44,7 +44,7 @@ void resetItemStatus(BuildContext context, Kanji targetKanji) {
 
 void launchURL(Kanji targetKanji) async {
   String url =
-      'https://kanji.koohii.com/study/kanji/' + '${targetKanji.frameNumber}';
+      'https://kanji.koohii.com/study/kanji/' + '${targetKanji.koohiiNumber}';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
