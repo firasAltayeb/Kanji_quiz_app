@@ -1,14 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class ItemBottomRow extends ConsumerWidget {
   final bool showResetButton;
   final Function showHandler;
+  final List<Kanji> lessonList;
   final mnemonicController = TextEditingController();
 
   ItemBottomRow({
+    this.lessonList,
     @required this.showHandler,
     @required this.showResetButton,
   });
@@ -23,6 +26,7 @@ class ItemBottomRow extends ConsumerWidget {
             child: _bottomButton(
               screenHeight,
               () => openChoiceDialog(
+                watch,
                 context,
                 targetKanji,
                 resetItemStatus,
@@ -38,12 +42,14 @@ class ItemBottomRow extends ConsumerWidget {
             targetKanji.progressLevel == 6
                 ? null
                 : () => openChoiceDialog(
+                      watch,
                       context,
                       targetKanji,
                       markAsComplete,
                       targetKanji.itemType != "Kanji"
                           ? "This item will be marked as learned"
                           : "This item will be sent to the practice queue!!",
+                      lessonList,
                     ),
             "Mark Complete",
             targetKanji.progressLevel == 6 ? Colors.grey : Colors.green,

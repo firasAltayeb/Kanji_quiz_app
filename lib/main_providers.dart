@@ -86,10 +86,10 @@ final srsXlvlListProvider =
     Provider.autoDispose.family<List<Kanji>, int>((ref, level) {
   final kanjiMainList = ref.watch(kanjiListProvider);
   final srsLvlList = kanjiMainList.where((item) {
-    if (level < 6)
+    if (level <= 6)
       return item.progressLevel == level;
     else
-      return item.progressLevel == level && item.itemType == "Kanji";
+      return item.learningStatus == "Learned";
   }).toList();
   return srsLvlList;
 });

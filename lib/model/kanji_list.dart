@@ -62,7 +62,7 @@ class KanjiList extends StateNotifier<List<Kanji>> {
   void editKanji(Kanji updatedKanji) {
     state = [
       for (final kanji in state)
-        if (kanji.keyword == updatedKanji.keyword)
+        if (kanji.characterID == updatedKanji.characterID)
           Kanji(
             keyword: updatedKanji.keyword,
             itemType: updatedKanji.itemType,

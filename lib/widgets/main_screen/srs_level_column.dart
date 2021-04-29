@@ -65,6 +65,15 @@ class SrsLevelColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
+        TextContainer(
+          passedText: 'Learned Items',
+          screenHeight: screenHeight,
+        ),
+        KanjiInteractiveRow(
+          kanjiList: watch(srsXlvlListProvider(7)),
+          widgetHeight: screenHeight * 0.2,
+          selectHandler: pushToItemScreen,
+        ),
       ],
     );
   }

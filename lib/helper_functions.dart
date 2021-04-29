@@ -7,11 +7,14 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 void openChoiceDialog(
+  ScopedReader watch,
   BuildContext context,
   Kanji targetKanji,
   Function bottomRowHandler,
-  String alertMessage,
-) async {
+  String alertMessage, [
+  List<Kanji> lessonList,
+]) async {
+  final queueIndex = watch(lessonQueueIdxProvider).state;
   var dialogChoice = await BackPressedAlert().dialog(
         parentCtx: context,
         alertMsg: alertMessage,
@@ -19,7 +22,12 @@ void openChoiceDialog(
       false;
   if (dialogChoice) {
     bottomRowHandler(context, targetKanji);
-    Navigator.of(context).pop();
+    if (lessonList == null) {
+      Navigator.of(context).pop();
+    } else {
+      context.read(targetKanjiProvider).state = lessonList[queueIndex + 1];
+      context.read(lessonQueueIdxProvider).state++;
+    }
   }
 }
 
@@ -31,7 +39,6 @@ void markAsComplete(BuildContext context, Kanji targetKanji) {
     targetKanji.learningStatus = 'Learned';
   context.read(kanjiListProvider.notifier).editKanji(targetKanji);
   context.read(kanjiListProvider.notifier).saveProgress();
-  context.read(lessonQueueIdxProvider).state = 0;
 }
 
 void resetItemStatus(BuildContext context, Kanji targetKanji) {
