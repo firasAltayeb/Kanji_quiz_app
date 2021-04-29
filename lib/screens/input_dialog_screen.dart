@@ -52,11 +52,11 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
     if (widget.itemDetails.itemType == 'Kanji') {
       hintText = 'Please create a mnemonic for the kanji ' +
-          '${widget.itemDetails.characterLook} using its bulidng blocks: ' +
+          '${widget.itemDetails.characterID} using its bulidng blocks: ' +
           '${widget.itemDetails.buildingBlockKeywords}';
     } else if (widget.itemDetails.itemType == 'Radical') {
       hintText = 'Please create a mnemonic for the Radical ' +
-          '${widget.itemDetails.characterLook}';
+          '${widget.itemDetails.characterID}';
     } else {
       hintText = 'Please create a mnemonic';
     }

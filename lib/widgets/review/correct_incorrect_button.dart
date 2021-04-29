@@ -38,7 +38,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
         ),
         onPressed: () {
           var characterLook = targetKanji.itemType != "Primitive"
-              ? targetKanji.characterLook
+              ? targetKanji.characterID
               : "";
           var currentProgressLevel = selectChoice
               ? targetKanji.progressLevel + 1

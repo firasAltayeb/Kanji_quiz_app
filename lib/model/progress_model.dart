@@ -1,6 +1,7 @@
 class Progress {
   String keyword;
   int progressLevel;
+  String characterID;
   String mnemonicStory;
   String learningStatus;
   List<String> recallHistory;
@@ -11,6 +12,7 @@ class Progress {
   Progress({
     this.keyword,
     this.progressLevel,
+    this.characterID,
     this.mnemonicStory,
     this.learningStatus,
     this.recallHistory,
@@ -33,6 +35,7 @@ class Progress {
 
     return Progress(
       keyword: json['keyword'] as String,
+      characterID: json['characterID'] as String,
       progressLevel: json['progressLevel'] as int,
       mnemonicStory: json['mnemonicStory'] as String,
       learningStatus: json['learningStatus'] as String,
@@ -49,6 +52,7 @@ class Progress {
     return {
       'keyword': this.keyword,
       'progressLevel': this.progressLevel,
+      'characterID': this.characterID,
       'mnemonicStory': this.mnemonicStory,
       'learningStatus': this.learningStatus,
       'dateLastLevelChanged': formatedDate,

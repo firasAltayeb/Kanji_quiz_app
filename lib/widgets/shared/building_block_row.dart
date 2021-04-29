@@ -79,7 +79,7 @@ class BuildingBlockRow extends ConsumerWidget {
                       Container(
                         height: height,
                         child: Text(
-                          bbKanji.characterLook,
+                          bbKanji.characterID,
                           style: TextStyle(
                             fontSize: height * 0.6,
                             fontFamily: 'Lato',

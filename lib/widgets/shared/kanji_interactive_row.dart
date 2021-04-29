@@ -49,7 +49,7 @@ class KanjiInteractiveRow extends ConsumerWidget {
                     Container(
                       height: widgetHeight * 0.65,
                       child: Text(
-                        kanjiList[i].characterLook,
+                        kanjiList[i].characterID,
                         style: TextStyle(
                           fontSize: widgetHeight * 0.4,
                           fontFamily: 'Lato',

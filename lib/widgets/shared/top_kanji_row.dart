@@ -72,7 +72,7 @@ class TopKanjiRow extends ConsumerWidget {
             Container(
               height: height * 0.18,
               child: Text(
-                targetKanji.characterLook,
+                targetKanji.characterID,
                 style: TextStyle(
                   fontSize: height * 0.11,
                   fontFamily: 'Lato',

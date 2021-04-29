@@ -63,7 +63,7 @@ class PracticeManager extends StatelessWidget {
                   height: screenHeight,
                 ),
                 CornerWidget(
-                  passedText: _targetKanji.characterLook + " 01/15",
+                  passedText: _targetKanji.characterID + " 01/15",
                   height: screenHeight,
                 ),
                 CornerButton(

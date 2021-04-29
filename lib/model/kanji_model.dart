@@ -4,9 +4,9 @@ class Kanji {
   final String keyword;
   final String itemType;
   final String jlptLevel;
-  final int frameNumber;
-  final int koohiiNumber;
-  final String characterLook;
+  final int frameNumForth;
+  final int frameNumSixth;
+  final String characterID;
   final List<String> buildingBlocksLook;
   final List<String> buildingBlockKeywords;
   final List<String> similarCharactersLook;
@@ -26,9 +26,9 @@ class Kanji {
     @required this.keyword,
     @required this.itemType,
     @required this.jlptLevel,
-    @required this.frameNumber,
-    @required this.koohiiNumber,
-    @required this.characterLook,
+    @required this.frameNumForth,
+    @required this.frameNumSixth,
+    @required this.characterID,
     @required this.buildingBlocksLook,
     @required this.buildingBlockKeywords,
     @required this.similarCharactersLook,

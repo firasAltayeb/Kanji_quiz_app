@@ -10,14 +10,15 @@ class KanjiList extends StateNotifier<List<Kanji>> {
   void updateProgress(List<Progress> progressList) {
     state = [
       for (final kanji in state)
-        if (progressList.any((element) => element.keyword == kanji.keyword))
+        if (progressList
+            .any((element) => element.characterID == kanji.characterID))
           Kanji(
             keyword: kanji.keyword,
             itemType: kanji.itemType,
             jlptLevel: kanji.jlptLevel,
-            frameNumber: kanji.frameNumber,
-            koohiiNumber: kanji.koohiiNumber,
-            characterLook: kanji.characterLook,
+            frameNumForth: kanji.frameNumForth,
+            frameNumSixth: kanji.frameNumSixth,
+            characterID: kanji.characterID,
             buildingBlocksLook: kanji.buildingBlocksLook,
             buildingBlockKeywords: kanji.buildingBlockKeywords,
             similarCharactersLook: kanji.similarCharactersLook,
@@ -25,25 +26,32 @@ class KanjiList extends StateNotifier<List<Kanji>> {
             frequencyInAozora: kanji.frequencyInAozora,
             kanjiMeanings: kanji.kanjiMeanings,
             progressLevel: progressList
-                .firstWhere((element) => element.keyword == kanji.keyword)
+                .firstWhere(
+                    (element) => element.characterID == kanji.characterID)
                 .progressLevel,
             mnemonicStory: progressList
-                .firstWhere((element) => element.keyword == kanji.keyword)
+                .firstWhere(
+                    (element) => element.characterID == kanji.characterID)
                 .mnemonicStory,
             learningStatus: progressList
-                .firstWhere((element) => element.keyword == kanji.keyword)
+                .firstWhere(
+                    (element) => element.characterID == kanji.characterID)
                 .learningStatus,
             dateLastLevelChanged: progressList
-                .firstWhere((element) => element.keyword == kanji.keyword)
+                .firstWhere(
+                    (element) => element.characterID == kanji.characterID)
                 .dateLastLevelChanged,
             recallHistory: progressList
-                .firstWhere((element) => element.keyword == kanji.keyword)
+                .firstWhere(
+                    (element) => element.characterID == kanji.characterID)
                 .recallHistory,
             practiceHistory: progressList
-                .firstWhere((element) => element.keyword == kanji.keyword)
+                .firstWhere(
+                    (element) => element.characterID == kanji.characterID)
                 .practiceHistory,
             chosenDifficulty: progressList
-                .firstWhere((element) => element.keyword == kanji.keyword)
+                .firstWhere(
+                    (element) => element.characterID == kanji.characterID)
                 .chosenDifficulty,
           )
         else
@@ -59,9 +67,9 @@ class KanjiList extends StateNotifier<List<Kanji>> {
             keyword: updatedKanji.keyword,
             itemType: updatedKanji.itemType,
             jlptLevel: updatedKanji.jlptLevel,
-            frameNumber: updatedKanji.frameNumber,
-            koohiiNumber: updatedKanji.koohiiNumber,
-            characterLook: updatedKanji.characterLook,
+            frameNumForth: updatedKanji.frameNumForth,
+            frameNumSixth: updatedKanji.frameNumSixth,
+            characterID: updatedKanji.characterID,
             buildingBlocksLook: updatedKanji.buildingBlocksLook,
             buildingBlockKeywords: updatedKanji.buildingBlockKeywords,
             similarCharactersLook: updatedKanji.similarCharactersLook,
@@ -86,6 +94,7 @@ class KanjiList extends StateNotifier<List<Kanji>> {
         .map((kanji) => Progress(
               keyword: kanji.keyword,
               progressLevel: kanji.progressLevel,
+              characterID: kanji.characterID,
               mnemonicStory: kanji.mnemonicStory,
               learningStatus: kanji.learningStatus,
               dateLastLevelChanged: kanji.dateLastLevelChanged,
