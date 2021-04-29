@@ -21,6 +21,8 @@ final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
   return KanjiList(kanjiStaticData);
 });
 
+final showAlertProvider = StateProvider<bool>((ref) => true);
+
 final targetKanjiProvider = StateProvider<Kanji>((ref) => kanjiStaticData[0]);
 
 final practiceQueueIdxProvider = StateProvider<int>((ref) => 0);

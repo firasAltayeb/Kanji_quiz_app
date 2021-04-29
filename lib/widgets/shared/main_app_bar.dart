@@ -5,7 +5,7 @@ import 'package:kanji_quiz_app/main_providers.dart';
 import '../../screens/user_page_screen.dart';
 import 'package:flutter/material.dart';
 
-enum VertOptions { User, WrapUp, Koohii, SrsColumn }
+enum VertOptions { User, WrapUp, Koohii, ToggleSRSColumn, ToggleAlert }
 
 class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final AppBar appBar;
@@ -19,7 +19,8 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     Kanji targetKanji,
     List<bool> ansChoiceList,
     List<Kanji> reviewList,
-    bool lvlColumnVisible,
+    bool showSrsVisible,
+    bool showAlert,
   ) {
     if (choice == VertOptions.User) {
       Navigator.of(context).pushNamed(UserPage.routeName);
@@ -27,8 +28,10 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
       launchURL(targetKanji);
     } else if (choice == VertOptions.WrapUp) {
       wrapSession(context, ansChoiceList, reviewList);
-    } else if (choice == VertOptions.SrsColumn) {
-      context.read(lvlColumnVisibleProvider).state = !lvlColumnVisible;
+    } else if (choice == VertOptions.ToggleSRSColumn) {
+      context.read(lvlColumnVisibleProvider).state = !showSrsVisible;
+    } else if (choice == VertOptions.ToggleAlert) {
+      context.read(showAlertProvider).state = !showAlert;
     }
   }
 
@@ -37,6 +40,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     final targetKanji = watch(targetKanjiProvider).state;
     final ansChoiceList = watch(answerChoiceListProvider).state;
     final showSrsVisible = watch(lvlColumnVisibleProvider).state;
+    final showAlert = watch(showAlertProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     return AppBar(
       title: Text(
@@ -63,6 +67,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
             ansChoiceList,
             reviewList,
             showSrsVisible,
+            showAlert,
           ),
           icon: Icon(
             Icons.more_vert,
@@ -80,7 +85,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
               ),
             if (passedTitle == "Home")
               PopupMenuItem(
-                value: VertOptions.SrsColumn,
+                value: VertOptions.ToggleSRSColumn,
                 child: Text(
                   showSrsVisible ? 'Hide SRS column' : 'Show SRS column',
                   style: TextStyle(
@@ -103,6 +108,16 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
                 value: VertOptions.Koohii,
                 child: Text(
                   'Search in Koohii',
+                  style: TextStyle(
+                    fontSize: screenHeight * 0.03,
+                  ),
+                ),
+              ),
+            if (passedTitle == "Lesson")
+              PopupMenuItem(
+                value: VertOptions.ToggleAlert,
+                child: Text(
+                  showAlert ? 'Hide pop-up alert' : 'Show pop-up alert',
                   style: TextStyle(
                     fontSize: screenHeight * 0.03,
                   ),

@@ -15,11 +15,15 @@ void openChoiceDialog(
   List<Kanji> lessonList,
 ]) async {
   final queueIndex = watch(lessonQueueIdxProvider).state;
-  var dialogChoice = await BackPressedAlert().dialog(
-        parentCtx: context,
-        alertMsg: alertMessage,
-      ) ??
-      false;
+  final showAlert = watch(showAlertProvider).state;
+  bool dialogChoice = true;
+  if (showAlert) {
+    dialogChoice = await BackPressedAlert().dialog(
+          parentCtx: context,
+          alertMsg: alertMessage,
+        ) ??
+        false;
+  }
   if (dialogChoice) {
     bottomRowHandler(context, targetKanji);
     if (lessonList == null) {
