@@ -102,7 +102,7 @@ final templateAddressProvider =
     case "Radical":
       return "assets/images/blue_badge_template.png";
     case "Primitive":
-      return targetKanji.characterID;
+      return "assets/images/badges/${targetKanji.characterID}.png";
     default:
       return "assets/images/red_badge_template.png";
   }
