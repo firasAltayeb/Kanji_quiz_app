@@ -52,7 +52,7 @@ class PracticeManager extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CornerButton(
-                  passedText: "Undo",
+                  passedText: "Back",
                   handler: _queueIndex == 0
                       ? null
                       : () => _undoAnswer(
@@ -78,6 +78,26 @@ class PracticeManager extends StatelessWidget {
               ],
             ),
             Expanded(child: SizedBox()),
+            Text(
+              "Choose the most correct translation for the following sentence?",
+              style: TextStyle(
+                fontSize: screenHeight * 0.04,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Expanded(child: SizedBox()),
+            Text(
+              "Sentence example",
+              style: TextStyle(
+                fontSize: screenHeight * 0.04,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Expanded(child: SizedBox()),
+            _answerButton(bldCtx, screenHeight, screenWidth),
+            Expanded(child: SizedBox()),
             _answerButton(bldCtx, screenHeight, screenWidth),
             Expanded(child: SizedBox()),
             _answerButton(bldCtx, screenHeight, screenWidth),
@@ -94,7 +114,7 @@ class PracticeManager extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
       width: screenWidth * 0.95,
-      height: screenHeight * 0.1,
+      height: screenHeight * 0.09,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
@@ -105,7 +125,7 @@ class PracticeManager extends StatelessWidget {
       child: FittedBox(
         fit: BoxFit.fill,
         child: Text(
-          "Answer sentence \n button",
+          "extracted sentence translation \n answer button option",
           textAlign: TextAlign.center,
         ),
       ),

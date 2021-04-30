@@ -39,8 +39,10 @@ void markAsComplete(BuildContext context, Kanji targetKanji) {
   targetKanji.progressLevel = 6;
   if (targetKanji.itemType == "Kanji")
     targetKanji.learningStatus = 'Practice';
-  else if (targetKanji.itemType != "Kanji")
+  else if (targetKanji.itemType != "Kanji") {
     targetKanji.learningStatus = 'Learned';
+    targetKanji.progressLevel++;
+  }
   context.read(kanjiListProvider.notifier).editKanji(targetKanji);
   context.read(kanjiListProvider.notifier).saveProgress();
 }
@@ -88,11 +90,13 @@ void wrapSession(BuildContext context, answerChoiceList, reviewList) {
       reviewedItem.progressLevel++;
       reviewedItem.recallHistory.add("Correct");
       //when lvl is 5 practice if kanji else learned
-      if (reviewedItem.progressLevel > 5) {
+      if (reviewedItem.progressLevel == 6) {
         if (reviewedItem.itemType == "Kanji")
           reviewedItem.learningStatus = 'Practice';
-        else if (reviewedItem.itemType != "Kanji")
+        else if (reviewedItem.itemType != "Kanji") {
           reviewedItem.learningStatus = 'Learned';
+          reviewedItem.progressLevel++;
+        }
       }
     } /*if answer was incorrect*/ else {
       reviewedItem.difficultyAdjustment();
