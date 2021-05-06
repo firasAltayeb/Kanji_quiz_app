@@ -13,6 +13,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
 
   Widget build(BuildContext buildContex, ScopedReader watch) {
     final targetKanji = watch(targetKanjiProvider).state;
+    final showSrsPop = watch(showSrsPopUpProvider).state;
     var screenHeight = MediaQuery.of(buildContex).size.height;
     var screenWidth = MediaQuery.of(buildContex).size.width;
     return Container(
@@ -43,12 +44,13 @@ class CorrectIncorrectButton extends ConsumerWidget {
           var currentProgressLevel = selectChoice
               ? targetKanji.progressLevel + 1
               : targetKanji.lapsePenalty();
-          _openCustomDialog(
-            buildContex,
-            characterLook,
-            currentProgressLevel,
-            screenHeight,
-          );
+          if (showSrsPop)
+            _openCustomDialog(
+              buildContex,
+              characterLook,
+              currentProgressLevel,
+              screenHeight,
+            );
           buildContex.read(showAnsBtnVisibleProvider).state = true;
           answerQuestion(selectChoice);
         },

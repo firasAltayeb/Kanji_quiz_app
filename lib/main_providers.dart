@@ -21,9 +21,13 @@ final kanjiListProvider = StateNotifierProvider<KanjiList, List<Kanji>>((ref) {
   return KanjiList(kanjiStaticData);
 });
 
+final targetKanjiProvider = StateProvider<Kanji>((ref) => kanjiStaticData[0]);
+
 final showAlertProvider = StateProvider<bool>((ref) => true);
 
-final targetKanjiProvider = StateProvider<Kanji>((ref) => kanjiStaticData[0]);
+final showSrsPopUpProvider = StateProvider<bool>((ref) => false);
+
+final lvlColumnVisibleProvider = StateProvider<bool>((ref) => true);
 
 final practiceQueueIdxProvider = StateProvider<int>((ref) => 0);
 
@@ -36,8 +40,6 @@ final reviewQueueIdxProvider = StateProvider<int>((ref) => 0);
 final sessionScoreProvider = StateProvider<int>((ref) => 0);
 
 final showAnsBtnVisibleProvider = StateProvider<bool>((ref) => true);
-
-final lvlColumnVisibleProvider = StateProvider<bool>((ref) => true);
 
 final answerChoiceListProvider = StateProvider<List<bool>>((ref) => []);
 
@@ -75,14 +77,12 @@ final reviewReadyListProvider = Provider<List<Kanji>>((ref) {
   // ignore: unused_local_variable
   final syncNow = ref.watch(syncNowProvider);
   final reviewList = ref.watch(reviewListProvider);
-  final readyList =
-      reviewList.where((kanjiItem) => isReviewReady(kanjiItem)).toList();
+  final readyList = reviewList.where((kanjiItem) {
+    return true; // used for testing review screen
+    // return DateTime.now().isAfter(kanjiItem.nextReviewDate()) ? true : false;
+  }).toList();
   return readyList;
 });
-
-bool isReviewReady(Kanji kanjiItem) {
-  return DateTime.now().isAfter(kanjiItem.nextReviewDate()) ? true : false;
-}
 
 final srsXlvlListProvider =
     Provider.autoDispose.family<List<Kanji>, int>((ref, level) {

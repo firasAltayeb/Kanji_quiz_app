@@ -11,7 +11,8 @@ enum VertOptions {
   WrapReview,
   WrapLesson,
   ToggleAlert,
-  ToggleSRSColumn,
+  ToggleSrsColumn,
+  ToggleSrsPopUp,
 }
 
 class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
@@ -30,6 +31,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     List<Kanji> lessonList,
     bool showSrsVisible,
     bool showAlert,
+    bool showPopUp,
   ) {
     if (choice == VertOptions.User) {
       Navigator.of(context).pushNamed(UserPage.routeName);
@@ -39,10 +41,12 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
       wrapReviewSession(context, ansChoiceList, reviewList);
     } else if (choice == VertOptions.WrapLesson) {
       wrapLessonSession(context, lsnQueueIdx, lessonList);
-    } else if (choice == VertOptions.ToggleSRSColumn) {
+    } else if (choice == VertOptions.ToggleSrsColumn) {
       context.read(lvlColumnVisibleProvider).state = !showSrsVisible;
     } else if (choice == VertOptions.ToggleAlert) {
       context.read(showAlertProvider).state = !showAlert;
+    } else if (choice == VertOptions.ToggleSrsPopUp) {
+      context.read(showSrsPopUpProvider).state = !showPopUp;
     }
   }
 
@@ -51,6 +55,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     final targetKanji = watch(targetKanjiProvider).state;
     final showAlert = watch(showAlertProvider).state;
+    final showSrsPop = watch(showSrsPopUpProvider).state;
 
     final reviewList = watch(reviewReadyListProvider);
     final ansChoiceList = watch(answerChoiceListProvider).state;
@@ -85,6 +90,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
             lessonList,
             showSrsVisible,
             showAlert,
+            showSrsPop,
           ),
           icon: Icon(
             Icons.more_vert,
@@ -102,7 +108,7 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
               ),
             if (passedTitle == "Home")
               PopupMenuItem(
-                value: VertOptions.ToggleSRSColumn,
+                value: VertOptions.ToggleSrsColumn,
                 child: Text(
                   showSrsVisible ? 'Hide SRS column' : 'Show SRS column',
                   style: TextStyle(
@@ -115,6 +121,16 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
                 value: VertOptions.WrapReview,
                 child: Text(
                   'Wrap up session',
+                  style: TextStyle(
+                    fontSize: screenHeight * 0.03,
+                  ),
+                ),
+              ),
+            if (passedTitle == "Review")
+              PopupMenuItem(
+                value: VertOptions.ToggleSrsPopUp,
+                child: Text(
+                  showSrsPop ? 'Hide pop-up msg' : 'Show pop-up msg',
                   style: TextStyle(
                     fontSize: screenHeight * 0.03,
                   ),
