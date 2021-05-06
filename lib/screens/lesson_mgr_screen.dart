@@ -7,6 +7,7 @@ import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
+import '../helper_functions.dart';
 import '../main_providers.dart';
 
 class LessonManager extends StatelessWidget {
@@ -17,15 +18,7 @@ class LessonManager extends StatelessWidget {
       context.read(targetKanjiProvider).state = lessonList[queueIndex + 1];
       context.read(lessonQueueIdxProvider).state++;
     } else {
-      lessonList.forEach((element) {
-        element.progressLevel = 1;
-        element.learningStatus = 'Review';
-        element.dateLastLevelChanged = DateTime.now();
-        context.read(kanjiListProvider.notifier).editKanji(element);
-      });
-      context.read(lessonQueueIdxProvider).state = 0;
-      context.read(kanjiListProvider.notifier).saveProgress();
-      Navigator.pop(context);
+      wrapLessonSession(context, lessonList, queueIndex);
     }
   }
 

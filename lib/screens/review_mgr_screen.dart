@@ -48,7 +48,7 @@ class ReviewManager extends StatelessWidget {
               )
             : ResultPage(
                 wrapSession: () =>
-                    wrapSession(bldCtx, _ansChoiceList, _reviewList),
+                    wrapReviewSession(bldCtx, _ansChoiceList, _reviewList),
                 undoLastAnswer: () => _undoAnswer(
                     bldCtx, _ansChoiceList, _queueIndex, _reviewList),
               );

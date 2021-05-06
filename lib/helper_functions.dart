@@ -1,10 +1,10 @@
-import 'package:kanji_quiz_app/widgets/misc/back_pressed_alert.dart';
 import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'misc/back_pressed_alert.dart';
 
 void openChoiceDialog(
   BuildContext context,
@@ -36,14 +36,7 @@ void openChoiceDialog(
 
 void markAsComplete(BuildContext context, Kanji targetKanji) {
   targetKanji.progressLevel = 6;
-  if (targetKanji.itemType == "Kanji")
-    targetKanji.learningStatus = 'Practice';
-  else if (targetKanji.itemType != "Kanji") {
-    targetKanji.learningStatus = 'Learned';
-    targetKanji.progressLevel++;
-  }
   context.read(kanjiListProvider.notifier).editKanji(targetKanji);
-  context.read(kanjiListProvider.notifier).saveProgress();
 }
 
 void resetItemStatus(BuildContext context, Kanji targetKanji) {
@@ -79,7 +72,7 @@ void editMnemonicHandler(
   });
 }
 
-void wrapSession(BuildContext context, answerChoiceList, reviewList) {
+void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
   for (var index = 0; index < answerChoiceList.length; index++) {
     Kanji reviewedItem = reviewList[index];
     reviewedItem.dateLastLevelChanged = DateTime.now();
@@ -108,6 +101,29 @@ void wrapSession(BuildContext context, answerChoiceList, reviewList) {
   context.read(answerChoiceListProvider).state.clear();
   context.read(correctRecallListProvider).state.clear();
   context.read(incorrectRecallListProvider).state.clear();
+  context.read(kanjiListProvider.notifier).saveProgress();
+  Navigator.pop(context);
+}
+
+void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
+  for (var index = 0; index < lsnQueueIdx; index++) {
+    Kanji sessionItem = lessonList[index];
+    sessionItem.dateLastLevelChanged = DateTime.now();
+    // if item not marked as completed
+    if (sessionItem.progressLevel < 6) {
+      sessionItem.progressLevel = 1;
+      sessionItem.learningStatus = 'Review';
+    } /*if item marked as completed*/ else {
+      if (sessionItem.itemType == "Kanji")
+        sessionItem.learningStatus = 'Practice';
+      else if (sessionItem.itemType != "Kanji") {
+        sessionItem.learningStatus = 'Learned';
+        sessionItem.progressLevel++;
+      }
+    }
+    context.read(kanjiListProvider.notifier).editKanji(sessionItem);
+  }
+  context.read(lessonQueueIdxProvider).state = 0;
   context.read(kanjiListProvider.notifier).saveProgress();
   Navigator.pop(context);
 }
