@@ -5,18 +5,22 @@ import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class ItemBottomRow extends ConsumerWidget {
+  final int lsnQueueIdx;
+  final List<Kanji> lessonList;
+
   final bool showResetButton;
   final Function showHandler;
-  final List<Kanji> lessonList;
   final mnemonicController = TextEditingController();
 
   ItemBottomRow({
     this.lessonList,
+    this.lsnQueueIdx,
     @required this.showHandler,
     @required this.showResetButton,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
+    final showAlert = watch(showAlertProvider).state;
     final targetKanji = watch(targetKanjiProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     return Row(
@@ -26,7 +30,6 @@ class ItemBottomRow extends ConsumerWidget {
             child: _bottomButton(
               screenHeight,
               () => openChoiceDialog(
-                watch,
                 context,
                 targetKanji,
                 resetItemStatus,
@@ -39,20 +42,21 @@ class ItemBottomRow extends ConsumerWidget {
         Expanded(
           child: _bottomButton(
             screenHeight,
-            targetKanji.progressLevel == 6
+            targetKanji.progressLevel >= 6
                 ? null
                 : () => openChoiceDialog(
-                      watch,
                       context,
                       targetKanji,
                       markAsComplete,
                       targetKanji.itemType != "Kanji"
                           ? "This item will be marked as learned"
                           : "This item will be sent to the practice queue!!",
+                      lsnQueueIdx,
                       lessonList,
+                      showAlert,
                     ),
             "Mark Complete",
-            targetKanji.progressLevel == 6 ? Colors.grey : Colors.green,
+            targetKanji.progressLevel >= 6 ? Colors.grey : Colors.green,
           ),
         ),
         Expanded(

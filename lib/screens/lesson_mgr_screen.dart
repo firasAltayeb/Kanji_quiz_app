@@ -90,6 +90,7 @@ class LessonManager extends StatelessWidget {
               Expanded(child: SizedBox()),
               if (_showButtonRow)
                 ItemBottomRow(
+                  lsnQueueIdx: _queueIndex,
                   lessonList: _lessonList,
                   showResetButton: false,
                   showHandler: (trueFalse) => _showHandler(bldCtx, trueFalse),

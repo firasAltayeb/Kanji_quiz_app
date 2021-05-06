@@ -7,15 +7,14 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 void openChoiceDialog(
-  ScopedReader watch,
   BuildContext context,
   Kanji targetKanji,
-  Function bottomRowHandler,
+  Function chosenHandler,
   String alertMessage, [
-  List<Kanji> lessonList,
+  int lsnQueueIdx,
+  List<Kanji> lsnList,
+  bool showAlert = true,
 ]) async {
-  final queueIndex = watch(lessonQueueIdxProvider).state;
-  final showAlert = watch(showAlertProvider).state;
   bool dialogChoice = true;
   if (showAlert) {
     dialogChoice = await BackPressedAlert().dialog(
@@ -25,11 +24,11 @@ void openChoiceDialog(
         false;
   }
   if (dialogChoice) {
-    bottomRowHandler(context, targetKanji);
-    if (lessonList == null) {
+    chosenHandler(context, targetKanji);
+    if (lsnList == null) {
       Navigator.of(context).pop();
     } else {
-      context.read(targetKanjiProvider).state = lessonList[queueIndex + 1];
+      context.read(targetKanjiProvider).state = lsnList[lsnQueueIdx + 1];
       context.read(lessonQueueIdxProvider).state++;
     }
   }
