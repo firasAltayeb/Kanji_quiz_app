@@ -35,7 +35,7 @@ class TopKanjiRow extends ConsumerWidget {
                 passedText: leftWidgetText,
                 height: screenHeight,
               ),
-        kanjiPicture(screenHeight, templateAddress, targetKanji),
+        _kanjiPicture(screenHeight, templateAddress, targetKanji),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? CornerButton(
                 passedText: rightWidgetText,
@@ -50,10 +50,10 @@ class TopKanjiRow extends ConsumerWidget {
     );
   }
 
-  Widget kanjiPicture(
+  Widget _kanjiPicture(
       double height, String templateAddress, Kanji targetKanji) {
     return Expanded(
-      flex: 3,
+      flex: 2,
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -75,7 +75,7 @@ class TopKanjiRow extends ConsumerWidget {
                 targetKanji.characterID,
                 style: TextStyle(
                   fontSize: height * 0.11,
-                  fontFamily: 'Lato',
+                  fontFamily: 'Anton',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),

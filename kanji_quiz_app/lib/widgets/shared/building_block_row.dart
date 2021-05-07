@@ -13,14 +13,14 @@ class BuildingBlockRow extends ConsumerWidget {
       alignment: Alignment.center,
       height: screenHeight * 0.175,
       child: bbKanjiList.isEmpty
-          ? textWidget(
+          ? _textWidget(
               'Item type: ${targetKanji.itemType}',
               screenWidth * 0.08,
             )
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                textWidget(
+                _textWidget(
                   'Building blocks: ',
                   screenWidth * 0.06,
                 ),
@@ -28,25 +28,25 @@ class BuildingBlockRow extends ConsumerWidget {
                   Container(
                     width: screenWidth * 0.3,
                     child:
-                        kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
+                        _kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
                   ),
                 if (bbKanjiList.length == 2)
                   Container(
                     width: screenWidth * 0.5,
                     child:
-                        kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
+                        _kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
                   ),
                 if (bbKanjiList.length > 2)
                   Expanded(
                     child:
-                        kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
+                        _kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
                   ),
               ],
             ),
     );
   }
 
-  Widget textWidget(String displayedText, double height) {
+  Widget _textWidget(String displayedText, double height) {
     return Text(
       displayedText,
       style: TextStyle(
@@ -56,7 +56,7 @@ class BuildingBlockRow extends ConsumerWidget {
     );
   }
 
-  Widget kanjiBlockRow(double height, ScopedReader watch, Kanji targetKanji) {
+  Widget _kanjiBlockRow(double height, ScopedReader watch, Kanji targetKanji) {
     return Row(
       children: [
         ...(watch(buildingBlocksProvider(targetKanji)))
@@ -82,7 +82,7 @@ class BuildingBlockRow extends ConsumerWidget {
                           bbKanji.characterID,
                           style: TextStyle(
                             fontSize: height * 0.6,
-                            fontFamily: 'Lato',
+                            fontFamily: 'Anton',
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
