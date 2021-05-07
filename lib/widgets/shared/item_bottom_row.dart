@@ -30,10 +30,11 @@ class ItemBottomRow extends ConsumerWidget {
             child: _bottomButton(
               screenHeight,
               () => openChoiceDialog(
-                context,
-                targetKanji,
-                resetItemStatus,
-                "This item will be sent back to the lesson queue!!",
+                context: context,
+                targetKanji: targetKanji,
+                chosenHandler: resetItemStatus,
+                alertMessage:
+                    "This item will be sent back to the lesson queue!!",
               ),
               "Reset status",
               Colors.red,
@@ -45,15 +46,15 @@ class ItemBottomRow extends ConsumerWidget {
             targetKanji.progressLevel >= 6
                 ? null
                 : () => openChoiceDialog(
-                      context,
-                      targetKanji,
-                      markAsComplete,
-                      targetKanji.itemType != "Kanji"
+                      context: context,
+                      targetKanji: targetKanji,
+                      chosenHandler: markAsComplete,
+                      alertMessage: targetKanji.itemType != "Kanji"
                           ? "This item will be marked as learned"
                           : "This item will be sent to the practice queue!!",
-                      lsnQueueIdx,
-                      lessonList,
-                      showAlert,
+                      lsnQueueIdx: lsnQueueIdx,
+                      lsnList: lessonList,
+                      showAlert: showAlert,
                     ),
             "Mark Complete",
             targetKanji.progressLevel >= 6 ? Colors.grey : Colors.green,

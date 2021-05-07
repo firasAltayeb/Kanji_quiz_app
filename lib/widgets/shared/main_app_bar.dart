@@ -1,54 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
-import '../../screens/user_page_screen.dart';
 import 'package:flutter/material.dart';
-
-enum VertOptions {
-  User,
-  Koohii,
-  WrapReview,
-  WrapLesson,
-  ToggleAlert,
-  ToggleSrsColumn,
-  ToggleSrsPopUp,
-}
 
 class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final AppBar appBar;
   final String passedTitle;
 
   MainAppBar({Key key, this.passedTitle, this.appBar}) : super(key: key);
-
-  void _choiceAction(
-    VertOptions choice,
-    BuildContext context,
-    Kanji targetKanji,
-    List<bool> ansChoiceList,
-    List<Kanji> reviewList,
-    int lsnQueueIdx,
-    List<Kanji> lessonList,
-    bool showSrsVisible,
-    bool showAlert,
-    bool showPopUp,
-  ) {
-    if (choice == VertOptions.User) {
-      Navigator.of(context).pushNamed(UserPage.routeName);
-    } else if (choice == VertOptions.Koohii) {
-      launchURL(targetKanji);
-    } else if (choice == VertOptions.WrapReview) {
-      wrapReviewSession(context, ansChoiceList, reviewList);
-    } else if (choice == VertOptions.WrapLesson) {
-      wrapLessonSession(context, lsnQueueIdx, lessonList);
-    } else if (choice == VertOptions.ToggleSrsColumn) {
-      context.read(lvlColumnVisibleProvider).state = !showSrsVisible;
-    } else if (choice == VertOptions.ToggleAlert) {
-      context.read(showAlertProvider).state = !showAlert;
-    } else if (choice == VertOptions.ToggleSrsPopUp) {
-      context.read(showSrsPopUpProvider).state = !showPopUp;
-    }
-  }
 
   Widget build(BuildContext context, ScopedReader watch) {
     final showSrsVisible = watch(lvlColumnVisibleProvider).state;
@@ -80,17 +39,17 @@ class MainAppBar extends ConsumerWidget implements PreferredSizeWidget {
           onPressed: null,
         ),
         PopupMenuButton(
-          onSelected: (choice) => _choiceAction(
-            choice,
-            context,
-            targetKanji,
-            ansChoiceList,
-            reviewList,
-            lsnQueueIdx,
-            lessonList,
-            showSrsVisible,
-            showAlert,
-            showSrsPop,
+          onSelected: (choice) => choiceAction(
+            choice: choice,
+            context: context,
+            showAlert: showAlert,
+            showPopUp: showSrsPop,
+            reviewList: reviewList,
+            lessonList: lessonList,
+            lsnQueueIdx: lsnQueueIdx,
+            targetKanji: targetKanji,
+            ansChoiceList: ansChoiceList,
+            showSrsVisible: showSrsVisible,
           ),
           icon: Icon(
             Icons.more_vert,

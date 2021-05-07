@@ -1,4 +1,5 @@
 import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
+import 'package:kanji_quiz_app/screens/user_page_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
@@ -6,15 +7,54 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'misc/back_pressed_alert.dart';
 
-void openChoiceDialog(
-  BuildContext context,
+enum VertOptions {
+  User,
+  Koohii,
+  WrapReview,
+  WrapLesson,
+  ToggleAlert,
+  ToggleSrsColumn,
+  ToggleSrsPopUp,
+}
+
+void choiceAction({
+  @required BuildContext context,
+  @required VertOptions choice,
+  List<bool> ansChoiceList,
+  List<Kanji> reviewList,
+  List<Kanji> lessonList,
+  bool showSrsVisible,
   Kanji targetKanji,
-  Function chosenHandler,
-  String alertMessage, [
   int lsnQueueIdx,
-  List<Kanji> lsnList,
+  bool showAlert,
+  bool showPopUp,
+}) {
+  if (choice == VertOptions.User) {
+    Navigator.of(context).pushNamed(UserPage.routeName);
+  } else if (choice == VertOptions.Koohii) {
+    launchURL(targetKanji);
+  } else if (choice == VertOptions.WrapReview) {
+    wrapReviewSession(context, ansChoiceList, reviewList);
+  } else if (choice == VertOptions.WrapLesson) {
+    wrapLessonSession(context, lsnQueueIdx, lessonList);
+  } else if (choice == VertOptions.ToggleSrsColumn) {
+    context.read(lvlColumnVisibleProvider).state = !showSrsVisible;
+  } else if (choice == VertOptions.ToggleAlert) {
+    context.read(showAlertProvider).state = !showAlert;
+  } else if (choice == VertOptions.ToggleSrsPopUp) {
+    context.read(showSrsPopUpProvider).state = !showPopUp;
+  }
+}
+
+void openChoiceDialog({
+  Function chosenHandler,
   bool showAlert = true,
-]) async {
+  BuildContext context,
+  String alertMessage,
+  List<Kanji> lsnList,
+  Kanji targetKanji,
+  int lsnQueueIdx,
+}) async {
   bool dialogChoice = true;
   if (showAlert) {
     dialogChoice = await BackPressedAlert().dialog(
