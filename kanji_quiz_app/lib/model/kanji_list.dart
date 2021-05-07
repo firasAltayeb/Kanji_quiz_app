@@ -1,8 +1,9 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
-import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:kanji_quiz_app/model/progress_services.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:universal_io/io.dart' show Platform;
 
 class KanjiList extends StateNotifier<List<Kanji>> {
   KanjiList([List<Kanji> kanjiList]) : super(kanjiList ?? []);
@@ -93,20 +94,20 @@ class KanjiList extends StateNotifier<List<Kanji>> {
     List<Progress> newProgress = state
         .map((kanji) => Progress(
               keyword: kanji.keyword,
-              progressLevel: kanji.progressLevel,
               characterID: kanji.characterID,
+              progressLevel: kanji.progressLevel,
               mnemonicStory: kanji.mnemonicStory,
-              learningStatus: kanji.learningStatus,
-              dateLastLevelChanged: kanji.dateLastLevelChanged,
               recallHistory: kanji.recallHistory,
+              learningStatus: kanji.learningStatus,
               practiceHistory: kanji.practiceHistory,
               chosenDifficulty: kanji.chosenDifficulty,
+              dateLastLevelChanged: kanji.dateLastLevelChanged,
             ))
         .toList();
-    var status = await Permission.storage.status;
-    if (status.isGranted) {
-      print("status.isGranted ${status.isGranted}");
-      writeProgressUpdate(newProgress);
+
+    if (Platform.isAndroid) {
+      var status = await Permission.storage.status;
+      if (status.isGranted) writeProgressUpdate(newProgress);
     }
   }
 }

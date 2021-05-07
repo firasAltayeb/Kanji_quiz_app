@@ -1,13 +1,14 @@
-import 'dart:io';
-import 'dart:convert';
-import 'dart:async' show Future;
-import 'package:flutter/foundation.dart';
-import 'package:kanji_quiz_app/model/progress_model.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:permission_handler/permission_handler.dart';
+import 'package:kanji_quiz_app/model/progress_model.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:universal_io/io.dart' show Platform;
+import 'package:path_provider/path_provider.dart';
+import 'package:flutter/foundation.dart';
+import 'dart:async' show Future;
+import 'dart:convert';
+import 'dart:io';
 
-Future<String> get _loadJsonString async {
+Future<String> get _assetsJsonString async {
   return await rootBundle.loadString('assets/json/progress_list.json');
 }
 
@@ -23,27 +24,37 @@ Future<File> get _localFile async {
   return File('$path/kanji_progress.json');
 }
 
-Future<List<Progress>> loadProgressList(String jsonString) async {
+Future<List<Progress>> _loadProgressList(String jsonString) async {
   List<dynamic> jsonResponse = json.decode(jsonString);
   //print("jsonResponse is \n" + "$jsonResponse");
   return jsonResponse.map((i) => Progress.fromJson(i)).toList();
 }
 
-Future<List<Progress>> readProgressUpdate() async {
-  String jsonString;
+Future<String> get _androidProgressData async {
   final file = await _localFile;
   final jsonFileExist = await file.exists();
   var status = await Permission.storage.status;
 
   if (jsonFileExist && status.isGranted) {
     print("local json file exists");
-    jsonString = await file.readAsString();
+    return await file.readAsString();
+  }
+  return await _assetsJsonString;
+}
+
+Future<List<Progress>> readProgressUpdate() async {
+  String jsonString;
+
+  if (Platform.isAndroid) {
+    jsonString = await _androidProgressData;
   } else {
     print("local json file doesn't exists");
-    jsonString = await _loadJsonString;
+    jsonString = await _assetsJsonString;
   }
 
-  return compute(loadProgressList, jsonString);
+  jsonString = await _assetsJsonString;
+
+  return compute(_loadProgressList, jsonString);
 }
 
 Future<File> writeProgressUpdate(List<Progress> progressList) async {
