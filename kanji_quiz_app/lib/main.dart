@@ -49,9 +49,7 @@ class MyApp extends ConsumerWidget {
             LessonManager.routeName: (_) => LessonManager(),
             ReviewManager.routeName: (_) => ReviewManager(),
             PracticeManager.routeName: (_) => PracticeManager(),
-            ItemDetailScreen.routeName: (_) => ItemDetailScreen(
-                  currentTimeZone: "",
-                ),
+            ItemDetailScreen.routeName: (_) => ItemDetailScreen(),
           },
         );
       },

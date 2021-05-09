@@ -89,7 +89,7 @@ class LessonManager extends ConsumerWidget {
               ItemBottomRow(
                 lsnQueueIdx: _queueIndex,
                 lessonList: _lessonList,
-                showResetButton: false,
+                itemDetailScreen: false,
                 showHandler: (trueFalse) => _showHandler(context, trueFalse),
               ),
           ],

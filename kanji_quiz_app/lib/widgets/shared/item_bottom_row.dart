@@ -8,15 +8,15 @@ class ItemBottomRow extends ConsumerWidget {
   final int lsnQueueIdx;
   final List<Kanji> lessonList;
 
-  final bool showResetButton;
   final Function showHandler;
+  final bool itemDetailScreen;
   final mnemonicController = TextEditingController();
 
   ItemBottomRow({
     this.lessonList,
     this.lsnQueueIdx,
     @required this.showHandler,
-    @required this.showResetButton,
+    @required this.itemDetailScreen,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
@@ -25,7 +25,7 @@ class ItemBottomRow extends ConsumerWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     return Row(
       children: [
-        if (showResetButton)
+        if (itemDetailScreen)
           Expanded(
             child: _bottomButton(
               screenHeight,
@@ -37,6 +37,23 @@ class ItemBottomRow extends ConsumerWidget {
                     "This item will be sent back to the lesson queue!!",
               ),
               "Reset status",
+              Colors.red,
+            ),
+          ),
+        if (!itemDetailScreen && targetKanji.progressLevel >= 6)
+          Expanded(
+            child: _bottomButton(
+              screenHeight,
+              () => openChoiceDialog(
+                context: context,
+                targetKanji: targetKanji,
+                chosenHandler: resetItemStatus,
+                alertMessage: "All your changes will be undo",
+                lsnQueueIdx: lsnQueueIdx,
+                lsnList: lessonList,
+                showAlert: showAlert,
+              ),
+              "Undo Changes",
               Colors.red,
             ),
           ),

@@ -66,6 +66,7 @@ void openChoiceDialog({
   if (dialogChoice) {
     chosenHandler(context, targetKanji);
     if (lsnList == null) {
+      context.read(kanjiListProvider.notifier).saveProgress();
       Navigator.of(context).pop();
     } else {
       context.read(targetKanjiProvider).state = lsnList[lsnQueueIdx + 1];
@@ -84,7 +85,6 @@ void resetItemStatus(BuildContext context, Kanji targetKanji) {
   targetKanji.progressLevel = 0;
   targetKanji.mnemonicStory = '';
   context.read(kanjiListProvider.notifier).editKanji(targetKanji);
-  context.read(kanjiListProvider.notifier).saveProgress();
 }
 
 void launchURL(Kanji targetKanji) async {

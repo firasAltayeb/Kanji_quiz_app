@@ -1,3 +1,7 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 import '../widgets/item_details/item_detail_app_bar.dart';
 import '../widgets/item_details/item_difficulty_row.dart';
 import '../widgets/shared/scrollable_container.dart';
@@ -8,25 +12,15 @@ import '../widgets/shared/text_container.dart';
 import '../widgets/shared/top_kanji_row.dart';
 import '../main_providers.dart';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
 class ItemDetailScreen extends ConsumerWidget {
   static const routeName = '/item-details';
-  final String currentTimeZone;
-
-  ItemDetailScreen({@required this.currentTimeZone});
 
   String _fixTimeZone(DateTime time) {
-    // print('$currentTimeZone');
-    // print('${DateTime.now().timeZoneName}');
     final _dateFormater = DateFormat('dd/MM/yyyy HH:mm');
-
-    if (currentTimeZone == 'Asia/Tokyo' &&
-        DateTime.now().timeZoneName != 'JST') {
-      time.add(Duration(hours: 9));
-    }
+    // if (currentTimeZone == 'Asia/Tokyo' &&
+    //     DateTime.now().timeZoneName != 'JST') {
+    //   time.add(Duration(hours: 9));
+    // }
     return _dateFormater.format(time);
   }
 
@@ -83,7 +77,7 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(height: 30),
             if (_showButtonRow)
               ItemBottomRow(
-                showResetButton: true,
+                itemDetailScreen: true,
                 showHandler: (value) => _showHandler(context, value),
               ),
             if (!_showButtonRow)
