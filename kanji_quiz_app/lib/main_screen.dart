@@ -1,6 +1,6 @@
+import 'package:kanji_quiz_app/widgets/main_screen/main_screen_app_bar.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/srs_level_column.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/main_drawer.dart';
-import 'package:kanji_quiz_app/widgets/shared/main_app_bar.dart';
 import 'package:kanji_quiz_app/screens/practice_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
@@ -17,8 +17,7 @@ class MainScreen extends StatelessWidget {
     print('Main body build is called');
 
     return Scaffold(
-      appBar: MainAppBar(
-        passedTitle: 'Home',
+      appBar: MainScreenAppBar(
         appBar: AppBar(),
       ),
       drawer: SizedBox(

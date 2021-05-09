@@ -23,7 +23,7 @@ void choiceAction({
   List<bool> ansChoiceList,
   List<Kanji> reviewList,
   List<Kanji> lessonList,
-  bool showSrsVisible,
+  bool lvlColumnVisible,
   Kanji targetKanji,
   int lsnQueueIdx,
   bool showAlert,
@@ -38,7 +38,7 @@ void choiceAction({
   } else if (choice == VertOptions.WrapLesson) {
     wrapLessonSession(context, lsnQueueIdx, lessonList);
   } else if (choice == VertOptions.ToggleSrsColumn) {
-    context.read(lvlColumnVisibleProvider).state = !showSrsVisible;
+    context.read(lvlColumnVisibleProvider).state = !lvlColumnVisible;
   } else if (choice == VertOptions.ToggleAlert) {
     context.read(showAlertProvider).state = !showAlert;
   } else if (choice == VertOptions.ToggleSrsPopUp) {
