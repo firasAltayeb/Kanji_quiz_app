@@ -67,7 +67,7 @@ class PracticeManager extends ConsumerWidget {
                           _practiceList,
                           _practiceQueueIdx,
                         ),
-                height: _screenHeight,
+                height: _screenHeight * 1.1,
               ),
               CornerWidget(
                 passedText: _targetKanji.characterID + _sentenceRemainingStatus,
@@ -81,7 +81,7 @@ class PracticeManager extends ConsumerWidget {
                   _practiceList,
                   _practiceQueueIdx,
                 ),
-                height: _screenHeight,
+                height: _screenHeight * 1.1,
               ),
             ],
           ),

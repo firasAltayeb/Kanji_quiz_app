@@ -16,7 +16,7 @@ class CornerWidget extends StatelessWidget {
     return Expanded(
       flex: flexInt,
       child: Container(
-        padding: EdgeInsets.fromLTRB(0, height * 0.03, 0, 0),
+        padding: EdgeInsets.only(top: height * 0.03),
         child: Text(
           passedText,
           textAlign: TextAlign.center,
