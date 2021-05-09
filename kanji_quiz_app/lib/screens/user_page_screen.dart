@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/shared/main_app_bar.dart';
+import 'package:kanji_quiz_app/widgets/main_screen/home_app_bar.dart';
 
 class UserPage extends StatelessWidget {
   static const routeName = '/user-screen';
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(
-        passedTitle: 'User',
+      appBar: HomeAppBar(
         appBar: AppBar(),
       ),
       body: Column(

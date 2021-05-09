@@ -1,8 +1,8 @@
+import 'package:kanji_quiz_app/widgets/main_screen/home_app_bar.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
-import '../widgets/shared/main_app_bar.dart';
 import 'package:flutter/material.dart';
 import '../main_providers.dart';
 
@@ -39,8 +39,7 @@ class PracticeManager extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: MainAppBar(
-        passedTitle: 'Pratice',
+      appBar: HomeAppBar(
         appBar: AppBar(),
       ),
       body: Consumer(builder: (bldCtx, watch, _) {

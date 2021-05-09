@@ -3,10 +3,10 @@ import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'package:flutter/material.dart';
 
-class MainScreenAppBar extends ConsumerWidget implements PreferredSizeWidget {
+class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final AppBar appBar;
 
-  MainScreenAppBar({
+  HomeAppBar({
     Key key,
     this.appBar,
   }) : super(key: key);

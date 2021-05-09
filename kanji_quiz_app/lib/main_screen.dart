@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/widgets/main_screen/main_screen_app_bar.dart';
+import 'package:kanji_quiz_app/widgets/main_screen/home_app_bar.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/srs_level_column.dart';
 import 'package:kanji_quiz_app/widgets/main_screen/main_drawer.dart';
 import 'package:kanji_quiz_app/screens/practice_screen.dart';
@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
     print('Main body build is called');
 
     return Scaffold(
-      appBar: MainScreenAppBar(
+      appBar: HomeAppBar(
         appBar: AppBar(),
       ),
       drawer: SizedBox(

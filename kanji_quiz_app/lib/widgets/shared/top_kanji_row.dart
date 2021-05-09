@@ -53,7 +53,7 @@ class TopKanjiRow extends ConsumerWidget {
   Widget _kanjiPicture(
       double height, String templateAddress, Kanji targetKanji) {
     return Expanded(
-      flex: 2,
+      flex: 3,
       child: Stack(
         alignment: Alignment.center,
         children: [
