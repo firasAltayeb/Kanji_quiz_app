@@ -52,8 +52,6 @@ Future<List<Progress>> readProgressUpdate() async {
     jsonString = await _assetsJsonString;
   }
 
-  jsonString = await _assetsJsonString;
-
   return compute(_loadProgressList, jsonString);
 }
 
@@ -72,7 +70,7 @@ Future<File> writeProgressUpdate(List<Progress> progressList) async {
     print("new location ${file.path}");
     await file.create(recursive: true);
   }
-
+  print("write file encoded");
   String encoded = jsonEncode(progressList);
   return file.writeAsString(encoded);
 }

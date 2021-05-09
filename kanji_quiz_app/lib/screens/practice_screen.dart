@@ -6,7 +6,7 @@ import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 import '../main_providers.dart';
 
-class PracticeManager extends StatelessWidget {
+class PracticeManager extends ConsumerWidget {
   static const routeName = '/practice-screen';
 
   void _undoAnswer(BuildContext ctx, queueIdx, practiceList) {
@@ -27,10 +27,12 @@ class PracticeManager extends StatelessWidget {
     }
   }
 
-  Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
+  Widget build(BuildContext context, ScopedReader watch) {
     List<Kanji> _practiceList = ModalRoute.of(context).settings.arguments;
+    final _queueIndex = watch(practiceQueueIdxProvider).state;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final _targetKanji = watch(targetKanjiProvider).state;
+    final screenWidth = MediaQuery.of(context).size.width;
 
     print('Practice mgr build called');
 
@@ -42,70 +44,66 @@ class PracticeManager extends StatelessWidget {
       appBar: HomeAppBar(
         appBar: AppBar(),
       ),
-      body: Consumer(builder: (bldCtx, watch, _) {
-        final _targetKanji = watch(targetKanjiProvider).state;
-        final _queueIndex = watch(practiceQueueIdxProvider).state;
-        return Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CornerButton(
-                  passedText: "Back",
-                  handler: _queueIndex == 0
-                      ? null
-                      : () => _undoAnswer(
-                            bldCtx,
-                            _queueIndex,
-                            _practiceList,
-                          ),
-                  height: screenHeight,
-                ),
-                CornerWidget(
-                  passedText: _targetKanji.characterID + " 01/15",
-                  height: screenHeight,
-                ),
-                CornerButton(
-                  passedText: "Skip",
-                  handler: () => _nextKanji(
-                    bldCtx,
-                    _queueIndex,
-                    _practiceList,
-                  ),
-                  height: screenHeight,
-                ),
-              ],
-            ),
-            Expanded(child: SizedBox()),
-            Text(
-              "Choose the most correct translation for the following sentence?",
-              style: TextStyle(
-                fontSize: screenHeight * 0.04,
-                fontWeight: FontWeight.bold,
+      body: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CornerButton(
+                passedText: "Back",
+                handler: _queueIndex == 0
+                    ? null
+                    : () => _undoAnswer(
+                          context,
+                          _queueIndex,
+                          _practiceList,
+                        ),
+                height: screenHeight,
               ),
-              textAlign: TextAlign.center,
-            ),
-            Expanded(child: SizedBox()),
-            Text(
-              "Sentence example",
-              style: TextStyle(
-                fontSize: screenHeight * 0.04,
-                fontWeight: FontWeight.bold,
+              CornerWidget(
+                passedText: _targetKanji.characterID + " 01/15",
+                height: screenHeight * 1.2,
               ),
-              textAlign: TextAlign.center,
+              CornerButton(
+                passedText: "Skip",
+                handler: () => _nextKanji(
+                  context,
+                  _queueIndex,
+                  _practiceList,
+                ),
+                height: screenHeight,
+              ),
+            ],
+          ),
+          Expanded(child: SizedBox()),
+          Text(
+            "Choose the most correct translation for the following sentence?",
+            style: TextStyle(
+              fontSize: screenHeight * 0.03,
+              fontWeight: FontWeight.bold,
             ),
-            Expanded(child: SizedBox()),
-            _answerButton(bldCtx, screenHeight, screenWidth),
-            Expanded(child: SizedBox()),
-            _answerButton(bldCtx, screenHeight, screenWidth),
-            Expanded(child: SizedBox()),
-            _answerButton(bldCtx, screenHeight, screenWidth),
-            Expanded(child: SizedBox()),
-            _answerButton(bldCtx, screenHeight, screenWidth),
-            Expanded(child: SizedBox()),
-          ],
-        );
-      }),
+            textAlign: TextAlign.center,
+          ),
+          Expanded(flex: 3, child: SizedBox()),
+          Text(
+            "Sentence example",
+            style: TextStyle(
+              fontSize: screenHeight * 0.04,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          Expanded(flex: 5, child: SizedBox()),
+          _answerButton(context, screenHeight, screenWidth),
+          Expanded(child: SizedBox()),
+          _answerButton(context, screenHeight, screenWidth),
+          Expanded(child: SizedBox()),
+          _answerButton(context, screenHeight, screenWidth),
+          Expanded(child: SizedBox()),
+          _answerButton(context, screenHeight, screenWidth),
+          Expanded(child: SizedBox()),
+        ],
+      ),
     );
   }
 
@@ -113,7 +111,7 @@ class PracticeManager extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
       width: screenWidth * 0.95,
-      height: screenHeight * 0.09,
+      height: screenHeight * 0.08,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,

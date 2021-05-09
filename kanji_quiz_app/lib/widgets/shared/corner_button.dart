@@ -4,17 +4,19 @@ class CornerButton extends StatelessWidget {
   final String passedText;
   final Function handler;
   final double height;
+  final int flexInt;
 
   CornerButton({
     @required this.passedText,
     @required this.handler,
     @required this.height,
+    this.flexInt = 2,
   });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 2,
+      flex: flexInt,
       child: Padding(
         padding: EdgeInsets.only(top: height * 0.02),
         child: TextButton(
