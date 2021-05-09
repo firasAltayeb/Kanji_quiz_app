@@ -49,6 +49,7 @@ void choiceAction({
 void openChoiceDialog({
   Function chosenHandler,
   bool showAlert = true,
+  bool naviPop = true,
   BuildContext context,
   String alertMessage,
   List<Kanji> lsnList,
@@ -65,12 +66,14 @@ void openChoiceDialog({
   }
   if (dialogChoice) {
     chosenHandler(context, targetKanji);
-    if (lsnList == null) {
+    if (lsnList != null) {
+      context.read(targetKanjiProvider).state = lsnList[lsnQueueIdx + 1];
+      context.read(lessonQueueIdxProvider).state++;
+    } else if (naviPop) {
       context.read(kanjiListProvider.notifier).saveProgress();
       Navigator.of(context).pop();
     } else {
-      context.read(targetKanjiProvider).state = lsnList[lsnQueueIdx + 1];
-      context.read(lessonQueueIdxProvider).state++;
+      context.read(targetKanjiProvider).state = targetKanji;
     }
   }
 }

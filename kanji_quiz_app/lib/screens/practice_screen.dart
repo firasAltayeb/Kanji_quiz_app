@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/widgets/main_screen/home_app_bar.dart';
+import 'package:kanji_quiz_app/widgets/practice_mgr/practice_app_bar.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -41,7 +41,7 @@ class PracticeManager extends ConsumerWidget {
     }
 
     return Scaffold(
-      appBar: HomeAppBar(
+      appBar: PracticeAppBar(
         appBar: AppBar(),
       ),
       body: Column(
