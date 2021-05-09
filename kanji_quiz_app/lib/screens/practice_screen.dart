@@ -21,12 +21,11 @@ class PracticeManager extends ConsumerWidget {
     }
   }
 
-  void _goToPreviousSen(
+  void _previousSentence(
       BuildContext ctx, senQueueIdx, practiceList, practiceQueueIdx) {
-    if (senQueueIdx > 0) {
+    if (senQueueIdx > 1) {
       ctx.read(sentenceQueueIdxProvider).state--;
-    } else if (senQueueIdx == 1 && practiceQueueIdx > 1) {
-      ctx.read(sentenceQueueIdxProvider).state = 1;
+    } else if (senQueueIdx <= 1 && practiceQueueIdx > 0) {
       ctx.read(targetKanjiProvider).state = practiceList[practiceQueueIdx - 1];
       ctx.read(practiceQueueIdxProvider).state--;
     }
@@ -58,10 +57,10 @@ class PracticeManager extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CornerButton(
-                passedText: "Back",
-                handler: _practiceQueueIdx == 0
+                passedText: "Perv",
+                handler: _senQueueIdx == 1 && _practiceQueueIdx == 0
                     ? null
-                    : () => _goToPreviousSen(
+                    : () => _previousSentence(
                           context,
                           _senQueueIdx,
                           _practiceList,

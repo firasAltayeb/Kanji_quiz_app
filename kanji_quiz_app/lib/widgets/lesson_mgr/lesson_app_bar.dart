@@ -43,18 +43,18 @@ class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           itemBuilder: (_) => [
             PopupMenuItem(
-              value: VertOptions.Koohii,
+              value: VertOptions.WrapLesson,
               child: Text(
-                'Search in Koohii',
+                'Wrap up session',
                 style: TextStyle(
                   fontSize: screenHeight * 0.03,
                 ),
               ),
             ),
             PopupMenuItem(
-              value: VertOptions.WrapLesson,
+              value: VertOptions.Koohii,
               child: Text(
-                'Wrap up session',
+                'Search in Koohii',
                 style: TextStyle(
                   fontSize: screenHeight * 0.03,
                 ),
