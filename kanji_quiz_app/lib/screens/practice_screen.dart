@@ -1,4 +1,5 @@
 import 'package:kanji_quiz_app/widgets/practice_mgr/practice_app_bar.dart';
+import 'package:kanji_quiz_app/widgets/practice_mgr/sen_translation_btn.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,30 +10,37 @@ import '../main_providers.dart';
 class PracticeManager extends ConsumerWidget {
   static const routeName = '/practice-screen';
 
-  void _undoAnswer(BuildContext ctx, queueIdx, practiceList) {
-    if (queueIdx > 0) {
-      ctx.read(targetKanjiProvider).state = practiceList[queueIdx - 1];
-      ctx.read(practiceQueueIdxProvider).state--;
+  void _skipSentence(
+      BuildContext ctx, senQueueIdx, practiceList, practiceQueueIdx) {
+    if (senQueueIdx < 15) {
+      ctx.read(sentenceQueueIdxProvider).state++;
+    } else {
+      ctx.read(sentenceQueueIdxProvider).state = 1;
+      ctx.read(targetKanjiProvider).state = practiceList[practiceQueueIdx + 1];
+      ctx.read(practiceQueueIdxProvider).state++;
     }
   }
 
-  void _nextKanji(BuildContext ctx, queueIdx, practiceList) {
-    if (queueIdx < practiceList.length - 1) {
-      ctx.read(targetKanjiProvider).state = practiceList[queueIdx + 1];
-      ctx.read(practiceQueueIdxProvider).state++;
-    } else {
-      ctx.read(practiceQueueIdxProvider).state = 0;
-      ctx.read(kanjiListProvider.notifier).saveProgress();
-      Navigator.pop(ctx);
+  void _goToPreviousSen(
+      BuildContext ctx, senQueueIdx, practiceList, practiceQueueIdx) {
+    if (senQueueIdx > 0) {
+      ctx.read(sentenceQueueIdxProvider).state--;
+    } else if (senQueueIdx == 1 && practiceQueueIdx > 1) {
+      ctx.read(sentenceQueueIdxProvider).state = 1;
+      ctx.read(targetKanjiProvider).state = practiceList[practiceQueueIdx - 1];
+      ctx.read(practiceQueueIdxProvider).state--;
     }
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
     List<Kanji> _practiceList = ModalRoute.of(context).settings.arguments;
-    final _queueIndex = watch(practiceQueueIdxProvider).state;
-    final screenHeight = MediaQuery.of(context).size.height;
+    final _practiceQueueIdx = watch(practiceQueueIdxProvider).state;
+    final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
     final _targetKanji = watch(targetKanjiProvider).state;
-    final screenWidth = MediaQuery.of(context).size.width;
+
+    var _screenHeight = MediaQuery.of(context).size.height;
+    var _sentenceRemainingStatus =
+        _senQueueIdx < 10 ? " 0$_senQueueIdx/15" : " $_senQueueIdx/15";
 
     print('Practice mgr build called');
 
@@ -51,27 +59,29 @@ class PracticeManager extends ConsumerWidget {
             children: [
               CornerButton(
                 passedText: "Back",
-                handler: _queueIndex == 0
+                handler: _practiceQueueIdx == 0
                     ? null
-                    : () => _undoAnswer(
+                    : () => _goToPreviousSen(
                           context,
-                          _queueIndex,
+                          _senQueueIdx,
                           _practiceList,
+                          _practiceQueueIdx,
                         ),
-                height: screenHeight,
+                height: _screenHeight,
               ),
               CornerWidget(
-                passedText: _targetKanji.characterID + " 01/15",
-                height: screenHeight * 1.2,
+                passedText: _targetKanji.characterID + _sentenceRemainingStatus,
+                height: _screenHeight * 1.3,
               ),
               CornerButton(
                 passedText: "Skip",
-                handler: () => _nextKanji(
+                handler: () => _skipSentence(
                   context,
-                  _queueIndex,
+                  _senQueueIdx,
                   _practiceList,
+                  _practiceQueueIdx,
                 ),
-                height: screenHeight,
+                height: _screenHeight,
               ),
             ],
           ),
@@ -79,7 +89,7 @@ class PracticeManager extends ConsumerWidget {
           Text(
             "Choose the most correct translation for the following sentence?",
             style: TextStyle(
-              fontSize: screenHeight * 0.03,
+              fontSize: _screenHeight * 0.03,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
@@ -88,43 +98,29 @@ class PracticeManager extends ConsumerWidget {
           Text(
             "Sentence example",
             style: TextStyle(
-              fontSize: screenHeight * 0.04,
+              fontSize: _screenHeight * 0.04,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
           Expanded(flex: 5, child: SizedBox()),
-          _answerButton(context, screenHeight, screenWidth),
+          TranslationOptionBtn(
+            _practiceList,
+          ),
           Expanded(child: SizedBox()),
-          _answerButton(context, screenHeight, screenWidth),
+          TranslationOptionBtn(
+            _practiceList,
+          ),
           Expanded(child: SizedBox()),
-          _answerButton(context, screenHeight, screenWidth),
+          TranslationOptionBtn(
+            _practiceList,
+          ),
           Expanded(child: SizedBox()),
-          _answerButton(context, screenHeight, screenWidth),
+          TranslationOptionBtn(
+            _practiceList,
+          ),
           Expanded(child: SizedBox()),
         ],
-      ),
-    );
-  }
-
-  Widget _answerButton(BuildContext context, screenHeight, screenWidth) {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
-      width: screenWidth * 0.95,
-      height: screenHeight * 0.08,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
-        color: Theme.of(context).accentColor,
-      ),
-      child: FittedBox(
-        fit: BoxFit.fill,
-        child: Text(
-          "extracted sentence translation \n answer button option",
-          textAlign: TextAlign.center,
-        ),
       ),
     );
   }
