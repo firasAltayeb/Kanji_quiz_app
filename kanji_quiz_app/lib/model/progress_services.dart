@@ -1,5 +1,4 @@
 import 'package:permission_handler/permission_handler.dart';
-import 'package:kanji_quiz_app/model/progress_model.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:universal_io/io.dart' show Platform;
 import 'package:path_provider/path_provider.dart';
@@ -7,6 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'dart:async' show Future;
 import 'dart:convert';
 import 'dart:io';
+
+import '../model/progress_model.dart';
 
 Future<String> get _assetsJsonString async {
   return await rootBundle.loadString('assets/json/progress_list.json');

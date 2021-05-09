@@ -1,12 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:flutter/material.dart';
+
 import '../widgets/shared/scrollable_container.dart';
 import '../widgets/lesson_mgr/lesson_app_bar.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/top_kanji_row.dart';
-import 'package:flutter/material.dart';
+import '../model/kanji_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 

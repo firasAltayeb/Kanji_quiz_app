@@ -1,12 +1,13 @@
-import 'package:kanji_quiz_app/widgets/main_screen/home_app_bar.dart';
-import 'package:kanji_quiz_app/widgets/main_screen/srs_level_column.dart';
-import 'package:kanji_quiz_app/widgets/main_screen/main_drawer.dart';
-import 'package:kanji_quiz_app/screens/practice_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
+
 import 'package:kanji_quiz_app/main_providers.dart';
+import 'widgets/main_screen/srs_level_column.dart';
+import 'widgets/main_screen/home_app_bar.dart';
+import 'widgets/main_screen/main_drawer.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
-import 'package:flutter/material.dart';
+import 'screens/practice_screen.dart';
 import 'model/kanji_model.dart';
 
 class MainScreen extends StatelessWidget {

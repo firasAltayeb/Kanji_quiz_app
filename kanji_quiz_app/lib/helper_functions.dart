@@ -1,11 +1,12 @@
-import 'package:kanji_quiz_app/screens/input_dialog_screen.dart';
-import 'package:kanji_quiz_app/screens/user_page_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
-import 'package:kanji_quiz_app/main_providers.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
+
+import 'screens/input_dialog_screen.dart';
+import 'screens/user_page_screen.dart';
 import 'misc/back_pressed_alert.dart';
+import 'model/kanji_model.dart';
+import 'main_providers.dart';
 
 enum VertOptions {
   User,

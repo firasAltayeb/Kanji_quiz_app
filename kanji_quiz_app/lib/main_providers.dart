@@ -1,11 +1,11 @@
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_list.dart';
 import 'package:universal_io/io.dart' show Platform;
 import 'model/kanji_static_data.dart';
 import 'model/progress_services.dart';
 import 'model/progress_model.dart';
 import 'model/kanji_model.dart';
+import 'model/kanji_list.dart';
 
 final progressProvider =
     FutureProvider.autoDispose<List<Progress>>((ref) async {

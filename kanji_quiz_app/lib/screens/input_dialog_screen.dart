@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+
+import '../model/kanji_model.dart';
 import '../main_providers.dart';
 
 class InputDialogScreen extends StatefulWidget {

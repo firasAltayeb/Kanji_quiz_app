@@ -1,10 +1,11 @@
-import 'package:kanji_quiz_app/widgets/practice_mgr/practice_app_bar.dart';
-import 'package:kanji_quiz_app/widgets/practice_mgr/sen_translation_btn.dart';
-import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
-import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/practice_mgr/sen_translation_btn.dart';
+import '../widgets/practice_mgr/practice_app_bar.dart';
+import '../widgets/shared/corner_button.dart';
+import '../widgets/shared/corner_widget.dart';
+import '../model/kanji_model.dart';
 import '../main_providers.dart';
 
 class PracticeManager extends ConsumerWidget {

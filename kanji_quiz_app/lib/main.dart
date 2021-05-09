@@ -1,12 +1,13 @@
-import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
-import 'package:kanji_quiz_app/screens/user_page_screen.dart';
-import 'package:kanji_quiz_app/screens/review_mgr_screen.dart';
-import 'package:kanji_quiz_app/screens/lesson_mgr_screen.dart';
-import 'package:kanji_quiz_app/screens/practice_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/main_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'package:kanji_quiz_app/main_providers.dart';
+import 'screens/item_detail_screen.dart';
+import 'screens/review_mgr_screen.dart';
+import 'screens/lesson_mgr_screen.dart';
+import 'screens/user_page_screen.dart';
+import 'screens/practice_screen.dart';
 import 'model/progress_model.dart';
 import 'main_screen.dart';
 

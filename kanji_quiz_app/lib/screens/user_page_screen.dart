@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kanji_quiz_app/widgets/main_screen/home_app_bar.dart';
+
+import '../widgets/main_screen/home_app_bar.dart';
 
 class UserPage extends StatelessWidget {
   static const routeName = '/user-screen';
