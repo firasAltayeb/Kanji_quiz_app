@@ -1,23 +1,18 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../main_providers.dart';
 
-enum HabticLevels {
-  Vibrate,
-  Heavy,
-  Medium,
-  Light,
-}
+import '../../model/translation_question.dart';
+import '../../model/kanji_model.dart';
+import '../../main_providers.dart';
 
 class TranslationOptionBtn extends ConsumerWidget {
   final List<Kanji> practiceList;
-  final HabticLevels habticLevel;
+  final TranslationQusAnswer questionAnswer;
 
   TranslationOptionBtn(
     this.practiceList,
-    this.habticLevel,
+    this.questionAnswer,
   );
 
   Widget build(BuildContext context, ScopedReader watch) {
@@ -27,47 +22,48 @@ class TranslationOptionBtn extends ConsumerWidget {
 
     return InkWell(
       onTap: () {
-        switch (habticLevel) {
-          case HabticLevels.Vibrate:
-            HapticFeedback.vibrate();
-            break;
-          case HabticLevels.Heavy:
-            HapticFeedback.heavyImpact();
-            break;
-          case HabticLevels.Medium:
-            HapticFeedback.mediumImpact();
-            break;
-          case HabticLevels.Light:
-            HapticFeedback.lightImpact();
-            break;
-        }
-        if (practiceQueueIdx < practiceList.length - 1) {
-          context.read(sentenceQueueIdxProvider).state = 1;
-          context.read(targetKanjiProvider).state =
-              practiceList[practiceQueueIdx + 1];
-          context.read(practiceQueueIdxProvider).state++;
-        } else {
-          context.read(sentenceQueueIdxProvider).state = 1;
-          context.read(practiceQueueIdxProvider).state = 0;
-          Navigator.of(context).pop();
+        if (questionAnswer.accuracy == 100) {
+          HapticFeedback.vibrate();
+          if (practiceQueueIdx < practiceList.length - 1) {
+            context.read(sentenceQueueIdxProvider).state = 1;
+            context.read(targetKanjiProvider).state =
+                practiceList[practiceQueueIdx + 1];
+            context.read(practiceQueueIdxProvider).state++;
+          } else {
+            context.read(sentenceQueueIdxProvider).state = 1;
+            context.read(practiceQueueIdxProvider).state = 0;
+            Navigator.of(context).pop();
+          }
+        } else if (questionAnswer.accuracy >= 60 &&
+            questionAnswer.accuracy <= 80) {
+          HapticFeedback.heavyImpact();
+        } else if (questionAnswer.accuracy >= 40 &&
+            questionAnswer.accuracy <= 60) {
+          HapticFeedback.mediumImpact();
+        } else if (questionAnswer.accuracy >= 0 &&
+            questionAnswer.accuracy <= 40) {
+          HapticFeedback.lightImpact();
         }
       },
-      child: Ink(
-        padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
-        width: screenWidth * 0.95,
-        height: screenHeight * 0.08,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.black,
-            width: 3,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Ink(
+          padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
+          width: screenWidth * 0.95,
+          height: screenHeight * 0.08,
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.black,
+              width: 3,
+            ),
+            color: Theme.of(context).accentColor,
           ),
-          color: Theme.of(context).accentColor,
-        ),
-        child: FittedBox(
-          fit: BoxFit.fill,
-          child: Text(
-            "extracted sentence translation \n answer button option",
-            textAlign: TextAlign.center,
+          child: FittedBox(
+            fit: BoxFit.contain,
+            child: Text(
+              questionAnswer.answerText,
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),

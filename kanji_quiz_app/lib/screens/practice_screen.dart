@@ -1,13 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'dart:convert';
 
 import '../widgets/practice_mgr/sen_translation_btn.dart';
 import '../widgets/practice_mgr/practice_app_bar.dart';
 import '../widgets/shared/corner_button.dart';
 import '../widgets/shared/corner_widget.dart';
-import '../model/aozora_sites.dart';
+import '../model/translation_question.dart';
 import '../model/kanji_model.dart';
 import '../main_providers.dart';
 
@@ -35,51 +33,12 @@ class PracticeManager extends ConsumerWidget {
     }
   }
 
-  // void _webScraperScrap() async {
-  //   var novelSubPage = "";
-  //   final rawUrl = aozoraBunkoSites[0];
-  //   final webScraper = WebScraper('https://www.aozora.gr.jp');
-  //   final endpoint = rawUrl.replaceAll('https://www.aozora.gr.jp', '');
-  //   print("endpoint is $endpoint");
-  //   if (await webScraper.loadWebPage(endpoint)) {
-  //     final pageContent = webScraper.getPageContent();
-  //     final queriedStartIndex = pageContent.indexOf("/files/");
-  //     novelSubPage =
-  //         pageContent.substring(queriedStartIndex, queriedStartIndex + 23);
-  //     print(novelSubPage);
-  //   }
-  //   final newEndPoint =
-  //       endpoint.replaceAll(RegExp('/card[0-9]*.html'), novelSubPage);
-  //   print("newEndPoint is $newEndPoint");
-  //   if (await webScraper.loadWebPage(newEndPoint)) {
-  //     final pageContent = webScraper.getPageContent();
-  //     print(pageContent);
-  //   }
-  // }
-
-  void _manualSiteScrap() async {
-    var client = Client();
-    var novelSubPage = "";
-    final rawUrl = aozoraBunkoSites[0];
-    Response response = await client.get(rawUrl);
-    print(utf8.decode(response.bodyBytes));
-    final queriedStartIndex = response.body.indexOf("/files/");
-    novelSubPage =
-        response.body.substring(queriedStartIndex, queriedStartIndex + 23);
-    final newUrl = rawUrl.replaceAll(RegExp('/card[0-9]*.html'), novelSubPage);
-    print("newUrl is $newUrl");
-    Response newResponse = await client.get(newUrl);
-    print(newResponse.body);
-    print(utf8.decode(newResponse.bodyBytes, allowMalformed: true));
-  }
-
   Widget build(BuildContext context, ScopedReader watch) {
     List<Kanji> _practiceList = ModalRoute.of(context).settings.arguments;
     final _practiceQueueIdx = watch(practiceQueueIdxProvider).state;
     final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
     final _targetKanji = watch(targetKanjiProvider).state;
-
-    _manualSiteScrap();
+    final _questionList = translationQuestions;
 
     var _screenHeight = MediaQuery.of(context).size.height;
     var _sentenceRemainingStatus =
@@ -139,34 +98,20 @@ class PracticeManager extends ConsumerWidget {
           ),
           Expanded(flex: 3, child: SizedBox()),
           Text(
-            "Sentence example $_senQueueIdx",
+            _questionList[_practiceQueueIdx % 2].quesitonText,
             style: TextStyle(
-              fontSize: _screenHeight * 0.04,
+              fontSize: _screenHeight * 0.05,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
           Expanded(flex: 5, child: SizedBox()),
-          TranslationOptionBtn(
-            _practiceList,
-            HabticLevels.Vibrate,
-          ),
-          Expanded(child: SizedBox()),
-          TranslationOptionBtn(
-            _practiceList,
-            HabticLevels.Heavy,
-          ),
-          Expanded(child: SizedBox()),
-          TranslationOptionBtn(
-            _practiceList,
-            HabticLevels.Medium,
-          ),
-          Expanded(child: SizedBox()),
-          TranslationOptionBtn(
-            _practiceList,
-            HabticLevels.Light,
-          ),
-          Expanded(child: SizedBox()),
+          ...(_questionList[_practiceQueueIdx % 2].answerList)
+              .map((answerOption) => TranslationOptionBtn(
+                    _practiceList,
+                    answerOption,
+                  ))
+              .toList()
         ],
       ),
     );
