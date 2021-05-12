@@ -7,7 +7,7 @@ import '../widgets/practice_mgr/sen_translation_btn.dart';
 import '../widgets/practice_mgr/practice_app_bar.dart';
 import '../widgets/shared/corner_button.dart';
 import '../widgets/shared/corner_widget.dart';
-import '../model/aozora_bunko_sites.dart';
+import '../model/aozora_sites.dart';
 import '../model/kanji_model.dart';
 import '../main_providers.dart';
 
@@ -149,18 +149,22 @@ class PracticeManager extends ConsumerWidget {
           Expanded(flex: 5, child: SizedBox()),
           TranslationOptionBtn(
             _practiceList,
+            HabticLevels.Vibrate,
           ),
           Expanded(child: SizedBox()),
           TranslationOptionBtn(
             _practiceList,
+            HabticLevels.Heavy,
           ),
           Expanded(child: SizedBox()),
           TranslationOptionBtn(
             _practiceList,
+            HabticLevels.Medium,
           ),
           Expanded(child: SizedBox()),
           TranslationOptionBtn(
             _practiceList,
+            HabticLevels.Light,
           ),
           Expanded(child: SizedBox()),
         ],

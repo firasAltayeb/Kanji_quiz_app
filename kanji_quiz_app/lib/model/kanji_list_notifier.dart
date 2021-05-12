@@ -2,9 +2,9 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:universal_io/io.dart' show Platform;
 
-import '../model/progress_services.dart';
-import '../model/progress_model.dart';
-import '../model/kanji_model.dart';
+import 'progress_services.dart';
+import 'progress_model.dart';
+import 'kanji_model.dart';
 
 class KanjiList extends StateNotifier<List<Kanji>> {
   KanjiList([List<Kanji> kanjiList]) : super(kanjiList ?? []);

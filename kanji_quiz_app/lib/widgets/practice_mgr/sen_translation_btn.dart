@@ -1,13 +1,23 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/kanji_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../main_providers.dart';
+
+enum HabticLevels {
+  Vibrate,
+  Heavy,
+  Medium,
+  Light,
+}
 
 class TranslationOptionBtn extends ConsumerWidget {
   final List<Kanji> practiceList;
+  final HabticLevels habticLevel;
 
   TranslationOptionBtn(
     this.practiceList,
+    this.habticLevel,
   );
 
   Widget build(BuildContext context, ScopedReader watch) {
@@ -17,6 +27,20 @@ class TranslationOptionBtn extends ConsumerWidget {
 
     return InkWell(
       onTap: () {
+        switch (habticLevel) {
+          case HabticLevels.Vibrate:
+            HapticFeedback.vibrate();
+            break;
+          case HabticLevels.Heavy:
+            HapticFeedback.heavyImpact();
+            break;
+          case HabticLevels.Medium:
+            HapticFeedback.mediumImpact();
+            break;
+          case HabticLevels.Light:
+            HapticFeedback.lightImpact();
+            break;
+        }
         if (practiceQueueIdx < practiceList.length - 1) {
           context.read(sentenceQueueIdxProvider).state = 1;
           context.read(targetKanjiProvider).state =
