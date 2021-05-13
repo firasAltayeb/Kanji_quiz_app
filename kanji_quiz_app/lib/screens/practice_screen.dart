@@ -108,6 +108,7 @@ class PracticeManager extends ConsumerWidget {
           Expanded(flex: 5, child: SizedBox()),
           ...(_questionList[_practiceQueueIdx % 2].answerList)
               .map((answerOption) => TranslationOptionBtn(
+                    answerOption.accuracy == 100 ? Colors.green : Colors.red,
                     _practiceList,
                     answerOption,
                   ))

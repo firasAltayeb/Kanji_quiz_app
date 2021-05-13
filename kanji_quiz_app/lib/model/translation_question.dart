@@ -21,16 +21,16 @@ List<TranslationQuestion> translationQuestions = [
   ]),
   TranslationQuestion(quesitonText: "良い一日を。", answerList: [
     TranslationQusAnswer(
-      answerText: "Have a good day.",
-      accuracy: 100,
-    ),
-    TranslationQusAnswer(
       answerText: "Have a good sun.",
       accuracy: 60,
     ),
     TranslationQusAnswer(
       answerText: "Have a nice month.",
       accuracy: 40,
+    ),
+    TranslationQusAnswer(
+      answerText: "Have a good day.",
+      accuracy: 100,
     ),
     TranslationQusAnswer(
       answerText: "Have a good one.",
