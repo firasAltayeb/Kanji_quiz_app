@@ -19,19 +19,19 @@ class TranslationOptionBtn extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     final practiceQueueIdx = watch(practiceQueueIdxProvider).state;
-    final sentenceAnswered = watch(sentenceAnsweredProvider).state;
+    final answeredRevealed = watch(answeredRevealedProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
 
     return InkWell(
       onTap: () {
-        if (sentenceAnswered) {
+        if (answeredRevealed) {
           if (practiceQueueIdx < practiceList.length - 1) {
             context.read(sentenceQueueIdxProvider).state = 1;
             context.read(targetKanjiProvider).state =
                 practiceList[practiceQueueIdx + 1];
             context.read(practiceQueueIdxProvider).state++;
-            context.read(sentenceAnsweredProvider).state = !sentenceAnswered;
+            context.read(answeredRevealedProvider).state = !answeredRevealed;
           } else {
             context.read(sentenceQueueIdxProvider).state = 1;
             context.read(practiceQueueIdxProvider).state = 0;
@@ -40,20 +40,17 @@ class TranslationOptionBtn extends ConsumerWidget {
         }
         if (questionAnswer.accuracy == 100) {
           HapticFeedback.vibrate();
-          context.read(sentenceAnsweredProvider).state = !sentenceAnswered;
         } else if (questionAnswer.accuracy >= 60 &&
             questionAnswer.accuracy <= 80) {
           HapticFeedback.heavyImpact();
-          context.read(sentenceAnsweredProvider).state = !sentenceAnswered;
         } else if (questionAnswer.accuracy >= 40 &&
             questionAnswer.accuracy <= 60) {
           HapticFeedback.mediumImpact();
-          context.read(sentenceAnsweredProvider).state = !sentenceAnswered;
         } else if (questionAnswer.accuracy >= 0 &&
             questionAnswer.accuracy <= 40) {
           HapticFeedback.lightImpact();
-          context.read(sentenceAnsweredProvider).state = !sentenceAnswered;
         }
+        context.read(answeredRevealedProvider).state = !answeredRevealed;
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10),
@@ -67,7 +64,7 @@ class TranslationOptionBtn extends ConsumerWidget {
               width: 3,
             ),
             color:
-                !sentenceAnswered ? Theme.of(context).accentColor : answerColor,
+                !answeredRevealed ? Theme.of(context).accentColor : answerColor,
           ),
           child: FittedBox(
             fit: BoxFit.contain,

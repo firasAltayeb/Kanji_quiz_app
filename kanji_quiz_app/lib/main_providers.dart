@@ -37,7 +37,7 @@ final practiceQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final sentenceQueueIdxProvider = StateProvider<int>((ref) => 1);
 
-final sentenceAnsweredProvider = StateProvider<bool>((ref) => false);
+final answeredRevealedProvider = StateProvider<bool>((ref) => false);
 
 final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
 
