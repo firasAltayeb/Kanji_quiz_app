@@ -4,12 +4,12 @@ class Kanji {
   final String keyword;
   final String itemType;
   final String jlptLevel;
-  final int frameNumForth;
+  final int frameNumFifth;
   final int frameNumSixth;
   final String characterID;
   final List<String> buildingBlocksLook;
   final List<String> buildingBlockKeywords;
-  final List<String> similarCharactersLook;
+  final List<String> similarCharactersID;
   final List<String> similarCharactersKeyword;
   final int frequencyInAozora;
   final List<String> kanjiMeanings;
@@ -26,12 +26,12 @@ class Kanji {
     @required this.keyword,
     @required this.itemType,
     @required this.jlptLevel,
-    @required this.frameNumForth,
+    @required this.frameNumFifth,
     @required this.frameNumSixth,
     @required this.characterID,
     @required this.buildingBlocksLook,
     @required this.buildingBlockKeywords,
-    @required this.similarCharactersLook,
+    @required this.similarCharactersID,
     @required this.similarCharactersKeyword,
     @required this.frequencyInAozora,
     @required this.kanjiMeanings,
