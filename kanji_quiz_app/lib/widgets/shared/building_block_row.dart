@@ -5,16 +5,16 @@ import '../../main_providers.dart';
 
 class BuildingBlockRow extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
-    final targetKanji = watch(targetKanjiProvider).state;
+    final targetItem = watch(targetKanjiProvider).state;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
-    var bbKanjiList = targetKanji.buildingBlockKeywords;
+    var buildingBlockIDList = targetItem.buildingBlocksID;
     return Container(
       alignment: Alignment.center,
       height: screenHeight * 0.175,
-      child: bbKanjiList.isEmpty
+      child: buildingBlockIDList[0] == ""
           ? _textWidget(
-              'Item type: ${targetKanji.itemType}',
+              'Item type: ${targetItem.itemType}',
               screenWidth * 0.08,
             )
           : Row(
@@ -24,22 +24,22 @@ class BuildingBlockRow extends ConsumerWidget {
                   'Building blocks: ',
                   screenWidth * 0.06,
                 ),
-                if (bbKanjiList.length == 1)
+                if (buildingBlockIDList.length == 1)
                   Container(
                     width: screenWidth * 0.3,
                     child:
-                        _kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
+                        _kanjiBlockRow(screenHeight * 0.1, watch, targetItem),
                   ),
-                if (bbKanjiList.length == 2)
+                if (buildingBlockIDList.length == 2)
                   Container(
                     width: screenWidth * 0.5,
                     child:
-                        _kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
+                        _kanjiBlockRow(screenHeight * 0.1, watch, targetItem),
                   ),
-                if (bbKanjiList.length > 2)
+                if (buildingBlockIDList.length > 2)
                   Expanded(
                     child:
-                        _kanjiBlockRow(screenHeight * 0.1, watch, targetKanji),
+                        _kanjiBlockRow(screenHeight * 0.1, watch, targetItem),
                   ),
               ],
             ),

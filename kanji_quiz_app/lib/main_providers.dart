@@ -119,10 +119,10 @@ final templateAddressProvider =
 final buildingBlocksProvider =
     Provider.autoDispose.family<List<Kanji>, Kanji>((ref, targetKanji) {
   final kanjiList = kanjiStaticData;
-  List<String> bbkeywords = targetKanji.buildingBlockKeywords;
+  List<String> targetbuildingBlockIDs = targetKanji.buildingBlocksID;
 
   List<Kanji> buildingBlocks = kanjiList
-      .where((element) => bbkeywords.contains(element.keyword))
+      .where((kanji) => targetbuildingBlockIDs.contains(kanji.characterID))
       .toList();
 
   return buildingBlocks;
