@@ -7,7 +7,7 @@ class Kanji {
   final int frameNumFifth;
   final int frameNumSixth;
   final String characterID;
-  final List<String> buildingBlocksLook;
+  final List<String> buildingBlocksID;
   final List<String> buildingBlockKeywords;
   final List<String> similarCharactersID;
   final List<String> similarCharactersKeyword;
@@ -29,7 +29,7 @@ class Kanji {
     @required this.frameNumFifth,
     @required this.frameNumSixth,
     @required this.characterID,
-    @required this.buildingBlocksLook,
+    @required this.buildingBlocksID,
     @required this.buildingBlockKeywords,
     @required this.similarCharactersID,
     @required this.similarCharactersKeyword,
