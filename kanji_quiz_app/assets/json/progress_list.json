@@ -3664,17 +3664,6 @@
   },
   {
     "keyword": "",
-    "characterID": "欠",
-    "learningStatus": "Lesson",
-    "mnemonicStory": "",
-    "progressLevel": 0,
-    "dateLastLevelChanged": "",
-    "recallHistory": [],
-    "practiceHistory": [],
-    "chosenDifficulty": 1
-  },
-  {
-    "keyword": "",
     "characterID": "吹",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
@@ -4050,6 +4039,17 @@
   {
     "keyword": "",
     "characterID": "虫",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "犭",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -4523,6 +4523,17 @@
   {
     "keyword": "",
     "characterID": "翌",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "彐",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -5853,7 +5864,7 @@
   },
   {
     "keyword": "",
-    "characterID": "出",
+    "characterID": "山",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -5864,7 +5875,7 @@
   },
   {
     "keyword": "",
-    "characterID": "山",
+    "characterID": "出",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -5887,28 +5898,6 @@
   {
     "keyword": "",
     "characterID": "密",
-    "learningStatus": "Lesson",
-    "mnemonicStory": "",
-    "progressLevel": 0,
-    "dateLastLevelChanged": "",
-    "recallHistory": [],
-    "practiceHistory": [],
-    "chosenDifficulty": 1
-  },
-  {
-    "keyword": "",
-    "characterID": "入",
-    "learningStatus": "Lesson",
-    "mnemonicStory": "",
-    "progressLevel": 0,
-    "dateLastLevelChanged": "",
-    "recallHistory": [],
-    "practiceHistory": [],
-    "chosenDifficulty": 1
-  },
-  {
-    "keyword": "",
-    "characterID": "込",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -6326,7 +6315,7 @@
   },
   {
     "keyword": "",
-    "characterID": "臣",
+    "characterID": "巨",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -6337,7 +6326,7 @@
   },
   {
     "keyword": "",
-    "characterID": "巨",
+    "characterID": "臣",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -6414,7 +6403,7 @@
   },
   {
     "keyword": "",
-    "characterID": "亻",
+    "characterID": "彳",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -6855,6 +6844,50 @@
   {
     "keyword": "",
     "characterID": "人",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "欠",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "入",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "込",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "亻",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -8043,17 +8076,6 @@
   {
     "keyword": "",
     "characterID": "作",
-    "learningStatus": "Lesson",
-    "mnemonicStory": "",
-    "progressLevel": 0,
-    "dateLastLevelChanged": "",
-    "recallHistory": [],
-    "practiceHistory": [],
-    "chosenDifficulty": 1
-  },
-  {
-    "keyword": "",
-    "characterID": "彐",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -9967,17 +9989,6 @@
   },
   {
     "keyword": "",
-    "characterID": "卵",
-    "learningStatus": "Lesson",
-    "mnemonicStory": "",
-    "progressLevel": 0,
-    "dateLastLevelChanged": "",
-    "recallHistory": [],
-    "practiceHistory": [],
-    "chosenDifficulty": 1
-  },
-  {
-    "keyword": "",
     "characterID": "留",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
@@ -10023,6 +10034,17 @@
   {
     "keyword": "",
     "characterID": "興",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "西",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -11221,17 +11243,6 @@
   },
   {
     "keyword": "",
-    "characterID": "西",
-    "learningStatus": "Lesson",
-    "mnemonicStory": "",
-    "progressLevel": 0,
-    "dateLastLevelChanged": "",
-    "recallHistory": [],
-    "practiceHistory": [],
-    "chosenDifficulty": 1
-  },
-  {
-    "keyword": "",
     "characterID": "価",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
@@ -11507,7 +11518,7 @@
   },
   {
     "keyword": "",
-    "characterID": "偉",
+    "characterID": "韋",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -11518,7 +11529,7 @@
   },
   {
     "keyword": "",
-    "characterID": "韋",
+    "characterID": "偉",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
@@ -11816,6 +11827,28 @@
   {
     "keyword": "",
     "characterID": "区",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "卯",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "卵",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
     "progressLevel": 0,
