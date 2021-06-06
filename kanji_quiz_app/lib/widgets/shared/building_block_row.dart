@@ -12,7 +12,7 @@ class BuildingBlockRow extends ConsumerWidget {
     return Container(
       alignment: Alignment.center,
       height: screenHeight * 0.175,
-      child: buildingBlockIDList[0] == ""
+      child: buildingBlockIDList.isEmpty
           ? _textWidget(
               'Item type: ${targetItem.itemType}',
               screenWidth * 0.08,
