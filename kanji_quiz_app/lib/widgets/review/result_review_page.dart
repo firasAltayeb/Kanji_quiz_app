@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
+import 'package:kanji_quiz_app/widgets/shared/item_interactive_row.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
@@ -51,8 +51,8 @@ class ResultPage extends ConsumerWidget {
         screenHeight,
       ),
       if (correctRecallList.length > 0)
-        KanjiInteractiveRow(
-          kanjiList: correctRecallList,
+        ItemInteractiveRow(
+          itemList: correctRecallList,
           widgetHeight: screenHeight * 0.175,
           selectHandler: null,
         ),
@@ -66,8 +66,8 @@ class ResultPage extends ConsumerWidget {
         screenHeight,
       ),
       if (incorrectRecallList.length > 0)
-        KanjiInteractiveRow(
-          kanjiList: incorrectRecallList,
+        ItemInteractiveRow(
+          itemList: incorrectRecallList,
           widgetHeight: screenHeight * 0.175,
           selectHandler: null,
         ),

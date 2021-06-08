@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
+import 'package:kanji_quiz_app/widgets/shared/item_interactive_row.dart';
 import 'package:kanji_quiz_app/widgets/shared/text_container.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,8 +15,8 @@ class SrsLevelColumn extends ConsumerWidget {
           passedText: 'SRS Level 1 Items',
           screenHeight: screenHeight,
         ),
-        KanjiInteractiveRow(
-          kanjiList: watch(srsXlvlListProvider(1)),
+        ItemInteractiveRow(
+          itemList: watch(srsXlvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -24,8 +24,8 @@ class SrsLevelColumn extends ConsumerWidget {
           passedText: 'SRS Level 2 Items',
           screenHeight: screenHeight,
         ),
-        KanjiInteractiveRow(
-          kanjiList: watch(srsXlvlListProvider(2)),
+        ItemInteractiveRow(
+          itemList: watch(srsXlvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -33,8 +33,8 @@ class SrsLevelColumn extends ConsumerWidget {
           passedText: 'SRS Level 3 Items',
           screenHeight: screenHeight,
         ),
-        KanjiInteractiveRow(
-          kanjiList: watch(srsXlvlListProvider(3)),
+        ItemInteractiveRow(
+          itemList: watch(srsXlvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -42,8 +42,8 @@ class SrsLevelColumn extends ConsumerWidget {
           passedText: 'SRS Level 4 Items',
           screenHeight: screenHeight,
         ),
-        KanjiInteractiveRow(
-          kanjiList: watch(srsXlvlListProvider(4)),
+        ItemInteractiveRow(
+          itemList: watch(srsXlvlListProvider(4)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -51,8 +51,8 @@ class SrsLevelColumn extends ConsumerWidget {
           passedText: 'SRS Level 5 Items',
           screenHeight: screenHeight,
         ),
-        KanjiInteractiveRow(
-          kanjiList: watch(srsXlvlListProvider(5)),
+        ItemInteractiveRow(
+          itemList: watch(srsXlvlListProvider(5)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -60,8 +60,8 @@ class SrsLevelColumn extends ConsumerWidget {
           passedText: 'Ready to Practice',
           screenHeight: screenHeight,
         ),
-        KanjiInteractiveRow(
-          kanjiList: watch(srsXlvlListProvider(6)),
+        ItemInteractiveRow(
+          itemList: watch(srsXlvlListProvider(6)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -69,8 +69,8 @@ class SrsLevelColumn extends ConsumerWidget {
           passedText: 'Learned Items',
           screenHeight: screenHeight,
         ),
-        KanjiInteractiveRow(
-          kanjiList: watch(srsXlvlListProvider(7)),
+        ItemInteractiveRow(
+          itemList: watch(srsXlvlListProvider(7)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),

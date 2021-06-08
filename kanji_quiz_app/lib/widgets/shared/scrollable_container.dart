@@ -60,7 +60,7 @@ class ScrollableContainer extends ConsumerWidget {
           fontSize: screenHeight * 0.035,
         ),
         children: <TextSpan>[
-          TextSpan(text: 'Please create a mnemonic for the above $itemType '),
+          TextSpan(text: 'Please create a mnemonic for the above $itemType'),
           TextSpan(
             text: '${targetKanji.keyword} ',
             style: TextStyle(

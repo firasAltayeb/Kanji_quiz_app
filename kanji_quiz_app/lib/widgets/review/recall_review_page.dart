@@ -1,6 +1,6 @@
 import 'package:kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
 import 'package:kanji_quiz_app/widgets/review/show_answer_button.dart';
-import 'package:kanji_quiz_app/widgets/shared/top_kanji_row.dart';
+import 'package:kanji_quiz_app/widgets/shared/top_picture_row.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/learning_item_model.dart';
 import 'package:flutter/material.dart';

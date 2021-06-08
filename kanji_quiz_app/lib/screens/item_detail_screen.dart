@@ -9,7 +9,7 @@ import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/text_container.dart';
-import '../widgets/shared/top_kanji_row.dart';
+import '../widgets/shared/top_picture_row.dart';
 import '../main_providers.dart';
 
 class ItemDetailScreen extends ConsumerWidget {

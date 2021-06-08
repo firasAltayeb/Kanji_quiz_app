@@ -3,13 +3,13 @@ import 'package:kanji_quiz_app/model/learning_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
-class KanjiInteractiveRow extends ConsumerWidget {
+class ItemInteractiveRow extends ConsumerWidget {
   final double widgetHeight;
-  final List<LearningItem> kanjiList;
+  final List<LearningItem> itemList;
   final Function selectHandler;
 
-  KanjiInteractiveRow({
-    @required this.kanjiList,
+  ItemInteractiveRow({
+    @required this.itemList,
     @required this.widgetHeight,
     @required this.selectHandler,
   });
@@ -18,19 +18,20 @@ class KanjiInteractiveRow extends ConsumerWidget {
     return SizedBox(
       height: widgetHeight,
       child: GridView.builder(
-          itemCount: kanjiList.length,
+          itemCount: itemList.length,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: widgetHeight,
             childAspectRatio: 1.25,
           ),
           scrollDirection: Axis.horizontal,
           itemBuilder: (ctx, i) {
+            bool plusChara = itemList[i].characterID.length > 1;
             return InkWell(
               onTap: selectHandler == null
                   ? null
                   : () => selectHandler(
                         context,
-                        kanjiList[i],
+                        itemList[i],
                       ),
               child: Stack(
                 alignment: Alignment.center,
@@ -39,19 +40,22 @@ class KanjiInteractiveRow extends ConsumerWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          watch(templateAddressProvider(kanjiList[i])),
+                          watch(templateAddressProvider(itemList[i])),
                         ),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
-                  if (kanjiList[i].itemType != "Primitive")
+                  if (itemList[i].itemType != "Primitive")
                     Container(
-                      height: widgetHeight * 0.65,
+                      height:
+                          plusChara ? widgetHeight * 0.6 : widgetHeight * 0.65,
                       child: Text(
-                        kanjiList[i].characterID,
+                        itemList[i].characterID,
                         style: TextStyle(
-                          fontSize: widgetHeight * 0.4,
+                          fontSize: plusChara
+                              ? widgetHeight * 0.35
+                              : widgetHeight * 0.4,
                           fontFamily: 'Lato',
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

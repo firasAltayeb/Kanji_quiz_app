@@ -19,9 +19,9 @@ class TopKanjiRow extends ConsumerWidget {
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final targetKanji = watch(targetItemProvider).state;
+    final targetItem = watch(targetItemProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
-    final templateAddress = watch(templateAddressProvider(targetKanji));
+    final templateAddress = watch(templateAddressProvider(targetItem));
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -35,7 +35,7 @@ class TopKanjiRow extends ConsumerWidget {
                 passedText: leftWidgetText,
                 height: screenHeight,
               ),
-        _kanjiPicture(screenHeight, templateAddress, targetKanji),
+        _itemPicture(screenHeight, templateAddress, targetItem),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? CornerButton(
                 passedText: rightWidgetText,
@@ -50,8 +50,9 @@ class TopKanjiRow extends ConsumerWidget {
     );
   }
 
-  Widget _kanjiPicture(
-      double height, String templateAddress, LearningItem targetKanji) {
+  Widget _itemPicture(
+      double height, String templateAddress, LearningItem targetItem) {
+    bool plusChara = targetItem.characterID.length > 1;
     return Expanded(
       flex: 3,
       child: Stack(
@@ -68,13 +69,13 @@ class TopKanjiRow extends ConsumerWidget {
               ),
             ),
           ),
-          if (targetKanji.itemType != "Primitive")
+          if (targetItem.itemType != "Primitive")
             Container(
-              height: height * 0.18,
+              height: plusChara ? height * 0.16 : height * 0.18,
               child: Text(
-                targetKanji.characterID,
+                targetItem.characterID,
                 style: TextStyle(
-                  fontSize: height * 0.11,
+                  fontSize: plusChara ? height * 0.095 : height * 0.11,
                   fontFamily: 'Anton',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
