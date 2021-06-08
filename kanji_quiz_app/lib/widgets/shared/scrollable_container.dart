@@ -1,6 +1,6 @@
 import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../main_providers.dart';
@@ -12,7 +12,7 @@ class ScrollableContainer extends ConsumerWidget {
   ScrollableContainer({@required this.showHandler});
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final targetKanji = watch(targetKanjiProvider).state;
+    final targetKanji = watch(targetItemProvider).state;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Consumer(builder: (context, watch, _) {
@@ -50,7 +50,7 @@ class ScrollableContainer extends ConsumerWidget {
     });
   }
 
-  Widget _instructionTextWidget(screenHeight, Kanji targetKanji) {
+  Widget _instructionTextWidget(screenHeight, LearningItem targetKanji) {
     var itemType = targetKanji.itemType;
     return RichText(
       textAlign: TextAlign.center,
@@ -84,7 +84,7 @@ class ScrollableContainer extends ConsumerWidget {
     );
   }
 
-  Widget _mnemonicTextWidget(var screenHeight, Kanji targetKanji) {
+  Widget _mnemonicTextWidget(var screenHeight, LearningItem targetKanji) {
     return Text(
       targetKanji.mnemonicStory,
       textAlign: TextAlign.center,

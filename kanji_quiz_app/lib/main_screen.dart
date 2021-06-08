@@ -8,7 +8,7 @@ import 'widgets/main_screen/main_drawer.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
 import 'screens/practice_screen.dart';
-import 'model/kanji_model.dart';
+import 'model/learing_item_model.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -91,7 +91,7 @@ class MainScreen extends StatelessWidget {
   }
 
   Widget _screenNavigateColumn(BuildContext bldCtx, screenHeight, screenWidth,
-      label, List<Kanji> kanjiList, routeName, queueIdx) {
+      label, List<LearningItem> kanjiList, routeName, queueIdx) {
     return Column(
       children: [
         Text(
@@ -118,8 +118,7 @@ class MainScreen extends StatelessWidget {
             onPressed: kanjiList.length == 0
                 ? null
                 : () {
-                    bldCtx.read(targetKanjiProvider).state =
-                        kanjiList[queueIdx];
+                    bldCtx.read(targetItemProvider).state = kanjiList[queueIdx];
                     Navigator.of(bldCtx)
                         .pushNamed(routeName, arguments: kanjiList);
                   },

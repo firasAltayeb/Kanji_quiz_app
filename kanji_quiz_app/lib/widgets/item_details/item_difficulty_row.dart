@@ -6,7 +6,7 @@ class ItemDifficultyRow extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
-    final targetK = watch(targetKanjiProvider).state;
+    final targetK = watch(targetItemProvider).state;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -33,9 +33,11 @@ class ItemDifficultyRow extends ConsumerWidget {
               onPressed: () {
                 if (targetK.chosenDifficulty > 1) {
                   targetK.chosenDifficulty--;
-                  context.read(targetKanjiProvider).state = targetK;
-                  context.read(kanjiListProvider.notifier).editKanji(targetK);
-                  context.read(kanjiListProvider.notifier).saveProgress();
+                  context.read(targetItemProvider).state = targetK;
+                  context
+                      .read(learningItemProvider.notifier)
+                      .editKanji(targetK);
+                  context.read(learningItemProvider.notifier).saveProgress();
                 }
               },
               iconSize: screenHeight * 0.04,
@@ -56,9 +58,11 @@ class ItemDifficultyRow extends ConsumerWidget {
               onPressed: () {
                 if (targetK.chosenDifficulty < 4) {
                   targetK.chosenDifficulty++;
-                  context.read(targetKanjiProvider).state = targetK;
-                  context.read(kanjiListProvider.notifier).editKanji(targetK);
-                  context.read(kanjiListProvider.notifier).saveProgress();
+                  context.read(targetItemProvider).state = targetK;
+                  context
+                      .read(learningItemProvider.notifier)
+                      .editKanji(targetK);
+                  context.read(learningItemProvider.notifier).saveProgress();
                 }
               },
               iconSize: screenHeight * 0.04,

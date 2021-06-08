@@ -2,7 +2,7 @@ import 'package:kanji_quiz_app/widgets/shared/kanji_interactive_row.dart';
 import 'package:kanji_quiz_app/widgets/shared/text_container.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
@@ -78,8 +78,8 @@ class SrsLevelColumn extends ConsumerWidget {
     );
   }
 
-  void pushToItemScreen(BuildContext context, Kanji clickedKanji) {
-    context.read(targetKanjiProvider).state = clickedKanji;
+  void pushToItemScreen(BuildContext context, LearningItem clickedKanji) {
+    context.read(targetItemProvider).state = clickedKanji;
     Navigator.of(context).pushNamed(ItemDetailScreen.routeName);
   }
 }

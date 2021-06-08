@@ -1,10 +1,10 @@
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetailAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
-  final Kanji targetKanji;
+  final LearningItem targetKanji;
 
   ItemDetailAppBar({
     Key key,

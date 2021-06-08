@@ -7,7 +7,7 @@ import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/top_kanji_row.dart';
-import '../model/kanji_model.dart';
+import '../model/learing_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 
@@ -16,7 +16,7 @@ class LessonManager extends ConsumerWidget {
 
   void _nextKanji(BuildContext context, queueIndex, lessonList) {
     if (queueIndex < lessonList.length - 1) {
-      context.read(targetKanjiProvider).state = lessonList[queueIndex + 1];
+      context.read(targetItemProvider).state = lessonList[queueIndex + 1];
       context.read(lessonQueueIdxProvider).state++;
     } else {
       wrapLessonSession(context, lessonList, queueIndex);
@@ -25,7 +25,7 @@ class LessonManager extends ConsumerWidget {
 
   void _previousKanji(BuildContext context, queueIndex, lessonList) {
     if (queueIndex > 0) {
-      context.read(targetKanjiProvider).state = lessonList[queueIndex - 1];
+      context.read(targetItemProvider).state = lessonList[queueIndex - 1];
       context.read(lessonQueueIdxProvider).state--;
     }
   }
@@ -35,7 +35,7 @@ class LessonManager extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    List<Kanji> _lessonList = ModalRoute.of(context).settings.arguments;
+    List<LearningItem> _lessonList = ModalRoute.of(context).settings.arguments;
     final _showButtonRow = watch(btnBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;

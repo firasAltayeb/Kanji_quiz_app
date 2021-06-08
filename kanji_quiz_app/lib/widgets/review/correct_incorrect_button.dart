@@ -12,7 +12,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
   });
 
   Widget build(BuildContext buildContex, ScopedReader watch) {
-    final targetKanji = watch(targetKanjiProvider).state;
+    final targetKanji = watch(targetItemProvider).state;
     final showSrsPop = watch(showSrsPopUpProvider).state;
     var screenHeight = MediaQuery.of(buildContex).size.height;
     var screenWidth = MediaQuery.of(buildContex).size.width;

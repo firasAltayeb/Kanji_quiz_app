@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class KanjiInteractiveRow extends ConsumerWidget {
   final double widgetHeight;
-  final List<Kanji> kanjiList;
+  final List<LearningItem> kanjiList;
   final Function selectHandler;
 
   KanjiInteractiveRow({

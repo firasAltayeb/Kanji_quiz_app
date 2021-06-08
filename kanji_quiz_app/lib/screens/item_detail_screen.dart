@@ -30,7 +30,7 @@ class ItemDetailScreen extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     final _showButtonRow = watch(btnBottomRowProvider).state;
-    final _targetKanji = watch(targetKanjiProvider).state;
+    final _targetKanji = watch(targetItemProvider).state;
     var screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(

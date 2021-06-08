@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import '../model/kanji_model.dart';
+import '../model/learing_item_model.dart';
 import '../main_providers.dart';
 
 class InputDialogScreen extends StatefulWidget {
-  final Kanji itemDetails;
+  final LearningItem itemDetails;
 
   InputDialogScreen(this.itemDetails);
 
@@ -127,10 +127,10 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               widget.itemDetails.mnemonicStory =
                                   _mnemonicController.text;
                               context
-                                  .read(kanjiListProvider.notifier)
+                                  .read(learningItemProvider.notifier)
                                   .editKanji(widget.itemDetails);
                               context
-                                  .read(kanjiListProvider.notifier)
+                                  .read(learningItemProvider.notifier)
                                   .saveProgress();
                               Navigator.pop(context);
                             },

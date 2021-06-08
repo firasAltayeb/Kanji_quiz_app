@@ -6,7 +6,7 @@ import '../widgets/practice_mgr/practice_app_bar.dart';
 import '../widgets/shared/corner_button.dart';
 import '../widgets/shared/corner_widget.dart';
 import '../model/translation_question.dart';
-import '../model/kanji_model.dart';
+import '../model/learing_item_model.dart';
 import '../main_providers.dart';
 
 class PracticeManager extends ConsumerWidget {
@@ -18,7 +18,7 @@ class PracticeManager extends ConsumerWidget {
       ctx.read(sentenceQueueIdxProvider).state++;
     } else {
       ctx.read(sentenceQueueIdxProvider).state = 1;
-      ctx.read(targetKanjiProvider).state = practiceList[practiceQueueIdx + 1];
+      ctx.read(targetItemProvider).state = practiceList[practiceQueueIdx + 1];
       ctx.read(practiceQueueIdxProvider).state++;
     }
   }
@@ -28,16 +28,17 @@ class PracticeManager extends ConsumerWidget {
     if (senQueueIdx > 1) {
       ctx.read(sentenceQueueIdxProvider).state--;
     } else if (senQueueIdx <= 1 && practiceQueueIdx > 0) {
-      ctx.read(targetKanjiProvider).state = practiceList[practiceQueueIdx - 1];
+      ctx.read(targetItemProvider).state = practiceList[practiceQueueIdx - 1];
       ctx.read(practiceQueueIdxProvider).state--;
     }
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    List<Kanji> _practiceList = ModalRoute.of(context).settings.arguments;
+    List<LearningItem> _practiceList =
+        ModalRoute.of(context).settings.arguments;
     final _practiceQueueIdx = watch(practiceQueueIdxProvider).state;
     final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
-    final _targetKanji = watch(targetKanjiProvider).state;
+    final _targetKanji = watch(targetItemProvider).state;
     final _questionList = translationQuestions;
 
     var _screenHeight = MediaQuery.of(context).size.height;

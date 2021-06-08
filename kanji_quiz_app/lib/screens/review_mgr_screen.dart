@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../widgets/review/result_review_page.dart';
 import '../widgets/review/recall_review_page.dart';
 import '../widgets/review/review_app_bar.dart';
-import '../model/kanji_model.dart';
+import '../model/learing_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 
@@ -18,13 +18,13 @@ class ReviewManager extends ConsumerWidget {
     } else {
       ctx.read(incorrectRecallListProvider).state.removeLast();
     }
-    ctx.read(targetKanjiProvider).state = reviewList[queueIdx - 1];
+    ctx.read(targetItemProvider).state = reviewList[queueIdx - 1];
     ctx.read(answerChoiceListProvider).state.removeLast();
     ctx.read(reviewQueueIdxProvider).state--;
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    List<Kanji> _reviewList = ModalRoute.of(context).settings.arguments;
+    List<LearningItem> _reviewList = ModalRoute.of(context).settings.arguments;
     final _ansChoiceList = watch(answerChoiceListProvider).state;
     final _queueIndex = watch(reviewQueueIdxProvider).state;
     final showSrsPop = watch(showSrsPopUpProvider).state;

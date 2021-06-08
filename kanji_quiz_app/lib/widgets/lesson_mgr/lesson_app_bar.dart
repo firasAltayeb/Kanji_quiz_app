@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +6,7 @@ class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
   final bool showAlert;
   final int lsnQueueIdx;
-  final List<Kanji> lessonList;
+  final List<LearningItem> lessonList;
 
   LessonAppBar({
     Key key,

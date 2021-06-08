@@ -4,17 +4,17 @@ import 'package:universal_io/io.dart' show Platform;
 
 import 'progress_services.dart';
 import 'progress_model.dart';
-import 'kanji_model.dart';
+import 'learing_item_model.dart';
 
-class KanjiList extends StateNotifier<List<Kanji>> {
-  KanjiList([List<Kanji> kanjiList]) : super(kanjiList ?? []);
+class ItemList extends StateNotifier<List<LearningItem>> {
+  ItemList([List<LearningItem> kanjiList]) : super(kanjiList ?? []);
 
   void updateProgress(List<Progress> progressList) {
     state = [
       for (final kanji in state)
         if (progressList
             .any((element) => element.characterID == kanji.characterID))
-          Kanji(
+          LearningItem(
             keyword: kanji.keyword,
             itemType: kanji.itemType,
             jlptLevel: kanji.jlptLevel,
@@ -61,11 +61,11 @@ class KanjiList extends StateNotifier<List<Kanji>> {
     ];
   }
 
-  void editKanji(Kanji updatedKanji) {
+  void editKanji(LearningItem updatedKanji) {
     state = [
       for (final kanji in state)
         if (kanji.characterID == updatedKanji.characterID)
-          Kanji(
+          LearningItem(
             keyword: updatedKanji.keyword,
             itemType: updatedKanji.itemType,
             jlptLevel: updatedKanji.jlptLevel,

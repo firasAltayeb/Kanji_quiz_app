@@ -2,13 +2,13 @@ import 'package:kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
 import 'package:kanji_quiz_app/widgets/review/show_answer_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/top_kanji_row.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class RecallPage extends ConsumerWidget {
   final int queueIndex;
-  final List<Kanji> reviewQueue;
+  final List<LearningItem> reviewQueue;
   final Function undoLastAnswer;
 
   RecallPage({
@@ -27,7 +27,7 @@ class RecallPage extends ConsumerWidget {
       ctx.read(incorrectRecallListProvider).state.add(reviewQueue[queueIndex]);
     }
     if (queueIndex < reviewQueue.length - 1)
-      ctx.read(targetKanjiProvider).state = reviewQueue[queueIndex + 1];
+      ctx.read(targetItemProvider).state = reviewQueue[queueIndex + 1];
     ctx.read(reviewQueueIdxProvider).state++;
   }
 

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../model/translation_question.dart';
-import '../../model/kanji_model.dart';
+import '../../model/learing_item_model.dart';
 import '../../main_providers.dart';
 
 class TranslationOptionBtn extends ConsumerWidget {
   final Color answerColor;
-  final List<Kanji> practiceList;
+  final List<LearningItem> practiceList;
   final TranslationQusAnswer questionAnswer;
 
   TranslationOptionBtn(
@@ -28,7 +28,7 @@ class TranslationOptionBtn extends ConsumerWidget {
         if (answeredRevealed) {
           if (practiceQueueIdx < practiceList.length - 1) {
             context.read(sentenceQueueIdxProvider).state = 1;
-            context.read(targetKanjiProvider).state =
+            context.read(targetItemProvider).state =
                 practiceList[practiceQueueIdx + 1];
             context.read(practiceQueueIdxProvider).state++;
             context.read(answeredRevealedProvider).state = !answeredRevealed;

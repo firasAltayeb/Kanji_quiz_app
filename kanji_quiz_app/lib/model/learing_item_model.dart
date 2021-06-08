@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class Kanji {
+class LearningItem {
   final String keyword;
   final String itemType;
   final String jlptLevel;
@@ -22,7 +22,7 @@ class Kanji {
   DateTime dateLastLevelChanged;
   int chosenDifficulty;
 
-  Kanji({
+  LearningItem({
     @required this.keyword,
     @required this.itemType,
     @required this.jlptLevel,

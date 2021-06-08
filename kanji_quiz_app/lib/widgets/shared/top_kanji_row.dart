@@ -1,7 +1,7 @@
 import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
@@ -19,7 +19,7 @@ class TopKanjiRow extends ConsumerWidget {
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final targetKanji = watch(targetKanjiProvider).state;
+    final targetKanji = watch(targetItemProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     final templateAddress = watch(templateAddressProvider(targetKanji));
     return Row(
@@ -51,7 +51,7 @@ class TopKanjiRow extends ConsumerWidget {
   }
 
   Widget _kanjiPicture(
-      double height, String templateAddress, Kanji targetKanji) {
+      double height, String templateAddress, LearningItem targetKanji) {
     return Expanded(
       flex: 3,
       child: Stack(

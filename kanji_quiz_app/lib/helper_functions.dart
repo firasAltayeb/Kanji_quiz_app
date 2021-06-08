@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'screens/input_dialog_screen.dart';
 import 'screens/user_page_screen.dart';
 import 'misc/back_pressed_alert.dart';
-import 'model/kanji_model.dart';
+import 'model/learing_item_model.dart';
 import 'main_providers.dart';
 
 enum VertOptions {
@@ -22,10 +22,10 @@ void choiceAction({
   @required BuildContext context,
   @required VertOptions choice,
   List<bool> ansChoiceList,
-  List<Kanji> reviewList,
-  List<Kanji> lessonList,
+  List<LearningItem> reviewList,
+  List<LearningItem> lessonList,
   bool lvlColumnVisible,
-  Kanji targetKanji,
+  LearningItem targetKanji,
   int lsnQueueIdx,
   bool showAlert,
   bool showPopUp,
@@ -53,8 +53,8 @@ void openChoiceDialog({
   bool naviPop = true,
   BuildContext context,
   String alertMessage,
-  List<Kanji> lsnList,
-  Kanji targetKanji,
+  List<LearningItem> lsnList,
+  LearningItem targetKanji,
   int lsnQueueIdx,
 }) async {
   bool dialogChoice = true;
@@ -68,30 +68,30 @@ void openChoiceDialog({
   if (dialogChoice) {
     chosenHandler(context, targetKanji);
     if (lsnList != null) {
-      context.read(targetKanjiProvider).state = lsnList[lsnQueueIdx + 1];
+      context.read(targetItemProvider).state = lsnList[lsnQueueIdx + 1];
       context.read(lessonQueueIdxProvider).state++;
     } else if (naviPop) {
-      context.read(kanjiListProvider.notifier).saveProgress();
+      context.read(learningItemProvider.notifier).saveProgress();
       Navigator.of(context).pop();
     } else {
-      context.read(targetKanjiProvider).state = targetKanji;
+      context.read(targetItemProvider).state = targetKanji;
     }
   }
 }
 
-void markAsComplete(BuildContext context, Kanji targetKanji) {
+void markAsComplete(BuildContext context, LearningItem targetKanji) {
   targetKanji.progressLevel = 6;
-  context.read(kanjiListProvider.notifier).editKanji(targetKanji);
+  context.read(learningItemProvider.notifier).editKanji(targetKanji);
 }
 
-void resetItemStatus(BuildContext context, Kanji targetKanji) {
+void resetItemStatus(BuildContext context, LearningItem targetKanji) {
   targetKanji.learningStatus = 'Lesson';
   targetKanji.progressLevel = 0;
   targetKanji.mnemonicStory = '';
-  context.read(kanjiListProvider.notifier).editKanji(targetKanji);
+  context.read(learningItemProvider.notifier).editKanji(targetKanji);
 }
 
-void launchURL(Kanji targetKanji) async {
+void launchURL(LearningItem targetKanji) async {
   String url =
       'https://kanji.koohii.com/study/kanji/' + '${targetKanji.frameNumSixth}';
   if (await canLaunch(url)) {
@@ -102,7 +102,7 @@ void launchURL(Kanji targetKanji) async {
 }
 
 void editMnemonicHandler(
-    BuildContext context, Kanji targetKanji, Function showHandler) {
+    BuildContext context, LearningItem targetKanji, Function showHandler) {
   Navigator.of(context)
       .push(
     PageRouteBuilder(
@@ -118,7 +118,7 @@ void editMnemonicHandler(
 
 void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
   for (var index = 0; index < answerChoiceList.length; index++) {
-    Kanji reviewedItem = reviewList[index];
+    LearningItem reviewedItem = reviewList[index];
     reviewedItem.dateLastLevelChanged = DateTime.now();
     //if answer was correct
     if (answerChoiceList[index]) {
@@ -138,20 +138,20 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
       reviewedItem.difficultyAdjustment();
       reviewedItem.progressLevel = reviewedItem.lapsePenalty();
     }
-    context.read(kanjiListProvider.notifier).editKanji(reviewedItem);
+    context.read(learningItemProvider.notifier).editKanji(reviewedItem);
   }
   context.read(sessionScoreProvider).state = 0;
   context.read(reviewQueueIdxProvider).state = 0;
   context.read(answerChoiceListProvider).state.clear();
   context.read(correctRecallListProvider).state.clear();
   context.read(incorrectRecallListProvider).state.clear();
-  context.read(kanjiListProvider.notifier).saveProgress();
+  context.read(learningItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }
 
 void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
   for (var index = 0; index < lsnQueueIdx; index++) {
-    Kanji sessionItem = lessonList[index];
+    LearningItem sessionItem = lessonList[index];
     sessionItem.dateLastLevelChanged = DateTime.now();
     // if item not marked as completed
     if (sessionItem.progressLevel < 6) {
@@ -165,9 +165,9 @@ void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
         sessionItem.progressLevel++;
       }
     }
-    context.read(kanjiListProvider.notifier).editKanji(sessionItem);
+    context.read(learningItemProvider.notifier).editKanji(sessionItem);
   }
   context.read(lessonQueueIdxProvider).state = 0;
-  context.read(kanjiListProvider.notifier).saveProgress();
+  context.read(learningItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }

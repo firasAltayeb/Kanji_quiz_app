@@ -1,12 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
-import 'package:kanji_quiz_app/model/kanji_model.dart';
+import 'package:kanji_quiz_app/model/learing_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class ItemBottomRow extends ConsumerWidget {
   final int lsnQueueIdx;
-  final List<Kanji> lessonList;
+  final List<LearningItem> lessonList;
 
   final Function showHandler;
   final bool itemDetailScreen;
@@ -21,7 +21,7 @@ class ItemBottomRow extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     final showAlert = watch(showAlertProvider).state;
-    final targetKanji = watch(targetKanjiProvider).state;
+    final targetKanji = watch(targetItemProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     return Row(
       children: [
