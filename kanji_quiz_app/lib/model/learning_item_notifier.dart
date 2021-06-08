@@ -26,7 +26,7 @@ class ItemList extends StateNotifier<List<LearningItem>> {
             similarCharactersID: kanji.similarCharactersID,
             similarCharactersKeyword: kanji.similarCharactersKeyword,
             frequencyInAozora: kanji.frequencyInAozora,
-            kanjiMeanings: kanji.kanjiMeanings,
+            itemMeanings: kanji.itemMeanings,
             progressLevel: progressList
                 .firstWhere(
                     (element) => element.characterID == kanji.characterID)
@@ -77,7 +77,7 @@ class ItemList extends StateNotifier<List<LearningItem>> {
             similarCharactersID: updatedKanji.similarCharactersID,
             similarCharactersKeyword: updatedKanji.similarCharactersKeyword,
             frequencyInAozora: updatedKanji.frequencyInAozora,
-            kanjiMeanings: updatedKanji.kanjiMeanings,
+            itemMeanings: updatedKanji.itemMeanings,
             progressLevel: updatedKanji.progressLevel,
             mnemonicStory: updatedKanji.mnemonicStory,
             learningStatus: updatedKanji.learningStatus,

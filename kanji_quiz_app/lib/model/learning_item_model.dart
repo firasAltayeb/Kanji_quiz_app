@@ -12,7 +12,8 @@ class LearningItem {
   final List<String> similarCharactersID;
   final List<String> similarCharactersKeyword;
   final int frequencyInAozora;
-  final List<String> kanjiMeanings;
+  final List<String> itemMeanings;
+  final List<String> itemReadings;
 
   int progressLevel;
   String mnemonicStory;
@@ -34,7 +35,8 @@ class LearningItem {
     @required this.similarCharactersID,
     @required this.similarCharactersKeyword,
     @required this.frequencyInAozora,
-    @required this.kanjiMeanings,
+    @required this.itemMeanings,
+    this.itemReadings,
     this.progressLevel = 0,
     this.mnemonicStory = "",
     this.learningStatus = "Lesson",

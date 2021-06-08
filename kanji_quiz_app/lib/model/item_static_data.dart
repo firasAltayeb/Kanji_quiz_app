@@ -16,7 +16,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2,
-    kanjiMeanings: ["one"],
+    itemMeanings: ["one"],
   ),
   LearningItem(
     keyword: "two",
@@ -33,7 +33,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 18,
-    kanjiMeanings: ["two"],
+    itemMeanings: ["two"],
   ),
   LearningItem(
     keyword: "three",
@@ -50,7 +50,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 30,
-    kanjiMeanings: ["three"],
+    itemMeanings: ["three"],
   ),
   LearningItem(
     keyword: "four",
@@ -67,7 +67,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 84,
-    kanjiMeanings: ["four"],
+    itemMeanings: ["four"],
   ),
   LearningItem(
     keyword: "five",
@@ -84,7 +84,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 71,
-    kanjiMeanings: ["five"],
+    itemMeanings: ["five"],
   ),
   LearningItem(
     keyword: "six",
@@ -101,7 +101,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 151,
-    kanjiMeanings: ["six"],
+    itemMeanings: ["six"],
   ),
   LearningItem(
     keyword: "seven",
@@ -118,7 +118,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 168,
-    kanjiMeanings: ["seven"],
+    itemMeanings: ["seven"],
   ),
   LearningItem(
     keyword: "eight",
@@ -135,7 +135,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 138,
-    kanjiMeanings: ["eight"],
+    itemMeanings: ["eight"],
   ),
   LearningItem(
     keyword: "nine",
@@ -152,7 +152,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 232,
-    kanjiMeanings: ["nine"],
+    itemMeanings: ["nine"],
   ),
   LearningItem(
     keyword: "ten",
@@ -169,7 +169,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 32,
-    kanjiMeanings: ["ten"],
+    itemMeanings: ["ten"],
   ),
   LearningItem(
     keyword: "mouth",
@@ -186,7 +186,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 89,
-    kanjiMeanings: ["mouth"],
+    itemMeanings: ["mouth"],
   ),
   LearningItem(
     keyword: "day",
@@ -206,7 +206,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 5,
-    kanjiMeanings: [
+    itemMeanings: [
       "day",
       "sun",
       "Japan",
@@ -231,7 +231,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 47,
-    kanjiMeanings: [
+    itemMeanings: [
       "month",
       "moon",
     ],
@@ -251,7 +251,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 86,
-    kanjiMeanings: [
+    itemMeanings: [
       "rice field",
       "rice paddy",
     ],
@@ -274,7 +274,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 53,
-    kanjiMeanings: [
+    itemMeanings: [
       "eye",
       "class",
       "look",
@@ -296,7 +296,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 217,
-    kanjiMeanings: ["old"],
+    itemMeanings: ["old"],
   ),
   LearningItem(
     keyword: "I",
@@ -313,7 +313,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 553,
-    kanjiMeanings: [
+    itemMeanings: [
       "I",
       "my",
       "our",
@@ -335,7 +335,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 72,
-    kanjiMeanings: [
+    itemMeanings: [
       "bright",
       "Light",
     ],
@@ -355,7 +355,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 282,
-    kanjiMeanings: [
+    itemMeanings: [
       "goods",
       "refinement",
       "dignity",
@@ -380,7 +380,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1033,
-    kanjiMeanings: [
+    itemMeanings: [
       "spine",
       "backbone",
     ],
@@ -403,7 +403,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 228,
-    kanjiMeanings: [
+    itemMeanings: [
       "early",
       "fast",
     ],
@@ -423,7 +423,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 82,
-    kanjiMeanings: [
+    itemMeanings: [
       "generation",
       "world",
       "society",
@@ -448,7 +448,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 805,
-    kanjiMeanings: [
+    itemMeanings: [
       "daybreak",
       "dawn",
       "morning",
@@ -469,7 +469,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "olden times",
@@ -486,7 +486,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1018,
-    kanjiMeanings: [
+    itemMeanings: [
       "old times",
       "old things",
       "old friend",
@@ -508,7 +508,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "oneself",
@@ -525,7 +525,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 19,
-    kanjiMeanings: ["oneself"],
+    itemMeanings: ["oneself"],
   ),
   LearningItem(
     keyword: "white",
@@ -546,7 +546,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 95,
-    kanjiMeanings: ["white"],
+    itemMeanings: ["white"],
   ),
   LearningItem(
     keyword: "hundred",
@@ -563,7 +563,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 214,
-    kanjiMeanings: ["hundred"],
+    itemMeanings: ["hundred"],
   ),
   LearningItem(
     keyword: "in",
@@ -583,7 +583,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 15,
-    kanjiMeanings: [
+    itemMeanings: [
       "in",
       "inside",
       "middle",
@@ -609,7 +609,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 291,
-    kanjiMeanings: ["thousand"],
+    itemMeanings: ["thousand"],
   ),
   LearningItem(
     keyword: "tongue",
@@ -626,7 +626,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1153,
-    kanjiMeanings: [
+    itemMeanings: [
       "tongue",
       "reed",
       "clapper",
@@ -647,7 +647,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2095,
-    kanjiMeanings: [
+    itemMeanings: [
       "measuring box",
       "1.8 liter",
     ],
@@ -670,7 +670,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 592,
-    kanjiMeanings: [
+    itemMeanings: [
       "round",
       "full (month)",
       "perfection",
@@ -695,7 +695,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 727,
-    kanjiMeanings: [
+    itemMeanings: [
       "measurement",
       "tenth of a shaku",
       "a little",
@@ -720,7 +720,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1167,
-    kanjiMeanings: [
+    itemMeanings: [
       "specialty",
       "exclusive",
       "mainly",
@@ -745,7 +745,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 535,
-    kanjiMeanings: [
+    itemMeanings: [
       "Dr.",
       "command",
       "esteem",
@@ -768,7 +768,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "fortune-telling",
@@ -789,7 +789,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1293,
-    kanjiMeanings: [
+    itemMeanings: [
       "fortune-telling",
       "divining",
       "forecasting",
@@ -811,7 +811,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 12,
-    kanjiMeanings: [
+    itemMeanings: [
       "above",
       "up",
     ],
@@ -834,7 +834,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 37,
-    kanjiMeanings: [
+    itemMeanings: [
       "below",
       "down",
       "descend",
@@ -856,7 +856,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "morning",
@@ -873,7 +873,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 222,
-    kanjiMeanings: [
+    itemMeanings: [
       "morning",
       "dynasty",
       "regime",
@@ -895,7 +895,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "shellfish",
@@ -912,7 +912,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1690,
-    kanjiMeanings: ["shellfish"],
+    itemMeanings: ["shellfish"],
   ),
   LearningItem(
     keyword: "employee",
@@ -932,7 +932,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 625,
-    kanjiMeanings: [
+    itemMeanings: [
       "employee",
       "member",
       "number",
@@ -954,7 +954,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "see",
@@ -974,7 +974,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3,
-    kanjiMeanings: [
+    itemMeanings: [
       "see",
       "hopes",
       "chances",
@@ -999,7 +999,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 724,
-    kanjiMeanings: [
+    itemMeanings: [
       "newborn babe",
       "child",
       "young of animals",
@@ -1023,7 +1023,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 309,
-    kanjiMeanings: [
+    itemMeanings: [
       "beginning",
       "former time",
       "origin",
@@ -1047,7 +1047,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1694,
-    kanjiMeanings: [
+    itemMeanings: [
       "page",
       "leaf",
     ],
@@ -1070,7 +1070,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1765,
-    kanjiMeanings: [
+    itemMeanings: [
       "stubborn",
       "foolish",
       "firmly",
@@ -1091,7 +1091,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2341,
-    kanjiMeanings: [
+    itemMeanings: [
       "table",
       "table enclosure",
     ],
@@ -1115,7 +1115,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 893,
-    kanjiMeanings: [
+    itemMeanings: [
       "commonplace",
       "ordinary",
       "mediocre",
@@ -1136,7 +1136,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "defeat",
@@ -1156,7 +1156,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 613,
-    kanjiMeanings: [
+    itemMeanings: [
       "defeat",
       "negative",
       "minus",
@@ -1178,7 +1178,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 362,
-    kanjiMeanings: [
+    itemMeanings: [
       "ten thousand",
       "10,000",
     ],
@@ -1201,7 +1201,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 594,
-    kanjiMeanings: [
+    itemMeanings: [
       "phrase",
       "clause",
       "sentence",
@@ -1227,7 +1227,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3801,
-    kanjiMeanings: [
+    itemMeanings: [
       "ladle",
       "one tenth of a go",
       "dip",
@@ -1251,7 +1251,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 38,
-    kanjiMeanings: [
+    itemMeanings: [
       "bull's eye",
       "mark",
       "target",
@@ -1273,7 +1273,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "neck",
@@ -1293,7 +1293,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 396,
-    kanjiMeanings: [
+    itemMeanings: [
       "neck",
       "counter for songs and poems",
     ],
@@ -1313,7 +1313,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1654,
-    kanjiMeanings: [
+    itemMeanings: [
       "the latter",
       "duplicate",
       "strange",
@@ -1339,7 +1339,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 704,
-    kanjiMeanings: [
+    itemMeanings: [
       "riot",
       "war",
       "disorder",
@@ -1365,7 +1365,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 178,
-    kanjiMeanings: [
+    itemMeanings: [
       "straightaway",
       "honesty",
       "frankness",
@@ -1387,7 +1387,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "tool",
@@ -1407,7 +1407,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 564,
-    kanjiMeanings: [
+    itemMeanings: [
       "tool",
       "utensil",
       "means",
@@ -1433,7 +1433,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 144,
-    kanjiMeanings: [
+    itemMeanings: [
       "true",
       "reality",
       "Buddhist sect",
@@ -1457,7 +1457,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 410,
-    kanjiMeanings: [
+    itemMeanings: [
       "craft",
       "construction",
     ],
@@ -1477,7 +1477,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "left",
@@ -1497,7 +1497,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 299,
-    kanjiMeanings: ["left"],
+    itemMeanings: ["left"],
   ),
   LearningItem(
     keyword: "right",
@@ -1518,7 +1518,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 300,
-    kanjiMeanings: ["right"],
+    itemMeanings: ["right"],
   ),
   LearningItem(
     keyword: "possess",
@@ -1538,7 +1538,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 169,
-    kanjiMeanings: [
+    itemMeanings: [
       "possess",
       "have",
       "exist",
@@ -1563,7 +1563,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 662,
-    kanjiMeanings: [
+    itemMeanings: [
       "sword",
       "saber",
       "knife",
@@ -1587,7 +1587,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1735,
-    kanjiMeanings: [
+    itemMeanings: [
       "blade",
       "sword",
       "edge",
@@ -1611,7 +1611,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 128,
-    kanjiMeanings: [
+    itemMeanings: [
       "cut",
       "cutoff",
       "be sharp",
@@ -1636,7 +1636,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1118,
-    kanjiMeanings: [
+    itemMeanings: [
       "seduce",
       "call",
       "send for",
@@ -1661,7 +1661,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 441,
-    kanjiMeanings: [
+    itemMeanings: [
       "shining",
       "bright",
     ],
@@ -1681,7 +1681,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "rule",
@@ -1701,7 +1701,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1145,
-    kanjiMeanings: [
+    itemMeanings: [
       "rule",
       "follow",
       "based on",
@@ -1723,7 +1723,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 190,
-    kanjiMeanings: [
+    itemMeanings: [
       "separate",
       "branch off",
       "diverge",
@@ -1748,7 +1748,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 631,
-    kanjiMeanings: [
+    itemMeanings: [
       "street",
       "ward",
       "town",
@@ -1770,7 +1770,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 243,
-    kanjiMeanings: [
+    itemMeanings: [
       "town",
       "village",
       "block",
@@ -1796,7 +1796,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 296,
-    kanjiMeanings: [
+    itemMeanings: [
       "can",
       "passable",
       "mustn't",
@@ -1822,7 +1822,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 857,
-    kanjiMeanings: [
+    itemMeanings: [
       "place on the head",
       "receive",
       "top of head",
@@ -1848,7 +1848,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 8,
-    kanjiMeanings: [
+    itemMeanings: [
       "child",
       "sign of the rat",
       "11PM-1AM",
@@ -1870,7 +1870,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 939,
-    kanjiMeanings: [
+    itemMeanings: [
       "complete",
       "finish",
     ],
@@ -1893,7 +1893,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 26,
-    kanjiMeanings: [
+    itemMeanings: [
       "woman",
       "female",
     ],
@@ -1916,7 +1916,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 192,
-    kanjiMeanings: [
+    itemMeanings: [
       "fond",
       "pleasing",
       "like something",
@@ -1940,7 +1940,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 133,
-    kanjiMeanings: ["mother"],
+    itemMeanings: ["mother"],
   ),
   LearningItem(
     keyword: "elder brother",
@@ -1960,7 +1960,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 397,
-    kanjiMeanings: [
+    itemMeanings: [
       "elder brother",
       "big brother",
     ],
@@ -1983,7 +1983,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 42,
-    kanjiMeanings: [
+    itemMeanings: [
       "little",
       "small",
     ],
@@ -2006,7 +2006,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 79,
-    kanjiMeanings: [
+    itemMeanings: [
       "few",
       "little",
     ],
@@ -2029,7 +2029,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 7,
-    kanjiMeanings: [
+    itemMeanings: [
       "large",
       "big",
     ],
@@ -2052,7 +2052,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 506,
-    kanjiMeanings: ["evening"],
+    itemMeanings: ["evening"],
   ),
   LearningItem(
     keyword: "many",
@@ -2073,7 +2073,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 121,
-    kanjiMeanings: [
+    itemMeanings: [
       "many",
       "frequent",
       "much",
@@ -2097,7 +2097,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 102,
-    kanjiMeanings: ["outside"],
+    itemMeanings: ["outside"],
   ),
   LearningItem(
     keyword: "name",
@@ -2117,7 +2117,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 88,
-    kanjiMeanings: [
+    itemMeanings: [
       "name",
       "noted",
       "distinguished",
@@ -2139,7 +2139,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "stone",
@@ -2159,7 +2159,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 227,
-    kanjiMeanings: ["stone"],
+    itemMeanings: ["stone"],
   ),
   LearningItem(
     keyword: "resemblance",
@@ -2179,7 +2179,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2238,
-    kanjiMeanings: ["resemblance"],
+    itemMeanings: ["resemblance"],
   ),
   LearningItem(
     keyword: "smash",
@@ -2199,7 +2199,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1878,
-    kanjiMeanings: [
+    itemMeanings: [
       "smash",
       "break",
       "crush",
@@ -2224,7 +2224,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 990,
-    kanjiMeanings: ["sand"],
+    itemMeanings: ["sand"],
   ),
   LearningItem(
     keyword: "ray",
@@ -2241,7 +2241,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 191,
-    kanjiMeanings: [
+    itemMeanings: [
       "ray",
       "light",
     ],
@@ -2264,7 +2264,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 162,
-    kanjiMeanings: [
+    itemMeanings: [
       "plump",
       "thick",
       "big around",
@@ -2288,7 +2288,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 650,
-    kanjiMeanings: [
+    itemMeanings: [
       "utensil",
       "vessel",
       "receptacle",
@@ -2313,7 +2313,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 518,
-    kanjiMeanings: [
+    itemMeanings: [
       "exquisite",
       "strange",
       "queer",
@@ -2335,7 +2335,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1019,
-    kanjiMeanings: [
+    itemMeanings: [
       "focus",
       "government ministry",
       "conserve",
@@ -2356,7 +2356,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 671,
-    kanjiMeanings: [
+    itemMeanings: [
       "stranges",
       "trangeness",
       "curiosity",
@@ -2380,7 +2380,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 163,
-    kanjiMeanings: [
+    itemMeanings: [
       "stream",
       "river",
     ],
@@ -2403,7 +2403,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 640,
-    kanjiMeanings: [
+    itemMeanings: [
       "state",
       "province",
     ],
@@ -2426,7 +2426,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1000,
-    kanjiMeanings: [
+    itemMeanings: [
       "obey",
       "order",
       "turn",
@@ -2451,7 +2451,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 76,
-    kanjiMeanings: ["water"],
+    itemMeanings: ["water"],
   ),
   LearningItem(
     keyword: "eternity",
@@ -2471,7 +2471,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 644,
-    kanjiMeanings: [
+    itemMeanings: [
       "eternity",
       "long",
       "lengthy",
@@ -2492,7 +2492,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 912,
-    kanjiMeanings: [
+    itemMeanings: [
       "spring",
       "fountain",
     ],
@@ -2515,7 +2515,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 201,
-    kanjiMeanings: [
+    itemMeanings: [
       "meadow",
       "original",
       "field",
@@ -2539,7 +2539,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 642,
-    kanjiMeanings: [
+    itemMeanings: [
       "petition",
       "request",
       "vow",
@@ -2561,7 +2561,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "source",
@@ -2578,7 +2578,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 632,
-    kanjiMeanings: [
+    itemMeanings: [
       "source",
       "origin",
     ],
@@ -2601,7 +2601,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 181,
-    kanjiMeanings: [
+    itemMeanings: [
       "lively",
       "resuscitation",
       "being helped,",
@@ -2626,7 +2626,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 417,
-    kanjiMeanings: [
+    itemMeanings: [
       "extinguish",
       "blow out",
       "turn off",
@@ -2648,7 +2648,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1003,
-    kanjiMeanings: [
+    itemMeanings: [
       "overnight stay",
       "put up at",
       "ride at anchor",
@@ -2672,7 +2672,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 234,
-    kanjiMeanings: [
+    itemMeanings: [
       "soil",
       "earth",
       "ground",
@@ -2697,7 +2697,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2488,
-    kanjiMeanings: [
+    itemMeanings: [
       "square jewel",
       "corner",
       "angle",
@@ -2723,7 +2723,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 403,
-    kanjiMeanings: ["Buddhist temple"],
+    itemMeanings: ["Buddhist temple"],
   ),
   LearningItem(
     keyword: "time",
@@ -2743,7 +2743,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 11,
-    kanjiMeanings: [
+    itemMeanings: [
       "time",
       "hour",
     ],
@@ -2767,7 +2767,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 237,
-    kanjiMeanings: ["fire"],
+    itemMeanings: ["fire"],
   ),
   LearningItem(
     keyword: "inflammation",
@@ -2787,7 +2787,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1689,
-    kanjiMeanings: [
+    itemMeanings: [
       "inflammation",
       "flame",
       "blaze",
@@ -2808,7 +2808,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "spot",
@@ -2825,7 +2825,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 208,
-    kanjiMeanings: [
+    itemMeanings: [
       "spot",
       "point",
       "mark",
@@ -2847,7 +2847,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 734,
-    kanjiMeanings: [
+    itemMeanings: [
       "illuminate",
       "shine",
       "compare",
@@ -2869,7 +2869,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 772,
-    kanjiMeanings: ["fish"],
+    itemMeanings: ["fish"],
   ),
   LearningItem(
     keyword: "ri",
@@ -2890,7 +2890,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 546,
-    kanjiMeanings: [
+    itemMeanings: [
       "ri",
       "village",
       "parent's home",
@@ -2915,7 +2915,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 301,
-    kanjiMeanings: ["black"],
+    itemMeanings: ["black"],
   ),
   LearningItem(
     keyword: "quantity",
@@ -2935,7 +2935,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 879,
-    kanjiMeanings: [
+    itemMeanings: [
       "quantity",
       "measure",
       "weight",
@@ -2957,7 +2957,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 919,
-    kanjiMeanings: [
+    itemMeanings: [
       "bury",
       "be filled up",
       "embedded",
@@ -2978,7 +2978,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "same",
@@ -2998,7 +2998,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 63,
-    kanjiMeanings: [
+    itemMeanings: [
       "same",
       "agree",
       "equal",
@@ -3022,7 +3022,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 111,
-    kanjiMeanings: [
+    itemMeanings: [
       "yonder",
       "facing",
       "beyond",
@@ -3044,7 +3044,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "character",
@@ -3065,7 +3065,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 205,
-    kanjiMeanings: [
+    itemMeanings: [
       "character",
       "letter",
       "word",
@@ -3087,7 +3087,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 425,
-    kanjiMeanings: [
+    itemMeanings: [
       "guard",
       "protect",
       "defend",
@@ -3112,7 +3112,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 933,
-    kanjiMeanings: [
+    itemMeanings: [
       "perfect",
       "completion",
       "end",
@@ -3136,7 +3136,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 244,
-    kanjiMeanings: [
+    itemMeanings: [
       "relax",
       "cheap",
       "low",
@@ -3158,7 +3158,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 378,
-    kanjiMeanings: [
+    itemMeanings: [
       "Shinto shrine",
       "constellations",
       "palace",
@@ -3183,7 +3183,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 333,
-    kanjiMeanings: [
+    itemMeanings: [
       "draw near",
       "stop in",
       "bring near",
@@ -3205,7 +3205,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "wealth",
@@ -3225,7 +3225,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 676,
-    kanjiMeanings: [
+    itemMeanings: [
       "wealth",
       "enrich",
       "abundant",
@@ -3250,7 +3250,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 118,
-    kanjiMeanings: [
+    itemMeanings: [
       "tree",
       "wood",
     ],
@@ -3273,7 +3273,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 508,
-    kanjiMeanings: [
+    itemMeanings: [
       "grove",
       "forest",
     ],
@@ -3296,7 +3296,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 738,
-    kanjiMeanings: [
+    itemMeanings: [
       "forest",
       "woods",
     ],
@@ -3319,7 +3319,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 926,
-    kanjiMeanings: ["plant"],
+    itemMeanings: ["plant"],
   ),
   LearningItem(
     keyword: "town",
@@ -3336,7 +3336,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 183,
-    kanjiMeanings: [
+    itemMeanings: [
       "village",
       "town",
     ],
@@ -3356,7 +3356,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 115,
-    kanjiMeanings: [
+    itemMeanings: [
       "inter-",
       "mutual",
       "together",
@@ -3381,7 +3381,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 27,
-    kanjiMeanings: [
+    itemMeanings: [
       "book",
       "present",
       "main",
@@ -3403,7 +3403,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 588,
-    kanjiMeanings: [
+    itemMeanings: [
       "plan",
       "suggestion",
       "draft",
@@ -3429,7 +3429,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 596,
-    kanjiMeanings: [
+    itemMeanings: [
       "un-",
       "not yet",
       "hitherto",
@@ -3454,7 +3454,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 562,
-    kanjiMeanings: [
+    itemMeanings: [
       "end",
       "close",
       "tip",
@@ -3479,7 +3479,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 119,
-    kanjiMeanings: [
+    itemMeanings: [
       "flavor",
       "taste",
     ],
@@ -3502,7 +3502,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 847,
-    kanjiMeanings: ["younger sister"],
+    itemMeanings: ["younger sister"],
   ),
   LearningItem(
     keyword: "vermilion",
@@ -3522,7 +3522,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1641,
-    kanjiMeanings: [
+    itemMeanings: [
       "vermilion",
       "cinnabar",
       "scarlet",
@@ -3544,7 +3544,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "young",
@@ -3564,7 +3564,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 196,
-    kanjiMeanings: [
+    itemMeanings: [
       "young",
       "if",
       "perhaps",
@@ -3590,7 +3590,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 259,
-    kanjiMeanings: [
+    itemMeanings: [
       "grass",
       "weeds",
       "herbs",
@@ -3612,7 +3612,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 240,
-    kanjiMeanings: [
+    itemMeanings: [
       "suffering",
       "trial",
       "worry",
@@ -3637,7 +3637,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 556,
-    kanjiMeanings: [
+    itemMeanings: [
       "dilute",
       "thin",
       "weak (tea)",
@@ -3662,7 +3662,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 125,
-    kanjiMeanings: [
+    itemMeanings: [
       "leaf",
       "plane",
       "lobe",
@@ -3687,7 +3687,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1937,
-    kanjiMeanings: [
+    itemMeanings: [
       "must not",
       "do not",
       "be not",
@@ -3708,7 +3708,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 534,
-    kanjiMeanings: [
+    itemMeanings: [
       "evening",
       "twilight",
       "season end",
@@ -3733,7 +3733,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2325,
-    kanjiMeanings: [
+    itemMeanings: [
       "seedling",
       "sapling",
       "shoot",
@@ -3757,7 +3757,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2448,
-    kanjiMeanings: [
+    itemMeanings: [
       "portent",
       "10**12",
       "trillion",
@@ -3782,7 +3782,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 637,
-    kanjiMeanings: [
+    itemMeanings: [
       "stare",
       "watch",
       "look at",
@@ -3807,7 +3807,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 707,
-    kanjiMeanings: ["dog"],
+    itemMeanings: ["dog"],
   ),
   LearningItem(
     keyword: "status quo",
@@ -3824,7 +3824,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 579,
-    kanjiMeanings: [
+    itemMeanings: [
       "status quo",
       "conditions",
       "circumstances",
@@ -3846,7 +3846,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 557,
-    kanjiMeanings: [
+    itemMeanings: [
       "silence",
       "become silent",
       "stop speaking",
@@ -3871,7 +3871,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 74,
-    kanjiMeanings: [
+    itemMeanings: [
       "sort of thing",
       "so",
       "if so",
@@ -3893,7 +3893,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 811,
-    kanjiMeanings: ["cow"],
+    itemMeanings: ["cow"],
   ),
   LearningItem(
     keyword: "special",
@@ -3914,7 +3914,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 353,
-    kanjiMeanings: ["special"],
+    itemMeanings: ["special"],
   ),
   LearningItem(
     keyword: "revelation",
@@ -3934,7 +3934,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 357,
-    kanjiMeanings: [
+    itemMeanings: [
       "revelation",
       "tell",
       "inform",
@@ -3956,7 +3956,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 69,
-    kanjiMeanings: [
+    itemMeanings: [
       "before",
       "ahead",
       "previous",
@@ -3978,7 +3978,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 944,
-    kanjiMeanings: [
+    itemMeanings: [
       "wash",
       "inquire into",
       "probe",
@@ -3999,7 +3999,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "jammed in",
@@ -4019,7 +4019,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 645,
-    kanjiMeanings: [
+    itemMeanings: [
       "jammed in",
       "shellfish",
       "mediate",
@@ -4041,7 +4041,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 303,
-    kanjiMeanings: [
+    itemMeanings: [
       "world",
       "boundary",
     ],
@@ -4061,7 +4061,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 375,
-    kanjiMeanings: ["tea"],
+    itemMeanings: ["tea"],
   ),
   LearningItem(
     keyword: "meeting",
@@ -4078,7 +4078,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "fit",
@@ -4098,7 +4098,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 50,
-    kanjiMeanings: [
+    itemMeanings: [
       "fit",
       "suit",
       "join",
@@ -4123,7 +4123,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 369,
-    kanjiMeanings: [
+    itemMeanings: [
       "king",
       "rule",
       "magnate",
@@ -4147,7 +4147,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 615,
-    kanjiMeanings: [
+    itemMeanings: [
       "jewel",
       "ball",
     ],
@@ -4167,7 +4167,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 123,
-    kanjiMeanings: [
+    itemMeanings: [
       "present",
       "existing",
       "actual",
@@ -4188,7 +4188,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 750,
-    kanjiMeanings: [
+    itemMeanings: [
       "lunatic",
       "insane",
       "crazy",
@@ -4210,7 +4210,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2168,
-    kanjiMeanings: [
+    itemMeanings: [
       "display",
       "offer",
       "present",
@@ -4235,7 +4235,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 126,
-    kanjiMeanings: [
+    itemMeanings: [
       "whole",
       "entire",
       "all",
@@ -4257,7 +4257,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 85,
-    kanjiMeanings: [
+    itemMeanings: [
       "logic",
       "arrangement",
       "reason",
@@ -4283,7 +4283,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 87,
-    kanjiMeanings: [
+    itemMeanings: [
       "lord",
       "chief",
       "master",
@@ -4308,7 +4308,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 442,
-    kanjiMeanings: [
+    itemMeanings: [
       "pour",
       "irrigate",
       "shed (tears)",
@@ -4330,7 +4330,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 129,
-    kanjiMeanings: ["gold"],
+    itemMeanings: ["gold"],
   ),
   LearningItem(
     keyword: "road",
@@ -4347,7 +4347,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "road-way",
@@ -4364,7 +4364,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 97,
-    kanjiMeanings: [
+    itemMeanings: [
       "road-way",
       "street",
       "district",
@@ -4389,7 +4389,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 443,
-    kanjiMeanings: [
+    itemMeanings: [
       "create",
       "make",
       "structure",
@@ -4414,7 +4414,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 947,
-    kanjiMeanings: [
+    itemMeanings: [
       "urge",
       "force",
       "imminent",
@@ -4439,7 +4439,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 530,
-    kanjiMeanings: [
+    itemMeanings: [
       "escape",
       "flee",
       "shirk",
@@ -4464,7 +4464,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 576,
-    kanjiMeanings: [
+    itemMeanings: [
       "environs",
       "boundary",
       "border",
@@ -4489,7 +4489,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 203,
-    kanjiMeanings: ["car"],
+    itemMeanings: ["car"],
   ),
   LearningItem(
     keyword: "take along",
@@ -4509,7 +4509,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 289,
-    kanjiMeanings: [
+    itemMeanings: [
       "take along",
       "lead",
       "join",
@@ -4531,7 +4531,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 33,
-    kanjiMeanings: [
+    itemMeanings: [
       "in front",
       "before",
     ],
@@ -4551,7 +4551,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "each",
@@ -4571,7 +4571,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 826,
-    kanjiMeanings: [
+    itemMeanings: [
       "each",
       "every",
       "either",
@@ -4592,7 +4592,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 450,
-    kanjiMeanings: [
+    itemMeanings: [
       "status",
       "rank",
       "capacity",
@@ -4614,7 +4614,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1190,
-    kanjiMeanings: [
+    itemMeanings: [
       "abbreviation",
       "omission",
       "outline",
@@ -4636,7 +4636,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 359,
-    kanjiMeanings: [
+    itemMeanings: [
       "guest",
       "visitor",
       "customer",
@@ -4662,7 +4662,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 963,
-    kanjiMeanings: [
+    itemMeanings: [
       "forehead",
       "tablet",
       "plaque",
@@ -4684,7 +4684,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 668,
-    kanjiMeanings: ["summer"],
+    itemMeanings: ["summer"],
   ),
   LearningItem(
     keyword: "dispose",
@@ -4704,7 +4704,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 200,
-    kanjiMeanings: [
+    itemMeanings: [
       "dispose",
       "manage",
       "deal with",
@@ -4726,7 +4726,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 712,
-    kanjiMeanings: [
+    itemMeanings: [
       "article",
       "clause",
       "item",
@@ -4751,7 +4751,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 164,
-    kanjiMeanings: [
+    itemMeanings: [
       "fall",
       "drop",
       "come down",
@@ -4773,7 +4773,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "army",
@@ -4793,7 +4793,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 338,
-    kanjiMeanings: [
+    itemMeanings: [
       "army",
       "force",
       "troops",
@@ -4815,7 +4815,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 329,
-    kanjiMeanings: [
+    itemMeanings: [
       "carry",
       "luck",
       "destiny",
@@ -4837,7 +4837,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 401,
-    kanjiMeanings: [
+    itemMeanings: [
       "dream",
       "vision",
       "illusion",
@@ -4858,7 +4858,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "tall",
@@ -4875,7 +4875,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 134,
-    kanjiMeanings: [
+    itemMeanings: [
       "tall",
       "high",
       "expensive",
@@ -4899,7 +4899,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 280,
-    kanjiMeanings: [
+    itemMeanings: [
       "capital",
       "10**16",
     ],
@@ -4919,7 +4919,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 572,
-    kanjiMeanings: [
+    itemMeanings: [
       "scenery",
       "view",
     ],
@@ -4939,7 +4939,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "cottage",
@@ -4959,7 +4959,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 834,
-    kanjiMeanings: [
+    itemMeanings: [
       "cottage",
       "inn",
       "hut",
@@ -4981,7 +4981,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 741,
-    kanjiMeanings: [
+    itemMeanings: [
       "circumference",
       "circuit",
       "lap",
@@ -5002,7 +5002,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1333,
-    kanjiMeanings: ["week"],
+    itemMeanings: ["week"],
   ),
   LearningItem(
     keyword: "gentleman",
@@ -5022,7 +5022,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 189,
-    kanjiMeanings: [
+    itemMeanings: [
       "gentleman",
       "scholar",
       "samurai",
@@ -5043,7 +5043,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 207,
-    kanjiMeanings: [
+    itemMeanings: [
       "good luck",
       "joy",
       "congratulations",
@@ -5067,7 +5067,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1410,
-    kanjiMeanings: [
+    itemMeanings: [
       "robust",
       "manhood",
       "prosperity",
@@ -5091,7 +5091,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 460,
-    kanjiMeanings: ["sell"],
+    itemMeanings: ["sell"],
   ),
   LearningItem(
     keyword: "schoolhouse",
@@ -5108,7 +5108,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "study",
@@ -5128,7 +5128,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 49,
-    kanjiMeanings: [
+    itemMeanings: [
       "study",
       "learning",
       "science",
@@ -5152,7 +5152,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 278,
-    kanjiMeanings: [
+    itemMeanings: [
       "memorize",
       "learn",
       "remember",
@@ -5178,7 +5178,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 4612,
-    kanjiMeanings: [
+    itemMeanings: [
       "brush",
       "finally",
       "self",
@@ -5200,7 +5200,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 48,
-    kanjiMeanings: ["write"],
+    itemMeanings: ["write"],
   ),
   LearningItem(
     keyword: "haven",
@@ -5220,7 +5220,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 768,
-    kanjiMeanings: [
+    itemMeanings: [
       "haven",
       "port",
       "harbor",
@@ -5242,7 +5242,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "aggression",
@@ -5262,7 +5262,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1403,
-    kanjiMeanings: [
+    itemMeanings: [
       "aggression",
       "attack",
       "criticize",
@@ -5284,7 +5284,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1062,
-    kanjiMeanings: [
+    itemMeanings: [
       "failure",
       "defeat",
       "reversal",
@@ -5309,7 +5309,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 777,
-    kanjiMeanings: [
+    itemMeanings: [
       "sheet of...",
       "counter for flat thin objects or sheets",
     ],
@@ -5329,7 +5329,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 376,
-    kanjiMeanings: [
+    itemMeanings: [
       "happenstance",
       "especially",
       "intentionally",
@@ -5354,7 +5354,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 903,
-    kanjiMeanings: [
+    itemMeanings: [
       "awe",
       "respect",
       "honor",
@@ -5376,7 +5376,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 25,
-    kanjiMeanings: [
+    itemMeanings: [
       "say",
       "word",
     ],
@@ -5396,7 +5396,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 705,
-    kanjiMeanings: [
+    itemMeanings: [
       "admonish",
       "commandment",
     ],
@@ -5416,7 +5416,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 440,
-    kanjiMeanings: [
+    itemMeanings: [
       "plot",
       "plan",
       "scheme",
@@ -5441,7 +5441,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 878,
-    kanjiMeanings: [
+    itemMeanings: [
       "packed",
       "close",
       "pressed",
@@ -5466,7 +5466,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 66,
-    kanjiMeanings: [
+    itemMeanings: [
       "tale",
       "talk",
     ],
@@ -5489,7 +5489,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 184,
-    kanjiMeanings: [
+    itemMeanings: [
       "word",
       "speech",
       "language",
@@ -5513,7 +5513,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 286,
-    kanjiMeanings: ["read"],
+    itemMeanings: ["read"],
   ),
   LearningItem(
     keyword: "tune",
@@ -5530,7 +5530,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 284,
-    kanjiMeanings: [
+    itemMeanings: [
       "tune",
       "tone",
       "meterkey (music)",
@@ -5554,7 +5554,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 463,
-    kanjiMeanings: [
+    itemMeanings: [
       "discuss",
       "talk",
     ],
@@ -5574,7 +5574,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "style",
@@ -5594,7 +5594,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 323,
-    kanjiMeanings: [
+    itemMeanings: [
       "style",
       "ceremony",
       "rite",
@@ -5619,7 +5619,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 873,
-    kanjiMeanings: [
+    itemMeanings: [
       "test",
       "try",
       "attempt",
@@ -5641,7 +5641,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "a (a certain)",
@@ -5661,7 +5661,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 335,
-    kanjiMeanings: [
+    itemMeanings: [
       "some",
       "one",
       "or",
@@ -5686,7 +5686,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1634,
-    kanjiMeanings: [
+    itemMeanings: [
       "range",
       "region",
       "limits",
@@ -5712,7 +5712,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3777,
-    kanjiMeanings: ["5th calendar sign"],
+    itemMeanings: ["5th calendar sign"],
   ),
   LearningItem(
     keyword: "turn into",
@@ -5732,7 +5732,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 94,
-    kanjiMeanings: [
+    itemMeanings: [
       "turn into",
       "become",
       "get",
@@ -5757,7 +5757,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 512,
-    kanjiMeanings: ["castle"],
+    itemMeanings: ["castle"],
   ),
   LearningItem(
     keyword: "sign of the dog",
@@ -5777,7 +5777,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3591,
-    kanjiMeanings: [
+    itemMeanings: [
       "sign of the dog",
       "7-9PM",
       "eleventh sign of Chinese zodiac",
@@ -5801,7 +5801,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 970,
-    kanjiMeanings: [
+    itemMeanings: [
       "intimidate",
       "dignity",
       "majesty",
@@ -5826,7 +5826,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 910,
-    kanjiMeanings: [
+    itemMeanings: [
       "destroy",
       "ruin",
       "overthrow",
@@ -5848,7 +5848,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1037,
-    kanjiMeanings: [
+    itemMeanings: [
       "dwindle",
       "decrease",
       "reduce",
@@ -5870,7 +5870,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "coin",
@@ -5891,7 +5891,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 808,
-    kanjiMeanings: [
+    itemMeanings: [
       "coin",
       ".01",
       "yenmoney",
@@ -5915,7 +5915,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 887,
-    kanjiMeanings: [
+    itemMeanings: [
       "shallow",
       "superficial",
       "frivolous",
@@ -5940,7 +5940,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 390,
-    kanjiMeanings: [
+    itemMeanings: [
       "stop",
       "halt",
     ],
@@ -5963,7 +5963,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 159,
-    kanjiMeanings: [
+    itemMeanings: [
       "walk",
       "counter for steps",
     ],
@@ -5986,7 +5986,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 624,
-    kanjiMeanings: [
+    itemMeanings: [
       "curriculum",
       "continuation",
       "passage of time",
@@ -6007,7 +6007,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "warrior",
@@ -6024,7 +6024,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 347,
-    kanjiMeanings: [
+    itemMeanings: [
       "warrior",
       "military",
       "chivalry",
@@ -6050,7 +6050,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 98,
-    kanjiMeanings: [
+    itemMeanings: [
       "correct",
       "justice",
       "righteous",
@@ -6072,7 +6072,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 651,
-    kanjiMeanings: [
+    itemMeanings: [
       "evidence",
       "proof",
       "certificate",
@@ -6097,7 +6097,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 356,
-    kanjiMeanings: [
+    itemMeanings: [
       "politics",
       "government",
     ],
@@ -6117,7 +6117,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "determine",
@@ -6134,7 +6134,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 242,
-    kanjiMeanings: [
+    itemMeanings: [
       "determine",
       "fix",
       "establish",
@@ -6160,7 +6160,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 473,
-    kanjiMeanings: ["run"],
+    itemMeanings: ["run"],
   ),
   LearningItem(
     keyword: "transcend",
@@ -6177,7 +6177,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1405,
-    kanjiMeanings: [
+    itemMeanings: [
       "transcend",
       "super-",
       "ultra-",
@@ -6198,7 +6198,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 469,
-    kanjiMeanings: [
+    itemMeanings: [
       "surpass",
       "cross over",
       "move to",
@@ -6223,7 +6223,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 680,
-    kanjiMeanings: [
+    itemMeanings: [
       "just so",
       "this",
       "right",
@@ -6248,7 +6248,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 267,
-    kanjiMeanings: [
+    itemMeanings: [
       "topic",
       "subject",
     ],
@@ -6268,7 +6268,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "build",
@@ -6285,7 +6285,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 605,
-    kanjiMeanings: ["build"],
+    itemMeanings: ["build"],
   ),
   LearningItem(
     keyword: "garment",
@@ -6302,7 +6302,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 627,
-    kanjiMeanings: [
+    itemMeanings: [
       "garment",
       "clothes",
       "dressing",
@@ -6323,7 +6323,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 872,
-    kanjiMeanings: [
+    itemMeanings: [
       "attire",
       "dress",
       "pretend",
@@ -6345,7 +6345,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 566,
-    kanjiMeanings: [
+    itemMeanings: [
       "back",
       "amidst",
       "in",
@@ -6370,7 +6370,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 971,
-    kanjiMeanings: [
+    itemMeanings: [
       "pathetic",
       "grief",
       "sorrow",
@@ -6392,7 +6392,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 266,
-    kanjiMeanings: [
+    itemMeanings: [
       "distant",
       "far",
     ],
@@ -6412,7 +6412,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "first time",
@@ -6429,7 +6429,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 175,
-    kanjiMeanings: [
+    itemMeanings: [
       "first time",
       "beginning",
     ],
@@ -6452,7 +6452,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1668,
-    kanjiMeanings: [
+    itemMeanings: [
       "towel",
       "hanging scroll",
       "width",
@@ -6476,7 +6476,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 754,
-    kanjiMeanings: [
+    itemMeanings: [
       "linen",
       "cloth",
       "spread",
@@ -6501,7 +6501,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 897,
-    kanjiMeanings: [
+    itemMeanings: [
       "curtain",
       "bunting",
       "act of play",
@@ -6525,7 +6525,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 472,
-    kanjiMeanings: [
+    itemMeanings: [
       "market",
       "city",
       "town",
@@ -6549,7 +6549,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 709,
-    kanjiMeanings: ["elder sister"],
+    itemMeanings: ["elder sister"],
   ),
   LearningItem(
     keyword: "apron",
@@ -6566,7 +6566,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "sash",
@@ -6583,7 +6583,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 756,
-    kanjiMeanings: [
+    itemMeanings: [
       "sash",
       "belt",
       "obi",
@@ -6608,7 +6608,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 928,
-    kanjiMeanings: [
+    itemMeanings: [
       "thorn",
       "pierce",
       "stab",
@@ -6630,7 +6630,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 405,
-    kanjiMeanings: [
+    itemMeanings: [
       "system",
       "law",
       "rule",
@@ -6654,7 +6654,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 39,
-    kanjiMeanings: ["say"],
+    itemMeanings: ["say"],
   ),
   LearningItem(
     keyword: "revolve",
@@ -6674,7 +6674,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 638,
-    kanjiMeanings: [
+    itemMeanings: [
       "revolve",
       "turn around",
       "change",
@@ -6698,7 +6698,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 366,
-    kanjiMeanings: [
+    itemMeanings: [
       "technique",
       "art",
       "craft",
@@ -6720,7 +6720,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 382,
-    kanjiMeanings: ["rain"],
+    itemMeanings: ["rain"],
   ),
   LearningItem(
     keyword: "cloud",
@@ -6740,7 +6740,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 523,
-    kanjiMeanings: ["cloud"],
+    itemMeanings: ["cloud"],
   ),
   LearningItem(
     keyword: "ice",
@@ -6757,7 +6757,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "winter",
@@ -6774,7 +6774,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 844,
-    kanjiMeanings: ["winter"],
+    itemMeanings: ["winter"],
   ),
   LearningItem(
     keyword: "heavens",
@@ -6795,7 +6795,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 142,
-    kanjiMeanings: [
+    itemMeanings: [
       "heavens",
       "sky",
       "imperial",
@@ -6816,7 +6816,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "bridge",
@@ -6836,7 +6836,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 543,
-    kanjiMeanings: ["bridge"],
+    itemMeanings: ["bridge"],
   ),
   LearningItem(
     keyword: "stand up",
@@ -6856,7 +6856,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 41,
-    kanjiMeanings: [
+    itemMeanings: [
       "stand up",
       "rise",
       "set up",
@@ -6878,7 +6878,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 477,
-    kanjiMeanings: [
+    itemMeanings: [
       "cry",
       "weep",
       "moan",
@@ -6902,7 +6902,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1087,
-    kanjiMeanings: ["concubine"],
+    itemMeanings: ["concubine"],
   ),
   LearningItem(
     keyword: "badge",
@@ -6919,7 +6919,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 835,
-    kanjiMeanings: [
+    itemMeanings: [
       "badge",
       "chapter",
       "composition",
@@ -6945,7 +6945,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 639,
-    kanjiMeanings: [
+    itemMeanings: [
       "make a deal",
       "selling",
       "dealing in",
@@ -6967,7 +6967,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "suitable",
@@ -6987,7 +6987,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1079,
-    kanjiMeanings: [
+    itemMeanings: [
       "suitable",
       "occasional",
       "rare",
@@ -7013,7 +7013,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 612,
-    kanjiMeanings: [
+    itemMeanings: [
       "enemy",
       "foe",
       "opponent",
@@ -7037,7 +7037,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3237,
-    kanjiMeanings: [
+    itemMeanings: [
       "spoon",
     ],
   ),
@@ -7060,7 +7060,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 247,
-    kanjiMeanings: [
+    itemMeanings: [
       "time",
       "about",
       "toward",
@@ -7084,7 +7084,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 458,
-    kanjiMeanings: ["north"],
+    itemMeanings: ["north"],
   ),
   LearningItem(
     keyword: "stature",
@@ -7101,7 +7101,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 452,
-    kanjiMeanings: [
+    itemMeanings: [
       "stature",
       "height",
       "back",
@@ -7126,7 +7126,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 604,
-    kanjiMeanings: [
+    itemMeanings: [
       "compare",
       "race",
       "ratio",
@@ -7148,7 +7148,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 272,
-    kanjiMeanings: [
+    itemMeanings: [
       "all",
       "everything",
     ],
@@ -7171,7 +7171,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1527,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "reclining",
@@ -7188,7 +7188,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "every",
@@ -7209,7 +7209,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 550,
-    kanjiMeanings: ["every"],
+    itemMeanings: ["every"],
   ),
   LearningItem(
     keyword: "plum",
@@ -7230,7 +7230,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 945,
-    kanjiMeanings: ["plum"],
+    itemMeanings: ["plum"],
   ),
   LearningItem(
     keyword: "sea",
@@ -7251,7 +7251,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 229,
-    kanjiMeanings: [
+    itemMeanings: [
       "sea",
       "ocean",
     ],
@@ -7271,7 +7271,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "abdomen",
@@ -7291,7 +7291,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 515,
-    kanjiMeanings: [
+    itemMeanings: [
       "abdomen",
       "belly",
       "stomach",
@@ -7312,7 +7312,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 536,
-    kanjiMeanings: [
+    itemMeanings: [
       "blow",
       "breathe",
       "puff",
@@ -7334,7 +7334,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 274,
-    kanjiMeanings: [
+    itemMeanings: [
       "song",
       "sing",
     ],
@@ -7357,7 +7357,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 141,
-    kanjiMeanings: [
+    itemMeanings: [
       "next",
       "order",
       "sequence",
@@ -7378,7 +7378,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 830,
-    kanjiMeanings: [
+    itemMeanings: [
       "assets",
       "resources",
       "capital",
@@ -7400,7 +7400,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 285,
-    kanjiMeanings: [
+    itemMeanings: [
       "figure",
       "form",
       "shape",
@@ -7421,7 +7421,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 155,
-    kanjiMeanings: [
+    itemMeanings: [
       "sound",
       "noise",
     ],
@@ -7441,7 +7441,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 365,
-    kanjiMeanings: [
+    itemMeanings: [
       "darkness",
       "disappear",
       "shade",
@@ -7463,7 +7463,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "discriminating",
@@ -7480,7 +7480,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 332,
-    kanjiMeanings: [
+    itemMeanings: [
       "discriminating",
       "know",
       "write",
@@ -7501,7 +7501,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "mirror",
@@ -7522,7 +7522,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 836,
-    kanjiMeanings: [
+    itemMeanings: [
       "mirror",
       "speculum",
       "barrel-head",
@@ -7544,7 +7544,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 752,
-    kanjiMeanings: [
+    itemMeanings: [
       "boundary",
       "border",
       "region",
@@ -7568,7 +7568,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 828,
-    kanjiMeanings: [
+    itemMeanings: [
       "deceased",
       "the late",
       "dying",
@@ -7590,7 +7590,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 781,
-    kanjiMeanings: [
+    itemMeanings: [
       "laid waste",
       "rough",
       "rude",
@@ -7612,7 +7612,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 387,
-    kanjiMeanings: [
+    itemMeanings: [
       "ambition:,:full moon",
       "hope",
       "desire",
@@ -7636,7 +7636,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 21,
-    kanjiMeanings: [
+    itemMeanings: [
       "direction",
       "personal",
       "ternative",
@@ -7660,7 +7660,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 714,
-    kanjiMeanings: [
+    itemMeanings: [
       "boy",
       "priest's residence",
       "priest",
@@ -7681,7 +7681,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 769,
-    kanjiMeanings: [
+    itemMeanings: [
       "call on",
       "visit",
       "look up",
@@ -7706,7 +7706,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 444,
-    kanjiMeanings: [
+    itemMeanings: [
       "set free",
       "release",
       "fire",
@@ -7728,7 +7728,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 850,
-    kanjiMeanings: [
+    itemMeanings: [
       "violent",
       "get excited",
       "enraged",
@@ -7750,7 +7750,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "undress",
@@ -7770,7 +7770,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 907,
-    kanjiMeanings: [
+    itemMeanings: [
       "undress",
       "removing",
       "escape from",
@@ -7795,7 +7795,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 202,
-    kanjiMeanings: [
+    itemMeanings: [
       "opinion",
       "theory",
       "explanation",
@@ -7820,7 +7820,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3064,
-    kanjiMeanings: [
+    itemMeanings: [
       "formerly",
       "once",
       "before",
@@ -7845,7 +7845,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 854,
-    kanjiMeanings: [
+    itemMeanings: [
       "increase",
       "add",
       "augment",
@@ -7870,7 +7870,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 236,
-    kanjiMeanings: ["east"],
+    itemMeanings: ["east"],
   ),
   LearningItem(
     keyword: "porter",
@@ -7887,7 +7887,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "courts",
@@ -7907,7 +7907,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1609,
-    kanjiMeanings: [
+    itemMeanings: [
       "courts",
       "imperial court",
       "government office",
@@ -7931,7 +7931,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 986,
-    kanjiMeanings: [
+    itemMeanings: [
       "dye",
       "color",
       "paint",
@@ -7956,7 +7956,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 618,
-    kanjiMeanings: [
+    itemMeanings: [
       "year-end",
       "age",
       "occasion",
@@ -7978,7 +7978,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1396,
-    kanjiMeanings: ["prefecture"],
+    itemMeanings: ["prefecture"],
   ),
   LearningItem(
     keyword: "est",
@@ -7995,7 +7995,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1246,
-    kanjiMeanings: ["to be (classical)"],
+    itemMeanings: ["to be (classical)"],
   ),
   LearningItem(
     keyword: "ground",
@@ -8012,7 +8012,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 59,
-    kanjiMeanings: [
+    itemMeanings: [
       "ground",
       "earth",
     ],
@@ -8035,7 +8035,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 923,
-    kanjiMeanings: [
+    itemMeanings: [
       "pond",
       "cistern",
       "pool",
@@ -8057,7 +8057,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 861,
-    kanjiMeanings: [
+    itemMeanings: [
       "insect",
       "bug",
       "temper",
@@ -8078,7 +8078,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "single",
@@ -8095,7 +8095,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 522,
-    kanjiMeanings: [
+    itemMeanings: [
       "single",
       "alone",
       "spontaneously",
@@ -8120,7 +8120,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 107,
-    kanjiMeanings: [
+    itemMeanings: [
       "wind",
       "air",
       "style",
@@ -8142,7 +8142,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 510,
-    kanjiMeanings: ["self"],
+    itemMeanings: ["self"],
   ),
   LearningItem(
     keyword: "rouse",
@@ -8162,7 +8162,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 204,
-    kanjiMeanings: [
+    itemMeanings: [
       "rouse",
       "wake up",
       "get up",
@@ -8186,7 +8186,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 567,
-    kanjiMeanings: [
+    itemMeanings: [
       "reformation",
       "change",
       "modify",
@@ -8208,7 +8208,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 173,
-    kanjiMeanings: [
+    itemMeanings: [
       "scribe",
       "account",
       "narrative",
@@ -8232,7 +8232,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 869,
-    kanjiMeanings: [
+    itemMeanings: [
       "wrap",
       "pack up",
       "cover",
@@ -8254,7 +8254,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [],
+    itemMeanings: [],
   ),
   LearningItem(
     keyword: "tortoise",
@@ -8274,7 +8274,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1639,
-    kanjiMeanings: [
+    itemMeanings: [
       "tortoise",
       "turtle",
     ],
@@ -8297,7 +8297,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 384,
-    kanjiMeanings: ["electricity"],
+    itemMeanings: ["electricity"],
   ),
   LearningItem(
     keyword: "pig",
@@ -8314,7 +8314,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "consummate",
@@ -8334,7 +8334,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 995,
-    kanjiMeanings: [
+    itemMeanings: [
       "consummate",
       "accomplish",
       "attain",
@@ -8359,7 +8359,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 34,
-    kanjiMeanings: [
+    itemMeanings: [
       "house",
       "home",
       "family",
@@ -8381,7 +8381,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "open",
@@ -8401,7 +8401,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 4279,
-    kanjiMeanings: [
+    itemMeanings: [
       "open",
       "sun",
     ],
@@ -8425,7 +8425,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 91,
-    kanjiMeanings: [
+    itemMeanings: [
       "location",
       "place",
     ],
@@ -8448,7 +8448,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 759,
-    kanjiMeanings: [
+    itemMeanings: [
       "hot water",
       "bath",
       "hot spring",
@@ -8472,7 +8472,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1640,
-    kanjiMeanings: ["sheep"],
+    itemMeanings: ["sheep"],
   ),
   LearningItem(
     keyword: "beauty",
@@ -8489,7 +8489,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 150,
-    kanjiMeanings: [
+    itemMeanings: [
       "beauty",
       "beautiful",
     ],
@@ -8512,7 +8512,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 482,
-    kanjiMeanings: [
+    itemMeanings: [
       "ocean",
       "sea",
       "foreign",
@@ -8537,7 +8537,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1568,
-    kanjiMeanings: [
+    itemMeanings: [
       "detailed",
       "full",
       "minute",
@@ -8559,7 +8559,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 179,
-    kanjiMeanings: [
+    itemMeanings: [
       "accomplished",
       "reach",
       "arrive",
@@ -8581,7 +8581,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "distinction",
@@ -8601,7 +8601,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 589,
-    kanjiMeanings: [
+    itemMeanings: [
       "distinction",
       "difference",
       "variation",
@@ -8626,7 +8626,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 186,
-    kanjiMeanings: [
+    itemMeanings: [
       "don",
       "arrive",
       "wear",
@@ -8648,7 +8648,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "solely",
@@ -8668,7 +8668,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 690,
-    kanjiMeanings: [
+    itemMeanings: [
       "solely",
       "only",
       "merely",
@@ -8693,7 +8693,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 252,
-    kanjiMeanings: [
+    itemMeanings: [
       "who",
       "someone",
       "somebody",
@@ -8714,7 +8714,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1433,
-    kanjiMeanings: [
+    itemMeanings: [
       "char",
       "hurry",
       "impatient",
@@ -8736,7 +8736,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 251,
-    kanjiMeanings: [
+    itemMeanings: [
       "gather",
       "meet",
       "congregate",
@@ -8761,7 +8761,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 316,
-    kanjiMeanings: [
+    itemMeanings: [
       "advance",
       "proceed",
       "progress",
@@ -8783,7 +8783,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 525,
-    kanjiMeanings: ["miscellaneous"],
+    itemMeanings: ["miscellaneous"],
   ),
   LearningItem(
     keyword: "semi-",
@@ -8800,7 +8800,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 377,
-    kanjiMeanings: [
+    itemMeanings: [
       "semi-",
       "correspond to",
       "proportionate to",
@@ -8822,7 +8822,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1245,
-    kanjiMeanings: [
+    itemMeanings: [
       "rob",
       "take by force",
       "snatch away",
@@ -8844,7 +8844,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 560,
-    kanjiMeanings: [
+    itemMeanings: [
       "assurance",
       "firm",
       "tight",
@@ -8870,7 +8870,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 775,
-    kanjiMeanings: [
+    itemMeanings: [
       "noon",
       "sign of the horse",
       "11AM-1PM",
@@ -8895,7 +8895,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 526,
-    kanjiMeanings: [
+    itemMeanings: [
       "permit",
       "approve",
     ],
@@ -8915,7 +8915,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "authority",
@@ -8932,7 +8932,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 700,
-    kanjiMeanings: [
+    itemMeanings: [
       "authority",
       "power",
       "rights",
@@ -8956,7 +8956,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 310,
-    kanjiMeanings: [
+    itemMeanings: [
       "outlook",
       "look",
       "appearance",
@@ -8981,7 +8981,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 634,
-    kanjiMeanings: [
+    itemMeanings: [
       "feathers",
       "counter for birds",
       "rabbits",
@@ -9005,7 +9005,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 755,
-    kanjiMeanings: ["learn"],
+    itemMeanings: ["learn"],
   ),
   LearningItem(
     keyword: "the following",
@@ -9025,7 +9025,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 951,
-    kanjiMeanings: [
+    itemMeanings: [
       "the following",
       "next",
     ],
@@ -9045,7 +9045,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "weekday",
@@ -9066,7 +9066,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1059,
-    kanjiMeanings: ["weekday"],
+    itemMeanings: ["weekday"],
   ),
   LearningItem(
     keyword: "quandary",
@@ -9086,7 +9086,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 538,
-    kanjiMeanings: [
+    itemMeanings: [
       "quandary",
       "become distressed",
       "annoyed",
@@ -9110,7 +9110,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 806,
-    kanjiMeanings: [
+    itemMeanings: [
       "harden",
       "set",
       "clot",
@@ -9135,7 +9135,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 103,
-    kanjiMeanings: ["country"],
+    itemMeanings: ["country"],
   ),
   LearningItem(
     keyword: "group",
@@ -9152,7 +9152,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 623,
-    kanjiMeanings: [
+    itemMeanings: [
       "group",
       "association",
     ],
@@ -9172,7 +9172,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 757,
-    kanjiMeanings: [
+    itemMeanings: [
       "cause",
       "factor",
       "be associated with",
@@ -9194,7 +9194,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 795,
-    kanjiMeanings: [
+    itemMeanings: [
       "park",
       "garden",
       "yard",
@@ -9219,7 +9219,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 652,
-    kanjiMeanings: [
+    itemMeanings: [
       "-times",
       "round",
       "game",
@@ -9241,7 +9241,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "store",
@@ -9261,7 +9261,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 379,
-    kanjiMeanings: [
+    itemMeanings: [
       "store",
       "shop",
     ],
@@ -9285,7 +9285,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 245,
-    kanjiMeanings: [
+    itemMeanings: [
       "warehouse",
       "storehouse",
     ],
@@ -9308,7 +9308,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 445,
-    kanjiMeanings: [
+    itemMeanings: [
       "courtyard",
       "garden",
       "yard",
@@ -9332,7 +9332,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 687,
-    kanjiMeanings: [
+    itemMeanings: [
       "bed",
       "counter for beds",
       "floor",
@@ -9357,7 +9357,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 35,
-    kanjiMeanings: [
+    itemMeanings: [
       "heart",
       "mind",
       "spirit",
@@ -9378,7 +9378,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 462,
-    kanjiMeanings: ["forget"],
+    itemMeanings: ["forget"],
   ),
   LearningItem(
     keyword: "endure",
@@ -9398,7 +9398,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 936,
-    kanjiMeanings: [
+    itemMeanings: [
       "endure",
       "bear",
       "put up with",
@@ -9423,7 +9423,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 602,
-    kanjiMeanings: [
+    itemMeanings: [
       "acknowledge",
       "witness",
       "discern",
@@ -9448,7 +9448,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 467,
-    kanjiMeanings: [
+    itemMeanings: [
       "intention",
       "plan",
       "resolve",
@@ -9473,7 +9473,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1010,
-    kanjiMeanings: [
+    itemMeanings: [
       "document",
       "records",
     ],
@@ -9496,7 +9496,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 909,
-    kanjiMeanings: [
+    itemMeanings: [
       "loyalty",
       "fidelity",
       "faithfulness",
@@ -9521,7 +9521,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 9,
-    kanjiMeanings: ["think"],
+    itemMeanings: ["think"],
   ),
   LearningItem(
     keyword: "apply",
@@ -9538,7 +9538,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 622,
-    kanjiMeanings: [
+    itemMeanings: [
       "apply",
       "answer",
       "yes",
@@ -9563,7 +9563,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 58,
-    kanjiMeanings: [
+    itemMeanings: [
       "idea",
       "mind",
       "heart",
@@ -9588,7 +9588,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 210,
-    kanjiMeanings: [
+    itemMeanings: [
       "concept",
       "think",
       "idea",
@@ -9610,7 +9610,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 381,
-    kanjiMeanings: [
+    itemMeanings: [
       "breath",
       "respiration",
       "son",
@@ -9632,7 +9632,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 320,
-    kanjiMeanings: [
+    itemMeanings: [
       "fear",
       "dread",
       "awe",
@@ -9656,7 +9656,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 949,
-    kanjiMeanings: [
+    itemMeanings: [
       "beguile",
       "delusion",
       "perplexity",
@@ -9680,7 +9680,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 81,
-    kanjiMeanings: [
+    itemMeanings: [
       "emotion",
       "feeling",
       "sensation",
@@ -9701,7 +9701,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1292,
-    kanjiMeanings: [
+    itemMeanings: [
       "melancholy",
       "grieve",
       "lament",
@@ -9723,7 +9723,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [],
+    itemMeanings: [],
   ),
   LearningItem(
     keyword: "busy",
@@ -9743,7 +9743,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1406,
-    kanjiMeanings: [
+    itemMeanings: [
       "busy",
       "occupied",
       "restless",
@@ -9767,7 +9767,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 791,
-    kanjiMeanings: [
+    itemMeanings: [
       "dreadful",
       "be frightened",
       "fearful",
@@ -9792,7 +9792,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1376,
-    kanjiMeanings: [
+    itemMeanings: [
       "repent",
       "regret",
     ],
@@ -9815,7 +9815,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1001,
-    kanjiMeanings: [
+    itemMeanings: [
       "hate",
       "detest",
     ],
@@ -9838,7 +9838,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 968,
-    kanjiMeanings: [
+    itemMeanings: [
       "recollection",
       "think",
       "remember",
@@ -9862,7 +9862,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 273,
-    kanjiMeanings: [
+    itemMeanings: [
       "invariably",
       "certain",
       "inevitable",
@@ -9886,7 +9886,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 24,
-    kanjiMeanings: ["hand"],
+    itemMeanings: ["hand"],
   ),
   LearningItem(
     keyword: "ego",
@@ -9903,7 +9903,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 215,
-    kanjiMeanings: [
+    itemMeanings: [
       "ego",
       "I",
       "selfish",
@@ -9928,7 +9928,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 212,
-    kanjiMeanings: [
+    itemMeanings: [
       "righteousness",
       "justice",
       "morality",
@@ -9954,7 +9954,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 337,
-    kanjiMeanings: [
+    itemMeanings: [
       "deliberation",
       "consultation",
       "debate",
@@ -9976,7 +9976,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "embrace",
@@ -9996,7 +9996,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 578,
-    kanjiMeanings: [
+    itemMeanings: [
       "embrace",
       "hug",
       "hold in arms",
@@ -10017,7 +10017,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 894,
-    kanjiMeanings: [
+    itemMeanings: [
       "criticism",
       "strike",
     ],
@@ -10040,7 +10040,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 275,
-    kanjiMeanings: [
+    itemMeanings: [
       "strike",
       "hit",
       "knock",
@@ -10065,7 +10065,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 815,
-    kanjiMeanings: [
+    itemMeanings: [
       "discard",
       "throw away",
       "abandon",
@@ -10091,7 +10091,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 389,
-    kanjiMeanings: [
+    itemMeanings: [
       "finger",
       "point to",
       "indicate",
@@ -10117,7 +10117,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 54,
-    kanjiMeanings: [
+    itemMeanings: [
       "hold",
       "have",
     ],
@@ -10141,7 +10141,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1008,
-    kanjiMeanings: [
+    itemMeanings: [
       "conjecture",
       "infer",
       "guess",
@@ -10163,7 +10163,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 888,
-    kanjiMeanings: [
+    itemMeanings: [
       "propose",
       "take along",
       "carry in hand",
@@ -10187,7 +10187,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1550,
-    kanjiMeanings: [
+    itemMeanings: [
       "shouldering",
       "carry",
       "raise",
@@ -10213,7 +10213,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1015,
-    kanjiMeanings: [
+    itemMeanings: [
       "foothold",
       "based on",
       "follow",
@@ -10238,7 +10238,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 701,
-    kanjiMeanings: [
+    itemMeanings: [
       "sketch",
       "compose",
       "write",
@@ -10260,7 +10260,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 723,
-    kanjiMeanings: [
+    itemMeanings: [
       "touch",
       "contact",
       "adjoin",
@@ -10282,7 +10282,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 411,
-    kanjiMeanings: [
+    itemMeanings: [
       "hang",
       "suspend",
       "depend",
@@ -10304,7 +10304,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "polish",
@@ -10324,7 +10324,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 643,
-    kanjiMeanings: [
+    itemMeanings: [
       "polish",
       "study of",
       "sharpen",
@@ -10345,7 +10345,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 711,
-    kanjiMeanings: [
+    itemMeanings: [
       "nose",
       "snout",
     ],
@@ -10368,7 +10368,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1096,
-    kanjiMeanings: [
+    itemMeanings: [
       "punish",
       "penalty",
       "sentence",
@@ -10390,7 +10390,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1048,
-    kanjiMeanings: [
+    itemMeanings: [
       "mould",
       "type",
       "model",
@@ -10414,7 +10414,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 952,
-    kanjiMeanings: [
+    itemMeanings: [
       "genius",
       "years old",
       "cubic shaku",
@@ -10439,7 +10439,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 327,
-    kanjiMeanings: [
+    itemMeanings: [
       "exist",
       "suppose",
       "be aware of",
@@ -10464,7 +10464,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 256,
-    kanjiMeanings: [
+    itemMeanings: [
       "exist",
       "outskirts",
       "suburbs",
@@ -10489,7 +10489,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1273,
-    kanjiMeanings: [
+    itemMeanings: [
       "from",
       "possessive particle",
       "whereupon",
@@ -10511,7 +10511,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 569,
-    kanjiMeanings: [
+    itemMeanings: [
       "reach out",
       "exert",
       "exercise",
@@ -10533,7 +10533,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 896,
-    kanjiMeanings: [
+    itemMeanings: [
       "suck",
       "imbibe",
       "inhale",
@@ -10555,7 +10555,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1208,
-    kanjiMeanings: [
+    itemMeanings: [
       "handle",
       "entertain",
       "threshs",
@@ -10577,7 +10577,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "length",
@@ -10594,7 +10594,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 744,
-    kanjiMeanings: [
+    itemMeanings: [
       "length",
       "ten shaku",
       "measure",
@@ -10620,7 +10620,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 431,
-    kanjiMeanings: [
+    itemMeanings: [
       "history",
       "chronicle",
     ],
@@ -10643,7 +10643,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1838,
-    kanjiMeanings: [
+    itemMeanings: [
       "officer",
       "an official",
     ],
@@ -10666,7 +10666,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 537,
-    kanjiMeanings: [
+    itemMeanings: [
       "grow late",
       "night watch",
       "sit up late",
@@ -10691,7 +10691,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 250,
-    kanjiMeanings: [
+    itemMeanings: [
       "or again",
       "furthermore",
       "on the other hand",
@@ -10715,7 +10715,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2493,
-    kanjiMeanings: [
+    itemMeanings: [
       "vessels",
       "counter for ships",
       "fish",
@@ -10740,7 +10740,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 807,
-    kanjiMeanings: [
+    itemMeanings: [
       "safeguard",
       "protect",
     ],
@@ -10763,7 +10763,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 476,
-    kanjiMeanings: [
+    itemMeanings: [
       "guy",
       "slave",
       "manservant",
@@ -10788,7 +10788,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 773,
-    kanjiMeanings: [
+    itemMeanings: [
       "angry",
       "be offended",
     ],
@@ -10811,7 +10811,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 339,
-    kanjiMeanings: ["friend"],
+    itemMeanings: ["friend"],
   ),
   LearningItem(
     keyword: "slip out",
@@ -10831,7 +10831,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 551,
-    kanjiMeanings: [
+    itemMeanings: [
       "slip out",
       "extract",
       "pull out",
@@ -10853,7 +10853,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "throw",
@@ -10874,7 +10874,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 641,
-    kanjiMeanings: [
+    itemMeanings: [
       "throw",
       "discard",
       "abandon",
@@ -10900,7 +10900,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1092,
-    kanjiMeanings: [
+    itemMeanings: [
       "establishment",
       "provision",
       "prepare",
@@ -10924,7 +10924,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 930,
-    kanjiMeanings: [
+    itemMeanings: [
       "beat",
       "attack",
       "defeat",
@@ -10950,7 +10950,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 349,
-    kanjiMeanings: [
+    itemMeanings: [
       "branch",
       "support",
       "sustain",
@@ -10975,7 +10975,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 856,
-    kanjiMeanings: [
+    itemMeanings: [
       "skill",
       "art",
       "craft",
@@ -10997,7 +10997,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "suspicious",
@@ -11017,7 +11017,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 503,
-    kanjiMeanings: [
+    itemMeanings: [
       "suspicious",
       "mystery",
       "apparition",
@@ -11042,7 +11042,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 597,
-    kanjiMeanings: [
+    itemMeanings: [
       "lightly",
       "trifling",
       "unimportant",
@@ -11067,7 +11067,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 916,
-    kanjiMeanings: [
+    itemMeanings: [
       "uncle",
       "youth",
     ],
@@ -11091,7 +11091,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 974,
-    kanjiMeanings: [
+    itemMeanings: [
       "loneliness",
       "quietly",
       "mellow",
@@ -11117,7 +11117,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 341,
-    kanjiMeanings: ["anti-"],
+    itemMeanings: ["anti-"],
   ),
   LearningItem(
     keyword: "slope",
@@ -11138,7 +11138,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 699,
-    kanjiMeanings: [
+    itemMeanings: [
       "slope",
       "incline",
       "hill",
@@ -11162,7 +11162,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 732,
-    kanjiMeanings: [
+    itemMeanings: [
       "plank",
       "board",
       "plate",
@@ -11188,7 +11188,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 223,
-    kanjiMeanings: [
+    itemMeanings: [
       "return",
       "answer",
       "fade",
@@ -11210,7 +11210,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1619,
-    kanjiMeanings: [
+    itemMeanings: [
       "claw",
       "nail",
       "talon",
@@ -11231,7 +11231,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "floating",
@@ -11248,7 +11248,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 484,
-    kanjiMeanings: [
+    itemMeanings: [
       "floating",
       "float",
       "rise to surface",
@@ -11273,7 +11273,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 507,
-    kanjiMeanings: [
+    itemMeanings: [
       "leader",
       "commander",
       "general",
@@ -11295,7 +11295,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "accept",
@@ -11316,7 +11316,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 307,
-    kanjiMeanings: [
+    itemMeanings: [
       "accept",
       "undergo",
       "answer (phone)",
@@ -11342,7 +11342,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 213,
-    kanjiMeanings: [
+    itemMeanings: [
       "love",
       "affection",
       "favourite",
@@ -11367,7 +11367,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 801,
-    kanjiMeanings: [
+    itemMeanings: [
       "pay",
       "clear out",
       "prune",
@@ -11393,7 +11393,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 455,
-    kanjiMeanings: [
+    itemMeanings: [
       "wide",
       "broad",
       "spacious",
@@ -11418,7 +11418,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 686,
-    kanjiMeanings: [
+    itemMeanings: [
       "valve",
       "petal",
       "braid",
@@ -11440,7 +11440,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 647,
-    kanjiMeanings: [
+    itemMeanings: [
       "masculine",
       "male",
       "hero",
@@ -11465,7 +11465,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 372,
-    kanjiMeanings: [
+    itemMeanings: [
       "pedestala",
       "stand",
       "counter for machines and vehicles",
@@ -11489,7 +11489,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 283,
-    kanjiMeanings: [
+    itemMeanings: [
       "reign",
       "be at peace",
       "calm down",
@@ -11514,7 +11514,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 292,
-    kanjiMeanings: [
+    itemMeanings: [
       "commence",
       "begin",
     ],
@@ -11537,7 +11537,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 373,
-    kanjiMeanings: [
+    itemMeanings: [
       "gone",
       "past",
       "quit",
@@ -11559,7 +11559,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 180,
-    kanjiMeanings: [
+    itemMeanings: [
       "method",
       "law",
       "rule",
@@ -11581,7 +11581,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "meeting",
@@ -11601,7 +11601,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 104,
-    kanjiMeanings: [
+    itemMeanings: [
       "meeting",
       "meet",
       "party",
@@ -11626,7 +11626,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 488,
-    kanjiMeanings: [
+    itemMeanings: [
       "climax",
       "arrive",
       "proceed",
@@ -11651,7 +11651,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 294,
-    kanjiMeanings: [
+    itemMeanings: [
       "room",
       "apartment",
       "chamber",
@@ -11676,7 +11676,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 882,
-    kanjiMeanings: [
+    itemMeanings: [
       "arrival",
       "proceed",
       "reach",
@@ -11701,7 +11701,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 657,
-    kanjiMeanings: [
+    itemMeanings: [
       "doth",
       "do",
       "send",
@@ -11723,7 +11723,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 866,
-    kanjiMeanings: [
+    itemMeanings: [
       "mutually",
       "reciprocally",
       "together",
@@ -11744,7 +11744,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "bring up",
@@ -11761,7 +11761,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 682,
-    kanjiMeanings: [
+    itemMeanings: [
       "bring up",
       "grow up",
       "raise",
@@ -11786,7 +11786,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 981,
-    kanjiMeanings: [
+    itemMeanings: [
       "allot",
       "fill",
     ],
@@ -11809,7 +11809,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 206,
-    kanjiMeanings: [
+    itemMeanings: [
       "current",
       "a sink",
       "flow",
@@ -11831,7 +11831,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 51,
-    kanjiMeanings: ["mountain"],
+    itemMeanings: ["mountain"],
   ),
   LearningItem(
     keyword: "exit",
@@ -11851,7 +11851,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 4,
-    kanjiMeanings: [
+    itemMeanings: [
       "exit",
       "leave",
       "go out",
@@ -11873,7 +11873,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1355,
-    kanjiMeanings: [
+    itemMeanings: [
       "crumble",
       "die",
       "demolish",
@@ -11895,7 +11895,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 684,
-    kanjiMeanings: [
+    itemMeanings: [
       "secrecy",
       "density (pop)",
       "minuteness",
@@ -11921,7 +11921,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 13,
-    kanjiMeanings: [
+    itemMeanings: [
       "part",
       "minute of time",
       "segment",
@@ -11946,7 +11946,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 891,
-    kanjiMeanings: [
+    itemMeanings: [
       "poverty",
       "poor",
     ],
@@ -11966,7 +11966,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 295,
-    kanjiMeanings: [
+    itemMeanings: [
       "public",
       "prince",
       "official",
@@ -11991,7 +11991,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 466,
-    kanjiMeanings: ["valley"],
+    itemMeanings: ["valley"],
   ),
   LearningItem(
     keyword: "contain",
@@ -12011,7 +12011,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 433,
-    kanjiMeanings: [
+    itemMeanings: [
       "contain",
       "form",
       "looks",
@@ -12035,7 +12035,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 803,
-    kanjiMeanings: [
+    itemMeanings: [
       "longing",
       "covetousness",
       "greed",
@@ -12057,7 +12057,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "public chamber",
@@ -12077,7 +12077,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 600,
-    kanjiMeanings: [
+    itemMeanings: [
       "public chamber",
       "hall",
     ],
@@ -12100,7 +12100,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 230,
-    kanjiMeanings: [
+    itemMeanings: [
       "usual",
       "ordinary",
       "normal",
@@ -12125,7 +12125,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 810,
-    kanjiMeanings: [
+    itemMeanings: [
       "pelt",
       "skin",
       "hide",
@@ -12150,7 +12150,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 447,
-    kanjiMeanings: [
+    itemMeanings: [
       "waves",
       "billows",
       "Poland",
@@ -12174,7 +12174,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 586,
-    kanjiMeanings: [
+    itemMeanings: [
       "rend",
       "rip",
       "tear",
@@ -12200,7 +12200,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 975,
-    kanjiMeanings: [
+    itemMeanings: [
       "incur",
       "cover",
       "veil",
@@ -12222,7 +12222,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "remainder",
@@ -12242,7 +12242,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 317,
-    kanjiMeanings: [
+    itemMeanings: [
       "remainder",
       "leftover",
       "balance",
@@ -12266,7 +12266,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 843,
-    kanjiMeanings: [
+    itemMeanings: [
       "particularly",
       "especially",
       "exceptionally",
@@ -12290,7 +12290,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 859,
-    kanjiMeanings: [
+    itemMeanings: [
       "file",
       "row",
       "rank",
@@ -12312,7 +12312,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 137,
-    kanjiMeanings: [
+    itemMeanings: [
       "death",
       "die",
     ],
@@ -12332,7 +12332,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "wink",
@@ -12349,7 +12349,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 969,
-    kanjiMeanings: [
+    itemMeanings: [
       "wink",
       "blink",
       "twinkle",
@@ -12370,7 +12370,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 500,
-    kanjiMeanings: ["ear"],
+    itemMeanings: ["ear"],
   ),
   LearningItem(
     keyword: "take",
@@ -12387,7 +12387,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 105,
-    kanjiMeanings: [
+    itemMeanings: [
       "take",
       "fetch",
       "take up",
@@ -12408,7 +12408,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 979,
-    kanjiMeanings: [
+    itemMeanings: [
       "purport",
       "gist",
       "elegance",
@@ -12430,7 +12430,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 172,
-    kanjiMeanings: [
+    itemMeanings: [
       "utmost",
       "most",
       "extreme",
@@ -12455,7 +12455,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 961,
-    kanjiMeanings: [
+    itemMeanings: [
       "shame",
       "dishonor",
     ],
@@ -12475,7 +12475,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 670,
-    kanjiMeanings: [
+    itemMeanings: [
       "post",
       "employment",
       "work",
@@ -12499,7 +12499,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 997,
-    kanjiMeanings: [
+    itemMeanings: [
       "holy",
       "saint",
       "sage",
@@ -12524,7 +12524,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 822,
-    kanjiMeanings: [
+    itemMeanings: [
       "listen",
       "headstrong",
       "naughty",
@@ -12546,7 +12546,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 937,
-    kanjiMeanings: [
+    itemMeanings: [
       "pocket",
       "feelings",
       "heart",
@@ -12568,7 +12568,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "buy",
@@ -12588,7 +12588,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 492,
-    kanjiMeanings: ["buy"],
+    itemMeanings: ["buy"],
   ),
   LearningItem(
     keyword: "placement",
@@ -12605,7 +12605,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 218,
-    kanjiMeanings: [
+    itemMeanings: [
       "placement",
       "put",
       "set",
@@ -12627,7 +12627,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1526,
-    kanjiMeanings: [
+    itemMeanings: [
       "ring",
       "circle",
       "link",
@@ -12652,7 +12652,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 143,
-    kanjiMeanings: [
+    itemMeanings: [
       "husband",
       "man",
     ],
@@ -12672,7 +12672,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1111,
-    kanjiMeanings: [
+    itemMeanings: [
       "standard",
       "measure",
     ],
@@ -12695,7 +12695,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 346,
-    kanjiMeanings: [
+    itemMeanings: [
       "lose",
       "error",
       "fault",
@@ -12717,7 +12717,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 745,
-    kanjiMeanings: ["iron"],
+    itemMeanings: ["iron"],
   ),
   LearningItem(
     keyword: "gigantic",
@@ -12737,7 +12737,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1399,
-    kanjiMeanings: [
+    itemMeanings: [
       "gigantic",
       "big",
       "large",
@@ -12763,7 +12763,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 904,
-    kanjiMeanings: [
+    itemMeanings: [
       "retainer",
       "subject",
     ],
@@ -12786,7 +12786,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 70,
-    kanjiMeanings: [
+    itemMeanings: [
       "power",
       "strength",
       "strong",
@@ -12808,7 +12808,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 101,
-    kanjiMeanings: ["male"],
+    itemMeanings: ["male"],
   ),
   LearningItem(
     keyword: "labor",
@@ -12825,7 +12825,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 555,
-    kanjiMeanings: [
+    itemMeanings: [
       "labor",
       "thank for",
       "reward for",
@@ -12847,7 +12847,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 702,
-    kanjiMeanings: [
+    itemMeanings: [
       "persuade",
       "recommend",
       "advise",
@@ -12869,7 +12869,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1125,
-    kanjiMeanings: [
+    itemMeanings: [
       "toil",
       "diligent",
       "as much as possible",
@@ -12893,7 +12893,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 350,
-    kanjiMeanings: [
+    itemMeanings: [
       "add",
       "addition",
       "increase",
@@ -12915,7 +12915,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "going",
@@ -12932,7 +12932,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 10,
-    kanjiMeanings: [
+    itemMeanings: [
       "going",
       "journey",
       "carry out",
@@ -12957,7 +12957,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 881,
-    kanjiMeanings: [
+    itemMeanings: [
       "restore",
       "return to",
       "revert",
@@ -12979,7 +12979,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 139,
-    kanjiMeanings: [
+    itemMeanings: [
       "gain",
       "get",
       "find",
@@ -13001,7 +13001,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 493,
-    kanjiMeanings: [
+    itemMeanings: [
       "accompany",
       "obey",
       "submit to",
@@ -13023,7 +13023,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 832,
-    kanjiMeanings: [
+    itemMeanings: [
       "on foot",
       "junior",
       "emptiness",
@@ -13049,7 +13049,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 263,
-    kanjiMeanings: [
+    itemMeanings: [
       "wait",
       "depend on",
     ],
@@ -13072,7 +13072,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 20,
-    kanjiMeanings: [
+    itemMeanings: [
       "he",
       "that",
       "the",
@@ -13096,7 +13096,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 392,
-    kanjiMeanings: [
+    itemMeanings: [
       "duty",
       "war",
       "campaign",
@@ -13121,7 +13121,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 514,
-    kanjiMeanings: [
+    itemMeanings: [
       "benevolence",
       "virtue",
       "goodness",
@@ -13146,7 +13146,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 628,
-    kanjiMeanings: [
+    itemMeanings: [
       "delicate",
       "minuteness",
       "insignificance",
@@ -13170,7 +13170,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 725,
-    kanjiMeanings: [
+    itemMeanings: [
       "boulevard",
       "street",
       "town",
@@ -13191,7 +13191,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "extent",
@@ -13211,7 +13211,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 325,
-    kanjiMeanings: [
+    itemMeanings: [
       "extent",
       "degree",
       "law",
@@ -13233,7 +13233,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 194,
-    kanjiMeanings: [
+    itemMeanings: [
       "harmony",
       "Japanese style",
       "peace",
@@ -13255,7 +13255,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 760,
-    kanjiMeanings: [
+    itemMeanings: [
       "shift",
       "move",
       "change",
@@ -13277,7 +13277,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 504,
-    kanjiMeanings: ["autumn"],
+    itemMeanings: ["autumn"],
   ),
   LearningItem(
     keyword: "private",
@@ -13297,7 +13297,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 14,
-    kanjiMeanings: [
+    itemMeanings: [
       "private",
       "I",
       "me",
@@ -13318,7 +13318,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 813,
-    kanjiMeanings: [
+    itemMeanings: [
       "secret",
       "conceal",
     ],
@@ -13338,7 +13338,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 953,
-    kanjiMeanings: [
+    itemMeanings: [
       "appellation",
       "praise",
       "admire",
@@ -13363,7 +13363,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 269,
-    kanjiMeanings: [
+    itemMeanings: [
       "profit",
       "advantage",
       "benefit",
@@ -13384,7 +13384,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 792,
-    kanjiMeanings: [
+    itemMeanings: [
       "incense",
       "smell",
       "perfume",
@@ -13408,7 +13408,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 925,
-    kanjiMeanings: [
+    itemMeanings: [
       "excel",
       "excellence",
       "beauty",
@@ -13430,7 +13430,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 549,
-    kanjiMeanings: [
+    itemMeanings: [
       "rice",
       "USA",
       "metre",
@@ -13451,7 +13451,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 855,
-    kanjiMeanings: [
+    itemMeanings: [
       "astray",
       "be perplexed",
       "in doubt",
@@ -13473,7 +13473,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 408,
-    kanjiMeanings: [
+    itemMeanings: [
       "heart",
       "interior",
     ],
@@ -13496,7 +13496,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 225,
-    kanjiMeanings: [
+    itemMeanings: [
       "number",
       "strength",
       "fate",
@@ -13521,7 +13521,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 427,
-    kanjiMeanings: [
+    itemMeanings: [
       "sort",
       "kind",
       "variety",
@@ -13543,7 +13543,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 954,
-    kanjiMeanings: [
+    itemMeanings: [
       "knee",
       "lap",
     ],
@@ -13563,7 +13563,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 57,
-    kanjiMeanings: [
+    itemMeanings: [
       "Esq.",
       "way",
       "manner",
@@ -13589,7 +13589,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 554,
-    kanjiMeanings: [
+    itemMeanings: [
       "request",
       "want",
       "wish for",
@@ -13611,7 +13611,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 720,
-    kanjiMeanings: ["bamboo"],
+    itemMeanings: ["bamboo"],
   ),
   LearningItem(
     keyword: "laugh",
@@ -13628,7 +13628,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 154,
-    kanjiMeanings: ["laugh"],
+    itemMeanings: ["laugh"],
   ),
   LearningItem(
     keyword: "rib",
@@ -13648,7 +13648,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3099,
-    kanjiMeanings: ["rib"],
+    itemMeanings: ["rib"],
   ),
   LearningItem(
     keyword: "muscle",
@@ -13665,7 +13665,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 849,
-    kanjiMeanings: [
+    itemMeanings: [
       "muscle",
       "sinew",
       "tendon",
@@ -13687,7 +13687,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 914,
-    kanjiMeanings: [
+    itemMeanings: [
       "box",
       "chest",
       "case",
@@ -13712,7 +13712,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 629,
-    kanjiMeanings: [
+    itemMeanings: [
       "writing brush",
       "writing",
       "painting brush",
@@ -13734,7 +13734,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 157,
-    kanjiMeanings: [
+    itemMeanings: [
       "etc.",
       "and so forth",
       "class (first)",
@@ -13756,7 +13756,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 157,
-    kanjiMeanings: [
+    itemMeanings: [
       "calculate",
       "divining",
       "number",
@@ -13778,7 +13778,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 435,
-    kanjiMeanings: [
+    itemMeanings: [
       "solution",
       "answer",
     ],
@@ -13801,7 +13801,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1,
-    kanjiMeanings: ["person"],
+    itemMeanings: ["person"],
   ),
   LearningItem(
     keyword: "lack",
@@ -13818,7 +13818,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1012,
-    kanjiMeanings: [
+    itemMeanings: [
       "lack",
       "gap",
       "fail",
@@ -13842,7 +13842,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 45,
-    kanjiMeanings: [
+    itemMeanings: [
       "enter",
       "insert",
     ],
@@ -13862,7 +13862,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 182,
-    kanjiMeanings: [
+    itemMeanings: [
       "crowded",
       "mixture",
       "in bulk",
@@ -13884,7 +13884,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "assistant",
@@ -13904,7 +13904,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 649,
-    kanjiMeanings: [
+    itemMeanings: [
       "assistant",
       "help",
     ],
@@ -13927,7 +13927,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 436,
-    kanjiMeanings: [
+    itemMeanings: [
       "dwell",
       "reside",
       "live",
@@ -13949,7 +13949,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 364,
-    kanjiMeanings: [
+    itemMeanings: [
       "rank",
       "grade",
       "throne",
@@ -13971,7 +13971,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 691,
-    kanjiMeanings: [
+    itemMeanings: [
       "go-between",
       "relationship",
     ],
@@ -13995,7 +13995,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 116,
-    kanjiMeanings: [
+    itemMeanings: [
       "body",
       "substance",
       "object",
@@ -14020,7 +14020,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 511,
-    kanjiMeanings: [
+    itemMeanings: [
       "affair",
       "case",
       "matter",
@@ -14045,7 +14045,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 170,
-    kanjiMeanings: [
+    itemMeanings: [
       "attend",
       "doing",
       "official",
@@ -14070,7 +14070,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 209,
-    kanjiMeanings: [
+    itemMeanings: [
       "other",
       "another",
       "the others",
@@ -14094,7 +14094,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 929,
-    kanjiMeanings: [
+    itemMeanings: [
       "prostrated",
       "bend down",
       "bow",
@@ -14119,7 +14119,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 328,
-    kanjiMeanings: [
+    itemMeanings: [
       "transmit",
       "go along",
       "walk along",
@@ -14144,7 +14144,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 654,
-    kanjiMeanings: [
+    itemMeanings: [
       "Buddha",
       "the dead",
       "France",
@@ -14168,7 +14168,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 789,
-    kanjiMeanings: [
+    itemMeanings: [
       "rest",
       "day off",
       "retire",
@@ -14193,7 +14193,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 767,
-    kanjiMeanings: [
+    itemMeanings: [
       "sham",
       "temporary",
       "interim",
@@ -14218,7 +14218,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 884,
-    kanjiMeanings: [
+    itemMeanings: [
       "vulgar",
       "customs",
       "manners",
@@ -14240,7 +14240,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 174,
-    kanjiMeanings: [
+    itemMeanings: [
       "faith",
       "truth",
       "fidelity",
@@ -14262,7 +14262,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 358,
-    kanjiMeanings: [
+    itemMeanings: [
       "example",
       "custom",
       "usage",
@@ -14284,7 +14284,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 664,
-    kanjiMeanings: [
+    itemMeanings: [
       "individual",
       "counter for articles",
     ],
@@ -14304,7 +14304,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 948,
-    kanjiMeanings: [
+    itemMeanings: [
       "healthy",
       "health",
       "strength",
@@ -14329,7 +14329,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 478,
-    kanjiMeanings: [
+    itemMeanings: [
       "side",
       "lean",
       "oppose",
@@ -14355,7 +14355,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 837,
-    kanjiMeanings: [
+    itemMeanings: [
       "price",
       "cost",
       "value",
@@ -14376,7 +14376,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 696,
-    kanjiMeanings: [
+    itemMeanings: [
       "overthrow",
       "fall",
       "collapse",
@@ -14401,7 +14401,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 748,
-    kanjiMeanings: [
+    itemMeanings: [
       "Buddhist priest",
       "monk",
     ],
@@ -14425,7 +14425,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 771,
-    kanjiMeanings: [
+    itemMeanings: [
       "ceremony",
       "rule",
       "affair",
@@ -14447,7 +14447,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1540,
-    kanjiMeanings: [
+    itemMeanings: [
       "sponsor",
       "hold (a meeting)",
       "give (a dinner)",
@@ -14471,7 +14471,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1950,
-    kanjiMeanings: [
+    itemMeanings: [
       "scorn",
       "despise",
       "make light of",
@@ -14493,7 +14493,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 312,
-    kanjiMeanings: [
+    itemMeanings: [
       "use",
       "send on a mission",
       "order",
@@ -14515,7 +14515,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 820,
-    kanjiMeanings: [
+    itemMeanings: [
       "convenience",
       "facility",
       "excrement",
@@ -14540,7 +14540,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 648,
-    kanjiMeanings: [
+    itemMeanings: [
       "tenderness",
       "excel",
       "surpass",
@@ -14562,7 +14562,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 438,
-    kanjiMeanings: [
+    itemMeanings: [
       "inn",
       "lodging",
       "relay station",
@@ -14587,7 +14587,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 841,
-    kanjiMeanings: [
+    itemMeanings: [
       "wound",
       "hurt",
       "injure",
@@ -14609,7 +14609,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 573,
-    kanjiMeanings: [
+    itemMeanings: [
       "protect",
       "guarantee",
       "keep",
@@ -14631,7 +14631,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 231,
-    kanjiMeanings: [
+    itemMeanings: [
       "adhere",
       "attach",
       "refer to",
@@ -14653,7 +14653,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 790,
-    kanjiMeanings: [
+    itemMeanings: [
       "borough",
       "urban prefecture",
       "govt office",
@@ -14677,7 +14677,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 726,
-    kanjiMeanings: [
+    itemMeanings: [
       "responsibility",
       "duty",
       "term",
@@ -14702,7 +14702,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 73,
-    kanjiMeanings: [
+    itemMeanings: [
       "substitute",
       "change",
       "convert",
@@ -14727,7 +14727,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 216,
-    kanjiMeanings: [
+    itemMeanings: [
       "change",
       "take the form of",
       "influence",
@@ -14749,7 +14749,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 197,
-    kanjiMeanings: ["flower"],
+    itemMeanings: ["flower"],
   ),
   LearningItem(
     keyword: "lean",
@@ -14769,7 +14769,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 871,
-    kanjiMeanings: [
+    itemMeanings: [
       "lean",
       "incline",
       "tilt",
@@ -14794,7 +14794,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 17,
-    kanjiMeanings: ["what"],
+    itemMeanings: ["what"],
   ),
   LearningItem(
     keyword: "baggage",
@@ -14814,7 +14814,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 911,
-    kanjiMeanings: [
+    itemMeanings: [
       "baggage",
       "shoulder-pole load",
       "bear (a burden)",
@@ -14836,7 +14836,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 541,
-    kanjiMeanings: [
+    itemMeanings: [
       "bystander",
       "side",
       "besides",
@@ -14858,7 +14858,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 475,
-    kanjiMeanings: [
+    itemMeanings: [
       "I",
       "myself",
     ],
@@ -14878,7 +14878,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "double",
@@ -14895,7 +14895,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1426,
-    kanjiMeanings: [
+    itemMeanings: [
       "double",
       "twice",
       "times",
@@ -14917,7 +14917,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 451,
-    kanjiMeanings: [
+    itemMeanings: [
       "long time",
       "old story",
     ],
@@ -14940,7 +14940,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 113,
-    kanjiMeanings: [
+    itemMeanings: [
       "inside",
       "within",
       "between",
@@ -14965,7 +14965,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3045,
-    kanjiMeanings: [
+    itemMeanings: [
       "third class",
       "3rd",
       "3rd calendar sign",
@@ -14989,7 +14989,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 817,
-    kanjiMeanings: [
+    itemMeanings: [
       "design",
       "pattern",
       "build",
@@ -15014,7 +15014,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 533,
-    kanjiMeanings: ["meat"],
+    itemMeanings: ["meat"],
   ),
   LearningItem(
     keyword: "accompany",
@@ -15031,7 +15031,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "sitting in meditation",
@@ -15048,7 +15048,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 697,
-    kanjiMeanings: ["sit"],
+    itemMeanings: ["sit"],
   ),
   LearningItem(
     keyword: "sit",
@@ -15065,7 +15065,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 306,
-    kanjiMeanings: [
+    itemMeanings: [
       "squat",
       "seat",
       "cushion",
@@ -15087,7 +15087,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "by means of",
@@ -15104,7 +15104,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 135,
-    kanjiMeanings: [
+    itemMeanings: [
       "by means of",
       "because",
       "in view of",
@@ -15126,7 +15126,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 501,
-    kanjiMeanings: [
+    itemMeanings: [
       "becoming",
       "resemble",
       "counterfeit",
@@ -15151,7 +15151,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 678,
-    kanjiMeanings: [
+    itemMeanings: [
       "virtuous",
       "good",
       "goodness",
@@ -15172,7 +15172,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 29,
-    kanjiMeanings: [
+    itemMeanings: [
       "year",
       "counter for years",
     ],
@@ -15192,7 +15192,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 112,
-    kanjiMeanings: [
+    itemMeanings: [
       "night",
       "evening",
     ],
@@ -15212,7 +15212,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "play",
@@ -15232,7 +15232,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 439,
-    kanjiMeanings: ["play"],
+    itemMeanings: ["play"],
   ),
   LearningItem(
     keyword: "trip",
@@ -15252,7 +15252,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 453,
-    kanjiMeanings: [
+    itemMeanings: [
       "trip",
       "travel",
     ],
@@ -15275,7 +15275,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 880,
-    kanjiMeanings: [
+    itemMeanings: [
       "not",
       "must not",
       "do not",
@@ -15297,7 +15297,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 40,
-    kanjiMeanings: [
+    itemMeanings: [
       "thing",
       "object",
       "matter",
@@ -15318,7 +15318,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 746,
-    kanjiMeanings: [
+    itemMeanings: [
       "easy",
       "ready to",
       "simple",
@@ -15340,7 +15340,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "roof",
@@ -15360,7 +15360,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 61,
-    kanjiMeanings: [
+    itemMeanings: [
       "roof",
       "house",
       "shop",
@@ -15385,7 +15385,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 983,
-    kanjiMeanings: [
+    itemMeanings: [
       "grip",
       "hold",
       "mould sushi",
@@ -15410,7 +15410,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 906,
-    kanjiMeanings: [
+    itemMeanings: [
       "yield",
       "bend",
       "flinch",
@@ -15432,7 +15432,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 55,
-    kanjiMeanings: [
+    itemMeanings: [
       "reside",
       "to be",
       "exist",
@@ -15457,7 +15457,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 876,
-    kanjiMeanings: [
+    itemMeanings: [
       "stratum",
       "social class",
       "layer",
@@ -15479,7 +15479,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 735,
-    kanjiMeanings: [
+    itemMeanings: [
       "bureau",
       "board",
       "office",
@@ -15501,7 +15501,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1201,
-    kanjiMeanings: [
+    itemMeanings: [
       "slow",
       "late",
       "back",
@@ -15526,7 +15526,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1101,
-    kanjiMeanings: [
+    itemMeanings: [
       "shaku",
       "Japanese foot",
       "measure",
@@ -15551,7 +15551,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1024,
-    kanjiMeanings: [
+    itemMeanings: [
       "exhaust",
       "use up",
       "run out of",
@@ -15576,7 +15576,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 524,
-    kanjiMeanings: [
+    itemMeanings: [
       "swamp",
       "marsh",
       "brilliance",
@@ -15601,7 +15601,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 570,
-    kanjiMeanings: [
+    itemMeanings: [
       "translate",
       "reason",
       "circumstance",
@@ -15623,7 +15623,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 858,
-    kanjiMeanings: [
+    itemMeanings: [
       "daytime",
       "noon",
     ],
@@ -15646,7 +15646,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 235,
-    kanjiMeanings: [
+    itemMeanings: [
       "door",
       "counter for houses",
     ],
@@ -15669,7 +15669,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 736,
-    kanjiMeanings: ["shoulder"],
+    itemMeanings: ["shoulder"],
   ),
   LearningItem(
     keyword: "re-",
@@ -15689,7 +15689,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 774,
-    kanjiMeanings: [
+    itemMeanings: [
       "re-",
       "return",
       "revert",
@@ -15714,7 +15714,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 688,
-    kanjiMeanings: [
+    itemMeanings: [
       "tears",
       "sympathy",
     ],
@@ -15737,7 +15737,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 529,
-    kanjiMeanings: [
+    itemMeanings: [
       "show",
       "indicate",
       "point out",
@@ -15762,7 +15762,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 630,
-    kanjiMeanings: [
+    itemMeanings: [
       "salute",
       "bow",
       "ceremony",
@@ -15784,7 +15784,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 601,
-    kanjiMeanings: [
+    itemMeanings: [
       "blessing",
       "fortune",
       "luck",
@@ -15809,7 +15809,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 187,
-    kanjiMeanings: [
+    itemMeanings: [
       "company",
       "firm",
       "office",
@@ -15831,7 +15831,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 672,
-    kanjiMeanings: [
+    itemMeanings: [
       "inspection",
       "regard as",
       "see",
@@ -15856,7 +15856,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 635,
-    kanjiMeanings: [
+    itemMeanings: [
       "religion",
       "sect",
       "denomination",
@@ -15881,7 +15881,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 977,
-    kanjiMeanings: [
+    itemMeanings: [
       "ritual",
       "offer prayers",
       "celebrate",
@@ -15906,7 +15906,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 608,
-    kanjiMeanings: [
+    itemMeanings: [
       "guess",
       "presume",
       "surmise",
@@ -15928,7 +15928,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 281,
-    kanjiMeanings: [
+    itemMeanings: [
       "wherefore",
       "a reason",
     ],
@@ -15948,7 +15948,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 992,
-    kanjiMeanings: [
+    itemMeanings: [
       "oil",
       "fat",
     ],
@@ -15971,7 +15971,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 762,
-    kanjiMeanings: [
+    itemMeanings: [
       "armor",
       "high (voice)",
       "A grade",
@@ -15996,7 +15996,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 471,
-    kanjiMeanings: [
+    itemMeanings: [
       "push",
       "stop",
       "check",
@@ -16021,7 +16021,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 255,
-    kanjiMeanings: [
+    itemMeanings: [
       "have the honor to",
       "sign of the monkey",
       "3-5PM",
@@ -16046,7 +16046,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 621,
-    kanjiMeanings: [
+    itemMeanings: [
       "expand",
       "stretch",
       "extend",
@@ -16068,7 +16068,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 108,
-    kanjiMeanings: [
+    itemMeanings: [
       "gods",
       "mind",
       "soul",
@@ -16092,7 +16092,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 330,
-    kanjiMeanings: [
+    itemMeanings: [
       "fruit",
       "reward",
       "carry out",
@@ -16117,7 +16117,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2927,
-    kanjiMeanings: [
+    itemMeanings: [
       "axe",
       "1.32 lb",
       "catty",
@@ -16142,7 +16142,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 68,
-    kanjiMeanings: [
+    itemMeanings: [
       "place",
       "extent",
     ],
@@ -16166,7 +16166,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 130,
-    kanjiMeanings: [
+    itemMeanings: [
       "near",
       "early",
       "akin",
@@ -16191,7 +16191,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 437,
-    kanjiMeanings: [
+    itemMeanings: [
       "fold",
       "break",
       "fracture",
@@ -16216,7 +16216,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 825,
-    kanjiMeanings: [
+    itemMeanings: [
       "philosophy",
       "clear",
     ],
@@ -16236,7 +16236,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 987,
-    kanjiMeanings: [
+    itemMeanings: [
       "temporarily",
       "a while",
       "moment",
@@ -16258,7 +16258,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 448,
-    kanjiMeanings: [
+    itemMeanings: [
       "severance",
       "decline",
       "refuse",
@@ -16283,7 +16283,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 352,
-    kanjiMeanings: [
+    itemMeanings: [
       "substance",
       "quality",
       "matter",
@@ -16305,7 +16305,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "yesterday",
@@ -16325,7 +16325,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 633,
-    kanjiMeanings: [
+    itemMeanings: [
       "yesterday",
       "previous",
     ],
@@ -16348,7 +16348,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 46,
-    kanjiMeanings: [
+    itemMeanings: [
       "make",
       "production",
       "prepare",
@@ -16373,7 +16373,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 361,
-    kanjiMeanings: ["snow"],
+    itemMeanings: ["snow"],
   ),
   LearningItem(
     keyword: "inquire",
@@ -16393,7 +16393,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 908,
-    kanjiMeanings: [
+    itemMeanings: [
       "inquire",
       "fathom",
       "look for",
@@ -16417,7 +16417,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 297,
-    kanjiMeanings: [
+    itemMeanings: [
       "hurry",
       "emergency",
       "sudden",
@@ -16442,7 +16442,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 344,
-    kanjiMeanings: [
+    itemMeanings: [
       "lie down",
       "sleep",
       "rest",
@@ -16467,7 +16467,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 342,
-    kanjiMeanings: [
+    itemMeanings: [
       "lady",
       "woman",
       "wife",
@@ -16489,7 +16489,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 100,
-    kanjiMeanings: [
+    itemMeanings: [
       "hit",
       "right",
       "appropriate",
@@ -16511,7 +16511,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "contend",
@@ -16528,7 +16528,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 591,
-    kanjiMeanings: [
+    itemMeanings: [
       "contend",
       "dispute",
       "argue",
@@ -16552,7 +16552,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 16,
-    kanjiMeanings: [
+    itemMeanings: [
       "matter",
       "thing",
       "fact",
@@ -16574,7 +16574,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 4050,
-    kanjiMeanings: ["an official rank"],
+    itemMeanings: ["an official rank"],
   ),
   LearningItem(
     keyword: "Italy",
@@ -16591,7 +16591,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 620,
-    kanjiMeanings: [
+    itemMeanings: [
       "Italy",
       "that one",
     ],
@@ -16614,7 +16614,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 93,
-    kanjiMeanings: [
+    itemMeanings: [
       "mister",
       "you",
       "ruler",
@@ -16639,7 +16639,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 802,
-    kanjiMeanings: [
+    itemMeanings: [
       "flock",
       "group",
       "crowd",
@@ -16661,7 +16661,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1819,
-    kanjiMeanings: [
+    itemMeanings: [
       "-proof",
       "enduring",
     ],
@@ -16681,7 +16681,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 559,
-    kanjiMeanings: [
+    itemMeanings: [
       "edge",
       "origin",
       "end",
@@ -16703,7 +16703,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 334,
-    kanjiMeanings: [
+    itemMeanings: [
       "both",
       "old Japanese coin",
       "counter for carriages (e.g., in a train)",
@@ -16725,7 +16725,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 517,
-    kanjiMeanings: [
+    itemMeanings: [
       "full",
       "fullness",
       "enough",
@@ -16747,7 +16747,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "brush-stroke",
@@ -16764,7 +16764,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 318,
-    kanjiMeanings: [
+    itemMeanings: [
       "brush-stroke",
       "picture",
     ],
@@ -16784,7 +16784,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 540,
-    kanjiMeanings: [
+    itemMeanings: [
       "bend",
       "music",
       "melody",
@@ -16809,7 +16809,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2049,
-    kanjiMeanings: [
+    itemMeanings: [
       "Big Dipper",
       "ten sho (vol)",
       "sake dipper",
@@ -16833,7 +16833,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 520,
-    kanjiMeanings: [
+    itemMeanings: [
       "fee",
       "materials",
     ],
@@ -16857,7 +16857,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 457,
-    kanjiMeanings: [
+    itemMeanings: [
       "department",
       "course",
       "section",
@@ -16878,7 +16878,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 315,
-    kanjiMeanings: [
+    itemMeanings: [
       "map",
       "drawing",
       "plan",
@@ -16903,7 +16903,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 136,
-    kanjiMeanings: [
+    itemMeanings: [
       "utilize",
       "business",
       "service",
@@ -16925,7 +16925,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 860,
-    kanjiMeanings: [
+    itemMeanings: [
       "equip",
       "provision",
       "preparation",
@@ -16946,7 +16946,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "once upon a time",
@@ -16966,7 +16966,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 519,
-    kanjiMeanings: [
+    itemMeanings: [
       "once upon a time",
       "antiquity",
       "old times",
@@ -16990,7 +16990,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 899,
-    kanjiMeanings: [
+    itemMeanings: [
       "borrow",
       "rent",
     ],
@@ -17013,7 +17013,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1026,
-    kanjiMeanings: [
+    itemMeanings: [
       "pity",
       "be sparing of",
       "frugal",
@@ -17038,7 +17038,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 582,
-    kanjiMeanings: [
+    itemMeanings: [
       "scatter",
       "disperse",
       "spend",
@@ -17060,7 +17060,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1729,
-    kanjiMeanings: ["twenty"],
+    itemMeanings: ["twenty"],
   ),
   LearningItem(
     keyword: "caverns",
@@ -17077,7 +17077,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "seat",
@@ -17097,7 +17097,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 824,
-    kanjiMeanings: [
+    itemMeanings: [
       "seat",
       "mat",
       "occasion",
@@ -17119,7 +17119,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 62,
-    kanjiMeanings: [
+    itemMeanings: [
       "degrees",
       "occurrence",
       "time",
@@ -17144,7 +17144,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 399,
-    kanjiMeanings: [
+    itemMeanings: [
       "transit",
       "ford",
       "ferry",
@@ -17166,7 +17166,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "lofty",
@@ -17186,7 +17186,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 4556,
-    kanjiMeanings: [
+    itemMeanings: [
       "high",
       "far",
     ],
@@ -17206,7 +17206,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 693,
-    kanjiMeanings: [
+    itemMeanings: [
       "bake",
       "burning",
     ],
@@ -17226,7 +17226,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 249,
-    kanjiMeanings: [
+    itemMeanings: [
       "half",
       "middle",
       "odd number",
@@ -17251,7 +17251,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 348,
-    kanjiMeanings: [
+    itemMeanings: [
       "judgement",
       "signature",
       "stamp",
@@ -17273,7 +17273,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "scroll",
@@ -17290,7 +17290,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 402,
-    kanjiMeanings: [
+    itemMeanings: [
       "scroll",
       "volume",
       "book",
@@ -17312,7 +17312,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 421,
-    kanjiMeanings: [
+    itemMeanings: [
       "victory",
       "win",
       "prevail",
@@ -17334,7 +17334,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 426,
-    kanjiMeanings: ["wisteria"],
+    itemMeanings: ["wisteria"],
   ),
   LearningItem(
     keyword: "one-sided",
@@ -17351,7 +17351,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 368,
-    kanjiMeanings: [
+    itemMeanings: [
       "one-sided",
       "leaf",
       "sheet",
@@ -17375,7 +17375,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 599,
-    kanjiMeanings: [
+    itemMeanings: [
       "printing block",
       "printing plate",
       "edition",
@@ -17397,7 +17397,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 238,
-    kanjiMeanings: [
+    itemMeanings: [
       "of",
       "this",
     ],
@@ -17417,7 +17417,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 877,
-    kanjiMeanings: [
+    itemMeanings: [
       "turf",
       "lawn",
     ],
@@ -17437,7 +17437,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 64,
-    kanjiMeanings: [
+    itemMeanings: [
       "negative",
       "non-",
       "bad",
@@ -17459,7 +17459,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 864,
-    kanjiMeanings: [
+    itemMeanings: [
       "negate",
       "no",
       "noes",
@@ -17481,7 +17481,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 892,
-    kanjiMeanings: [
+    itemMeanings: [
       "counter for cupfuls",
       "wine glass",
       "glass",
@@ -17503,7 +17503,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 685,
-    kanjiMeanings: [
+    itemMeanings: [
       "dart",
       "arrow",
     ],
@@ -17526,7 +17526,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 590,
-    kanjiMeanings: [
+    itemMeanings: [
       "tribe",
       "family",
     ],
@@ -17546,7 +17546,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 44,
-    kanjiMeanings: [
+    itemMeanings: [
       "know",
       "wisdom",
     ],
@@ -17566,7 +17566,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 946,
-    kanjiMeanings: [
+    itemMeanings: [
       "wisdom",
       "intellect",
       "reason",
@@ -17590,7 +17590,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1587,
-    kanjiMeanings: [
+    itemMeanings: [
       "halberd",
       "arms",
       "festival float",
@@ -17614,7 +17614,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 742,
-    kanjiMeanings: [
+    itemMeanings: [
       "task",
       "duties",
     ],
@@ -17634,7 +17634,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "homecoming",
@@ -17654,7 +17654,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 148,
-    kanjiMeanings: [
+    itemMeanings: [
       "homecoming",
       "arrive at",
       "lead to",
@@ -17679,7 +17679,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 152,
-    kanjiMeanings: [
+    itemMeanings: [
       "pull",
       "tug",
       "jerk",
@@ -17701,7 +17701,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1886,
-    kanjiMeanings: [
+    itemMeanings: [
       "vast",
       "broad",
       "wide",
@@ -17722,7 +17722,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 260,
-    kanjiMeanings: ["strong"],
+    itemMeanings: ["strong"],
   ),
   LearningItem(
     keyword: "weak",
@@ -17739,7 +17739,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 663,
-    kanjiMeanings: [
+    itemMeanings: [
       "weak",
       "frail",
     ],
@@ -17759,7 +17759,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "No.",
@@ -17776,7 +17776,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 80,
-    kanjiMeanings: [
+    itemMeanings: [
       "No.",
       "residence",
     ],
@@ -17799,7 +17799,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 563,
-    kanjiMeanings: [
+    itemMeanings: [
       "younger brother",
       "faithful service to elders",
     ],
@@ -17819,7 +17819,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "nickname",
@@ -17836,7 +17836,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 483,
-    kanjiMeanings: [
+    itemMeanings: [
       "nickname",
       "number",
       "item",
@@ -17858,7 +17858,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1250,
-    kanjiMeanings: [
+    itemMeanings: [
       "dirty",
       "pollute",
       "disgrace",
@@ -17880,7 +17880,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "bestow",
@@ -17900,7 +17900,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 424,
-    kanjiMeanings: [
+    itemMeanings: [
       "bestow",
       "participate in",
       "give",
@@ -17922,7 +17922,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 681,
-    kanjiMeanings: [
+    itemMeanings: [
       "copy",
       "be photographed",
       "describe",
@@ -17943,7 +17943,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 67,
-    kanjiMeanings: [
+    itemMeanings: [
       "somebody",
       "person",
       "one's station in life",
@@ -17967,7 +17967,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 967,
-    kanjiMeanings: [
+    itemMeanings: [
       "shoot",
       "shine into",
       "onto",
@@ -17992,7 +17992,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1277,
-    kanjiMeanings: [
+    itemMeanings: [
       "apologize",
       "thank",
       "refuse",
@@ -18016,7 +18016,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 279,
-    kanjiMeanings: [
+    itemMeanings: [
       "old man",
       "old age",
       "grow old",
@@ -18040,7 +18040,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 96,
-    kanjiMeanings: [
+    itemMeanings: [
       "consider",
       "think over",
     ],
@@ -18063,7 +18063,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1439,
-    kanjiMeanings: [
+    itemMeanings: [
       "filial piety",
       "child's respect",
     ],
@@ -18086,7 +18086,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 185,
-    kanjiMeanings: [
+    itemMeanings: [
       "teach",
       "faith",
       "doctrine",
@@ -18110,7 +18110,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 31,
-    kanjiMeanings: [
+    itemMeanings: [
       "someone",
       "person",
     ],
@@ -18130,7 +18130,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 799,
-    kanjiMeanings: [
+    itemMeanings: [
       "renowned",
       "publish",
       "write",
@@ -18152,7 +18152,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1274,
-    kanjiMeanings: [
+    itemMeanings: [
       "sultry",
       "hot",
       "summer heat",
@@ -18176,7 +18176,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 497,
-    kanjiMeanings: [
+    itemMeanings: [
       "various",
       "many",
       "several",
@@ -18198,7 +18198,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "cheek",
@@ -18218,7 +18218,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1014,
-    kanjiMeanings: [
+    itemMeanings: [
       "cheeks",
       "jaw",
     ],
@@ -18238,7 +18238,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "chase",
@@ -18258,7 +18258,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 420,
-    kanjiMeanings: [
+    itemMeanings: [
       "chase",
       "drive away",
       "follow",
@@ -18280,7 +18280,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 326,
-    kanjiMeanings: [
+    itemMeanings: [
       "expert",
       "teacher",
       "master",
@@ -18305,7 +18305,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 532,
-    kanjiMeanings: [
+    itemMeanings: [
       "bureaucrat",
       "the government",
       "organ",
@@ -18326,7 +18326,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 146,
-    kanjiMeanings: ["father"],
+    itemMeanings: ["father"],
   ),
   LearningItem(
     keyword: "mingle",
@@ -18346,7 +18346,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 481,
-    kanjiMeanings: [
+    itemMeanings: [
       "mingle",
       "mixing",
       "association",
@@ -18368,7 +18368,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1353,
-    kanjiMeanings: [
+    itemMeanings: [
       "merit",
       "efficacy",
       "efficiency",
@@ -18390,7 +18390,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1279,
-    kanjiMeanings: [
+    itemMeanings: [
       "contrast",
       "compare",
     ],
@@ -18413,7 +18413,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 211,
-    kanjiMeanings: [
+    itemMeanings: [
       "exam",
       "school",
       "printing",
@@ -18435,7 +18435,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 127,
-    kanjiMeanings: [
+    itemMeanings: [
       "leg",
       "foot",
       "be sufficient",
@@ -18457,7 +18457,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1707,
-    kanjiMeanings: [
+    itemMeanings: [
       "long-distance",
       "spur",
       "fetlock",
@@ -18478,7 +18478,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 355,
-    kanjiMeanings: [
+    itemMeanings: [
       "path",
       "route",
       "road",
@@ -18500,7 +18500,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 758,
-    kanjiMeanings: [
+    itemMeanings: [
       "step",
       "trample",
       "carry through",
@@ -18522,7 +18522,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 677,
-    kanjiMeanings: [
+    itemMeanings: [
       "skeleton",
       "bone",
       "remains",
@@ -18544,7 +18544,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "overdo",
@@ -18564,7 +18564,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 241,
-    kanjiMeanings: [
+    itemMeanings: [
       "overdo",
       "exceed",
       "go beyond",
@@ -18586,7 +18586,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "occasion",
@@ -18606,7 +18606,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 354,
-    kanjiMeanings: [
+    itemMeanings: [
       "occasion",
       "side",
       "edge",
@@ -18628,7 +18628,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1022,
-    kanjiMeanings: [
+    itemMeanings: [
       "hinder",
       "hurt",
       "harm",
@@ -18649,7 +18649,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1490,
-    kanjiMeanings: [
+    itemMeanings: [
       "crevice",
       "fissure",
       "discord",
@@ -18671,7 +18671,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 883,
-    kanjiMeanings: [
+    itemMeanings: [
       "follow",
       "though",
       "notwithstanding",
@@ -18696,7 +18696,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 695,
-    kanjiMeanings: [
+    itemMeanings: [
       "sunshine",
       "yang principle",
       "positive",
@@ -18721,7 +18721,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1171,
-    kanjiMeanings: [
+    itemMeanings: [
       "ward off",
       "defend",
       "protect",
@@ -18746,7 +18746,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 575,
-    kanjiMeanings: [
+    itemMeanings: [
       "Inst.",
       "institution",
       "temple",
@@ -18771,7 +18771,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 715,
-    kanjiMeanings: [
+    itemMeanings: [
       "regiment",
       "party",
       "company",
@@ -18796,7 +18796,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 465,
-    kanjiMeanings: [
+    itemMeanings: [
       "descend",
       "precipitate",
       "fall",
@@ -18821,7 +18821,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 395,
-    kanjiMeanings: [
+    itemMeanings: [
       "storey",
       "stair",
       "counter for storeys of a building",
@@ -18845,7 +18845,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 867,
-    kanjiMeanings: ["neighboring"],
+    itemMeanings: ["neighboring"],
   ),
   LearningItem(
     keyword: "conceal",
@@ -18862,7 +18862,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 619,
-    kanjiMeanings: [
+    itemMeanings: [
       "conceal",
       "hide",
       "cover",
@@ -18883,7 +18883,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 931,
-    kanjiMeanings: [
+    itemMeanings: [
       "hole",
       "aperture",
       "slit",
@@ -18905,7 +18905,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 83,
-    kanjiMeanings: [
+    itemMeanings: [
       "empty",
       "sky",
       "void",
@@ -18930,7 +18930,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 527,
-    kanjiMeanings: [
+    itemMeanings: [
       "window",
       "pane",
     ],
@@ -18950,7 +18950,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 302,
-    kanjiMeanings: [
+    itemMeanings: [
       "stab",
       "protruding",
       "thrust",
@@ -18975,7 +18975,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 616,
-    kanjiMeanings: [
+    itemMeanings: [
       "research",
       "study",
     ],
@@ -18995,7 +18995,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "grope",
@@ -19012,7 +19012,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 614,
-    kanjiMeanings: [
+    itemMeanings: [
       "grope",
       "search",
       "look for",
@@ -19033,7 +19033,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 262,
-    kanjiMeanings: [
+    itemMeanings: [
       "deep",
       "heighten",
       "intensify",
@@ -19058,7 +19058,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1374,
-    kanjiMeanings: [
+    itemMeanings: [
       "hill",
       "knoll",
     ],
@@ -19078,7 +19078,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 257,
-    kanjiMeanings: [
+    itemMeanings: [
       "soldier",
       "private",
       "troops",
@@ -19100,7 +19100,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1017,
-    kanjiMeanings: ["thread"],
+    itemMeanings: ["thread"],
   ),
   LearningItem(
     keyword: "weave",
@@ -19120,7 +19120,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 751,
-    kanjiMeanings: [
+    itemMeanings: [
       "weave",
       "fabric",
     ],
@@ -19140,7 +19140,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 456,
-    kanjiMeanings: [
+    itemMeanings: [
       "line",
       "track",
     ],
@@ -19160,7 +19160,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 593,
-    kanjiMeanings: [
+    itemMeanings: [
       "thong",
       "beginning",
       "inception",
@@ -19185,7 +19185,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 454,
-    kanjiMeanings: [
+    itemMeanings: [
       "continue",
       "series",
       "sequel",
@@ -19206,7 +19206,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 565,
-    kanjiMeanings: [
+    itemMeanings: [
       "picture",
       "drawing",
       "painting",
@@ -19231,7 +19231,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 793,
-    kanjiMeanings: [
+    itemMeanings: [
       "overall",
       "relationship",
       "ruling",
@@ -19256,7 +19256,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 689,
-    kanjiMeanings: [
+    itemMeanings: [
       "salary",
       "wage",
       "gift",
@@ -19278,7 +19278,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 199,
-    kanjiMeanings: [
+    itemMeanings: [
       "tie",
       "bind",
       "contract",
@@ -19300,7 +19300,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 380,
-    kanjiMeanings: [
+    itemMeanings: [
       "end",
       "finish",
     ],
@@ -19320,7 +19320,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 924,
-    kanjiMeanings: [
+    itemMeanings: [
       "class",
       "rank",
       "grade",
@@ -19344,7 +19344,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 798,
-    kanjiMeanings: [
+    itemMeanings: [
       "crimson",
       "deep red",
     ],
@@ -19364,7 +19364,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 959,
-    kanjiMeanings: [
+    itemMeanings: [
       "settlement",
       "obtain",
       "reap",
@@ -19389,7 +19389,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 314,
-    kanjiMeanings: [
+    itemMeanings: [
       "sutra",
       "longitude",
       "pass thru",
@@ -19414,7 +19414,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 683,
-    kanjiMeanings: [
+    itemMeanings: [
       "promise",
       "approximately",
       "shrink",
@@ -19438,7 +19438,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 351,
-    kanjiMeanings: [
+    itemMeanings: [
       "dainty",
       "get thin",
       "taper",
@@ -19463,7 +19463,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 901,
-    kanjiMeanings: [
+    itemMeanings: [
       "general",
       "whole",
       "all",
@@ -19488,7 +19488,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1476,
-    kanjiMeanings: [
+    itemMeanings: [
       "inherit",
       "succeed",
       "continue",
@@ -19510,7 +19510,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 542,
-    kanjiMeanings: [
+    itemMeanings: [
       "affinity",
       "relation",
       "connection",
@@ -19532,7 +19532,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1620,
-    kanjiMeanings: [
+    itemMeanings: [
       "tense",
       "solid",
       "hard",
@@ -19554,7 +19554,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "behind",
@@ -19571,7 +19571,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 52,
-    kanjiMeanings: [
+    itemMeanings: [
       "behind",
       "back",
       "later",
@@ -19595,7 +19595,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 419,
-    kanjiMeanings: [
+    itemMeanings: [
       "how many",
       "how much",
       "how far",
@@ -19620,7 +19620,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 264,
-    kanjiMeanings: [
+    itemMeanings: [
       "loom",
       "mechanism",
       "machine",
@@ -19642,7 +19642,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 794,
-    kanjiMeanings: [
+    itemMeanings: [
       "mysterious",
       "occultness",
       "black",
@@ -19667,7 +19667,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1286,
-    kanjiMeanings: [
+    itemMeanings: [
       "lineage",
       "system",
     ],
@@ -19690,7 +19690,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 496,
-    kanjiMeanings: [
+    itemMeanings: [
       "person in charge",
       "connection",
       "duty",
@@ -19712,7 +19712,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "instead",
@@ -19729,7 +19729,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1021,
-    kanjiMeanings: [
+    itemMeanings: [
       "instead",
       "on the contrary",
       "rather",
@@ -19754,7 +19754,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 980,
-    kanjiMeanings: [
+    itemMeanings: [
       "skids",
       "leg",
       "undercarriage",
@@ -19779,7 +19779,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2468,
-    kanjiMeanings: ["wholesale"],
+    itemMeanings: ["wholesale"],
   ),
   LearningItem(
     keyword: "honorable",
@@ -19796,7 +19796,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 60,
-    kanjiMeanings: [
+    itemMeanings: [
       "honorabl",
       "emanipulate",
       "govern",
@@ -19820,7 +19820,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 499,
-    kanjiMeanings: [
+    itemMeanings: [
       "clothing",
       "admit",
       "obey",
@@ -19845,7 +19845,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 219,
-    kanjiMeanings: [
+    itemMeanings: [
       "fate",
       "command",
       "decree",
@@ -19867,7 +19867,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "orders",
@@ -19887,7 +19887,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 833,
-    kanjiMeanings: [
+    itemMeanings: [
       "orders",
       "ancient laws",
       "command",
@@ -19912,7 +19912,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 568,
-    kanjiMeanings: [
+    itemMeanings: [
       "cool",
       "cold (beer, person)",
       "chill",
@@ -19936,7 +19936,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 851,
-    kanjiMeanings: [
+    itemMeanings: [
       "jurisdiction",
       "dominion",
       "territory",
@@ -19961,7 +19961,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 845,
-    kanjiMeanings: [
+    itemMeanings: [
       "courage",
       "cheer up",
       "be in high spirits",
@@ -19986,7 +19986,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 75,
-    kanjiMeanings: [
+    itemMeanings: [
       "traffic",
       "pass through",
       "avenue",
@@ -20008,7 +20008,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2352,
-    kanjiMeanings: [
+    itemMeanings: [
       "head",
       "counter for animals",
     ],
@@ -20031,7 +20031,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 584,
-    kanjiMeanings: [
+    itemMeanings: [
       "doubt",
       "distrust",
       "be suspicious",
@@ -20053,7 +20053,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2243,
-    kanjiMeanings: [
+    itemMeanings: [
       "sign of the snake or serpent",
       "9-11AM",
       "sixth sign of Chinese zodiac",
@@ -20074,7 +20074,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 988,
-    kanjiMeanings: [
+    itemMeanings: [
       "crime",
       "sin",
       "offense",
@@ -20095,7 +20095,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 818,
-    kanjiMeanings: [
+    itemMeanings: [
       "dangerous",
       "fear",
       "uneasy",
@@ -20116,7 +20116,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "arm",
@@ -20133,7 +20133,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 694,
-    kanjiMeanings: [
+    itemMeanings: [
       "arm",
       "ability",
       "talent",
@@ -20154,7 +20154,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "detain",
@@ -20174,7 +20174,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 646,
-    kanjiMeanings: [
+    itemMeanings: [
       "detain",
       "fasten",
       "halt",
@@ -20196,7 +20196,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "stamp",
@@ -20216,7 +20216,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 780,
-    kanjiMeanings: [
+    itemMeanings: [
       "stamp",
       "seal",
       "mark",
@@ -20238,7 +20238,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2659,
-    kanjiMeanings: ["mortar"],
+    itemMeanings: ["mortar"],
   ),
   LearningItem(
     keyword: "entertain",
@@ -20255,7 +20255,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 544,
-    kanjiMeanings: [
+    itemMeanings: [
       "entertain",
       "revive",
       "retrieve",
@@ -20277,7 +20277,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 313,
-    kanjiMeanings: [
+    itemMeanings: [
       "west",
       "Spain",
     ],
@@ -20297,7 +20297,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3041,
-    kanjiMeanings: [
+    itemMeanings: [
       "west",
       "bird",
       "sign of the bird",
@@ -20319,7 +20319,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 345,
-    kanjiMeanings: [
+    itemMeanings: [
       "sake",
       "alcohol",
     ],
@@ -20339,7 +20339,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1463,
-    kanjiMeanings: [
+    itemMeanings: [
       "cruel",
       "severe",
       "atrocious",
@@ -20364,7 +20364,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 814,
-    kanjiMeanings: [
+    itemMeanings: [
       "drunk",
       "feel sick",
       "poisoned",
@@ -20386,7 +20386,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 391,
-    kanjiMeanings: [
+    itemMeanings: [
       "distribute",
       "spouse",
       "exile",
@@ -20408,7 +20408,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 787,
-    kanjiMeanings: [
+    itemMeanings: [
       "revered",
       "valuable",
       "precious",
@@ -20430,7 +20430,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1233,
-    kanjiMeanings: [
+    itemMeanings: [
       "beans",
       "pea",
       "midget",
@@ -20454,7 +20454,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 140,
-    kanjiMeanings: [
+    itemMeanings: [
       "head",
       "counter for large animals",
     ],
@@ -20474,7 +20474,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 823,
-    kanjiMeanings: [
+    itemMeanings: [
       "short",
       "brevity",
       "fault",
@@ -20496,7 +20496,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 955,
-    kanjiMeanings: [
+    itemMeanings: [
       "bountiful",
       "excellent",
       "rich",
@@ -20517,7 +20517,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "rejoice",
@@ -20534,7 +20534,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 531,
-    kanjiMeanings: [
+    itemMeanings: [
       "rejoice",
       "take pleasure in",
     ],
@@ -20554,7 +20554,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 786,
-    kanjiMeanings: [
+    itemMeanings: [
       "timber",
       "trees",
       "wood",
@@ -20576,7 +20576,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1532,
-    kanjiMeanings: [
+    itemMeanings: [
       "dish",
       "a helping",
       "plate",
@@ -20597,7 +20597,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 513,
-    kanjiMeanings: ["blood"],
+    itemMeanings: ["blood"],
   ),
   LearningItem(
     keyword: "warm",
@@ -20614,7 +20614,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 846,
-    kanjiMeanings: ["warm"],
+    itemMeanings: ["warm"],
   ),
   LearningItem(
     keyword: "boom",
@@ -20634,7 +20634,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 737,
-    kanjiMeanings: [
+    itemMeanings: [
       "boom",
       "prosper",
       "copulate",
@@ -20655,7 +20655,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "silver",
@@ -20672,7 +20672,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 595,
-    kanjiMeanings: ["silver"],
+    itemMeanings: ["silver"],
   ),
   LearningItem(
     keyword: "root",
@@ -20692,7 +20692,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 277,
-    kanjiMeanings: [
+    itemMeanings: [
       "root",
       "head (pimple)",
     ],
@@ -20715,7 +20715,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 703,
-    kanjiMeanings: [
+    itemMeanings: [
       "instant",
       "namely",
       "as is",
@@ -20740,7 +20740,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 674,
-    kanjiMeanings: [
+    itemMeanings: [
       "node",
       "season",
       "period",
@@ -20765,7 +20765,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 660,
-    kanjiMeanings: [
+    itemMeanings: [
       "retreat",
       "withdraw",
       "retire",
@@ -20790,7 +20790,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 416,
-    kanjiMeanings: [
+    itemMeanings: [
       "limit",
       "restrict",
       "to best of ability",
@@ -20814,7 +20814,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 117,
-    kanjiMeanings: ["eyeball"],
+    itemMeanings: ["eyeball"],
   ),
   LearningItem(
     keyword: "good",
@@ -20834,7 +20834,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 383,
-    kanjiMeanings: [
+    itemMeanings: [
       "good",
       "pleasing",
       "skilled",
@@ -20858,7 +20858,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 331,
-    kanjiMeanings: [
+    itemMeanings: [
       "daughter",
       "girl",
     ],
@@ -20881,7 +20881,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 166,
-    kanjiMeanings: [
+    itemMeanings: [
       "eat",
       "food",
     ],
@@ -20904,7 +20904,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 730,
-    kanjiMeanings: [
+    itemMeanings: [
       "meal",
       "boiled rice",
     ],
@@ -20927,7 +20927,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 571,
-    kanjiMeanings: [
+    itemMeanings: [
       "drink",
       "smoke",
       "take",
@@ -20951,7 +20951,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 430,
-    kanjiMeanings: [
+    itemMeanings: [
       "building",
       "mansion",
       "large building",
@@ -20973,7 +20973,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 706,
-    kanjiMeanings: [
+    itemMeanings: [
       "foster",
       "bring up",
       "rear",
@@ -20995,7 +20995,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "previously",
@@ -21015,7 +21015,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 900,
-    kanjiMeanings: [
+    itemMeanings: [
       "previously",
       "already",
       "long ago",
@@ -21039,7 +21039,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 994,
-    kanjiMeanings: [
+    itemMeanings: [
       "outline",
       "condition",
       "approximation",
@@ -21061,7 +21061,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 124,
-    kanjiMeanings: [
+    itemMeanings: [
       "even",
       "flat",
       "peace",
@@ -21082,7 +21082,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 276,
-    kanjiMeanings: [
+    itemMeanings: [
       "call",
       "call out to",
       "invite",
@@ -21106,7 +21106,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 580,
-    kanjiMeanings: [
+    itemMeanings: [
       "evaluate",
       "criticism",
       "comment",
@@ -21127,7 +21127,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "hope",
@@ -21147,7 +21147,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1177,
-    kanjiMeanings: [
+    itemMeanings: [
       "hope",
       "beg",
       "request",
@@ -21169,7 +21169,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2351,
-    kanjiMeanings: [
+    itemMeanings: [
       "villain",
       "evil",
       "bad luck",
@@ -21191,7 +21191,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 404,
-    kanjiMeanings: [
+    itemMeanings: [
       "bosom",
       "breast",
       "chest",
@@ -21216,7 +21216,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 422,
-    kanjiMeanings: [
+    itemMeanings: [
       "detach",
       "separation",
       "disjoin",
@@ -21241,7 +21241,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 322,
-    kanjiMeanings: [
+    itemMeanings: [
       "kill",
       "murder",
       "butcher",
@@ -21266,7 +21266,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3036,
-    kanjiMeanings: [
+    itemMeanings: [
       "barracks",
       "police station",
       "camp",
@@ -21291,7 +21291,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 788,
-    kanjiMeanings: [
+    itemMeanings: [
       "genuine",
       "purity",
       "innocence",
@@ -21316,7 +21316,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1122,
-    kanjiMeanings: [
+    itemMeanings: [
       "spicy",
       "bitter",
       "hot",
@@ -21341,7 +21341,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 989,
-    kanjiMeanings: [
+    itemMeanings: [
       "resign",
       "word",
       "term",
@@ -21366,7 +21366,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3381,
-    kanjiMeanings: [
+    itemMeanings: [
       "false",
       "punish",
       "crime",
@@ -21391,7 +21391,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 739,
-    kanjiMeanings: [
+    itemMeanings: [
       "wall",
       "lining (stomach)",
       "fence",
@@ -21412,7 +21412,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 106,
-    kanjiMeanings: ["new"],
+    itemMeanings: ["new"],
   ),
   LearningItem(
     keyword: "parent",
@@ -21429,7 +21429,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 147,
-    kanjiMeanings: [
+    itemMeanings: [
       "parent",
       "intimacy",
       "relative",
@@ -21454,7 +21454,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 393,
-    kanjiMeanings: [
+    itemMeanings: [
       "happiness",
       "blessing",
       "fortune",
@@ -21475,7 +21475,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 673,
-    kanjiMeanings: [
+    itemMeanings: [
       "report",
       "news",
       "reward",
@@ -21497,7 +21497,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "shout",
@@ -21514,7 +21514,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 658,
-    kanjiMeanings: [
+    itemMeanings: [
       "shout",
       "exclaim",
       "yell",
@@ -21538,7 +21538,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1144,
-    kanjiMeanings: [
+    itemMeanings: [
       "income",
       "obtain",
       "reap",
@@ -21560,7 +21560,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "land",
@@ -21580,7 +21580,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1013,
-    kanjiMeanings: [
+    itemMeanings: [
       "land",
       "six",
     ],
@@ -21603,7 +21603,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 385,
-    kanjiMeanings: [
+    itemMeanings: [
       "forces",
       "energy",
       "military strength",
@@ -21627,7 +21627,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 498,
-    kanjiMeanings: [
+    itemMeanings: [
       "heat",
       "temperature",
       "fever",
@@ -21652,7 +21652,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2801,
-    kanjiMeanings: [
+    itemMeanings: [
       "sign of the hog",
       "9-11PM",
       "twelfth sign of the Chinese zodiac",
@@ -21676,7 +21676,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 581,
-    kanjiMeanings: [
+    itemMeanings: [
       "engrave",
       "cut fine",
       "chop",
@@ -21698,7 +21698,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "mention",
@@ -21715,7 +21715,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 796,
-    kanjiMeanings: [
+    itemMeanings: [
       "mention",
       "state",
       "speak",
@@ -21740,7 +21740,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 304,
-    kanjiMeanings: [
+    itemMeanings: [
       "art",
       "technique",
       "skill",
@@ -21762,7 +21762,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "cold",
@@ -21779,7 +21779,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 713,
-    kanjiMeanings: ["cold"],
+    itemMeanings: ["cold"],
   ),
   LearningItem(
     keyword: "grass skirt",
@@ -21796,7 +21796,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "grow up",
@@ -21813,7 +21813,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "poison",
@@ -21833,7 +21833,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 733,
-    kanjiMeanings: [
+    itemMeanings: [
       "poison",
       "virus",
       "venom",
@@ -21855,7 +21855,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 429,
-    kanjiMeanings: [
+    itemMeanings: [
       "elementary",
       "principle",
       "naked",
@@ -21880,7 +21880,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 114,
-    kanjiMeanings: [
+    itemMeanings: [
       "blue",
       "green",
     ],
@@ -21904,7 +21904,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 423,
-    kanjiMeanings: [
+    itemMeanings: [
       "refined",
       "ghost",
       "fairy",
@@ -21930,7 +21930,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 158,
-    kanjiMeanings: [
+    itemMeanings: [
       "feelings",
       "emotion",
       "passion",
@@ -21956,7 +21956,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 783,
-    kanjiMeanings: ["clear up"],
+    itemMeanings: ["clear up"],
   ),
   LearningItem(
     keyword: "pure",
@@ -21977,7 +21977,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 495,
-    kanjiMeanings: [
+    itemMeanings: [
       "pure",
       "purify",
       "cleanse",
@@ -21999,7 +21999,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 470,
-    kanjiMeanings: ["quiet"],
+    itemMeanings: ["quiet"],
   ),
   LearningItem(
     keyword: "blame",
@@ -22019,7 +22019,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1052,
-    kanjiMeanings: [
+    itemMeanings: [
       "blame",
       "condemn",
       "censure",
@@ -22043,7 +22043,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 765,
-    kanjiMeanings: [
+    itemMeanings: [
       "volume",
       "product (x*y)",
       "acreage",
@@ -22068,7 +22068,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 156,
-    kanjiMeanings: [
+    itemMeanings: [
       "surface",
       "table",
       "chart",
@@ -22093,7 +22093,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 890,
-    kanjiMeanings: [
+    itemMeanings: [
       "harm",
       "injury",
     ],
@@ -22116,7 +22116,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 816,
-    kanjiMeanings: [
+    itemMeanings: [
       "proportion",
       "comparatively",
       "divide",
@@ -22141,7 +22141,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 22,
-    kanjiMeanings: [
+    itemMeanings: [
       "life",
       "genuine",
       "birth",
@@ -22162,7 +22162,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 718,
-    kanjiMeanings: [
+    itemMeanings: [
       "star",
       "spot",
       "dot",
@@ -22187,7 +22187,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 984,
-    kanjiMeanings: ["surname"],
+    itemMeanings: ["surname"],
   ),
   LearningItem(
     keyword: "sex",
@@ -22207,7 +22207,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 165,
-    kanjiMeanings: [
+    itemMeanings: [
       "sex",
       "gender",
       "nature",
@@ -22228,7 +22228,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 464,
-    kanjiMeanings: [
+    itemMeanings: [
       "products",
       "bear",
       "give birth",
@@ -22250,7 +22250,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "springtime",
@@ -22267,7 +22267,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 388,
-    kanjiMeanings: [
+    itemMeanings: [
       "springtime",
       "spring (season)",
     ],
@@ -22290,7 +22290,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 65,
-    kanjiMeanings: [
+    itemMeanings: [
       "reality",
       "truth",
     ],
@@ -22310,7 +22310,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "dedicate",
@@ -22330,7 +22330,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 885,
-    kanjiMeanings: [
+    itemMeanings: [
       "observance",
       "offer",
       "present",
@@ -22355,7 +22355,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 962,
-    kanjiMeanings: [
+    itemMeanings: [
       "rod",
       "stick",
       "cane",
@@ -22377,7 +22377,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "diligence",
@@ -22394,7 +22394,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1007,
-    kanjiMeanings: [
+    itemMeanings: [
       "diligence",
       "become employed",
       "serve",
@@ -22415,7 +22415,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "difficult",
@@ -22432,7 +22432,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 370,
-    kanjiMeanings: [
+    itemMeanings: [
       "difficult",
       "impossible",
       "trouble",
@@ -22454,7 +22454,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "ride",
@@ -22471,7 +22471,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 374,
-    kanjiMeanings: [
+    itemMeanings: [
       "ride",
       "power",
       "multiplication",
@@ -22496,7 +22496,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 36,
-    kanjiMeanings: ["now"],
+    itemMeanings: ["now"],
   ),
   LearningItem(
     keyword: "include",
@@ -22513,7 +22513,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1156,
-    kanjiMeanings: [
+    itemMeanings: [
       "contain",
       "include",
       "hold in the mouth",
@@ -22538,7 +22538,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 293,
-    kanjiMeanings: [
+    itemMeanings: [
       "wish",
       "sense",
       "idea",
@@ -22563,7 +22563,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 927,
-    kanjiMeanings: [
+    itemMeanings: [
       "shade",
       "yin",
       "negative",
@@ -22588,7 +22588,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 675,
-    kanjiMeanings: [
+    itemMeanings: [
       "before",
       "hand",
       "previous",
@@ -22611,7 +22611,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 153,
-    kanjiMeanings: [
+    itemMeanings: [
       "plains",
       "field",
       "rustic",
@@ -22636,7 +22636,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1146,
-    kanjiMeanings: [
+    itemMeanings: [
       "concurrently",
       "and",
       "beforehand",
@@ -22661,7 +22661,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 719,
-    kanjiMeanings: [
+    itemMeanings: [
       "dislike",
       "detest",
       "hate",
@@ -22682,7 +22682,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 710,
-    kanjiMeanings: [
+    itemMeanings: [
       "value",
       "price",
     ],
@@ -22705,7 +22705,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 239,
-    kanjiMeanings: [
+    itemMeanings: [
       "need",
       "main point",
       "essence",
@@ -22727,7 +22727,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 609,
-    kanjiMeanings: [
+    itemMeanings: [
       "loin",
       "ships",
       "waist",
@@ -22749,7 +22749,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 611,
-    kanjiMeanings: ["smoke"],
+    itemMeanings: ["smoke"],
   ),
   LearningItem(
     keyword: "south",
@@ -22769,7 +22769,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 494,
-    kanjiMeanings: ["south"],
+    itemMeanings: ["south"],
   ),
   LearningItem(
     keyword: "gates",
@@ -22789,7 +22789,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 188,
-    kanjiMeanings: [
+    itemMeanings: [
       "gate",
       "counter for cannons",
     ],
@@ -22809,7 +22809,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 176,
-    kanjiMeanings: [
+    itemMeanings: [
       "question",
       "ask",
       "problem",
@@ -22830,7 +22830,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 23,
-    kanjiMeanings: [
+    itemMeanings: [
       "interval",
       "space",
     ],
@@ -22853,7 +22853,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 993,
-    kanjiMeanings: [
+    itemMeanings: [
       "get dark",
       "gloom",
       "disorder",
@@ -22877,7 +22877,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1104,
-    kanjiMeanings: [
+    itemMeanings: [
       "simplicity",
       "brevity",
     ],
@@ -22897,7 +22897,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 258,
-    kanjiMeanings: [
+    itemMeanings: [
       "open",
       "unfold",
       "unseal",
@@ -22918,7 +22918,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 966,
-    kanjiMeanings: [
+    itemMeanings: [
       "closed",
       "shut",
     ],
@@ -22941,7 +22941,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 77,
-    kanjiMeanings: [
+    itemMeanings: [
       "hear",
       "ask",
       "listen",
@@ -22962,7 +22962,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 761,
-    kanjiMeanings: [
+    itemMeanings: [
       "godown",
       "warehouse",
       "storehouse",
@@ -22984,7 +22984,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1041,
-    kanjiMeanings: [
+    itemMeanings: [
       "genesis",
       "wound",
       "injury",
@@ -23009,7 +23009,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 340,
-    kanjiMeanings: [
+    itemMeanings: [
       "un-",
       "mistake",
       "negative",
@@ -23034,7 +23034,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 415,
-    kanjiMeanings: [
+    itemMeanings: [
       "grieve",
       "sad",
       "deplore",
@@ -23056,7 +23056,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 666,
-    kanjiMeanings: [
+    itemMeanings: [
       "guilt",
       "sin",
       "crime",
@@ -23081,7 +23081,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1038,
-    kanjiMeanings: [
+    itemMeanings: [
       "comrade",
       "fellow",
       "people",
@@ -23103,7 +23103,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "marquis",
@@ -23123,7 +23123,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1518,
-    kanjiMeanings: [
+    itemMeanings: [
       "marquis",
       "lord",
       "daimyo",
@@ -23147,7 +23147,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1582,
-    kanjiMeanings: [
+    itemMeanings: [
       "throat",
       "voice",
     ],
@@ -23167,7 +23167,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "decide",
@@ -23184,7 +23184,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 265,
-    kanjiMeanings: [
+    itemMeanings: [
       "decide",
       "fix",
       "agree upon",
@@ -23206,7 +23206,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 610,
-    kanjiMeanings: [
+    itemMeanings: [
       "cheerful",
       "pleasant",
       "agreeable",
@@ -23228,7 +23228,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "admirable",
@@ -23245,7 +23245,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1296,
-    kanjiMeanings: [
+    itemMeanings: [
       "admirable",
       "greatness",
       "remarkable",
@@ -23267,7 +23267,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 220,
-    kanjiMeanings: [
+    itemMeanings: [
       "difference",
       "differ",
     ],
@@ -23290,7 +23290,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 386,
-    kanjiMeanings: [
+    itemMeanings: [
       "defense",
       "protection",
     ],
@@ -23313,7 +23313,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1176,
-    kanjiMeanings: [
+    itemMeanings: [
       "dry",
       "parch",
       "ebb",
@@ -23335,7 +23335,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 785,
-    kanjiMeanings: [
+    itemMeanings: [
       "flats",
       "counter for houses",
       "eaves",
@@ -23359,7 +23359,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 552,
-    kanjiMeanings: ["beach"],
+    itemMeanings: ["beach"],
   ),
   LearningItem(
     keyword: "going",
@@ -23376,7 +23376,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 3143,
-    kanjiMeanings: [
+    itemMeanings: [
       "going",
       "from",
     ],
@@ -23399,7 +23399,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 271,
-    kanjiMeanings: [
+    itemMeanings: [
       "too much",
       "myself",
       "surplus",
@@ -23421,7 +23421,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 574,
-    kanjiMeanings: [
+    itemMeanings: [
       "route",
       "way",
       "road",
@@ -23445,7 +23445,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 782,
-    kanjiMeanings: [
+    itemMeanings: [
       "bundle",
       "sheaf",
       "ream",
@@ -23470,7 +23470,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 485,
-    kanjiMeanings: [
+    itemMeanings: [
       "trust",
       "request",
     ],
@@ -23490,7 +23490,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 874,
-    kanjiMeanings: [
+    itemMeanings: [
       "quick",
       "fast",
     ],
@@ -23510,7 +23510,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1344,
-    kanjiMeanings: [
+    itemMeanings: [
       "organize",
       "arranging",
       "tune",
@@ -23532,7 +23532,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "saber",
@@ -23549,7 +23549,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 957,
-    kanjiMeanings: [
+    itemMeanings: [
       "sabre",
       "sword",
       "blade",
@@ -23574,7 +23574,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 195,
-    kanjiMeanings: [
+    itemMeanings: [
       "heavy",
       "important",
       "esteem",
@@ -23599,7 +23599,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 109,
-    kanjiMeanings: [
+    itemMeanings: [
       "move",
       "motion",
       "change",
@@ -23621,7 +23621,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 449,
-    kanjiMeanings: [
+    itemMeanings: [
       "work",
       "(kokuji)",
     ],
@@ -23644,7 +23644,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 288,
-    kanjiMeanings: [
+    itemMeanings: [
       "species",
       "kind",
       "class",
@@ -23666,7 +23666,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "ill",
@@ -23686,7 +23686,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 287,
-    kanjiMeanings: [
+    itemMeanings: [
       "ill",
       "sick",
     ],
@@ -23710,7 +23710,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 985,
-    kanjiMeanings: [
+    itemMeanings: [
       "exhausted",
       "tire",
       "weary",
@@ -23731,7 +23731,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 585,
-    kanjiMeanings: [
+    itemMeanings: [
       "pain",
       "hurt",
       "damage",
@@ -23756,7 +23756,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1203,
-    kanjiMeanings: [
+    itemMeanings: [
       "mannerism",
       "habit",
       "vice",
@@ -23778,7 +23778,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "doctor",
@@ -23795,7 +23795,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 731,
-    kanjiMeanings: [
+    itemMeanings: [
       "doctor",
       "medicine",
     ],
@@ -23815,7 +23815,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1427,
-    kanjiMeanings: [
+    itemMeanings: [
       "equal",
       "head",
       "counter for small animals",
@@ -23837,7 +23837,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 943,
-    kanjiMeanings: [
+    itemMeanings: [
       "ward",
       "district",
     ],
@@ -23860,7 +23860,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2157,
-    kanjiMeanings: ["sign of the hare"],
+    itemMeanings: ["sign of the hare"],
   ),
   LearningItem(
     keyword: "egg",
@@ -23877,7 +23877,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1823,
-    kanjiMeanings: [
+    itemMeanings: [
       "egg",
       "ovum",
       "spawn",
@@ -23902,7 +23902,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1470,
-    kanjiMeanings: [
+    itemMeanings: [
       "repress",
       "well",
       "now",
@@ -23927,7 +23927,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 583,
-    kanjiMeanings: [
+    itemMeanings: [
       "face-up",
       "look up",
       "depend",
@@ -23952,7 +23952,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 905,
-    kanjiMeanings: [
+    itemMeanings: [
       "welcome",
       "meet",
       "greet",
@@ -23973,7 +23973,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "ascend",
@@ -23990,7 +23990,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 722,
-    kanjiMeanings: [
+    itemMeanings: [
       "ascend",
       "climb up",
     ],
@@ -24010,7 +24010,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 132,
-    kanjiMeanings: [
+    itemMeanings: [
       "departure",
       "discharge",
       "publish",
@@ -24032,7 +24032,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "shape",
@@ -24049,7 +24049,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 161,
-    kanjiMeanings: [
+    itemMeanings: [
       "shape",
       "form",
       "style",
@@ -24070,7 +24070,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 398,
-    kanjiMeanings: [
+    itemMeanings: [
       "shadow",
       "silhouette",
       "phantom",
@@ -24091,7 +24091,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1127,
-    kanjiMeanings: [
+    itemMeanings: [
       "lad",
       "boy (ancient)",
     ],
@@ -24114,7 +24114,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 92,
-    kanjiMeanings: [
+    itemMeanings: [
       "face",
       "expression",
     ],
@@ -24134,7 +24134,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 490,
-    kanjiMeanings: [
+    itemMeanings: [
       "nonplussed",
       "three (in documents)",
       "going",
@@ -24156,7 +24156,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 779,
-    kanjiMeanings: [
+    itemMeanings: [
       "discipline",
       "conduct oneself well",
       "studymaster",
@@ -24177,7 +24177,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 942,
-    kanjiMeanings: [
+    itemMeanings: [
       "rare",
       "curious",
       "strange",
@@ -24198,7 +24198,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 43,
-    kanjiMeanings: [
+    itemMeanings: [
       "sentence",
       "literature",
       "style",
@@ -24223,7 +24223,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 149,
-    kanjiMeanings: [
+    itemMeanings: [
       "vis-a-vis",
       "opposite",
       "even",
@@ -24245,7 +24245,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "adjusted",
@@ -24262,7 +24262,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1753,
-    kanjiMeanings: [
+    itemMeanings: [
       "adjusted",
       "alike",
       "equal",
@@ -24287,7 +24287,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 679,
-    kanjiMeanings: [
+    itemMeanings: [
       "settle (debt, etc.)",
       "relieve (burden)",
       "finish",
@@ -24309,7 +24309,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "music",
@@ -24326,7 +24326,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 268,
-    kanjiMeanings: [
+    itemMeanings: [
       "music",
       "comfort",
       "ease",
@@ -24347,7 +24347,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 865,
-    kanjiMeanings: [
+    itemMeanings: [
       "medicine",
       "chemical",
       "enamel",
@@ -24372,7 +24372,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1373,
-    kanjiMeanings: [
+    itemMeanings: [
       "center",
       "middle",
     ],
@@ -24395,7 +24395,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 753,
-    kanjiMeanings: [
+    itemMeanings: [
       "England",
       "English",
       "hero",
@@ -24420,7 +24420,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 776,
-    kanjiMeanings: [
+    itemMeanings: [
       "reflect",
       "reflection",
       "projection",
@@ -24441,7 +24441,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 321,
-    kanjiMeanings: ["red"],
+    itemMeanings: ["red"],
   ),
   LearningItem(
     keyword: "unusual",
@@ -24461,7 +24461,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 177,
-    kanjiMeanings: [
+    itemMeanings: [
       "unusual",
       "change",
       "strange",
@@ -24485,7 +24485,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 870,
-    kanjiMeanings: [
+    itemMeanings: [
       "tracks",
       "mark",
       "print",
@@ -24507,7 +24507,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 603,
-    kanjiMeanings: [
+    itemMeanings: [
       "romance",
       "in love",
       "yearn for",
@@ -24532,7 +24532,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 721,
-    kanjiMeanings: ["yellow"],
+    itemMeanings: ["yellow"],
   ),
   LearningItem(
     keyword: "sideways",
@@ -24549,7 +24549,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 336,
-    kanjiMeanings: [
+    itemMeanings: [
       "sideways",
       "side",
       "horizontal",
@@ -24575,7 +24575,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1676,
-    kanjiMeanings: ["comma-design"],
+    itemMeanings: ["comma-design"],
   ),
   LearningItem(
     keyword: "color",
@@ -24592,7 +24592,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 131,
-    kanjiMeanings: ["color"],
+    itemMeanings: ["color"],
   ),
   LearningItem(
     keyword: "discontinue",
@@ -24612,7 +24612,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 418,
-    kanjiMeanings: [
+    itemMeanings: [
       "discontinue",
       "beyond",
       "sever",
@@ -24637,7 +24637,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1128,
-    kanjiMeanings: [
+    itemMeanings: [
       "sweet",
       "coax",
       "pamper",
@@ -24662,7 +24662,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 145,
-    kanjiMeanings: ["that"],
+    itemMeanings: ["that"],
   ),
   LearningItem(
     keyword: "period",
@@ -24679,7 +24679,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 548,
-    kanjiMeanings: [
+    itemMeanings: [
       "period",
       "time",
       "date",
@@ -24704,7 +24704,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 950,
-    kanjiMeanings: [
+    itemMeanings: [
       "fundamentals",
       "counter for machines",
       "foundation",
@@ -24728,7 +24728,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 819,
-    kanjiMeanings: [
+    itemMeanings: [
       "tremendously",
       "very",
       "great",
@@ -24750,7 +24750,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 972,
-    kanjiMeanings: [
+    itemMeanings: [
       "withstand",
       "endure",
       "support",
@@ -24772,7 +24772,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "precious",
@@ -24792,7 +24792,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 360,
-    kanjiMeanings: [
+    itemMeanings: [
       "precious",
       "value",
       "prize",
@@ -24817,7 +24817,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 913,
-    kanjiMeanings: [
+    itemMeanings: [
       "bequeath",
       "leave behind",
       "reserve",
@@ -24841,7 +24841,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 829,
-    kanjiMeanings: [
+    itemMeanings: [
       "dispatch",
       "despatch",
       "send",
@@ -24863,7 +24863,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 474,
-    kanjiMeanings: [
+    itemMeanings: [
       "dance",
       "flit",
       "circle",
@@ -24885,7 +24885,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 56,
-    kanjiMeanings: [
+    itemMeanings: [
       "nothingness",
       "none",
       "ain't",
@@ -24910,7 +24910,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1687,
-    kanjiMeanings: [
+    itemMeanings: [
       "moreover",
       "also",
       "furthermore",
@@ -24931,7 +24931,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 516,
-    kanjiMeanings: [
+    itemMeanings: [
       "association",
       "braid",
       "plait",
@@ -24953,7 +24953,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 246,
-    kanjiMeanings: [
+    itemMeanings: [
       "help",
       "rescue",
       "assist",
@@ -24977,7 +24977,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 547,
-    kanjiMeanings: [
+    itemMeanings: [
       "row",
       "and",
       "besides",
@@ -25002,7 +25002,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 800,
-    kanjiMeanings: [
+    itemMeanings: [
       "universal",
       "wide(ly)",
       "generally",
@@ -25024,7 +25024,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 863,
-    kanjiMeanings: [
+    itemMeanings: [
       "spirits",
       "soul",
     ],
@@ -25047,7 +25047,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 311,
-    kanjiMeanings: [
+    itemMeanings: [
       "business",
       "vocation",
       "arts",
@@ -25072,7 +25072,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 120,
-    kanjiMeanings: [
+    itemMeanings: [
       "me",
       "I (male)",
       "servant",
@@ -25097,7 +25097,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 343,
-    kanjiMeanings: [
+    itemMeanings: [
       "together",
       "both",
       "neither",
@@ -25122,7 +25122,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 253,
-    kanjiMeanings: [
+    itemMeanings: [
       "submit",
       "offer",
       "present",
@@ -25144,7 +25144,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 491,
-    kanjiMeanings: [
+    itemMeanings: [
       "uncommon",
       "different",
       "queerness",
@@ -25166,7 +25166,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 940,
-    kanjiMeanings: [
+    itemMeanings: [
       "outburst",
       "rave",
       "fret",
@@ -25188,7 +25188,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 868,
-    kanjiMeanings: [
+    itemMeanings: [
       "elect",
       "select",
       "choose",
@@ -25210,7 +25210,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 577,
-    kanjiMeanings: [
+    itemMeanings: [
       "Mr.",
       "hall",
       "mansion",
@@ -25232,7 +25232,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 371,
-    kanjiMeanings: [
+    itemMeanings: [
       "well",
       "well crib",
       "town",
@@ -25254,7 +25254,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 717,
-    kanjiMeanings: [
+    itemMeanings: [
       "surround",
       "besiege",
       "store",
@@ -25276,7 +25276,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1710,
-    kanjiMeanings: [
+    itemMeanings: [
       "Asia",
       "rank next",
       "come after",
@@ -25300,7 +25300,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 193,
-    kanjiMeanings: [
+    itemMeanings: [
       "bad",
       "vice",
       "rascal",
@@ -25322,7 +25322,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 521,
-    kanjiMeanings: [
+    itemMeanings: [
       "circle",
       "yen",
       "round",
@@ -25343,7 +25343,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 394,
-    kanjiMeanings: [
+    itemMeanings: [
       "angle",
       "corner",
       "square",
@@ -25365,7 +25365,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 934,
-    kanjiMeanings: [
+    itemMeanings: [
       "contact",
       "touch",
       "feel",
@@ -25387,7 +25387,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 233,
-    kanjiMeanings: [
+    itemMeanings: [
       "unravel",
       "notes",
       "key",
@@ -25409,7 +25409,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 669,
-    kanjiMeanings: [
+    itemMeanings: [
       "again",
       "twice",
       "second time",
@@ -25430,7 +25430,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "lecture",
@@ -25450,7 +25450,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 982,
-    kanjiMeanings: [
+    itemMeanings: [
       "lecture",
       "club",
       "association",
@@ -25474,7 +25474,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 587,
-    kanjiMeanings: [
+    itemMeanings: [
       "posture",
       "build",
       "pretend",
@@ -25495,7 +25495,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1588,
-    kanjiMeanings: [
+    itemMeanings: [
       "tome",
       "counter for books",
       "volume",
@@ -25519,7 +25519,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 171,
-    kanjiMeanings: [
+    itemMeanings: [
       "argument",
       "discourse",
     ],
@@ -25542,7 +25542,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 902,
-    kanjiMeanings: [
+    itemMeanings: [
       "wheel",
       "ring",
       "circle",
@@ -25567,7 +25567,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 226,
-    kanjiMeanings: [
+    itemMeanings: [
       "family name",
       "surname",
       "clan",
@@ -25591,7 +25591,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 261,
-    kanjiMeanings: ["paper"],
+    itemMeanings: ["paper"],
   ),
   LearningItem(
     keyword: "marriage",
@@ -25608,7 +25608,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 740,
-    kanjiMeanings: ["marriage"],
+    itemMeanings: ["marriage"],
   ),
   LearningItem(
     keyword: "calling card",
@@ -25625,7 +25625,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "lower",
@@ -25645,7 +25645,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 763,
-    kanjiMeanings: [
+    itemMeanings: [
       "lower",
       "short",
       "humble",
@@ -25669,7 +25669,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 198,
-    kanjiMeanings: [
+    itemMeanings: [
       "bottom",
       "sole",
       "depth",
@@ -25691,7 +25691,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 248,
-    kanjiMeanings: [
+    itemMeanings: [
       "people",
       "nation",
       "subjects",
@@ -25712,7 +25712,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 661,
-    kanjiMeanings: [
+    itemMeanings: [
       "sleep",
       "die",
       "sleepy",
@@ -25733,7 +25733,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "catch",
@@ -25753,7 +25753,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 922,
-    kanjiMeanings: [
+    itemMeanings: [
       "catch",
       "capture",
     ],
@@ -25776,7 +25776,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 409,
-    kanjiMeanings: [
+    itemMeanings: [
       "metropolis",
       "capital",
       "all",
@@ -25798,7 +25798,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 432,
-    kanjiMeanings: ["what?"],
+    itemMeanings: ["what?"],
   ),
   LearningItem(
     keyword: "hometown",
@@ -25818,7 +25818,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 747,
-    kanjiMeanings: [
+    itemMeanings: [
       "home town",
       "village",
       "native place",
@@ -25840,7 +25840,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 698,
-    kanjiMeanings: [
+    itemMeanings: [
       "echo",
       "sound",
       "resound",
@@ -25865,7 +25865,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 99,
-    kanjiMeanings: [
+    itemMeanings: [
       "son",
       "counter for sons",
     ],
@@ -25885,7 +25885,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 110,
-    kanjiMeanings: [
+    itemMeanings: [
       "section",
       "bureau",
       "dept",
@@ -25907,7 +25907,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 539,
-    kanjiMeanings: [
+    itemMeanings: [
       "faction",
       "group",
       "party",
@@ -25929,7 +25929,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 606,
-    kanjiMeanings: [
+    itemMeanings: [
       "masses",
       "great numbers",
       "multitude",
@@ -25955,7 +25955,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 412,
-    kanjiMeanings: [
+    itemMeanings: [
       "grade",
       "steps",
       "stairs",
@@ -25979,7 +25979,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 999,
-    kanjiMeanings: [
+    itemMeanings: [
       "boat",
       "ship",
     ],
@@ -26002,7 +26002,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 848,
-    kanjiMeanings: [
+    itemMeanings: [
       "carrier",
       "carry",
       "all",
@@ -26025,7 +26025,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "ship",
@@ -26042,7 +26042,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 308,
-    kanjiMeanings: [
+    itemMeanings: [
       "ship",
       "boat",
     ],
@@ -26062,7 +26062,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1002,
-    kanjiMeanings: [
+    itemMeanings: [
       "benefit",
       "gain",
       "profit",
@@ -26084,7 +26084,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1324,
-    kanjiMeanings: [
+    itemMeanings: [
       "spare time",
       "rest",
       "leisure",
@@ -26106,7 +26106,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 434,
-    kanjiMeanings: [
+    itemMeanings: [
       "spread",
       "pave",
       "sit",
@@ -26131,7 +26131,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 6,
-    kanjiMeanings: [
+    itemMeanings: [
       "come",
       "due",
       "next",
@@ -26153,7 +26153,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 28,
-    kanjiMeanings: [
+    itemMeanings: [
       "spirit",
       "mind",
       "air",
@@ -26175,7 +26175,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 254,
-    kanjiMeanings: [
+    itemMeanings: [
       "fly",
       "skip (pages)",
       "scatter",
@@ -26196,7 +26196,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 797,
-    kanjiMeanings: [
+    itemMeanings: [
       "sink",
       "be submerged",
       "subside",
@@ -26218,7 +26218,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 428,
-    kanjiMeanings: [
+    itemMeanings: [
       "wife",
       "spouse",
     ],
@@ -26238,7 +26238,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1420,
-    kanjiMeanings: ["nifty"],
+    itemMeanings: ["nifty"],
   ),
   LearningItem(
     keyword: "mask",
@@ -26255,7 +26255,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 90,
-    kanjiMeanings: [
+    itemMeanings: [
       "mask",
       "face",
       "features",
@@ -26277,7 +26277,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 122,
-    kanjiMeanings: ["voice"],
+    itemMeanings: ["voice"],
   ),
   LearningItem(
     keyword: "give",
@@ -26294,7 +26294,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 812,
-    kanjiMeanings: [
+    itemMeanings: [
       "give",
       "do something for",
       "kingdom of Wu",
@@ -26315,7 +26315,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 827,
-    kanjiMeanings: [
+    itemMeanings: [
       "acquiesce",
       "hear",
       "listen to",
@@ -26337,7 +26337,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 406,
-    kanjiMeanings: [
+    itemMeanings: [
       "poles",
       "settlement",
       "conclusion",
@@ -26362,7 +26362,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2164,
-    kanjiMeanings: [
+    itemMeanings: [
       "tusk",
       "fang",
     ],
@@ -26385,7 +26385,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 991,
-    kanjiMeanings: [
+    itemMeanings: [
       "wicked",
       "injustice",
       "wrong",
@@ -26406,7 +26406,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "turn",
@@ -26426,7 +26426,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 324,
-    kanjiMeanings: [
+    itemMeanings: [
       "turn",
       "number in a series",
     ],
@@ -26446,7 +26446,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 607,
-    kanjiMeanings: [
+    itemMeanings: [
       "fur",
       "hair",
       "feather",
@@ -26471,7 +26471,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 636,
-    kanjiMeanings: [
+    itemMeanings: [
       "tail",
       "end",
       "counter for fish",
@@ -26493,7 +26493,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "home",
@@ -26510,7 +26510,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 915,
-    kanjiMeanings: [
+    itemMeanings: [
       "home",
       "house",
       "residence",
@@ -26532,7 +26532,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "do",
@@ -26549,7 +26549,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 446,
-    kanjiMeanings: [
+    itemMeanings: [
       "do",
       "change",
       "make",
@@ -26571,7 +26571,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "long",
@@ -26591,7 +26591,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 78,
-    kanjiMeanings: [
+    itemMeanings: [
       "long",
       "leader",
       "superior",
@@ -26616,7 +26616,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 270,
-    kanjiMeanings: [
+    itemMeanings: [
       "length",
       "encounter for bows & stringed instruments",
       "stretch",
@@ -26638,7 +26638,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 655,
-    kanjiMeanings: ["hair of the head"],
+    itemMeanings: ["hair of the head"],
   ),
   LearningItem(
     keyword: "unfold",
@@ -26658,7 +26658,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 960,
-    kanjiMeanings: [
+    itemMeanings: [
       "unfold",
       "expand",
     ],
@@ -26678,7 +26678,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "simple",
@@ -26698,7 +26698,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 561,
-    kanjiMeanings: [
+    itemMeanings: [
       "simple",
       "one",
       "single",
@@ -26720,7 +26720,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 290,
-    kanjiMeanings: [
+    itemMeanings: [
       "war",
       "battle",
       "match",
@@ -26741,7 +26741,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1438,
-    kanjiMeanings: [
+    itemMeanings: [
       "brain",
       "memory",
     ],
@@ -26761,7 +26761,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1295,
-    kanjiMeanings: [
+    itemMeanings: [
       "trouble",
       "worry",
       "in pain",
@@ -26783,7 +26783,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 958,
-    kanjiMeanings: [
+    itemMeanings: [
       "stern",
       "strictness",
       "severity",
@@ -26805,7 +26805,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 875,
-    kanjiMeanings: [
+    itemMeanings: [
       "raise",
       "plan",
       "project",
@@ -26831,7 +26831,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 509,
-    kanjiMeanings: [
+    itemMeanings: [
       "bird",
       "chicken",
     ],
@@ -26854,7 +26854,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 468,
-    kanjiMeanings: [
+    itemMeanings: [
       "chirp",
       "cry",
       "bark",
@@ -26876,7 +26876,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 298,
-    kanjiMeanings: ["island"],
+    itemMeanings: ["island"],
   ),
   LearningItem(
     keyword: "corner",
@@ -26896,7 +26896,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 938,
-    kanjiMeanings: [
+    itemMeanings: [
       "corner",
       "nook",
     ],
@@ -26916,7 +26916,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "inverted",
@@ -26933,7 +26933,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 965,
-    kanjiMeanings: [
+    itemMeanings: [
       "inverted",
       "reverse",
       "opposite",
@@ -26955,7 +26955,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 838,
-    kanjiMeanings: [
+    itemMeanings: [
       "concerning",
       "settle",
       "take position",
@@ -26980,7 +26980,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1185,
-    kanjiMeanings: [
+    itemMeanings: [
       "excuse",
       "dismissal",
     ],
@@ -27003,7 +27003,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 505,
-    kanjiMeanings: [
+    itemMeanings: [
       "nightfall",
       "night",
     ],
@@ -27026,7 +27026,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1290,
-    kanjiMeanings: [
+    itemMeanings: [
       "exertion",
       "endeavour",
       "encourage",
@@ -27051,7 +27051,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 480,
-    kanjiMeanings: [
+    itemMeanings: [
       "elephant",
       "pattern after",
       "imitate",
@@ -27076,7 +27076,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 479,
-    kanjiMeanings: [
+    itemMeanings: [
       "statue",
       "picture",
       "image",
@@ -27101,7 +27101,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 160,
-    kanjiMeanings: ["horse"],
+    itemMeanings: ["horse"],
   ),
   LearningItem(
     keyword: "verification",
@@ -27118,7 +27118,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 667,
-    kanjiMeanings: [
+    itemMeanings: [
       "verification",
       "effect",
       "testing",
@@ -27142,7 +27142,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1306,
-    kanjiMeanings: ["station"],
+    itemMeanings: ["station"],
   ),
   LearningItem(
     keyword: "boisterous",
@@ -27162,7 +27162,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 821,
-    kanjiMeanings: [
+    itemMeanings: [
       "boisterous",
       "make noise",
       "clamor",
@@ -27184,7 +27184,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 749,
-    kanjiMeanings: [
+    itemMeanings: [
       "burden",
       "some",
       "pack horse",
@@ -27206,7 +27206,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 459,
-    kanjiMeanings: [
+    itemMeanings: [
       "wonder",
       "be surprised",
       "frightened",
@@ -27231,7 +27231,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1460,
-    kanjiMeanings: [
+    itemMeanings: [
       "tiger",
       "drunkard",
     ],
@@ -27254,7 +27254,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1076,
-    kanjiMeanings: [
+    itemMeanings: [
       "void",
       "emptiness",
       "unpreparedness",
@@ -27280,7 +27280,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1023,
-    kanjiMeanings: [
+    itemMeanings: [
       "frolic",
       "play",
       "sport",
@@ -27301,7 +27301,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1005,
-    kanjiMeanings: [
+    itemMeanings: [
       "prudence",
       "thought",
       "concern",
@@ -27326,7 +27326,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 558,
-    kanjiMeanings: [
+    itemMeanings: [
       "drama",
       "play",
     ],
@@ -27346,7 +27346,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 653,
-    kanjiMeanings: ["deer"],
+    itemMeanings: ["deer"],
   ),
   LearningItem(
     keyword: "lovely",
@@ -27363,7 +27363,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1054,
-    kanjiMeanings: [
+    itemMeanings: [
       "lovely",
       "beautiful",
       "graceful",
@@ -27388,7 +27388,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 363,
-    kanjiMeanings: [
+    itemMeanings: [
       "ability",
       "talent",
       "skill",
@@ -27413,7 +27413,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 413,
-    kanjiMeanings: [
+    itemMeanings: [
       "attitude",
       "condition",
       "figure",
@@ -27438,7 +27438,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 2105,
-    kanjiMeanings: [
+    itemMeanings: [
       "sign of the tiger",
       "third sign of Chinese zodiac",
     ],
@@ -27461,7 +27461,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 659,
-    kanjiMeanings: [
+    itemMeanings: [
       "performance",
       "act",
       "play",
@@ -27486,7 +27486,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 1680,
-    kanjiMeanings: [
+    itemMeanings: [
       "sign of the dragon",
       "fifth sign of Chinese zodiac",
     ],
@@ -27509,7 +27509,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 367,
-    kanjiMeanings: [
+    itemMeanings: [
       "shake",
       "wave",
       "wag",
@@ -27534,7 +27534,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 839,
-    kanjiMeanings: [
+    itemMeanings: [
       "agriculture",
       "farmers",
     ],
@@ -27554,7 +27554,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 0,
-    kanjiMeanings: [""],
+    itemMeanings: [""],
   ),
   LearningItem(
     keyword: "send off",
@@ -27574,7 +27574,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 487,
-    kanjiMeanings: [
+    itemMeanings: [
       "escort",
       "send",
     ],
@@ -27594,7 +27594,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 224,
-    kanjiMeanings: [
+    itemMeanings: [
       "connection",
       "barrier",
       "gateway",
@@ -27619,7 +27619,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 996,
-    kanjiMeanings: [
+    itemMeanings: [
       "ghost",
       "devil",
     ],
@@ -27642,7 +27642,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 918,
-    kanjiMeanings: [
+    itemMeanings: [
       "soul",
       "spirit",
     ],
@@ -27662,7 +27662,7 @@ List<LearningItem> kanjiStaticData = [
     recallHistory: [],
     practiceHistory: [],
     frequencyInAozora: 770,
-    kanjiMeanings: [
+    itemMeanings: [
       "witch",
       "demon",
       "evil spirit",
