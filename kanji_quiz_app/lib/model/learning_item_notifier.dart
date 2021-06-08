@@ -11,60 +11,61 @@ class ItemList extends StateNotifier<List<LearningItem>> {
 
   void updateProgress(List<Progress> progressList) {
     state = [
-      for (final kanji in state)
+      for (final item in state)
         if (progressList
-            .any((element) => element.characterID == kanji.characterID))
+            .any((element) => element.characterID == item.characterID))
           LearningItem(
-            keyword: kanji.keyword,
-            itemType: kanji.itemType,
-            jlptLevel: kanji.jlptLevel,
-            frameNumFifth: kanji.frameNumFifth,
-            frameNumSixth: kanji.frameNumSixth,
-            characterID: kanji.characterID,
-            buildingBlocksID: kanji.buildingBlocksID,
-            buildingBlockKeywords: kanji.buildingBlockKeywords,
-            similarCharactersID: kanji.similarCharactersID,
-            similarCharactersKeyword: kanji.similarCharactersKeyword,
-            frequencyInAozora: kanji.frequencyInAozora,
-            itemMeanings: kanji.itemMeanings,
+            keyword: item.keyword,
+            itemType: item.itemType,
+            jlptLevel: item.jlptLevel,
+            frameNumFifth: item.frameNumFifth,
+            frameNumSixth: item.frameNumSixth,
+            characterID: item.characterID,
+            buildingBlocksID: item.buildingBlocksID,
+            buildingBlockKeywords: item.buildingBlockKeywords,
+            similarCharactersID: item.similarCharactersID,
+            similarCharactersKeyword: item.similarCharactersKeyword,
+            frequencyInAozora: item.frequencyInAozora,
+            itemMeanings: item.itemMeanings,
+            itemReadings: item.itemReadings,
             progressLevel: progressList
                 .firstWhere(
-                    (element) => element.characterID == kanji.characterID)
+                    (element) => element.characterID == item.characterID)
                 .progressLevel,
             mnemonicStory: progressList
                 .firstWhere(
-                    (element) => element.characterID == kanji.characterID)
+                    (element) => element.characterID == item.characterID)
                 .mnemonicStory,
             learningStatus: progressList
                 .firstWhere(
-                    (element) => element.characterID == kanji.characterID)
+                    (element) => element.characterID == item.characterID)
                 .learningStatus,
             dateLastLevelChanged: progressList
                 .firstWhere(
-                    (element) => element.characterID == kanji.characterID)
+                    (element) => element.characterID == item.characterID)
                 .dateLastLevelChanged,
             recallHistory: progressList
                 .firstWhere(
-                    (element) => element.characterID == kanji.characterID)
+                    (element) => element.characterID == item.characterID)
                 .recallHistory,
             practiceHistory: progressList
                 .firstWhere(
-                    (element) => element.characterID == kanji.characterID)
+                    (element) => element.characterID == item.characterID)
                 .practiceHistory,
             chosenDifficulty: progressList
                 .firstWhere(
-                    (element) => element.characterID == kanji.characterID)
+                    (element) => element.characterID == item.characterID)
                 .chosenDifficulty,
           )
         else
-          kanji,
+          item,
     ];
   }
 
   void editKanji(LearningItem updatedKanji) {
     state = [
-      for (final kanji in state)
-        if (kanji.characterID == updatedKanji.characterID)
+      for (final item in state)
+        if (item.characterID == updatedKanji.characterID)
           LearningItem(
             keyword: updatedKanji.keyword,
             itemType: updatedKanji.itemType,
@@ -78,6 +79,7 @@ class ItemList extends StateNotifier<List<LearningItem>> {
             similarCharactersKeyword: updatedKanji.similarCharactersKeyword,
             frequencyInAozora: updatedKanji.frequencyInAozora,
             itemMeanings: updatedKanji.itemMeanings,
+            itemReadings: updatedKanji.itemReadings,
             progressLevel: updatedKanji.progressLevel,
             mnemonicStory: updatedKanji.mnemonicStory,
             learningStatus: updatedKanji.learningStatus,
@@ -87,22 +89,22 @@ class ItemList extends StateNotifier<List<LearningItem>> {
             chosenDifficulty: updatedKanji.chosenDifficulty,
           )
         else
-          kanji,
+          item,
     ];
   }
 
   void saveProgress() async {
     List<Progress> newProgress = state
-        .map((kanji) => Progress(
-              keyword: kanji.keyword,
-              characterID: kanji.characterID,
-              progressLevel: kanji.progressLevel,
-              mnemonicStory: kanji.mnemonicStory,
-              recallHistory: kanji.recallHistory,
-              learningStatus: kanji.learningStatus,
-              practiceHistory: kanji.practiceHistory,
-              chosenDifficulty: kanji.chosenDifficulty,
-              dateLastLevelChanged: kanji.dateLastLevelChanged,
+        .map((item) => Progress(
+              keyword: item.keyword,
+              characterID: item.characterID,
+              progressLevel: item.progressLevel,
+              mnemonicStory: item.mnemonicStory,
+              recallHistory: item.recallHistory,
+              learningStatus: item.learningStatus,
+              practiceHistory: item.practiceHistory,
+              chosenDifficulty: item.chosenDifficulty,
+              dateLastLevelChanged: item.dateLastLevelChanged,
             ))
         .toList();
 

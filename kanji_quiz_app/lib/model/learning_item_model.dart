@@ -12,15 +12,15 @@ class LearningItem {
   final List<String> similarCharactersID;
   final List<String> similarCharactersKeyword;
   final int frequencyInAozora;
-  final List<String> itemMeanings;
-  final List<String> itemReadings;
+  List<String> itemMeanings;
+  List<String> itemReadings;
+  DateTime dateLastLevelChanged;
 
   int progressLevel;
   String mnemonicStory;
   String learningStatus;
   List<String> recallHistory;
   List<String> practiceHistory;
-  DateTime dateLastLevelChanged;
   int chosenDifficulty;
 
   LearningItem({
@@ -35,7 +35,7 @@ class LearningItem {
     @required this.similarCharactersID,
     @required this.similarCharactersKeyword,
     @required this.frequencyInAozora,
-    @required this.itemMeanings,
+    this.itemMeanings,
     this.itemReadings,
     this.progressLevel = 0,
     this.mnemonicStory = "",
