@@ -6,7 +6,7 @@ import '../widgets/practice_mgr/practice_app_bar.dart';
 import '../widgets/shared/corner_button.dart';
 import '../widgets/shared/corner_widget.dart';
 import '../model/translation_question.dart';
-import '../model/learing_item_model.dart';
+import '../model/learning_item_model.dart';
 import '../main_providers.dart';
 
 class PracticeManager extends ConsumerWidget {

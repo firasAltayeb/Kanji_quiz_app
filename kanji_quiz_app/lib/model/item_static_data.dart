@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/model/learing_item_model.dart';
+import 'package:kanji_quiz_app/model/learning_item_model.dart';
 
 List<LearningItem> kanjiStaticData = [
   LearningItem(

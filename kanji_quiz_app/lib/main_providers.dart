@@ -3,10 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:universal_io/io.dart' show Platform;
 
 import 'model/learning_item_notifier.dart';
-import 'model/learning_item_data.dart';
+import 'model/item_static_data.dart';
 import 'model/progress_services.dart';
 import 'model/progress_model.dart';
-import 'model/learing_item_model.dart';
+import 'model/learning_item_model.dart';
 
 final progressProvider =
     FutureProvider.autoDispose<List<Progress>>((ref) async {

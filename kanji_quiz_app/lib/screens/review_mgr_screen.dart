@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../widgets/review/result_review_page.dart';
 import '../widgets/review/recall_review_page.dart';
 import '../widgets/review/review_app_bar.dart';
-import '../model/learing_item_model.dart';
+import '../model/learning_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 

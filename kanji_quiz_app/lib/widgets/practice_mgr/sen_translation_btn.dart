@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../model/translation_question.dart';
-import '../../model/learing_item_model.dart';
+import '../../model/learning_item_model.dart';
 import '../../main_providers.dart';
 
 class TranslationOptionBtn extends ConsumerWidget {

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'screens/input_dialog_screen.dart';
 import 'screens/user_page_screen.dart';
 import 'misc/back_pressed_alert.dart';
-import 'model/learing_item_model.dart';
+import 'model/learning_item_model.dart';
 import 'main_providers.dart';
 
 enum VertOptions {

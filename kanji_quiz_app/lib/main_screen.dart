@@ -8,7 +8,7 @@ import 'widgets/main_screen/main_drawer.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
 import 'screens/practice_screen.dart';
-import 'model/learing_item_model.dart';
+import 'model/learning_item_model.dart';
 
 class MainScreen extends StatelessWidget {
   @override

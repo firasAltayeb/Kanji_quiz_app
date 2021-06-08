@@ -1,7 +1,7 @@
 import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/learing_item_model.dart';
+import 'package:kanji_quiz_app/model/learning_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 

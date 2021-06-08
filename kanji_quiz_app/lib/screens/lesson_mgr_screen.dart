@@ -7,7 +7,7 @@ import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/top_kanji_row.dart';
-import '../model/learing_item_model.dart';
+import '../model/learning_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 

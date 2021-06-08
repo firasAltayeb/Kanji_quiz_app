@@ -4,7 +4,7 @@ import 'package:universal_io/io.dart' show Platform;
 
 import 'progress_services.dart';
 import 'progress_model.dart';
-import 'learing_item_model.dart';
+import 'learning_item_model.dart';
 
 class ItemList extends StateNotifier<List<LearningItem>> {
   ItemList([List<LearningItem> kanjiList]) : super(kanjiList ?? []);
