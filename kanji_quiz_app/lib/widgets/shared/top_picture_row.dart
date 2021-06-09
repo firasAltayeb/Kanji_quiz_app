@@ -71,11 +71,11 @@ class TopKanjiRow extends ConsumerWidget {
           ),
           if (targetItem.itemType != "Primitive")
             Container(
-              height: plusChara ? height * 0.16 : height * 0.18,
+              height: plusChara ? height * 0.13 : height * 0.18,
               child: Text(
                 targetItem.characterID,
                 style: TextStyle(
-                  fontSize: plusChara ? height * 0.095 : height * 0.11,
+                  fontSize: plusChara ? height * 0.07 : height * 0.11,
                   fontFamily: 'Anton',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,

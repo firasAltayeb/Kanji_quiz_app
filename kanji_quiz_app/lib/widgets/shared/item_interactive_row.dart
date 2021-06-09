@@ -49,12 +49,12 @@ class ItemInteractiveRow extends ConsumerWidget {
                   if (itemList[i].itemType != "Primitive")
                     Container(
                       height:
-                          plusChara ? widgetHeight * 0.6 : widgetHeight * 0.65,
+                          plusChara ? widgetHeight * 0.45 : widgetHeight * 0.65,
                       child: Text(
                         itemList[i].characterID,
                         style: TextStyle(
                           fontSize: plusChara
-                              ? widgetHeight * 0.35
+                              ? widgetHeight * 0.25
                               : widgetHeight * 0.4,
                           fontFamily: 'Lato',
                           fontWeight: FontWeight.bold,

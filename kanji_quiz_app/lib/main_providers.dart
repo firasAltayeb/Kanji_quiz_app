@@ -111,6 +111,10 @@ final srsXlvlListProvider =
 final templateAddressProvider =
     Provider.autoDispose.family<String, LearningItem>((ref, targetKanji) {
   switch (targetKanji.itemType) {
+    case "Hiragana":
+      return "assets/images/pink_badge_template.png";
+    case "Katakana":
+      return "assets/images/pink_badge_template.png";
     case "Radical":
       return "assets/images/blue_badge_template.png";
     case "Primitive":
