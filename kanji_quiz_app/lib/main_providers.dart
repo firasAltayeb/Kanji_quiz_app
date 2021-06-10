@@ -131,5 +131,8 @@ final buildingBlocksProvider =
       .where((kanji) => targetbuildingBlockIDs.contains(kanji.characterID))
       .toList();
 
+  if (buildingBlocks.length > targetbuildingBlockIDs.length) {
+    buildingBlocks.removeWhere((element) => element.itemType == "Katakana");
+  }
   return buildingBlocks;
 });

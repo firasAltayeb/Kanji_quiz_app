@@ -2771,7 +2771,17 @@
     "practiceHistory": [],
     "chosenDifficulty": 1
   },
-
+  {
+    "keyword": "",
+    "characterID": "ハ",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
   {
     "keyword": "",
     "characterID": "貝",
@@ -3038,6 +3048,28 @@
   },
   {
     "keyword": "",
+    "characterID": "ナ",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
+    "characterID": "ナ",
+    "learningStatus": "Lesson",
+    "mnemonicStory": "",
+    "progressLevel": 0,
+    "dateLastLevelChanged": "",
+    "recallHistory": [],
+    "practiceHistory": [],
+    "chosenDifficulty": 1
+  },
+  {
+    "keyword": "",
     "characterID": "工",
     "learningStatus": "Lesson",
     "mnemonicStory": "",
@@ -3047,7 +3079,6 @@
     "practiceHistory": [],
     "chosenDifficulty": 1
   },
-
   {
     "keyword": "",
     "characterID": "左",
