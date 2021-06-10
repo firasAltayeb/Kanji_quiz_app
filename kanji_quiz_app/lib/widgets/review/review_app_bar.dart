@@ -1,11 +1,11 @@
-import 'package:kanji_quiz_app/model/learning_item_model.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class ReviewAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
   final bool showSrsPop;
-  final List<LearningItem> reviewList;
+  final List<StudyItem> reviewList;
   final List<bool> ansChoiceList;
 
   ReviewAppBar({

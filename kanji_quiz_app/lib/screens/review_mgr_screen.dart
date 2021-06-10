@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../widgets/review/result_review_page.dart';
 import '../widgets/review/recall_review_page.dart';
 import '../widgets/review/review_app_bar.dart';
-import '../model/learning_item_model.dart';
+import '../model/study_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 
@@ -24,7 +24,7 @@ class ReviewManager extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    List<LearningItem> _reviewList = ModalRoute.of(context).settings.arguments;
+    List<StudyItem> _reviewList = ModalRoute.of(context).settings.arguments;
     final _ansChoiceList = watch(answerChoiceListProvider).state;
     final _queueIndex = watch(reviewQueueIdxProvider).state;
     final showSrsPop = watch(showSrsPopUpProvider).state;

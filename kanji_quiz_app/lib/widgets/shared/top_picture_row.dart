@@ -1,7 +1,7 @@
 import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/learning_item_model.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
@@ -51,7 +51,7 @@ class TopKanjiRow extends ConsumerWidget {
   }
 
   Widget _itemPicture(
-      double height, String templateAddress, LearningItem targetItem) {
+      double height, String templateAddress, StudyItem targetItem) {
     bool plusChara = targetItem.characterID.length > 1;
     return Expanded(
       flex: 3,

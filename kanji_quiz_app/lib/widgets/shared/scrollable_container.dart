@@ -1,6 +1,6 @@
 import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/learning_item_model.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../main_providers.dart';
@@ -50,7 +50,7 @@ class ScrollableContainer extends ConsumerWidget {
     });
   }
 
-  Widget _instructionTextWidget(screenHeight, LearningItem targetKanji) {
+  Widget _instructionTextWidget(screenHeight, StudyItem targetKanji) {
     var itemType = targetKanji.itemType;
     return RichText(
       textAlign: TextAlign.center,
@@ -60,7 +60,7 @@ class ScrollableContainer extends ConsumerWidget {
           fontSize: screenHeight * 0.035,
         ),
         children: <TextSpan>[
-          TextSpan(text: 'Please create a mnemonic for the above $itemType'),
+          TextSpan(text: 'Please create a mnemonic for the above $itemType '),
           TextSpan(
             text: '${targetKanji.keyword} ',
             style: TextStyle(
@@ -84,7 +84,7 @@ class ScrollableContainer extends ConsumerWidget {
     );
   }
 
-  Widget _mnemonicTextWidget(var screenHeight, LearningItem targetKanji) {
+  Widget _mnemonicTextWidget(var screenHeight, StudyItem targetKanji) {
     return Text(
       targetKanji.mnemonicStory,
       textAlign: TextAlign.center,

@@ -1,4 +1,4 @@
-import 'package:kanji_quiz_app/model/learning_item_model.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 
 String hiraganaList = "あいうえおかきくけこさしすせそたちつてとなにぬね" +
     "のはひふへほまみむめもやゆよらりるれろわをんがぎぐ" +
@@ -8,8 +8,8 @@ String katakanaList = "アイウエオカキクケコサシスセソタチツテ
     "ノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザ" +
     "ジズゼゾダヂヅデドバビブベボパピプペポャュョァィェォ";
 
-List<LearningItem> kanjiStaticData = [
-  LearningItem(
+List<StudyItem> kanjiStaticData = [
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "あ",
@@ -27,7 +27,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["a"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "い",
@@ -45,7 +45,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["i"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "う",
@@ -63,7 +63,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["u"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "え",
@@ -81,7 +81,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["e"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "お",
@@ -99,7 +99,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["o"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "か",
@@ -117,7 +117,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ka"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "き",
@@ -135,7 +135,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ki"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "く",
@@ -153,7 +153,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ku"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "け",
@@ -171,7 +171,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ke"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "こ",
@@ -189,7 +189,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ko"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "さ",
@@ -207,7 +207,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["sa"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "し",
@@ -225,7 +225,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["shi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "す",
@@ -243,7 +243,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["su"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "せ",
@@ -261,7 +261,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["se"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "そ",
@@ -279,7 +279,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["so"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "た",
@@ -297,7 +297,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ta"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ち",
@@ -315,7 +315,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["chi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "つ",
@@ -333,7 +333,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["tsu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "て",
@@ -351,7 +351,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["te"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "と",
@@ -369,7 +369,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["to"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "な",
@@ -387,7 +387,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["na"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "に",
@@ -405,7 +405,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ni"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぬ",
@@ -423,7 +423,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ね",
@@ -441,7 +441,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ne"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "の",
@@ -459,7 +459,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["no"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "は",
@@ -477,7 +477,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ha"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ひ",
@@ -495,7 +495,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ふ",
@@ -513,7 +513,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["fu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "へ",
@@ -531,7 +531,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["he"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ほ",
@@ -549,7 +549,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ho"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ま",
@@ -567,7 +567,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ma"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "み",
@@ -585,7 +585,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "む",
@@ -603,7 +603,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "め",
@@ -621,7 +621,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["me"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "も",
@@ -639,7 +639,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "や",
@@ -657,7 +657,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ゆ",
@@ -675,7 +675,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["yu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "よ",
@@ -693,7 +693,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["yo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ら",
@@ -711,7 +711,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ra"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "り",
@@ -729,7 +729,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ri"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "る",
@@ -747,7 +747,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ru"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "れ",
@@ -765,7 +765,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["re"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ろ",
@@ -783,7 +783,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ro"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "わ",
@@ -801,7 +801,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["wa"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "を",
@@ -819,7 +819,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["o (wo)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ん",
@@ -837,7 +837,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["n"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "が",
@@ -855,7 +855,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ga"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぎ",
@@ -873,7 +873,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぐ",
@@ -891,7 +891,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "げ",
@@ -909,7 +909,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ge"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ご",
@@ -927,7 +927,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["go"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ざ",
@@ -945,7 +945,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["za"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "じ",
@@ -963,7 +963,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ji (zi)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ず",
@@ -981,7 +981,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["zu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぜ",
@@ -999,7 +999,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ze"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぞ",
@@ -1017,7 +1017,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["zo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "だ",
@@ -1035,7 +1035,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["da"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぢ",
@@ -1053,7 +1053,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ji (di)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "づ",
@@ -1071,7 +1071,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["zu (du)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "で",
@@ -1089,7 +1089,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["de"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ど",
@@ -1107,7 +1107,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["do"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ば",
@@ -1125,7 +1125,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ba"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "び",
@@ -1143,7 +1143,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぶ",
@@ -1161,7 +1161,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "べ",
@@ -1179,7 +1179,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["be"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぼ",
@@ -1197,7 +1197,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぱ",
@@ -1215,7 +1215,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pa"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぴ",
@@ -1233,7 +1233,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぷ",
@@ -1251,7 +1251,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぺ",
@@ -1269,7 +1269,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pe"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぽ",
@@ -1287,7 +1287,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["po"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "きゃ",
@@ -1305,7 +1305,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["kya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "きゅ",
@@ -1323,7 +1323,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["kyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "きょ",
@@ -1341,7 +1341,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["kyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "しゃ",
@@ -1359,7 +1359,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["sha"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "しゅ",
@@ -1377,7 +1377,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["shu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "しょ",
@@ -1395,7 +1395,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["sho"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ちゃ",
@@ -1413,7 +1413,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["cha"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ちゅ",
@@ -1431,7 +1431,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["chu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ちょ",
@@ -1449,7 +1449,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["cho"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "にゃ",
@@ -1467,7 +1467,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "にゅ",
@@ -1485,7 +1485,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "にょ",
@@ -1503,7 +1503,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ひゃ",
@@ -1521,7 +1521,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ひゅ",
@@ -1539,7 +1539,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ひょ",
@@ -1557,7 +1557,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "みゃ",
@@ -1575,7 +1575,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "みゅ",
@@ -1593,7 +1593,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["myu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "みょ",
@@ -1611,7 +1611,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["myo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "りゃ",
@@ -1629,7 +1629,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["rya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "りゅ",
@@ -1647,7 +1647,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ryu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "りょ",
@@ -1665,7 +1665,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ryo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぎゃ",
@@ -1683,7 +1683,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぎゅ",
@@ -1701,7 +1701,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぎょ",
@@ -1719,7 +1719,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "じゃ",
@@ -1737,7 +1737,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ja"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "じゅ",
@@ -1755,7 +1755,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ju"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "じょ",
@@ -1773,7 +1773,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["jo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "びゃ",
@@ -1791,7 +1791,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "びゅ",
@@ -1809,7 +1809,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["byu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "びょ",
@@ -1827,7 +1827,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["byo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぴゃ",
@@ -1845,7 +1845,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぴゅ",
@@ -1863,7 +1863,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Hiragana",
     characterID: "ぴょ",
@@ -1881,7 +1881,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ア",
@@ -1899,7 +1899,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["a"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "イ",
@@ -1917,7 +1917,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["i"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ウ",
@@ -1935,7 +1935,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["u"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "エ",
@@ -1953,7 +1953,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["e"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "オ",
@@ -1971,7 +1971,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["o"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "カ",
@@ -1989,7 +1989,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ka"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "キ",
@@ -2007,7 +2007,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ki"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ク",
@@ -2025,7 +2025,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ku"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ケ",
@@ -2043,7 +2043,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ke"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "コ",
@@ -2061,7 +2061,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ko"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "サ",
@@ -2079,7 +2079,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["sa"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "シ",
@@ -2097,7 +2097,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["shi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ス",
@@ -2115,7 +2115,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["su"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "セ",
@@ -2133,7 +2133,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["se"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ソ",
@@ -2151,7 +2151,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["so"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "タ",
@@ -2169,7 +2169,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ta"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "チ",
@@ -2187,7 +2187,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["chi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ツ",
@@ -2205,7 +2205,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["tsu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "テ",
@@ -2223,7 +2223,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["te"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ト",
@@ -2241,7 +2241,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["to"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ナ",
@@ -2259,7 +2259,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["na"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ニ",
@@ -2277,7 +2277,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ni"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヌ",
@@ -2295,7 +2295,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ネ",
@@ -2313,7 +2313,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ne"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ノ",
@@ -2331,7 +2331,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["no"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ハ",
@@ -2349,7 +2349,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ha"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヒ",
@@ -2367,7 +2367,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "フ",
@@ -2385,7 +2385,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["fu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヘ",
@@ -2403,7 +2403,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["he"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ホ",
@@ -2421,7 +2421,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ho"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "マ",
@@ -2439,7 +2439,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ma"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ミ",
@@ -2457,7 +2457,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ム",
@@ -2475,7 +2475,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "メ",
@@ -2493,7 +2493,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["me"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "モ",
@@ -2511,7 +2511,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヤ",
@@ -2529,7 +2529,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ユ",
@@ -2547,7 +2547,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["yu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヨ",
@@ -2565,7 +2565,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["yo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ラ",
@@ -2583,7 +2583,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ra"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "リ",
@@ -2601,7 +2601,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ri"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ル",
@@ -2619,7 +2619,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ru"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "レ",
@@ -2637,7 +2637,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["re"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ロ",
@@ -2655,7 +2655,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ro"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ワ",
@@ -2673,7 +2673,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["wa"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヲ",
@@ -2691,7 +2691,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["o (wo)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ン",
@@ -2709,7 +2709,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["n"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ガ",
@@ -2727,7 +2727,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ga"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ギ",
@@ -2745,7 +2745,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "グ",
@@ -2763,7 +2763,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ゲ",
@@ -2781,7 +2781,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ge"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ゴ",
@@ -2799,7 +2799,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["go"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ザ",
@@ -2817,7 +2817,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["za"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ジ",
@@ -2835,7 +2835,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ji (zi)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ズ",
@@ -2853,7 +2853,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["zu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ゼ",
@@ -2871,7 +2871,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ze"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ゾ",
@@ -2889,7 +2889,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["zo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ダ",
@@ -2907,7 +2907,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["da"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヂ",
@@ -2925,7 +2925,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ji (di)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヅ",
@@ -2943,7 +2943,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["zu (du)"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "デ",
@@ -2961,7 +2961,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["de"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ド",
@@ -2979,7 +2979,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["do"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "バ",
@@ -2997,7 +2997,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ba"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ビ",
@@ -3015,7 +3015,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ブ",
@@ -3033,7 +3033,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ベ",
@@ -3051,7 +3051,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["be"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ボ",
@@ -3069,7 +3069,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "パ",
@@ -3087,7 +3087,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pa"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ピ",
@@ -3105,7 +3105,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pi"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "プ",
@@ -3123,7 +3123,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ペ",
@@ -3141,7 +3141,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pe"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ポ",
@@ -3159,7 +3159,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["po"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "キャ",
@@ -3177,7 +3177,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["kya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "キュ",
@@ -3195,7 +3195,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["kyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "キョ",
@@ -3213,7 +3213,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["kyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "シャ",
@@ -3231,7 +3231,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["sha"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "シュ",
@@ -3249,7 +3249,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["shu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ショ",
@@ -3267,7 +3267,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["sho"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "チャ",
@@ -3285,7 +3285,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["cha"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "チュ",
@@ -3303,7 +3303,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["chu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "チョ",
@@ -3321,7 +3321,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["cho"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ニャ",
@@ -3339,7 +3339,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ニュ",
@@ -3357,7 +3357,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ニョ",
@@ -3375,7 +3375,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["nyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヒャ",
@@ -3393,7 +3393,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヒュ",
@@ -3411,7 +3411,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ヒョ",
@@ -3429,7 +3429,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["hyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ミャ",
@@ -3447,7 +3447,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["mya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ミュ",
@@ -3465,7 +3465,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["myu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ミョ",
@@ -3483,7 +3483,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["myo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "リャ",
@@ -3501,7 +3501,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["rya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "リュ",
@@ -3519,7 +3519,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ryu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "リョ",
@@ -3537,7 +3537,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ryo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ギャ",
@@ -3555,7 +3555,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ギュ",
@@ -3573,7 +3573,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ギョ",
@@ -3591,7 +3591,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["gyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ジャ",
@@ -3609,7 +3609,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ja"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ジュ",
@@ -3627,7 +3627,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["ju"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ジョ",
@@ -3645,7 +3645,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["jo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ビャ",
@@ -3663,7 +3663,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["bya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ビュ",
@@ -3681,7 +3681,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["byu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ビョ",
@@ -3699,7 +3699,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["byo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ピャ",
@@ -3717,7 +3717,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pya"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ピュ",
@@ -3735,7 +3735,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pyu"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "",
     itemType: "Katakana",
     characterID: "ピョ",
@@ -3753,7 +3753,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: ["pyo"],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "one",
     itemType: "Kanji",
     characterID: "一",
@@ -3771,7 +3771,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["one"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "two",
     itemType: "Kanji",
     characterID: "二",
@@ -3789,7 +3789,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["two"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "three",
     itemType: "Kanji",
     characterID: "三",
@@ -3807,7 +3807,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["three"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "four",
     itemType: "Kanji",
     characterID: "四",
@@ -3825,7 +3825,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["four"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "five",
     itemType: "Kanji",
     characterID: "五",
@@ -3843,7 +3843,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["five"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "six",
     itemType: "Kanji",
     characterID: "六",
@@ -3861,7 +3861,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["six"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "seven",
     itemType: "Kanji",
     characterID: "七",
@@ -3879,7 +3879,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["seven"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "eight",
     itemType: "Kanji",
     characterID: "八",
@@ -3897,7 +3897,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["eight"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "nine",
     itemType: "Kanji",
     characterID: "九",
@@ -3915,7 +3915,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["nine"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ten",
     itemType: "Kanji",
     characterID: "十",
@@ -3933,7 +3933,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["ten"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mouth",
     itemType: "Kanji",
     characterID: "口",
@@ -3951,7 +3951,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["mouth"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "day",
     itemType: "Kanji",
     characterID: "日",
@@ -3977,7 +3977,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "month",
     itemType: "Kanji",
     characterID: "月",
@@ -4001,7 +4001,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rice field",
     itemType: "Kanji",
     characterID: "田",
@@ -4022,7 +4022,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "eye",
     itemType: "Kanji",
     characterID: "目",
@@ -4048,7 +4048,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "old",
     itemType: "Kanji",
     characterID: "古",
@@ -4066,7 +4066,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["old"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "I",
     itemType: "Kanji",
     characterID: "吾",
@@ -4089,7 +4089,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bright",
     itemType: "Kanji",
     characterID: "明",
@@ -4110,7 +4110,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "goods",
     itemType: "Kanji",
     characterID: "品",
@@ -4133,7 +4133,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spine",
     itemType: "Kanji",
     characterID: "呂",
@@ -4157,7 +4157,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "early",
     itemType: "Kanji",
     characterID: "早",
@@ -4181,7 +4181,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "generation",
     itemType: "Kanji",
     characterID: "世",
@@ -4204,7 +4204,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "nightbreak",
     itemType: "Kanji",
     characterID: "旦",
@@ -4229,7 +4229,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "walking stick",
     itemType: "Radical",
     characterID: "丨",
@@ -4247,7 +4247,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "olden times",
     itemType: "Kanji",
     characterID: "旧",
@@ -4270,7 +4270,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "a drop of",
     itemType: "Radical",
     characterID: "丶",
@@ -4288,7 +4288,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "oneself",
     itemType: "Kanji",
     characterID: "自",
@@ -4306,7 +4306,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["oneself"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "white",
     itemType: "Kanji",
     characterID: "白",
@@ -4328,7 +4328,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["white"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hundred",
     itemType: "Kanji",
     characterID: "百",
@@ -4346,7 +4346,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["hundred"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "in",
     itemType: "Kanji",
     characterID: "中",
@@ -4372,7 +4372,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "thousand",
     itemType: "Kanji",
     characterID: "千",
@@ -4394,7 +4394,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["thousand"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tongue",
     itemType: "Kanji",
     characterID: "舌",
@@ -4416,7 +4416,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "measuring box",
     itemType: "Kanji",
     characterID: "升",
@@ -4437,7 +4437,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "round",
     itemType: "Kanji",
     characterID: "丸",
@@ -4463,7 +4463,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "measurement",
     itemType: "Kanji",
     characterID: "寸",
@@ -4489,7 +4489,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "specialty",
     itemType: "Kanji",
     characterID: "専",
@@ -4515,7 +4515,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Dr.",
     itemType: "Kanji",
     characterID: "博",
@@ -4542,7 +4542,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "augury",
     itemType: "Radical",
     characterID: "卜",
@@ -4560,7 +4560,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fortune-telling",
     itemType: "Kanji",
     characterID: "占",
@@ -4587,7 +4587,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "above",
     itemType: "Kanji",
     characterID: "上",
@@ -4608,7 +4608,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "below",
     itemType: "Kanji",
     characterID: "下",
@@ -4634,7 +4634,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mist",
     itemType: "Primitive",
     characterID: "53p",
@@ -4652,7 +4652,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "morning",
     itemType: "Kanji",
     characterID: "朝",
@@ -4675,7 +4675,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "animal legs",
     itemType: "Radical",
     characterID: "ハ",
@@ -4693,7 +4693,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shellfish",
     itemType: "Kanji",
     characterID: "貝",
@@ -4711,7 +4711,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["shellfish"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "employee",
     itemType: "Kanji",
     characterID: "員",
@@ -4737,7 +4737,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "human legs",
     itemType: "Radical",
     characterID: "儿",
@@ -4755,7 +4755,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "see",
     itemType: "Kanji",
     characterID: "見",
@@ -4781,7 +4781,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "newborn babe",
     itemType: "Kanji",
     characterID: "児",
@@ -4806,7 +4806,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beginning",
     itemType: "Kanji",
     characterID: "元",
@@ -4831,7 +4831,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "page",
     itemType: "Kanji",
     characterID: "頁",
@@ -4855,7 +4855,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stubborn",
     itemType: "Kanji",
     characterID: "頑",
@@ -4880,7 +4880,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stool",
     itemType: "Kanji",
     characterID: "几",
@@ -4901,7 +4901,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mediocre",
     itemType: "Kanji",
     characterID: "凡",
@@ -4927,7 +4927,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bound up",
     itemType: "Radical",
     characterID: "勹",
@@ -4945,7 +4945,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "defeat",
     itemType: "Kanji",
     characterID: "負",
@@ -4971,7 +4971,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ten thousand",
     itemType: "Kanji",
     characterID: "万",
@@ -4992,7 +4992,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "phrase",
     itemType: "Kanji",
     characterID: "句",
@@ -5018,7 +5018,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ladle",
     itemType: "Kanji",
     characterID: "勺",
@@ -5044,7 +5044,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bull's eye",
     itemType: "Kanji",
     characterID: "的",
@@ -5070,7 +5070,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "horns",
     itemType: "Primitive",
     characterID: "74p",
@@ -5088,7 +5088,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "neck",
     itemType: "Kanji",
     characterID: "首",
@@ -5112,7 +5112,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fish guts",
     itemType: "Kanji",
     characterID: "乙",
@@ -5135,7 +5135,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "riot",
     itemType: "Kanji",
     characterID: "乱",
@@ -5162,7 +5162,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "straightaway",
     itemType: "Kanji",
     characterID: "直",
@@ -5189,7 +5189,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tool",
     itemType: "Primitive",
     characterID: "78p",
@@ -5207,7 +5207,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tool",
     itemType: "Kanji",
     characterID: "具",
@@ -5233,7 +5233,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "true",
     itemType: "Kanji",
     characterID: "真",
@@ -5259,7 +5259,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "craft",
     itemType: "Kanji",
     characterID: "工",
@@ -5283,7 +5283,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "by my side",
     itemType: "Radical",
     characterID: "ナ",
@@ -5301,7 +5301,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "left",
     itemType: "Kanji",
     characterID: "左",
@@ -5322,7 +5322,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["left"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "right",
     itemType: "Kanji",
     characterID: "右",
@@ -5344,7 +5344,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["right"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "possess",
     itemType: "Kanji",
     characterID: "有",
@@ -5370,7 +5370,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sword",
     itemType: "Kanji",
     characterID: "刀",
@@ -5395,7 +5395,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "blade",
     itemType: "Kanji",
     characterID: "刃",
@@ -5420,7 +5420,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cut",
     itemType: "Kanji",
     characterID: "切",
@@ -5445,7 +5445,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "seduce",
     itemType: "Kanji",
     characterID: "召",
@@ -5472,7 +5472,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shining",
     itemType: "Kanji",
     characterID: "昭",
@@ -5496,7 +5496,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "saber",
     itemType: "Radical",
     characterID: "刂",
@@ -5514,7 +5514,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rule",
     itemType: "Kanji",
     characterID: "則",
@@ -5540,7 +5540,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "separate",
     itemType: "Kanji",
     characterID: "別",
@@ -5563,7 +5563,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "street",
     itemType: "Kanji",
     characterID: "丁",
@@ -5589,7 +5589,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "village",
     itemType: "Kanji",
     characterID: "町",
@@ -5612,7 +5612,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "can",
     itemType: "Kanji",
     characterID: "可",
@@ -5639,7 +5639,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "place on the head",
     itemType: "Kanji",
     characterID: "頂",
@@ -5666,7 +5666,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "child",
     itemType: "Kanji",
     characterID: "子",
@@ -5693,7 +5693,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "complete",
     itemType: "Kanji",
     characterID: "了",
@@ -5714,7 +5714,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "woman",
     itemType: "Kanji",
     characterID: "女",
@@ -5738,7 +5738,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fond",
     itemType: "Kanji",
     characterID: "好",
@@ -5763,7 +5763,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mama",
     itemType: "Kanji",
     characterID: "母",
@@ -5784,7 +5784,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["mother"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "elder brother",
     itemType: "Kanji",
     characterID: "兄",
@@ -5808,7 +5808,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "little",
     itemType: "Kanji",
     characterID: "小",
@@ -5832,7 +5832,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "few",
     itemType: "Kanji",
     characterID: "少",
@@ -5856,7 +5856,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "large",
     itemType: "Kanji",
     characterID: "大",
@@ -5880,7 +5880,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "evening",
     itemType: "Kanji",
     characterID: "夕",
@@ -5901,7 +5901,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["evening"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "many",
     itemType: "Kanji",
     characterID: "多",
@@ -5927,7 +5927,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "outside",
     itemType: "Kanji",
     characterID: "外",
@@ -5948,7 +5948,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["outside"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "name",
     itemType: "Kanji",
     characterID: "名",
@@ -5974,7 +5974,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cliff",
     itemType: "Radical",
     characterID: "厂",
@@ -5992,7 +5992,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stone",
     itemType: "Kanji",
     characterID: "石",
@@ -6013,7 +6013,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["stone"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "resemblance",
     itemType: "Kanji",
     characterID: "肖",
@@ -6034,7 +6034,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["resemblance"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "smash",
     itemType: "Kanji",
     characterID: "砕",
@@ -6060,7 +6060,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sand",
     itemType: "Kanji",
     characterID: "砂",
@@ -6081,7 +6081,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["sand"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ray",
     itemType: "Kanji",
     characterID: "光",
@@ -6102,7 +6102,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plump",
     itemType: "Kanji",
     characterID: "太",
@@ -6127,7 +6127,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "utensil",
     itemType: "Kanji",
     characterID: "器",
@@ -6153,7 +6153,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "exquisite",
     itemType: "Kanji",
     characterID: "妙",
@@ -6179,7 +6179,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "focus",
     itemType: "Kanji",
     characterID: "省",
@@ -6201,7 +6201,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "strange",
     itemType: "Kanji",
     characterID: "奇",
@@ -6223,7 +6223,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stream",
     itemType: "Kanji",
     characterID: "川",
@@ -6247,7 +6247,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "state",
     itemType: "Kanji",
     characterID: "州",
@@ -6271,7 +6271,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "obey",
     itemType: "Kanji",
     characterID: "順",
@@ -6297,7 +6297,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "water",
     itemType: "Kanji",
     characterID: "水",
@@ -6318,7 +6318,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["water"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "eternity",
     itemType: "Kanji",
     characterID: "永",
@@ -6343,7 +6343,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spring",
     itemType: "Kanji",
     characterID: "泉",
@@ -6364,7 +6364,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "meadow",
     itemType: "Kanji",
     characterID: "原",
@@ -6389,7 +6389,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "petition",
     itemType: "Kanji",
     characterID: "願",
@@ -6415,7 +6415,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "water",
     itemType: "Radical",
     characterID: "氵",
@@ -6433,7 +6433,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "source",
     itemType: "Kanji",
     characterID: "源",
@@ -6454,7 +6454,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lively",
     itemType: "Kanji",
     characterID: "活",
@@ -6480,7 +6480,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "extinguish",
     itemType: "Kanji",
     characterID: "消",
@@ -6506,7 +6506,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "overnight",
     itemType: "Kanji",
     characterID: "泊",
@@ -6528,7 +6528,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "soil",
     itemType: "Kanji",
     characterID: "土",
@@ -6554,7 +6554,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "squared jewel",
     itemType: "Kanji",
     characterID: "圭",
@@ -6580,7 +6580,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Buddhist temple",
     itemType: "Kanji",
     characterID: "寺",
@@ -6602,7 +6602,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["Buddhist temple"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "time",
     itemType: "Kanji",
     characterID: "時",
@@ -6626,7 +6626,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fire",
     itemType: "Kanji",
     characterID: "火",
@@ -6648,7 +6648,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["fire"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inflammation",
     itemType: "Kanji",
     characterID: "炎",
@@ -6673,7 +6673,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "oven fire",
     itemType: "Radical",
     characterID: "灬",
@@ -6691,7 +6691,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spot",
     itemType: "Kanji",
     characterID: "点",
@@ -6714,7 +6714,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "illuminate",
     itemType: "Kanji",
     characterID: "照",
@@ -6737,7 +6737,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fish",
     itemType: "Kanji",
     characterID: "魚",
@@ -6755,7 +6755,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["fish"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ri",
     itemType: "Kanji",
     characterID: "里",
@@ -6782,7 +6782,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "black",
     itemType: "Kanji",
     characterID: "黒",
@@ -6803,7 +6803,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["black"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "quantity",
     itemType: "Kanji",
     characterID: "量",
@@ -6829,7 +6829,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bury",
     itemType: "Kanji",
     characterID: "埋",
@@ -6851,7 +6851,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hood",
     itemType: "Radical",
     characterID: "冂",
@@ -6869,7 +6869,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "same",
     itemType: "Kanji",
     characterID: "同",
@@ -6894,7 +6894,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "yonder",
     itemType: "Kanji",
     characterID: "向",
@@ -6920,7 +6920,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "house",
     itemType: "Radical",
     characterID: "宀",
@@ -6938,7 +6938,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "character",
     itemType: "Kanji",
     characterID: "字",
@@ -6965,7 +6965,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "guard",
     itemType: "Kanji",
     characterID: "守",
@@ -6988,7 +6988,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "perfect",
     itemType: "Kanji",
     characterID: "完",
@@ -7013,7 +7013,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "relax",
     itemType: "Kanji",
     characterID: "安",
@@ -7039,7 +7039,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Shinto shrine",
     itemType: "Kanji",
     characterID: "宮",
@@ -7062,7 +7062,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "draw near",
     itemType: "Kanji",
     characterID: "寄",
@@ -7088,7 +7088,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wealth",
     itemType: "Radical",
     characterID: "畐",
@@ -7106,7 +7106,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wealth",
     itemType: "Kanji",
     characterID: "富",
@@ -7131,7 +7131,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tree",
     itemType: "Kanji",
     characterID: "木",
@@ -7156,7 +7156,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grove",
     itemType: "Kanji",
     characterID: "林",
@@ -7180,7 +7180,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "forest",
     itemType: "Kanji",
     characterID: "森",
@@ -7204,7 +7204,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plant",
     itemType: "Kanji",
     characterID: "植",
@@ -7225,7 +7225,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["plant"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "town",
     itemType: "Kanji",
     characterID: "村",
@@ -7246,7 +7246,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inter",
     itemType: "Kanji",
     characterID: "相",
@@ -7269,7 +7269,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "book",
     itemType: "Kanji",
     characterID: "本",
@@ -7295,7 +7295,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plan",
     itemType: "Kanji",
     characterID: "案",
@@ -7318,7 +7318,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "not yet",
     itemType: "Kanji",
     characterID: "未",
@@ -7345,7 +7345,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "extremity",
     itemType: "Kanji",
     characterID: "末",
@@ -7371,7 +7371,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "flavor",
     itemType: "Kanji",
     characterID: "味",
@@ -7395,7 +7395,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "younger sister",
     itemType: "Kanji",
     characterID: "妹",
@@ -7416,7 +7416,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["younger sister"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "vermilion",
     itemType: "Kanji",
     characterID: "朱",
@@ -7442,7 +7442,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "flower",
     itemType: "Radical",
     characterID: "艹",
@@ -7460,7 +7460,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "young",
     itemType: "Kanji",
     characterID: "若",
@@ -7487,7 +7487,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grass",
     itemType: "Kanji",
     characterID: "草",
@@ -7513,7 +7513,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "suffering",
     itemType: "Kanji",
     characterID: "苦",
@@ -7536,7 +7536,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dilute",
     itemType: "Kanji",
     characterID: "薄",
@@ -7562,7 +7562,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "leaf",
     itemType: "Kanji",
     characterID: "葉",
@@ -7588,7 +7588,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shalt",
     itemType: "Kanji",
     characterID: "莫",
@@ -7613,7 +7613,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "livelihood",
     itemType: "Kanji",
     characterID: "暮",
@@ -7636,7 +7636,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "seedling",
     itemType: "Kanji",
     characterID: "苗",
@@ -7661,7 +7661,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "portent",
     itemType: "Kanji",
     characterID: "兆",
@@ -7687,7 +7687,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stare",
     itemType: "Kanji",
     characterID: "眺",
@@ -7713,7 +7713,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dog",
     itemType: "Kanji",
     characterID: "犬",
@@ -7734,7 +7734,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["dog"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "status quo",
     itemType: "Kanji",
     characterID: "状",
@@ -7757,7 +7757,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "silence",
     itemType: "Kanji",
     characterID: "黙",
@@ -7780,7 +7780,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sort of thing",
     itemType: "Kanji",
     characterID: "然",
@@ -7806,7 +7806,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cow",
     itemType: "Kanji",
     characterID: "牛",
@@ -7824,7 +7824,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["cow"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "special",
     itemType: "Kanji",
     characterID: "特",
@@ -7846,7 +7846,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["special"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "revelation",
     itemType: "Kanji",
     characterID: "告",
@@ -7872,7 +7872,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "before",
     itemType: "Kanji",
     characterID: "先",
@@ -7895,7 +7895,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wash",
     itemType: "Kanji",
     characterID: "洗",
@@ -7917,7 +7917,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "umbrella",
     itemType: "Primitive",
     characterID: "265p",
@@ -7935,7 +7935,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "jammed in",
     itemType: "Kanji",
     characterID: "介",
@@ -7961,7 +7961,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "world",
     itemType: "Kanji",
     characterID: "界",
@@ -7982,7 +7982,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tea",
     itemType: "Kanji",
     characterID: "茶",
@@ -8000,7 +8000,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["tea"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "meeting",
     itemType: "Primitive",
     characterID: "269p",
@@ -8018,7 +8018,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fit",
     itemType: "Kanji",
     characterID: "合",
@@ -8044,7 +8044,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "king",
     itemType: "Kanji",
     characterID: "王",
@@ -8069,7 +8069,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "jewel",
     itemType: "Kanji",
     characterID: "玉",
@@ -8093,7 +8093,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "present",
     itemType: "Kanji",
     characterID: "現",
@@ -8115,7 +8115,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lunatic",
     itemType: "Kanji",
     characterID: "狂",
@@ -8138,7 +8138,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "display",
     itemType: "Kanji",
     characterID: "呈",
@@ -8161,7 +8161,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "whole",
     itemType: "Kanji",
     characterID: "全",
@@ -8187,7 +8187,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "logic",
     itemType: "Kanji",
     characterID: "理",
@@ -8210,7 +8210,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lord",
     itemType: "Kanji",
     characterID: "主",
@@ -8237,7 +8237,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pour",
     itemType: "Kanji",
     characterID: "注",
@@ -8263,7 +8263,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gold",
     itemType: "Kanji",
     characterID: "金",
@@ -8281,7 +8281,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["gold"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "road",
     itemType: "Primitive",
     characterID: "295p",
@@ -8299,7 +8299,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "road-way",
     itemType: "Kanji",
     characterID: "道",
@@ -8322,7 +8322,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "create",
     itemType: "Kanji",
     characterID: "造",
@@ -8348,7 +8348,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "urge",
     itemType: "Kanji",
     characterID: "迫",
@@ -8374,7 +8374,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "escape",
     itemType: "Kanji",
     characterID: "逃",
@@ -8400,7 +8400,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "environs",
     itemType: "Kanji",
     characterID: "辺",
@@ -8426,7 +8426,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "car",
     itemType: "Kanji",
     characterID: "車",
@@ -8447,7 +8447,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["car"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "take along",
     itemType: "Kanji",
     characterID: "連",
@@ -8473,7 +8473,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "in front",
     itemType: "Kanji",
     characterID: "前",
@@ -8494,7 +8494,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "walking legs",
     itemType: "Radical",
     characterID: "夂",
@@ -8512,7 +8512,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "each",
     itemType: "Kanji",
     characterID: "各",
@@ -8537,7 +8537,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "status",
     itemType: "Kanji",
     characterID: "格",
@@ -8560,7 +8560,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "abbreviation",
     itemType: "Kanji",
     characterID: "略",
@@ -8583,7 +8583,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "guest",
     itemType: "Kanji",
     characterID: "客",
@@ -8606,7 +8606,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "forehead",
     itemType: "Kanji",
     characterID: "額",
@@ -8633,7 +8633,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "summer",
     itemType: "Kanji",
     characterID: "夏",
@@ -8651,7 +8651,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["summer"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dispose",
     itemType: "Kanji",
     characterID: "処",
@@ -8677,7 +8677,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "twig",
     itemType: "Kanji",
     characterID: "条",
@@ -8700,7 +8700,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fall",
     itemType: "Kanji",
     characterID: "落",
@@ -8726,7 +8726,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "crown",
     itemType: "Radical",
     characterID: "冖",
@@ -8744,7 +8744,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "army",
     itemType: "Kanji",
     characterID: "軍",
@@ -8770,7 +8770,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "carry",
     itemType: "Kanji",
     characterID: "運",
@@ -8793,7 +8793,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dream",
     itemType: "Kanji",
     characterID: "夢",
@@ -8815,7 +8815,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "top hat",
     itemType: "Radical",
     characterID: "亠",
@@ -8833,7 +8833,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tall",
     itemType: "Kanji",
     characterID: "高",
@@ -8855,7 +8855,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "capital",
     itemType: "Kanji",
     characterID: "京",
@@ -8879,7 +8879,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "scenery",
     itemType: "Kanji",
     characterID: "景",
@@ -8900,7 +8900,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lidded crock",
     itemType: "Primitive",
     characterID: "338p",
@@ -8918,7 +8918,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cottage",
     itemType: "Kanji",
     characterID: "舎",
@@ -8944,7 +8944,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "circumference",
     itemType: "Kanji",
     characterID: "周",
@@ -8966,7 +8966,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "week",
     itemType: "Kanji",
     characterID: "週",
@@ -8984,7 +8984,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["week"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gentleman",
     itemType: "Kanji",
     characterID: "士",
@@ -9009,7 +9009,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "good luck",
     itemType: "Kanji",
     characterID: "吉",
@@ -9031,7 +9031,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "robust",
     itemType: "Kanji",
     characterID: "壮",
@@ -9056,7 +9056,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sell",
     itemType: "Kanji",
     characterID: "売",
@@ -9077,7 +9077,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["sell"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "schoolhouse",
     itemType: "Primitive",
     characterID: "346p",
@@ -9095,7 +9095,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "study",
     itemType: "Kanji",
     characterID: "学",
@@ -9120,7 +9120,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "memorize",
     itemType: "Kanji",
     characterID: "覚",
@@ -9146,7 +9146,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "brush",
     itemType: "Kanji",
     characterID: "聿",
@@ -9173,7 +9173,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "write",
     itemType: "Kanji",
     characterID: "書",
@@ -9191,7 +9191,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["write"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "haven",
     itemType: "Kanji",
     characterID: "津",
@@ -9217,7 +9217,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "taskmaster",
     itemType: "Radical",
     characterID: "攵",
@@ -9235,7 +9235,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "aggression",
     itemType: "Kanji",
     characterID: "攻",
@@ -9261,7 +9261,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "failure",
     itemType: "Kanji",
     characterID: "敗",
@@ -9283,7 +9283,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sheet of",
     itemType: "Kanji",
     characterID: "枚",
@@ -9308,7 +9308,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "happenstance",
     itemType: "Kanji",
     characterID: "故",
@@ -9331,7 +9331,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "awe",
     itemType: "Kanji",
     characterID: "敬",
@@ -9357,7 +9357,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "say",
     itemType: "Kanji",
     characterID: "言",
@@ -9378,7 +9378,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "admonish",
     itemType: "Kanji",
     characterID: "警",
@@ -9399,7 +9399,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plot",
     itemType: "Kanji",
     characterID: "計",
@@ -9422,7 +9422,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "packed",
     itemType: "Kanji",
     characterID: "詰",
@@ -9448,7 +9448,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tale",
     itemType: "Kanji",
     characterID: "話",
@@ -9472,7 +9472,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "word",
     itemType: "Kanji",
     characterID: "語",
@@ -9497,7 +9497,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "read",
     itemType: "Kanji",
     characterID: "読",
@@ -9518,7 +9518,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["read"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tune",
     itemType: "Kanji",
     characterID: "調",
@@ -9540,7 +9540,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "discuss",
     itemType: "Kanji",
     characterID: "談",
@@ -9564,7 +9564,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "arrow",
     itemType: "Radical",
     characterID: "弋",
@@ -9582,7 +9582,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "style",
     itemType: "Kanji",
     characterID: "式",
@@ -9608,7 +9608,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "test",
     itemType: "Kanji",
     characterID: "試",
@@ -9634,7 +9634,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spear",
     itemType: "Radical",
     characterID: "戈",
@@ -9652,7 +9652,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "a (a certain)",
     itemType: "Kanji",
     characterID: "或",
@@ -9678,7 +9678,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "range",
     itemType: "Kanji",
     characterID: "域",
@@ -9704,7 +9704,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "turn into",
     itemType: "Kanji",
     characterID: "戊",
@@ -9726,7 +9726,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["5th calendar sign"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "turn into",
     itemType: "Kanji",
     characterID: "成",
@@ -9752,7 +9752,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "castle",
     itemType: "Kanji",
     characterID: "城",
@@ -9773,7 +9773,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["castle"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sign of the dog",
     itemType: "Kanji",
     characterID: "戌",
@@ -9798,7 +9798,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "intimidate",
     itemType: "Kanji",
     characterID: "威",
@@ -9824,7 +9824,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "destroy",
     itemType: "Kanji",
     characterID: "滅",
@@ -9850,7 +9850,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dwindle",
     itemType: "Kanji",
     characterID: "減",
@@ -9873,7 +9873,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "float",
     itemType: "Primitive",
     characterID: "394p",
@@ -9891,7 +9891,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "coin",
     itemType: "Kanji",
     characterID: "銭",
@@ -9917,7 +9917,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shallow",
     itemType: "Kanji",
     characterID: "浅",
@@ -9943,7 +9943,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stop",
     itemType: "Kanji",
     characterID: "止",
@@ -9967,7 +9967,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "walk",
     itemType: "Kanji",
     characterID: "歩",
@@ -9991,7 +9991,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "curriculum",
     itemType: "Kanji",
     characterID: "歴",
@@ -10016,7 +10016,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "arrows",
     itemType: "Primitive",
     characterID: "403p",
@@ -10034,7 +10034,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "warrior",
     itemType: "Kanji",
     characterID: "武",
@@ -10057,7 +10057,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "correct",
     itemType: "Kanji",
     characterID: "正",
@@ -10084,7 +10084,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "evidence",
     itemType: "Kanji",
     characterID: "証",
@@ -10106,7 +10106,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "politics",
     itemType: "Kanji",
     characterID: "政",
@@ -10131,7 +10131,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mending",
     itemType: "Primitive",
     characterID: "408p",
@@ -10149,7 +10149,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "determine",
     itemType: "Kanji",
     characterID: "定",
@@ -10172,7 +10172,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "run",
     itemType: "Kanji",
     characterID: "走",
@@ -10194,7 +10194,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["run"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "transcend",
     itemType: "Kanji",
     characterID: "超",
@@ -10216,7 +10216,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "surpass",
     itemType: "Kanji",
     characterID: "越",
@@ -10239,7 +10239,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "just so",
     itemType: "Kanji",
     characterID: "是",
@@ -10265,7 +10265,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "topic",
     itemType: "Kanji",
     characterID: "題",
@@ -10289,7 +10289,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stretch",
     itemType: "Radical",
     characterID: "廴",
@@ -10307,7 +10307,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "build",
     itemType: "Kanji",
     characterID: "建",
@@ -10325,7 +10325,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["build"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "garment",
     itemType: "Kanji",
     characterID: "衣",
@@ -10347,7 +10347,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "attire",
     itemType: "Kanji",
     characterID: "装",
@@ -10370,7 +10370,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "back",
     itemType: "Kanji",
     characterID: "裏",
@@ -10393,7 +10393,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pathetic",
     itemType: "Kanji",
     characterID: "哀",
@@ -10419,7 +10419,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "distant",
     itemType: "Kanji",
     characterID: "遠",
@@ -10440,7 +10440,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "altar",
     itemType: "Radical",
     characterID: "礻",
@@ -10458,7 +10458,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "first time",
     itemType: "Kanji",
     characterID: "初",
@@ -10479,7 +10479,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "towel",
     itemType: "Kanji",
     characterID: "巾",
@@ -10504,7 +10504,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "linen",
     itemType: "Kanji",
     characterID: "布",
@@ -10530,7 +10530,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "curtain",
     itemType: "Kanji",
     characterID: "幕",
@@ -10555,7 +10555,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "market",
     itemType: "Kanji",
     characterID: "市",
@@ -10580,7 +10580,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "elder sister",
     itemType: "Kanji",
     characterID: "姉",
@@ -10601,7 +10601,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["elder sister"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "apron",
     itemType: "Primitive",
     characterID: "444p",
@@ -10619,7 +10619,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sash",
     itemType: "Kanji",
     characterID: "帯",
@@ -10642,7 +10642,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "thorn",
     itemType: "Kanji",
     characterID: "刺",
@@ -10668,7 +10668,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "system",
     itemType: "Kanji",
     characterID: "制",
@@ -10690,7 +10690,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "quote",
     itemType: "Kanji",
     characterID: "云",
@@ -10711,7 +10711,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["say"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "revolve",
     itemType: "Kanji",
     characterID: "転",
@@ -10736,7 +10736,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "technique",
     itemType: "Kanji",
     characterID: "芸",
@@ -10762,7 +10762,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rain",
     itemType: "Kanji",
     characterID: "雨",
@@ -10780,7 +10780,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["rain"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cloud",
     itemType: "Kanji",
     characterID: "雲",
@@ -10801,7 +10801,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["cloud"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ice",
     itemType: "Radical",
     characterID: "冫",
@@ -10819,7 +10819,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "winter",
     itemType: "Kanji",
     characterID: "冬",
@@ -10837,7 +10837,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["winter"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "heavens",
     itemType: "Kanji",
     characterID: "天",
@@ -10863,7 +10863,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "heaven-high",
     itemType: "Radical",
     characterID: "喬",
@@ -10881,7 +10881,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bridge",
     itemType: "Kanji",
     characterID: "橋",
@@ -10902,7 +10902,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["bridge"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stand up",
     itemType: "Kanji",
     characterID: "立",
@@ -10928,7 +10928,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cry",
     itemType: "Kanji",
     characterID: "泣",
@@ -10950,7 +10950,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "concubine",
     itemType: "Kanji",
     characterID: "妾",
@@ -10971,7 +10971,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["concubine"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "badge",
     itemType: "Kanji",
     characterID: "章",
@@ -10994,7 +10994,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "make a deal",
     itemType: "Kanji",
     characterID: "商",
@@ -11021,7 +11021,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "antique",
     itemType: "Radical",
     characterID: "啇",
@@ -11039,7 +11039,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "suitable",
     itemType: "Kanji",
     characterID: "適",
@@ -11065,7 +11065,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "enemy",
     itemType: "Kanji",
     characterID: "敵",
@@ -11091,7 +11091,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spoon",
     itemType: "Kanji",
     characterID: "匕",
@@ -11114,7 +11114,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "about that time",
     itemType: "Kanji",
     characterID: "頃",
@@ -11140,7 +11140,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "north",
     itemType: "Kanji",
     characterID: "北",
@@ -11161,7 +11161,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["north"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stature",
     itemType: "Kanji",
     characterID: "背",
@@ -11184,7 +11184,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "compare",
     itemType: "Kanji",
     characterID: "比",
@@ -11210,7 +11210,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "all",
     itemType: "Kanji",
     characterID: "皆",
@@ -11231,7 +11231,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "delicious",
     itemType: "Kanji",
     characterID: "旨",
@@ -11252,7 +11252,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "reclining",
     itemType: "Primitive",
     characterID: "497p",
@@ -11270,7 +11270,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "every",
     itemType: "Kanji",
     characterID: "毎",
@@ -11292,7 +11292,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["every"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plum",
     itemType: "Kanji",
     characterID: "梅",
@@ -11314,7 +11314,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["plum"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sea",
     itemType: "Kanji",
     characterID: "海",
@@ -11339,7 +11339,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "double back",
     itemType: "Radical",
     characterID: "复",
@@ -11357,7 +11357,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "abdomen",
     itemType: "Kanji",
     characterID: "腹",
@@ -11382,7 +11382,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "blow",
     itemType: "Kanji",
     characterID: "吹",
@@ -11405,7 +11405,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "song",
     itemType: "Kanji",
     characterID: "歌",
@@ -11426,7 +11426,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "next",
     itemType: "Kanji",
     characterID: "次",
@@ -11451,7 +11451,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "assets",
     itemType: "Kanji",
     characterID: "資",
@@ -11474,7 +11474,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "figure",
     itemType: "Kanji",
     characterID: "姿",
@@ -11496,7 +11496,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sound",
     itemType: "Kanji",
     characterID: "音",
@@ -11517,7 +11517,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "darkness",
     itemType: "Kanji",
     characterID: "暗",
@@ -11540,7 +11540,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "kazoo",
     itemType: "Primitive",
     characterID: "521p",
@@ -11558,7 +11558,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "discriminating",
     itemType: "Kanji",
     characterID: "識",
@@ -11580,7 +11580,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mirror",
     itemType: "Radical",
     characterID: "竟",
@@ -11598,7 +11598,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mirror",
     itemType: "Kanji",
     characterID: "鏡",
@@ -11625,7 +11625,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "boundary",
     itemType: "Kanji",
     characterID: "境",
@@ -11647,7 +11647,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "deceased",
     itemType: "Kanji",
     characterID: "亡",
@@ -11673,7 +11673,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "laid waste",
     itemType: "Kanji",
     characterID: "荒",
@@ -11696,7 +11696,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ambition",
     itemType: "Kanji",
     characterID: "望",
@@ -11718,7 +11718,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "direction",
     itemType: "Kanji",
     characterID: "方",
@@ -11743,7 +11743,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "boy",
     itemType: "Kanji",
     characterID: "坊",
@@ -11768,7 +11768,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "call on",
     itemType: "Kanji",
     characterID: "訪",
@@ -11791,7 +11791,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "set free",
     itemType: "Kanji",
     characterID: "放",
@@ -11817,7 +11817,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "violent",
     itemType: "Kanji",
     characterID: "激",
@@ -11840,7 +11840,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "devil",
     itemType: "Radical",
     characterID: "兑",
@@ -11858,7 +11858,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "undress",
     itemType: "Kanji",
     characterID: "脱",
@@ -11884,7 +11884,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "explanation",
     itemType: "Kanji",
     characterID: "説",
@@ -11910,7 +11910,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "formerly",
     itemType: "Kanji",
     characterID: "曽",
@@ -11936,7 +11936,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "increase",
     itemType: "Kanji",
     characterID: "増",
@@ -11962,7 +11962,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "east",
     itemType: "Kanji",
     characterID: "東",
@@ -11983,7 +11983,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["east"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "porter",
     itemType: "Radical",
     characterID: "壬",
@@ -12001,7 +12001,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "courts",
     itemType: "Kanji",
     characterID: "廷",
@@ -12026,7 +12026,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dye",
     itemType: "Kanji",
     characterID: "染",
@@ -12052,7 +12052,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "year-end",
     itemType: "Kanji",
     characterID: "歳",
@@ -12078,7 +12078,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "prefecture",
     itemType: "Kanji",
     characterID: "県",
@@ -12096,7 +12096,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["prefecture"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "est",
     itemType: "Kanji",
     characterID: "也",
@@ -12114,7 +12114,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["to be (classical)"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ground",
     itemType: "Kanji",
     characterID: "地",
@@ -12135,7 +12135,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pond",
     itemType: "Kanji",
     characterID: "池",
@@ -12161,7 +12161,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "insect",
     itemType: "Kanji",
     characterID: "虫",
@@ -12183,7 +12183,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "watchdog",
     itemType: "Radical",
     characterID: "犭",
@@ -12201,7 +12201,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "single",
     itemType: "Kanji",
     characterID: "独",
@@ -12224,7 +12224,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wind",
     itemType: "Kanji",
     characterID: "風",
@@ -12250,7 +12250,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "self",
     itemType: "Kanji",
     characterID: "己",
@@ -12268,7 +12268,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["self"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rouse",
     itemType: "Kanji",
     characterID: "起",
@@ -12293,7 +12293,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "reformation",
     itemType: "Kanji",
     characterID: "改",
@@ -12319,7 +12319,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "scribe",
     itemType: "Kanji",
     characterID: "記",
@@ -12341,7 +12341,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wrap",
     itemType: "Kanji",
     characterID: "包",
@@ -12367,7 +12367,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hook",
     itemType: "Radical",
     characterID: "乚",
@@ -12385,7 +12385,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tortoise",
     itemType: "Kanji",
     characterID: "亀",
@@ -12409,7 +12409,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "electricity",
     itemType: "Kanji",
     characterID: "電",
@@ -12430,7 +12430,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["electricity"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pig",
     itemType: "Radical",
     characterID: "豕",
@@ -12448,7 +12448,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "consummate",
     itemType: "Kanji",
     characterID: "遂",
@@ -12474,7 +12474,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "house",
     itemType: "Kanji",
     characterID: "家",
@@ -12500,7 +12500,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "not",
     itemType: "Primitive",
     characterID: "584p",
@@ -12518,7 +12518,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "open",
     itemType: "Kanji",
     characterID: "昜",
@@ -12542,7 +12542,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "location",
     itemType: "Kanji",
     characterID: "場",
@@ -12567,7 +12567,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hot water",
     itemType: "Kanji",
     characterID: "湯",
@@ -12592,7 +12592,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sheep",
     itemType: "Kanji",
     characterID: "羊",
@@ -12613,7 +12613,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["sheep"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beauty",
     itemType: "Kanji",
     characterID: "美",
@@ -12634,7 +12634,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ocean",
     itemType: "Kanji",
     characterID: "洋",
@@ -12660,7 +12660,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "detailed",
     itemType: "Kanji",
     characterID: "詳",
@@ -12686,7 +12686,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "accomplished",
     itemType: "Kanji",
     characterID: "達",
@@ -12709,7 +12709,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wool",
     itemType: "Primitive",
     characterID: "593p",
@@ -12727,7 +12727,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "distinction",
     itemType: "Kanji",
     characterID: "差",
@@ -12753,7 +12753,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "don",
     itemType: "Kanji",
     characterID: "着",
@@ -12779,7 +12779,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "turkey",
     itemType: "Radical",
     characterID: "隹",
@@ -12797,7 +12797,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "solely",
     itemType: "Kanji",
     characterID: "唯",
@@ -12823,7 +12823,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "who?",
     itemType: "Kanji",
     characterID: "誰",
@@ -12848,7 +12848,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "char",
     itemType: "Kanji",
     characterID: "焦",
@@ -12871,7 +12871,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gather",
     itemType: "Kanji",
     characterID: "集",
@@ -12894,7 +12894,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "advance",
     itemType: "Kanji",
     characterID: "進",
@@ -12920,7 +12920,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "miscellaneous",
     itemType: "Kanji",
     characterID: "雑",
@@ -12938,7 +12938,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["miscellaneous"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "semi-",
     itemType: "Kanji",
     characterID: "準",
@@ -12961,7 +12961,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rob",
     itemType: "Kanji",
     characterID: "奪",
@@ -12984,7 +12984,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "assurance",
     itemType: "Kanji",
     characterID: "確",
@@ -13007,7 +13007,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "noon",
     itemType: "Kanji",
     characterID: "午",
@@ -13034,7 +13034,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "permit",
     itemType: "Kanji",
     characterID: "許",
@@ -13058,7 +13058,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pegasus",
     itemType: "Primitive",
     characterID: "613p",
@@ -13076,7 +13076,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "authority",
     itemType: "Kanji",
     characterID: "権",
@@ -13098,7 +13098,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "outlook",
     itemType: "Kanji",
     characterID: "観",
@@ -13124,7 +13124,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "feathers",
     itemType: "Kanji",
     characterID: "羽",
@@ -13149,7 +13149,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "learn",
     itemType: "Kanji",
     characterID: "習",
@@ -13170,7 +13170,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["learn"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "the following",
     itemType: "Kanji",
     characterID: "翌",
@@ -13194,7 +13194,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "broom",
     itemType: "Radical",
     characterID: "彐",
@@ -13212,7 +13212,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "weekday",
     itemType: "Kanji",
     characterID: "曜",
@@ -13234,7 +13234,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["weekday"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "quandary",
     itemType: "Kanji",
     characterID: "困",
@@ -13259,7 +13259,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "harden",
     itemType: "Kanji",
     characterID: "固",
@@ -13285,7 +13285,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "country",
     itemType: "Kanji",
     characterID: "国",
@@ -13306,7 +13306,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["country"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "group",
     itemType: "Kanji",
     characterID: "団",
@@ -13327,7 +13327,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cause",
     itemType: "Kanji",
     characterID: "因",
@@ -13350,7 +13350,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "park",
     itemType: "Kanji",
     characterID: "園",
@@ -13373,7 +13373,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "-times",
     itemType: "Kanji",
     characterID: "回",
@@ -13399,7 +13399,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cave",
     itemType: "Radical",
     characterID: "广",
@@ -13417,7 +13417,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "store",
     itemType: "Kanji",
     characterID: "店",
@@ -13441,7 +13441,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "warehouse",
     itemType: "Kanji",
     characterID: "庫",
@@ -13466,7 +13466,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "courtyard",
     itemType: "Kanji",
     characterID: "庭",
@@ -13491,7 +13491,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bed",
     itemType: "Kanji",
     characterID: "床",
@@ -13517,7 +13517,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "heart",
     itemType: "Kanji",
     characterID: "心",
@@ -13542,7 +13542,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "forget",
     itemType: "Kanji",
     characterID: "忘",
@@ -13560,7 +13560,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["forget"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "endure",
     itemType: "Kanji",
     characterID: "忍",
@@ -13586,7 +13586,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "acknowledge",
     itemType: "Kanji",
     characterID: "認",
@@ -13612,7 +13612,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "intention",
     itemType: "Kanji",
     characterID: "志",
@@ -13638,7 +13638,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "document",
     itemType: "Kanji",
     characterID: "誌",
@@ -13662,7 +13662,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "loyalty",
     itemType: "Kanji",
     characterID: "忠",
@@ -13687,7 +13687,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "think",
     itemType: "Kanji",
     characterID: "思",
@@ -13709,7 +13709,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["think"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "apply",
     itemType: "Kanji",
     characterID: "応",
@@ -13732,7 +13732,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "idea",
     itemType: "Kanji",
     characterID: "意",
@@ -13758,7 +13758,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "concept",
     itemType: "Kanji",
     characterID: "想",
@@ -13784,7 +13784,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "breath",
     itemType: "Kanji",
     characterID: "息",
@@ -13807,7 +13807,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fear",
     itemType: "Kanji",
     characterID: "恐",
@@ -13829,7 +13829,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beguile",
     itemType: "Kanji",
     characterID: "惑",
@@ -13854,7 +13854,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "emotion",
     itemType: "Kanji",
     characterID: "感",
@@ -13879,7 +13879,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "melancholy",
     itemType: "Kanji",
     characterID: "憂",
@@ -13902,7 +13902,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "state of mind",
     itemType: "Radical",
     characterID: "忄",
@@ -13920,7 +13920,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "busy",
     itemType: "Kanji",
     characterID: "忙",
@@ -13945,7 +13945,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dreadful",
     itemType: "Kanji",
     characterID: "怖",
@@ -13970,7 +13970,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "repent",
     itemType: "Kanji",
     characterID: "悔",
@@ -13995,7 +13995,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hate",
     itemType: "Kanji",
     characterID: "憎",
@@ -14019,7 +14019,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "recollection",
     itemType: "Kanji",
     characterID: "憶",
@@ -14044,7 +14044,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "invariably",
     itemType: "Kanji",
     characterID: "必",
@@ -14069,7 +14069,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hand",
     itemType: "Kanji",
     characterID: "手",
@@ -14090,7 +14090,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["hand"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ego",
     itemType: "Kanji",
     characterID: "我",
@@ -14113,7 +14113,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "righteousness",
     itemType: "Kanji",
     characterID: "義",
@@ -14139,7 +14139,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "deliberation",
     itemType: "Kanji",
     characterID: "議",
@@ -14166,7 +14166,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hand",
     itemType: "Radical",
     characterID: "扌",
@@ -14184,7 +14184,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "embrace",
     itemType: "Kanji",
     characterID: "抱",
@@ -14209,7 +14209,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "criticism",
     itemType: "Kanji",
     characterID: "批",
@@ -14230,7 +14230,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "strike",
     itemType: "Kanji",
     characterID: "打",
@@ -14256,7 +14256,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "discard",
     itemType: "Kanji",
     characterID: "捨",
@@ -14282,7 +14282,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "finger",
     itemType: "Kanji",
     characterID: "指",
@@ -14309,7 +14309,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hold",
     itemType: "Kanji",
     characterID: "持",
@@ -14334,7 +14334,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "conjecture",
     itemType: "Kanji",
     characterID: "推",
@@ -14361,7 +14361,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "propose",
     itemType: "Kanji",
     characterID: "提",
@@ -14383,7 +14383,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shouldering",
     itemType: "Kanji",
     characterID: "担",
@@ -14409,7 +14409,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "foothold",
     itemType: "Kanji",
     characterID: "拠",
@@ -14436,7 +14436,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sketch",
     itemType: "Kanji",
     characterID: "描",
@@ -14462,7 +14462,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "touch",
     itemType: "Kanji",
     characterID: "接",
@@ -14485,7 +14485,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hang",
     itemType: "Kanji",
     characterID: "掛",
@@ -14508,7 +14508,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "two hands",
     itemType: "Radical",
     characterID: "开",
@@ -14526,7 +14526,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "polish",
     itemType: "Kanji",
     characterID: "研",
@@ -14551,7 +14551,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "nose",
     itemType: "Kanji",
     characterID: "鼻",
@@ -14572,7 +14572,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "punish",
     itemType: "Kanji",
     characterID: "刑",
@@ -14598,7 +14598,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mold",
     itemType: "Kanji",
     characterID: "型",
@@ -14620,7 +14620,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "genius",
     itemType: "Kanji",
     characterID: "才",
@@ -14645,7 +14645,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "suppose",
     itemType: "Kanji",
     characterID: "存",
@@ -14672,7 +14672,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "exist",
     itemType: "Kanji",
     characterID: "在",
@@ -14698,7 +14698,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "from",
     itemType: "Kanji",
     characterID: "乃",
@@ -14724,7 +14724,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "reach out",
     itemType: "Kanji",
     characterID: "及",
@@ -14747,7 +14747,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "suck",
     itemType: "Kanji",
     characterID: "吸",
@@ -14770,7 +14770,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "handle",
     itemType: "Kanji",
     characterID: "扱",
@@ -14793,7 +14793,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "arm",
     itemType: "Primitive",
     characterID: "746p",
@@ -14811,7 +14811,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "length",
     itemType: "Kanji",
     characterID: "丈",
@@ -14835,7 +14835,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "history",
     itemType: "Kanji",
     characterID: "史",
@@ -14859,7 +14859,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "officer",
     itemType: "Kanji",
     characterID: "吏",
@@ -14883,7 +14883,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grow late",
     itemType: "Kanji",
     characterID: "更",
@@ -14909,7 +14909,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "or again",
     itemType: "Kanji",
     characterID: "又",
@@ -14934,7 +14934,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "vessels",
     itemType: "Kanji",
     characterID: "隻",
@@ -14960,7 +14960,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "safeguard",
     itemType: "Kanji",
     characterID: "護",
@@ -14984,7 +14984,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "guy",
     itemType: "Kanji",
     characterID: "奴",
@@ -15010,7 +15010,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "angry",
     itemType: "Kanji",
     characterID: "怒",
@@ -15034,7 +15034,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "friend",
     itemType: "Kanji",
     characterID: "友",
@@ -15055,7 +15055,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["friend"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "slip out",
     itemType: "Kanji",
     characterID: "抜",
@@ -15081,7 +15081,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "missile",
     itemType: "Radical",
     characterID: "殳",
@@ -15099,7 +15099,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "throw",
     itemType: "Kanji",
     characterID: "投",
@@ -15126,7 +15126,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "establishment",
     itemType: "Kanji",
     characterID: "設",
@@ -15152,7 +15152,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beat",
     itemType: "Kanji",
     characterID: "撃",
@@ -15178,7 +15178,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "branch",
     itemType: "Kanji",
     characterID: "支",
@@ -15204,7 +15204,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "skill",
     itemType: "Kanji",
     characterID: "技",
@@ -15231,7 +15231,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spool",
     itemType: "Radical",
     characterID: "圣",
@@ -15249,7 +15249,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "suspicious",
     itemType: "Kanji",
     characterID: "怪",
@@ -15274,7 +15274,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lightly",
     itemType: "Kanji",
     characterID: "軽",
@@ -15300,7 +15300,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "uncle",
     itemType: "Kanji",
     characterID: "叔",
@@ -15325,7 +15325,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "loneliness",
     itemType: "Kanji",
     characterID: "寂",
@@ -15352,7 +15352,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "anti",
     itemType: "Kanji",
     characterID: "反",
@@ -15374,7 +15374,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["anti-"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "slope",
     itemType: "Kanji",
     characterID: "坂",
@@ -15400,7 +15400,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plank",
     itemType: "Kanji",
     characterID: "板",
@@ -15426,7 +15426,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "return",
     itemType: "Kanji",
     characterID: "返",
@@ -15453,7 +15453,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "claw",
     itemType: "Kanji",
     characterID: "爪",
@@ -15475,7 +15475,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fledgling",
     itemType: "Primitive",
     characterID: "787p",
@@ -15493,7 +15493,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "floating",
     itemType: "Kanji",
     characterID: "浮",
@@ -15515,7 +15515,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "leader",
     itemType: "Kanji",
     characterID: "将",
@@ -15542,7 +15542,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "birdhouse",
     itemType: "Primitive",
     characterID: "794p",
@@ -15560,7 +15560,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "accept",
     itemType: "Kanji",
     characterID: "受",
@@ -15587,7 +15587,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "love",
     itemType: "Kanji",
     characterID: "愛",
@@ -15613,7 +15613,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pay",
     itemType: "Kanji",
     characterID: "払",
@@ -15640,7 +15640,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wide",
     itemType: "Kanji",
     characterID: "広",
@@ -15666,7 +15666,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "valve",
     itemType: "Kanji",
     characterID: "弁",
@@ -15693,7 +15693,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "masculine",
     itemType: "Kanji",
     characterID: "雄",
@@ -15716,7 +15716,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pedestal",
     itemType: "Kanji",
     characterID: "台",
@@ -15741,7 +15741,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "reign",
     itemType: "Kanji",
     characterID: "治",
@@ -15767,7 +15767,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "commence",
     itemType: "Kanji",
     characterID: "始",
@@ -15791,7 +15791,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gone",
     itemType: "Kanji",
     characterID: "去",
@@ -15817,7 +15817,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "method",
     itemType: "Kanji",
     characterID: "法",
@@ -15840,7 +15840,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wall",
     itemType: "Primitive",
     characterID: "814p",
@@ -15858,7 +15858,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "meeting",
     itemType: "Kanji",
     characterID: "会",
@@ -15884,7 +15884,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "climax",
     itemType: "Kanji",
     characterID: "至",
@@ -15910,7 +15910,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "room",
     itemType: "Kanji",
     characterID: "室",
@@ -15936,7 +15936,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "arrival",
     itemType: "Kanji",
     characterID: "到",
@@ -15962,7 +15962,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "doth",
     itemType: "Kanji",
     characterID: "致",
@@ -15988,7 +15988,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mutually",
     itemType: "Kanji",
     characterID: "互",
@@ -16010,7 +16010,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "infant",
     itemType: "Primitive",
     characterID: "821p",
@@ -16028,7 +16028,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bring up",
     itemType: "Kanji",
     characterID: "育",
@@ -16051,7 +16051,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "allot",
     itemType: "Kanji",
     characterID: "充",
@@ -16075,7 +16075,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "current",
     itemType: "Kanji",
     characterID: "流",
@@ -16101,7 +16101,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mountain",
     itemType: "Kanji",
     characterID: "山",
@@ -16119,7 +16119,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["mountain"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "exit",
     itemType: "Kanji",
     characterID: "出",
@@ -16145,7 +16145,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "crumble",
     itemType: "Kanji",
     characterID: "崩",
@@ -16168,7 +16168,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "secrecy",
     itemType: "Kanji",
     characterID: "密",
@@ -16191,7 +16191,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "part",
     itemType: "Kanji",
     characterID: "分",
@@ -16218,7 +16218,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "poverty",
     itemType: "Kanji",
     characterID: "貧",
@@ -16242,7 +16242,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "public",
     itemType: "Kanji",
     characterID: "公",
@@ -16265,7 +16265,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "valley",
     itemType: "Kanji",
     characterID: "谷",
@@ -16286,7 +16286,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["valley"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "contain",
     itemType: "Kanji",
     characterID: "容",
@@ -16311,7 +16311,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "longing",
     itemType: "Kanji",
     characterID: "欲",
@@ -16337,7 +16337,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "outhouse",
     itemType: "Primitive",
     characterID: "861p",
@@ -16355,7 +16355,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "public chamber",
     itemType: "Kanji",
     characterID: "堂",
@@ -16379,7 +16379,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "usual",
     itemType: "Kanji",
     characterID: "常",
@@ -16405,7 +16405,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pelt",
     itemType: "Kanji",
     characterID: "皮",
@@ -16431,7 +16431,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "waves",
     itemType: "Kanji",
     characterID: "波",
@@ -16456,7 +16456,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rend",
     itemType: "Kanji",
     characterID: "破",
@@ -16482,7 +16482,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "incur",
     itemType: "Kanji",
     characterID: "被",
@@ -16509,7 +16509,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "evening",
     itemType: "Radical",
     characterID: "歹",
@@ -16527,7 +16527,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "remainder",
     itemType: "Kanji",
     characterID: "残",
@@ -16552,7 +16552,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "particularly",
     itemType: "Kanji",
     characterID: "殊",
@@ -16577,7 +16577,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "file",
     itemType: "Kanji",
     characterID: "列",
@@ -16603,7 +16603,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "death",
     itemType: "Kanji",
     characterID: "死",
@@ -16624,7 +16624,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sunglasses",
     itemType: "Radical",
     characterID: "舛",
@@ -16642,7 +16642,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wink",
     itemType: "Kanji",
     characterID: "瞬",
@@ -16664,7 +16664,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ear",
     itemType: "Kanji",
     characterID: "耳",
@@ -16682,7 +16682,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["ear"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "take",
     itemType: "Kanji",
     characterID: "取",
@@ -16704,7 +16704,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gist",
     itemType: "Kanji",
     characterID: "趣",
@@ -16727,7 +16727,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "utmost",
     itemType: "Kanji",
     characterID: "最",
@@ -16749,7 +16749,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shame",
     itemType: "Kanji",
     characterID: "恥",
@@ -16774,7 +16774,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "post",
     itemType: "Kanji",
     characterID: "職",
@@ -16796,7 +16796,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "holy",
     itemType: "Kanji",
     characterID: "聖",
@@ -16822,7 +16822,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "listen",
     itemType: "Kanji",
     characterID: "聴",
@@ -16848,7 +16848,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pocket",
     itemType: "Kanji",
     characterID: "懐",
@@ -16871,7 +16871,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Goggles",
     itemType: "Radical",
     characterID: "罒",
@@ -16889,7 +16889,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "buy",
     itemType: "Kanji",
     characterID: "買",
@@ -16910,7 +16910,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["buy"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "placement",
     itemType: "Kanji",
     characterID: "置",
@@ -16933,7 +16933,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ring",
     itemType: "Kanji",
     characterID: "環",
@@ -16956,7 +16956,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "husband",
     itemType: "Kanji",
     characterID: "夫",
@@ -16980,7 +16980,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "standard",
     itemType: "Kanji",
     characterID: "規",
@@ -17001,7 +17001,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lose",
     itemType: "Kanji",
     characterID: "失",
@@ -17027,7 +17027,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "iron",
     itemType: "Kanji",
     characterID: "鉄",
@@ -17045,7 +17045,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["iron"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gigantic",
     itemType: "Kanji",
     characterID: "巨",
@@ -17071,7 +17071,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "retainer",
     itemType: "Kanji",
     characterID: "臣",
@@ -17096,7 +17096,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "power",
     itemType: "Kanji",
     characterID: "力",
@@ -17122,7 +17122,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "male",
     itemType: "Kanji",
     characterID: "男",
@@ -17140,7 +17140,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["male"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "labor",
     itemType: "Kanji",
     characterID: "労",
@@ -17163,7 +17163,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "persuade",
     itemType: "Kanji",
     characterID: "勧",
@@ -17186,7 +17186,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "toil",
     itemType: "Kanji",
     characterID: "努",
@@ -17208,7 +17208,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "add",
     itemType: "Kanji",
     characterID: "加",
@@ -17234,7 +17234,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "going",
     itemType: "Radical",
     characterID: "彳",
@@ -17252,7 +17252,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "going",
     itemType: "Kanji",
     characterID: "行",
@@ -17275,7 +17275,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "restore",
     itemType: "Kanji",
     characterID: "復",
@@ -17301,7 +17301,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gain",
     itemType: "Kanji",
     characterID: "得",
@@ -17324,7 +17324,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "accompany",
     itemType: "Kanji",
     characterID: "従",
@@ -17347,7 +17347,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "junior",
     itemType: "Kanji",
     characterID: "徒",
@@ -17370,7 +17370,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wait",
     itemType: "Kanji",
     characterID: "待",
@@ -17395,7 +17395,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "he",
     itemType: "Kanji",
     characterID: "彼",
@@ -17420,7 +17420,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "duty",
     itemType: "Kanji",
     characterID: "役",
@@ -17446,7 +17446,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "benevolence",
     itemType: "Kanji",
     characterID: "徳",
@@ -17472,7 +17472,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "delicate",
     itemType: "Kanji",
     characterID: "微",
@@ -17497,7 +17497,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "boulevard",
     itemType: "Kanji",
     characterID: "街",
@@ -17522,7 +17522,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wheat",
     itemType: "Radical",
     characterID: "禾",
@@ -17540,7 +17540,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "extent",
     itemType: "Kanji",
     characterID: "程",
@@ -17566,7 +17566,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "harmony",
     itemType: "Kanji",
     characterID: "和",
@@ -17589,7 +17589,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shift",
     itemType: "Kanji",
     characterID: "移",
@@ -17612,7 +17612,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "autumn",
     itemType: "Kanji",
     characterID: "秋",
@@ -17630,7 +17630,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["autumn"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "private",
     itemType: "Kanji",
     characterID: "私",
@@ -17655,7 +17655,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "secret",
     itemType: "Kanji",
     characterID: "秘",
@@ -17676,7 +17676,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "appellation",
     itemType: "Kanji",
     characterID: "称",
@@ -17699,7 +17699,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "profit",
     itemType: "Kanji",
     characterID: "利",
@@ -17724,7 +17724,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "incense",
     itemType: "Kanji",
     characterID: "香",
@@ -17746,7 +17746,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "excel",
     itemType: "Kanji",
     characterID: "秀",
@@ -17772,7 +17772,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rice",
     itemType: "Kanji",
     characterID: "米",
@@ -17794,7 +17794,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "astray",
     itemType: "Kanji",
     characterID: "迷",
@@ -17817,7 +17817,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "core",
     itemType: "Kanji",
     characterID: "奥",
@@ -17838,7 +17838,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "number",
     itemType: "Kanji",
     characterID: "数",
@@ -17864,7 +17864,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sort",
     itemType: "Kanji",
     characterID: "類",
@@ -17890,7 +17890,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "knee",
     itemType: "Kanji",
     characterID: "膝",
@@ -17911,7 +17911,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Esq.",
     itemType: "Kanji",
     characterID: "様",
@@ -17934,7 +17934,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "request",
     itemType: "Kanji",
     characterID: "求",
@@ -17961,7 +17961,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bamboo",
     itemType: "Kanji",
     characterID: "竹",
@@ -17979,7 +17979,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["bamboo"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "laugh",
     itemType: "Kanji",
     characterID: "笑",
@@ -17997,7 +17997,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["laugh"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rib",
     itemType: "Kanji",
     characterID: "肋",
@@ -18018,7 +18018,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["rib"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "muscle",
     itemType: "Kanji",
     characterID: "筋",
@@ -18041,7 +18041,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "box",
     itemType: "Kanji",
     characterID: "箱",
@@ -18064,7 +18064,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "writing brush",
     itemType: "Kanji",
     characterID: "筆",
@@ -18090,7 +18090,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "etc.",
     itemType: "Kanji",
     characterID: "等",
@@ -18113,7 +18113,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "calculate",
     itemType: "Kanji",
     characterID: "算",
@@ -18136,7 +18136,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "solution",
     itemType: "Kanji",
     characterID: "答",
@@ -18157,7 +18157,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "person",
     itemType: "Kanji",
     characterID: "人",
@@ -18178,7 +18178,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["person"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lack",
     itemType: "Kanji",
     characterID: "欠",
@@ -18200,7 +18200,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "enter",
     itemType: "Kanji",
     characterID: "入",
@@ -18224,7 +18224,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "crowded",
     itemType: "Kanji",
     characterID: "込",
@@ -18247,7 +18247,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Human",
     itemType: "Radical",
     characterID: "亻",
@@ -18265,7 +18265,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "assistant",
     itemType: "Kanji",
     characterID: "佐",
@@ -18289,7 +18289,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dwell",
     itemType: "Kanji",
     characterID: "住",
@@ -18315,7 +18315,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rank",
     itemType: "Kanji",
     characterID: "位",
@@ -18338,7 +18338,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "go-between",
     itemType: "Kanji",
     characterID: "仲",
@@ -18359,7 +18359,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "body",
     itemType: "Kanji",
     characterID: "体",
@@ -18386,7 +18386,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "affair",
     itemType: "Kanji",
     characterID: "件",
@@ -18412,7 +18412,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "attend",
     itemType: "Kanji",
     characterID: "仕",
@@ -18438,7 +18438,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "other",
     itemType: "Kanji",
     characterID: "他",
@@ -18463,7 +18463,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "prostrated",
     itemType: "Kanji",
     characterID: "伏",
@@ -18489,7 +18489,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "transmit",
     itemType: "Kanji",
     characterID: "伝",
@@ -18515,7 +18515,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Buddha",
     itemType: "Kanji",
     characterID: "仏",
@@ -18540,7 +18540,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rest",
     itemType: "Kanji",
     characterID: "休",
@@ -18566,7 +18566,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "provisional",
     itemType: "Kanji",
     characterID: "仮",
@@ -18592,7 +18592,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "vulgar",
     itemType: "Kanji",
     characterID: "俗",
@@ -18618,7 +18618,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "faith",
     itemType: "Kanji",
     characterID: "信",
@@ -18641,7 +18641,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "example",
     itemType: "Kanji",
     characterID: "例",
@@ -18664,7 +18664,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "individual",
     itemType: "Kanji",
     characterID: "個",
@@ -18685,7 +18685,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "healthy",
     itemType: "Kanji",
     characterID: "健",
@@ -18708,7 +18708,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "side",
     itemType: "Kanji",
     characterID: "側",
@@ -18734,7 +18734,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "price",
     itemType: "Kanji",
     characterID: "値",
@@ -18760,7 +18760,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "overthrow",
     itemType: "Kanji",
     characterID: "倒",
@@ -18783,7 +18783,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Buddhist priest",
     itemType: "Kanji",
     characterID: "僧",
@@ -18807,7 +18807,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ceremony",
     itemType: "Kanji",
     characterID: "儀",
@@ -18834,7 +18834,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sponsor",
     itemType: "Kanji",
     characterID: "催",
@@ -18856,7 +18856,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "scorn",
     itemType: "Kanji",
     characterID: "侮",
@@ -18882,7 +18882,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "use",
     itemType: "Kanji",
     characterID: "使",
@@ -18905,7 +18905,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "convenience",
     itemType: "Kanji",
     characterID: "便",
@@ -18928,7 +18928,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tenderness",
     itemType: "Kanji",
     characterID: "優",
@@ -18954,7 +18954,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inn",
     itemType: "Kanji",
     characterID: "宿",
@@ -18977,7 +18977,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wound",
     itemType: "Kanji",
     characterID: "傷",
@@ -19003,7 +19003,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "protect",
     itemType: "Kanji",
     characterID: "保",
@@ -19026,7 +19026,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "adhere",
     itemType: "Kanji",
     characterID: "付",
@@ -19049,7 +19049,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "municipality",
     itemType: "Kanji",
     characterID: "府",
@@ -19071,7 +19071,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "responsibility",
     itemType: "Kanji",
     characterID: "任",
@@ -19097,7 +19097,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "substitute",
     itemType: "Kanji",
     characterID: "代",
@@ -19123,7 +19123,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "change",
     itemType: "Kanji",
     characterID: "化",
@@ -19149,7 +19149,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "flower",
     itemType: "Kanji",
     characterID: "花",
@@ -19167,7 +19167,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["flower"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lean",
     itemType: "Kanji",
     characterID: "傾",
@@ -19193,7 +19193,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "what",
     itemType: "Kanji",
     characterID: "何",
@@ -19214,7 +19214,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["what"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "baggage",
     itemType: "Kanji",
     characterID: "荷",
@@ -19240,7 +19240,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bystander",
     itemType: "Kanji",
     characterID: "傍",
@@ -19263,7 +19263,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "myself",
     itemType: "Kanji",
     characterID: "俺",
@@ -19284,7 +19284,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "muzzle",
     itemType: "Radical",
     characterID: "咅",
@@ -19302,7 +19302,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "double",
     itemType: "Kanji",
     characterID: "倍",
@@ -19325,7 +19325,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "long time",
     itemType: "Kanji",
     characterID: "久",
@@ -19346,7 +19346,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inside",
     itemType: "Kanji",
     characterID: "内",
@@ -19372,7 +19372,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "third class",
     itemType: "Kanji",
     characterID: "丙",
@@ -19397,7 +19397,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "design",
     itemType: "Kanji",
     characterID: "柄",
@@ -19423,7 +19423,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "meat",
     itemType: "Kanji",
     characterID: "肉",
@@ -19444,7 +19444,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["meat"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "accompany",
     itemType: "Radical",
     characterID: "从",
@@ -19462,7 +19462,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sitting in meditation",
     itemType: "Kanji",
     characterID: "坐",
@@ -19480,7 +19480,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["sit"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sit",
     itemType: "Kanji",
     characterID: "座",
@@ -19503,7 +19503,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plow",
     itemType: "Primitive",
     characterID: "1105p",
@@ -19521,7 +19521,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "by means of",
     itemType: "Kanji",
     characterID: "以",
@@ -19544,7 +19544,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "similar",
     itemType: "Kanji",
     characterID: "似",
@@ -19567,7 +19567,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "virtuous",
     itemType: "Kanji",
     characterID: "善",
@@ -19592,7 +19592,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "year",
     itemType: "Kanji",
     characterID: "年",
@@ -19613,7 +19613,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "night",
     itemType: "Kanji",
     characterID: "夜",
@@ -19634,7 +19634,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "banner",
     itemType: "Primitive",
     characterID: "1126p",
@@ -19652,7 +19652,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "play",
     itemType: "Kanji",
     characterID: "遊",
@@ -19673,7 +19673,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["play"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "trip",
     itemType: "Kanji",
     characterID: "旅",
@@ -19697,7 +19697,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "not",
     itemType: "Kanji",
     characterID: "勿",
@@ -19723,7 +19723,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "thing",
     itemType: "Kanji",
     characterID: "物",
@@ -19745,7 +19745,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "easy",
     itemType: "Kanji",
     characterID: "易",
@@ -19768,7 +19768,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "flag",
     itemType: "Radical",
     characterID: "尸",
@@ -19786,7 +19786,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "roof",
     itemType: "Kanji",
     characterID: "屋",
@@ -19812,7 +19812,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grip",
     itemType: "Kanji",
     characterID: "握",
@@ -19838,7 +19838,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "yield",
     itemType: "Kanji",
     characterID: "屈",
@@ -19864,7 +19864,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "reside",
     itemType: "Kanji",
     characterID: "居",
@@ -19887,7 +19887,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stratum",
     itemType: "Kanji",
     characterID: "層",
@@ -19913,7 +19913,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bureau",
     itemType: "Kanji",
     characterID: "局",
@@ -19936,7 +19936,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "slow",
     itemType: "Kanji",
     characterID: "遅",
@@ -19959,7 +19959,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shaku",
     itemType: "Kanji",
     characterID: "尺",
@@ -19985,7 +19985,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "exhaust",
     itemType: "Kanji",
     characterID: "尽",
@@ -20011,7 +20011,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "swamp",
     itemType: "Kanji",
     characterID: "沢",
@@ -20037,7 +20037,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "translate",
     itemType: "Kanji",
     characterID: "訳",
@@ -20063,7 +20063,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "daytime",
     itemType: "Kanji",
     characterID: "昼",
@@ -20084,7 +20084,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "door",
     itemType: "Kanji",
     characterID: "戸",
@@ -20108,7 +20108,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shoulder",
     itemType: "Kanji",
     characterID: "肩",
@@ -20129,7 +20129,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["shoulder"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "re-",
     itemType: "Kanji",
     characterID: "戻",
@@ -20155,7 +20155,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tears",
     itemType: "Kanji",
     characterID: "涙",
@@ -20179,7 +20179,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "show",
     itemType: "Kanji",
     characterID: "示",
@@ -20205,7 +20205,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "salutation",
     itemType: "Kanji",
     characterID: "礼",
@@ -20231,7 +20231,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "blessing",
     itemType: "Kanji",
     characterID: "福",
@@ -20254,7 +20254,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "company",
     itemType: "Kanji",
     characterID: "社",
@@ -20280,7 +20280,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inspection",
     itemType: "Kanji",
     characterID: "視",
@@ -20303,7 +20303,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "religion",
     itemType: "Kanji",
     characterID: "宗",
@@ -20329,7 +20329,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ritual",
     itemType: "Kanji",
     characterID: "祭",
@@ -20355,7 +20355,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "guess",
     itemType: "Kanji",
     characterID: "察",
@@ -20381,7 +20381,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wherefore",
     itemType: "Kanji",
     characterID: "由",
@@ -20402,7 +20402,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "oil",
     itemType: "Kanji",
     characterID: "油",
@@ -20423,7 +20423,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "armor",
     itemType: "Kanji",
     characterID: "甲",
@@ -20449,7 +20449,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "push",
     itemType: "Kanji",
     characterID: "押",
@@ -20475,7 +20475,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "speaketh",
     itemType: "Kanji",
     characterID: "申",
@@ -20501,7 +20501,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "expand",
     itemType: "Kanji",
     characterID: "伸",
@@ -20527,7 +20527,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gods",
     itemType: "Kanji",
     characterID: "神",
@@ -20549,7 +20549,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fruit",
     itemType: "Kanji",
     characterID: "果",
@@ -20575,7 +20575,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ax",
     itemType: "Kanji",
     characterID: "斤",
@@ -20601,7 +20601,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "place",
     itemType: "Kanji",
     characterID: "所",
@@ -20625,7 +20625,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "near",
     itemType: "Kanji",
     characterID: "近",
@@ -20652,7 +20652,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fold",
     itemType: "Kanji",
     characterID: "折",
@@ -20678,7 +20678,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "philosophy",
     itemType: "Kanji",
     characterID: "哲",
@@ -20702,7 +20702,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "temporarily",
     itemType: "Kanji",
     characterID: "暫",
@@ -20725,7 +20725,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "severance",
     itemType: "Kanji",
     characterID: "断",
@@ -20748,7 +20748,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "substance",
     itemType: "Kanji",
     characterID: "質",
@@ -20774,7 +20774,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "while",
     itemType: "Radical",
     characterID: "乍",
@@ -20792,7 +20792,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "yesterday",
     itemType: "Kanji",
     characterID: "昨",
@@ -20816,7 +20816,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "make",
     itemType: "Kanji",
     characterID: "作",
@@ -20842,7 +20842,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "snow",
     itemType: "Kanji",
     characterID: "雪",
@@ -20863,7 +20863,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["snow"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inquire",
     itemType: "Kanji",
     characterID: "尋",
@@ -20888,7 +20888,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hurry",
     itemType: "Kanji",
     characterID: "急",
@@ -20914,7 +20914,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lie down",
     itemType: "Kanji",
     characterID: "寝",
@@ -20940,7 +20940,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lady",
     itemType: "Kanji",
     characterID: "婦",
@@ -20966,7 +20966,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hit",
     itemType: "Kanji",
     characterID: "当",
@@ -20989,7 +20989,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rake",
     itemType: "Primitive",
     characterID: "1238p",
@@ -21007,7 +21007,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "contend",
     itemType: "Kanji",
     characterID: "争",
@@ -21029,7 +21029,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "matter",
     itemType: "Kanji",
     characterID: "事",
@@ -21055,7 +21055,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "an official rank",
     itemType: "Kanji",
     characterID: "尹",
@@ -21073,7 +21073,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["an official rank"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Italy",
     itemType: "Kanji",
     characterID: "伊",
@@ -21094,7 +21094,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "old boy",
     itemType: "Kanji",
     characterID: "君",
@@ -21120,7 +21120,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "flock",
     itemType: "Kanji",
     characterID: "群",
@@ -21146,7 +21146,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "proof",
     itemType: "Kanji",
     characterID: "耐",
@@ -21167,7 +21167,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "edge",
     itemType: "Kanji",
     characterID: "端",
@@ -21190,7 +21190,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "both",
     itemType: "Kanji",
     characterID: "両",
@@ -21213,7 +21213,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "full",
     itemType: "Kanji",
     characterID: "満",
@@ -21236,7 +21236,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shovel",
     itemType: "Radical",
     characterID: "凵",
@@ -21254,7 +21254,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "brush-stroke",
     itemType: "Kanji",
     characterID: "画",
@@ -21275,7 +21275,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bend",
     itemType: "Kanji",
     characterID: "曲",
@@ -21298,7 +21298,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Big Dipper",
     itemType: "Kanji",
     characterID: "斗",
@@ -21323,7 +21323,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fee",
     itemType: "Kanji",
     characterID: "料",
@@ -21347,7 +21347,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "department",
     itemType: "Kanji",
     characterID: "科",
@@ -21373,7 +21373,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "map",
     itemType: "Kanji",
     characterID: "図",
@@ -21396,7 +21396,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "utilize",
     itemType: "Kanji",
     characterID: "用",
@@ -21422,7 +21422,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "equip",
     itemType: "Kanji",
     characterID: "備",
@@ -21444,7 +21444,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "salad",
     itemType: "Primitive",
     characterID: "1268p",
@@ -21462,7 +21462,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "once upon a time",
     itemType: "Kanji",
     characterID: "昔",
@@ -21487,7 +21487,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "borrow",
     itemType: "Kanji",
     characterID: "借",
@@ -21511,7 +21511,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pity",
     itemType: "Kanji",
     characterID: "惜",
@@ -21537,7 +21537,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "scatter",
     itemType: "Kanji",
     characterID: "散",
@@ -21563,7 +21563,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "twenty",
     itemType: "Kanji",
     characterID: "廿",
@@ -21581,7 +21581,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["twenty"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "caverns",
     itemType: "Primitive",
     characterID: "1277p",
@@ -21599,7 +21599,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "seat",
     itemType: "Kanji",
     characterID: "席",
@@ -21625,7 +21625,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "degrees",
     itemType: "Kanji",
     characterID: "度",
@@ -21648,7 +21648,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "transit",
     itemType: "Kanji",
     characterID: "渡",
@@ -21674,7 +21674,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "haystack",
     itemType: "Radical",
     characterID: "卉",
@@ -21692,7 +21692,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lofty",
     itemType: "Kanji",
     characterID: "尭",
@@ -21716,7 +21716,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bake",
     itemType: "Kanji",
     characterID: "焼",
@@ -21737,7 +21737,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "half",
     itemType: "Kanji",
     characterID: "半",
@@ -21760,7 +21760,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "judgment",
     itemType: "Kanji",
     characterID: "判",
@@ -21786,7 +21786,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "quarter",
     itemType: "Primitive",
     characterID: "1292p",
@@ -21804,7 +21804,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "scroll",
     itemType: "Kanji",
     characterID: "巻",
@@ -21827,7 +21827,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "victory",
     itemType: "Kanji",
     characterID: "勝",
@@ -21850,7 +21850,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wisteria",
     itemType: "Kanji",
     characterID: "藤",
@@ -21868,7 +21868,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["wisteria"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "one-sided",
     itemType: "Kanji",
     characterID: "片",
@@ -21890,7 +21890,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "printing block",
     itemType: "Kanji",
     characterID: "版",
@@ -21916,7 +21916,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "of",
     itemType: "Kanji",
     characterID: "之",
@@ -21937,7 +21937,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "turf",
     itemType: "Kanji",
     characterID: "芝",
@@ -21958,7 +21958,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "negative",
     itemType: "Kanji",
     characterID: "不",
@@ -21981,7 +21981,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "negate",
     itemType: "Kanji",
     characterID: "否",
@@ -22004,7 +22004,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cupfuls",
     itemType: "Kanji",
     characterID: "杯",
@@ -22027,7 +22027,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dart",
     itemType: "Kanji",
     characterID: "矢",
@@ -22048,7 +22048,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tribe",
     itemType: "Kanji",
     characterID: "族",
@@ -22072,7 +22072,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "know",
     itemType: "Kanji",
     characterID: "知",
@@ -22093,7 +22093,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wisdom",
     itemType: "Kanji",
     characterID: "智",
@@ -22115,7 +22115,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "halberd",
     itemType: "Kanji",
     characterID: "矛",
@@ -22140,7 +22140,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "task",
     itemType: "Kanji",
     characterID: "務",
@@ -22164,7 +22164,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spear",
     itemType: "Primitive",
     characterID: "1316p",
@@ -22182,7 +22182,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "homecoming",
     itemType: "Kanji",
     characterID: "帰",
@@ -22208,7 +22208,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pull",
     itemType: "Kanji",
     characterID: "引",
@@ -22234,7 +22234,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "vast",
     itemType: "Kanji",
     characterID: "弘",
@@ -22256,7 +22256,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "strong",
     itemType: "Kanji",
     characterID: "強",
@@ -22274,7 +22274,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["strong"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "weak",
     itemType: "Kanji",
     characterID: "弱",
@@ -22295,7 +22295,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dollar sign",
     itemType: "Radical",
     characterID: "弗",
@@ -22313,7 +22313,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "No.",
     itemType: "Kanji",
     characterID: "第",
@@ -22334,7 +22334,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "younger brother",
     itemType: "Kanji",
     characterID: "弟",
@@ -22358,7 +22358,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "snare",
     itemType: "Radical",
     characterID: "丂",
@@ -22376,7 +22376,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "nickname",
     itemType: "Kanji",
     characterID: "号",
@@ -22399,7 +22399,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dirty",
     itemType: "Kanji",
     characterID: "汚",
@@ -22422,7 +22422,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "slingshot",
     itemType: "Primitive",
     characterID: "1335p",
@@ -22440,7 +22440,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bestow",
     itemType: "Kanji",
     characterID: "与",
@@ -22466,7 +22466,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "copy",
     itemType: "Kanji",
     characterID: "写",
@@ -22488,7 +22488,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "somebody",
     itemType: "Kanji",
     characterID: "身",
@@ -22510,7 +22510,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shoot",
     itemType: "Kanji",
     characterID: "射",
@@ -22536,7 +22536,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "apologize",
     itemType: "Kanji",
     characterID: "謝",
@@ -22561,7 +22561,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "old man",
     itemType: "Kanji",
     characterID: "老",
@@ -22586,7 +22586,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "consider",
     itemType: "Kanji",
     characterID: "考",
@@ -22610,7 +22610,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "filial piety",
     itemType: "Kanji",
     characterID: "孝",
@@ -22634,7 +22634,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "teach",
     itemType: "Kanji",
     characterID: "教",
@@ -22659,7 +22659,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "someone",
     itemType: "Kanji",
     characterID: "者",
@@ -22683,7 +22683,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "renowned",
     itemType: "Kanji",
     characterID: "著",
@@ -22706,7 +22706,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sultry",
     itemType: "Kanji",
     characterID: "暑",
@@ -22728,7 +22728,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "various",
     itemType: "Kanji",
     characterID: "諸",
@@ -22754,7 +22754,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "scissors",
     itemType: "Primitive",
     characterID: "1358p",
@@ -22772,7 +22772,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cheek",
     itemType: "Kanji",
     characterID: "頬",
@@ -22796,7 +22796,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "maestro",
     itemType: "Radical",
     characterID: "𠂤",
@@ -22814,7 +22814,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "chase",
     itemType: "Kanji",
     characterID: "追",
@@ -22840,7 +22840,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "expert",
     itemType: "Kanji",
     characterID: "師",
@@ -22863,7 +22863,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bureaucrat",
     itemType: "Kanji",
     characterID: "官",
@@ -22888,7 +22888,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "father",
     itemType: "Kanji",
     characterID: "父",
@@ -22906,7 +22906,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["father"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mingle",
     itemType: "Kanji",
     characterID: "交",
@@ -22932,7 +22932,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "merit",
     itemType: "Kanji",
     characterID: "効",
@@ -22955,7 +22955,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "contrast",
     itemType: "Kanji",
     characterID: "較",
@@ -22976,7 +22976,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "exam",
     itemType: "Kanji",
     characterID: "校",
@@ -23002,7 +23002,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "leg",
     itemType: "Kanji",
     characterID: "足",
@@ -23025,7 +23025,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "long-distance",
     itemType: "Kanji",
     characterID: "距",
@@ -23047,7 +23047,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "path",
     itemType: "Kanji",
     characterID: "路",
@@ -23070,7 +23070,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "step",
     itemType: "Kanji",
     characterID: "踏",
@@ -23093,7 +23093,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "skeleton",
     itemType: "Kanji",
     characterID: "骨",
@@ -23116,7 +23116,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "crooked mouth",
     itemType: "Radical",
     characterID: "咼",
@@ -23134,7 +23134,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "overdo",
     itemType: "Kanji",
     characterID: "過",
@@ -23160,7 +23160,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beta",
     itemType: "Radical",
     characterID: "阝",
@@ -23178,7 +23178,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "occasion",
     itemType: "Kanji",
     characterID: "際",
@@ -23204,7 +23204,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hinder",
     itemType: "Kanji",
     characterID: "障",
@@ -23226,7 +23226,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "chink",
     itemType: "Kanji",
     characterID: "隙",
@@ -23249,7 +23249,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "follow",
     itemType: "Kanji",
     characterID: "随",
@@ -23272,7 +23272,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sunshine",
     itemType: "Kanji",
     characterID: "陽",
@@ -23298,7 +23298,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ward off",
     itemType: "Kanji",
     characterID: "防",
@@ -23324,7 +23324,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Inst.",
     itemType: "Kanji",
     characterID: "院",
@@ -23350,7 +23350,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "regiment",
     itemType: "Kanji",
     characterID: "隊",
@@ -23376,7 +23376,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "descend",
     itemType: "Kanji",
     characterID: "降",
@@ -23402,7 +23402,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "story",
     itemType: "Kanji",
     characterID: "階",
@@ -23427,7 +23427,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "neighboring",
     itemType: "Kanji",
     characterID: "隣",
@@ -23448,7 +23448,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["neighboring"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "conceal",
     itemType: "Kanji",
     characterID: "隠",
@@ -23470,7 +23470,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hole",
     itemType: "Kanji",
     characterID: "穴",
@@ -23493,7 +23493,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "empty",
     itemType: "Kanji",
     characterID: "空",
@@ -23516,7 +23516,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "window",
     itemType: "Kanji",
     characterID: "窓",
@@ -23540,7 +23540,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stab",
     itemType: "Kanji",
     characterID: "突",
@@ -23563,7 +23563,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "research",
     itemType: "Kanji",
     characterID: "究",
@@ -23587,7 +23587,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "human legs",
     itemType: "Radical",
     characterID: "兀",
@@ -23605,7 +23605,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grope",
     itemType: "Kanji",
     characterID: "探",
@@ -23627,7 +23627,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "deep",
     itemType: "Kanji",
     characterID: "深",
@@ -23650,7 +23650,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hill",
     itemType: "Kanji",
     characterID: "丘",
@@ -23674,7 +23674,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "soldier",
     itemType: "Kanji",
     characterID: "兵",
@@ -23697,7 +23697,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "thread",
     itemType: "Kanji",
     characterID: "糸",
@@ -23715,7 +23715,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["thread"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "weave",
     itemType: "Kanji",
     characterID: "織",
@@ -23739,7 +23739,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "line",
     itemType: "Kanji",
     characterID: "線",
@@ -23760,7 +23760,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "thong",
     itemType: "Kanji",
     characterID: "緒",
@@ -23783,7 +23783,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "continue",
     itemType: "Kanji",
     characterID: "続",
@@ -23808,7 +23808,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "picture",
     itemType: "Kanji",
     characterID: "絵",
@@ -23831,7 +23831,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "overall",
     itemType: "Kanji",
     characterID: "統",
@@ -23857,7 +23857,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "salary",
     itemType: "Kanji",
     characterID: "給",
@@ -23883,7 +23883,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tie",
     itemType: "Kanji",
     characterID: "結",
@@ -23906,7 +23906,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "end",
     itemType: "Kanji",
     characterID: "終",
@@ -23927,7 +23927,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "class",
     itemType: "Kanji",
     characterID: "級",
@@ -23949,7 +23949,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "crimson",
     itemType: "Kanji",
     characterID: "紅",
@@ -23973,7 +23973,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "settlement",
     itemType: "Kanji",
     characterID: "納",
@@ -23996,7 +23996,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sutra",
     itemType: "Kanji",
     characterID: "経",
@@ -24022,7 +24022,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "promise",
     itemType: "Kanji",
     characterID: "約",
@@ -24047,7 +24047,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dainty",
     itemType: "Kanji",
     characterID: "細",
@@ -24073,7 +24073,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "general",
     itemType: "Kanji",
     characterID: "総",
@@ -24099,7 +24099,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inherit",
     itemType: "Kanji",
     characterID: "継",
@@ -24125,7 +24125,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "affinity",
     itemType: "Kanji",
     characterID: "縁",
@@ -24148,7 +24148,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tense",
     itemType: "Kanji",
     characterID: "緊",
@@ -24171,7 +24171,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cocoon",
     itemType: "Radical",
     characterID: "幺",
@@ -24189,7 +24189,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "behind",
     itemType: "Kanji",
     characterID: "後",
@@ -24211,7 +24211,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "how many",
     itemType: "Kanji",
     characterID: "幾",
@@ -24237,7 +24237,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mechanism",
     itemType: "Kanji",
     characterID: "機",
@@ -24263,7 +24263,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mysterious",
     itemType: "Kanji",
     characterID: "玄",
@@ -24286,7 +24286,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lineage",
     itemType: "Kanji",
     characterID: "系",
@@ -24310,7 +24310,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "person in charge",
     itemType: "Kanji",
     characterID: "係",
@@ -24336,7 +24336,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "kneel",
     itemType: "Radical",
     characterID: "卩",
@@ -24354,7 +24354,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "instead",
     itemType: "Kanji",
     characterID: "却",
@@ -24377,7 +24377,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shins",
     itemType: "Kanji",
     characterID: "脚",
@@ -24403,7 +24403,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wholesale",
     itemType: "Kanji",
     characterID: "卸",
@@ -24424,7 +24424,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["wholesale"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "honorable",
     itemType: "Kanji",
     characterID: "御",
@@ -24446,7 +24446,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "clothing",
     itemType: "Kanji",
     characterID: "服",
@@ -24472,7 +24472,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fate",
     itemType: "Kanji",
     characterID: "命",
@@ -24498,7 +24498,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "chop-seal",
     itemType: "Primitive",
     characterID: "1503p",
@@ -24516,7 +24516,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "orders",
     itemType: "Kanji",
     characterID: "令",
@@ -24542,7 +24542,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cool",
     itemType: "Kanji",
     characterID: "冷",
@@ -24567,7 +24567,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "jurisdiction",
     itemType: "Kanji",
     characterID: "領",
@@ -24593,7 +24593,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "courage",
     itemType: "Kanji",
     characterID: "勇",
@@ -24619,7 +24619,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "traffic",
     itemType: "Kanji",
     characterID: "通",
@@ -24645,7 +24645,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "critters",
     itemType: "Kanji",
     characterID: "疋",
@@ -24666,7 +24666,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "doubt",
     itemType: "Kanji",
     characterID: "疑",
@@ -24692,7 +24692,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sign of the snake",
     itemType: "Kanji",
     characterID: "巳",
@@ -24714,7 +24714,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "crime",
     itemType: "Kanji",
     characterID: "犯",
@@ -24736,7 +24736,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dangerous",
     itemType: "Kanji",
     characterID: "危",
@@ -24758,7 +24758,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mailbox",
     itemType: "Primitive",
     characterID: "1522p",
@@ -24776,7 +24776,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "arm",
     itemType: "Kanji",
     characterID: "腕",
@@ -24798,7 +24798,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "receipt",
     itemType: "Primitive",
     characterID: "1526p",
@@ -24816,7 +24816,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "detain",
     itemType: "Kanji",
     characterID: "留",
@@ -24842,7 +24842,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "staples",
     itemType: "Primitive",
     characterID: "1530p",
@@ -24860,7 +24860,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stamp",
     itemType: "Kanji",
     characterID: "印",
@@ -24886,7 +24886,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mortar",
     itemType: "Kanji",
     characterID: "臼",
@@ -24904,7 +24904,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["mortar"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "entertain",
     itemType: "Kanji",
     characterID: "興",
@@ -24927,7 +24927,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "west",
     itemType: "Kanji",
     characterID: "西",
@@ -24948,7 +24948,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sign of the bird",
     itemType: "Kanji",
     characterID: "酉",
@@ -24971,7 +24971,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sake",
     itemType: "Kanji",
     characterID: "酒",
@@ -24992,7 +24992,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cruel",
     itemType: "Kanji",
     characterID: "酷",
@@ -25015,7 +25015,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "drunk",
     itemType: "Kanji",
     characterID: "酔",
@@ -25041,7 +25041,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "distribute",
     itemType: "Kanji",
     characterID: "配",
@@ -25064,7 +25064,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "revered",
     itemType: "Kanji",
     characterID: "尊",
@@ -25087,7 +25087,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beans",
     itemType: "Kanji",
     characterID: "豆",
@@ -25109,7 +25109,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "head",
     itemType: "Kanji",
     characterID: "頭",
@@ -25133,7 +25133,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "short",
     itemType: "Kanji",
     characterID: "短",
@@ -25156,7 +25156,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bountiful",
     itemType: "Kanji",
     characterID: "豊",
@@ -25178,7 +25178,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Drum",
     itemType: "Radical",
     characterID: "壴",
@@ -25196,7 +25196,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rejoice",
     itemType: "Kanji",
     characterID: "喜",
@@ -25217,7 +25217,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "timber-trees",
     itemType: "Kanji",
     characterID: "樹",
@@ -25240,7 +25240,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dish",
     itemType: "Kanji",
     characterID: "皿",
@@ -25262,7 +25262,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "blood",
     itemType: "Kanji",
     characterID: "血",
@@ -25280,7 +25280,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["blood"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "warm",
     itemType: "Kanji",
     characterID: "温",
@@ -25298,7 +25298,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["warm"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "boom",
     itemType: "Kanji",
     characterID: "盛",
@@ -25323,7 +25323,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "silver",
     itemType: "Radical",
     characterID: "艮",
@@ -25341,7 +25341,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "silver",
     itemType: "Kanji",
     characterID: "銀",
@@ -25359,7 +25359,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["silver"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "root",
     itemType: "Kanji",
     characterID: "根",
@@ -25383,7 +25383,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "instant",
     itemType: "Kanji",
     characterID: "即",
@@ -25409,7 +25409,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "node",
     itemType: "Kanji",
     characterID: "節",
@@ -25435,7 +25435,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "retreat",
     itemType: "Kanji",
     characterID: "退",
@@ -25461,7 +25461,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "limit",
     itemType: "Kanji",
     characterID: "限",
@@ -25486,7 +25486,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "eyeball",
     itemType: "Kanji",
     characterID: "眼",
@@ -25507,7 +25507,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["eyeball"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "good",
     itemType: "Kanji",
     characterID: "良",
@@ -25532,7 +25532,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "daughter",
     itemType: "Kanji",
     characterID: "娘",
@@ -25556,7 +25556,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "eat",
     itemType: "Kanji",
     characterID: "食",
@@ -25580,7 +25580,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "meal",
     itemType: "Kanji",
     characterID: "飯",
@@ -25604,7 +25604,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "drink",
     itemType: "Kanji",
     characterID: "飲",
@@ -25629,7 +25629,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Bldg",
     itemType: "Kanji",
     characterID: "館",
@@ -25655,7 +25655,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "foster",
     itemType: "Kanji",
     characterID: "養",
@@ -25678,7 +25678,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "waitress",
     itemType: "Primitive",
     characterID: "1593p",
@@ -25696,7 +25696,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "previously",
     itemType: "Kanji",
     characterID: "既",
@@ -25721,7 +25721,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "outline",
     itemType: "Kanji",
     characterID: "概",
@@ -25747,7 +25747,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "even",
     itemType: "Kanji",
     characterID: "平",
@@ -25769,7 +25769,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "call",
     itemType: "Kanji",
     characterID: "呼",
@@ -25791,7 +25791,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "evaluate",
     itemType: "Kanji",
     characterID: "評",
@@ -25816,7 +25816,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sheaf",
     itemType: "Radical",
     characterID: "㐅",
@@ -25834,7 +25834,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hope",
     itemType: "Kanji",
     characterID: "希",
@@ -25860,7 +25860,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "villain",
     itemType: "Kanji",
     characterID: "凶",
@@ -25883,7 +25883,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bosom",
     itemType: "Kanji",
     characterID: "胸",
@@ -25906,7 +25906,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "detach",
     itemType: "Kanji",
     characterID: "離",
@@ -25932,7 +25932,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "kill",
     itemType: "Kanji",
     characterID: "殺",
@@ -25958,7 +25958,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "barracks",
     itemType: "Kanji",
     characterID: "屯",
@@ -25984,7 +25984,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "genuine",
     itemType: "Kanji",
     characterID: "純",
@@ -26010,7 +26010,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spicy",
     itemType: "Kanji",
     characterID: "辛",
@@ -26036,7 +26036,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "resign",
     itemType: "Kanji",
     characterID: "辞",
@@ -26062,7 +26062,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "false",
     itemType: "Kanji",
     characterID: "辟",
@@ -26088,7 +26088,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wall",
     itemType: "Kanji",
     characterID: "壁",
@@ -26113,7 +26113,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "new",
     itemType: "Kanji",
     characterID: "新",
@@ -26131,7 +26131,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["new"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "parent",
     itemType: "Kanji",
     characterID: "親",
@@ -26154,7 +26154,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "happiness",
     itemType: "Kanji",
     characterID: "幸",
@@ -26179,7 +26179,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "report",
     itemType: "Kanji",
     characterID: "報",
@@ -26202,7 +26202,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hook",
     itemType: "Radical",
     characterID: "丩",
@@ -26220,7 +26220,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shout",
     itemType: "Kanji",
     characterID: "叫",
@@ -26242,7 +26242,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "income",
     itemType: "Kanji",
     characterID: "収",
@@ -26268,7 +26268,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rice seedling",
     itemType: "Primitive",
     characterID: "1631p",
@@ -26286,7 +26286,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "land",
     itemType: "Kanji",
     characterID: "陸",
@@ -26310,7 +26310,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "forces",
     itemType: "Kanji",
     characterID: "勢",
@@ -26335,7 +26335,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "heat",
     itemType: "Kanji",
     characterID: "熱",
@@ -26361,7 +26361,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sign of the hog",
     itemType: "Kanji",
     characterID: "亥",
@@ -26386,7 +26386,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "engrave",
     itemType: "Kanji",
     characterID: "刻",
@@ -26412,7 +26412,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "resin",
     itemType: "Primitive",
     characterID: "1643p",
@@ -26430,7 +26430,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mention",
     itemType: "Kanji",
     characterID: "述",
@@ -26453,7 +26453,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "art",
     itemType: "Kanji",
     characterID: "術",
@@ -26479,7 +26479,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "celery",
     itemType: "Primitive",
     characterID: "1645p",
@@ -26497,7 +26497,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cold",
     itemType: "Kanji",
     characterID: "寒",
@@ -26515,7 +26515,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["cold"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grass skirt",
     itemType: "Radical",
     characterID: "㐮",
@@ -26533,7 +26533,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grow up",
     itemType: "Primitive",
     characterID: "1651p",
@@ -26551,7 +26551,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "poison",
     itemType: "Kanji",
     characterID: "毒",
@@ -26577,7 +26577,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "elementary",
     itemType: "Kanji",
     characterID: "素",
@@ -26600,7 +26600,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "blue",
     itemType: "Kanji",
     characterID: "青",
@@ -26624,7 +26624,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "refined",
     itemType: "Kanji",
     characterID: "精",
@@ -26651,7 +26651,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "feelings",
     itemType: "Kanji",
     characterID: "情",
@@ -26678,7 +26678,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "clear up",
     itemType: "Kanji",
     characterID: "晴",
@@ -26700,7 +26700,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["clear up"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pure",
     itemType: "Kanji",
     characterID: "清",
@@ -26727,7 +26727,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "quiet",
     itemType: "Kanji",
     characterID: "静",
@@ -26745,7 +26745,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["quiet"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "blame",
     itemType: "Kanji",
     characterID: "責",
@@ -26770,7 +26770,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "volume",
     itemType: "Kanji",
     characterID: "積",
@@ -26796,7 +26796,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "surface",
     itemType: "Kanji",
     characterID: "表",
@@ -26822,7 +26822,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "harm",
     itemType: "Kanji",
     characterID: "害",
@@ -26846,7 +26846,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "proportion",
     itemType: "Kanji",
     characterID: "割",
@@ -26872,7 +26872,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "life",
     itemType: "Kanji",
     characterID: "生",
@@ -26897,7 +26897,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "star",
     itemType: "Kanji",
     characterID: "星",
@@ -26920,7 +26920,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "surname",
     itemType: "Kanji",
     characterID: "姓",
@@ -26941,7 +26941,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["surname"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sex",
     itemType: "Kanji",
     characterID: "性",
@@ -26966,7 +26966,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "products",
     itemType: "Kanji",
     characterID: "産",
@@ -26989,7 +26989,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bonsai",
     itemType: "Primitive",
     characterID: "1690p",
@@ -27007,7 +27007,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "springtime",
     itemType: "Kanji",
     characterID: "春",
@@ -27028,7 +27028,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "reality",
     itemType: "Kanji",
     characterID: "実",
@@ -27052,7 +27052,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cornstalk",
     itemType: "Primitive",
     characterID: "1695p",
@@ -27070,7 +27070,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dedicate",
     itemType: "Kanji",
     characterID: "奉",
@@ -27096,7 +27096,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rod",
     itemType: "Kanji",
     characterID: "棒",
@@ -27122,7 +27122,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cabbage",
     itemType: "Radical",
     characterID: "堇",
@@ -27140,7 +27140,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "diligence",
     itemType: "Kanji",
     characterID: "勤",
@@ -27162,7 +27162,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "scarecrow",
     itemType: "Primitive",
     characterID: "1700p",
@@ -27180,7 +27180,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "difficult",
     itemType: "Kanji",
     characterID: "難",
@@ -27203,7 +27203,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "silage",
     itemType: "Primitive",
     characterID: "1709p",
@@ -27221,7 +27221,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ride",
     itemType: "Kanji",
     characterID: "乗",
@@ -27244,7 +27244,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "now",
     itemType: "Kanji",
     characterID: "今",
@@ -27265,7 +27265,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["now"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "include",
     itemType: "Kanji",
     characterID: "含",
@@ -27288,7 +27288,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wish",
     itemType: "Kanji",
     characterID: "念",
@@ -27314,7 +27314,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shade",
     itemType: "Kanji",
     characterID: "陰",
@@ -27340,7 +27340,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beforehand",
     itemType: "Kanji",
     characterID: "予",
@@ -27367,7 +27367,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "plains",
     itemType: "Kanji",
     characterID: "野",
@@ -27390,7 +27390,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "concurrently",
     itemType: "Kanji",
     characterID: "兼",
@@ -27416,7 +27416,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dislike",
     itemType: "Kanji",
     characterID: "嫌",
@@ -27441,7 +27441,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "value",
     itemType: "Kanji",
     characterID: "価",
@@ -27462,7 +27462,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "need",
     itemType: "Kanji",
     characterID: "要",
@@ -27488,7 +27488,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "loins",
     itemType: "Kanji",
     characterID: "腰",
@@ -27511,7 +27511,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "smoke",
     itemType: "Kanji",
     characterID: "煙",
@@ -27529,7 +27529,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["smoke"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "south",
     itemType: "Kanji",
     characterID: "南",
@@ -27550,7 +27550,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["south"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gates",
     itemType: "Kanji",
     characterID: "門",
@@ -27574,7 +27574,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "question",
     itemType: "Kanji",
     characterID: "問",
@@ -27596,7 +27596,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "interval",
     itemType: "Kanji",
     characterID: "間",
@@ -27617,7 +27617,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pitch dark",
     itemType: "Kanji",
     characterID: "闇",
@@ -27642,7 +27642,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "simplicity",
     itemType: "Kanji",
     characterID: "簡",
@@ -27666,7 +27666,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "open",
     itemType: "Kanji",
     characterID: "開",
@@ -27688,7 +27688,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "closed",
     itemType: "Kanji",
     characterID: "閉",
@@ -27709,7 +27709,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hear",
     itemType: "Kanji",
     characterID: "聞",
@@ -27734,7 +27734,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "godown",
     itemType: "Kanji",
     characterID: "倉",
@@ -27757,7 +27757,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "genesis",
     itemType: "Kanji",
     characterID: "創",
@@ -27780,7 +27780,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "un-",
     itemType: "Kanji",
     characterID: "非",
@@ -27806,7 +27806,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sad",
     itemType: "Kanji",
     characterID: "悲",
@@ -27832,7 +27832,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "guilt",
     itemType: "Kanji",
     characterID: "罪",
@@ -27855,7 +27855,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "comrade",
     itemType: "Kanji",
     characterID: "輩",
@@ -27881,7 +27881,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "key",
     itemType: "Radical",
     characterID: "ユ",
@@ -27899,7 +27899,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "marquis",
     itemType: "Kanji",
     characterID: "侯",
@@ -27924,7 +27924,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "throat",
     itemType: "Kanji",
     characterID: "喉",
@@ -27948,7 +27948,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "guillotine",
     itemType: "Primitive",
     characterID: "1770p",
@@ -27966,7 +27966,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "decide",
     itemType: "Kanji",
     characterID: "決",
@@ -27989,7 +27989,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "cheerful",
     itemType: "Kanji",
     characterID: "快",
@@ -28012,7 +28012,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "locket",
     itemType: "Radical",
     characterID: "韋",
@@ -28030,7 +28030,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "admirable",
     itemType: "Kanji",
     characterID: "偉",
@@ -28053,7 +28053,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "difference",
     itemType: "Kanji",
     characterID: "違",
@@ -28074,7 +28074,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "defense",
     itemType: "Kanji",
     characterID: "衛",
@@ -28098,7 +28098,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dry",
     itemType: "Kanji",
     characterID: "干",
@@ -28124,7 +28124,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "flats",
     itemType: "Kanji",
     characterID: "軒",
@@ -28146,7 +28146,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "beach",
     itemType: "Kanji",
     characterID: "岸",
@@ -28167,7 +28167,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["beach"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "going",
     itemType: "Kanji",
     characterID: "于",
@@ -28188,7 +28188,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "too much",
     itemType: "Kanji",
     characterID: "余",
@@ -28214,7 +28214,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "route",
     itemType: "Kanji",
     characterID: "途",
@@ -28236,7 +28236,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bundle",
     itemType: "Kanji",
     characterID: "束",
@@ -28262,7 +28262,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "trust",
     itemType: "Kanji",
     characterID: "頼",
@@ -28286,7 +28286,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "quick",
     itemType: "Kanji",
     characterID: "速",
@@ -28307,7 +28307,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "organize",
     itemType: "Kanji",
     characterID: "整",
@@ -28330,7 +28330,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "awl",
     itemType: "Primitive",
     characterID: "1801p",
@@ -28348,7 +28348,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "saber",
     itemType: "Kanji",
     characterID: "剣",
@@ -28371,7 +28371,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "heavy",
     itemType: "Kanji",
     characterID: "重",
@@ -28397,7 +28397,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "move",
     itemType: "Kanji",
     characterID: "動",
@@ -28423,7 +28423,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "work",
     itemType: "Kanji",
     characterID: "働",
@@ -28444,7 +28444,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "species",
     itemType: "Kanji",
     characterID: "種",
@@ -28470,7 +28470,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sickness",
     itemType: "Radical",
     characterID: "疒",
@@ -28488,7 +28488,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ill",
     itemType: "Kanji",
     characterID: "病",
@@ -28512,7 +28512,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tired",
     itemType: "Kanji",
     characterID: "疲",
@@ -28538,7 +28538,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "pain",
     itemType: "Kanji",
     characterID: "痛",
@@ -28561,7 +28561,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mannerism",
     itemType: "Kanji",
     characterID: "癖",
@@ -28587,7 +28587,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "box",
     itemType: "Radical",
     characterID: "匚",
@@ -28605,7 +28605,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "doctor",
     itemType: "Kanji",
     characterID: "医",
@@ -28626,7 +28626,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "equal",
     itemType: "Kanji",
     characterID: "匹",
@@ -28649,7 +28649,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ward",
     itemType: "Kanji",
     characterID: "区",
@@ -28670,7 +28670,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sign of the hare",
     itemType: "Kanji",
     characterID: "卯",
@@ -28691,7 +28691,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["sign of the hare"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "egg",
     itemType: "Kanji",
     characterID: "卵",
@@ -28714,7 +28714,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "repress",
     itemType: "Kanji",
     characterID: "抑",
@@ -28740,7 +28740,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "faceup",
     itemType: "Kanji",
     characterID: "仰",
@@ -28766,7 +28766,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "welcome",
     itemType: "Kanji",
     characterID: "迎",
@@ -28791,7 +28791,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "teepee",
     itemType: "Radical",
     characterID: "癶",
@@ -28809,7 +28809,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ascend",
     itemType: "Kanji",
     characterID: "登",
@@ -28830,7 +28830,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "discharge",
     itemType: "Kanji",
     characterID: "発",
@@ -28853,7 +28853,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Hair ornament",
     itemType: "Radical",
     characterID: "彡",
@@ -28871,7 +28871,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shape",
     itemType: "Kanji",
     characterID: "形",
@@ -28893,7 +28893,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shadow",
     itemType: "Kanji",
     characterID: "影",
@@ -28915,7 +28915,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lad",
     itemType: "Kanji",
     characterID: "彦",
@@ -28936,7 +28936,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "face",
     itemType: "Kanji",
     characterID: "顔",
@@ -28960,7 +28960,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "visit",
     itemType: "Kanji",
     characterID: "参",
@@ -28983,7 +28983,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "discipline",
     itemType: "Kanji",
     characterID: "修",
@@ -29005,7 +29005,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "rare",
     itemType: "Kanji",
     characterID: "珍",
@@ -29027,7 +29027,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sentence",
     itemType: "Kanji",
     characterID: "文",
@@ -29050,7 +29050,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "vis-a-vis",
     itemType: "Kanji",
     characterID: "対",
@@ -29076,7 +29076,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fenceposts",
     itemType: "Primitive",
     characterID: "1866p",
@@ -29094,7 +29094,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "adjusted",
     itemType: "Kanji",
     characterID: "斉",
@@ -29117,7 +29117,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "finish",
     itemType: "Kanji",
     characterID: "済",
@@ -29143,7 +29143,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sparkler",
     itemType: "Primitive",
     characterID: "1872p",
@@ -29161,7 +29161,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "music",
     itemType: "Kanji",
     characterID: "楽",
@@ -29183,7 +29183,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "medicine",
     itemType: "Kanji",
     characterID: "薬",
@@ -29206,7 +29206,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "center",
     itemType: "Kanji",
     characterID: "央",
@@ -29230,7 +29230,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "England",
     itemType: "Kanji",
     characterID: "英",
@@ -29256,7 +29256,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "reflect",
     itemType: "Kanji",
     characterID: "映",
@@ -29281,7 +29281,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "red",
     itemType: "Kanji",
     characterID: "赤",
@@ -29299,7 +29299,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["red"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "unusual",
     itemType: "Kanji",
     characterID: "変",
@@ -29324,7 +29324,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tracks",
     itemType: "Kanji",
     characterID: "跡",
@@ -29350,7 +29350,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "romance",
     itemType: "Kanji",
     characterID: "恋",
@@ -29373,7 +29373,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "yellow",
     itemType: "Kanji",
     characterID: "黄",
@@ -29394,7 +29394,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["yellow"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sideways",
     itemType: "Kanji",
     characterID: "横",
@@ -29417,7 +29417,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "comma-design",
     itemType: "Kanji",
     characterID: "巴",
@@ -29439,7 +29439,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["comma-design"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "color",
     itemType: "Kanji",
     characterID: "色",
@@ -29457,7 +29457,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["color"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "discontinue",
     itemType: "Kanji",
     characterID: "絶",
@@ -29483,7 +29483,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sweet",
     itemType: "Kanji",
     characterID: "甘",
@@ -29509,7 +29509,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "that",
     itemType: "Kanji",
     characterID: "其",
@@ -29530,7 +29530,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["that"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "period",
     itemType: "Kanji",
     characterID: "期",
@@ -29553,7 +29553,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fundamentals",
     itemType: "Kanji",
     characterID: "基",
@@ -29578,7 +29578,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tremendously",
     itemType: "Kanji",
     characterID: "甚",
@@ -29604,7 +29604,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "withstand",
     itemType: "Kanji",
     characterID: "堪",
@@ -29627,7 +29627,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "purse",
     itemType: "Primitive",
     characterID: "1908p",
@@ -29645,7 +29645,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "precious",
     itemType: "Kanji",
     characterID: "貴",
@@ -29671,7 +29671,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bequeath",
     itemType: "Kanji",
     characterID: "遺",
@@ -29696,7 +29696,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dispatch",
     itemType: "Kanji",
     characterID: "遣",
@@ -29722,7 +29722,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "dance",
     itemType: "Kanji",
     characterID: "舞",
@@ -29745,7 +29745,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "nothingness",
     itemType: "Kanji",
     characterID: "無",
@@ -29768,7 +29768,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "moreover",
     itemType: "Kanji",
     characterID: "且",
@@ -29793,7 +29793,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "association",
     itemType: "Kanji",
     characterID: "組",
@@ -29816,7 +29816,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "help",
     itemType: "Kanji",
     characterID: "助",
@@ -29838,7 +29838,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "row",
     itemType: "Kanji",
     characterID: "並",
@@ -29864,7 +29864,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "universal",
     itemType: "Kanji",
     characterID: "普",
@@ -29890,7 +29890,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spirits",
     itemType: "Kanji",
     characterID: "霊",
@@ -29911,7 +29911,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "profession",
     itemType: "Kanji",
     characterID: "業",
@@ -29937,7 +29937,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "me",
     itemType: "Kanji",
     characterID: "僕",
@@ -29963,7 +29963,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "together",
     itemType: "Kanji",
     characterID: "共",
@@ -29989,7 +29989,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "submit",
     itemType: "Kanji",
     characterID: "供",
@@ -30015,7 +30015,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "uncommon",
     itemType: "Kanji",
     characterID: "異",
@@ -30038,7 +30038,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "outburst",
     itemType: "Kanji",
     characterID: "暴",
@@ -30061,7 +30061,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "elect",
     itemType: "Kanji",
     characterID: "選",
@@ -30084,7 +30084,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Mr.",
     itemType: "Kanji",
     characterID: "殿",
@@ -30107,7 +30107,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "well",
     itemType: "Kanji",
     characterID: "井",
@@ -30130,7 +30130,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "surround",
     itemType: "Kanji",
     characterID: "囲",
@@ -30153,7 +30153,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "Asia",
     itemType: "Kanji",
     characterID: "亜",
@@ -30175,7 +30175,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bad",
     itemType: "Kanji",
     characterID: "悪",
@@ -30201,7 +30201,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "circle",
     itemType: "Kanji",
     characterID: "円",
@@ -30223,7 +30223,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "angle",
     itemType: "Kanji",
     characterID: "角",
@@ -30246,7 +30246,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "contact",
     itemType: "Kanji",
     characterID: "触",
@@ -30269,7 +30269,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "unravel",
     itemType: "Kanji",
     characterID: "解",
@@ -30292,7 +30292,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "again",
     itemType: "Kanji",
     characterID: "再",
@@ -30314,7 +30314,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "funnel",
     itemType: "Radical",
     characterID: "冓",
@@ -30332,7 +30332,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lecture",
     itemType: "Kanji",
     characterID: "講",
@@ -30357,7 +30357,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "posture",
     itemType: "Kanji",
     characterID: "構",
@@ -30382,7 +30382,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tome",
     itemType: "Kanji",
     characterID: "冊",
@@ -30404,7 +30404,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "argument",
     itemType: "Kanji",
     characterID: "論",
@@ -30428,7 +30428,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wheel",
     itemType: "Kanji",
     characterID: "輪",
@@ -30454,7 +30454,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "family name",
     itemType: "Kanji",
     characterID: "氏",
@@ -30479,7 +30479,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "paper",
     itemType: "Kanji",
     characterID: "紙",
@@ -30500,7 +30500,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["paper"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "marriage",
     itemType: "Kanji",
     characterID: "婚",
@@ -30518,7 +30518,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["marriage"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "calling card",
     itemType: "Primitive",
     characterID: "1973p",
@@ -30536,7 +30536,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lower",
     itemType: "Kanji",
     characterID: "低",
@@ -30561,7 +30561,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bottom",
     itemType: "Kanji",
     characterID: "底",
@@ -30587,7 +30587,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "people",
     itemType: "Kanji",
     characterID: "民",
@@ -30609,7 +30609,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sleep",
     itemType: "Kanji",
     characterID: "眠",
@@ -30631,7 +30631,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "offspring",
     itemType: "Radical",
     characterID: "甫",
@@ -30649,7 +30649,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "catch",
     itemType: "Kanji",
     characterID: "捕",
@@ -30673,7 +30673,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "metropolis",
     itemType: "Kanji",
     characterID: "都",
@@ -30699,7 +30699,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "interrogative",
     itemType: "Kanji",
     characterID: "那",
@@ -30717,7 +30717,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["what?"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hometown",
     itemType: "Kanji",
     characterID: "郷",
@@ -30743,7 +30743,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "echo",
     itemType: "Kanji",
     characterID: "響",
@@ -30766,7 +30766,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "son",
     itemType: "Kanji",
     characterID: "郎",
@@ -30790,7 +30790,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "section",
     itemType: "Kanji",
     characterID: "部",
@@ -30813,7 +30813,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "faction",
     itemType: "Kanji",
     characterID: "派",
@@ -30836,7 +30836,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "masses",
     itemType: "Kanji",
     characterID: "衆",
@@ -30859,7 +30859,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "grade",
     itemType: "Kanji",
     characterID: "段",
@@ -30885,7 +30885,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "boat",
     itemType: "Kanji",
     characterID: "舟",
@@ -30909,7 +30909,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "carrier",
     itemType: "Kanji",
     characterID: "般",
@@ -30936,7 +30936,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "gully",
     itemType: "Primitive",
     characterID: "2019p",
@@ -30954,7 +30954,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ship",
     itemType: "Kanji",
     characterID: "船",
@@ -30975,7 +30975,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "benefit",
     itemType: "Kanji",
     characterID: "益",
@@ -30998,7 +30998,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spare time",
     itemType: "Kanji",
     characterID: "暇",
@@ -31021,7 +31021,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spread",
     itemType: "Kanji",
     characterID: "敷",
@@ -31044,7 +31044,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "come",
     itemType: "Kanji",
     characterID: "来",
@@ -31070,7 +31070,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "spirit",
     itemType: "Kanji",
     characterID: "気",
@@ -31093,7 +31093,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fly",
     itemType: "Kanji",
     characterID: "飛",
@@ -31115,7 +31115,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sink",
     itemType: "Kanji",
     characterID: "沈",
@@ -31138,7 +31138,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wife",
     itemType: "Kanji",
     characterID: "妻",
@@ -31159,7 +31159,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "nifty",
     itemType: "Kanji",
     characterID: "凄",
@@ -31177,7 +31177,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["nifty"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mask",
     itemType: "Kanji",
     characterID: "面",
@@ -31200,7 +31200,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "voice",
     itemType: "Kanji",
     characterID: "声",
@@ -31218,7 +31218,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["voice"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "give",
     itemType: "Kanji",
     characterID: "呉",
@@ -31240,7 +31240,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "acquiesce",
     itemType: "Kanji",
     characterID: "承",
@@ -31263,7 +31263,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "poles",
     itemType: "Kanji",
     characterID: "極",
@@ -31286,7 +31286,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tusk",
     itemType: "Kanji",
     characterID: "牙",
@@ -31310,7 +31310,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wicked",
     itemType: "Kanji",
     characterID: "邪",
@@ -31335,7 +31335,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "animal tracks",
     itemType: "Radical",
     characterID: "釆",
@@ -31353,7 +31353,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "turn",
     itemType: "Kanji",
     characterID: "番",
@@ -31377,7 +31377,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "fur",
     itemType: "Kanji",
     characterID: "毛",
@@ -31400,7 +31400,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tail",
     itemType: "Kanji",
     characterID: "尾",
@@ -31426,7 +31426,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lock of hair",
     itemType: "Primitive",
     characterID: "2065p",
@@ -31444,7 +31444,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "home",
     itemType: "Kanji",
     characterID: "宅",
@@ -31467,7 +31467,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tail feathers",
     itemType: "Primitive",
     characterID: "2067p",
@@ -31485,7 +31485,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "do",
     itemType: "Kanji",
     characterID: "為",
@@ -31508,7 +31508,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hairpin",
     itemType: "Primitive",
     characterID: "2070p",
@@ -31526,7 +31526,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "long",
     itemType: "Kanji",
     characterID: "長",
@@ -31552,7 +31552,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lengthen",
     itemType: "Kanji",
     characterID: "張",
@@ -31578,7 +31578,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "hair of the head",
     itemType: "Kanji",
     characterID: "髪",
@@ -31596,7 +31596,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["hair of the head"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "unfold",
     itemType: "Kanji",
     characterID: "展",
@@ -31620,7 +31620,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "owl",
     itemType: "Primitive",
     characterID: "2078p",
@@ -31638,7 +31638,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "simple",
     itemType: "Kanji",
     characterID: "単",
@@ -31664,7 +31664,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "war",
     itemType: "Kanji",
     characterID: "戦",
@@ -31686,7 +31686,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "brain",
     itemType: "Kanji",
     characterID: "脳",
@@ -31707,7 +31707,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "trouble",
     itemType: "Kanji",
     characterID: "悩",
@@ -31730,7 +31730,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "stern",
     itemType: "Kanji",
     characterID: "厳",
@@ -31753,7 +31753,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "raise",
     itemType: "Kanji",
     characterID: "挙",
@@ -31776,7 +31776,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "bird",
     itemType: "Kanji",
     characterID: "鳥",
@@ -31801,7 +31801,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "chirp",
     itemType: "Kanji",
     characterID: "鳴",
@@ -31827,7 +31827,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "island",
     itemType: "Kanji",
     characterID: "島",
@@ -31845,7 +31845,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["island"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "corner",
     itemType: "Kanji",
     characterID: "隅",
@@ -31869,7 +31869,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "mountain goat",
     itemType: "Primitive",
     characterID: "2109p",
@@ -31887,7 +31887,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "inverted",
     itemType: "Kanji",
     characterID: "逆",
@@ -31910,7 +31910,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "concerning",
     itemType: "Kanji",
     characterID: "就",
@@ -31933,7 +31933,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "excuse",
     itemType: "Kanji",
     characterID: "免",
@@ -31957,7 +31957,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "nightfall",
     itemType: "Kanji",
     characterID: "晩",
@@ -31981,7 +31981,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "exertion",
     itemType: "Kanji",
     characterID: "勉",
@@ -32007,7 +32007,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "elephant",
     itemType: "Kanji",
     characterID: "象",
@@ -32033,7 +32033,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "statue",
     itemType: "Kanji",
     characterID: "像",
@@ -32059,7 +32059,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "horse",
     itemType: "Kanji",
     characterID: "馬",
@@ -32080,7 +32080,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["horse"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "verification",
     itemType: "Kanji",
     characterID: "験",
@@ -32102,7 +32102,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "station",
     itemType: "Kanji",
     characterID: "駅",
@@ -32123,7 +32123,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["station"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "boisterous",
     itemType: "Kanji",
     characterID: "騒",
@@ -32149,7 +32149,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "burdensome",
     itemType: "Kanji",
     characterID: "駄",
@@ -32172,7 +32172,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "wonder",
     itemType: "Kanji",
     characterID: "驚",
@@ -32195,7 +32195,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "tiger",
     itemType: "Kanji",
     characterID: "虎",
@@ -32219,7 +32219,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "void",
     itemType: "Kanji",
     characterID: "虚",
@@ -32245,7 +32245,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "frolic",
     itemType: "Kanji",
     characterID: "戯",
@@ -32271,7 +32271,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "prudence",
     itemType: "Kanji",
     characterID: "慮",
@@ -32294,7 +32294,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "drama",
     itemType: "Kanji",
     characterID: "劇",
@@ -32318,7 +32318,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "deer",
     itemType: "Kanji",
     characterID: "鹿",
@@ -32336,7 +32336,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: ["deer"],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "lovely",
     itemType: "Kanji",
     characterID: "麗",
@@ -32359,7 +32359,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ability",
     itemType: "Kanji",
     characterID: "能",
@@ -32385,7 +32385,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "attitude",
     itemType: "Kanji",
     characterID: "態",
@@ -32411,7 +32411,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sign of the tiger",
     itemType: "Kanji",
     characterID: "寅",
@@ -32435,7 +32435,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "performance",
     itemType: "Kanji",
     characterID: "演",
@@ -32461,7 +32461,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "sign of the dragon",
     itemType: "Kanji",
     characterID: "辰",
@@ -32485,7 +32485,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "shake",
     itemType: "Kanji",
     characterID: "振",
@@ -32511,7 +32511,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "agriculture",
     itemType: "Kanji",
     characterID: "農",
@@ -32535,7 +32535,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "golden calf",
     itemType: "Radical",
     characterID: "关",
@@ -32553,7 +32553,7 @@ List<LearningItem> kanjiStaticData = [
     itemMeanings: [],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "send off",
     itemType: "Kanji",
     characterID: "送",
@@ -32577,7 +32577,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "connection",
     itemType: "Kanji",
     characterID: "関",
@@ -32600,7 +32600,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "ghost",
     itemType: "Kanji",
     characterID: "鬼",
@@ -32624,7 +32624,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "soul",
     itemType: "Kanji",
     characterID: "魂",
@@ -32648,7 +32648,7 @@ List<LearningItem> kanjiStaticData = [
     ],
     itemReadings: [],
   ),
-  LearningItem(
+  StudyItem(
     keyword: "witch",
     itemType: "Kanji",
     characterID: "魔",

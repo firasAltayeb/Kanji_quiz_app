@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../model/translation_question.dart';
-import '../../model/learning_item_model.dart';
+import '../../model/study_item_model.dart';
 import '../../main_providers.dart';
 
 class TranslationOptionBtn extends ConsumerWidget {
   final Color answerColor;
-  final List<LearningItem> practiceList;
+  final List<StudyItem> practiceList;
   final TranslationQusAnswer questionAnswer;
 
   TranslationOptionBtn(

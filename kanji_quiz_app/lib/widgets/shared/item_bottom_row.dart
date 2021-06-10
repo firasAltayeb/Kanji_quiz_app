@@ -1,12 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
-import 'package:kanji_quiz_app/model/learning_item_model.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class ItemBottomRow extends ConsumerWidget {
   final int lsnQueueIdx;
-  final List<LearningItem> lessonList;
+  final List<StudyItem> lessonList;
 
   final Function showHandler;
   final bool itemDetailScreen;

@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import '../model/learning_item_model.dart';
+import '../model/study_item_model.dart';
 import '../main_providers.dart';
 
 class InputDialogScreen extends StatefulWidget {
-  final LearningItem itemDetails;
+  final StudyItem itemDetails;
 
   InputDialogScreen(this.itemDetails);
 

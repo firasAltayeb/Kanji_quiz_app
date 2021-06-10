@@ -6,7 +6,7 @@ import '../widgets/practice_mgr/practice_app_bar.dart';
 import '../widgets/shared/corner_button.dart';
 import '../widgets/shared/corner_widget.dart';
 import '../model/translation_question.dart';
-import '../model/learning_item_model.dart';
+import '../model/study_item_model.dart';
 import '../main_providers.dart';
 
 class PracticeManager extends ConsumerWidget {
@@ -34,8 +34,7 @@ class PracticeManager extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    List<LearningItem> _practiceList =
-        ModalRoute.of(context).settings.arguments;
+    List<StudyItem> _practiceList = ModalRoute.of(context).settings.arguments;
     final _practiceQueueIdx = watch(practiceQueueIdxProvider).state;
     final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
     final _targetKanji = watch(targetItemProvider).state;

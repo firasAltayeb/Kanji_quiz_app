@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/learning_item_model.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
@@ -57,7 +57,7 @@ class BuildingBlockRow extends ConsumerWidget {
   }
 
   Widget _kanjiBlockRow(
-      double height, ScopedReader watch, LearningItem targetKanji) {
+      double height, ScopedReader watch, StudyItem targetKanji) {
     return Row(
       children: [
         ...(watch(buildingBlocksProvider(targetKanji)))

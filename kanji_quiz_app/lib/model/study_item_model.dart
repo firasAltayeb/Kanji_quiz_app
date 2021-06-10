@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class LearningItem {
+class StudyItem {
   final String keyword;
   final String itemType;
   final String jlptLevel;
@@ -23,7 +23,7 @@ class LearningItem {
   List<String> practiceHistory;
   int chosenDifficulty;
 
-  LearningItem({
+  StudyItem({
     @required this.keyword,
     @required this.itemType,
     @required this.jlptLevel,

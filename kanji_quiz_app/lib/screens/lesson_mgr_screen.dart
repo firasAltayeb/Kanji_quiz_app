@@ -7,7 +7,7 @@ import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/item_bottom_row.dart';
 import '../widgets/shared/top_picture_row.dart';
-import '../model/learning_item_model.dart';
+import '../model/study_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 
@@ -35,7 +35,7 @@ class LessonManager extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    List<LearningItem> _lessonList = ModalRoute.of(context).settings.arguments;
+    List<StudyItem> _lessonList = ModalRoute.of(context).settings.arguments;
     final _showButtonRow = watch(btnBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;

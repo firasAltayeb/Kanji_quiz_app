@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'screens/input_dialog_screen.dart';
 import 'screens/user_page_screen.dart';
 import 'misc/back_pressed_alert.dart';
-import 'model/learning_item_model.dart';
+import 'model/study_item_model.dart';
 import 'main_providers.dart';
 
 enum VertOptions {
@@ -22,10 +22,10 @@ void choiceAction({
   @required BuildContext context,
   @required VertOptions choice,
   List<bool> ansChoiceList,
-  List<LearningItem> reviewList,
-  List<LearningItem> lessonList,
+  List<StudyItem> reviewList,
+  List<StudyItem> lessonList,
   bool lvlColumnVisible,
-  LearningItem targetKanji,
+  StudyItem targetKanji,
   int lsnQueueIdx,
   bool showAlert,
   bool showPopUp,
@@ -53,8 +53,8 @@ void openChoiceDialog({
   bool naviPop = true,
   BuildContext context,
   String alertMessage,
-  List<LearningItem> lsnList,
-  LearningItem targetKanji,
+  List<StudyItem> lsnList,
+  StudyItem targetKanji,
   int lsnQueueIdx,
 }) async {
   bool dialogChoice = true;
@@ -79,19 +79,19 @@ void openChoiceDialog({
   }
 }
 
-void markAsComplete(BuildContext context, LearningItem targetKanji) {
+void markAsComplete(BuildContext context, StudyItem targetKanji) {
   targetKanji.progressLevel = 6;
   context.read(learningItemProvider.notifier).editKanji(targetKanji);
 }
 
-void resetItemStatus(BuildContext context, LearningItem targetKanji) {
+void resetItemStatus(BuildContext context, StudyItem targetKanji) {
   targetKanji.learningStatus = 'Lesson';
   targetKanji.progressLevel = 0;
   targetKanji.mnemonicStory = '';
   context.read(learningItemProvider.notifier).editKanji(targetKanji);
 }
 
-void launchURL(LearningItem targetKanji) async {
+void launchURL(StudyItem targetKanji) async {
   String url =
       'https://kanji.koohii.com/study/kanji/' + '${targetKanji.frameNumSixth}';
   if (await canLaunch(url)) {
@@ -102,7 +102,7 @@ void launchURL(LearningItem targetKanji) async {
 }
 
 void editMnemonicHandler(
-    BuildContext context, LearningItem targetKanji, Function showHandler) {
+    BuildContext context, StudyItem targetKanji, Function showHandler) {
   Navigator.of(context)
       .push(
     PageRouteBuilder(
@@ -118,7 +118,7 @@ void editMnemonicHandler(
 
 void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
   for (var index = 0; index < answerChoiceList.length; index++) {
-    LearningItem reviewedItem = reviewList[index];
+    StudyItem reviewedItem = reviewList[index];
     reviewedItem.dateLastLevelChanged = DateTime.now();
     //if answer was correct
     if (answerChoiceList[index]) {
@@ -151,7 +151,7 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
 
 void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
   for (var index = 0; index < lsnQueueIdx; index++) {
-    LearningItem sessionItem = lessonList[index];
+    StudyItem sessionItem = lessonList[index];
     sessionItem.dateLastLevelChanged = DateTime.now();
     // if item not marked as completed
     if (sessionItem.progressLevel < 6) {
