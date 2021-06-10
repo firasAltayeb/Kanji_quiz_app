@@ -29,10 +29,10 @@ class ItemBottomRow extends ConsumerWidget {
           Expanded(
             child: _bottomButton(
               screenHeight,
-              () => openChoiceDialog(
+              () => resetChoiceDialog(
                 context: context,
                 targetKanji: targetKanji,
-                chosenHandler: resetItemStatus,
+                showAlert: showAlert,
                 alertMessage:
                     "This item will be sent back to the lesson queue!!",
               ),
@@ -44,10 +44,9 @@ class ItemBottomRow extends ConsumerWidget {
           Expanded(
             child: _bottomButton(
               screenHeight,
-              () => openChoiceDialog(
+              () => resetChoiceDialog(
                 context: context,
                 targetKanji: targetKanji,
-                chosenHandler: resetItemStatus,
                 alertMessage: "All your changes will be undo",
                 showAlert: showAlert,
                 naviPop: false,
@@ -61,10 +60,9 @@ class ItemBottomRow extends ConsumerWidget {
             screenHeight,
             targetKanji.progressLevel >= 6
                 ? null
-                : () => openChoiceDialog(
+                : () => completeChoiceDialog(
                       context: context,
                       targetKanji: targetKanji,
-                      chosenHandler: markAsComplete,
                       alertMessage: targetKanji.itemType != "Kanji"
                           ? "This item will be marked as learned"
                           : "This item will be sent to the practice queue!!",
@@ -100,9 +98,7 @@ class ItemBottomRow extends ConsumerWidget {
       onTap: () => handler(),
       child: Container(
         height: screenHeight * 0.135,
-        padding: btnText == "Kanji Koohii"
-            ? const EdgeInsets.all(15)
-            : const EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           border: Border(
             top: BorderSide(width: 3.0, color: Colors.black),

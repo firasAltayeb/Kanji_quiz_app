@@ -47,8 +47,7 @@ void choiceAction({
   }
 }
 
-void openChoiceDialog({
-  Function chosenHandler,
+void completeChoiceDialog({
   bool showAlert = true,
   bool naviPop = true,
   BuildContext context,
@@ -66,29 +65,46 @@ void openChoiceDialog({
         false;
   }
   if (dialogChoice) {
-    chosenHandler(context, targetKanji);
-    if (lsnList != null) {
+    targetKanji.progressLevel = 6;
+    context.read(learningItemProvider.notifier).editKanji(targetKanji);
+
+    if (lsnList.length <= lsnQueueIdx + 1) {
+      wrapLessonSession(context, lsnQueueIdx, lsnList);
+    } else {
       context.read(targetItemProvider).state = lsnList[lsnQueueIdx + 1];
       context.read(lessonQueueIdxProvider).state++;
-    } else if (naviPop) {
-      context.read(learningItemProvider.notifier).saveProgress();
-      Navigator.of(context).pop();
-    } else {
-      context.read(targetItemProvider).state = targetKanji;
     }
   }
 }
 
-void markAsComplete(BuildContext context, StudyItem targetKanji) {
-  targetKanji.progressLevel = 6;
-  context.read(learningItemProvider.notifier).editKanji(targetKanji);
-}
-
-void resetItemStatus(BuildContext context, StudyItem targetKanji) {
-  targetKanji.learningStatus = 'Lesson';
-  targetKanji.progressLevel = 0;
-  targetKanji.mnemonicStory = '';
-  context.read(learningItemProvider.notifier).editKanji(targetKanji);
+void resetChoiceDialog({
+  bool showAlert = true,
+  bool naviPop = true,
+  BuildContext context,
+  String alertMessage,
+  StudyItem targetKanji,
+}) async {
+  bool dialogChoice = true;
+  if (showAlert) {
+    dialogChoice = await BackPressedAlert().dialog(
+          parentCtx: context,
+          alertMsg: alertMessage,
+        ) ??
+        false;
+  }
+  if (dialogChoice) {
+    targetKanji.learningStatus = 'Lesson';
+    targetKanji.progressLevel = 0;
+    targetKanji.mnemonicStory = '';
+    context.read(learningItemProvider.notifier).editKanji(targetKanji);
+    if (naviPop) {
+      context.read(learningItemProvider.notifier).saveProgress();
+      Navigator.of(context).pop();
+    } else {
+      //Will update the displayed character's status
+      context.read(targetItemProvider).state = targetKanji;
+    }
+  }
 }
 
 void launchURL(StudyItem targetKanji) async {
@@ -150,7 +166,7 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
 }
 
 void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
-  for (var index = 0; index < lsnQueueIdx; index++) {
+  for (var index = 0; index <= lsnQueueIdx; index++) {
     StudyItem sessionItem = lessonList[index];
     sessionItem.dateLastLevelChanged = DateTime.now();
     // if item not marked as completed
