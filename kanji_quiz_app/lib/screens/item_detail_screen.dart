@@ -48,7 +48,10 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(
               height: screenHeight * 0.08,
               child: KeyTextContainer(
-                'Keyword: ' + _targetKanji.keyword,
+                _targetKanji.itemType == "Hiragana" ||
+                        _targetKanji.itemType == "Katakana"
+                    ? 'Reading: ' + _targetKanji.itemReadings[0]
+                    : 'Keyword: ' + _targetKanji.keyword,
               ),
             ),
             SizedBox(height: 20),

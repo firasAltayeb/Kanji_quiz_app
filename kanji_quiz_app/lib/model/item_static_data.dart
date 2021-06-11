@@ -2332,7 +2332,7 @@ List<StudyItem> studyItemStaticData = [
     itemReadings: ["no"],
   ),
   StudyItem(
-    keyword: "animal legs",
+    keyword: "",
     itemType: "Katakana",
     characterID: "ハ",
     jlptLevel: "N5",
@@ -6394,7 +6394,7 @@ List<StudyItem> studyItemStaticData = [
     frameNumFifth: 134,
     frameNumSixth: 142,
     buildingBlocksID: ["厂", "日", "小"],
-    buildingBlockKeywords: [""],
+    buildingBlockKeywords: ["cliff", "day", "little"],
     dateLastLevelChanged: DateTime.now().subtract(Duration(days: 5)),
     similarCharactersID: ["源", "線"],
     similarCharactersKeyword: [
@@ -7136,7 +7136,7 @@ List<StudyItem> studyItemStaticData = [
     frameNumFifth: 193,
     frameNumSixth: 205,
     buildingBlocksID: ["宀", "畐"],
-    buildingBlockKeywords: [""],
+    buildingBlockKeywords: ["house", "wealth"],
     dateLastLevelChanged: DateTime.now().subtract(Duration(days: 5)),
     similarCharactersID: ["福", "寅"],
     similarCharactersKeyword: [
@@ -8011,8 +8011,8 @@ List<StudyItem> studyItemStaticData = [
     jlptLevel: "N3",
     frameNumFifth: 252,
     frameNumSixth: 267,
-    buildingBlocksID: ["艹", "265p", "十"],
-    buildingBlockKeywords: [""],
+    buildingBlocksID: ["艹", "265p", "十", "小"],
+    buildingBlockKeywords: ["flower", "umbrella", "ten", "little"],
     dateLastLevelChanged: DateTime.now().subtract(Duration(days: 5)),
     similarCharactersID: ["茉"],
     similarCharactersKeyword: ["leaf"],
@@ -12495,8 +12495,8 @@ List<StudyItem> studyItemStaticData = [
     jlptLevel: "N1",
     frameNumFifth: 540,
     frameNumSixth: 579,
-    buildingBlocksID: ["295p", "74p", "豕"],
-    buildingBlockKeywords: [""],
+    buildingBlocksID: ["74p", "295p", "豕"],
+    buildingBlockKeywords: ["horns", "road", "pig"],
     dateLastLevelChanged: DateTime.now().subtract(Duration(days: 5)),
     similarCharactersID: ["隊", "逐"],
     similarCharactersKeyword: [
@@ -22163,7 +22163,7 @@ List<StudyItem> studyItemStaticData = [
     frameNumFifth: 1225,
     frameNumSixth: 1311,
     buildingBlocksID: ["マ", "オ"],
-    buildingBlockKeywords: ["ま", "o"],
+    buildingBlockKeywords: ["katakana ma", "katakana o"],
     dateLastLevelChanged: DateTime.now().subtract(Duration(days: 5)),
     similarCharactersID: ["予", "柔"],
     similarCharactersKeyword: [

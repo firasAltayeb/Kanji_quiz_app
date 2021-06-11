@@ -78,7 +78,10 @@ class LessonManager extends ConsumerWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.075,
               child: KeyTextContainer(
-                'Keyword: ' + _lessonList[_queueIndex].keyword,
+                _lessonList[_queueIndex].itemType == "Hiragana" ||
+                        _lessonList[_queueIndex].itemType == "Katakana"
+                    ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
+                    : 'Keyword: ' + _lessonList[_queueIndex].keyword,
               ),
             ),
             BuildingBlockRow(),

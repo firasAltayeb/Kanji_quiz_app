@@ -69,7 +69,7 @@ class ScrollableContainer extends ConsumerWidget {
             ),
           ),
           if (targetKanji.itemType == 'Kanji')
-            TextSpan(text: 'using its bulidng blocks: '),
+            TextSpan(text: 'using its building blocks: '),
           if (itemType == 'Kanji')
             TextSpan(
               text: '${targetKanji.buildingBlockKeywords} ',
