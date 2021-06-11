@@ -8,7 +8,7 @@ String katakanaList = "アイウエオカキクケコサシスセソタチツテ
     "ノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザ" +
     "ジズゼゾダヂヅデドバビブベボパピプペポャュョァィェォ";
 
-List<StudyItem> kanjiStaticData = [
+List<StudyItem> studyItemStaticData = [
   StudyItem(
     keyword: "",
     itemType: "Hiragana",

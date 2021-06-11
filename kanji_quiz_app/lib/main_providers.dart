@@ -23,11 +23,11 @@ final progressProvider =
 
 final learningItemProvider =
     StateNotifierProvider<ItemList, List<StudyItem>>((ref) {
-  return ItemList(kanjiStaticData);
+  return ItemList(studyItemStaticData);
 });
 
 final targetItemProvider =
-    StateProvider<StudyItem>((ref) => kanjiStaticData[0]);
+    StateProvider<StudyItem>((ref) => studyItemStaticData[0]);
 
 final showAlertProvider = StateProvider<bool>((ref) => true);
 
@@ -124,12 +124,14 @@ final templateAddressProvider =
 
 final buildingBlocksProvider =
     Provider.autoDispose.family<List<StudyItem>, StudyItem>((ref, targetKanji) {
-  final kanjiList = kanjiStaticData;
+  final studyItemList = studyItemStaticData;
   List<String> targetbuildingBlockIDs = targetKanji.buildingBlocksID;
 
-  List<StudyItem> buildingBlocks = kanjiList
-      .where((kanji) => targetbuildingBlockIDs.contains(kanji.characterID))
-      .toList();
+  List<StudyItem> buildingBlocks = [];
+  for (var index = 0; index < targetbuildingBlockIDs.length; index++) {
+    buildingBlocks.addAll(studyItemList
+        .where((item) => item.characterID == targetbuildingBlockIDs[index]));
+  }
 
   if (buildingBlocks.length > targetbuildingBlockIDs.length) {
     buildingBlocks.removeWhere((element) => element.itemType == "Katakana");
