@@ -61,7 +61,7 @@ class ItemBottomRow extends ConsumerWidget {
             targetItem.learningStatus == "Lesson"
                 ? "Practice Ready"
                 : "Mark As Learned",
-            //button color
+            //button background color
             targetItem.learningStatus == "Learned" ? Colors.grey : Colors.green,
           ),
         ),
