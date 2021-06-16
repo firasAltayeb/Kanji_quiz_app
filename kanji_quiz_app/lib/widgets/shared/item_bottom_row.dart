@@ -8,48 +8,33 @@ class ItemBottomRow extends ConsumerWidget {
   final int lsnQueueIdx;
   final List<StudyItem> lessonList;
 
-  final Function showHandler;
+  final Function showBottomRow;
   final bool itemDetailScreen;
   final mnemonicController = TextEditingController();
 
   ItemBottomRow({
     this.lessonList,
     this.lsnQueueIdx,
-    @required this.showHandler,
+    @required this.showBottomRow,
     @required this.itemDetailScreen,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
     final showAlert = watch(showAlertProvider).state;
-    final targetKanji = watch(targetItemProvider).state;
+    final targetItem = watch(targetItemProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     return Row(
       children: [
-        if (itemDetailScreen)
+        if (itemDetailScreen || targetItem.progressLevel == 7)
           Expanded(
             child: _bottomButton(
               screenHeight,
               () => resetChoiceDialog(
                 context: context,
-                targetKanji: targetKanji,
+                targetItem: targetItem,
                 showAlert: showAlert,
-                alertMessage:
-                    "This item will be sent back to the lesson queue!!",
-              ),
-              "Reset status",
-              Colors.red,
-            ),
-          ),
-        if (!itemDetailScreen && targetKanji.progressLevel >= 6)
-          Expanded(
-            child: _bottomButton(
-              screenHeight,
-              () => resetChoiceDialog(
-                context: context,
-                targetKanji: targetKanji,
                 alertMessage: "All your changes will be undo",
-                showAlert: showAlert,
-                naviPop: false,
+                naviPop: itemDetailScreen ? true : false,
               ),
               "Undo Changes",
               Colors.red,
@@ -58,31 +43,30 @@ class ItemBottomRow extends ConsumerWidget {
         Expanded(
           child: _bottomButton(
             screenHeight,
-            targetKanji.progressLevel >= 6
+            targetItem.progressLevel == 7
                 ? null
                 : () => completeChoiceDialog(
                       context: context,
-                      targetKanji: targetKanji,
-                      alertMessage: targetKanji.itemType != "Kanji"
-                          ? "This item will be marked as learned"
-                          : "This item will be sent to the practice queue!!",
+                      targetItem: targetItem,
+                      alertMessage: "This item will be marked as learned",
                       lsnQueueIdx: lsnQueueIdx,
                       lsnList: lessonList,
                       showAlert: showAlert,
+                      naviPop: itemDetailScreen ? true : false,
                     ),
             "Mark Complete",
-            targetKanji.progressLevel >= 6 ? Colors.grey : Colors.green,
+            targetItem.progressLevel == 7 ? Colors.grey : Colors.green,
           ),
         ),
         Expanded(
           child: _bottomButton(
             screenHeight,
             () {
-              showHandler(false);
+              showBottomRow(false);
               editMnemonicHandler(
                 context,
-                targetKanji,
-                showHandler,
+                targetItem,
+                showBottomRow,
               );
             },
             "Edit Mnemonic",

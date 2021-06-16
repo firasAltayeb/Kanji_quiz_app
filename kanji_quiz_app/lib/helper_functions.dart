@@ -53,7 +53,7 @@ void completeChoiceDialog({
   BuildContext context,
   String alertMessage,
   List<StudyItem> lsnList,
-  StudyItem targetKanji,
+  StudyItem targetItem,
   int lsnQueueIdx,
 }) async {
   bool dialogChoice = true;
@@ -65,10 +65,16 @@ void completeChoiceDialog({
         false;
   }
   if (dialogChoice) {
-    targetKanji.progressLevel = 6;
-    context.read(learningItemProvider.notifier).editKanji(targetKanji);
+    targetItem.progressLevel = 7;
+    targetItem.learningStatus = "Learned";
+    targetItem.dateLastLevelChanged = DateTime.now();
+    context.read(learningItemProvider.notifier).editKanji(targetItem);
 
+    if (naviPop) {
+      Navigator.of(context).pop();
+    }
     if (lsnList.length <= lsnQueueIdx + 1) {
+      //the item is the last in the queue
       wrapLessonSession(context, lsnQueueIdx, lsnList);
     } else {
       context.read(targetItemProvider).state = lsnList[lsnQueueIdx + 1];
@@ -82,7 +88,7 @@ void resetChoiceDialog({
   bool naviPop = true,
   BuildContext context,
   String alertMessage,
-  StudyItem targetKanji,
+  StudyItem targetItem,
 }) async {
   bool dialogChoice = true;
   if (showAlert) {
@@ -93,16 +99,18 @@ void resetChoiceDialog({
         false;
   }
   if (dialogChoice) {
-    targetKanji.learningStatus = 'Lesson';
-    targetKanji.progressLevel = 0;
-    targetKanji.mnemonicStory = '';
-    context.read(learningItemProvider.notifier).editKanji(targetKanji);
+    targetItem.progressLevel = 0;
+    targetItem.mnemonicStory = '';
+    targetItem.learningStatus = 'Lesson';
+    targetItem.dateLastLevelChanged = DateTime.now();
+    context.read(learningItemProvider.notifier).editKanji(targetItem);
+
     if (naviPop) {
       context.read(learningItemProvider.notifier).saveProgress();
       Navigator.of(context).pop();
     } else {
-      //Will update the displayed character's status
-      context.read(targetItemProvider).state = targetKanji;
+      //Will update the currently displayed character
+      context.read(targetItemProvider).state = targetItem;
     }
   }
 }
@@ -142,12 +150,13 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
       reviewedItem.progressLevel++;
       reviewedItem.recallHistory.add("Correct");
       //when lvl is 5 practice if kanji else learned
-      if (reviewedItem.progressLevel == 6) {
+      if (reviewedItem.progressLevel == 4) {
         if (reviewedItem.itemType == "Kanji")
           reviewedItem.learningStatus = 'Practice';
-        else if (reviewedItem.itemType != "Kanji") {
+        else {
+          //seven is the final level
+          reviewedItem.progressLevel = 7;
           reviewedItem.learningStatus = 'Learned';
-          reviewedItem.progressLevel++;
         }
       }
     } /*if answer was incorrect*/ else {
@@ -169,19 +178,12 @@ void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
   for (var index = 0; index <= lsnQueueIdx; index++) {
     StudyItem sessionItem = lessonList[index];
     sessionItem.dateLastLevelChanged = DateTime.now();
-    // if item not marked as completed
-    if (sessionItem.progressLevel < 6) {
+    // if item is not marked as completed
+    if (sessionItem.progressLevel < 7) {
       sessionItem.progressLevel = 1;
       sessionItem.learningStatus = 'Review';
-    } /*if item marked as completed*/ else {
-      if (sessionItem.itemType == "Kanji")
-        sessionItem.learningStatus = 'Practice';
-      else if (sessionItem.itemType != "Kanji") {
-        sessionItem.learningStatus = 'Learned';
-        sessionItem.progressLevel++;
-      }
+      context.read(learningItemProvider.notifier).editKanji(sessionItem);
     }
-    context.read(learningItemProvider.notifier).editKanji(sessionItem);
   }
   context.read(lessonQueueIdxProvider).state = 0;
   context.read(learningItemProvider.notifier).saveProgress();

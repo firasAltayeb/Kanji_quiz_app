@@ -12,7 +12,7 @@ class SrsLevelColumn extends ConsumerWidget {
     return Column(
       children: [
         TextContainer(
-          passedText: 'SRS Level 1 Items',
+          passedText: 'Review Level 1 Items',
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
@@ -21,7 +21,7 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
         TextContainer(
-          passedText: 'SRS Level 2 Items',
+          passedText: 'Review Level 2 Items',
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
@@ -30,7 +30,7 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
         TextContainer(
-          passedText: 'SRS Level 3 Items',
+          passedText: 'Review Level 3 Items',
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
@@ -39,7 +39,7 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
         TextContainer(
-          passedText: 'SRS Level 4 Items',
+          passedText: 'Practice Level 1 Items',
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
@@ -48,7 +48,7 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
         TextContainer(
-          passedText: 'SRS Level 5 Items',
+          passedText: 'Practice Level 2 Items',
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
@@ -57,7 +57,7 @@ class SrsLevelColumn extends ConsumerWidget {
           selectHandler: pushToItemScreen,
         ),
         TextContainer(
-          passedText: 'Ready to Practice',
+          passedText: 'Practice Level 3 Items',
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(

@@ -30,8 +30,8 @@ class LessonManager extends ConsumerWidget {
     }
   }
 
-  void _showHandler(BuildContext context, bool trueFalse) {
-    context.read(btnBottomRowProvider).state = trueFalse;
+  void _showHandler(BuildContext context, bool value) {
+    context.read(btnBottomRowProvider).state = value;
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
@@ -94,7 +94,7 @@ class LessonManager extends ConsumerWidget {
                 lsnQueueIdx: _queueIndex,
                 lessonList: _lessonList,
                 itemDetailScreen: false,
-                showHandler: (trueFalse) => _showHandler(context, trueFalse),
+                showBottomRow: (value) => _showHandler(context, value),
               ),
           ],
         ),

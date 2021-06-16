@@ -96,11 +96,8 @@ final reviewReadyListProvider = Provider<List<StudyItem>>((ref) {
 
 final srsXlvlListProvider =
     Provider.autoDispose.family<List<StudyItem>, int>((ref, level) {
-  final kanjiMainList = ref.watch(learningItemProvider);
-  final srsLvlList = kanjiMainList.where((item) {
-    if (level >= 6 && item.learningStatus == "Lesson") {
-      return false;
-    }
+  final itemMainList = ref.watch(learningItemProvider);
+  final srsLvlList = itemMainList.where((item) {
     return item.progressLevel == level;
   }).toList();
   return srsLvlList;

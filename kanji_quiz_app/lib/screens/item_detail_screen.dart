@@ -24,19 +24,19 @@ class ItemDetailScreen extends ConsumerWidget {
     return _dateFormater.format(time);
   }
 
-  void _showHandler(BuildContext context, bool trueFalse) {
-    context.read(btnBottomRowProvider).state = trueFalse;
+  void _showHandler(BuildContext context, bool value) {
+    context.read(btnBottomRowProvider).state = value;
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
     final _showButtonRow = watch(btnBottomRowProvider).state;
-    final _targetKanji = watch(targetItemProvider).state;
-    var screenHeight = MediaQuery.of(context).size.height;
+    final _targetItem = watch(targetItemProvider).state;
 
+    var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: ItemDetailAppBar(
         appBar: AppBar(),
-        targetKanji: _targetKanji,
+        targetKanji: _targetItem,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -48,27 +48,30 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(
               height: screenHeight * 0.08,
               child: KeyTextContainer(
-                _targetKanji.itemType == "Hiragana" ||
-                        _targetKanji.itemType == "Katakana"
-                    ? 'Reading: ' + _targetKanji.itemReadings[0]
-                    : 'Keyword: ' + _targetKanji.keyword,
+                _targetItem.itemType == "Hiragana" ||
+                        _targetItem.itemType == "Katakana"
+                    ? 'Reading: ' + _targetItem.itemReadings[0]
+                    : 'Keyword: ' + _targetItem.keyword,
               ),
             ),
             SizedBox(height: 20),
             KeyTextContainer(
               'Last level change date: ' +
-                  '${_fixTimeZone(_targetKanji.dateLastLevelChanged)}',
+                  '${_fixTimeZone(_targetItem.dateLastLevelChanged)}',
             ),
             SizedBox(height: 20),
             TextContainer(
-              passedText: 'Current SRS level is ${_targetKanji.progressLevel}',
+              passedText: _targetItem.learningStatus != "Learned"
+                  ? 'Current SRS level is ${_targetItem.progressLevel}'
+                  : "Item Learned",
               screenHeight: screenHeight,
             ),
             SizedBox(height: 20),
-            KeyTextContainer(
-              'Next review date: ' +
-                  '${_fixTimeZone(_targetKanji.nextReviewDate())}',
-            ),
+            if (_targetItem.learningStatus != "Learned")
+              KeyTextContainer(
+                'Next review date: ' +
+                    '${_fixTimeZone(_targetItem.nextReviewDate())}',
+              ),
             SizedBox(height: 20),
             ItemDifficultyRow(),
             SizedBox(height: 20),
@@ -81,7 +84,7 @@ class ItemDetailScreen extends ConsumerWidget {
             if (_showButtonRow)
               ItemBottomRow(
                 itemDetailScreen: true,
-                showHandler: (value) => _showHandler(context, value),
+                showBottomRow: (value) => _showHandler(context, value),
               ),
             if (!_showButtonRow)
               SizedBox(
