@@ -65,7 +65,8 @@ class ItemList extends StateNotifier<List<StudyItem>> {
   void editKanji(StudyItem updatedKanji) {
     state = [
       for (final item in state)
-        if (item.characterID == updatedKanji.characterID)
+        if (item.characterID == updatedKanji.characterID &&
+            item.itemType == updatedKanji.itemType)
           StudyItem(
             keyword: updatedKanji.keyword,
             itemType: updatedKanji.itemType,

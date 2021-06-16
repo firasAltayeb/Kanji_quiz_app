@@ -66,9 +66,6 @@ void completeChoiceDialog({
   }
   if (dialogChoice) {
     targetItem.progressLevel = 7;
-    targetItem.learningStatus = "Learned";
-    targetItem.dateLastLevelChanged = DateTime.now();
-    context.read(learningItemProvider.notifier).editKanji(targetItem);
 
     if (naviPop) {
       Navigator.of(context).pop();
@@ -179,11 +176,13 @@ void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
     StudyItem sessionItem = lessonList[index];
     sessionItem.dateLastLevelChanged = DateTime.now();
     // if item is not marked as completed
-    if (sessionItem.progressLevel < 7) {
+    if (sessionItem.progressLevel == 7) {
+      sessionItem.learningStatus = 'Learned';
+    } else {
       sessionItem.progressLevel = 1;
       sessionItem.learningStatus = 'Review';
-      context.read(learningItemProvider.notifier).editKanji(sessionItem);
     }
+    context.read(learningItemProvider.notifier).editKanji(sessionItem);
   }
   context.read(lessonQueueIdxProvider).state = 0;
   context.read(learningItemProvider.notifier).saveProgress();
