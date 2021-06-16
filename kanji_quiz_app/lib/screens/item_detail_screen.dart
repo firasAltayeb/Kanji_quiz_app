@@ -7,7 +7,7 @@ import '../widgets/item_details/item_difficulty_row.dart';
 import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
-import '../widgets/shared/item_bottom_row.dart';
+import '../widgets/shared/bottom_row_buttons.dart';
 import '../widgets/shared/text_container.dart';
 import '../widgets/shared/top_picture_row.dart';
 import '../main_providers.dart';
@@ -31,11 +31,13 @@ class ItemDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     final _showButtonRow = watch(btnBottomRowProvider).state;
     final _targetItem = watch(targetItemProvider).state;
+    final _showAlert = watch(showAlertProvider).state;
 
     var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: ItemDetailAppBar(
         appBar: AppBar(),
+        showAlert: _showAlert,
         targetKanji: _targetItem,
       ),
       body: SingleChildScrollView(
@@ -62,7 +64,8 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(height: 20),
             TextContainer(
               passedText: _targetItem.learningStatus != "Learned"
-                  ? 'Current SRS level is ${_targetItem.progressLevel}'
+                  ? "Current ${_targetItem.learningStatus} level " +
+                      "is ${_targetItem.progressLevel}"
                   : "Item Learned",
               screenHeight: screenHeight,
             ),

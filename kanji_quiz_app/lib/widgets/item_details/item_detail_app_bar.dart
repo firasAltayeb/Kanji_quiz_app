@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 
 class ItemDetailAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
+  final bool showAlert;
   final StudyItem targetKanji;
 
   ItemDetailAppBar({
     Key key,
     this.appBar,
+    this.showAlert,
     this.targetKanji,
   }) : super(key: key);
 
@@ -28,6 +30,7 @@ class ItemDetailAppBar extends StatelessWidget implements PreferredSizeWidget {
           onSelected: (choice) => choiceAction(
             choice: choice,
             context: context,
+            showAlert: showAlert,
             targetKanji: targetKanji,
           ),
           icon: Icon(
@@ -38,6 +41,15 @@ class ItemDetailAppBar extends StatelessWidget implements PreferredSizeWidget {
               value: VertOptions.Koohii,
               child: Text(
                 'Search in Koohii',
+                style: TextStyle(
+                  fontSize: screenHeight * 0.03,
+                ),
+              ),
+            ),
+            PopupMenuItem(
+              value: VertOptions.ToggleAlert,
+              child: Text(
+                showAlert ? 'Hide pop-up alert' : 'Show pop-up alert',
                 style: TextStyle(
                   fontSize: screenHeight * 0.03,
                 ),
