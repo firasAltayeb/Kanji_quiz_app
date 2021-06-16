@@ -9170,7 +9170,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "brush",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "聿",
     jlptLevel: "none",
     frameNumFifth: 0,
@@ -9728,7 +9728,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "turn into",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "戊",
     jlptLevel: "none",
     frameNumFifth: 0,
@@ -9797,7 +9797,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "sign of the dog",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "戌",
     jlptLevel: "none",
     frameNumFifth: 0,
@@ -11133,7 +11133,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "spoon",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "匕",
     jlptLevel: "none",
     frameNumFifth: 444,
@@ -11952,7 +11952,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "formerly",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "曽",
     jlptLevel: "none",
     frameNumFifth: 501,
@@ -12560,7 +12560,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "open",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "昜",
     jlptLevel: "none",
     frameNumFifth: 0,
@@ -18039,7 +18039,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "rib",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "肋",
     jlptLevel: "none",
     frameNumFifth: 2463,
@@ -21097,7 +21097,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "an official rank",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "尹",
     jlptLevel: "none",
     frameNumFifth: 0,
@@ -26122,7 +26122,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "false",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "辟",
     jlptLevel: "none",
     frameNumFifth: 0,
@@ -28227,7 +28227,7 @@ List<StudyItem> studyItemStaticData = [
   ),
   StudyItem(
     keyword: "going",
-    itemType: "Kanji",
+    itemType: "Radicals",
     characterID: "于",
     jlptLevel: "none",
     frameNumFifth: 0,
