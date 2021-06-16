@@ -16,12 +16,12 @@ final progressProvider =
     }
   }
   final progressList = await readProgressUpdate();
-  ref.read(learningItemProvider.notifier).updateProgress(progressList);
+  ref.read(studyItemProvider.notifier).updateProgress(progressList);
 
   return progressList;
 });
 
-final learningItemProvider =
+final studyItemProvider =
     StateNotifierProvider<ItemList, List<StudyItem>>((ref) {
   return ItemList(studyItemStaticData);
 });
@@ -60,7 +60,7 @@ final incorrectRecallListProvider = StateProvider<List<StudyItem>>((ref) => []);
 final syncNowProvider = StateProvider<int>((ref) => 0);
 
 final lessonListProvider = Provider<List<StudyItem>>((ref) {
-  final kanjiMainList = ref.watch(learningItemProvider);
+  final kanjiMainList = ref.watch(studyItemProvider);
   final lessonList = kanjiMainList
       .where((kanjiItem) => kanjiItem.learningStatus == "Lesson")
       .toList();
@@ -68,7 +68,7 @@ final lessonListProvider = Provider<List<StudyItem>>((ref) {
 });
 
 final reviewListProvider = Provider<List<StudyItem>>((ref) {
-  final kanjiMainList = ref.watch(learningItemProvider);
+  final kanjiMainList = ref.watch(studyItemProvider);
   final reviewList = kanjiMainList
       .where((kanjiItem) => kanjiItem.learningStatus == "Review")
       .toList();
@@ -76,7 +76,7 @@ final reviewListProvider = Provider<List<StudyItem>>((ref) {
 });
 
 final practiceListProvider = Provider<List<StudyItem>>((ref) {
-  final kanjiMainList = ref.watch(learningItemProvider);
+  final kanjiMainList = ref.watch(studyItemProvider);
   final reviewList = kanjiMainList
       .where((kanjiItem) => kanjiItem.learningStatus == "Practice")
       .toList();
@@ -94,13 +94,30 @@ final reviewReadyListProvider = Provider<List<StudyItem>>((ref) {
   return readyList;
 });
 
-final srsXlvlListProvider =
+final reviewXlvlListProvider =
     Provider.autoDispose.family<List<StudyItem>, int>((ref, level) {
-  final itemMainList = ref.watch(learningItemProvider);
-  final srsLvlList = itemMainList.where((item) {
-    return item.progressLevel == level;
+  final itemMainList = ref.watch(studyItemProvider);
+  final reviewLvlList = itemMainList.where((item) {
+    return item.progressLevel == level && item.learningStatus == "Review";
   }).toList();
-  return srsLvlList;
+  return reviewLvlList;
+});
+
+final practiceXlvlListProvider =
+    Provider.autoDispose.family<List<StudyItem>, int>((ref, level) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final reviewLvlList = itemMainList.where((item) {
+    return item.progressLevel == level && item.learningStatus == "Practice";
+  }).toList();
+  return reviewLvlList;
+});
+
+final learnedListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final learnedList = itemMainList.where((item) {
+    return item.learningStatus == "Learned";
+  }).toList();
+  return learnedList;
 });
 
 final templateAddressProvider =

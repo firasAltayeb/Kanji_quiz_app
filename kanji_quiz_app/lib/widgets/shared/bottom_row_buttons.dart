@@ -25,7 +25,7 @@ class ItemBottomRow extends ConsumerWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     return Row(
       children: [
-        if (itemDetailScreen || targetItem.progressLevel == 7)
+        if (itemDetailScreen || targetItem.learningStatus != "Lesson")
           Expanded(
             child: _bottomButton(
               screenHeight,
@@ -43,13 +43,13 @@ class ItemBottomRow extends ConsumerWidget {
         Expanded(
           child: _bottomButton(
             screenHeight,
-            targetItem.progressLevel == 7
+            targetItem.learningStatus == "Learned"
                 ? null
                 : () => completeChoiceDialog(
                       context: context,
                       targetItem: targetItem,
                       alertMessage: targetItem.itemType == "Kanji" &&
-                              targetItem.progressLevel < 4
+                              targetItem.learningStatus != "Practice"
                           ? "This item will be moved to the practice queue"
                           : "This item will be marked as learned",
                       lsnQueueIdx: lsnQueueIdx,
@@ -57,10 +57,12 @@ class ItemBottomRow extends ConsumerWidget {
                       showAlert: showAlert,
                       naviPop: itemDetailScreen ? true : false,
                     ),
-            targetItem.itemType == "Kanji" && targetItem.progressLevel < 4
+            //button label text
+            targetItem.learningStatus == "Lesson"
                 ? "Practice Ready"
                 : "Mark As Learned",
-            targetItem.progressLevel == 7 ? Colors.grey : Colors.green,
+            //button color
+            targetItem.learningStatus == "Learned" ? Colors.grey : Colors.green,
           ),
         ),
         Expanded(

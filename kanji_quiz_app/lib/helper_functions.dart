@@ -66,16 +66,17 @@ void completeChoiceDialog({
   }
   if (dialogChoice) {
     targetItem.dateLastLevelChanged = DateTime.now();
-    if (targetItem.itemType == "Kanji" && targetItem.progressLevel < 4) {
-      targetItem.progressLevel = 4;
+    if (targetItem.itemType == "Kanji" &&
+        targetItem.learningStatus != "Practice") {
+      targetItem.progressLevel = 1;
       targetItem.learningStatus = 'Practice';
     } else {
-      targetItem.progressLevel = 7;
+      targetItem.progressLevel = 4;
       targetItem.learningStatus = 'Learned';
     }
 
     if (naviPop) {
-      context.read(learningItemProvider.notifier).editKanji(targetItem);
+      context.read(studyItemProvider.notifier).editKanji(targetItem);
       Navigator.of(context).pop();
     }
     if (lsnList.length <= lsnQueueIdx + 1) {
@@ -108,10 +109,10 @@ void resetChoiceDialog({
     targetItem.mnemonicStory = '';
     targetItem.learningStatus = 'Lesson';
     targetItem.dateLastLevelChanged = DateTime.now();
-    context.read(learningItemProvider.notifier).editKanji(targetItem);
+    context.read(studyItemProvider.notifier).editKanji(targetItem);
 
     if (naviPop) {
-      context.read(learningItemProvider.notifier).saveProgress();
+      context.read(studyItemProvider.notifier).saveProgress();
       Navigator.of(context).pop();
     } else {
       //Will update the currently displayed character
@@ -154,13 +155,12 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
       // current progress + 1
       reviewedItem.progressLevel++;
       reviewedItem.recallHistory.add("Correct");
-      //when lvl is 5 practice if kanji else learned
+      //when lvl is 4 practice if kanji else learned
       if (reviewedItem.progressLevel == 4) {
-        if (reviewedItem.itemType == "Kanji")
+        if (reviewedItem.itemType == "Kanji") {
+          reviewedItem.progressLevel = 1;
           reviewedItem.learningStatus = 'Practice';
-        else {
-          //seven is the final level
-          reviewedItem.progressLevel = 7;
+        } else {
           reviewedItem.learningStatus = 'Learned';
         }
       }
@@ -168,14 +168,14 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
       reviewedItem.difficultyAdjustment();
       reviewedItem.progressLevel = reviewedItem.lapsePenalty();
     }
-    context.read(learningItemProvider.notifier).editKanji(reviewedItem);
+    context.read(studyItemProvider.notifier).editKanji(reviewedItem);
   }
   context.read(sessionScoreProvider).state = 0;
   context.read(reviewQueueIdxProvider).state = 0;
   context.read(answerChoiceListProvider).state.clear();
   context.read(correctRecallListProvider).state.clear();
   context.read(incorrectRecallListProvider).state.clear();
-  context.read(learningItemProvider.notifier).saveProgress();
+  context.read(studyItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }
 
@@ -188,9 +188,9 @@ void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
       sessionItem.progressLevel = 1;
       sessionItem.learningStatus = 'Review';
     }
-    context.read(learningItemProvider.notifier).editKanji(sessionItem);
+    context.read(studyItemProvider.notifier).editKanji(sessionItem);
   }
   context.read(lessonQueueIdxProvider).state = 0;
-  context.read(learningItemProvider.notifier).saveProgress();
+  context.read(studyItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }

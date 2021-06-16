@@ -34,10 +34,8 @@ class ItemDifficultyRow extends ConsumerWidget {
                 if (targetK.chosenDifficulty > 1) {
                   targetK.chosenDifficulty--;
                   context.read(targetItemProvider).state = targetK;
-                  context
-                      .read(learningItemProvider.notifier)
-                      .editKanji(targetK);
-                  context.read(learningItemProvider.notifier).saveProgress();
+                  context.read(studyItemProvider.notifier).editKanji(targetK);
+                  context.read(studyItemProvider.notifier).saveProgress();
                 }
               },
               iconSize: screenHeight * 0.04,
@@ -59,10 +57,8 @@ class ItemDifficultyRow extends ConsumerWidget {
                 if (targetK.chosenDifficulty < 4) {
                   targetK.chosenDifficulty++;
                   context.read(targetItemProvider).state = targetK;
-                  context
-                      .read(learningItemProvider.notifier)
-                      .editKanji(targetK);
-                  context.read(learningItemProvider.notifier).saveProgress();
+                  context.read(studyItemProvider.notifier).editKanji(targetK);
+                  context.read(studyItemProvider.notifier).saveProgress();
                 }
               },
               iconSize: screenHeight * 0.04,

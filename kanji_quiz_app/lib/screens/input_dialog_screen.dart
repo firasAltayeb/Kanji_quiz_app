@@ -127,10 +127,10 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               widget.itemDetails.mnemonicStory =
                                   _mnemonicController.text;
                               context
-                                  .read(learningItemProvider.notifier)
+                                  .read(studyItemProvider.notifier)
                                   .editKanji(widget.itemDetails);
                               context
-                                  .read(learningItemProvider.notifier)
+                                  .read(studyItemProvider.notifier)
                                   .saveProgress();
                               Navigator.pop(context);
                             },

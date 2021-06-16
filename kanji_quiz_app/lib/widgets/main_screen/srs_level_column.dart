@@ -16,7 +16,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(srsXlvlListProvider(1)),
+          itemList: watch(reviewXlvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -25,7 +25,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(srsXlvlListProvider(2)),
+          itemList: watch(reviewXlvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -34,7 +34,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(srsXlvlListProvider(3)),
+          itemList: watch(reviewXlvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -43,7 +43,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(srsXlvlListProvider(4)),
+          itemList: watch(practiceXlvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -52,7 +52,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(srsXlvlListProvider(5)),
+          itemList: watch(practiceXlvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -61,7 +61,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(srsXlvlListProvider(6)),
+          itemList: watch(practiceXlvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -70,7 +70,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(srsXlvlListProvider(7)),
+          itemList: watch(learnedListProvider),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
