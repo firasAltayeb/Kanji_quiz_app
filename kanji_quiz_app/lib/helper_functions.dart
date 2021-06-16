@@ -65,9 +65,17 @@ void completeChoiceDialog({
         false;
   }
   if (dialogChoice) {
-    targetItem.progressLevel = 7;
+    targetItem.dateLastLevelChanged = DateTime.now();
+    if (targetItem.itemType == "Kanji" && targetItem.progressLevel < 4) {
+      targetItem.progressLevel = 4;
+      targetItem.learningStatus = 'Practice';
+    } else {
+      targetItem.progressLevel = 7;
+      targetItem.learningStatus = 'Learned';
+    }
 
     if (naviPop) {
+      context.read(learningItemProvider.notifier).editKanji(targetItem);
       Navigator.of(context).pop();
     }
     if (lsnList.length <= lsnQueueIdx + 1) {
@@ -176,9 +184,7 @@ void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
     StudyItem sessionItem = lessonList[index];
     sessionItem.dateLastLevelChanged = DateTime.now();
     // if item is not marked as completed
-    if (sessionItem.progressLevel == 7) {
-      sessionItem.learningStatus = 'Learned';
-    } else {
+    if (sessionItem.learningStatus == "Lesson") {
       sessionItem.progressLevel = 1;
       sessionItem.learningStatus = 'Review';
     }

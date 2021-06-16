@@ -48,13 +48,18 @@ class ItemBottomRow extends ConsumerWidget {
                 : () => completeChoiceDialog(
                       context: context,
                       targetItem: targetItem,
-                      alertMessage: "This item will be marked as learned",
+                      alertMessage: targetItem.itemType == "Kanji" &&
+                              targetItem.progressLevel < 4
+                          ? "This item will be moved to the practice queue"
+                          : "This item will be marked as learned",
                       lsnQueueIdx: lsnQueueIdx,
                       lsnList: lessonList,
                       showAlert: showAlert,
                       naviPop: itemDetailScreen ? true : false,
                     ),
-            "Mark Complete",
+            targetItem.itemType == "Kanji" && targetItem.progressLevel < 4
+                ? "Practice Ready"
+                : "Mark As Learned",
             targetItem.progressLevel == 7 ? Colors.grey : Colors.green,
           ),
         ),
