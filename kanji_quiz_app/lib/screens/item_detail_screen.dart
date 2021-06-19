@@ -63,10 +63,7 @@ class ItemDetailScreen extends ConsumerWidget {
             ),
             SizedBox(height: 20),
             TextContainer(
-              passedText: _targetItem.learningStatus != "Acquired"
-                  ? "Current ${_targetItem.learningStatus} level " +
-                      "is ${_targetItem.progressLevel}"
-                  : "Item acquired",
+              passedText: _targetItem.levelTranslation(),
               screenHeight: screenHeight,
             ),
             SizedBox(height: 20),

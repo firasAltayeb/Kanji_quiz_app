@@ -146,6 +146,22 @@ void editMnemonicHandler(
   });
 }
 
+void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
+  for (var index = 0; index <= lsnQueueIdx; index++) {
+    StudyItem sessionItem = lessonList[index];
+    sessionItem.dateLastLevelChanged = DateTime.now();
+    // if item is not marked as completed
+    if (sessionItem.learningStatus == "Lesson") {
+      sessionItem.progressLevel = 1;
+      sessionItem.learningStatus = 'Review';
+    }
+    context.read(studyItemProvider.notifier).editKanji(sessionItem);
+  }
+  context.read(lessonQueueIdxProvider).state = 0;
+  context.read(studyItemProvider.notifier).saveProgress();
+  Navigator.pop(context);
+}
+
 void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
   for (var index = 0; index < answerChoiceList.length; index++) {
     StudyItem reviewedItem = reviewList[index];
@@ -165,7 +181,10 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
       } else if (reviewedItem.progressLevel == 7) {
         reviewedItem.learningStatus = 'Acquired';
       }
-    } /*if answer was incorrect*/ else {
+    } else if (!answerChoiceList[index]) {
+      /*if answer was incorrect*/
+      reviewedItem.recallHistory.add("Incorrect");
+
       reviewedItem.difficultyAdjustment();
       reviewedItem.progressLevel = reviewedItem.lapsePenalty();
     }
@@ -180,18 +199,36 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
   Navigator.pop(context);
 }
 
-void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
-  for (var index = 0; index <= lsnQueueIdx; index++) {
-    StudyItem sessionItem = lessonList[index];
-    sessionItem.dateLastLevelChanged = DateTime.now();
-    // if item is not marked as completed
-    if (sessionItem.learningStatus == "Lesson") {
-      sessionItem.progressLevel = 1;
-      sessionItem.learningStatus = 'Review';
+void wrapPracticeSession(BuildContext context, answerChoiceList, practiceList) {
+  for (var index = 0; index < answerChoiceList.length; index++) {
+    StudyItem practiceItem = practiceList[index];
+    practiceItem.dateLastLevelChanged = DateTime.now();
+    //if answer was correct
+    if (answerChoiceList[index]) {
+      // current progress + 1
+      practiceItem.progressLevel++;
+      practiceItem.practiceHistory.add("Correct");
+      //when item reaches lvl 7 it is marked as done
+      if (practiceItem.progressLevel == 7) {
+        practiceItem.learningStatus = 'Acquired';
+      }
+      context.read(studyItemProvider.notifier).editKanji(practiceItem);
+    } else if (!answerChoiceList[index]) {
+      /*if answer was incorrect*/
+      practiceItem.practiceHistory.add("Incorrect");
+      practiceItem.progressLevel = practiceItem.lapsePenalty();
+      if (practiceItem.progressLevel < 4)
+        practiceItem.learningStatus = "Review";
+      context.read(studyItemProvider.notifier).editKanji(practiceItem);
     }
-    context.read(studyItemProvider.notifier).editKanji(sessionItem);
   }
-  context.read(lessonQueueIdxProvider).state = 0;
+  context.read(sessionScoreProvider).state = 0;
+  context.read(sentenceQueueIdxProvider).state = 1;
+  context.read(practiceQueueIdxProvider).state = 0;
+  context.read(answeredRevealedProvider).state = false;
+  context.read(answerChoiceListProvider).state.clear();
+  context.read(correctRecallListProvider).state.clear();
+  context.read(incorrectRecallListProvider).state.clear();
   context.read(studyItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }

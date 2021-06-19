@@ -4,18 +4,39 @@ import 'package:flutter/services.dart';
 
 import '../../model/translation_question.dart';
 import '../../model/study_item_model.dart';
+import '../../helper_functions.dart';
 import '../../main_providers.dart';
 
 class TranslationOptionBtn extends ConsumerWidget {
   final Color answerColor;
+  final List<bool> ansChoiceList;
   final List<StudyItem> practiceList;
   final TranslationQusAnswer questionAnswer;
 
   TranslationOptionBtn(
     this.answerColor,
     this.practiceList,
+    this.ansChoiceList,
     this.questionAnswer,
   );
+
+  void _recordAnswer(BuildContext ctx, answerChoice, practiceList, queueIndex) {
+    ctx.read(answerChoiceListProvider).state.add(answerChoice);
+    if (answerChoice) {
+      ctx.read(sessionScoreProvider).state += 5;
+      ctx.read(correctRecallListProvider).state.add(practiceList[queueIndex]);
+    } else {
+      ctx.read(incorrectRecallListProvider).state.add(practiceList[queueIndex]);
+    }
+    //check whether currecnt item is last in the list
+    if (queueIndex < practiceList.length - 1) {
+      ctx.read(sentenceQueueIdxProvider).state = 1;
+      ctx.read(targetItemProvider).state = practiceList[queueIndex + 1];
+      ctx.read(practiceQueueIdxProvider).state++;
+    } else {
+      wrapPracticeSession(ctx, ansChoiceList, practiceList);
+    }
+  }
 
   Widget build(BuildContext context, ScopedReader watch) {
     final practiceQueueIdx = watch(practiceQueueIdxProvider).state;
@@ -25,32 +46,17 @@ class TranslationOptionBtn extends ConsumerWidget {
 
     return InkWell(
       onTap: () {
-        if (answeredRevealed) {
-          if (practiceQueueIdx < practiceList.length - 1) {
-            context.read(sentenceQueueIdxProvider).state = 1;
-            context.read(targetItemProvider).state =
-                practiceList[practiceQueueIdx + 1];
-            context.read(practiceQueueIdxProvider).state++;
-            context.read(answeredRevealedProvider).state = !answeredRevealed;
-          } else {
-            context.read(sentenceQueueIdxProvider).state = 1;
-            context.read(practiceQueueIdxProvider).state = 0;
-            Navigator.of(context).pop();
-          }
-        }
-        if (questionAnswer.accuracy == 100) {
-          HapticFeedback.vibrate();
-        } else if (questionAnswer.accuracy >= 60 &&
-            questionAnswer.accuracy <= 80) {
-          HapticFeedback.heavyImpact();
-        } else if (questionAnswer.accuracy >= 40 &&
-            questionAnswer.accuracy <= 60) {
-          HapticFeedback.mediumImpact();
-        } else if (questionAnswer.accuracy >= 0 &&
-            questionAnswer.accuracy <= 40) {
-          HapticFeedback.lightImpact();
-        }
+        HapticFeedback.vibrate();
         context.read(answeredRevealedProvider).state = !answeredRevealed;
+
+        if (answeredRevealed) {
+          if (questionAnswer.accuracy == 100) {
+            _recordAnswer(context, true, practiceList, practiceQueueIdx);
+          } else {
+            _recordAnswer(context, false, practiceList, practiceQueueIdx);
+          }
+          context.read(answeredRevealedProvider).state = !answeredRevealed;
+        }
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10),

@@ -36,6 +36,7 @@ class PracticeManager extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     List<StudyItem> _practiceList = ModalRoute.of(context).settings.arguments;
     final _practiceQueueIdx = watch(practiceQueueIdxProvider).state;
+    final _ansChoiceList = watch(answerChoiceListProvider).state;
     final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
     final _targetKanji = watch(targetItemProvider).state;
     final _questionList = translationQuestions;
@@ -110,6 +111,7 @@ class PracticeManager extends ConsumerWidget {
               .map((answerOption) => TranslationOptionBtn(
                     answerOption.accuracy == 100 ? Colors.green : Colors.red,
                     _practiceList,
+                    _ansChoiceList,
                     answerOption,
                   ))
               .toList()

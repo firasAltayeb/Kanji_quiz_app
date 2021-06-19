@@ -58,7 +58,7 @@ class ItemBottomRow extends ConsumerWidget {
                       naviPop: itemDetailScreen ? true : false,
                     ),
             //button label text
-            targetItem.learningStatus == "Lesson" &&
+            targetItem.learningStatus != "Practice" &&
                     targetItem.itemType == "Kanji"
                 ? "Practice Ready"
                 : "Mark As Acquired",

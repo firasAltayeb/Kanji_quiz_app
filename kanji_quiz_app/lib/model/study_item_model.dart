@@ -46,6 +46,20 @@ class StudyItem {
     this.chosenDifficulty = 1,
   });
 
+  String levelTranslation() {
+    var translation = "Item acquired";
+    if (progressLevel < 4) {
+      translation = "Current $learningStatus level is $progressLevel";
+    } else if (progressLevel == 4) {
+      translation = "Current $learningStatus level is 1";
+    } else if (progressLevel == 5) {
+      translation = "Current $learningStatus level is 2";
+    } else if (progressLevel == 6) {
+      translation = "Current $learningStatus level is 3";
+    }
+    return translation;
+  }
+
   int lapsePenalty() {
     //what happens when item lapse
     switch (chosenDifficulty) {
@@ -114,7 +128,6 @@ class StudyItem {
   }
 
   void difficultyAdjustment() {
-    recallHistory.add("Incorrect");
     var lastIndex = recallHistory.lastIndexOf("Incorrect");
     switch (chosenDifficulty) {
       case 1:
