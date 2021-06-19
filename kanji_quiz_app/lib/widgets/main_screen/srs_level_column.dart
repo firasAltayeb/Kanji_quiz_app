@@ -43,7 +43,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(practiceXlvlListProvider(1)),
+          itemList: watch(practiceXlvlListProvider(4)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -52,7 +52,7 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(practiceXlvlListProvider(2)),
+          itemList: watch(practiceXlvlListProvider(5)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
@@ -61,16 +61,16 @@ class SrsLevelColumn extends ConsumerWidget {
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(practiceXlvlListProvider(3)),
+          itemList: watch(practiceXlvlListProvider(6)),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),
         TextContainer(
-          passedText: 'Learned Items',
+          passedText: 'Acquired Items',
           screenHeight: screenHeight,
         ),
         ItemInteractiveRow(
-          itemList: watch(learnedListProvider),
+          itemList: watch(acquiredListProvider),
           widgetHeight: screenHeight * 0.2,
           selectHandler: pushToItemScreen,
         ),

@@ -63,14 +63,14 @@ class ItemDetailScreen extends ConsumerWidget {
             ),
             SizedBox(height: 20),
             TextContainer(
-              passedText: _targetItem.learningStatus != "Learned"
+              passedText: _targetItem.learningStatus != "Acquired"
                   ? "Current ${_targetItem.learningStatus} level " +
                       "is ${_targetItem.progressLevel}"
-                  : "Item Learned",
+                  : "Item acquired",
               screenHeight: screenHeight,
             ),
             SizedBox(height: 20),
-            if (_targetItem.learningStatus != "Learned")
+            if (_targetItem.learningStatus != "Acquired")
               KeyTextContainer(
                 'Next review date: ' +
                     '${_fixTimeZone(_targetItem.nextReviewDate())}',

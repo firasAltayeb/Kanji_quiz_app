@@ -43,7 +43,7 @@ class ItemBottomRow extends ConsumerWidget {
         Expanded(
           child: _bottomButton(
             screenHeight,
-            targetItem.learningStatus == "Learned"
+            targetItem.learningStatus == "Acquired"
                 ? null
                 : () => completeChoiceDialog(
                       context: context,
@@ -51,18 +51,21 @@ class ItemBottomRow extends ConsumerWidget {
                       alertMessage: targetItem.itemType == "Kanji" &&
                               targetItem.learningStatus != "Practice"
                           ? "This item will be moved to the practice queue"
-                          : "This item will be marked as learned",
+                          : "This item will be marked as acquired",
                       lsnQueueIdx: lsnQueueIdx,
                       lsnList: lessonList,
                       showAlert: showAlert,
                       naviPop: itemDetailScreen ? true : false,
                     ),
             //button label text
-            targetItem.learningStatus == "Lesson"
+            targetItem.learningStatus == "Lesson" &&
+                    targetItem.itemType == "Kanji"
                 ? "Practice Ready"
-                : "Mark As Learned",
+                : "Mark As Acquired",
             //button background color
-            targetItem.learningStatus == "Learned" ? Colors.grey : Colors.green,
+            targetItem.learningStatus == "Acquired"
+                ? Colors.grey
+                : Colors.green,
           ),
         ),
         Expanded(

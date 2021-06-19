@@ -68,11 +68,11 @@ void completeChoiceDialog({
     targetItem.dateLastLevelChanged = DateTime.now();
     if (targetItem.itemType == "Kanji" &&
         targetItem.learningStatus != "Practice") {
-      targetItem.progressLevel = 1;
+      targetItem.progressLevel = 4;
       targetItem.learningStatus = 'Practice';
     } else {
-      targetItem.progressLevel = 4;
-      targetItem.learningStatus = 'Learned';
+      targetItem.progressLevel = 7;
+      targetItem.learningStatus = 'Acquired';
     }
 
     if (naviPop) {
@@ -155,14 +155,15 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
       // current progress + 1
       reviewedItem.progressLevel++;
       reviewedItem.recallHistory.add("Correct");
-      //when lvl is 4 practice if kanji else learned
+      //when lvl is 4 practice if kanji else acquired
       if (reviewedItem.progressLevel == 4) {
         if (reviewedItem.itemType == "Kanji") {
-          reviewedItem.progressLevel = 1;
           reviewedItem.learningStatus = 'Practice';
         } else {
-          reviewedItem.learningStatus = 'Learned';
+          reviewedItem.learningStatus = 'Acquired';
         }
+      } else if (reviewedItem.progressLevel == 7) {
+        reviewedItem.learningStatus = 'Acquired';
       }
     } /*if answer was incorrect*/ else {
       reviewedItem.difficultyAdjustment();

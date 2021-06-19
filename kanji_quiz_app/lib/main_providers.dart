@@ -106,18 +106,18 @@ final reviewXlvlListProvider =
 final practiceXlvlListProvider =
     Provider.autoDispose.family<List<StudyItem>, int>((ref, level) {
   final itemMainList = ref.watch(studyItemProvider);
-  final reviewLvlList = itemMainList.where((item) {
+  final practiceLvlList = itemMainList.where((item) {
     return item.progressLevel == level && item.learningStatus == "Practice";
   }).toList();
-  return reviewLvlList;
+  return practiceLvlList;
 });
 
-final learnedListProvider = Provider<List<StudyItem>>((ref) {
+final acquiredListProvider = Provider<List<StudyItem>>((ref) {
   final itemMainList = ref.watch(studyItemProvider);
-  final learnedList = itemMainList.where((item) {
-    return item.learningStatus == "Learned";
+  final acquiredList = itemMainList.where((item) {
+    return item.learningStatus == "Acquired";
   }).toList();
-  return learnedList;
+  return acquiredList;
 });
 
 final templateAddressProvider =
