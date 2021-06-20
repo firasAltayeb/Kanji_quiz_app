@@ -1,25 +1,27 @@
 import 'package:kanji_quiz_app/widgets/shared/corner_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/corner_widget.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/study_item_model.dart';
-import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
+
 class TopKanjiRow extends ConsumerWidget {
-  final String leftWidgetText;
-  final String rightWidgetText;
-  final Function leftWidgetHandler;
   final Function rightWidgetHandler;
+  final Function leftWidgetHandler;
+  final String rightWidgetText;
+  final String leftWidgetText;
+  final StudyItem targetItem;
 
   TopKanjiRow({
-    @required this.leftWidgetText,
     @required this.rightWidgetText,
-    this.leftWidgetHandler,
+    @required this.leftWidgetText,
+    @required this.targetItem,
     this.rightWidgetHandler,
+    this.leftWidgetHandler,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final targetItem = watch(targetItemProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     final templateAddress = watch(templateAddressProvider(targetItem));
     return Row(
@@ -35,7 +37,7 @@ class TopKanjiRow extends ConsumerWidget {
                 passedText: leftWidgetText,
                 height: screenHeight,
               ),
-        _itemPicture(screenHeight, templateAddress, targetItem),
+        _itemPicture(screenHeight, templateAddress),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? CornerButton(
                 passedText: rightWidgetText,
@@ -50,8 +52,7 @@ class TopKanjiRow extends ConsumerWidget {
     );
   }
 
-  Widget _itemPicture(
-      double height, String templateAddress, StudyItem targetItem) {
+  Widget _itemPicture(double height, String templateAddress) {
     bool plusChara = targetItem.characterID.length > 1;
     return Expanded(
       flex: 3,

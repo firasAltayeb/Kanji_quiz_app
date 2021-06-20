@@ -20,7 +20,7 @@ class TranslationOptionBtn extends ConsumerWidget {
     this.questionAnswer,
   );
 
-  void _recordAnswer(BuildContext ctx, answerChoice, practiceList, queueIndex) {
+  void _recordAnswer(BuildContext ctx, answerChoice, queueIndex) {
     ctx.read(answerChoiceListProvider).state.add(answerChoice);
     if (answerChoice) {
       ctx.read(sessionScoreProvider).state += 5;
@@ -31,7 +31,6 @@ class TranslationOptionBtn extends ConsumerWidget {
     //check whether currecnt item is last in the list
     if (queueIndex < practiceList.length - 1) {
       ctx.read(sentenceQueueIdxProvider).state = 1;
-      ctx.read(targetItemProvider).state = practiceList[queueIndex + 1];
       ctx.read(practiceQueueIdxProvider).state++;
     } else {
       wrapPracticeSession(ctx, ansChoiceList, practiceList);
@@ -51,9 +50,9 @@ class TranslationOptionBtn extends ConsumerWidget {
 
         if (answeredRevealed) {
           if (questionAnswer.accuracy == 100) {
-            _recordAnswer(context, true, practiceList, practiceQueueIdx);
+            _recordAnswer(context, true, practiceQueueIdx);
           } else {
-            _recordAnswer(context, false, practiceList, practiceQueueIdx);
+            _recordAnswer(context, false, practiceQueueIdx);
           }
           context.read(answeredRevealedProvider).state = !answeredRevealed;
         }

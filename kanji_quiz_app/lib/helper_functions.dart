@@ -78,8 +78,7 @@ void completeChoiceDialog({
     if (naviPop) {
       context.read(studyItemProvider.notifier).editKanji(targetItem);
       Navigator.of(context).pop();
-    }
-    if (lsnList.length <= lsnQueueIdx + 1) {
+    } else if (lsnList.length <= lsnQueueIdx + 1) {
       //the item is the last in the queue
       wrapLessonSession(context, lsnQueueIdx, lsnList);
     } else {
@@ -176,6 +175,7 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
         if (reviewedItem.itemType == "Kanji") {
           reviewedItem.learningStatus = 'Practice';
         } else {
+          reviewedItem.progressLevel = 7;
           reviewedItem.learningStatus = 'Acquired';
         }
       } else if (reviewedItem.progressLevel == 7) {

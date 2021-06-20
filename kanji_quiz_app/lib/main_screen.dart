@@ -25,13 +25,10 @@ class MainScreen extends StatelessWidget {
         width: screenWidth * 0.65,
         child: MainAppDrawer(),
       ),
-      body: Consumer(builder: (buildContext, watch, _) {
+      body: Consumer(builder: (consumerCtx, watch, _) {
         final lessonList = watch(lessonListProvider);
         final reviewList = watch(reviewReadyListProvider);
         final pracitceList = watch(practiceListProvider);
-        final lsnqueueIdx = watch(lessonQueueIdxProvider).state;
-        final revnqueueIdx = watch(reviewQueueIdxProvider).state;
-        final pracnqueueIdx = watch(practiceQueueIdxProvider).state;
         final lvlColumnVisible = watch(lvlColumnVisibleProvider).state;
         return SingleChildScrollView(
           child: Column(
@@ -43,21 +40,21 @@ class MainScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _screenNavigateColumn(
-                      buildContext,
-                      screenHeight,
-                      screenWidth,
-                      "Lesson",
-                      lessonList,
-                      LessonManager.routeName,
-                      lsnqueueIdx),
+                    consumerCtx,
+                    screenHeight,
+                    screenWidth,
+                    "Lesson",
+                    lessonList,
+                    LessonManager.routeName,
+                  ),
                   _screenNavigateColumn(
-                      buildContext,
-                      screenHeight,
-                      screenWidth,
-                      "Review",
-                      reviewList,
-                      ReviewManager.routeName,
-                      revnqueueIdx),
+                    consumerCtx,
+                    screenHeight,
+                    screenWidth,
+                    "Review",
+                    reviewList,
+                    ReviewManager.routeName,
+                  ),
                 ],
               ),
               SizedBox(
@@ -71,13 +68,13 @@ class MainScreen extends StatelessWidget {
                   }
                 },
                 child: _screenNavigateColumn(
-                    buildContext,
-                    screenHeight,
-                    screenWidth * 2,
-                    "Practice",
-                    pracitceList,
-                    PracticeManager.routeName,
-                    pracnqueueIdx),
+                  consumerCtx,
+                  screenHeight,
+                  screenWidth * 2,
+                  "Practice",
+                  pracitceList,
+                  PracticeManager.routeName,
+                ),
               ),
               SizedBox(
                 height: screenHeight * 0.1,
@@ -90,12 +87,12 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget _screenNavigateColumn(BuildContext bldCtx, screenHeight, screenWidth,
-      label, List<StudyItem> kanjiList, routeName, queueIdx) {
+  Widget _screenNavigateColumn(BuildContext ctx, screenHeight, screenWidth,
+      label, List<StudyItem> itemList, routeName) {
     return Column(
       children: [
         Text(
-          label + ": " + '${kanjiList.length}',
+          label + ": " + '${itemList.length}',
           style: TextStyle(
             fontSize: screenHeight * 0.04,
             fontWeight: FontWeight.bold,
@@ -115,12 +112,10 @@ class MainScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            onPressed: kanjiList.length == 0
+            onPressed: itemList.length == 0
                 ? null
                 : () {
-                    bldCtx.read(targetItemProvider).state = kanjiList[queueIdx];
-                    Navigator.of(bldCtx)
-                        .pushNamed(routeName, arguments: kanjiList);
+                    Navigator.of(ctx).pushNamed(routeName, arguments: itemList);
                   },
           ),
         ),

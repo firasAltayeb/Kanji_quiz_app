@@ -4,11 +4,16 @@ import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class BuildingBlockRow extends ConsumerWidget {
+  final StudyItem targetItem;
+
+  BuildingBlockRow({
+    @required this.targetItem,
+  });
+
   Widget build(BuildContext context, ScopedReader watch) {
-    final targetItem = watch(targetItemProvider).state;
+    var buildingBlockIDList = targetItem.buildingBlocksID;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
-    var buildingBlockIDList = targetItem.buildingBlocksID;
     return Container(
       alignment: Alignment.center,
       height: screenHeight * 0.175,
@@ -27,19 +32,16 @@ class BuildingBlockRow extends ConsumerWidget {
                 if (buildingBlockIDList.length == 1)
                   Container(
                     width: screenWidth * 0.3,
-                    child:
-                        _kanjiBlockRow(screenHeight * 0.1, watch, targetItem),
+                    child: _kanjiBlockRow(screenHeight * 0.1, watch),
                   ),
                 if (buildingBlockIDList.length == 2)
                   Container(
                     width: screenWidth * 0.5,
-                    child:
-                        _kanjiBlockRow(screenHeight * 0.1, watch, targetItem),
+                    child: _kanjiBlockRow(screenHeight * 0.1, watch),
                   ),
                 if (buildingBlockIDList.length > 2)
                   Expanded(
-                    child:
-                        _kanjiBlockRow(screenHeight * 0.1, watch, targetItem),
+                    child: _kanjiBlockRow(screenHeight * 0.1, watch),
                   ),
               ],
             ),
@@ -56,11 +58,10 @@ class BuildingBlockRow extends ConsumerWidget {
     );
   }
 
-  Widget _kanjiBlockRow(
-      double height, ScopedReader watch, StudyItem targetKanji) {
+  Widget _kanjiBlockRow(double height, ScopedReader watch) {
     return Row(
       children: [
-        ...(watch(buildingBlocksProvider(targetKanji)))
+        ...(watch(buildingBlocksProvider(targetItem)))
             .map(
               (bbKanji) => Expanded(
                 child: Stack(

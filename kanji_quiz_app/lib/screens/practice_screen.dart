@@ -18,7 +18,6 @@ class PracticeManager extends ConsumerWidget {
       ctx.read(sentenceQueueIdxProvider).state++;
     } else {
       ctx.read(sentenceQueueIdxProvider).state = 1;
-      ctx.read(targetItemProvider).state = practiceList[practiceQueueIdx + 1];
       ctx.read(practiceQueueIdxProvider).state++;
     }
   }
@@ -28,7 +27,6 @@ class PracticeManager extends ConsumerWidget {
     if (senQueueIdx > 1) {
       ctx.read(sentenceQueueIdxProvider).state--;
     } else if (senQueueIdx <= 1 && practiceQueueIdx > 0) {
-      ctx.read(targetItemProvider).state = practiceList[practiceQueueIdx - 1];
       ctx.read(practiceQueueIdxProvider).state--;
     }
   }
@@ -38,7 +36,7 @@ class PracticeManager extends ConsumerWidget {
     final _practiceQueueIdx = watch(practiceQueueIdxProvider).state;
     final _ansChoiceList = watch(answerChoiceListProvider).state;
     final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
-    final _targetKanji = watch(targetItemProvider).state;
+    final _targetKanji = _practiceList[_practiceQueueIdx];
     final _questionList = translationQuestions;
 
     var _screenHeight = MediaQuery.of(context).size.height;

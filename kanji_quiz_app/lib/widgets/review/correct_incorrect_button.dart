@@ -1,21 +1,25 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/material.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 import '../../main_providers.dart';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
+
 class CorrectIncorrectButton extends ConsumerWidget {
-  final bool selectChoice;
   final Function answerQuestion;
+  final StudyItem targetItem;
+  final bool selectChoice;
 
   CorrectIncorrectButton({
-    @required this.selectChoice,
     @required this.answerQuestion,
+    @required this.selectChoice,
+    @required this.targetItem,
   });
 
   Widget build(BuildContext buildContex, ScopedReader watch) {
-    final targetKanji = watch(targetItemProvider).state;
     final showSrsPop = watch(showSrsPopUpProvider).state;
     var screenHeight = MediaQuery.of(buildContex).size.height;
     var screenWidth = MediaQuery.of(buildContex).size.width;
+
     return Container(
       height: screenHeight * 0.38,
       width: screenWidth * 0.5,
@@ -38,18 +42,17 @@ class CorrectIncorrectButton extends ConsumerWidget {
           ),
         ),
         onPressed: () {
-          var characterLook = targetKanji.itemType != "Primitive"
-              ? targetKanji.characterID
-              : "";
+          var characterLook =
+              targetItem.itemType != "Primitive" ? targetItem.characterID : "";
           var currentProgressLevel = selectChoice
-              ? targetKanji.progressLevel + 1
-              : targetKanji.lapsePenalty();
+              ? targetItem.progressLevel + 1
+              : targetItem.lapsePenalty();
           if (showSrsPop)
             _openCustomDialog(
               buildContex,
+              screenHeight,
               characterLook,
               currentProgressLevel,
-              screenHeight,
             );
           buildContex.read(showAnsBtnVisibleProvider).state = true;
           answerQuestion(selectChoice);
@@ -58,7 +61,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
     );
   }
 
-  void _openCustomDialog(BuildContext ctx, kanjiLook, newLvl, height) {
+  void _openCustomDialog(BuildContext ctx, height, kanjiLook, newLvl) {
     showGeneralDialog(
       context: ctx,
       barrierColor: Colors.black.withOpacity(0.2),

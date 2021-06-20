@@ -18,7 +18,6 @@ class ReviewManager extends ConsumerWidget {
     } else {
       ctx.read(incorrectRecallListProvider).state.removeLast();
     }
-    ctx.read(targetItemProvider).state = reviewList[queueIdx - 1];
     ctx.read(answerChoiceListProvider).state.removeLast();
     ctx.read(reviewQueueIdxProvider).state--;
   }
@@ -27,7 +26,7 @@ class ReviewManager extends ConsumerWidget {
     List<StudyItem> _reviewList = ModalRoute.of(context).settings.arguments;
     final _ansChoiceList = watch(answerChoiceListProvider).state;
     final _queueIndex = watch(reviewQueueIdxProvider).state;
-    final showSrsPop = watch(showSrsPopUpProvider).state;
+    final _showSrsPop = watch(showSrsPopUpProvider).state;
 
     print('Review mgr build called');
 
@@ -38,7 +37,7 @@ class ReviewManager extends ConsumerWidget {
     return Scaffold(
       appBar: ReviewAppBar(
         appBar: AppBar(),
-        showSrsPop: showSrsPop,
+        showSrsPop: _showSrsPop,
         reviewList: _reviewList,
         ansChoiceList: _ansChoiceList,
       ),

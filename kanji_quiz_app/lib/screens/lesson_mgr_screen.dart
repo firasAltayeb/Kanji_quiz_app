@@ -16,7 +16,6 @@ class LessonManager extends ConsumerWidget {
 
   void _nextKanji(BuildContext context, queueIndex, lessonList) {
     if (queueIndex < lessonList.length - 1) {
-      context.read(targetItemProvider).state = lessonList[queueIndex + 1];
       context.read(lessonQueueIdxProvider).state++;
     } else {
       wrapLessonSession(context, lessonList, queueIndex);
@@ -25,7 +24,6 @@ class LessonManager extends ConsumerWidget {
 
   void _previousKanji(BuildContext context, queueIndex, lessonList) {
     if (queueIndex > 0) {
-      context.read(targetItemProvider).state = lessonList[queueIndex - 1];
       context.read(lessonQueueIdxProvider).state--;
     }
   }
@@ -39,6 +37,7 @@ class LessonManager extends ConsumerWidget {
     final _showButtonRow = watch(btnBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;
+    final _targetItem = _lessonList[_queueIndex];
 
     print('Lesson mgr build called');
 
@@ -69,6 +68,7 @@ class LessonManager extends ConsumerWidget {
             TopKanjiRow(
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
+              targetItem: _targetItem,
               leftWidgetHandler: _queueIndex == 0
                   ? null
                   : () => _previousKanji(context, _queueIndex, _lessonList),
@@ -84,7 +84,9 @@ class LessonManager extends ConsumerWidget {
                     : 'Keyword: ' + _lessonList[_queueIndex].keyword,
               ),
             ),
-            BuildingBlockRow(),
+            BuildingBlockRow(
+              targetItem: _targetItem,
+            ),
             ScrollableContainer(
               showHandler: (trueFalse) => _showHandler(context, trueFalse),
             ),

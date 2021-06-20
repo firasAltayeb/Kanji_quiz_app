@@ -46,6 +46,7 @@ class ItemDetailScreen extends ConsumerWidget {
             TopKanjiRow(
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
+              targetItem: _targetItem,
             ),
             SizedBox(
               height: screenHeight * 0.08,
@@ -79,11 +80,14 @@ class ItemDetailScreen extends ConsumerWidget {
               showHandler: (value) => _showHandler(context, value),
             ),
             SizedBox(height: 30),
-            BuildingBlockRow(),
+            BuildingBlockRow(
+              targetItem: _targetItem,
+            ),
             SizedBox(height: 30),
             if (_showButtonRow)
               ItemBottomRow(
                 itemDetailScreen: true,
+                passedItem: _targetItem,
                 showBottomRow: (value) => _showHandler(context, value),
               ),
             if (!_showButtonRow)

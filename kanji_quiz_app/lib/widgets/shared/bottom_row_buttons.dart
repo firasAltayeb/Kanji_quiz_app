@@ -1,28 +1,33 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/helper_functions.dart';
-import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
+
+import 'package:kanji_quiz_app/model/study_item_model.dart';
+import 'package:kanji_quiz_app/helper_functions.dart';
 import '../../main_providers.dart';
 
 class ItemBottomRow extends ConsumerWidget {
-  final int lsnQueueIdx;
-  final List<StudyItem> lessonList;
-
-  final Function showBottomRow;
-  final bool itemDetailScreen;
   final mnemonicController = TextEditingController();
 
+  final List<StudyItem> lessonList;
+  final Function showBottomRow;
+  final bool itemDetailScreen;
+  final StudyItem passedItem;
+  final int lsnQueueIdx;
+
   ItemBottomRow({
-    this.lessonList,
-    this.lsnQueueIdx,
-    @required this.showBottomRow,
     @required this.itemDetailScreen,
+    @required this.showBottomRow,
+    this.lsnQueueIdx,
+    this.passedItem,
+    this.lessonList,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
     final showAlert = watch(showAlertProvider).state;
-    final targetItem = watch(targetItemProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
+    StudyItem targetItem =
+        lessonList == null ? passedItem : lessonList[lsnQueueIdx];
+
     return Row(
       children: [
         if (itemDetailScreen || targetItem.learningStatus != "Lesson")
