@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
+import '../helper_functions.dart';
 import '../widgets/practice_mgr/sen_translation_btn.dart';
 import '../widgets/practice_mgr/practice_app_bar.dart';
 import '../widgets/shared/corner_button.dart';
@@ -13,12 +14,15 @@ class PracticeManager extends ConsumerWidget {
   static const routeName = '/practice-screen';
 
   void _skipSentence(
-      BuildContext ctx, senQueueIdx, practiceList, practiceQueueIdx) {
+      BuildContext ctx, senQueueIdx, ansChoiceList, pracList, pracQueueIdx) {
     if (senQueueIdx < 15) {
       ctx.read(sentenceQueueIdxProvider).state++;
-    } else {
+    } else if (pracQueueIdx < pracList.length - 1) {
       ctx.read(sentenceQueueIdxProvider).state = 1;
       ctx.read(practiceQueueIdxProvider).state++;
+      ctx.read(answerChoiceListProvider).state.add(null);
+    } else {
+      wrapPracticeSession(ctx, ansChoiceList, pracList);
     }
   }
 
@@ -26,17 +30,20 @@ class PracticeManager extends ConsumerWidget {
       BuildContext ctx, senQueueIdx, practiceList, practiceQueueIdx) {
     if (senQueueIdx > 1) {
       ctx.read(sentenceQueueIdxProvider).state--;
-    } else if (senQueueIdx <= 1 && practiceQueueIdx > 0) {
+    } else if (senQueueIdx == 1 && practiceQueueIdx > 0) {
       ctx.read(practiceQueueIdxProvider).state--;
+      ctx.read(answerChoiceListProvider).state.removeLast();
     }
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    List<StudyItem> _practiceList = ModalRoute.of(context).settings.arguments;
-    final _practiceQueueIdx = watch(practiceQueueIdxProvider).state;
+    List<StudyItem> _pracList = ModalRoute.of(context).settings.arguments;
+    final _pracQueueIdx = watch(practiceQueueIdxProvider).state;
+    final _targetKanji = _pracList[_pracQueueIdx];
+
+    final _answeredRevealed = watch(answeredRevealedProvider).state;
     final _ansChoiceList = watch(answerChoiceListProvider).state;
     final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
-    final _targetKanji = _practiceList[_practiceQueueIdx];
     final _questionList = translationQuestions;
 
     var _screenHeight = MediaQuery.of(context).size.height;
@@ -45,7 +52,7 @@ class PracticeManager extends ConsumerWidget {
 
     print('Practice mgr build called');
 
-    if (_practiceList.isEmpty == true) {
+    if (_pracList.isEmpty == true) {
       return Scaffold();
     }
 
@@ -60,13 +67,14 @@ class PracticeManager extends ConsumerWidget {
             children: [
               CornerButton(
                 passedText: "Perv",
-                handler: _senQueueIdx == 1 && _practiceQueueIdx == 0
+                handler: (_senQueueIdx == 1 && _pracQueueIdx == 0) ||
+                        _answeredRevealed
                     ? null
                     : () => _previousSentence(
                           context,
                           _senQueueIdx,
-                          _practiceList,
-                          _practiceQueueIdx,
+                          _pracList,
+                          _pracQueueIdx,
                         ),
                 height: _screenHeight * 1.1,
               ),
@@ -76,12 +84,15 @@ class PracticeManager extends ConsumerWidget {
               ),
               CornerButton(
                 passedText: "Skip",
-                handler: () => _skipSentence(
-                  context,
-                  _senQueueIdx,
-                  _practiceList,
-                  _practiceQueueIdx,
-                ),
+                handler: _answeredRevealed
+                    ? null
+                    : () => _skipSentence(
+                          context,
+                          _senQueueIdx,
+                          _ansChoiceList,
+                          _pracList,
+                          _pracQueueIdx,
+                        ),
                 height: _screenHeight * 1.1,
               ),
             ],
@@ -97,7 +108,7 @@ class PracticeManager extends ConsumerWidget {
           ),
           Expanded(flex: 3, child: SizedBox()),
           Text(
-            _questionList[_practiceQueueIdx % 2].quesitonText,
+            _questionList[_pracQueueIdx % 2].quesitonText,
             style: TextStyle(
               fontSize: _screenHeight * 0.05,
               fontWeight: FontWeight.bold,
@@ -105,12 +116,14 @@ class PracticeManager extends ConsumerWidget {
             textAlign: TextAlign.center,
           ),
           Expanded(flex: 5, child: SizedBox()),
-          ...(_questionList[_practiceQueueIdx % 2].answerList)
+          ...(_questionList[_pracQueueIdx % 2].answerList)
               .map((answerOption) => TranslationOptionBtn(
-                    answerOption.accuracy == 100 ? Colors.green : Colors.red,
-                    _practiceList,
-                    _ansChoiceList,
-                    answerOption,
+                    answerColor: answerOption.accuracy == 100
+                        ? Colors.green
+                        : Colors.red,
+                    practiceList: _pracList,
+                    questionAnswer: answerOption,
+                    ansChoiceList: _ansChoiceList,
                   ))
               .toList()
         ],

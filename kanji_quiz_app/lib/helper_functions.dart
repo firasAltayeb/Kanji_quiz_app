@@ -204,25 +204,28 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
 }
 
 void wrapPracticeSession(BuildContext context, answerChoiceList, practiceList) {
+  print("answerChoiseList is $answerChoiceList");
   for (var index = 0; index < answerChoiceList.length; index++) {
     StudyItem practiceItem = practiceList[index];
     practiceItem.dateLastLevelChanged = DateTime.now();
-    //if answer was correct
-    if (answerChoiceList[index]) {
-      // current progress + 1
-      practiceItem.progressLevel++;
-      practiceItem.practiceHistory.add("Correct");
-      //when item reaches lvl 7 it is marked as done
-      if (practiceItem.progressLevel == 7) {
-        practiceItem.learningStatus = 'Acquired';
+    if (answerChoiceList[index] != null) {
+      //if answer was correct
+      if (answerChoiceList[index]) {
+        // current progress + 1
+        practiceItem.progressLevel++;
+        practiceItem.practiceHistory.add("Correct");
+        //when item reaches lvl 7 it is marked as done
+        if (practiceItem.progressLevel == 7) {
+          practiceItem.learningStatus = 'Acquired';
+        }
+      } else if (!answerChoiceList[index]) {
+        /*if answer was incorrect*/
+        practiceItem.practiceHistory.add("Incorrect");
+        practiceItem.progressLevel = practiceItem.lapsePenalty();
+        if (practiceItem.progressLevel < 4)
+          practiceItem.learningStatus = "Review";
       }
-      context.read(studyItemProvider.notifier).editKanji(practiceItem);
-    } else if (!answerChoiceList[index]) {
-      /*if answer was incorrect*/
-      practiceItem.practiceHistory.add("Incorrect");
-      practiceItem.progressLevel = practiceItem.lapsePenalty();
-      if (practiceItem.progressLevel < 4)
-        practiceItem.learningStatus = "Review";
+      //save changes to the main list
       context.read(studyItemProvider.notifier).editKanji(practiceItem);
     }
   }

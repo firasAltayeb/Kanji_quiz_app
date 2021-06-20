@@ -50,7 +50,7 @@ class ItemBottomRow extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             targetItem.learningStatus == "Acquired"
-                ? () => null
+                ? null
                 : () => completeChoiceDialog(
                       context: context,
                       lsnList: lessonList,
@@ -96,7 +96,7 @@ class ItemBottomRow extends ConsumerWidget {
 
   Widget _bottomButton(screenHeight, handler, btnText, color) {
     return GestureDetector(
-      onTap: () => handler(),
+      onTap: handler,
       child: Container(
         height: screenHeight * 0.135,
         padding: const EdgeInsets.all(5),

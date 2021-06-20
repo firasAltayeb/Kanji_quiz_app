@@ -8,17 +8,17 @@ import '../../helper_functions.dart';
 import '../../main_providers.dart';
 
 class TranslationOptionBtn extends ConsumerWidget {
-  final Color answerColor;
-  final List<bool> ansChoiceList;
-  final List<StudyItem> practiceList;
   final TranslationQusAnswer questionAnswer;
+  final List<StudyItem> practiceList;
+  final List<bool> ansChoiceList;
+  final Color answerColor;
 
-  TranslationOptionBtn(
-    this.answerColor,
-    this.practiceList,
-    this.ansChoiceList,
-    this.questionAnswer,
-  );
+  TranslationOptionBtn({
+    @required this.questionAnswer,
+    @required this.ansChoiceList,
+    @required this.practiceList,
+    @required this.answerColor,
+  });
 
   void _recordAnswer(BuildContext ctx, answerChoice, queueIndex) {
     ctx.read(answerChoiceListProvider).state.add(answerChoice);
