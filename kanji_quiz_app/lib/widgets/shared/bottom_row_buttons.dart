@@ -26,8 +26,8 @@ class ItemBottomRow extends ConsumerWidget {
     final showAlert = watch(showAlertProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
     StudyItem targetItem =
-        lessonList == null ? passedItem : lessonList[lsnQueueIdx];
-
+        passedItem != null ? passedItem : lessonList[lsnQueueIdx];
+    print(targetItem.learningStatus);
     return Row(
       children: [
         if (itemDetailScreen || targetItem.learningStatus != "Lesson")
@@ -36,8 +36,9 @@ class ItemBottomRow extends ConsumerWidget {
               screenHeight,
               () => resetChoiceDialog(
                 context: context,
-                targetItem: targetItem,
                 showAlert: showAlert,
+                targetItem: targetItem,
+                lsnQueueIdx: lsnQueueIdx,
                 alertMessage: "All your changes will be undo",
                 naviPop: itemDetailScreen ? true : false,
               ),
@@ -49,22 +50,23 @@ class ItemBottomRow extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             targetItem.learningStatus == "Acquired"
-                ? null
+                ? () => null
                 : () => completeChoiceDialog(
                       context: context,
+                      lsnList: lessonList,
+                      showAlert: showAlert,
                       targetItem: targetItem,
+                      lsnQueueIdx: lsnQueueIdx,
                       alertMessage: targetItem.itemType == "Kanji" &&
                               targetItem.learningStatus != "Practice"
                           ? "This item will be moved to the practice queue"
                           : "This item will be marked as acquired",
-                      lsnQueueIdx: lsnQueueIdx,
-                      lsnList: lessonList,
-                      showAlert: showAlert,
                       naviPop: itemDetailScreen ? true : false,
                     ),
             //button label text
             targetItem.learningStatus != "Practice" &&
-                    targetItem.itemType == "Kanji"
+                    targetItem.itemType == "Kanji" &&
+                    targetItem.learningStatus != "Acquired"
                 ? "Practice Ready"
                 : "Mark As Acquired",
             //button background color

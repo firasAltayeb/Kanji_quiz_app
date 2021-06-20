@@ -50,10 +50,10 @@ void choiceAction({
 void completeChoiceDialog({
   bool showAlert = true,
   bool naviPop = true,
-  BuildContext context,
-  String alertMessage,
   List<StudyItem> lsnList,
   StudyItem targetItem,
+  BuildContext context,
+  String alertMessage,
   int lsnQueueIdx,
 }) async {
   bool dialogChoice = true;
@@ -91,9 +91,10 @@ void completeChoiceDialog({
 void resetChoiceDialog({
   bool showAlert = true,
   bool naviPop = true,
+  StudyItem targetItem,
   BuildContext context,
   String alertMessage,
-  StudyItem targetItem,
+  int lsnQueueIdx,
 }) async {
   bool dialogChoice = true;
   if (showAlert) {
@@ -114,8 +115,11 @@ void resetChoiceDialog({
       context.read(studyItemProvider.notifier).saveProgress();
       Navigator.of(context).pop();
     } else {
-      //Will update the currently displayed character
-      context.read(targetItemProvider).state = targetItem;
+      if (lsnQueueIdx > 0) {
+        context.read(lessonQueueIdxProvider).state--;
+      } else {
+        context.read(lessonQueueIdxProvider).state++;
+      }
     }
   }
 }
