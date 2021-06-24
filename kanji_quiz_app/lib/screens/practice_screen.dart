@@ -1,13 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import '../helper_functions.dart';
 import '../widgets/practice_mgr/sen_translation_btn.dart';
 import '../widgets/practice_mgr/practice_app_bar.dart';
 import '../widgets/shared/corner_button.dart';
 import '../widgets/shared/corner_widget.dart';
 import '../model/translation_question.dart';
 import '../model/study_item_model.dart';
+import '../helper_functions.dart';
 import '../main_providers.dart';
 
 class PracticeManager extends ConsumerWidget {

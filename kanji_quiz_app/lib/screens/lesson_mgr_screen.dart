@@ -88,6 +88,7 @@ class LessonManager extends ConsumerWidget {
               targetItem: _targetItem,
             ),
             ScrollableContainer(
+              targetItem: _targetItem,
               showHandler: (trueFalse) => _showHandler(context, trueFalse),
             ),
             Expanded(child: SizedBox()),

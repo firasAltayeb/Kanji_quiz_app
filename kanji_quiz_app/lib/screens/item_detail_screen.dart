@@ -77,6 +77,7 @@ class ItemDetailScreen extends ConsumerWidget {
             ItemDifficultyRow(),
             SizedBox(height: 20),
             ScrollableContainer(
+              targetItem: _targetItem,
               showHandler: (value) => _showHandler(context, value),
             ),
             SizedBox(height: 30),

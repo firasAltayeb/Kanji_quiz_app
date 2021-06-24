@@ -1,18 +1,20 @@
-import 'package:kanji_quiz_app/helper_functions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../main_providers.dart';
+import 'package:kanji_quiz_app/helper_functions.dart';
+import '../../model/study_item_model.dart';
 
 class ScrollableContainer extends ConsumerWidget {
   final Function showHandler;
+  final StudyItem targetItem;
   final ScrollController _scrollController = ScrollController();
 
-  ScrollableContainer({@required this.showHandler});
+  ScrollableContainer({
+    @required this.targetItem,
+    @required this.showHandler,
+  });
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final targetKanji = watch(targetItemProvider).state;
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Consumer(builder: (context, watch, _) {
@@ -21,7 +23,7 @@ class ScrollableContainer extends ConsumerWidget {
           showHandler(false);
           editMnemonicHandler(
             context,
-            targetKanji,
+            targetItem,
             showHandler,
           );
         },
@@ -40,9 +42,9 @@ class ScrollableContainer extends ConsumerWidget {
             controller: _scrollController,
             child: SingleChildScrollView(
               controller: _scrollController,
-              child: targetKanji.mnemonicStory == ''
-                  ? _instructionTextWidget(screenHeight, targetKanji)
-                  : _mnemonicTextWidget(screenHeight, targetKanji),
+              child: targetItem.mnemonicStory == ''
+                  ? _instructionTextWidget(screenHeight, targetItem)
+                  : _mnemonicTextWidget(screenHeight, targetItem),
             ),
           ),
         ),
@@ -50,8 +52,9 @@ class ScrollableContainer extends ConsumerWidget {
     });
   }
 
-  Widget _instructionTextWidget(screenHeight, StudyItem targetKanji) {
-    var itemType = targetKanji.itemType;
+  Widget _instructionTextWidget(screenHeight, StudyItem targetItem) {
+    var itemType = targetItem.itemType;
+    print(itemType);
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
@@ -61,18 +64,18 @@ class ScrollableContainer extends ConsumerWidget {
         ),
         children: <TextSpan>[
           TextSpan(text: 'Please create a mnemonic for the above $itemType '),
-          TextSpan(
-            text: '${targetKanji.keyword} ',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          if (targetKanji.itemType == 'Kanji')
-            TextSpan(text: 'using its building blocks: '),
-          if (itemType == 'Kanji')
+          if (itemType != 'Hiragana' && itemType != 'Katakana')
             TextSpan(
-              text: '${targetKanji.buildingBlockKeywords} ',
+              text: '${targetItem.keyword} ',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          if (targetItem.buildingBlockKeywords.isNotEmpty)
+            TextSpan(
+              text: 'using its building blocks ' +
+                  '${targetItem.buildingBlockKeywords} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
