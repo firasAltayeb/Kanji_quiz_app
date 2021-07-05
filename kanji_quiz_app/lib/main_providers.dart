@@ -3,10 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:universal_io/io.dart' show Platform;
 
 import 'model/study_item_notifier.dart';
-import 'model/item_static_data.dart';
 import 'model/progress_services.dart';
-import 'model/progress_model.dart';
 import 'model/study_item_model.dart';
+import 'model/item_static_data.dart';
+import 'model/progress_model.dart';
 
 final progressProvider =
     FutureProvider.autoDispose<List<Progress>>((ref) async {
@@ -34,6 +34,8 @@ final showAlertProvider = StateProvider<bool>((ref) => true);
 final showSrsPopUpProvider = StateProvider<bool>((ref) => false);
 
 final lvlColumnVisibleProvider = StateProvider<bool>((ref) => true);
+
+final overallProgressVisibleProvider = StateProvider<bool>((ref) => true);
 
 final practiceQueueIdxProvider = StateProvider<int>((ref) => 0);
 

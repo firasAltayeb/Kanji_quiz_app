@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
+import 'package:kanji_quiz_app/widgets/main_screen/overall_progress_container.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'widgets/main_screen/srs_level_column.dart';
 import 'widgets/main_screen/home_app_bar.dart';
@@ -30,11 +31,12 @@ class MainScreen extends StatelessWidget {
         final reviewList = watch(reviewReadyListProvider);
         final pracitceList = watch(practiceListProvider);
         final lvlColumnVisible = watch(lvlColumnVisibleProvider).state;
+        final overallProgVisible = watch(overallProgressVisibleProvider).state;
         return SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
-                height: screenHeight * 0.1,
+                height: screenHeight * 0.075,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -77,7 +79,11 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: screenHeight * 0.1,
+                height: screenHeight * 0.05,
+              ),
+              if (overallProgVisible) OverallProgressContainer(),
+              SizedBox(
+                height: screenHeight * 0.05,
               ),
               if (lvlColumnVisible) SrsLevelColumn()
             ],

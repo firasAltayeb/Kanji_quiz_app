@@ -1,9 +1,10 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
+
 import 'package:kanji_quiz_app/widgets/shared/item_interactive_row.dart';
 import 'package:kanji_quiz_app/widgets/shared/text_container.dart';
 import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kanji_quiz_app/model/study_item_model.dart';
-import 'package:flutter/material.dart';
 import '../../main_providers.dart';
 
 class SrsLevelColumn extends ConsumerWidget {
