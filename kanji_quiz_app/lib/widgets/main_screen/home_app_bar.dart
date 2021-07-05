@@ -14,6 +14,7 @@ class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     final screenHeight = MediaQuery.of(context).size.height;
     final lvlColumnVisible = watch(lvlColumnVisibleProvider).state;
+    final overallProgVisible = watch(overallProgressVisibleProvider).state;
 
     return AppBar(
       title: Text(
@@ -36,6 +37,7 @@ class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
           onSelected: (choice) => choiceAction(
             choice: choice,
             context: context,
+            overallVisible: overallProgVisible,
             lvlColumnVisible: lvlColumnVisible,
           ),
           icon: Icon(
@@ -52,9 +54,22 @@ class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
               ),
             ),
             PopupMenuItem(
+              value: VertOptions.ToggleOverallProg,
+              child: Text(
+                overallProgVisible
+                    ? 'Hide overall progress'
+                    : 'Show overall progress',
+                style: TextStyle(
+                  fontSize: screenHeight * 0.03,
+                ),
+              ),
+            ),
+            PopupMenuItem(
               value: VertOptions.ToggleSrsColumn,
               child: Text(
-                lvlColumnVisible ? 'Hide SRS column' : 'Show SRS column',
+                lvlColumnVisible
+                    ? 'Hide badge collection'
+                    : 'Show badge collection',
                 style: TextStyle(
                   fontSize: screenHeight * 0.03,
                 ),

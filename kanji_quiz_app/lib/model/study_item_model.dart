@@ -17,11 +17,11 @@ class StudyItem {
   DateTime dateLastLevelChanged;
 
   int progressLevel;
+  int chosenDifficulty;
   String mnemonicStory;
   String learningStatus;
   List<String> recallHistory;
   List<String> practiceHistory;
-  int chosenDifficulty;
 
   StudyItem({
     @required this.keyword,
@@ -39,11 +39,11 @@ class StudyItem {
     this.itemReadings,
     this.progressLevel = 0,
     this.mnemonicStory = "",
+    this.chosenDifficulty = 1,
     this.learningStatus = "Lesson",
     this.recallHistory,
     this.practiceHistory,
     this.dateLastLevelChanged,
-    this.chosenDifficulty = 1,
   });
 
   String levelTranslation() {

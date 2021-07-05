@@ -9,13 +9,14 @@ import 'model/study_item_model.dart';
 import 'main_providers.dart';
 
 enum VertOptions {
-  User,
-  Koohii,
-  WrapReview,
-  WrapLesson,
-  ToggleAlert,
+  ToggleOverallProg,
   ToggleSrsColumn,
   ToggleSrsPopUp,
+  ToggleAlert,
+  WrapLesson,
+  WrapReview,
+  Koohii,
+  User,
 }
 
 void choiceAction({
@@ -25,6 +26,7 @@ void choiceAction({
   List<StudyItem> reviewList,
   List<StudyItem> lessonList,
   bool lvlColumnVisible,
+  bool overallVisible,
   StudyItem targetKanji,
   int lsnQueueIdx,
   bool showAlert,
@@ -34,16 +36,18 @@ void choiceAction({
     Navigator.of(context).pushNamed(UserPage.routeName);
   } else if (choice == VertOptions.Koohii) {
     launchURL(targetKanji);
-  } else if (choice == VertOptions.WrapReview) {
-    wrapReviewSession(context, ansChoiceList, reviewList);
   } else if (choice == VertOptions.WrapLesson) {
     wrapLessonSession(context, lsnQueueIdx, lessonList);
-  } else if (choice == VertOptions.ToggleSrsColumn) {
-    context.read(lvlColumnVisibleProvider).state = !lvlColumnVisible;
+  } else if (choice == VertOptions.WrapReview) {
+    wrapReviewSession(context, ansChoiceList, reviewList);
   } else if (choice == VertOptions.ToggleAlert) {
     context.read(showAlertProvider).state = !showAlert;
   } else if (choice == VertOptions.ToggleSrsPopUp) {
     context.read(showSrsPopUpProvider).state = !showPopUp;
+  } else if (choice == VertOptions.ToggleSrsColumn) {
+    context.read(lvlColumnVisibleProvider).state = !lvlColumnVisible;
+  } else if (choice == VertOptions.ToggleOverallProg) {
+    context.read(overallProgressVisibleProvider).state = !overallVisible;
   }
 }
 
