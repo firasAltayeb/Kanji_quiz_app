@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CornerButton extends StatelessWidget {
   final String passedText;
@@ -28,7 +29,10 @@ class CornerButton extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          onPressed: handler,
+          onPressed: () {
+            HapticFeedback.vibrate();
+            handler();
+          },
         ),
       ),
     );

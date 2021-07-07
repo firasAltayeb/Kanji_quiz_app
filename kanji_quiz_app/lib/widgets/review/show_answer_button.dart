@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import '../../main_providers.dart';
 
 class ShowAnswerButton extends ConsumerWidget {
@@ -17,7 +19,10 @@ class ShowAnswerButton extends ConsumerWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: () => bldCtx.read(showAnsBtnVisibleProvider).state = false,
+        onPressed: () {
+          HapticFeedback.vibrate();
+          bldCtx.read(showAnsBtnVisibleProvider).state = false;
+        },
       ),
     );
   }

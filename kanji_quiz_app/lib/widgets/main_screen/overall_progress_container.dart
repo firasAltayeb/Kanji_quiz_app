@@ -11,7 +11,7 @@ class OverallProgressContainer extends ConsumerWidget {
         Expanded(
           child: _bottomButton(
             screenHeight,
-            "Learned: ",
+            "Studied: ",
             watch(studiedListProvider).length,
             Colors.red[400],
           ),

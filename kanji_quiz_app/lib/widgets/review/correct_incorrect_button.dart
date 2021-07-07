@@ -1,8 +1,9 @@
-import 'package:kanji_quiz_app/model/study_item_model.dart';
-import '../../main_providers.dart';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../../model/study_item_model.dart';
+import '../../main_providers.dart';
 
 class CorrectIncorrectButton extends ConsumerWidget {
   final Function answerQuestion;
@@ -42,6 +43,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
           ),
         ),
         onPressed: () {
+          HapticFeedback.vibrate();
           var characterLook =
               targetItem.itemType != "Primitive" ? targetItem.characterID : "";
           var currentProgressLevel = selectChoice

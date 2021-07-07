@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+
 import '../../main_providers.dart';
 
 class ItemDifficultyRow extends ConsumerWidget {
@@ -31,6 +33,7 @@ class ItemDifficultyRow extends ConsumerWidget {
             backgroundColor: Colors.green,
             child: IconButton(
               onPressed: () {
+                HapticFeedback.vibrate();
                 if (targetK.chosenDifficulty > 1) {
                   targetK.chosenDifficulty--;
                   context.read(targetItemProvider).state = targetK;
@@ -54,6 +57,7 @@ class ItemDifficultyRow extends ConsumerWidget {
             backgroundColor: Colors.red,
             child: IconButton(
               onPressed: () {
+                HapticFeedback.vibrate();
                 if (targetK.chosenDifficulty < 4) {
                   targetK.chosenDifficulty++;
                   context.read(targetItemProvider).state = targetK;

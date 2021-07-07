@@ -1,6 +1,8 @@
-import 'package:kanji_quiz_app/widgets/shared/item_interactive_row.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../shared/item_interactive_row.dart';
 import '../../main_providers.dart';
 
 class ResultPage extends ConsumerWidget {
@@ -96,7 +98,10 @@ class ResultPage extends ConsumerWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        onPressed: wrapSession,
+        onPressed: () {
+          HapticFeedback.vibrate();
+          wrapSession();
+        },
       ),
     );
   }
