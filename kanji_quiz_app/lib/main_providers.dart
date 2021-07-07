@@ -89,9 +89,9 @@ final reviewReadyListProvider = Provider<List<StudyItem>>((ref) {
   // ignore: unused_local_variable
   final syncNow = ref.watch(syncNowProvider);
   final reviewList = ref.watch(reviewListProvider);
-  final readyList = reviewList.where((kanjiItem) {
+  final readyList = reviewList.where((item) {
     return true; // used for testing review screen
-    // return DateTime.now().isAfter(kanjiItem.nextReviewDate()) ? true : false;
+    // return DateTime.now().isAfter(item.nextReviewDate()) ? true : false;
   }).toList();
   return readyList;
 });
@@ -120,6 +120,30 @@ final acquiredListProvider = Provider<List<StudyItem>>((ref) {
     return item.learningStatus == "Acquired";
   }).toList();
   return acquiredList;
+});
+
+final studiedListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final studiedList = itemMainList.where((item) {
+    return item.mnemonicStory != "" && item.learningStatus != "Lesson";
+  }).toList();
+  return studiedList;
+});
+
+final reviewedListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final reviewedList = itemMainList.where((item) {
+    return item.recallHistory.isNotEmpty;
+  }).toList();
+  return reviewedList;
+});
+
+final practicedListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final practicedList = itemMainList.where((item) {
+    return item.practiceHistory.isNotEmpty;
+  }).toList();
+  return practicedList;
 });
 
 final templateAddressProvider =

@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
+import '../../main_providers.dart';
+
 class OverallProgressContainer extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -10,7 +12,7 @@ class OverallProgressContainer extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             "Learned: ",
-            10,
+            watch(studiedListProvider).length,
             Colors.red[400],
           ),
         ),
@@ -18,7 +20,7 @@ class OverallProgressContainer extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             "Reviewed: ",
-            10,
+            watch(reviewedListProvider).length,
             Colors.orange[400],
           ),
         ),
@@ -26,7 +28,7 @@ class OverallProgressContainer extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             "Practiced: ",
-            10,
+            watch(practicedListProvider).length,
             Colors.blue[400],
           ),
         ),
@@ -34,7 +36,7 @@ class OverallProgressContainer extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             "Acquired: ",
-            10,
+            watch(acquiredListProvider).length,
             Colors.green[400],
           ),
         ),
