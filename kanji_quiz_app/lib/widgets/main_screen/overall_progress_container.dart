@@ -12,7 +12,7 @@ class OverallProgressContainer extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             "Studied: ",
-            Colors.orange[400],
+            Colors.red[400],
             watch(studiedListProvider).length,
           ),
         ),
@@ -20,7 +20,7 @@ class OverallProgressContainer extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             "Reviewed: ",
-            Colors.red[400],
+            Colors.orange[400],
             watch(reviewedListProvider).length,
           ),
         ),

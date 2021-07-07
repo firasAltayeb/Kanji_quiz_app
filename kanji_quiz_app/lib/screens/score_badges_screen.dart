@@ -19,14 +19,14 @@ class BadgesScreen extends ConsumerWidget {
             Container(height: screenHeight * 0.03, color: Colors.grey[300]),
             TextContainer(
               passedText: 'Study Badges',
-              widgetColor: Colors.orange[400],
+              widgetColor: Colors.red[400],
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(screenHeight * 0.2, "S", scoreBadgesData),
             Container(height: screenHeight * 0.03, color: Colors.grey[300]),
             TextContainer(
               passedText: 'Review Badges',
-              widgetColor: Colors.red[400],
+              widgetColor: Colors.orange[400],
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(screenHeight * 0.2, "R", scoreBadgesData),

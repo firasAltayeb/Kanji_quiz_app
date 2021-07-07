@@ -12,7 +12,7 @@ class MainAppDrawer extends ConsumerWidget {
         children: <Widget>[
           Container(
             height: screenHeight * 0.15,
-            padding: EdgeInsets.fromLTRB(10, 20, 0, 0),
+            padding: EdgeInsets.only(left: 10),
             alignment: Alignment.centerLeft,
             color: Theme.of(context).accentColor,
             child: Text(
@@ -22,6 +22,10 @@ class MainAppDrawer extends ConsumerWidget {
                 fontSize: screenHeight * 0.04,
               ),
             ),
+          ),
+          Container(
+            height: screenHeight * 0.03,
+            color: Colors.grey[300],
           ),
           Expanded(
             child: drawerListView(context, screenHeight),
@@ -38,7 +42,7 @@ class MainAppDrawer extends ConsumerWidget {
         tiles: [
           buildListTile(
             height,
-            'Sync now',
+            'Sync progress',
             Icons.sync,
             () {
               ctx.read(syncNowProvider).state++;
@@ -47,9 +51,12 @@ class MainAppDrawer extends ConsumerWidget {
           ),
           buildListTile(
             height,
-            'Badges',
+            'Extra badges',
             Icons.badge,
-            () => Navigator.of(ctx).pushNamed(BadgesScreen.routeName),
+            () {
+              Navigator.pop(ctx);
+              Navigator.of(ctx).pushNamed(BadgesScreen.routeName);
+            },
           ),
           buildListTile(
             height,
@@ -72,9 +79,9 @@ class MainAppDrawer extends ConsumerWidget {
     return ListTile(
       contentPadding: EdgeInsets.fromLTRB(
         10,
-        height * 0.025,
+        height * 0.02,
         10,
-        height * 0.025,
+        height * 0.02,
       ),
       title: Text(
         title,

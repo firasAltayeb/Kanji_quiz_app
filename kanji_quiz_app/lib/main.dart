@@ -38,7 +38,7 @@ class MyApp extends ConsumerWidget {
             ),
             appBarTheme: AppBarTheme(
               backgroundColor: Colors.yellow[700],
-              brightness: Brightness.light,
+              brightness: Brightness.dark,
             ),
             accentColor: Colors.yellow[700],
             fontFamily: 'Lato',

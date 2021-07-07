@@ -36,8 +36,12 @@ class MainScreen extends StatelessWidget {
         return SingleChildScrollView(
           child: Column(
             children: [
+              Container(
+                height: screenHeight * 0.03,
+                color: Colors.grey[300],
+              ),
               SizedBox(
-                height: screenHeight * 0.075,
+                height: screenHeight * 0.05,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

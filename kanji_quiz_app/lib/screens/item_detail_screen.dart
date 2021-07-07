@@ -43,6 +43,10 @@ class ItemDetailScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              height: screenHeight * 0.03,
+              color: Colors.grey[300],
+            ),
             TopKanjiRow(
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
