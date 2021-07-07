@@ -65,7 +65,7 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(height: 20),
             TextContainer(
               passedText: _targetItem.levelTranslation(),
-              screenHeight: screenHeight,
+              widgetHeight: screenHeight * 0.04,
             ),
             SizedBox(height: 20),
             if (_targetItem.learningStatus != "Acquired")

@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../shared/item_interactive_row.dart';
+import '../shared/interactive_grid_view.dart';
 import '../../main_providers.dart';
 
 class ResultPage extends ConsumerWidget {
@@ -25,7 +25,6 @@ class ResultPage extends ConsumerWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(),
           Text(
             'Your session score is $sessionScore',
             style: TextStyle(
@@ -53,14 +52,10 @@ class ResultPage extends ConsumerWidget {
         screenHeight,
       ),
       if (correctRecallList.length > 0)
-        ItemInteractiveRow(
+        InteractiveGrid(
           itemList: correctRecallList,
           widgetHeight: screenHeight * 0.175,
           selectHandler: null,
-        ),
-      if (correctRecallList.length == 0)
-        SizedBox(
-          height: screenHeight * 0.175,
         ),
       textContainer(
         'Recalled Incorrectly',
@@ -68,14 +63,10 @@ class ResultPage extends ConsumerWidget {
         screenHeight,
       ),
       if (incorrectRecallList.length > 0)
-        ItemInteractiveRow(
+        InteractiveGrid(
           itemList: incorrectRecallList,
           widgetHeight: screenHeight * 0.175,
           selectHandler: null,
-        ),
-      if (incorrectRecallList.length == 0)
-        SizedBox(
-          height: screenHeight * 0.175,
         ),
       wrapUpButton(screenHeight),
     ]);

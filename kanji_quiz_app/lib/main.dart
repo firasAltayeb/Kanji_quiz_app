@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:kanji_quiz_app/screens/badges_screen.dart';
+import 'package:kanji_quiz_app/screens/score_badges_screen.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/item_detail_screen.dart';
 import 'screens/review_mgr_screen.dart';

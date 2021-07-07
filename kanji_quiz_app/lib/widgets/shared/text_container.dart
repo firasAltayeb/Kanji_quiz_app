@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class TextContainer extends StatelessWidget {
   final String passedText;
-  final double screenHeight;
+  final double widgetHeight;
 
   TextContainer({
     @required this.passedText,
-    @required this.screenHeight,
+    @required this.widgetHeight,
   });
 
   @override
@@ -24,7 +24,7 @@ class TextContainer extends StatelessWidget {
       child: Text(
         passedText,
         style: TextStyle(
-          fontSize: screenHeight * 0.04,
+          fontSize: widgetHeight,
           fontFamily: 'Anton',
         ),
         textAlign: TextAlign.center,
