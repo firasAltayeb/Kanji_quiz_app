@@ -28,7 +28,7 @@ class MainScreenAppBar extends ConsumerWidget implements PreferredSizeWidget {
         IconButton(
           icon: Icon(
             Icons.search_rounded,
-            color: Colors.white,
+            color: Colors.black,
             size: screenHeight * 0.035,
           ),
           onPressed: null,

@@ -28,12 +28,20 @@ class MyApp extends ConsumerWidget {
           themeMode: ThemeMode.dark,
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,
+            primaryIconTheme: IconThemeData(
+              color: Colors.black,
+            ),
+            primaryTextTheme: TextTheme(
+              headline6: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+            appBarTheme: AppBarTheme(
+              backgroundColor: Colors.yellow[700],
+              brightness: Brightness.light,
+            ),
             accentColor: Colors.yellow[700],
             fontFamily: 'Lato',
-            appBarTheme: AppBarTheme(
-              backgroundColor: Colors.black,
-              brightness: Brightness.dark,
-            ),
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                 side: BorderSide(width: 3, color: Colors.black),
@@ -56,7 +64,12 @@ class MyApp extends ConsumerWidget {
           },
         );
       },
-      loading: () => const Center(child: CircularProgressIndicator()),
+      loading: () => Container(
+        decoration: new BoxDecoration(color: Colors.yellow[700]),
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
       error: (err, stack) => Text('Error: $err'),
     );
   }

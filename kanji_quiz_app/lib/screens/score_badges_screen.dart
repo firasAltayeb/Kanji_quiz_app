@@ -16,30 +16,31 @@ class BadgesScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: screenHeight * 0.05),
+            Container(height: screenHeight * 0.03, color: Colors.grey[300]),
             TextContainer(
               passedText: 'Study Badges',
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(screenHeight * 0.2, "S", scoreBadgesData),
-            SizedBox(height: screenHeight * 0.05),
+            Container(height: screenHeight * 0.03, color: Colors.grey[300]),
             TextContainer(
               passedText: 'Review Badges',
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(screenHeight * 0.2, "R", scoreBadgesData),
-            SizedBox(height: screenHeight * 0.05),
+            Container(height: screenHeight * 0.03, color: Colors.grey[300]),
             TextContainer(
               passedText: 'Pratice Badges',
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(screenHeight * 0.2, "P", scoreBadgesData),
-            SizedBox(height: screenHeight * 0.05),
+            Container(height: screenHeight * 0.03, color: Colors.grey[300]),
             TextContainer(
               passedText: 'Acquire Badges',
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(screenHeight * 0.2, "A", scoreBadgesData),
+            Container(height: screenHeight * 0.03, color: Colors.grey[300]),
           ],
         ),
       ),
