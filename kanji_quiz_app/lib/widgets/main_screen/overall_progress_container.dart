@@ -12,39 +12,39 @@ class OverallProgressContainer extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             "Studied: ",
+            Colors.orange[400],
             watch(studiedListProvider).length,
-            Colors.red[400],
           ),
         ),
         Expanded(
           child: _bottomButton(
             screenHeight,
             "Reviewed: ",
+            Colors.red[400],
             watch(reviewedListProvider).length,
-            Colors.orange[400],
           ),
         ),
         Expanded(
           child: _bottomButton(
             screenHeight,
             "Practiced: ",
-            watch(practicedListProvider).length,
             Colors.blue[400],
+            watch(practicedListProvider).length,
           ),
         ),
         Expanded(
           child: _bottomButton(
             screenHeight,
             "Acquired: ",
-            watch(acquiredListProvider).length,
             Colors.green[400],
+            watch(acquiredListProvider).length,
           ),
         ),
       ],
     );
   }
 
-  Widget _bottomButton(screenHeight, labelTxt, counterTxt, color) {
+  Widget _bottomButton(screenHeight, labelTxt, color, counterTxt) {
     return Container(
       height: screenHeight * 0.175,
       padding: const EdgeInsets.only(top: 5, left: 5),

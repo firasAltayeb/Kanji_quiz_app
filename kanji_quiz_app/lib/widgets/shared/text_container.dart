@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class TextContainer extends StatelessWidget {
   final String passedText;
+  final Color widgetColor;
   final double widgetHeight;
 
   TextContainer({
+    this.widgetColor,
     @required this.passedText,
     @required this.widgetHeight,
   });
@@ -18,7 +20,7 @@ class TextContainer extends StatelessWidget {
           color: Colors.black,
           width: 3,
         ),
-        color: Theme.of(context).accentColor,
+        color: widgetColor,
       ),
       padding: const EdgeInsets.all(5),
       child: Text(
