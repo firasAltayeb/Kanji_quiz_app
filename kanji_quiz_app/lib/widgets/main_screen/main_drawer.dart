@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+
+import 'package:kanji_quiz_app/screens/badges_screen.dart';
 import '../../main_providers.dart';
 
 class MainAppDrawer extends ConsumerWidget {
@@ -29,43 +31,37 @@ class MainAppDrawer extends ConsumerWidget {
     );
   }
 
-  Widget drawerListView(BuildContext context, double height) {
+  Widget drawerListView(BuildContext ctx, double height) {
     return ListView(
       children: ListTile.divideTiles(
-        context: context,
+        context: ctx,
         tiles: [
           buildListTile(
             height,
             'Sync now',
             Icons.sync,
             () {
-              context.read(syncNowProvider).state++;
-              Navigator.pop(context);
+              ctx.read(syncNowProvider).state++;
+              Navigator.pop(ctx);
             },
-          ),
-          buildListTile(
-            height,
-            'Settings',
-            Icons.settings,
-            () => Navigator.pop(context),
           ),
           buildListTile(
             height,
             'Badges',
             Icons.badge,
-            () => Navigator.pop(context),
+            () => Navigator.of(ctx).pushNamed(BadgesScreen.routeName),
           ),
           buildListTile(
             height,
             'Feedback',
             Icons.feedback,
-            () => Navigator.pop(context),
+            () => Navigator.pop(ctx),
           ),
           buildListTile(
             height,
             'Tutorial',
             Icons.help,
-            () => Navigator.pop(context),
+            () => Navigator.pop(ctx),
           ),
         ],
       ).toList(),

@@ -1,12 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
+
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 import '../../main_providers.dart';
 
 class ItemInteractiveRow extends ConsumerWidget {
   final double widgetHeight;
-  final List<StudyItem> itemList;
   final Function selectHandler;
+  final List<StudyItem> itemList;
 
   ItemInteractiveRow({
     @required this.itemList,

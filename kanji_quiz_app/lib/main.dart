@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:kanji_quiz_app/screens/badges_screen.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/item_detail_screen.dart';
 import 'screens/review_mgr_screen.dart';
@@ -51,6 +52,7 @@ class MyApp extends ConsumerWidget {
             ReviewManager.routeName: (_) => ReviewManager(),
             PracticeManager.routeName: (_) => PracticeManager(),
             ItemDetailScreen.routeName: (_) => ItemDetailScreen(),
+            BadgesScreen.routeName: (_) => BadgesScreen(),
           },
         );
       },

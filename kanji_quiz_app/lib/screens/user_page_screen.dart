@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/main_screen/home_app_bar.dart';
+import '../widgets/main_screen/main_screen_app_bar.dart';
 
 class UserPage extends StatelessWidget {
   static const routeName = '/user-screen';
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: HomeAppBar(
+      appBar: MainScreenAppBar(
         appBar: AppBar(),
       ),
       body: Column(

@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import 'package:kanji_quiz_app/widgets/main_screen/overall_progress_container.dart';
+import 'widgets/main_screen/interactive_row_column.dart';
+import 'widgets/main_screen/main_screen_app_bar.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
-import 'widgets/main_screen/srs_level_column.dart';
-import 'widgets/main_screen/home_app_bar.dart';
 import 'widgets/main_screen/main_drawer.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
@@ -20,7 +20,7 @@ class MainScreen extends StatelessWidget {
     print('Main body build is called');
 
     return Scaffold(
-      appBar: HomeAppBar(
+      appBar: MainScreenAppBar(
         appBar: AppBar(),
       ),
       drawer: SizedBox(
@@ -86,7 +86,7 @@ class MainScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.05,
               ),
-              if (lvlColumnVisible) SrsLevelColumn()
+              if (lvlColumnVisible) InteractiveRowColumn()
             ],
           ),
         );

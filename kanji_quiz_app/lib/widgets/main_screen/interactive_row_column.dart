@@ -7,7 +7,7 @@ import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:kanji_quiz_app/model/study_item_model.dart';
 import '../../main_providers.dart';
 
-class SrsLevelColumn extends ConsumerWidget {
+class InteractiveRowColumn extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
     return Column(
