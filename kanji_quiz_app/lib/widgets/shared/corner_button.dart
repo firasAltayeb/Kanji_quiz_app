@@ -29,10 +29,12 @@ class CornerButton extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          onPressed: () {
-            HapticFeedback.vibrate();
-            handler();
-          },
+          onPressed: handler == null
+              ? null
+              : () {
+                  HapticFeedback.vibrate();
+                  handler();
+                },
         ),
       ),
     );
