@@ -87,7 +87,9 @@ class BadgesScreen extends ConsumerWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          "assets/images/crown_decoration.png",
+                          currentAmount >= scoreBadgesList[i].amountToGet
+                              ? scoreBadgesList[i].decorationAddress
+                              : "assets/images/decorations/grey_crown.png",
                         ),
                         fit: BoxFit.fill,
                       ),
@@ -101,24 +103,24 @@ class BadgesScreen extends ConsumerWidget {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                              currentAmount > scoreBadgesList[i].amountToGet
-                                  ? scoreBadgesList[i].backGroundAddress
-                                  : "assets/images/grey_badge_template2.png",
+                              currentAmount >= scoreBadgesList[i].amountToGet
+                                  ? "assets/images/gold_badge_template.png"
+                                  : "assets/images/grey_badge_template.png",
                             ),
                             fit: BoxFit.fill,
                           ),
                         ),
                       ),
                       Container(
-                        height: widgetHeight * 0.3,
+                        height: widgetHeight * 0.25,
                         child: Text(
                           "$badgesType" + "${scoreBadgesList[i].amountToGet}",
                           style: TextStyle(
-                            fontSize: widgetHeight * 0.2,
-                            fontFamily: 'Lato',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                              fontSize: widgetHeight * 0.175,
+                              fontFamily: 'Lato',
+                              fontStyle: FontStyle.italic,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         ),
                       ),
                     ],

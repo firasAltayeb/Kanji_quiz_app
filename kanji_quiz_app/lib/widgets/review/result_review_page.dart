@@ -51,23 +51,21 @@ class ResultPage extends ConsumerWidget {
         Colors.green,
         screenHeight,
       ),
-      if (correctRecallList.length > 0)
-        InteractiveGrid(
-          itemList: correctRecallList,
-          widgetHeight: screenHeight * 0.175,
-          selectHandler: null,
-        ),
+      InteractiveGrid(
+        itemList: correctRecallList,
+        widgetHeight: screenHeight * 0.175,
+        selectHandler: null,
+      ),
       textContainer(
         'Recalled Incorrectly',
         Colors.red,
         screenHeight,
       ),
-      if (incorrectRecallList.length > 0)
-        InteractiveGrid(
-          itemList: incorrectRecallList,
-          widgetHeight: screenHeight * 0.175,
-          selectHandler: null,
-        ),
+      InteractiveGrid(
+        itemList: incorrectRecallList,
+        widgetHeight: screenHeight * 0.175,
+        selectHandler: null,
+      ),
       wrapUpButton(screenHeight),
     ]);
   }

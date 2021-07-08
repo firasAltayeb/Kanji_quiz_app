@@ -44,6 +44,7 @@ class MyApp extends ConsumerWidget {
             fontFamily: 'Lato',
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
+                elevation: 5,
                 side: BorderSide(width: 3, color: Colors.black),
                 primary: Colors.yellow[700],
                 padding: const EdgeInsets.all(10),

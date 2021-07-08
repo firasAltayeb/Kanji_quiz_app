@@ -37,28 +37,28 @@ class TranslationOptionBtn extends ConsumerWidget {
     }
   }
 
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext ctx, ScopedReader watch) {
     final practiceQueueIdx = watch(practiceQueueIdxProvider).state;
     final answeredRevealed = watch(answeredRevealedProvider).state;
-    final screenHeight = MediaQuery.of(context).size.height;
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(ctx).size.height;
+    final screenWidth = MediaQuery.of(ctx).size.width;
 
-    return InkWell(
-      onTap: () {
-        HapticFeedback.vibrate();
-        context.read(answeredRevealedProvider).state = !answeredRevealed;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: InkWell(
+        onTap: () {
+          HapticFeedback.vibrate();
+          ctx.read(answeredRevealedProvider).state = !answeredRevealed;
 
-        if (answeredRevealed) {
-          if (questionAnswer.accuracy == 100) {
-            _recordAnswer(context, true, practiceQueueIdx);
-          } else {
-            _recordAnswer(context, false, practiceQueueIdx);
+          if (answeredRevealed) {
+            if (questionAnswer.accuracy == 100) {
+              _recordAnswer(ctx, true, practiceQueueIdx);
+            } else {
+              _recordAnswer(ctx, false, practiceQueueIdx);
+            }
+            ctx.read(answeredRevealedProvider).state = !answeredRevealed;
           }
-          context.read(answeredRevealedProvider).state = !answeredRevealed;
-        }
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 10),
+        },
         child: Ink(
           padding: const EdgeInsets.fromLTRB(5, 2.5, 5, 2.5),
           width: screenWidth * 0.95,
@@ -68,8 +68,7 @@ class TranslationOptionBtn extends ConsumerWidget {
               color: Colors.black,
               width: 3,
             ),
-            color:
-                !answeredRevealed ? Theme.of(context).accentColor : answerColor,
+            color: !answeredRevealed ? Theme.of(ctx).accentColor : answerColor,
           ),
           child: FittedBox(
             fit: BoxFit.contain,

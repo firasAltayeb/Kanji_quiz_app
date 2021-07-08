@@ -41,6 +41,9 @@ class RecallPage extends ConsumerWidget {
     return Column(
       children: [
         Container(height: screenHeight * 0.03, color: Colors.grey[300]),
+        SizedBox(
+          height: screenHeight * 0.01,
+        ),
         TopKanjiRow(
           targetItem: _targetItem,
           leftWidgetText: _itemCounter,
