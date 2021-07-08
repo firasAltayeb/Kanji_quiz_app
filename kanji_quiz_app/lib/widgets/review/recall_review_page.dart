@@ -35,8 +35,12 @@ class RecallPage extends ConsumerWidget {
     final _itemCounter = '${(queueIndex + 1)}/${reviewQueue.length}';
     final _targetItem = reviewQueue[queueIndex];
 
+    var screenHeight = MediaQuery.of(bldCtx).size.height;
+    var screenWidth = MediaQuery.of(bldCtx).size.width;
+
     return Column(
       children: [
+        Container(height: screenHeight * 0.03, color: Colors.grey[300]),
         TopKanjiRow(
           targetItem: _targetItem,
           leftWidgetText: _itemCounter,
@@ -50,7 +54,7 @@ class RecallPage extends ConsumerWidget {
                 },
         ),
         Expanded(child: SizedBox()),
-        _infoBox(bldCtx, _showBtnVisible),
+        _infoBox(_showBtnVisible, screenHeight, screenWidth),
         Expanded(child: SizedBox()),
         _showBtnVisible
             ? ShowAnswerButton()
@@ -72,17 +76,17 @@ class RecallPage extends ConsumerWidget {
     );
   }
 
-  Widget _infoBox(BuildContext context, showBtnVisible) {
+  Widget _infoBox(showBtnVisible, screenHeight, screenWidth) {
     return Container(
       padding: const EdgeInsets.all(10),
-      width: MediaQuery.of(context).size.width * 0.95,
-      height: MediaQuery.of(context).size.height * 0.125,
+      height: screenHeight * 0.125,
+      width: screenWidth * 0.95,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
           width: 3,
         ),
-        color: showBtnVisible ? Colors.red[400] : Theme.of(context).accentColor,
+        color: showBtnVisible ? Colors.red[400] : Colors.yellow[700],
       ),
       child: FittedBox(
         fit: showBtnVisible ? BoxFit.fitWidth : BoxFit.fill,

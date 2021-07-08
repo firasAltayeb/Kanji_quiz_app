@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/main_screen/main_screen_app_bar.dart';
+import '../widgets/score_screens/score_badges_app_screen.dart';
 import '../widgets/shared/text_container.dart';
 import '../model/score_badges_model.dart';
 
@@ -10,7 +10,7 @@ class BadgesScreen extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: MainScreenAppBar(
+      appBar: ScoreBadgesAppBar(
         appBar: AppBar(),
       ),
       body: SingleChildScrollView(

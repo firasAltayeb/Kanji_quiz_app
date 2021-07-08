@@ -34,6 +34,7 @@ class LessonManager extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     List<StudyItem> _lessonList = ModalRoute.of(context).settings.arguments;
+    double screenHeight = MediaQuery.of(context).size.height;
     final _showButtonRow = watch(btnBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;
@@ -65,6 +66,7 @@ class LessonManager extends ConsumerWidget {
         },
         child: Column(
           children: [
+            Container(height: screenHeight * 0.03, color: Colors.grey[300]),
             TopKanjiRow(
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
@@ -76,7 +78,7 @@ class LessonManager extends ConsumerWidget {
                   _nextKanji(context, _queueIndex, _lessonList),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.075,
+              height: screenHeight * 0.075,
               child: KeyTextContainer(
                 _lessonList[_queueIndex].itemType == "Hiragana" ||
                         _lessonList[_queueIndex].itemType == "Katakana"

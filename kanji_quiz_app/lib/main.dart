@@ -37,7 +37,7 @@ class MyApp extends ConsumerWidget {
               ),
             ),
             appBarTheme: AppBarTheme(
-              backgroundColor: Colors.yellow[700],
+              backgroundColor: Colors.orange[400],
               brightness: Brightness.dark,
             ),
             accentColor: Colors.yellow[700],
@@ -65,7 +65,7 @@ class MyApp extends ConsumerWidget {
         );
       },
       loading: () => Container(
-        decoration: new BoxDecoration(color: Colors.yellow[700]),
+        decoration: new BoxDecoration(color: Colors.orange[400]),
         child: Center(
           child: CircularProgressIndicator(),
         ),

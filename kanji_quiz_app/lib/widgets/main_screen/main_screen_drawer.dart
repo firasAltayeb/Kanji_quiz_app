@@ -14,7 +14,7 @@ class MainAppDrawer extends ConsumerWidget {
             height: screenHeight * 0.15,
             padding: EdgeInsets.only(left: 10),
             alignment: Alignment.centerLeft,
-            color: Theme.of(context).accentColor,
+            color: Colors.orange[400],
             child: Text(
               'Kanji Master!!',
               style: TextStyle(
@@ -22,10 +22,6 @@ class MainAppDrawer extends ConsumerWidget {
                 fontSize: screenHeight * 0.04,
               ),
             ),
-          ),
-          Container(
-            height: screenHeight * 0.03,
-            color: Colors.grey[300],
           ),
           Expanded(
             child: drawerListView(context, screenHeight),
