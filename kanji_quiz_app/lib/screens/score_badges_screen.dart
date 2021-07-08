@@ -80,32 +80,48 @@ class BadgesScreen extends ConsumerWidget {
             ),
             scrollDirection: Axis.horizontal,
             itemBuilder: (ctx, i) {
-              return Stack(
-                alignment: Alignment.center,
+              return Column(
                 children: [
                   Container(
+                    height: widgetHeight * 0.25,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                          currentAmount > scoreBadgesList[i].amountToGet
-                              ? scoreBadgesList[i].backGroundAddress
-                              : "assets/images/grey_badge_template.png",
+                          "assets/images/crown_decoration.png",
                         ),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
-                  Container(
-                    height: widgetHeight * 0.3,
-                    child: Text(
-                      "$badgesType" + "${scoreBadgesList[i].amountToGet}",
-                      style: TextStyle(
-                        fontSize: widgetHeight * 0.2,
-                        fontFamily: 'Lato',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        height: widgetHeight * 0.75,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              currentAmount > scoreBadgesList[i].amountToGet
+                                  ? scoreBadgesList[i].backGroundAddress
+                                  : "assets/images/grey_badge_template2.png",
+                            ),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                       ),
-                    ),
+                      Container(
+                        height: widgetHeight * 0.3,
+                        child: Text(
+                          "$badgesType" + "${scoreBadgesList[i].amountToGet}",
+                          style: TextStyle(
+                            fontSize: widgetHeight * 0.2,
+                            fontFamily: 'Lato',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               );
