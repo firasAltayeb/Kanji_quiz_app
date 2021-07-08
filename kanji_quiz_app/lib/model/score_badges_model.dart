@@ -1,76 +1,76 @@
 import 'package:flutter/foundation.dart';
 
-List<ScoreBadges> scoreBadgesData = [
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "10",
-    backGroundAddress: "assets/images/pink_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "50",
-    backGroundAddress: "assets/images/pink_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "100",
-    backGroundAddress: "assets/images/pink_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "200",
-    backGroundAddress: "assets/images/blue_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "300",
-    backGroundAddress: "assets/images/blue_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "400",
-    backGroundAddress: "assets/images/blue_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "500",
-    backGroundAddress: "assets/images/red_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "600",
-    backGroundAddress: "assets/images/red_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "700",
-    backGroundAddress: "assets/images/red_badge_template.png",
-  ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "800",
+List<ScoreBadge> scoreBadgesList = [
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 10,
     backGroundAddress: "assets/images/green_badge_template.png",
   ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "900",
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 50,
+    backGroundAddress: "assets/images/blue_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 100,
+    backGroundAddress: "assets/images/red_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 200,
     backGroundAddress: "assets/images/green_badge_template.png",
   ),
-  ScoreBadges(
-    pointToGain: 100,
-    labelText: "1000",
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 300,
+    backGroundAddress: "assets/images/blue_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 400,
+    backGroundAddress: "assets/images/red_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 500,
     backGroundAddress: "assets/images/green_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 600,
+    backGroundAddress: "assets/images/blue_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 700,
+    backGroundAddress: "assets/images/red_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 800,
+    backGroundAddress: "assets/images/pink_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 900,
+    backGroundAddress: "assets/images/pink_badge_template.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 1000,
+    backGroundAddress: "assets/images/pink_badge_template.png",
   ),
 ];
 
-class ScoreBadges {
-  final int pointToGain;
-  final String labelText;
+class ScoreBadge {
+  final int scoreGained;
+  final int amountToGet;
   final String backGroundAddress;
 
-  ScoreBadges({
-    @required this.labelText,
-    @required this.pointToGain,
+  ScoreBadge({
+    @required this.amountToGet,
+    @required this.scoreGained,
     @required this.backGroundAddress,
   });
 }
