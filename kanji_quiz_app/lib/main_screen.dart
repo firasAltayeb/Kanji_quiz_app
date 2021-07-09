@@ -6,11 +6,11 @@ import 'widgets/screen_main/overall_progress_container.dart';
 import 'widgets/screen_main/interactive_row_column.dart';
 import 'widgets/screen_main/main_screen_app_bar.dart';
 import 'widgets/screen_main/main_screen_drawer.dart';
-import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
 import 'screens/practice_screen.dart';
 import 'model/study_item_model.dart';
+import 'main_providers.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -28,11 +28,14 @@ class MainScreen extends StatelessWidget {
         child: MainAppDrawer(),
       ),
       body: Consumer(builder: (consumerCtx, watch, _) {
-        final lessonList = watch(lessonListProvider);
+        final allProgVisible = watch(overallProgressVisibleProvider).state;
+        final lvlColumnVisible = watch(lvlColumnVisibleProvider).state;
+        final pracQueueIdx = watch(practiceQueueIdxProvider).state;
+        final lsnQueueIndex = watch(lessonQueueIdxProvider).state;
+        final revQueueIndex = watch(reviewQueueIdxProvider).state;
         final reviewList = watch(reviewReadyListProvider);
         final pracitceList = watch(practiceListProvider);
-        final lvlColumnVisible = watch(lvlColumnVisibleProvider).state;
-        final overallProgVisible = watch(overallProgressVisibleProvider).state;
+        final lessonList = watch(lessonListProvider);
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -53,6 +56,7 @@ class MainScreen extends StatelessWidget {
                     "Lesson",
                     lessonList,
                     LessonManager.routeName,
+                    lsnQueueIndex,
                   ),
                   _screenNavigateColumn(
                     consumerCtx,
@@ -61,6 +65,7 @@ class MainScreen extends StatelessWidget {
                     "Review",
                     reviewList,
                     ReviewManager.routeName,
+                    revQueueIndex,
                   ),
                 ],
               ),
@@ -81,12 +86,13 @@ class MainScreen extends StatelessWidget {
                   "Practice",
                   pracitceList,
                   PracticeManager.routeName,
+                  pracQueueIdx,
                 ),
               ),
               SizedBox(
                 height: screenHeight * 0.05,
               ),
-              if (overallProgVisible) OverallProgressContainer(),
+              if (allProgVisible) OverallProgressContainer(),
               SizedBox(
                 height: screenHeight * 0.05,
               ),
@@ -99,7 +105,7 @@ class MainScreen extends StatelessWidget {
   }
 
   Widget _screenNavigateColumn(BuildContext ctx, screenHeight, screenWidth,
-      label, List<StudyItem> itemList, routeName) {
+      label, List<StudyItem> itemList, routeName, queueIdx) {
     return Column(
       children: [
         Text(
@@ -116,7 +122,7 @@ class MainScreen extends StatelessWidget {
           width: screenWidth * 0.4,
           child: ElevatedButton(
             child: Text(
-              'Start',
+              queueIdx == 0 ? "Start " : "Resume " + "Session",
               style: TextStyle(
                 fontSize: screenHeight * 0.04,
                 fontStyle: FontStyle.italic,
