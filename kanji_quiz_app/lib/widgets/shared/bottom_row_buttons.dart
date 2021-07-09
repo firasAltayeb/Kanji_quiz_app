@@ -9,14 +9,12 @@ class ItemBottomRow extends ConsumerWidget {
   final mnemonicController = TextEditingController();
 
   final List<StudyItem> lessonList;
-  final Function showBottomRow;
   final bool itemDetailScreen;
   final StudyItem passedItem;
   final int lsnQueueIdx;
 
   ItemBottomRow({
     @required this.itemDetailScreen,
-    @required this.showBottomRow,
     this.lsnQueueIdx,
     this.passedItem,
     this.lessonList,
@@ -27,7 +25,6 @@ class ItemBottomRow extends ConsumerWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     StudyItem targetItem =
         passedItem != null ? passedItem : lessonList[lsnQueueIdx];
-    print(targetItem.learningStatus);
     return Row(
       children: [
         if (itemDetailScreen || targetItem.learningStatus != "Lesson")
@@ -79,10 +76,10 @@ class ItemBottomRow extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             () {
-              editMnemonicHandler(
+              editDataHandler(
                 studyItem: targetItem,
                 buildContext: context,
-                bottomRowHandler: showBottomRow,
+                forKeyword: false,
               );
             },
             "Edit Mnemonic",

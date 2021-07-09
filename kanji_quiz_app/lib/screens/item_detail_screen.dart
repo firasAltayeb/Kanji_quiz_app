@@ -8,8 +8,9 @@ import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/bottom_row_buttons.dart';
-import '../widgets/shared/text_container.dart';
 import '../widgets/shared/top_picture_row.dart';
+import '../widgets/shared/text_container.dart';
+import '../helper_functions.dart';
 import '../main_providers.dart';
 
 class ItemDetailScreen extends ConsumerWidget {
@@ -24,12 +25,8 @@ class ItemDetailScreen extends ConsumerWidget {
     return _dateFormater.format(time);
   }
 
-  void _showHandler(BuildContext context, bool value) {
-    context.read(btnBottomRowProvider).state = value;
-  }
-
   Widget build(BuildContext context, ScopedReader watch) {
-    final _showButtonRow = watch(btnBottomRowProvider).state;
+    final _showButtonRow = watch(showBottomRowProvider).state;
     final _targetItem = watch(targetItemProvider).state;
     final _showAlert = watch(showAlertProvider).state;
     var isKana = _targetItem.itemType == "Hiragana" ||
@@ -54,14 +51,19 @@ class ItemDetailScreen extends ConsumerWidget {
               rightWidgetText: "Next",
               targetItem: _targetItem,
             ),
+            if (!isKana)
+              KeyTextContainer(
+                passedFunction: () => editDataHandler(
+                  studyItem: _targetItem,
+                  buildContext: context,
+                  forKeyword: true,
+                ),
+                textToDisplay: 'Keyword: ' + _targetItem.keyword,
+                widgetHeight: screenHeight * 0.08,
+              ),
             if (isKana)
               KeyTextContainer(
                 textToDisplay: 'Reading: ' + _targetItem.itemReadings[0],
-                widgetHeight: screenHeight * 0.08,
-              ),
-            if (!isKana)
-              KeyTextContainer(
-                textToDisplay: 'Keyword: ' + _targetItem.keyword,
                 widgetHeight: screenHeight * 0.08,
               ),
             SizedBox(height: 20),
@@ -86,7 +88,6 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(height: 20),
             ScrollableContainer(
               targetItem: _targetItem,
-              showHandler: (value) => _showHandler(context, value),
             ),
             SizedBox(height: 30),
             BuildingBlockRow(
@@ -97,7 +98,6 @@ class ItemDetailScreen extends ConsumerWidget {
               ItemBottomRow(
                 itemDetailScreen: true,
                 passedItem: _targetItem,
-                showBottomRow: (value) => _showHandler(context, value),
               ),
             if (!_showButtonRow)
               SizedBox(

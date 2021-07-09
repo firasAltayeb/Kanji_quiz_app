@@ -5,14 +5,10 @@ import 'package:kanji_quiz_app/helper_functions.dart';
 import '../../model/study_item_model.dart';
 
 class ScrollableContainer extends ConsumerWidget {
-  final Function showHandler;
-  final StudyItem targetItem;
   final ScrollController _scrollController = ScrollController();
+  final StudyItem targetItem;
 
-  ScrollableContainer({
-    @required this.targetItem,
-    @required this.showHandler,
-  });
+  ScrollableContainer({@required this.targetItem});
 
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -20,10 +16,10 @@ class ScrollableContainer extends ConsumerWidget {
     return Consumer(builder: (context, watch, _) {
       return InkWell(
         onLongPress: () {
-          editMnemonicHandler(
+          editDataHandler(
             studyItem: targetItem,
             buildContext: context,
-            bottomRowHandler: showHandler,
+            forKeyword: false,
           );
         },
         child: Container(
@@ -62,7 +58,7 @@ class ScrollableContainer extends ConsumerWidget {
           fontSize: screenHeight * 0.035,
         ),
         children: <TextSpan>[
-          TextSpan(text: 'Please create a mnemonic for the above $itemType '),
+          TextSpan(text: 'Please create a mnemonic for '),
           if (itemType != 'Hiragana' && itemType != 'Katakana')
             TextSpan(
               text: '${item.keyword} ',
@@ -72,9 +68,10 @@ class ScrollableContainer extends ConsumerWidget {
               ),
             ),
           if (item.buildingBlockKeywords.isNotEmpty)
+            TextSpan(text: 'using its building $temp '),
+          if (item.buildingBlockKeywords.isNotEmpty)
             TextSpan(
-              text: 'using its building $temp ' +
-                  '${item.buildingBlockKeywords} ',
+              text: '${item.buildingBlockKeywords} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,

@@ -138,25 +138,6 @@ void launchURL(StudyItem targetKanji) async {
   }
 }
 
-void editMnemonicHandler({
-  BuildContext buildContext,
-  Function bottomRowHandler,
-  StudyItem studyItem,
-}) {
-  bottomRowHandler(false);
-  Navigator.of(buildContext)
-      .push(
-    PageRouteBuilder(
-        opaque: false,
-        pageBuilder: (BuildContext context, _, __) {
-          return InputDialogScreen(studyItem);
-        }),
-  )
-      .then((passedText) {
-    bottomRowHandler(true);
-  });
-}
-
 void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
   for (var index = 0; index <= lsnQueueIdx; index++) {
     StudyItem sessionItem = lessonList[index];
@@ -248,14 +229,36 @@ void wrapPracticeSession(BuildContext context, answerChoiceList, practiceList) {
   Navigator.pop(context);
 }
 
-String inputDialogHintText(StudyItem item) {
+void editDataHandler(
+    {BuildContext buildContext, StudyItem studyItem, bool forKeyword}) {
+  buildContext.read(showBottomRowProvider).state = false;
+  Navigator.of(buildContext).push(
+    PageRouteBuilder(
+        opaque: false,
+        pageBuilder: (BuildContext context, _, __) {
+          return InputDialogScreen(
+            itemDetails: studyItem,
+            keywordManipulation: forKeyword,
+          );
+        }),
+  );
+}
+
+String inputDialogHintText(StudyItem item, keywordManipulation) {
+  var type = item.itemType;
+  var keywordHint = type == 'Kanji' ? "e.g. ${item.itemMeanings}" : "";
   var temp = item.buildingBlockKeywords.length > 1 ? "blocks" : "block";
-  if (item.itemType == 'Kanji') {
+  if (keywordManipulation) {
+    return "${item.itemType} keyword can be any of the " +
+        "words/meanings it usually associate with " +
+        keywordHint;
+  }
+  if (type == 'Kanji') {
     return 'Please create a mnemonic for the kanji ' +
         '${item.characterID} using its bulidng $temp: ' +
         '${item.buildingBlockKeywords}';
-  } else if (item.itemType == 'Radical') {
-    return 'Please create a mnemonic for the Radical ' + '${item.characterID}';
+  } else if (type == 'Radical') {
+    return 'Please create a mnemonic for the Radical ${item.characterID}';
   }
   return 'Please create a mnemonic';
 }

@@ -28,14 +28,10 @@ class LessonManager extends ConsumerWidget {
     }
   }
 
-  void _showHandler(BuildContext context, bool value) {
-    context.read(btnBottomRowProvider).state = value;
-  }
-
   Widget build(BuildContext context, ScopedReader watch) {
     List<StudyItem> _lessonList = ModalRoute.of(context).settings.arguments;
     double screenHeight = MediaQuery.of(context).size.height;
-    final _showButtonRow = watch(btnBottomRowProvider).state;
+    final _showButtonRow = watch(showBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;
     final _targetItem = _lessonList[_queueIndex];
@@ -78,6 +74,11 @@ class LessonManager extends ConsumerWidget {
                   _nextKanji(context, _queueIndex, _lessonList),
             ),
             KeyTextContainer(
+              passedFunction: () => editDataHandler(
+                studyItem: _targetItem,
+                buildContext: context,
+                forKeyword: true,
+              ),
               textToDisplay: _lessonList[_queueIndex].itemType == "Hiragana" ||
                       _lessonList[_queueIndex].itemType == "Katakana"
                   ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
@@ -89,7 +90,6 @@ class LessonManager extends ConsumerWidget {
             ),
             ScrollableContainer(
               targetItem: _targetItem,
-              showHandler: (trueFalse) => _showHandler(context, trueFalse),
             ),
             Expanded(child: SizedBox()),
             if (_showButtonRow)
@@ -97,7 +97,6 @@ class LessonManager extends ConsumerWidget {
                 lsnQueueIdx: _queueIndex,
                 lessonList: _lessonList,
                 itemDetailScreen: false,
-                showBottomRow: (value) => _showHandler(context, value),
               ),
           ],
         ),

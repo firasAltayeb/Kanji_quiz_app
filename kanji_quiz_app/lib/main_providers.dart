@@ -45,7 +45,7 @@ final answeredRevealedProvider = StateProvider<bool>((ref) => false);
 
 final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
 
-final btnBottomRowProvider = StateProvider<bool>((ref) => true);
+final showBottomRowProvider = StateProvider<bool>((ref) => true);
 
 final reviewQueueIdxProvider = StateProvider<int>((ref) => 0);
 
@@ -156,7 +156,7 @@ final templateAddressProvider =
     case "Radical":
       return "assets/images/templates/blue_badge_template.png";
     case "Primitive":
-      return "assets/images/templates/badges/${targetKanji.characterID}.png";
+      return "assets/images/badges/${targetKanji.characterID}.png";
     default:
       return "assets/images/templates/red_badge_template.png";
   }

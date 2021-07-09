@@ -7,8 +7,9 @@ import '../main_providers.dart';
 
 class InputDialogScreen extends StatefulWidget {
   final StudyItem itemDetails;
+  final bool keywordManipulation;
 
-  InputDialogScreen(this.itemDetails);
+  InputDialogScreen({this.itemDetails, this.keywordManipulation});
 
   @override
   _InputDialogScreenState createState() => _InputDialogScreenState();
@@ -22,7 +23,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
   void initState() {
     super.initState();
     _mnemonicController = TextEditingController();
-    _mnemonicController.text = widget.itemDetails.mnemonicStory;
+    if (!widget.keywordManipulation)
+      _mnemonicController.text = widget.itemDetails.mnemonicStory;
   }
 
   Future<bool> _onBackPressed() async {
@@ -53,7 +55,10 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                 autofocus: true,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: inputDialogHintText(widget.itemDetails),
+                  hintText: inputDialogHintText(
+                    widget.itemDetails,
+                    widget.keywordManipulation,
+                  ),
                   hintMaxLines: 10,
                   hintStyle: TextStyle(
                     fontSize: screenHeight * 0.04,
@@ -85,7 +90,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               setState(() {
                                 _showButtonsRow = false;
                               });
-                              context.read(btnBottomRowProvider).state = true;
+                              context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             }
                           : () {
@@ -104,15 +109,20 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               setState(() {
                                 _showButtonsRow = false;
                               });
-                              context.read(btnBottomRowProvider).state = true;
-                              widget.itemDetails.mnemonicStory =
-                                  _mnemonicController.text;
+                              if (widget.keywordManipulation)
+                                widget.itemDetails.keyword =
+                                    _mnemonicController.text;
+                              if (!widget.keywordManipulation)
+                                widget.itemDetails.mnemonicStory =
+                                    _mnemonicController.text;
                               context
                                   .read(studyItemProvider.notifier)
                                   .editKanji(widget.itemDetails);
                               context
                                   .read(studyItemProvider.notifier)
                                   .saveProgress();
+
+                              context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             },
                     ),
@@ -129,15 +139,15 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
     return Padding(
       padding: EdgeInsets.fromLTRB(0, height * 0.225, 15, 0),
       child: MaterialButton(
-        onPressed: handler,
+        color: color,
         elevation: 2,
+        onPressed: handler,
+        disabledColor: Colors.grey[600],
+        padding: const EdgeInsets.all(10),
         shape: RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(10.0),
           side: BorderSide(color: Colors.black, width: 3),
         ),
-        padding: const EdgeInsets.all(10),
-        color: color,
-        disabledColor: Colors.grey[600],
         child: Text(
           text,
           style: TextStyle(

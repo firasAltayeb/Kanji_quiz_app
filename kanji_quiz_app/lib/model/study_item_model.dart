@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 
 class StudyItem {
-  final String keyword;
   final String itemType;
   final String jlptLevel;
   final int frameNumFifth;
@@ -16,6 +15,7 @@ class StudyItem {
   List<String> itemReadings;
   DateTime dateLastLevelChanged;
 
+  String keyword;
   int progressLevel;
   int chosenDifficulty;
   String mnemonicStory;
