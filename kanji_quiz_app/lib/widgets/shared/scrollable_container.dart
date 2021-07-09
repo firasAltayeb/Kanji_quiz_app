@@ -52,9 +52,9 @@ class ScrollableContainer extends ConsumerWidget {
     });
   }
 
-  Widget _instructionTextWidget(screenHeight, StudyItem targetItem) {
-    var itemType = targetItem.itemType;
-    print(itemType);
+  Widget _instructionTextWidget(screenHeight, StudyItem item) {
+    var itemType = item.itemType;
+    var temp = item.buildingBlockKeywords.length > 1 ? "blocks" : "block";
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
@@ -66,16 +66,16 @@ class ScrollableContainer extends ConsumerWidget {
           TextSpan(text: 'Please create a mnemonic for the above $itemType '),
           if (itemType != 'Hiragana' && itemType != 'Katakana')
             TextSpan(
-              text: '${targetItem.keyword} ',
+              text: '${item.keyword} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
               ),
             ),
-          if (targetItem.buildingBlockKeywords.isNotEmpty)
+          if (item.buildingBlockKeywords.isNotEmpty)
             TextSpan(
-              text: 'using its building blocks ' +
-                  '${targetItem.buildingBlockKeywords} ',
+              text: 'using its building $temp ' +
+                  '${item.buildingBlockKeywords} ',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,

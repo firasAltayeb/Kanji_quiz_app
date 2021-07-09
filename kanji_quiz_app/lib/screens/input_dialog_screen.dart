@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../model/study_item_model.dart';
+import '../helper_functions.dart';
 import '../main_providers.dart';
 
 class InputDialogScreen extends StatefulWidget {
@@ -21,22 +22,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
   void initState() {
     super.initState();
     _mnemonicController = TextEditingController();
-    String mnemonicStory = widget.itemDetails.mnemonicStory;
-    var clearStory = mnemonicStory.split(" ").join("");
-    if (clearStory != '')
-      _mnemonicController.text = widget.itemDetails.mnemonicStory;
-  }
-
-  void _clearController() {
-    setState(() {
-      _mnemonicController.text = '';
-    });
-  }
-
-  void _hideBottomButton() {
-    setState(() {
-      _showButtonsRow = false;
-    });
+    _mnemonicController.text = widget.itemDetails.mnemonicStory;
   }
 
   Future<bool> _onBackPressed() async {
@@ -48,19 +34,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var emptyMnemonic = _mnemonicController.text.split(" ").join("") == "";
     var screenHeight = MediaQuery.of(context).size.height;
-    var hintText = '';
-
-    if (widget.itemDetails.itemType == 'Kanji') {
-      hintText = 'Please create a mnemonic for the kanji ' +
-          '${widget.itemDetails.characterID} using its bulidng blocks: ' +
-          '${widget.itemDetails.buildingBlockKeywords}';
-    } else if (widget.itemDetails.itemType == 'Radical') {
-      hintText = 'Please create a mnemonic for the Radical ' +
-          '${widget.itemDetails.characterID}';
-    } else {
-      hintText = 'Please create a mnemonic';
-    }
 
     return WillPopScope(
       onWillPop: _onBackPressed,
@@ -78,7 +53,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                 autofocus: true,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: hintText,
+                  hintText: inputDialogHintText(widget.itemDetails),
                   hintMaxLines: 10,
                   hintStyle: TextStyle(
                     fontSize: screenHeight * 0.04,
@@ -102,27 +77,33 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     _myMaterialButton(
-                      _mnemonicController.text == '' ? 'Return' : 'Dispose',
+                      emptyMnemonic ? 'Return' : 'Dispose',
                       Colors.red,
                       screenHeight,
-                      _mnemonicController.text == ''
+                      emptyMnemonic
                           ? () {
-                              _hideBottomButton();
+                              setState(() {
+                                _showButtonsRow = false;
+                              });
                               context.read(btnBottomRowProvider).state = true;
                               Navigator.pop(context);
                             }
                           : () {
-                              _clearController();
+                              setState(() {
+                                _mnemonicController.text = '';
+                              });
                             },
                     ),
                     _myMaterialButton(
                       'Submit',
                       Colors.green,
                       screenHeight,
-                      _mnemonicController.text == ''
+                      emptyMnemonic
                           ? null
                           : () {
-                              _hideBottomButton();
+                              setState(() {
+                                _showButtonsRow = false;
+                              });
                               context.read(btnBottomRowProvider).state = true;
                               widget.itemDetails.mnemonicStory =
                                   _mnemonicController.text;

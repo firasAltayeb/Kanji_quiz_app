@@ -243,3 +243,15 @@ void wrapPracticeSession(BuildContext context, answerChoiceList, practiceList) {
   context.read(studyItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }
+
+String inputDialogHintText(StudyItem item) {
+  var temp = item.buildingBlockKeywords.length > 1 ? "blocks" : "block";
+  if (item.itemType == 'Kanji') {
+    return 'Please create a mnemonic for the kanji ' +
+        '${item.characterID} using its bulidng $temp: ' +
+        '${item.buildingBlockKeywords}';
+  } else if (item.itemType == 'Radical') {
+    return 'Please create a mnemonic for the Radical ' + '${item.characterID}';
+  }
+  return 'Please create a mnemonic';
+}
