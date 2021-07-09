@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/shared/scrollable_container.dart';
-import '../widgets/lesson_mgr/lesson_app_bar.dart';
+import '../widgets/screen_lesson/lesson_app_bar.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/bottom_row_buttons.dart';

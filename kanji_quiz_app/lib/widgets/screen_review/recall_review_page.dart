@@ -1,11 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import 'package:kanji_quiz_app/widgets/review/correct_incorrect_button.dart';
-import 'package:kanji_quiz_app/widgets/review/show_answer_button.dart';
 import 'package:kanji_quiz_app/widgets/shared/top_picture_row.dart';
 import 'package:kanji_quiz_app/model/study_item_model.dart';
+import 'correct_incorrect_button.dart';
 import '../../main_providers.dart';
+import 'show_answer_button.dart';
 
 class RecallPage extends ConsumerWidget {
   final List<StudyItem> reviewQueue;

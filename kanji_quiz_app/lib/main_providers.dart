@@ -150,15 +150,15 @@ final templateAddressProvider =
     Provider.autoDispose.family<String, StudyItem>((ref, targetKanji) {
   switch (targetKanji.itemType) {
     case "Hiragana":
-      return "assets/images/pink_badge_template.png";
+      return "assets/images/templates/pink_badge_template.png";
     case "Katakana":
-      return "assets/images/pink_badge_template.png";
+      return "assets/images/templates/pink_badge_template.png";
     case "Radical":
-      return "assets/images/blue_badge_template.png";
+      return "assets/images/templates/blue_badge_template.png";
     case "Primitive":
-      return "assets/images/badges/${targetKanji.characterID}.png";
+      return "assets/images/templates/badges/${targetKanji.characterID}.png";
     default:
-      return "assets/images/red_badge_template.png";
+      return "assets/images/templates/red_badge_template.png";
   }
 });
 

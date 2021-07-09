@@ -61,7 +61,7 @@ class MyApp extends ConsumerWidget {
             ReviewManager.routeName: (_) => ReviewManager(),
             PracticeManager.routeName: (_) => PracticeManager(),
             ItemDetailScreen.routeName: (_) => ItemDetailScreen(),
-            BadgesScreen.routeName: (_) => BadgesScreen(),
+            ExtraBadgesScreen.routeName: (_) => ExtraBadgesScreen(),
           },
         );
       },

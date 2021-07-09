@@ -2,8 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../widgets/item_details/item_detail_app_bar.dart';
-import '../widgets/item_details/item_difficulty_row.dart';
+import '../widgets/screen_item_details/item_detail_app_bar.dart';
+import '../widgets/screen_item_details/item_difficulty_row.dart';
 import '../widgets/shared/scrollable_container.dart';
 import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';

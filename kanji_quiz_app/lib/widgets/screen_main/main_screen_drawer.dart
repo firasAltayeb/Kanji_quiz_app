@@ -51,7 +51,7 @@ class MainAppDrawer extends ConsumerWidget {
             Icons.badge,
             () {
               Navigator.pop(ctx);
-              Navigator.of(ctx).pushNamed(BadgesScreen.routeName);
+              Navigator.of(ctx).pushNamed(ExtraBadgesScreen.routeName);
             },
           ),
           buildListTile(

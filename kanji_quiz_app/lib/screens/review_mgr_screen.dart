@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/review/result_review_page.dart';
-import '../widgets/review/recall_review_page.dart';
-import '../widgets/review/review_app_bar.dart';
+import '../widgets/screen_review/result_review_page.dart';
+import '../widgets/screen_review/recall_review_page.dart';
+import '../widgets/screen_review/review_app_bar.dart';
 import '../model/study_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';

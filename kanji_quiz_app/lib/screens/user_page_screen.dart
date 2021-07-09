@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/main_screen/main_screen_app_bar.dart';
+import '../widgets/screen_main/main_screen_app_bar.dart';
 
 class UserPage extends StatelessWidget {
   static const routeName = '/user-screen';

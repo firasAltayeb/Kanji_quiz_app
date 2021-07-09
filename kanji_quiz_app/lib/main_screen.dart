@@ -1,11 +1,11 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
-import 'package:kanji_quiz_app/widgets/main_screen/overall_progress_container.dart';
-import 'widgets/main_screen/interactive_row_column.dart';
-import 'widgets/main_screen/main_screen_app_bar.dart';
-import 'widgets/main_screen/main_screen_drawer.dart';
+import 'widgets/screen_main/overall_progress_container.dart';
+import 'widgets/screen_main/interactive_row_column.dart';
+import 'widgets/screen_main/main_screen_app_bar.dart';
+import 'widgets/screen_main/main_screen_drawer.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';

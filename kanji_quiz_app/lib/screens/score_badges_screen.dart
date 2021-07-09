@@ -2,11 +2,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../main_providers.dart';
-import '../widgets/score_screens/score_badges_app_screen.dart';
+import '../widgets/screen_extra_badges/score_badges_app_screen.dart';
 import '../widgets/shared/text_container.dart';
 import '../model/score_badges_model.dart';
 
-class BadgesScreen extends ConsumerWidget {
+class ExtraBadgesScreen extends ConsumerWidget {
   static const routeName = '/badges-screen';
   Widget build(BuildContext context, ScopedReader watch) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -28,7 +28,7 @@ class BadgesScreen extends ConsumerWidget {
             ),
             interactiveRow(
               "S",
-              screenHeight * 0.2,
+              screenHeight * 0.25,
               watch(studiedListProvider).length,
             ),
             TextContainer(
@@ -38,7 +38,7 @@ class BadgesScreen extends ConsumerWidget {
             ),
             interactiveRow(
               "R",
-              screenHeight * 0.2,
+              screenHeight * 0.25,
               watch(reviewedListProvider).length,
             ),
             TextContainer(
@@ -48,7 +48,7 @@ class BadgesScreen extends ConsumerWidget {
             ),
             interactiveRow(
               "P",
-              screenHeight * 0.2,
+              screenHeight * 0.25,
               watch(practicedListProvider).length,
             ),
             TextContainer(
@@ -58,7 +58,7 @@ class BadgesScreen extends ConsumerWidget {
             ),
             interactiveRow(
               "A",
-              screenHeight * 0.2,
+              screenHeight * 0.25,
               watch(acquiredListProvider).length,
             ),
           ],
@@ -76,7 +76,7 @@ class BadgesScreen extends ConsumerWidget {
             itemCount: scoreBadgesList.length,
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: widgetHeight,
-              childAspectRatio: 1.25,
+              childAspectRatio: 1.5,
             ),
             scrollDirection: Axis.horizontal,
             itemBuilder: (ctx, i) {
@@ -104,8 +104,8 @@ class BadgesScreen extends ConsumerWidget {
                           image: DecorationImage(
                             image: AssetImage(
                               currentAmount >= scoreBadgesList[i].amountToGet
-                                  ? "assets/images/gold_badge_template.png"
-                                  : "assets/images/grey_badge_template.png",
+                                  ? "assets/images/templates/gold_badge_template.png"
+                                  : "assets/images/templates/grey_badge_template.png",
                             ),
                             fit: BoxFit.fill,
                           ),
@@ -118,7 +118,6 @@ class BadgesScreen extends ConsumerWidget {
                           style: TextStyle(
                               fontSize: widgetHeight * 0.175,
                               fontFamily: 'Lato',
-                              fontStyle: FontStyle.italic,
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         ),
