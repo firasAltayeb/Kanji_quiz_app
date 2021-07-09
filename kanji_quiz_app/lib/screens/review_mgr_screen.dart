@@ -18,13 +18,13 @@ class ReviewManager extends ConsumerWidget {
     } else {
       ctx.read(incorrectRecallListProvider).state.removeLast();
     }
-    ctx.read(answerChoiceListProvider).state.removeLast();
+    ctx.read(sessionChoicesListProvider).state.removeLast();
     ctx.read(reviewQueueIdxProvider).state--;
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
     List<StudyItem> _reviewList = ModalRoute.of(context).settings.arguments;
-    final _ansChoiceList = watch(answerChoiceListProvider).state;
+    final _sessionChoices = watch(sessionChoicesListProvider).state;
     final _queueIndex = watch(reviewQueueIdxProvider).state;
     final _showSrsPop = watch(showSrsPopUpProvider).state;
 
@@ -39,20 +39,20 @@ class ReviewManager extends ConsumerWidget {
         appBar: AppBar(),
         showSrsPop: _showSrsPop,
         reviewList: _reviewList,
-        ansChoiceList: _ansChoiceList,
+        sessionChoices: _sessionChoices,
       ),
       body: _queueIndex < _reviewList.length
           ? RecallPage(
               queueIndex: _queueIndex,
               reviewQueue: _reviewList,
               undoLastAnswer: () => _undoAnswer(
-                  context, _ansChoiceList, _queueIndex, _reviewList),
+                  context, _sessionChoices, _queueIndex, _reviewList),
             )
           : ResultPage(
               wrapSession: () =>
-                  wrapReviewSession(context, _ansChoiceList, _reviewList),
+                  wrapReviewSession(context, _sessionChoices, _reviewList),
               undoLastAnswer: () => _undoAnswer(
-                  context, _ansChoiceList, _queueIndex, _reviewList),
+                  context, _sessionChoices, _queueIndex, _reviewList),
             ),
     );
   }

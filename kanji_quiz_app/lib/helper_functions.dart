@@ -13,6 +13,7 @@ enum VertOptions {
   ToggleSrsColumn,
   ToggleSrsPopUp,
   ToggleAlert,
+  WrapPractice,
   WrapLesson,
   WrapReview,
   Koohii,
@@ -22,9 +23,10 @@ enum VertOptions {
 void choiceAction({
   @required BuildContext context,
   @required VertOptions choice,
-  List<bool> ansChoiceList,
-  List<StudyItem> reviewList,
+  List<StudyItem> practiceList,
   List<StudyItem> lessonList,
+  List<StudyItem> reviewList,
+  List<bool> sessionChoices,
   bool lvlColumnVisible,
   bool overallVisible,
   StudyItem targetKanji,
@@ -32,16 +34,18 @@ void choiceAction({
   bool showAlert,
   bool showPopUp,
 }) {
-  if (choice == VertOptions.User) {
-    Navigator.of(context).pushNamed(UserPage.routeName);
-  } else if (choice == VertOptions.Koohii) {
+  if (choice == VertOptions.Koohii) {
     launchURL(targetKanji);
   } else if (choice == VertOptions.WrapLesson) {
     wrapLessonSession(context, lsnQueueIdx, lessonList);
   } else if (choice == VertOptions.WrapReview) {
-    wrapReviewSession(context, ansChoiceList, reviewList);
+    wrapReviewSession(context, sessionChoices, reviewList);
+  } else if (choice == VertOptions.WrapPractice) {
+    wrapPracticeSession(context, sessionChoices, practiceList);
   } else if (choice == VertOptions.ToggleAlert) {
     context.read(showAlertProvider).state = !showAlert;
+  } else if (choice == VertOptions.User) {
+    Navigator.of(context).pushNamed(UserPage.routeName);
   } else if (choice == VertOptions.ToggleSrsPopUp) {
     context.read(showSrsPopUpProvider).state = !showPopUp;
   } else if (choice == VertOptions.ToggleSrsColumn) {
@@ -185,21 +189,21 @@ void wrapReviewSession(BuildContext context, answerChoiceList, reviewList) {
   }
   context.read(sessionScoreProvider).state = 0;
   context.read(reviewQueueIdxProvider).state = 0;
-  context.read(answerChoiceListProvider).state.clear();
+  context.read(sessionChoicesListProvider).state.clear();
   context.read(correctRecallListProvider).state.clear();
   context.read(incorrectRecallListProvider).state.clear();
   context.read(studyItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }
 
-void wrapPracticeSession(BuildContext context, answerChoiceList, practiceList) {
-  print("answerChoiseList is $answerChoiceList");
-  for (var index = 0; index < answerChoiceList.length; index++) {
+void wrapPracticeSession(BuildContext context, sessionChoices, practiceList) {
+  print("answerChoiseList is $sessionChoices");
+  for (var index = 0; index < sessionChoices.length; index++) {
     StudyItem practiceItem = practiceList[index];
     practiceItem.dateLastLevelChanged = DateTime.now();
-    if (answerChoiceList[index] != null) {
+    if (sessionChoices[index] != null) {
       //if answer was correct
-      if (answerChoiceList[index]) {
+      if (sessionChoices[index]) {
         // current progress + 1
         practiceItem.progressLevel++;
         practiceItem.practiceHistory.add("Correct");
@@ -207,7 +211,7 @@ void wrapPracticeSession(BuildContext context, answerChoiceList, practiceList) {
         if (practiceItem.progressLevel == 7) {
           practiceItem.learningStatus = 'Acquired';
         }
-      } else if (!answerChoiceList[index]) {
+      } else if (!sessionChoices[index]) {
         /*if answer was incorrect*/
         practiceItem.practiceHistory.add("Incorrect");
         practiceItem.progressLevel = practiceItem.lapsePenalty();
@@ -222,7 +226,7 @@ void wrapPracticeSession(BuildContext context, answerChoiceList, practiceList) {
   context.read(sentenceQueueIdxProvider).state = 1;
   context.read(practiceQueueIdxProvider).state = 0;
   context.read(answeredRevealedProvider).state = false;
-  context.read(answerChoiceListProvider).state.clear();
+  context.read(sessionChoicesListProvider).state.clear();
   context.read(correctRecallListProvider).state.clear();
   context.read(incorrectRecallListProvider).state.clear();
   context.read(studyItemProvider.notifier).saveProgress();

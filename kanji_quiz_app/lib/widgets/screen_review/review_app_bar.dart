@@ -1,19 +1,20 @@
+import 'package:flutter/material.dart';
+
 import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:kanji_quiz_app/helper_functions.dart';
-import 'package:flutter/material.dart';
 
 class ReviewAppBar extends StatelessWidget implements PreferredSizeWidget {
   final AppBar appBar;
   final bool showSrsPop;
+  final List<bool> sessionChoices;
   final List<StudyItem> reviewList;
-  final List<bool> ansChoiceList;
 
   ReviewAppBar({
     Key key,
     this.appBar,
     this.showSrsPop,
     this.reviewList,
-    this.ansChoiceList,
+    this.sessionChoices,
   }) : super(key: key);
 
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class ReviewAppBar extends StatelessWidget implements PreferredSizeWidget {
             context: context,
             showPopUp: showSrsPop,
             reviewList: reviewList,
-            ansChoiceList: ansChoiceList,
+            sessionChoices: sessionChoices,
           ),
           icon: Icon(
             Icons.more_vert,

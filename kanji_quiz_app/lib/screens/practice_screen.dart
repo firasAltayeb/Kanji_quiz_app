@@ -20,7 +20,7 @@ class PracticeManager extends ConsumerWidget {
     } else if (pracQueueIdx < pracList.length - 1) {
       ctx.read(sentenceQueueIdxProvider).state = 1;
       ctx.read(practiceQueueIdxProvider).state++;
-      ctx.read(answerChoiceListProvider).state.add(null);
+      ctx.read(sessionChoicesListProvider).state.add(null);
     } else {
       wrapPracticeSession(ctx, ansChoiceList, pracList);
     }
@@ -32,7 +32,7 @@ class PracticeManager extends ConsumerWidget {
       ctx.read(sentenceQueueIdxProvider).state--;
     } else if (senQueueIdx == 1 && practiceQueueIdx > 0) {
       ctx.read(practiceQueueIdxProvider).state--;
-      ctx.read(answerChoiceListProvider).state.removeLast();
+      ctx.read(sessionChoicesListProvider).state.removeLast();
     }
   }
 
@@ -41,8 +41,8 @@ class PracticeManager extends ConsumerWidget {
     final _pracQueueIdx = watch(practiceQueueIdxProvider).state;
     final _targetKanji = _pracList[_pracQueueIdx];
 
+    final _sessionChoices = watch(sessionChoicesListProvider).state;
     final _answeredRevealed = watch(answeredRevealedProvider).state;
-    final _ansChoiceList = watch(answerChoiceListProvider).state;
     final _senQueueIdx = watch(sentenceQueueIdxProvider).state;
     final _questionList = translationQuestions;
 
@@ -59,6 +59,8 @@ class PracticeManager extends ConsumerWidget {
     return Scaffold(
       appBar: PracticeAppBar(
         appBar: AppBar(),
+        practiceList: _pracList,
+        sessionChoicesList: _sessionChoices,
       ),
       body: Column(
         children: [
@@ -89,7 +91,7 @@ class PracticeManager extends ConsumerWidget {
                     : () => _skipSentence(
                           context,
                           _senQueueIdx,
-                          _ansChoiceList,
+                          _sessionChoices,
                           _pracList,
                           _pracQueueIdx,
                         ),
@@ -123,7 +125,7 @@ class PracticeManager extends ConsumerWidget {
                         : Colors.red,
                     practiceList: _pracList,
                     questionAnswer: answerOption,
-                    ansChoiceList: _ansChoiceList,
+                    sessionChoices: _sessionChoices,
                   ))
               .toList()
         ],

@@ -53,7 +53,7 @@ final sessionScoreProvider = StateProvider<int>((ref) => 0);
 
 final showAnsBtnVisibleProvider = StateProvider<bool>((ref) => true);
 
-final answerChoiceListProvider = StateProvider<List<bool>>((ref) => []);
+final sessionChoicesListProvider = StateProvider<List<bool>>((ref) => []);
 
 final correctRecallListProvider = StateProvider<List<StudyItem>>((ref) => []);
 

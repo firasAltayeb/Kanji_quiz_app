@@ -10,18 +10,18 @@ import '../../main_providers.dart';
 class TranslationOptionBtn extends ConsumerWidget {
   final TranslationQusAnswer questionAnswer;
   final List<StudyItem> practiceList;
-  final List<bool> ansChoiceList;
+  final List<bool> sessionChoices;
   final Color answerColor;
 
   TranslationOptionBtn({
     @required this.questionAnswer,
-    @required this.ansChoiceList,
+    @required this.sessionChoices,
     @required this.practiceList,
     @required this.answerColor,
   });
 
   void _recordAnswer(BuildContext ctx, answerChoice, queueIndex) {
-    ctx.read(answerChoiceListProvider).state.add(answerChoice);
+    ctx.read(sessionChoicesListProvider).state.add(answerChoice);
     if (answerChoice) {
       ctx.read(sessionScoreProvider).state += 5;
       ctx.read(correctRecallListProvider).state.add(practiceList[queueIndex]);
@@ -33,7 +33,7 @@ class TranslationOptionBtn extends ConsumerWidget {
       ctx.read(sentenceQueueIdxProvider).state = 1;
       ctx.read(practiceQueueIdxProvider).state++;
     } else {
-      wrapPracticeSession(ctx, ansChoiceList, practiceList);
+      wrapPracticeSession(ctx, sessionChoices, practiceList);
     }
   }
 
