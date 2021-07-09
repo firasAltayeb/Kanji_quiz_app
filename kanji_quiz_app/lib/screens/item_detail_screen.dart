@@ -26,6 +26,7 @@ class ItemDetailScreen extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
+    final _showScrollCon = watch(showScrollConProvider).state;
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _targetItem = watch(targetItemProvider).state;
     final _showAlert = watch(showAlertProvider).state;
@@ -34,6 +35,7 @@ class ItemDetailScreen extends ConsumerWidget {
 
     var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: ItemDetailAppBar(
         appBar: AppBar(),
         showAlert: _showAlert,
@@ -86,9 +88,14 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(height: 20),
             ItemDifficultyRow(),
             SizedBox(height: 20),
-            ScrollableContainer(
-              targetItem: _targetItem,
-            ),
+            if (_showScrollCon)
+              ScrollableContainer(
+                targetItem: _targetItem,
+              ),
+            if (!_showScrollCon)
+              SizedBox(
+                height: screenHeight * 0.175,
+              ),
             SizedBox(height: 30),
             BuildingBlockRow(
               targetItem: _targetItem,

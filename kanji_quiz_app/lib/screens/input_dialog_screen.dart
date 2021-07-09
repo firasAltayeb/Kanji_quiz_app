@@ -29,6 +29,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
   Future<bool> _onBackPressed() async {
     setState(() {
+      context.read(showScrollConProvider).state = true;
+      context.read(showBottomRowProvider).state = true;
       _showButtonsRow = false;
     });
     return true;
@@ -72,14 +74,14 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                 textInputAction: TextInputAction.go,
                 keyboardType: TextInputType.multiline,
                 minLines: 10,
-                maxLines: null,
+                maxLines: 10,
                 controller: _mnemonicController,
               ),
             ),
             if (_showButtonsRow)
               Consumer(builder: (context, watch, _) {
                 return Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     _myMaterialButton(
                       emptyMnemonic ? 'Return' : 'Dispose',
@@ -90,6 +92,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               setState(() {
                                 _showButtonsRow = false;
                               });
+                              context.read(showScrollConProvider).state = true;
                               context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             }
@@ -122,6 +125,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                                   .read(studyItemProvider.notifier)
                                   .saveProgress();
 
+                              context.read(showScrollConProvider).state = true;
                               context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             },
@@ -137,7 +141,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
   Widget _myMaterialButton(text, color, height, handler) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(0, height * 0.225, 15, 0),
+      padding: EdgeInsets.only(top: height * 0.25),
       child: MaterialButton(
         color: color,
         elevation: 2,
