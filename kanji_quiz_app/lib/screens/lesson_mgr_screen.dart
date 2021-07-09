@@ -77,14 +77,12 @@ class LessonManager extends ConsumerWidget {
               rightWidgetHandler: () =>
                   _nextKanji(context, _queueIndex, _lessonList),
             ),
-            SizedBox(
-              height: screenHeight * 0.075,
-              child: KeyTextContainer(
-                _lessonList[_queueIndex].itemType == "Hiragana" ||
-                        _lessonList[_queueIndex].itemType == "Katakana"
-                    ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
-                    : 'Keyword: ' + _lessonList[_queueIndex].keyword,
-              ),
+            KeyTextContainer(
+              textToDisplay: _lessonList[_queueIndex].itemType == "Hiragana" ||
+                      _lessonList[_queueIndex].itemType == "Katakana"
+                  ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
+                  : 'Keyword: ' + _lessonList[_queueIndex].keyword,
+              widgetHeight: screenHeight * 0.075,
             ),
             BuildingBlockRow(
               targetItem: _targetItem,

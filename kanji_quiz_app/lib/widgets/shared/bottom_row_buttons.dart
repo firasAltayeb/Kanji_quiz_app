@@ -79,11 +79,10 @@ class ItemBottomRow extends ConsumerWidget {
           child: _bottomButton(
             screenHeight,
             () {
-              showBottomRow(false);
               editMnemonicHandler(
-                context,
-                targetItem,
-                showBottomRow,
+                studyItem: targetItem,
+                buildContext: context,
+                bottomRowHandler: showBottomRow,
               );
             },
             "Edit Mnemonic",

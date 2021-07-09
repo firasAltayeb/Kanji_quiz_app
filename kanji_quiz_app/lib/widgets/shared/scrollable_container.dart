@@ -20,11 +20,10 @@ class ScrollableContainer extends ConsumerWidget {
     return Consumer(builder: (context, watch, _) {
       return InkWell(
         onLongPress: () {
-          showHandler(false);
           editMnemonicHandler(
-            context,
-            targetItem,
-            showHandler,
+            studyItem: targetItem,
+            buildContext: context,
+            bottomRowHandler: showHandler,
           );
         },
         child: Container(

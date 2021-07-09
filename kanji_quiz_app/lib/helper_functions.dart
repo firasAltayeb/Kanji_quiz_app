@@ -138,18 +138,22 @@ void launchURL(StudyItem targetKanji) async {
   }
 }
 
-void editMnemonicHandler(
-    BuildContext context, StudyItem targetKanji, Function showHandler) {
-  Navigator.of(context)
+void editMnemonicHandler({
+  BuildContext buildContext,
+  Function bottomRowHandler,
+  StudyItem studyItem,
+}) {
+  bottomRowHandler(false);
+  Navigator.of(buildContext)
       .push(
     PageRouteBuilder(
         opaque: false,
         pageBuilder: (BuildContext context, _, __) {
-          return InputDialogScreen(targetKanji);
+          return InputDialogScreen(studyItem);
         }),
   )
       .then((passedText) {
-    showHandler(true);
+    bottomRowHandler(true);
   });
 }
 

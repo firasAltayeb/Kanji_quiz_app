@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
 class KeyTextContainer extends StatelessWidget {
-  final String passedText;
+  final String textToDisplay;
+  final double widgetHeight;
 
-  KeyTextContainer(this.passedText);
+  KeyTextContainer({
+    @required this.textToDisplay,
+    this.widgetHeight,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      height: widgetHeight,
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
@@ -20,7 +25,7 @@ class KeyTextContainer extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
       child: FittedBox(
         child: Text(
-          passedText,
+          textToDisplay,
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),

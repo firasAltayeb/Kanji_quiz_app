@@ -32,6 +32,8 @@ class ItemDetailScreen extends ConsumerWidget {
     final _showButtonRow = watch(btnBottomRowProvider).state;
     final _targetItem = watch(targetItemProvider).state;
     final _showAlert = watch(showAlertProvider).state;
+    var isKana = _targetItem.itemType == "Hiragana" ||
+        _targetItem.itemType == "Katakana";
 
     var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -52,18 +54,19 @@ class ItemDetailScreen extends ConsumerWidget {
               rightWidgetText: "Next",
               targetItem: _targetItem,
             ),
-            SizedBox(
-              height: screenHeight * 0.08,
-              child: KeyTextContainer(
-                _targetItem.itemType == "Hiragana" ||
-                        _targetItem.itemType == "Katakana"
-                    ? 'Reading: ' + _targetItem.itemReadings[0]
-                    : 'Keyword: ' + _targetItem.keyword,
+            if (isKana)
+              KeyTextContainer(
+                textToDisplay: 'Reading: ' + _targetItem.itemReadings[0],
+                widgetHeight: screenHeight * 0.08,
               ),
-            ),
+            if (!isKana)
+              KeyTextContainer(
+                textToDisplay: 'Keyword: ' + _targetItem.keyword,
+                widgetHeight: screenHeight * 0.08,
+              ),
             SizedBox(height: 20),
             KeyTextContainer(
-              'Last level change date: ' +
+              textToDisplay: 'Last level change date: ' +
                   '${_fixTimeZone(_targetItem.dateLastLevelChanged)}',
             ),
             SizedBox(height: 20),
@@ -75,7 +78,7 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(height: 20),
             if (_targetItem.learningStatus != "Acquired")
               KeyTextContainer(
-                'Next review date: ' +
+                textToDisplay: 'Next review date: ' +
                     '${_fixTimeZone(_targetItem.nextReviewDate())}',
               ),
             SizedBox(height: 20),
