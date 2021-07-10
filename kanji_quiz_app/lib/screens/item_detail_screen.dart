@@ -10,6 +10,7 @@ import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/bottom_row_buttons.dart';
 import '../widgets/shared/top_picture_row.dart';
 import '../widgets/shared/text_container.dart';
+import '../model/study_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
 
@@ -29,12 +30,18 @@ class ItemDetailScreen extends ConsumerWidget {
     final _showScrollCon = watch(showScrollConProvider).state;
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _screenHeight = MediaQuery.of(context).size.height;
-    final _targetItem = watch(targetItemProvider).state;
     final _showAlert = watch(showAlertProvider).state;
+
+    StudyItem _argumentItem = ModalRoute.of(context).settings.arguments;
+    StudyItem _targetItem = watch(targetItemProvider).state;
+    bool _argumentItemIsNotNull = _argumentItem != null;
+
+    if (_argumentItemIsNotNull) {
+      _targetItem = _argumentItem;
+    }
+
     final isKana = _targetItem.itemType == "Hiragana" ||
         _targetItem.itemType == "Katakana";
-    final _sameLevelItems =
-        watch(chosenlvlListProvider(_targetItem.progressLevel));
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -51,18 +58,22 @@ class ItemDetailScreen extends ConsumerWidget {
               color: Colors.grey[300],
             ),
             TopKanjiRow(
-              // leftWidgetHandler: prevItemDetail(
-              //   ctx: context,
-              //   targetItem: _targetItem,
-              //   sameLevelItems: _sameLevelItems,
-              // ),
-              // rightWidgetHandler: nextItemDetail(
-              //   ctx: context,
-              //   targetItem: _targetItem,
-              //   sameLevelItems: _sameLevelItems,
-              // ),
-              leftWidgetText: "Prev",
-              rightWidgetText: "Next",
+              leftWidgetHandler: _argumentItemIsNotNull
+                  ? null
+                  : prevItemDetail(
+                      ctx: context,
+                      watch: watch,
+                      item: _targetItem,
+                    ),
+              rightWidgetHandler: _argumentItemIsNotNull
+                  ? null
+                  : nextItemDetail(
+                      ctx: context,
+                      watch: watch,
+                      item: _targetItem,
+                    ),
+              leftWidgetText: _argumentItemIsNotNull ? "" : "Prev",
+              rightWidgetText: _argumentItemIsNotNull ? "" : "Next",
               targetItem: _targetItem,
             ),
             if (!isKana)

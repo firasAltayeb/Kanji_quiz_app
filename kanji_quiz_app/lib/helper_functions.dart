@@ -271,16 +271,21 @@ String inputDialogHintText(StudyItem item, keywordManipulation) {
 
 void pushToItemDetailScreen(
     BuildContext ctx, StudyItem clickedKanji, String routeName) {
-  ctx.read(targetItemProvider).state = clickedKanji;
-  if (routeName != "/item-details")
+  print("pushToItemDetailScreen is called by $routeName");
+  if (routeName == "/") {
+    ctx.read(targetItemProvider).state = clickedKanji;
     Navigator.of(ctx).pushNamed(ItemDetailScreen.routeName);
+  } else {
+    Navigator.of(ctx)
+        .pushNamed(ItemDetailScreen.routeName, arguments: clickedKanji);
+  }
 }
 
 Function prevItemDetail(
-    {BuildContext ctx, List<StudyItem> sameLevelItems, targetItem}) {
-  final itemIdx = sameLevelItems.indexOf(targetItem);
+    {StudyItem item, BuildContext ctx, ScopedReader watch}) {
+  final sameLevelItems = watch(chosenlvlListProvider(item.progressLevel));
+  final itemIdx = sameLevelItems.indexOf(item);
   if (itemIdx == 0) return null;
-
   final prevKanji = sameLevelItems[itemIdx - 1];
   return () {
     ctx.read(targetItemProvider).state = prevKanji;
@@ -288,10 +293,10 @@ Function prevItemDetail(
 }
 
 Function nextItemDetail(
-    {BuildContext ctx, List<StudyItem> sameLevelItems, targetItem}) {
-  final itemIdx = sameLevelItems.indexOf(targetItem);
+    {StudyItem item, BuildContext ctx, ScopedReader watch}) {
+  final sameLevelItems = watch(chosenlvlListProvider(item.progressLevel));
+  final itemIdx = sameLevelItems.indexOf(item);
   if (itemIdx + 1 == sameLevelItems.length) return null;
-
   final nextKanji = sameLevelItems[itemIdx + 1];
   return () {
     ctx.read(targetItemProvider).state = nextKanji;
