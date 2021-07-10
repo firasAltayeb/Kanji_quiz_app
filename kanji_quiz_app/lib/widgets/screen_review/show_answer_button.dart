@@ -11,6 +11,14 @@ class ShowAnswerButton extends ConsumerWidget {
     return Container(
       width: double.infinity,
       height: screenHeight,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.yellow[700],
+            Colors.orange[400],
+          ],
+        ),
+      ),
       child: ElevatedButton(
         child: Text(
           "Show Answer",

@@ -14,7 +14,6 @@ class InteractiveRowColumn extends ConsumerWidget {
       children: [
         TextContainer(
           passedText: 'Review Level 1 Items',
-          widgetColor: Theme.of(context).accentColor,
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -24,7 +23,6 @@ class InteractiveRowColumn extends ConsumerWidget {
         ),
         TextContainer(
           passedText: 'Review Level 2 Items',
-          widgetColor: Theme.of(context).accentColor,
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -34,7 +32,6 @@ class InteractiveRowColumn extends ConsumerWidget {
         ),
         TextContainer(
           passedText: 'Review Level 3 Items',
-          widgetColor: Theme.of(context).accentColor,
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -44,7 +41,6 @@ class InteractiveRowColumn extends ConsumerWidget {
         ),
         TextContainer(
           passedText: 'Practice Level 1 Items',
-          widgetColor: Theme.of(context).accentColor,
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -54,7 +50,6 @@ class InteractiveRowColumn extends ConsumerWidget {
         ),
         TextContainer(
           passedText: 'Practice Level 2 Items',
-          widgetColor: Theme.of(context).accentColor,
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -64,7 +59,6 @@ class InteractiveRowColumn extends ConsumerWidget {
         ),
         TextContainer(
           passedText: 'Practice Level 3 Items',
-          widgetColor: Theme.of(context).accentColor,
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -74,7 +68,6 @@ class InteractiveRowColumn extends ConsumerWidget {
         ),
         TextContainer(
           passedText: 'Acquired Items',
-          widgetColor: Theme.of(context).accentColor,
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(

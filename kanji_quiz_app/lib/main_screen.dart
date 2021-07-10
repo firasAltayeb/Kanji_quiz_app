@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/screen_main/overall_progress_container.dart';
-import 'widgets/screen_main/interactive_row_column.dart';
+import 'widgets/screen_main/badge_collection_column.dart';
 import 'widgets/screen_main/main_screen_app_bar.dart';
 import 'widgets/screen_main/main_screen_drawer.dart';
 import 'screens/lesson_mgr_screen.dart';
@@ -120,11 +120,21 @@ class MainScreen extends StatelessWidget {
         ),
         Container(
           width: screenWidth * 0.4,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.yellow[700],
+                Colors.orange[400],
+              ],
+            ),
+          ),
           child: ElevatedButton(
             child: Text(
-              queueIdx == 0 ? "Start " : "Resume " + "Session",
+              queueIdx == 0 ? "Start Session" : "Resume Session",
               style: TextStyle(
-                fontSize: screenHeight * 0.04,
+                fontSize: label == "Practice"
+                    ? screenHeight * 0.035
+                    : screenHeight * 0.03,
                 fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,

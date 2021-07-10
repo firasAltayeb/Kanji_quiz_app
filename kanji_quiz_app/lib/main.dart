@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:kanji_quiz_app/screens/score_badges_screen.dart';
+import 'package:kanji_quiz_app/screens/extra_badges_screen.dart';
 import 'package:kanji_quiz_app/main_providers.dart';
 import 'screens/item_detail_screen.dart';
 import 'screens/review_mgr_screen.dart';
@@ -46,10 +46,11 @@ class MyApp extends ConsumerWidget {
               style: ElevatedButton.styleFrom(
                 elevation: 5,
                 side: BorderSide(width: 3, color: Colors.black),
-                primary: Colors.yellow[700],
-                padding: const EdgeInsets.all(10),
+                primary: Colors.transparent,
+                padding: const EdgeInsets.all(15),
                 minimumSize: Size(30, 30),
                 onPrimary: Colors.black,
+                shadowColor: Colors.transparent,
               ),
             ),
           ),

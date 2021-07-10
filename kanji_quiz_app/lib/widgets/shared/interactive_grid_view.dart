@@ -17,7 +17,10 @@ class InteractiveGrid extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     return Container(
-      padding: EdgeInsets.only(bottom: widgetHeight * 0.1),
+      padding: EdgeInsets.only(
+        top: widgetHeight * 0.05,
+        bottom: widgetHeight * 0.05,
+      ),
       height: widgetHeight,
       child: GridView.builder(
           itemCount: itemList.length,

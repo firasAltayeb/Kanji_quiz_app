@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import 'package:kanji_quiz_app/screens/score_badges_screen.dart';
+import 'package:kanji_quiz_app/screens/extra_badges_screen.dart';
 import '../../main_providers.dart';
 
 class MainAppDrawer extends ConsumerWidget {

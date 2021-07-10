@@ -64,6 +64,10 @@ class PracticeManager extends ConsumerWidget {
       ),
       body: Column(
         children: [
+          Container(
+            height: _screenHeight * 0.03,
+            color: Colors.grey[300],
+          ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -127,7 +131,10 @@ class PracticeManager extends ConsumerWidget {
                     questionAnswer: answerOption,
                     sessionChoices: _sessionChoices,
                   ))
-              .toList()
+              .toList(),
+          SizedBox(
+            height: _screenHeight * 0.015,
+          ),
         ],
       ),
     );

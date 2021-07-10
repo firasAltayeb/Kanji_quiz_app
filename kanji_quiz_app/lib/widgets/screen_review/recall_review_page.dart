@@ -85,6 +85,12 @@ class RecallPage extends ConsumerWidget {
       height: screenHeight * 0.125,
       width: screenWidth * 0.95,
       decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.orange[400],
+            Colors.yellow[700],
+          ],
+        ),
         border: Border.all(
           color: Colors.black,
           width: 3,

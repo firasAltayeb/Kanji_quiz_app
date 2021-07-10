@@ -23,7 +23,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             TextContainer(
               passedText: 'Study Badges',
-              widgetColor: Colors.red[400],
+              widgetColor: Colors.red,
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(
@@ -33,7 +33,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             TextContainer(
               passedText: 'Review Badges',
-              widgetColor: Colors.orange[400],
+              widgetColor: Colors.orange,
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(
@@ -43,7 +43,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             TextContainer(
               passedText: 'Pratice Badges',
-              widgetColor: Colors.blue[400],
+              widgetColor: Colors.blue,
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(
@@ -53,7 +53,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             TextContainer(
               passedText: 'Acquire Badges',
-              widgetColor: Colors.green[400],
+              widgetColor: Colors.green,
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(
@@ -116,10 +116,11 @@ class ExtraBadgesScreen extends ConsumerWidget {
                         child: Text(
                           "$badgesType" + "${scoreBadgesList[i].amountToGet}",
                           style: TextStyle(
-                              fontSize: widgetHeight * 0.175,
-                              fontFamily: 'Lato',
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                            fontSize: widgetHeight * 0.175,
+                            fontFamily: 'Lato',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
