@@ -48,7 +48,9 @@ class StudyItem {
 
   String levelTranslation() {
     var translation = "Item acquired";
-    if (progressLevel < 4) {
+    if (progressLevel == 0) {
+      translation = "Item not yet studied";
+    } else if (progressLevel < 4) {
       translation = "Current $learningStatus level is $progressLevel";
     } else if (progressLevel == 4) {
       translation = "Current $learningStatus level is 1";

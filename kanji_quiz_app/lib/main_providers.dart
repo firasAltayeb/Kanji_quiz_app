@@ -140,16 +140,21 @@ final practicedListProvider = Provider<List<StudyItem>>((ref) {
 });
 
 final templateAddressProvider =
-    Provider.autoDispose.family<String, StudyItem>((ref, targetKanji) {
-  switch (targetKanji.itemType) {
+    Provider.autoDispose.family<String, StudyItem>((ref, targetItem) {
+  print("${targetItem.characterID} ${targetItem.progressLevel}");
+  if (targetItem.itemType == "Primitive") {
+    return "assets/images/badges/${targetItem.characterID}.png";
+  }
+  if (targetItem.progressLevel == 0) {
+    return "assets/images/templates/grey_badge_template.png";
+  }
+  switch (targetItem.itemType) {
     case "Hiragana":
       return "assets/images/templates/pink_badge_template.png";
     case "Katakana":
       return "assets/images/templates/pink_badge_template.png";
     case "Radical":
       return "assets/images/templates/blue_badge_template.png";
-    case "Primitive":
-      return "assets/images/badges/${targetKanji.characterID}.png";
     default:
       return "assets/images/templates/red_badge_template.png";
   }
@@ -157,12 +162,12 @@ final templateAddressProvider =
 
 final buildingBlocksProvider =
     Provider.autoDispose.family<List<StudyItem>, StudyItem>((ref, targetKanji) {
-  final studyItemList = studyItemStaticData;
+  final itemMainList = ref.watch(studyItemProvider);
   List<String> targetbuildingBlockIDs = targetKanji.buildingBlocksID;
 
   List<StudyItem> buildingBlocks = [];
   for (var index = 0; index < targetbuildingBlockIDs.length; index++) {
-    buildingBlocks.addAll(studyItemList
+    buildingBlocks.addAll(itemMainList
         .where((item) => item.characterID == targetbuildingBlockIDs[index]));
   }
 
