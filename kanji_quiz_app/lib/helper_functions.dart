@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
@@ -266,4 +267,31 @@ String inputDialogHintText(StudyItem item, keywordManipulation) {
     return 'Please create a mnemonic for the Radical ${item.characterID}';
   }
   return 'Please create a mnemonic';
+}
+
+void pushToItemDetailScreen(BuildContext ctx, StudyItem clickedKanji) {
+  ctx.read(targetItemProvider).state = clickedKanji;
+  Navigator.of(ctx).pushNamed(ItemDetailScreen.routeName);
+}
+
+Function prevItemDetail(
+    {BuildContext ctx, List<StudyItem> sameLevelItems, targetItem}) {
+  final itemIdx = sameLevelItems.indexOf(targetItem);
+  if (itemIdx == 0) return null;
+
+  final prevKanji = sameLevelItems[itemIdx - 1];
+  return () {
+    ctx.read(targetItemProvider).state = prevKanji;
+  };
+}
+
+Function nextItemDetail(
+    {BuildContext ctx, List<StudyItem> sameLevelItems, targetItem}) {
+  final itemIdx = sameLevelItems.indexOf(targetItem);
+  if (itemIdx + 1 == sameLevelItems.length) return null;
+
+  final nextKanji = sameLevelItems[itemIdx + 1];
+  return () {
+    ctx.read(targetItemProvider).state = nextKanji;
+  };
 }

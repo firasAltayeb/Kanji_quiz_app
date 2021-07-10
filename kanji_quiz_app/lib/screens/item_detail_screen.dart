@@ -28,12 +28,16 @@ class ItemDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     final _showScrollCon = watch(showScrollConProvider).state;
     final _showButtonRow = watch(showBottomRowProvider).state;
+    final _screenHeight = MediaQuery.of(context).size.height;
     final _targetItem = watch(targetItemProvider).state;
     final _showAlert = watch(showAlertProvider).state;
-    var isKana = _targetItem.itemType == "Hiragana" ||
+    final isKana = _targetItem.itemType == "Hiragana" ||
         _targetItem.itemType == "Katakana";
+    final _sameLevelItems =
+        watch(chosenlvlListProvider(_targetItem.progressLevel));
 
-    var screenHeight = MediaQuery.of(context).size.height;
+    print(ModalRoute.of(context).settings.name);
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: ItemDetailAppBar(
@@ -45,10 +49,20 @@ class ItemDetailScreen extends ConsumerWidget {
         child: Column(
           children: [
             Container(
-              height: screenHeight * 0.03,
+              height: _screenHeight * 0.03,
               color: Colors.grey[300],
             ),
             TopKanjiRow(
+              leftWidgetHandler: prevItemDetail(
+                ctx: context,
+                targetItem: _targetItem,
+                sameLevelItems: _sameLevelItems,
+              ),
+              rightWidgetHandler: nextItemDetail(
+                ctx: context,
+                targetItem: _targetItem,
+                sameLevelItems: _sameLevelItems,
+              ),
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               targetItem: _targetItem,
@@ -61,12 +75,12 @@ class ItemDetailScreen extends ConsumerWidget {
                   forKeyword: true,
                 ),
                 textToDisplay: 'Keyword: ' + _targetItem.keyword,
-                widgetHeight: screenHeight * 0.08,
+                widgetHeight: _screenHeight * 0.08,
               ),
             if (isKana)
               KeyTextContainer(
                 textToDisplay: 'Reading: ' + _targetItem.itemReadings[0],
-                widgetHeight: screenHeight * 0.08,
+                widgetHeight: _screenHeight * 0.08,
               ),
             SizedBox(height: 20),
             KeyTextContainer(
@@ -76,8 +90,7 @@ class ItemDetailScreen extends ConsumerWidget {
             SizedBox(height: 20),
             TextContainer(
               passedText: _targetItem.levelTranslation(),
-              widgetColor: Theme.of(context).accentColor,
-              widgetHeight: screenHeight * 0.04,
+              widgetHeight: _screenHeight * 0.04,
             ),
             SizedBox(height: 20),
             if (_targetItem.learningStatus != "Acquired")
@@ -94,7 +107,7 @@ class ItemDetailScreen extends ConsumerWidget {
               ),
             if (!_showScrollCon)
               SizedBox(
-                height: screenHeight * 0.175,
+                height: _screenHeight * 0.175,
               ),
             SizedBox(height: 30),
             BuildingBlockRow(
@@ -108,7 +121,7 @@ class ItemDetailScreen extends ConsumerWidget {
               ),
             if (!_showButtonRow)
               SizedBox(
-                height: screenHeight * 0.135,
+                height: _screenHeight * 0.135,
               ),
           ],
         ),

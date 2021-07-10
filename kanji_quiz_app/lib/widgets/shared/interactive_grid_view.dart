@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../../model/study_item_model.dart';
+import '../../helper_functions.dart';
 import '../../main_providers.dart';
 
 class InteractiveGrid extends ConsumerWidget {
@@ -12,7 +13,7 @@ class InteractiveGrid extends ConsumerWidget {
   InteractiveGrid({
     @required this.itemList,
     @required this.widgetHeight,
-    @required this.selectHandler,
+    this.selectHandler = pushToItemDetailScreen,
   });
 
   Widget build(BuildContext context, ScopedReader watch) {

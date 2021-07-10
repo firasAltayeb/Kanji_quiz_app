@@ -1,10 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import 'package:kanji_quiz_app/widgets/shared/interactive_grid_view.dart';
-import 'package:kanji_quiz_app/widgets/shared/text_container.dart';
-import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
-import 'package:kanji_quiz_app/model/study_item_model.dart';
+import '../../widgets/shared/interactive_grid_view.dart';
+import '../../widgets/shared/text_container.dart';
 import '../../main_providers.dart';
 
 class InteractiveRowColumn extends ConsumerWidget {
@@ -17,54 +15,48 @@ class InteractiveRowColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
-          itemList: watch(reviewXlvlListProvider(1)),
+          itemList: watch(chosenlvlListProvider(1)),
           widgetHeight: screenHeight * 0.2,
-          selectHandler: pushToItemScreen,
         ),
         TextContainer(
           passedText: 'Review Level 2 Items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
-          itemList: watch(reviewXlvlListProvider(2)),
+          itemList: watch(chosenlvlListProvider(2)),
           widgetHeight: screenHeight * 0.2,
-          selectHandler: pushToItemScreen,
         ),
         TextContainer(
           passedText: 'Review Level 3 Items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
-          itemList: watch(reviewXlvlListProvider(3)),
+          itemList: watch(chosenlvlListProvider(3)),
           widgetHeight: screenHeight * 0.2,
-          selectHandler: pushToItemScreen,
         ),
         TextContainer(
           passedText: 'Practice Level 1 Items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
-          itemList: watch(practiceXlvlListProvider(4)),
+          itemList: watch(chosenlvlListProvider(4)),
           widgetHeight: screenHeight * 0.2,
-          selectHandler: pushToItemScreen,
         ),
         TextContainer(
           passedText: 'Practice Level 2 Items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
-          itemList: watch(practiceXlvlListProvider(5)),
+          itemList: watch(chosenlvlListProvider(5)),
           widgetHeight: screenHeight * 0.2,
-          selectHandler: pushToItemScreen,
         ),
         TextContainer(
           passedText: 'Practice Level 3 Items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
-          itemList: watch(practiceXlvlListProvider(6)),
+          itemList: watch(chosenlvlListProvider(6)),
           widgetHeight: screenHeight * 0.2,
-          selectHandler: pushToItemScreen,
         ),
         TextContainer(
           passedText: 'Acquired Items',
@@ -73,14 +65,8 @@ class InteractiveRowColumn extends ConsumerWidget {
         InteractiveGrid(
           itemList: watch(acquiredListProvider),
           widgetHeight: screenHeight * 0.2,
-          selectHandler: pushToItemScreen,
         ),
       ],
     );
-  }
-
-  void pushToItemScreen(BuildContext context, StudyItem clickedKanji) {
-    context.read(targetItemProvider).state = clickedKanji;
-    Navigator.of(context).pushNamed(ItemDetailScreen.routeName);
   }
 }

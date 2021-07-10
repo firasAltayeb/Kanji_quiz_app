@@ -98,22 +98,13 @@ final reviewReadyListProvider = Provider<List<StudyItem>>((ref) {
   return readyList;
 });
 
-final reviewXlvlListProvider =
+final chosenlvlListProvider =
     Provider.autoDispose.family<List<StudyItem>, int>((ref, level) {
   final itemMainList = ref.watch(studyItemProvider);
-  final reviewLvlList = itemMainList.where((item) {
-    return item.progressLevel == level && item.learningStatus == "Review";
+  final chosenlvlList = itemMainList.where((item) {
+    return item.progressLevel == level;
   }).toList();
-  return reviewLvlList;
-});
-
-final practiceXlvlListProvider =
-    Provider.autoDispose.family<List<StudyItem>, int>((ref, level) {
-  final itemMainList = ref.watch(studyItemProvider);
-  final practiceLvlList = itemMainList.where((item) {
-    return item.progressLevel == level && item.learningStatus == "Practice";
-  }).toList();
-  return practiceLvlList;
+  return chosenlvlList;
 });
 
 final acquiredListProvider = Provider<List<StudyItem>>((ref) {
