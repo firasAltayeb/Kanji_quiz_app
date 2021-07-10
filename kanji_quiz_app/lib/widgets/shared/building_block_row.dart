@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/model/study_item_model.dart';
 import 'package:flutter/material.dart';
+
+import '../../model/study_item_model.dart';
+import 'interactive_grid_view.dart';
 import '../../main_providers.dart';
 
 class BuildingBlockRow extends ConsumerWidget {
@@ -10,92 +12,49 @@ class BuildingBlockRow extends ConsumerWidget {
     @required this.targetItem,
   });
 
-  Widget build(BuildContext context, ScopedReader watch) {
+  Widget build(BuildContext ctx, ScopedReader watch) {
     var buildingBlockIDList = targetItem.buildingBlocksID;
-    var screenHeight = MediaQuery.of(context).size.height;
-    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(ctx).size.height;
+    var screenWidth = MediaQuery.of(ctx).size.width;
     return Container(
       alignment: Alignment.center,
       height: screenHeight * 0.175,
       child: buildingBlockIDList.isEmpty
           ? _textWidget(
-              'Item type: ${targetItem.itemType}',
-              screenWidth * 0.08,
+              textToDisplayed: 'Item type: ${targetItem.itemType}',
+              widgetWidth: screenWidth * 0.8,
+              fontSize: screenWidth * 0.075,
             )
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _textWidget(
-                  'Building blocks: ',
-                  screenWidth * 0.06,
+                  textToDisplayed: 'Building blocks: ',
+                  widgetWidth: screenWidth * 0.25,
+                  fontSize: screenWidth * 0.06,
                 ),
-                if (buildingBlockIDList.length == 1)
-                  Container(
-                    width: screenWidth * 0.3,
-                    child: _kanjiBlockRow(screenHeight * 0.1, watch),
+                Expanded(
+                  child: InteractiveGrid(
+                    itemList: watch(buildingBlocksProvider(targetItem)),
+                    widgetHeight: screenHeight * 0.175,
                   ),
-                if (buildingBlockIDList.length == 2)
-                  Container(
-                    width: screenWidth * 0.5,
-                    child: _kanjiBlockRow(screenHeight * 0.1, watch),
-                  ),
-                if (buildingBlockIDList.length > 2)
-                  Expanded(
-                    child: _kanjiBlockRow(screenHeight * 0.1, watch),
-                  ),
+                ),
               ],
             ),
     );
   }
 
-  Widget _textWidget(String displayedText, double height) {
-    return Text(
-      displayedText,
-      style: TextStyle(
-        fontSize: height,
-        fontWeight: FontWeight.bold,
+  Widget _textWidget({textToDisplayed, widgetWidth, fontSize}) {
+    return Container(
+      width: widgetWidth,
+      child: Text(
+        textToDisplayed,
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: FontWeight.bold,
+        ),
+        textAlign: TextAlign.center,
       ),
-    );
-  }
-
-  Widget _kanjiBlockRow(double height, ScopedReader watch) {
-    return Row(
-      children: [
-        ...(watch(buildingBlocksProvider(targetItem)))
-            .map(
-              (bbKanji) => Expanded(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            watch(templateAddressProvider(bbKanji)),
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                    if (bbKanji.itemType != "Primitive")
-                      Container(
-                        height: height,
-                        child: Text(
-                          bbKanji.characterID,
-                          style: TextStyle(
-                            fontSize: height * 0.6,
-                            fontFamily: 'Anton',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
-              ),
-            )
-            .toList()
-      ],
     );
   }
 }

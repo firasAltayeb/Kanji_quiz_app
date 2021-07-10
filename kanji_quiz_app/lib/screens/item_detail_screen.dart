@@ -36,8 +36,6 @@ class ItemDetailScreen extends ConsumerWidget {
     final _sameLevelItems =
         watch(chosenlvlListProvider(_targetItem.progressLevel));
 
-    print(ModalRoute.of(context).settings.name);
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: ItemDetailAppBar(
@@ -53,16 +51,16 @@ class ItemDetailScreen extends ConsumerWidget {
               color: Colors.grey[300],
             ),
             TopKanjiRow(
-              leftWidgetHandler: prevItemDetail(
-                ctx: context,
-                targetItem: _targetItem,
-                sameLevelItems: _sameLevelItems,
-              ),
-              rightWidgetHandler: nextItemDetail(
-                ctx: context,
-                targetItem: _targetItem,
-                sameLevelItems: _sameLevelItems,
-              ),
+              // leftWidgetHandler: prevItemDetail(
+              //   ctx: context,
+              //   targetItem: _targetItem,
+              //   sameLevelItems: _sameLevelItems,
+              // ),
+              // rightWidgetHandler: nextItemDetail(
+              //   ctx: context,
+              //   targetItem: _targetItem,
+              //   sameLevelItems: _sameLevelItems,
+              // ),
               leftWidgetText: "Prev",
               rightWidgetText: "Next",
               targetItem: _targetItem,
@@ -98,9 +96,9 @@ class ItemDetailScreen extends ConsumerWidget {
                 textToDisplay: 'Next review date: ' +
                     '${_fixTimeZone(_targetItem.nextReviewDate())}',
               ),
-            SizedBox(height: 20),
-            ItemDifficultyRow(),
-            SizedBox(height: 20),
+            BuildingBlockRow(
+              targetItem: _targetItem,
+            ),
             if (_showScrollCon)
               ScrollableContainer(
                 targetItem: _targetItem,
@@ -109,11 +107,9 @@ class ItemDetailScreen extends ConsumerWidget {
               SizedBox(
                 height: _screenHeight * 0.175,
               ),
-            SizedBox(height: 30),
-            BuildingBlockRow(
-              targetItem: _targetItem,
-            ),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
+            ItemDifficultyRow(),
+            SizedBox(height: 20),
             if (_showButtonRow)
               ItemBottomRow(
                 itemDetailScreen: true,

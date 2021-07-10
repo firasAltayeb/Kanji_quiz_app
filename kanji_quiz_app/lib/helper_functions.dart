@@ -269,9 +269,11 @@ String inputDialogHintText(StudyItem item, keywordManipulation) {
   return 'Please create a mnemonic';
 }
 
-void pushToItemDetailScreen(BuildContext ctx, StudyItem clickedKanji) {
+void pushToItemDetailScreen(
+    BuildContext ctx, StudyItem clickedKanji, String routeName) {
   ctx.read(targetItemProvider).state = clickedKanji;
-  Navigator.of(ctx).pushNamed(ItemDetailScreen.routeName);
+  if (routeName != "/item-details")
+    Navigator.of(ctx).pushNamed(ItemDetailScreen.routeName);
 }
 
 Function prevItemDetail(
