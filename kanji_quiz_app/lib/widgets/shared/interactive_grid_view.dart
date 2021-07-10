@@ -38,6 +38,7 @@ class InteractiveGrid extends ConsumerWidget {
                   : () => selectHandler(
                         context,
                         itemList[i],
+                        ModalRoute.of(context).settings.name,
                       ),
               child: Stack(
                 alignment: Alignment.center,

@@ -50,22 +50,22 @@ class MainScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   _screenNavigateColumn(
-                    consumerCtx,
-                    screenHeight,
-                    screenWidth,
-                    "Lesson",
-                    lessonList,
-                    LessonManager.routeName,
-                    lsnQueueIndex,
+                    routeName: LessonManager.routeName,
+                    widgetHeight: screenHeight,
+                    widgetWidth: screenWidth,
+                    queueIdx: lsnQueueIndex,
+                    itemList: lessonList,
+                    ctx: consumerCtx,
+                    label: "Lesson",
                   ),
                   _screenNavigateColumn(
-                    consumerCtx,
-                    screenHeight,
-                    screenWidth,
-                    "Review",
-                    reviewList,
-                    ReviewManager.routeName,
-                    revQueueIndex,
+                    routeName: ReviewManager.routeName,
+                    widgetHeight: screenHeight,
+                    widgetWidth: screenWidth,
+                    queueIdx: revQueueIndex,
+                    itemList: reviewList,
+                    ctx: consumerCtx,
+                    label: "Review",
                   ),
                 ],
               ),
@@ -80,13 +80,13 @@ class MainScreen extends StatelessWidget {
                   }
                 },
                 child: _screenNavigateColumn(
-                  consumerCtx,
-                  screenHeight,
-                  screenWidth * 2,
-                  "Practice",
-                  pracitceList,
-                  PracticeManager.routeName,
-                  pracQueueIdx,
+                  routeName: PracticeManager.routeName,
+                  widgetWidth: screenWidth * 2,
+                  widgetHeight: screenHeight,
+                  itemList: pracitceList,
+                  queueIdx: pracQueueIdx,
+                  label: "Practice",
+                  ctx: consumerCtx,
                 ),
               ),
               SizedBox(
@@ -104,22 +104,29 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget _screenNavigateColumn(BuildContext ctx, screenHeight, screenWidth,
-      label, List<StudyItem> itemList, routeName, queueIdx) {
+  Widget _screenNavigateColumn({
+    List<StudyItem> itemList,
+    double widgetHeight,
+    double widgetWidth,
+    BuildContext ctx,
+    String routeName,
+    String label,
+    int queueIdx,
+  }) {
     return Column(
       children: [
         Text(
           label + ": " + '${itemList.length}',
           style: TextStyle(
-            fontSize: screenHeight * 0.04,
+            fontSize: widgetHeight * 0.04,
             fontWeight: FontWeight.bold,
           ),
         ),
         SizedBox(
-          height: screenHeight * 0.02,
+          height: widgetHeight * 0.02,
         ),
         Container(
-          width: screenWidth * 0.4,
+          width: widgetWidth * 0.4,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -133,8 +140,8 @@ class MainScreen extends StatelessWidget {
               queueIdx == 0 ? "Start Session" : "Resume Session",
               style: TextStyle(
                 fontSize: label == "Practice"
-                    ? screenHeight * 0.035
-                    : screenHeight * 0.03,
+                    ? widgetHeight * 0.035
+                    : widgetHeight * 0.03,
                 fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,
