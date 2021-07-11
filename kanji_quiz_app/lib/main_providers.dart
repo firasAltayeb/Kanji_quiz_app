@@ -160,7 +160,7 @@ final templateAddressProvider =
   if (targetItem.itemType == "Primitive") {
     return "assets/images/badges/${targetItem.characterID}.png";
   }
-  if (targetItem.progressLevel == 0) {
+  if (targetItem.progressLevel == 0 && targetItem.mnemonicStory.isEmpty) {
     return "assets/images/templates/grey_badge_template.png";
   }
   switch (targetItem.itemType) {

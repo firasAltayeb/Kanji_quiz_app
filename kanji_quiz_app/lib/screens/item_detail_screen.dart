@@ -97,12 +97,13 @@ class ItemDetailScreen extends ConsumerWidget {
                   '${_fixTimeZone(_targetItem.dateLastLevelChanged)}',
             ),
             SizedBox(height: 20),
-            TextContainer(
-              passedText: _targetItem.levelTranslation(),
-              widgetHeight: _screenHeight * 0.04,
-            ),
+            if (_keywordNotPressed)
+              TextContainer(
+                passedText: _targetItem.levelTranslation(),
+                widgetHeight: _screenHeight * 0.04,
+              ),
             SizedBox(height: 20),
-            if (_targetItem.learningStatus != "Acquired")
+            if (_targetItem.learningStatus != "Acquired" && _keywordNotPressed)
               KeyTextContainer(
                 textToDisplay: 'Next review date: ' +
                     '${_fixTimeZone(_targetItem.nextReviewDate())}',
