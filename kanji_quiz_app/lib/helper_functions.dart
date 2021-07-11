@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kanji_quiz_app/screens/item_detail_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/input_dialog_screen.dart';
+import 'screens/item_detail_screen.dart';
 import 'screens/user_page_screen.dart';
 import 'misc/back_pressed_alert.dart';
 import 'model/study_item_model.dart';
@@ -17,6 +17,7 @@ enum VertOptions {
   WrapPractice,
   WrapLesson,
   WrapReview,
+  HomeIcon,
   Koohii,
   User,
 }
@@ -28,9 +29,9 @@ void choiceAction({
   List<StudyItem> lessonList,
   List<StudyItem> reviewList,
   List<bool> sessionChoices,
+  StudyItem targetKanji,
   bool lvlColumnVisible,
   bool overallVisible,
-  StudyItem targetKanji,
   int lsnQueueIdx,
   bool showAlert,
   bool showPopUp,
@@ -53,6 +54,8 @@ void choiceAction({
     context.read(lvlColumnVisibleProvider).state = !lvlColumnVisible;
   } else if (choice == VertOptions.ToggleOverallProg) {
     context.read(overallProgressVisibleProvider).state = !overallVisible;
+  } else if (choice == VertOptions.HomeIcon) {
+    Navigator.popUntil(context, ModalRoute.withName('/'));
   }
 }
 

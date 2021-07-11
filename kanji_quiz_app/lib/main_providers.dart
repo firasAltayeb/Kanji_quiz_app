@@ -139,6 +139,22 @@ final practicedListProvider = Provider<List<StudyItem>>((ref) {
   return practicedList;
 });
 
+final coloredAddressProvider =
+    Provider.autoDispose.family<String, StudyItem>((ref, targetItem) {
+  switch (targetItem.itemType) {
+    case "Hiragana":
+      return "assets/images/templates/pink_badge_template.png";
+    case "Katakana":
+      return "assets/images/templates/pink_badge_template.png";
+    case "Radical":
+      return "assets/images/templates/blue_badge_template.png";
+    case "Primitive":
+      return "assets/images/badges/${targetItem.characterID}.png";
+    default:
+      return "assets/images/templates/red_badge_template.png";
+  }
+});
+
 final templateAddressProvider =
     Provider.autoDispose.family<String, StudyItem>((ref, targetItem) {
   if (targetItem.itemType == "Primitive") {

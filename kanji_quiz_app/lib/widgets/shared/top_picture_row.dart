@@ -22,8 +22,11 @@ class TopKanjiRow extends ConsumerWidget {
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
+    final routeName = ModalRoute.of(context).settings.name;
     final screenHeight = MediaQuery.of(context).size.height;
-    final templateAddress = watch(templateAddressProvider(targetItem));
+    final addressProvider = routeName == "/lesson-screen"
+        ? coloredAddressProvider
+        : templateAddressProvider;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -37,7 +40,7 @@ class TopKanjiRow extends ConsumerWidget {
                 passedText: leftWidgetText,
                 height: screenHeight,
               ),
-        _itemPicture(screenHeight, templateAddress),
+        _itemPicture(screenHeight, watch(addressProvider(targetItem))),
         (rightWidgetText == 'Undo' || rightWidgetText == 'Next')
             ? CornerButton(
                 passedText: rightWidgetText,

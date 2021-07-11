@@ -21,6 +21,10 @@ class InteractiveGrid extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     final temp = passedWidget == null ? 0 : 1;
     final numberOfWidgets = itemList.length + temp;
+    final routeName = ModalRoute.of(context).settings.name;
+    final addressProvider = routeName == "/lesson-screen"
+        ? coloredAddressProvider
+        : templateAddressProvider;
     return Container(
       padding: EdgeInsets.only(
         top: widgetHeight * 0.025,
@@ -44,7 +48,7 @@ class InteractiveGrid extends ConsumerWidget {
                         : () => selectHandler(
                               context,
                               itemList[i],
-                              ModalRoute.of(context).settings.name,
+                              routeName,
                             ),
                     child: Stack(
                       alignment: Alignment.center,
@@ -53,7 +57,7 @@ class InteractiveGrid extends ConsumerWidget {
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(
-                                watch(templateAddressProvider(itemList[i])),
+                                watch(addressProvider(itemList[i])),
                               ),
                               fit: BoxFit.fill,
                             ),

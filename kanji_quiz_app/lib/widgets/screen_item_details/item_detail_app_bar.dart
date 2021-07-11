@@ -26,6 +26,16 @@ class ItemDetailAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
+        IconButton(
+          icon: Icon(
+            Icons.home_outlined,
+            color: Colors.black,
+            size: screenHeight * 0.04,
+          ),
+          onPressed: () {
+            Navigator.popUntil(context, ModalRoute.withName('/'));
+          },
+        ),
         PopupMenuButton(
           onSelected: (choice) => choiceAction(
             choice: choice,
