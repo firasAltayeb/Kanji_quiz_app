@@ -50,56 +50,45 @@ class LessonManager extends ConsumerWidget {
         lessonList: _lessonList,
         lsnQueueIdx: _queueIndex,
       ),
-      body: GestureDetector(
-        onHorizontalDragEnd: (DragEndDetails details) {
-          if (details.primaryVelocity > 0) {
-            _previousKanji(context, _queueIndex, _lessonList);
-            print("Swiped left in lesson screen");
-          } else if (details.primaryVelocity < 0) {
-            _nextKanji(context, _queueIndex, _lessonList);
-            print("Swiped right in lesson screen");
-          }
-        },
-        child: Column(
-          children: [
-            Container(height: screenHeight * 0.03, color: Colors.grey[300]),
-            TopKanjiRow(
-              leftWidgetText: "Prev",
-              rightWidgetText: "Next",
-              targetItem: _targetItem,
-              leftWidgetHandler: _queueIndex == 0
-                  ? null
-                  : () => _previousKanji(context, _queueIndex, _lessonList),
-              rightWidgetHandler: () =>
-                  _nextKanji(context, _queueIndex, _lessonList),
+      body: Column(
+        children: [
+          Container(height: screenHeight * 0.03, color: Colors.grey[300]),
+          TopKanjiRow(
+            leftWidgetText: "Prev",
+            rightWidgetText: "Next",
+            targetItem: _targetItem,
+            leftWidgetHandler: _queueIndex == 0
+                ? null
+                : () => _previousKanji(context, _queueIndex, _lessonList),
+            rightWidgetHandler: () =>
+                _nextKanji(context, _queueIndex, _lessonList),
+          ),
+          KeyTextContainer(
+            passedFunction: () => editDataHandler(
+              studyItem: _targetItem,
+              buildContext: context,
+              forKeyword: true,
             ),
-            KeyTextContainer(
-              passedFunction: () => editDataHandler(
-                studyItem: _targetItem,
-                buildContext: context,
-                forKeyword: true,
-              ),
-              textToDisplay: _lessonList[_queueIndex].itemType == "Hiragana" ||
-                      _lessonList[_queueIndex].itemType == "Katakana"
-                  ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
-                  : 'Keyword: ' + _lessonList[_queueIndex].keyword,
-              widgetHeight: screenHeight * 0.075,
+            textToDisplay: _lessonList[_queueIndex].itemType == "Hiragana" ||
+                    _lessonList[_queueIndex].itemType == "Katakana"
+                ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
+                : 'Keyword: ' + _lessonList[_queueIndex].keyword,
+            widgetHeight: screenHeight * 0.075,
+          ),
+          BuildingBlockRow(
+            targetItem: _targetItem,
+          ),
+          ScrollableContainer(
+            targetItem: _targetItem,
+          ),
+          Expanded(child: SizedBox()),
+          if (_showButtonRow)
+            ItemBottomRow(
+              lsnQueueIdx: _queueIndex,
+              lessonList: _lessonList,
+              itemDetailScreen: false,
             ),
-            BuildingBlockRow(
-              targetItem: _targetItem,
-            ),
-            ScrollableContainer(
-              targetItem: _targetItem,
-            ),
-            Expanded(child: SizedBox()),
-            if (_showButtonRow)
-              ItemBottomRow(
-                lsnQueueIdx: _queueIndex,
-                lessonList: _lessonList,
-                itemDetailScreen: false,
-              ),
-          ],
-        ),
+        ],
       ),
     );
   }
