@@ -66,20 +66,23 @@ class ResultPage extends ConsumerWidget {
         widgetHeight: screenHeight * 0.175,
         selectHandler: null,
       ),
+      SizedBox(height: screenHeight * 0.05),
       wrapUpButton(screenHeight),
     ]);
   }
 
   Widget wrapUpButton(double screenHeight) {
     return Container(
-      padding: EdgeInsets.only(top: screenHeight * 0.08),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(30.0),
-            side: BorderSide(color: Colors.black, width: 2),
-          ),
+      height: screenHeight * 0.075,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.yellow[700],
+            Colors.orange[300],
+          ],
         ),
+      ),
+      child: ElevatedButton(
         child: Text(
           ' Wrap up session ',
           style: TextStyle(

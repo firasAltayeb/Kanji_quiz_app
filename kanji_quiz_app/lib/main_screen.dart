@@ -126,7 +126,8 @@ class MainScreen extends StatelessWidget {
           height: widgetHeight * 0.02,
         ),
         Container(
-          width: widgetWidth * 0.4,
+          height: widgetHeight * 0.08,
+          width: widgetWidth * 0.35,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [

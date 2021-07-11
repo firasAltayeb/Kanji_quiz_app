@@ -46,10 +46,9 @@ class MyApp extends ConsumerWidget {
               style: ElevatedButton.styleFrom(
                 elevation: 5,
                 side: BorderSide(width: 3, color: Colors.black),
-                primary: Colors.transparent,
-                padding: const EdgeInsets.all(15),
                 minimumSize: Size(30, 30),
                 onPrimary: Colors.black,
+                primary: Colors.transparent,
                 shadowColor: Colors.transparent,
               ),
             ),

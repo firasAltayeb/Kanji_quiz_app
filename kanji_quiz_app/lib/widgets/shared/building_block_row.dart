@@ -12,6 +12,13 @@ class BuildingBlockRow extends ConsumerWidget {
     @required this.targetItem,
   });
 
+  double widthToCenter(numberOfItems, screenWidth) {
+    if (numberOfItems == 1) return screenWidth * 0.5;
+    if (numberOfItems == 2) return screenWidth * 0.6;
+    if (numberOfItems == 3) return screenWidth * 0.9;
+    return screenWidth;
+  }
+
   Widget build(BuildContext ctx, ScopedReader watch) {
     var buildingBlockIDList = targetItem.buildingBlocksID;
     var screenHeight = MediaQuery.of(ctx).size.height;
@@ -25,7 +32,7 @@ class BuildingBlockRow extends ConsumerWidget {
       );
     } else {
       return Container(
-        width: double.infinity,
+        width: widthToCenter(buildingBlockIDList.length, screenWidth),
         child: InteractiveGrid(
           itemList: watch(buildingBlocksProvider(targetItem)),
           widgetHeight: screenHeight * 0.175,
