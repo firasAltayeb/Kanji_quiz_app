@@ -285,7 +285,7 @@ Function prevItemDetail(
     {StudyItem item, BuildContext ctx, ScopedReader watch}) {
   final sameLevelItems = watch(chosenlvlListProvider(item.progressLevel));
   final itemIdx = sameLevelItems.indexOf(item);
-  if (itemIdx == 0) return null;
+  if (itemIdx <= 0 || sameLevelItems.length < 1) return null;
   final prevKanji = sameLevelItems[itemIdx - 1];
   return () {
     ctx.read(targetItemProvider).state = prevKanji;

@@ -141,7 +141,6 @@ final practicedListProvider = Provider<List<StudyItem>>((ref) {
 
 final templateAddressProvider =
     Provider.autoDispose.family<String, StudyItem>((ref, targetItem) {
-  print("${targetItem.characterID} ${targetItem.progressLevel}");
   if (targetItem.itemType == "Primitive") {
     return "assets/images/badges/${targetItem.characterID}.png";
   }

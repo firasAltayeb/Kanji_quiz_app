@@ -16,36 +16,32 @@ class BuildingBlockRow extends ConsumerWidget {
     var buildingBlockIDList = targetItem.buildingBlocksID;
     var screenHeight = MediaQuery.of(ctx).size.height;
     var screenWidth = MediaQuery.of(ctx).size.width;
-    return Container(
-      alignment: Alignment.center,
-      height: screenHeight * 0.175,
-      child: buildingBlockIDList.isEmpty
-          ? _textWidget(
-              textToDisplayed: 'Item type: ${targetItem.itemType}',
-              widgetWidth: screenWidth * 0.8,
-              fontSize: screenWidth * 0.075,
-            )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _textWidget(
-                  textToDisplayed: 'Building blocks: ',
-                  widgetWidth: screenWidth * 0.25,
-                  fontSize: screenWidth * 0.06,
-                ),
-                Expanded(
-                  child: InteractiveGrid(
-                    itemList: watch(buildingBlocksProvider(targetItem)),
-                    widgetHeight: screenHeight * 0.175,
-                  ),
-                ),
-              ],
-            ),
-    );
+    if (buildingBlockIDList.isEmpty) {
+      return _textWidget(
+        textToDisplayed: 'Item type: ${targetItem.itemType}',
+        widgetHeight: screenHeight * 0.175,
+        widgetWidth: screenWidth * 0.8,
+        fontSize: screenWidth * 0.075,
+      );
+    } else {
+      return Container(
+        width: double.infinity,
+        child: InteractiveGrid(
+          itemList: watch(buildingBlocksProvider(targetItem)),
+          widgetHeight: screenHeight * 0.175,
+          passedWidget: _textWidget(
+            textToDisplayed: 'Building blocks: ',
+            fontSize: screenWidth * 0.055,
+          ),
+        ),
+      );
+    }
   }
 
-  Widget _textWidget({textToDisplayed, widgetWidth, fontSize}) {
+  Widget _textWidget({textToDisplayed, widgetHeight, widgetWidth, fontSize}) {
     return Container(
+      alignment: Alignment.center,
+      height: widgetHeight,
       width: widgetWidth,
       child: Text(
         textToDisplayed,
