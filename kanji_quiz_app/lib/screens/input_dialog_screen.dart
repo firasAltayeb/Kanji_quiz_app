@@ -29,7 +29,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
   Future<bool> _onBackPressed() async {
     setState(() {
-      context.read(showScrollConProvider).state = true;
+      context.read(keywordNotPressedProvider).state = true;
       context.read(showBottomRowProvider).state = true;
       _showButtonsRow = false;
     });
@@ -73,8 +73,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                 ),
                 textInputAction: TextInputAction.go,
                 keyboardType: TextInputType.multiline,
-                minLines: 10,
-                maxLines: 10,
+                minLines: 12,
+                maxLines: 12,
                 controller: _mnemonicController,
               ),
             ),
@@ -92,7 +92,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               setState(() {
                                 _showButtonsRow = false;
                               });
-                              context.read(showScrollConProvider).state = true;
+                              context.read(keywordNotPressedProvider).state =
+                                  true;
                               context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             }
@@ -125,7 +126,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                                   .read(studyItemProvider.notifier)
                                   .saveProgress();
 
-                              context.read(showScrollConProvider).state = true;
+                              context.read(keywordNotPressedProvider).state =
+                                  true;
                               context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             },
@@ -141,7 +143,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
   Widget _myMaterialButton(text, color, height, handler) {
     return Padding(
-      padding: EdgeInsets.only(top: height * 0.25),
+      padding: EdgeInsets.only(top: height * 0.15),
       child: MaterialButton(
         color: color,
         elevation: 2,

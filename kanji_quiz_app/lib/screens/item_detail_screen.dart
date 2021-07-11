@@ -27,7 +27,7 @@ class ItemDetailScreen extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final _showScrollCon = watch(showScrollConProvider).state;
+    final _keywordNotPressed = watch(keywordNotPressedProvider).state;
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _screenHeight = MediaQuery.of(context).size.height;
     final _showAlert = watch(showAlertProvider).state;
@@ -107,19 +107,19 @@ class ItemDetailScreen extends ConsumerWidget {
                 textToDisplay: 'Next review date: ' +
                     '${_fixTimeZone(_targetItem.nextReviewDate())}',
               ),
-            BuildingBlockRow(
-              targetItem: _targetItem,
-            ),
-            if (_showScrollCon)
-              ScrollableContainer(
+            if (_keywordNotPressed)
+              BuildingBlockRow(
                 targetItem: _targetItem,
               ),
-            if (!_showScrollCon)
+            if (!_keywordNotPressed)
               SizedBox(
-                height: _screenHeight * 0.175,
+                height: _screenHeight * 0.05,
               ),
+            ScrollableContainer(
+              targetItem: _targetItem,
+            ),
             SizedBox(height: 20),
-            ItemDifficultyRow(),
+            if (_keywordNotPressed) ItemDifficultyRow(),
             SizedBox(height: 20),
             if (_showButtonRow)
               ItemBottomRow(

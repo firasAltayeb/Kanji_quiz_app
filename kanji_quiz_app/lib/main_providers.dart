@@ -45,7 +45,7 @@ final answeredRevealedProvider = StateProvider<bool>((ref) => false);
 
 final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
 
-final showScrollConProvider = StateProvider<bool>((ref) => true);
+final keywordNotPressedProvider = StateProvider<bool>((ref) => true);
 
 final showBottomRowProvider = StateProvider<bool>((ref) => true);
 
