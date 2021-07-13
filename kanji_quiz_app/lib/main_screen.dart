@@ -31,6 +31,7 @@ class MainScreen extends StatelessWidget {
         final allProgVisible = watch(overallProgressVisibleProvider).state;
         final lvlColumnVisible = watch(lvlColumnVisibleProvider).state;
         final pracQueueIdx = watch(practiceQueueIdxProvider).state;
+        final senQueueIdx = watch(sentenceQueueIdxProvider).state;
         final lsnQueueIndex = watch(lessonQueueIdxProvider).state;
         final revQueueIndex = watch(reviewQueueIdxProvider).state;
         final reviewList = watch(reviewReadyListProvider);
@@ -43,6 +44,7 @@ class MainScreen extends StatelessWidget {
                 height: screenHeight * 0.03,
                 color: Colors.grey[300],
               ),
+              richLessonText(screenWidth),
               SizedBox(
                 height: screenHeight * 0.05,
               ),
@@ -56,7 +58,8 @@ class MainScreen extends StatelessWidget {
                     queueIdx: lsnQueueIndex,
                     itemList: lessonList,
                     ctx: consumerCtx,
-                    label: "Lesson",
+                    label: "To study",
+                    extraIdx: 0,
                   ),
                   _screenNavigateColumn(
                     routeName: ReviewManager.routeName,
@@ -65,7 +68,8 @@ class MainScreen extends StatelessWidget {
                     queueIdx: revQueueIndex,
                     itemList: reviewList,
                     ctx: consumerCtx,
-                    label: "Review",
+                    label: "To review",
+                    extraIdx: 0,
                   ),
                 ],
               ),
@@ -85,7 +89,8 @@ class MainScreen extends StatelessWidget {
                   widgetHeight: screenHeight,
                   itemList: pracitceList,
                   queueIdx: pracQueueIdx,
-                  label: "Practice",
+                  extraIdx: senQueueIdx,
+                  label: "To practice",
                   ctx: consumerCtx,
                 ),
               ),
@@ -104,6 +109,31 @@ class MainScreen extends StatelessWidget {
     );
   }
 
+  Widget richLessonText(double screenWidth) {
+    return RichText(
+      text: TextSpan(
+        style: TextStyle(
+          fontSize: screenWidth * 0.04,
+          color: Colors.black,
+        ),
+        children: <TextSpan>[
+          TextSpan(
+            text: 'Remembering The Kanji: ',
+            style: TextStyle(
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+          TextSpan(
+            text: "Lesson 7",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _screenNavigateColumn({
     List<StudyItem> itemList,
     double widgetHeight,
@@ -112,6 +142,7 @@ class MainScreen extends StatelessWidget {
     String routeName,
     String label,
     int queueIdx,
+    int extraIdx,
   }) {
     return Column(
       children: [
@@ -138,7 +169,9 @@ class MainScreen extends StatelessWidget {
           ),
           child: ElevatedButton(
             child: Text(
-              queueIdx == 0 ? "Start Session" : "Resume Session",
+              queueIdx != 0 || extraIdx > 1
+                  ? "Resume Session"
+                  : "Start Session",
               style: TextStyle(
                 fontSize: label == "Practice"
                     ? widgetHeight * 0.035

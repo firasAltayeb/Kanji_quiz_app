@@ -98,10 +98,10 @@ class RecallPage extends ConsumerWidget {
         color: showBtnVisible ? Colors.red[400] : Colors.yellow[700],
       ),
       child: FittedBox(
-        fit: showBtnVisible ? BoxFit.fitWidth : BoxFit.fill,
+        fit: BoxFit.fitWidth,
         child: showBtnVisible
             ? Text(
-                'Can you recall this character?',
+                'Can you recall the assigned keyword \n for this character?',
                 textAlign: TextAlign.center,
               )
             : _keywordRichText(),
@@ -110,18 +110,20 @@ class RecallPage extends ConsumerWidget {
   }
 
   RichText _keywordRichText() {
-    return new RichText(
-      text: new TextSpan(
-        style: new TextStyle(
+    var keyword = reviewQueue[queueIndex].keyword;
+    var shortKey = keyword.length < 8 ? true : false;
+    return RichText(
+      text: TextSpan(
+        style: TextStyle(
           color: Colors.black,
         ),
         children: <TextSpan>[
-          new TextSpan(text: 'The correct keyword is: '),
-          new TextSpan(
-            text: '${reviewQueue[queueIndex].keyword}',
-            style: new TextStyle(fontWeight: FontWeight.bold),
+          TextSpan(text: 'The correct keyword is: '),
+          TextSpan(
+            text: shortKey ? keyword + " " * 8 : keyword,
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          new TextSpan(text: '. \n Did you remember correctly?'),
+          TextSpan(text: '\n' + 'Did you recall correctly?'),
         ],
       ),
     );

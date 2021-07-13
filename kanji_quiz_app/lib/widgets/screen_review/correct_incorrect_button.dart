@@ -35,7 +35,7 @@ class CorrectIncorrectButton extends ConsumerWidget {
       ),
       child: TextButton(
         child: Text(
-          selectChoice ? "Correct" : "Incorrect",
+          selectChoice ? "Yes" : "No",
           style: TextStyle(
             color: Colors.white,
             fontSize: screenHeight * 0.05,

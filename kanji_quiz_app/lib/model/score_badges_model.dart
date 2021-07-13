@@ -8,52 +8,52 @@ List<ScoreBadge> scoreBadgesList = [
   ),
   ScoreBadge(
     scoreGained: 100,
+    amountToGet: 25,
+    decorationAddress: "assets/images/decorations/bronze_crown.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
     amountToGet: 50,
     decorationAddress: "assets/images/decorations/bronze_crown.png",
   ),
   ScoreBadge(
     scoreGained: 100,
+    amountToGet: 75,
+    decorationAddress: "assets/images/decorations/bronze_crown.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
     amountToGet: 100,
-    decorationAddress: "assets/images/decorations/bronze_crown.png",
-  ),
-  ScoreBadge(
-    scoreGained: 100,
-    amountToGet: 200,
-    decorationAddress: "assets/images/decorations/bronze_crown.png",
-  ),
-  ScoreBadge(
-    scoreGained: 100,
-    amountToGet: 300,
     decorationAddress: "assets/images/decorations/silver_crown.png",
   ),
   ScoreBadge(
     scoreGained: 100,
-    amountToGet: 400,
+    amountToGet: 150,
+    decorationAddress: "assets/images/decorations/silver_crown.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 200,
+    decorationAddress: "assets/images/decorations/silver_crown.png",
+  ),
+  ScoreBadge(
+    scoreGained: 100,
+    amountToGet: 350,
     decorationAddress: "assets/images/decorations/silver_crown.png",
   ),
   ScoreBadge(
     scoreGained: 100,
     amountToGet: 500,
-    decorationAddress: "assets/images/decorations/silver_crown.png",
+    decorationAddress: "assets/images/decorations/gold_crown.png",
   ),
   ScoreBadge(
     scoreGained: 100,
-    amountToGet: 600,
-    decorationAddress: "assets/images/decorations/silver_crown.png",
-  ),
-  ScoreBadge(
-    scoreGained: 100,
-    amountToGet: 700,
+    amountToGet: 650,
     decorationAddress: "assets/images/decorations/gold_crown.png",
   ),
   ScoreBadge(
     scoreGained: 100,
     amountToGet: 800,
-    decorationAddress: "assets/images/decorations/gold_crown.png",
-  ),
-  ScoreBadge(
-    scoreGained: 100,
-    amountToGet: 900,
     decorationAddress: "assets/images/decorations/gold_crown.png",
   ),
   ScoreBadge(
