@@ -801,7 +801,7 @@ List<StudyItem> studyItemStaticData = [
     characterID: "専",
     jlptLevel: "N2",
     frameNumFifth: 46,
-    frameNumSixth: 46,
+    frameNumSixth: 47,
     buildingBlocksID: ["十", "田", "寸"],
     buildingBlockKeywords: [
       "ten",
@@ -831,7 +831,7 @@ List<StudyItem> studyItemStaticData = [
     characterID: "博",
     jlptLevel: "N1",
     frameNumFifth: 47,
-    frameNumSixth: 47,
+    frameNumSixth: 48,
     buildingBlocksID: ["十", "専"],
     buildingBlockKeywords: [
       "ten",

@@ -9,7 +9,6 @@ import '../widgets/shared/key_text_container.dart';
 import '../widgets/shared/building_block_row.dart';
 import '../widgets/shared/bottom_row_buttons.dart';
 import '../widgets/shared/top_picture_row.dart';
-import '../widgets/shared/text_container.dart';
 import '../model/study_item_model.dart';
 import '../helper_functions.dart';
 import '../main_providers.dart';
@@ -27,7 +26,6 @@ class ItemDetailScreen extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final _keywordNotPressed = watch(keywordNotPressedProvider).state;
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _screenHeight = MediaQuery.of(context).size.height;
     final _showAlert = watch(showAlertProvider).state;
@@ -97,7 +95,11 @@ class ItemDetailScreen extends ConsumerWidget {
             ScrollableContainer(
               targetItem: _targetItem,
             ),
-            if (_keywordNotPressed) infoColumn(_targetItem, _screenHeight),
+            infoColumn(
+              _targetItem,
+              _screenHeight,
+              watch(keywordPressedProvider).state,
+            ),
             ItemDifficultyRow(),
             SizedBox(height: 20),
             if (_showButtonRow)
@@ -115,30 +117,36 @@ class ItemDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget infoColumn(_targetItem, _screenHeight) {
-    return Column(
-      children: [
-        SizedBox(height: 30),
-        KeyTextContainer(
-          textToDisplay: "Item status: " + _targetItem.levelTranslation(),
-          widgetHeight: _screenHeight * 0.045,
-        ),
-        SizedBox(height: 20),
-        KeyTextContainer(
-          textToDisplay: _targetItem.learningStatus == "Acquired"
-              ? "already Acquired"
-              : 'Next review date: ' +
-                  '${_fixTimeZone(_targetItem.nextReviewDate())}',
-          widgetHeight: _screenHeight * 0.045,
-        ),
-        SizedBox(height: 20),
-        KeyTextContainer(
-          textToDisplay: 'Last level change date: ' +
-              '${_fixTimeZone(_targetItem.dateLastLevelChanged)}',
-          widgetHeight: _screenHeight * 0.05,
-        ),
-        SizedBox(height: 20),
-      ],
-    );
+  Widget infoColumn(targetItem, screenHeight, bool keywordPressed) {
+    return keywordPressed
+        ? SizedBox(
+            height: screenHeight * 0.2,
+          )
+        : Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 30),
+              Text(
+                "Item status: " + targetItem.levelTranslation(),
+                style: TextStyle(fontSize: screenHeight * 0.03),
+              ),
+              SizedBox(height: 20),
+              Text(
+                targetItem.learningStatus == "Acquired"
+                    ? "already Acquired"
+                    : 'Next review date: ' +
+                        '${_fixTimeZone(targetItem.nextReviewDate())}',
+                style: TextStyle(fontSize: screenHeight * 0.03),
+                textAlign: TextAlign.left,
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Last level change date: ' +
+                    '${_fixTimeZone(targetItem.dateLastLevelChanged)}',
+                style: TextStyle(fontSize: screenHeight * 0.03),
+              ),
+              SizedBox(height: 20),
+            ],
+          );
   }
 }

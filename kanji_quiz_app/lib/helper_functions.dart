@@ -239,7 +239,7 @@ void wrapPracticeSession(BuildContext context, sessionChoices, practiceList) {
 
 void editDataHandler(
     {BuildContext buildContext, StudyItem studyItem, bool forKeyword}) {
-  if (forKeyword) buildContext.read(keywordNotPressedProvider).state = false;
+  if (forKeyword) buildContext.read(keywordPressedProvider).state = true;
   buildContext.read(showBottomRowProvider).state = false;
   Navigator.of(buildContext).push(
     PageRouteBuilder(

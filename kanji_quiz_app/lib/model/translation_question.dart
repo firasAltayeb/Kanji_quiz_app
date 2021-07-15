@@ -60,7 +60,7 @@ class TranslationQusAnswer {
 
   String containableTxt() {
     if (answerText.length < 50) {
-      return answerText + " " * (40 - answerText.length);
+      return answerText + " " * (45 - answerText.length);
     }
     return answerText;
   }

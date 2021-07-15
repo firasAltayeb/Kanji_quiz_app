@@ -29,7 +29,7 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
 
   Future<bool> _onBackPressed() async {
     setState(() {
-      context.read(keywordNotPressedProvider).state = true;
+      context.read(keywordPressedProvider).state = false;
       context.read(showBottomRowProvider).state = true;
       _showButtonsRow = false;
     });
@@ -92,8 +92,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                               setState(() {
                                 _showButtonsRow = false;
                               });
-                              context.read(keywordNotPressedProvider).state =
-                                  true;
+                              context.read(keywordPressedProvider).state =
+                                  false;
                               context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             }
@@ -126,8 +126,8 @@ class _InputDialogScreenState extends State<InputDialogScreen> {
                                   .read(studyItemProvider.notifier)
                                   .saveProgress();
 
-                              context.read(keywordNotPressedProvider).state =
-                                  true;
+                              context.read(keywordPressedProvider).state =
+                                  false;
                               context.read(showBottomRowProvider).state = true;
                               Navigator.pop(context);
                             },
