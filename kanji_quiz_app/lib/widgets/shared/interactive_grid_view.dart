@@ -26,9 +26,11 @@ class InteractiveGrid extends ConsumerWidget {
         ? coloredAddressProvider
         : templateAddressProvider;
     return Container(
-      padding: EdgeInsets.only(
-        top: widgetHeight * 0.025,
-        bottom: widgetHeight * 0.025,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.grey[300],
+          width: 5,
+        ),
       ),
       height: widgetHeight,
       child: GridView.builder(
@@ -55,6 +57,7 @@ class InteractiveGrid extends ConsumerWidget {
                       children: [
                         Ink(
                           decoration: BoxDecoration(
+                            color: Colors.grey[300],
                             image: DecorationImage(
                               image: AssetImage(
                                 watch(addressProvider(itemList[i])),

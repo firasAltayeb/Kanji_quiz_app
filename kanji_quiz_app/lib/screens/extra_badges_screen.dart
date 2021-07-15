@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../main_providers.dart';
 import '../widgets/screen_extra_badges/score_badges_app_screen.dart';
-import '../widgets/shared/text_container.dart';
+import '../widgets/shared/colored_text_container.dart';
 import '../model/score_badges_model.dart';
 
 class ExtraBadgesScreen extends ConsumerWidget {

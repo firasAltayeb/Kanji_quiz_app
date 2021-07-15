@@ -27,17 +27,12 @@ class CorrectIncorrectButton extends ConsumerWidget {
         height: screenHeight * 0.35,
         width: screenWidth * 0.5,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              selectChoice ? Colors.green[700] : Colors.red[700],
-              selectChoice ? Colors.green[400] : Colors.red[400],
-            ],
-          ),
+          color: selectChoice ? Colors.green[500] : Colors.red[500],
           border: Border(
-            top: BorderSide(width: 3.0, color: Colors.black),
-            left: BorderSide(width: 1.0, color: Colors.black),
-            right: BorderSide(width: 1.0, color: Colors.black),
-            bottom: BorderSide(width: 3.0, color: Colors.black),
+            top: BorderSide(width: 1.0, color: Colors.black),
+            left: BorderSide(width: 0.5, color: Colors.black),
+            right: BorderSide(width: 0.5, color: Colors.black),
+            bottom: BorderSide(width: 0, color: Colors.black),
           ),
         ),
         child: TextButton(

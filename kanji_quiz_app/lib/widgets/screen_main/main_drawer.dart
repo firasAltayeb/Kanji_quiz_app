@@ -11,8 +11,15 @@ class MainAppDrawer extends ConsumerWidget {
       child: Column(
         children: <Widget>[
           Container(
-            height: screenHeight * 0.1,
-            color: Colors.orange[400],
+            height: screenHeight * 0.12,
+            decoration: BoxDecoration(
+              color: Colors.orange[400],
+              image: DecorationImage(
+                image: AssetImage(
+                  "assets/images/decorations/gold_crown.png",
+                ),
+              ),
+            ),
           ),
           Expanded(
             child: drawerListView(context, screenHeight),

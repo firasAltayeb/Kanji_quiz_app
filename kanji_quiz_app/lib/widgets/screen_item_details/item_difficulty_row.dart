@@ -10,7 +10,7 @@ class ItemDifficultyRow extends ConsumerWidget {
     var screenWidth = MediaQuery.of(context).size.width;
     final targetK = watch(targetItemProvider).state;
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Container(
           alignment: Alignment.center,

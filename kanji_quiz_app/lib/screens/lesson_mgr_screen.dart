@@ -73,7 +73,7 @@ class LessonManager extends ConsumerWidget {
                     _lessonList[_queueIndex].itemType == "Katakana"
                 ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
                 : 'Keyword: ' + _lessonList[_queueIndex].keyword,
-            widgetHeight: screenHeight * 0.075,
+            widgetHeight: screenHeight * 0.07,
           ),
           BuildingBlockRow(
             targetItem: _targetItem,

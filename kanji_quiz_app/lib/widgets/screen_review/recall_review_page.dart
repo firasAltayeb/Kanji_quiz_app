@@ -81,20 +81,10 @@ class RecallPage extends ConsumerWidget {
 
   Widget _infoBox(showBtnVisible, screenHeight, screenWidth) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      width: double.infinity,
       height: screenHeight * 0.125,
-      width: screenWidth * 0.95,
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Colors.orange[400],
-            Colors.yellow[700],
-          ],
-        ),
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
-        ),
         color: showBtnVisible ? Colors.red[400] : Colors.yellow[700],
       ),
       child: FittedBox(

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'widgets/screen_main/overall_progress_container.dart';
 import 'widgets/screen_main/badge_collection_column.dart';
-import 'widgets/screen_main/main_screen_app_bar.dart';
-import 'widgets/screen_main/main_screen_drawer.dart';
+import 'widgets/screen_main/main_app_bar.dart';
+import 'widgets/screen_main/main_drawer.dart';
 import 'screens/lesson_mgr_screen.dart';
 import 'screens/review_mgr_screen.dart';
 import 'screens/practice_screen.dart';

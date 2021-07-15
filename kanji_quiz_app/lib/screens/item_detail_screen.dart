@@ -26,6 +26,7 @@ class ItemDetailScreen extends ConsumerWidget {
   }
 
   Widget build(BuildContext context, ScopedReader watch) {
+    final _keywordPressed = watch(keywordPressedProvider).state;
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _screenHeight = MediaQuery.of(context).size.height;
     final _showAlert = watch(showAlertProvider).state;
@@ -82,24 +83,29 @@ class ItemDetailScreen extends ConsumerWidget {
                   forKeyword: true,
                 ),
                 textToDisplay: 'Keyword: ' + _targetItem.keyword,
-                widgetHeight: _screenHeight * 0.08,
+                widgetHeight: _screenHeight * 0.07,
               ),
             if (isKana)
               KeyTextContainer(
                 textToDisplay: 'Reading: ' + _targetItem.itemReadings[0],
-                widgetHeight: _screenHeight * 0.08,
+                widgetHeight: _screenHeight * 0.07,
               ),
+            SizedBox(height: 20),
             BuildingBlockRow(
               targetItem: _targetItem,
+              keywordPressed: _keywordPressed,
             ),
+            SizedBox(height: 20),
             ScrollableContainer(
               targetItem: _targetItem,
             ),
+            SizedBox(height: 30),
             infoColumn(
               _targetItem,
               _screenHeight,
-              watch(keywordPressedProvider).state,
+              _keywordPressed,
             ),
+            SizedBox(height: 20),
             ItemDifficultyRow(),
             SizedBox(height: 20),
             if (_showButtonRow)
@@ -122,31 +128,33 @@ class ItemDetailScreen extends ConsumerWidget {
         ? SizedBox(
             height: screenHeight * 0.2,
           )
-        : Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 30),
-              Text(
-                "Item status: " + targetItem.levelTranslation(),
-                style: TextStyle(fontSize: screenHeight * 0.03),
-              ),
-              SizedBox(height: 20),
-              Text(
-                targetItem.learningStatus == "Acquired"
-                    ? "already Acquired"
-                    : 'Next review date: ' +
-                        '${_fixTimeZone(targetItem.nextReviewDate())}',
-                style: TextStyle(fontSize: screenHeight * 0.03),
-                textAlign: TextAlign.left,
-              ),
-              SizedBox(height: 20),
-              Text(
-                'Last level change date: ' +
-                    '${_fixTimeZone(targetItem.dateLastLevelChanged)}',
-                style: TextStyle(fontSize: screenHeight * 0.03),
-              ),
-              SizedBox(height: 20),
-            ],
+        : Container(
+            padding: const EdgeInsets.all(10),
+            width: double.infinity,
+            color: Colors.grey[200],
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Item status: " + targetItem.levelTranslation(),
+                  style: TextStyle(fontSize: screenHeight * 0.03),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  targetItem.learningStatus == "Acquired"
+                      ? "already Acquired"
+                      : 'Next review date: ' +
+                          '${_fixTimeZone(targetItem.nextReviewDate())}',
+                  style: TextStyle(fontSize: screenHeight * 0.03),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Last level change date: ' +
+                      '${_fixTimeZone(targetItem.dateLastLevelChanged)}',
+                  style: TextStyle(fontSize: screenHeight * 0.03),
+                ),
+              ],
+            ),
           );
   }
 }

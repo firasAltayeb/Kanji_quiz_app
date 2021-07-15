@@ -8,7 +8,7 @@ class TextContainer extends StatelessWidget {
   TextContainer({
     @required this.passedText,
     @required this.widgetHeight,
-    this.widgetColor = Colors.yellow,
+    this.widgetColor = Colors.orange,
   });
 
   @override
@@ -25,17 +25,17 @@ class TextContainer extends StatelessWidget {
         border: Border(
           bottom: BorderSide(width: 1.0, color: Colors.black),
         ),
-        color: widgetColor[700],
+        color: widgetColor[400],
       ),
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(10),
       child: Text(
         passedText,
         style: TextStyle(
           fontSize: widgetHeight,
-          fontWeight: FontWeight.bold,
+          // fontWeight: FontWeight.bold,
           // color: Colors.white,
         ),
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.left,
       ),
     );
   }
