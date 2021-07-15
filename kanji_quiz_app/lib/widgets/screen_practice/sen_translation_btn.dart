@@ -66,14 +66,14 @@ class TranslationOptionBtn extends ConsumerWidget {
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.black,
-              width: 3,
+              width: 1,
             ),
             color: !answeredRevealed ? Theme.of(ctx).accentColor : answerColor,
           ),
           child: FittedBox(
             fit: BoxFit.contain,
             child: Text(
-              questionAnswer.answerText,
+              questionAnswer.containableTxt(),
               textAlign: TextAlign.center,
             ),
           ),

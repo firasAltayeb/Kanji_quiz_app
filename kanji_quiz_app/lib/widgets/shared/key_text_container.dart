@@ -31,6 +31,7 @@ class KeyTextContainer extends StatelessWidget {
           child: Text(
             textToDisplay,
             style: TextStyle(
+              fontFamily: 'Lato',
               fontWeight: FontWeight.bold,
             ),
           ),

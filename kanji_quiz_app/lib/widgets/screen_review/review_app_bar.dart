@@ -25,7 +25,6 @@ class ReviewAppBar extends StatelessWidget implements PreferredSizeWidget {
         'Review Page',
         style: TextStyle(
           fontSize: screenHeight * 0.03,
-          fontFamily: 'Anton',
         ),
       ),
       actions: [

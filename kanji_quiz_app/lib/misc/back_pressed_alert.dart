@@ -16,7 +16,6 @@ class BackPressedAlert {
           'Are you sure?',
           style: TextStyle(
             fontSize: screenHeight * 0.05,
-            fontFamily: 'Anton',
           ),
         ),
         content: Text(

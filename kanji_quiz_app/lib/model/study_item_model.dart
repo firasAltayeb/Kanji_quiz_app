@@ -47,19 +47,19 @@ class StudyItem {
   });
 
   String levelTranslation() {
-    var translation = "Lesson in Progress";
+    var translation = "lesson in Progress";
     if (progressLevel == 0 && mnemonicStory.isEmpty) {
-      translation = "Item not yet studied";
+      translation = "not yet studied";
     } else if (progressLevel > 0 && progressLevel < 4) {
-      translation = "Current $learningStatus level is $progressLevel";
+      translation = "$learningStatus level is $progressLevel";
     } else if (progressLevel == 4) {
-      translation = "Current $learningStatus level is 1";
+      translation = "$learningStatus level is 1";
     } else if (progressLevel == 5) {
-      translation = "Current $learningStatus level is 2";
+      translation = "$learningStatus level is 2";
     } else if (progressLevel == 6) {
-      translation = "Current $learningStatus level is 3";
+      translation = "$learningStatus level is 3";
     } else if (progressLevel == 7) {
-      translation = "Item acquired";
+      translation = "acquired";
     }
     return translation;
   }

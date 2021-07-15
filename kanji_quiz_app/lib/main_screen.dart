@@ -149,7 +149,7 @@ class MainScreen extends StatelessWidget {
         Text(
           label + ": " + '${itemList.length}',
           style: TextStyle(
-            fontSize: widgetHeight * 0.04,
+            fontSize: widgetHeight * 0.03,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -176,7 +176,6 @@ class MainScreen extends StatelessWidget {
                 fontSize: label == "Practice"
                     ? widgetHeight * 0.035
                     : widgetHeight * 0.03,
-                fontStyle: FontStyle.italic,
               ),
               textAlign: TextAlign.center,
             ),

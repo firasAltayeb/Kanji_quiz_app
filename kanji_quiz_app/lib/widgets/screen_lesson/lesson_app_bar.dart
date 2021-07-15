@@ -25,7 +25,6 @@ class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
         'Lesson Page',
         style: TextStyle(
           fontSize: screenHeight * 0.03,
-          fontFamily: 'Anton',
         ),
       ),
       actions: [

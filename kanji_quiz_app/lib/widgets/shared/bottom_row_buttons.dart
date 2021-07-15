@@ -98,10 +98,10 @@ class ItemBottomRow extends ConsumerWidget {
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           border: Border(
-            top: BorderSide(width: 3.0, color: Colors.black),
-            left: BorderSide(width: 1.0, color: Colors.black),
-            right: BorderSide(width: 1.0, color: Colors.black),
-            bottom: BorderSide(width: 3.0, color: Colors.black),
+            top: BorderSide(width: 1.0, color: Colors.black),
+            left: BorderSide(width: 0.5, color: Colors.black),
+            right: BorderSide(width: 0.5, color: Colors.black),
+            bottom: BorderSide(width: 1.0, color: Colors.black),
           ),
           color: color,
         ),
@@ -109,7 +109,7 @@ class ItemBottomRow extends ConsumerWidget {
           child: Text(
             btnText,
             style: TextStyle(
-              fontFamily: 'Anton',
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

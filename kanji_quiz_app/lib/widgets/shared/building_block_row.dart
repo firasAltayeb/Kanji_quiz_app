@@ -14,9 +14,7 @@ class BuildingBlockRow extends ConsumerWidget {
 
   double widthToCenter(numberOfItems, screenWidth) {
     if (numberOfItems == 1) return screenWidth * 0.5;
-    if (numberOfItems == 2) return screenWidth * 0.6;
-    if (numberOfItems == 3) return screenWidth * 0.9;
-    return screenWidth;
+    return screenWidth * 0.055;
   }
 
   Widget build(BuildContext ctx, ScopedReader watch) {
@@ -27,29 +25,24 @@ class BuildingBlockRow extends ConsumerWidget {
       return _textWidget(
         textToDisplayed: 'Item type: ${targetItem.itemType}',
         widgetHeight: screenHeight * 0.175,
-        widgetWidth: screenWidth * 0.8,
         fontSize: screenWidth * 0.075,
       );
     } else {
-      return Container(
-        width: widthToCenter(buildingBlockIDList.length, screenWidth),
-        child: InteractiveGrid(
-          itemList: watch(buildingBlocksProvider(targetItem)),
-          widgetHeight: screenHeight * 0.175,
-          passedWidget: _textWidget(
-            textToDisplayed: 'Building blocks: ',
-            fontSize: screenWidth * 0.055,
-          ),
+      return InteractiveGrid(
+        itemList: watch(buildingBlocksProvider(targetItem)),
+        widgetHeight: screenHeight * 0.175,
+        passedWidget: _textWidget(
+          textToDisplayed: 'Building blocks: ',
+          fontSize: screenWidth * 0.055,
         ),
       );
     }
   }
 
-  Widget _textWidget({textToDisplayed, widgetHeight, widgetWidth, fontSize}) {
+  Widget _textWidget({textToDisplayed, widgetHeight, fontSize}) {
     return Container(
-      alignment: Alignment.center,
       height: widgetHeight,
-      width: widgetWidth,
+      alignment: Alignment.center,
       child: Text(
         textToDisplayed,
         style: TextStyle(

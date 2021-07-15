@@ -57,4 +57,11 @@ class TranslationQusAnswer {
     @required this.answerText,
     @required this.accuracy,
   });
+
+  String containableTxt() {
+    if (answerText.length < 50) {
+      return answerText + " " * (40 - answerText.length);
+    }
+    return answerText;
+  }
 }

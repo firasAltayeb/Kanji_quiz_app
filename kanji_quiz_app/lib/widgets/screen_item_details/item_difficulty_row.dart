@@ -13,15 +13,14 @@ class ItemDifficultyRow extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
+          alignment: Alignment.center,
           height: screenHeight * 0.05,
-          width: screenWidth * 0.6,
-          child: FittedBox(
-            fit: BoxFit.fill,
-            child: Text(
-              'Item difficulty is: ${targetK.difficultyMeaning()}',
-              style: TextStyle(
-                fontFamily: 'Anton',
-              ),
+          width: screenWidth * 0.7,
+          child: Text(
+            'Item difficulty is: ${targetK.difficultyMeaning()}',
+            style: TextStyle(
+              fontSize: screenWidth * 0.05,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

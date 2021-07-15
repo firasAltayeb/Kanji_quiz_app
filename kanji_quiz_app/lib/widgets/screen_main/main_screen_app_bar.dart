@@ -21,7 +21,7 @@ class MainScreenAppBar extends ConsumerWidget implements PreferredSizeWidget {
         'Home Page',
         style: TextStyle(
           fontSize: screenHeight * 0.03,
-          fontFamily: 'Anton',
+          fontWeight: FontWeight.bold,
         ),
       ),
       actions: [

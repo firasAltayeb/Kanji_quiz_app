@@ -7,10 +7,10 @@ import '../../main_providers.dart';
 class ShowAnswerButton extends ConsumerWidget {
   @override
   Widget build(BuildContext bldCtx, ScopedReader watch) {
-    var screenHeight = MediaQuery.of(bldCtx).size.height * 0.35;
+    var screenHeight = MediaQuery.of(bldCtx).size.height;
     return Container(
       width: double.infinity,
-      height: screenHeight,
+      height: screenHeight * 0.35,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -23,7 +23,7 @@ class ShowAnswerButton extends ConsumerWidget {
         child: Text(
           "Show Answer",
           style: TextStyle(
-            fontSize: screenHeight * 0.15,
+            fontSize: screenHeight * 0.05,
             fontWeight: FontWeight.bold,
           ),
         ),

@@ -22,9 +22,8 @@ class TextContainer extends StatelessWidget {
             widgetColor[700],
           ],
         ),
-        border: Border.all(
-          color: Colors.black,
-          width: 3,
+        border: Border(
+          bottom: BorderSide(width: 1.0, color: Colors.black),
         ),
         color: widgetColor,
       ),
@@ -33,7 +32,7 @@ class TextContainer extends StatelessWidget {
         passedText,
         style: TextStyle(
           fontSize: widgetHeight,
-          fontFamily: 'Anton',
+          fontWeight: FontWeight.bold,
         ),
         textAlign: TextAlign.center,
       ),

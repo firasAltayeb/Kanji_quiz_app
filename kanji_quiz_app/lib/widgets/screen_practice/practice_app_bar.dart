@@ -23,7 +23,6 @@ class PracticeAppBar extends StatelessWidget implements PreferredSizeWidget {
         'Practice Page',
         style: TextStyle(
           fontSize: screenHeight * 0.03,
-          fontFamily: 'Anton',
         ),
       ),
       actions: [

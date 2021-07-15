@@ -41,11 +41,10 @@ class MyApp extends ConsumerWidget {
               brightness: Brightness.dark,
             ),
             accentColor: Colors.yellow[700],
-            fontFamily: 'Lato',
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
                 elevation: 5,
-                side: BorderSide(width: 3, color: Colors.black),
+                side: BorderSide(width: 1, color: Colors.black),
                 minimumSize: Size(30, 30),
                 onPrimary: Colors.black,
                 primary: Colors.transparent,

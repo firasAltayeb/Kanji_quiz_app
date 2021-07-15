@@ -11,7 +11,7 @@ class InteractiveRowColumn extends ConsumerWidget {
     return Column(
       children: [
         TextContainer(
-          passedText: 'Review Level 1 Items',
+          passedText: 'Level 1 review items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -19,7 +19,7 @@ class InteractiveRowColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.2,
         ),
         TextContainer(
-          passedText: 'Review Level 2 Items',
+          passedText: 'Level 2 review items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -27,7 +27,7 @@ class InteractiveRowColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.2,
         ),
         TextContainer(
-          passedText: 'Review Level 3 Items',
+          passedText: 'Level 3 review items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -35,7 +35,7 @@ class InteractiveRowColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.2,
         ),
         TextContainer(
-          passedText: 'Practice Level 1 Items',
+          passedText: 'Level 1 practice items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -43,7 +43,7 @@ class InteractiveRowColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.2,
         ),
         TextContainer(
-          passedText: 'Practice Level 2 Items',
+          passedText: 'Level 2 practice items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -51,7 +51,7 @@ class InteractiveRowColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.2,
         ),
         TextContainer(
-          passedText: 'Practice Level 3 Items',
+          passedText: 'Level 3 practice items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(
@@ -59,7 +59,7 @@ class InteractiveRowColumn extends ConsumerWidget {
           widgetHeight: screenHeight * 0.2,
         ),
         TextContainer(
-          passedText: 'Acquired Items',
+          passedText: 'Acquired items',
           widgetHeight: screenHeight * 0.04,
         ),
         InteractiveGrid(

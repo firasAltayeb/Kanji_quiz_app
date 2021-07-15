@@ -80,7 +80,6 @@ class TopKanjiRow extends ConsumerWidget {
                 targetItem.characterID,
                 style: TextStyle(
                   fontSize: plusChara ? height * 0.07 : height * 0.11,
-                  fontFamily: 'Anton',
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),

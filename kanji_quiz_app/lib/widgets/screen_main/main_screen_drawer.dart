@@ -11,17 +11,8 @@ class MainAppDrawer extends ConsumerWidget {
       child: Column(
         children: <Widget>[
           Container(
-            height: screenHeight * 0.15,
-            padding: EdgeInsets.only(left: 10),
-            alignment: Alignment.centerLeft,
+            height: screenHeight * 0.1,
             color: Colors.orange[400],
-            child: Text(
-              'Kanji Master!!',
-              style: TextStyle(
-                fontFamily: 'Anton',
-                fontSize: screenHeight * 0.04,
-              ),
-            ),
           ),
           Expanded(
             child: drawerListView(context, screenHeight),
@@ -36,11 +27,25 @@ class MainAppDrawer extends ConsumerWidget {
       children: ListTile.divideTiles(
         context: ctx,
         tiles: [
-          buildListTile(
-            height,
-            'Sync progress',
-            Icons.sync,
-            () {
+          ListTile(
+            contentPadding: EdgeInsets.fromLTRB(
+              10,
+              0,
+              10,
+              height * 0.02,
+            ),
+            title: Text(
+              'Sync progress',
+              style: TextStyle(
+                fontSize: height * 0.03,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            trailing: Icon(
+              Icons.sync,
+              size: height * 0.03,
+            ),
+            onTap: () {
               ctx.read(syncNowProvider).state++;
               Navigator.pop(ctx);
             },
@@ -71,7 +76,7 @@ class MainAppDrawer extends ConsumerWidget {
     );
   }
 
-  Widget buildListTile(var height, var title, var icon, var tapHandler) {
+  Widget buildListTile(height, title, icon, tapHandler) {
     return ListTile(
       contentPadding: EdgeInsets.fromLTRB(
         10,

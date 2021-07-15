@@ -49,12 +49,6 @@ class OverallProgressContainer extends ConsumerWidget {
       height: screenHeight * 0.175,
       padding: const EdgeInsets.only(top: 5, left: 5),
       decoration: BoxDecoration(
-        border: Border(
-          top: BorderSide(width: 3.0, color: Colors.black),
-          left: BorderSide(width: 1.0, color: Colors.black),
-          right: BorderSide(width: 1.0, color: Colors.black),
-          bottom: BorderSide(width: 3.0, color: Colors.black),
-        ),
         color: color,
       ),
       child: Column(
@@ -65,6 +59,7 @@ class OverallProgressContainer extends ConsumerWidget {
               labelTxt,
               style: TextStyle(
                 fontSize: screenHeight * 0.02,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -75,7 +70,7 @@ class OverallProgressContainer extends ConsumerWidget {
             "$counterTxt",
             style: TextStyle(
               fontSize: screenHeight * 0.05,
-              fontFamily: 'Anton',
+              fontFamily: 'Lato',
             ),
           ),
         ],

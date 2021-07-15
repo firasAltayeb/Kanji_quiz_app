@@ -21,44 +21,53 @@ class CorrectIncorrectButton extends ConsumerWidget {
     var screenHeight = MediaQuery.of(buildContex).size.height;
     var screenWidth = MediaQuery.of(buildContex).size.width;
 
-    return Container(
-      height: screenHeight * 0.38,
-      width: screenWidth * 0.5,
-      decoration: BoxDecoration(
-        color: selectChoice ? Colors.green : Colors.red,
-        border: Border(
-          top: BorderSide(width: 3.0, color: Colors.black),
-          left: BorderSide(width: 1.0, color: Colors.black),
-          right: BorderSide(width: 1.0, color: Colors.black),
-          bottom: BorderSide(width: 3.0, color: Colors.black),
-        ),
-      ),
-      child: TextButton(
-        child: Text(
-          selectChoice ? "Yes" : "No",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: screenHeight * 0.05,
-            fontWeight: FontWeight.bold,
+    return Material(
+      elevation: 5,
+      child: Container(
+        height: screenHeight * 0.35,
+        width: screenWidth * 0.5,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              selectChoice ? Colors.green[700] : Colors.red[700],
+              selectChoice ? Colors.green[400] : Colors.red[400],
+            ],
+          ),
+          border: Border(
+            top: BorderSide(width: 3.0, color: Colors.black),
+            left: BorderSide(width: 1.0, color: Colors.black),
+            right: BorderSide(width: 1.0, color: Colors.black),
+            bottom: BorderSide(width: 3.0, color: Colors.black),
           ),
         ),
-        onPressed: () {
-          HapticFeedback.vibrate();
-          var characterLook =
-              targetItem.itemType != "Primitive" ? targetItem.characterID : "";
-          var currentProgressLevel = selectChoice
-              ? targetItem.progressLevel + 1
-              : targetItem.lapsePenalty();
-          if (showSrsPop)
-            _openCustomDialog(
-              buildContex,
-              screenHeight,
-              characterLook,
-              currentProgressLevel,
-            );
-          buildContex.read(showAnsBtnVisibleProvider).state = true;
-          answerQuestion(selectChoice);
-        },
+        child: TextButton(
+          child: Text(
+            selectChoice ? "Yes" : "No",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: screenHeight * 0.05,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          onPressed: () {
+            HapticFeedback.vibrate();
+            var characterLook = targetItem.itemType != "Primitive"
+                ? targetItem.characterID
+                : "";
+            var currentProgressLevel = selectChoice
+                ? targetItem.progressLevel + 1
+                : targetItem.lapsePenalty();
+            if (showSrsPop)
+              _openCustomDialog(
+                buildContex,
+                screenHeight,
+                characterLook,
+                currentProgressLevel,
+              );
+            buildContex.read(showAnsBtnVisibleProvider).state = true;
+            answerQuestion(selectChoice);
+          },
+        ),
       ),
     );
   }

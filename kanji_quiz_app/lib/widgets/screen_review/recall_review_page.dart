@@ -113,6 +113,7 @@ class RecallPage extends ConsumerWidget {
     var keyword = reviewQueue[queueIndex].keyword;
     var shortKey = keyword.length < 8 ? true : false;
     return RichText(
+      textAlign: TextAlign.center,
       text: TextSpan(
         style: TextStyle(
           color: Colors.black,

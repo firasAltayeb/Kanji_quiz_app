@@ -91,36 +91,14 @@ class ItemDetailScreen extends ConsumerWidget {
                 textToDisplay: 'Reading: ' + _targetItem.itemReadings[0],
                 widgetHeight: _screenHeight * 0.08,
               ),
-            SizedBox(height: 20),
-            KeyTextContainer(
-              textToDisplay: 'Last level change date: ' +
-                  '${_fixTimeZone(_targetItem.dateLastLevelChanged)}',
+            BuildingBlockRow(
+              targetItem: _targetItem,
             ),
-            SizedBox(height: 20),
-            if (_keywordNotPressed)
-              TextContainer(
-                passedText: _targetItem.levelTranslation(),
-                widgetHeight: _screenHeight * 0.04,
-              ),
-            SizedBox(height: 20),
-            if (_targetItem.learningStatus != "Acquired" && _keywordNotPressed)
-              KeyTextContainer(
-                textToDisplay: 'Next review date: ' +
-                    '${_fixTimeZone(_targetItem.nextReviewDate())}',
-              ),
-            if (_keywordNotPressed)
-              BuildingBlockRow(
-                targetItem: _targetItem,
-              ),
-            if (!_keywordNotPressed)
-              SizedBox(
-                height: _screenHeight * 0.05,
-              ),
             ScrollableContainer(
               targetItem: _targetItem,
             ),
-            SizedBox(height: 20),
-            if (_keywordNotPressed) ItemDifficultyRow(),
+            if (_keywordNotPressed) infoColumn(_targetItem, _screenHeight),
+            ItemDifficultyRow(),
             SizedBox(height: 20),
             if (_showButtonRow)
               ItemBottomRow(
@@ -134,6 +112,33 @@ class ItemDetailScreen extends ConsumerWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget infoColumn(_targetItem, _screenHeight) {
+    return Column(
+      children: [
+        SizedBox(height: 30),
+        KeyTextContainer(
+          textToDisplay: "Item status: " + _targetItem.levelTranslation(),
+          widgetHeight: _screenHeight * 0.045,
+        ),
+        SizedBox(height: 20),
+        KeyTextContainer(
+          textToDisplay: _targetItem.learningStatus == "Acquired"
+              ? "already Acquired"
+              : 'Next review date: ' +
+                  '${_fixTimeZone(_targetItem.nextReviewDate())}',
+          widgetHeight: _screenHeight * 0.045,
+        ),
+        SizedBox(height: 20),
+        KeyTextContainer(
+          textToDisplay: 'Last level change date: ' +
+              '${_fixTimeZone(_targetItem.dateLastLevelChanged)}',
+          widgetHeight: _screenHeight * 0.05,
+        ),
+        SizedBox(height: 20),
+      ],
     );
   }
 }
