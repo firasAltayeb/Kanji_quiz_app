@@ -43,6 +43,9 @@ class MyApp extends ConsumerWidget {
             accentColor: Colors.yellow[700],
             elevatedButtonTheme: ElevatedButtonThemeData(
               style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // <-- Radius
+                ),
                 elevation: 5,
                 side: BorderSide(width: 1, color: Colors.black),
                 minimumSize: Size(30, 30),
