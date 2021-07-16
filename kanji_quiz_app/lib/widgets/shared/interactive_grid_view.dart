@@ -28,7 +28,7 @@ class InteractiveGrid extends ConsumerWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.grey[300],
+          color: Colors.white,
           width: 5,
         ),
       ),
@@ -57,7 +57,7 @@ class InteractiveGrid extends ConsumerWidget {
                       children: [
                         Ink(
                           decoration: BoxDecoration(
-                            color: Colors.grey[300],
+                            // color: Colors.grey[300],
                             image: DecorationImage(
                               image: AssetImage(
                                 watch(addressProvider(itemList[i])),

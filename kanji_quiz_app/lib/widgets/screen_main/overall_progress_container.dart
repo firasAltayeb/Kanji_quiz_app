@@ -46,7 +46,7 @@ class OverallProgressContainer extends ConsumerWidget {
 
   Widget _bottomButton(screenHeight, labelTxt, color, counterTxt) {
     return Container(
-      height: screenHeight * 0.175,
+      height: screenHeight * 0.15,
       padding: const EdgeInsets.only(top: 5, left: 5),
       decoration: BoxDecoration(
         color: color,

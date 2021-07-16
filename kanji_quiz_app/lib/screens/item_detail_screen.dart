@@ -29,6 +29,7 @@ class ItemDetailScreen extends ConsumerWidget {
     final _keywordPressed = watch(keywordPressedProvider).state;
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _screenHeight = MediaQuery.of(context).size.height;
+    final _screenWidth = MediaQuery.of(context).size.width;
     final _showAlert = watch(showAlertProvider).state;
 
     StudyItem _argumentItem = ModalRoute.of(context).settings.arguments;
@@ -103,6 +104,7 @@ class ItemDetailScreen extends ConsumerWidget {
             infoColumn(
               _targetItem,
               _screenHeight,
+              _screenWidth,
               _keywordPressed,
             ),
             SizedBox(height: 20),
@@ -123,7 +125,7 @@ class ItemDetailScreen extends ConsumerWidget {
     );
   }
 
-  Widget infoColumn(targetItem, screenHeight, bool keywordPressed) {
+  Widget infoColumn(targetItem, screenHeight, screenWidth, keywordPressed) {
     return keywordPressed
         ? SizedBox(
             height: screenHeight * 0.2,
@@ -137,7 +139,7 @@ class ItemDetailScreen extends ConsumerWidget {
               children: [
                 Text(
                   "Item status: " + targetItem.levelTranslation(),
-                  style: TextStyle(fontSize: screenHeight * 0.03),
+                  style: TextStyle(fontSize: screenWidth * 0.05),
                 ),
                 SizedBox(height: 20),
                 Text(
@@ -145,13 +147,13 @@ class ItemDetailScreen extends ConsumerWidget {
                       ? "already Acquired"
                       : 'Next review date: ' +
                           '${_fixTimeZone(targetItem.nextReviewDate())}',
-                  style: TextStyle(fontSize: screenHeight * 0.03),
+                  style: TextStyle(fontSize: screenWidth * 0.05),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'Last level change date: ' +
+                  'Last change date: ' +
                       '${_fixTimeZone(targetItem.dateLastLevelChanged)}',
-                  style: TextStyle(fontSize: screenHeight * 0.03),
+                  style: TextStyle(fontSize: screenWidth * 0.05),
                 ),
               ],
             ),

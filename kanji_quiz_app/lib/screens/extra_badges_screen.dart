@@ -21,7 +21,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
               height: screenHeight * 0.03,
               color: Colors.grey[300],
             ),
-            TextContainer(
+            ColoredTextContainer(
               passedText: 'Study Badges',
               widgetColor: Colors.red,
               widgetHeight: screenHeight * 0.04,
@@ -31,7 +31,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
               screenHeight * 0.25,
               watch(studiedListProvider).length,
             ),
-            TextContainer(
+            ColoredTextContainer(
               passedText: 'Review Badges',
               widgetColor: Colors.orange,
               widgetHeight: screenHeight * 0.04,
@@ -41,7 +41,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
               screenHeight * 0.25,
               watch(reviewedListProvider).length,
             ),
-            TextContainer(
+            ColoredTextContainer(
               passedText: 'Pratice Badges',
               widgetColor: Colors.blue,
               widgetHeight: screenHeight * 0.04,
@@ -51,7 +51,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
               screenHeight * 0.25,
               watch(practicedListProvider).length,
             ),
-            TextContainer(
+            ColoredTextContainer(
               passedText: 'Acquire Badges',
               widgetColor: Colors.green,
               widgetHeight: screenHeight * 0.04,

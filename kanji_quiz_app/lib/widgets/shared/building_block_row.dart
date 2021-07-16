@@ -28,7 +28,7 @@ class BuildingBlockRow extends ConsumerWidget {
       return _textWidget(
         textToDisplayed: 'Item type: ${targetItem.itemType}',
         widgetHeight: screenHeight * 0.175,
-        fontSize: screenWidth * 0.06,
+        fontSize: screenWidth * 0.065,
       );
     } else {
       return InteractiveGrid(

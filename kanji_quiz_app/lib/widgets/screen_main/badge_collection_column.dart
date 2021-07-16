@@ -31,7 +31,7 @@ class InteractiveRowColumn extends ConsumerWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          TextContainer(
+          ColoredTextContainer(
             passedText: 'Level 1 review badges',
             widgetHeight: screenHeight * 0.04,
           ),
@@ -39,7 +39,7 @@ class InteractiveRowColumn extends ConsumerWidget {
             itemList: watch(chosenlvlListProvider(1)),
             widgetHeight: screenHeight * 0.2,
           ),
-          TextContainer(
+          ColoredTextContainer(
             passedText: 'Level 2 review badges',
             widgetHeight: screenHeight * 0.04,
           ),
@@ -47,7 +47,7 @@ class InteractiveRowColumn extends ConsumerWidget {
             itemList: watch(chosenlvlListProvider(2)),
             widgetHeight: screenHeight * 0.2,
           ),
-          TextContainer(
+          ColoredTextContainer(
             passedText: 'Level 3 review badges',
             widgetHeight: screenHeight * 0.04,
           ),
@@ -55,7 +55,7 @@ class InteractiveRowColumn extends ConsumerWidget {
             itemList: watch(chosenlvlListProvider(3)),
             widgetHeight: screenHeight * 0.2,
           ),
-          TextContainer(
+          ColoredTextContainer(
             passedText: 'Level 1 practice badges',
             widgetHeight: screenHeight * 0.04,
           ),
@@ -63,7 +63,7 @@ class InteractiveRowColumn extends ConsumerWidget {
             itemList: watch(chosenlvlListProvider(4)),
             widgetHeight: screenHeight * 0.2,
           ),
-          TextContainer(
+          ColoredTextContainer(
             passedText: 'Level 2 practice badges',
             widgetHeight: screenHeight * 0.04,
           ),
@@ -71,7 +71,7 @@ class InteractiveRowColumn extends ConsumerWidget {
             itemList: watch(chosenlvlListProvider(5)),
             widgetHeight: screenHeight * 0.2,
           ),
-          TextContainer(
+          ColoredTextContainer(
             passedText: 'Level 3 practice badges',
             widgetHeight: screenHeight * 0.04,
           ),
@@ -79,7 +79,7 @@ class InteractiveRowColumn extends ConsumerWidget {
             itemList: watch(chosenlvlListProvider(6)),
             widgetHeight: screenHeight * 0.2,
           ),
-          TextContainer(
+          ColoredTextContainer(
             passedText: 'Acquired badges',
             widgetHeight: screenHeight * 0.04,
           ),
