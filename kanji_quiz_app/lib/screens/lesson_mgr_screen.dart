@@ -74,7 +74,7 @@ class LessonManager extends ConsumerWidget {
             targetItem: _targetItem,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            padding: const EdgeInsets.only(top: 5, bottom: 5),
             child: BuildingBlockRow(
               screenWidth: _screenWidth,
               screenHeight: _screenHeight,

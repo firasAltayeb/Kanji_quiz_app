@@ -94,7 +94,7 @@ class ItemBottomRow extends ConsumerWidget {
     return GestureDetector(
       onTap: handler,
       child: Container(
-        height: screenHeight * 0.135,
+        height: screenHeight * 0.125,
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           border: Border(

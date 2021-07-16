@@ -18,30 +18,29 @@ class BuildingBlockRow extends ConsumerWidget {
     this.keywordPressed = false,
   });
 
-  double widthToCenter(numberOfItems, screenWidth) {
-    if (numberOfItems == 1) return screenWidth * 0.5;
-    return screenWidth * 0.055;
-  }
-
   Widget build(BuildContext ctx, ScopedReader watch) {
     var buildingBlockIDList = targetItem.buildingBlocksID;
+    final description =
+        targetItem.itemType == "Hiragana" || targetItem.itemType == "Katakana"
+            ? 'Item type: ${targetItem.itemType}'
+            : 'This item is a building block for other kanji';
     if (keywordPressed) return SizedBox(height: screenHeight * 0.125);
     if (buildingBlockIDList.isEmpty) {
       return _textWidget(
-        textToDisplayed: 'Item type: ${targetItem.itemType}',
-        fontSize: screenWidth * 0.065,
+        textToDisplayed: description,
+        fontSize: screenWidth * 0.055,
       );
     } else {
       return Row(
         children: [
           _textWidget(
             textToDisplayed: 'Building blocks: ',
-            fontSize: screenWidth * 0.045,
+            fontSize: screenWidth * 0.055,
             widgetWidth: screenWidth * 0.35,
           ),
           GridViewContainer(
             widgetWidth: screenWidth * 0.6,
-            widgetHeight: screenHeight * 0.175,
+            widgetHeight: screenHeight * 0.2,
             itemList: watch(buildingBlocksProvider(targetItem)),
           ),
         ],

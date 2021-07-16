@@ -7,8 +7,15 @@ import '../../main_providers.dart';
 
 class BadgeCollectionColumn extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final lvlOneItems = watch(chosenlvlListProvider(1));
+    final lvlTwoItems = watch(chosenlvlListProvider(2));
+    final lvlThreeItems = watch(chosenlvlListProvider(3));
+    final lvlFourItems = watch(chosenlvlListProvider(4));
+    final lvlFiveItems = watch(chosenlvlListProvider(5));
+    final lvlSixItems = watch(chosenlvlListProvider(6));
+    final acquiredList = watch(acquiredListProvider);
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -31,60 +38,72 @@ class BadgeCollectionColumn extends ConsumerWidget {
                 ),
               ),
             ),
-            ColoredTextContainer(
-              passedText: 'Level 1 review badges',
-              widgetHeight: screenHeight * 0.04,
-            ),
-            GridViewContainer(
-              itemList: watch(chosenlvlListProvider(1)),
-              widgetHeight: screenHeight * 0.2,
-            ),
-            ColoredTextContainer(
-              passedText: 'Level 2 review badges',
-              widgetHeight: screenHeight * 0.04,
-            ),
-            GridViewContainer(
-              itemList: watch(chosenlvlListProvider(2)),
-              widgetHeight: screenHeight * 0.2,
-            ),
-            ColoredTextContainer(
-              passedText: 'Level 3 review badges',
-              widgetHeight: screenHeight * 0.04,
-            ),
-            GridViewContainer(
-              itemList: watch(chosenlvlListProvider(3)),
-              widgetHeight: screenHeight * 0.2,
-            ),
-            ColoredTextContainer(
-              passedText: 'Level 1 practice badges',
-              widgetHeight: screenHeight * 0.04,
-            ),
-            GridViewContainer(
-              itemList: watch(chosenlvlListProvider(4)),
-              widgetHeight: screenHeight * 0.2,
-            ),
-            ColoredTextContainer(
-              passedText: 'Level 2 practice badges',
-              widgetHeight: screenHeight * 0.04,
-            ),
-            GridViewContainer(
-              itemList: watch(chosenlvlListProvider(5)),
-              widgetHeight: screenHeight * 0.2,
-            ),
-            ColoredTextContainer(
-              passedText: 'Level 3 practice badges',
-              widgetHeight: screenHeight * 0.04,
-            ),
-            GridViewContainer(
-              itemList: watch(chosenlvlListProvider(6)),
-              widgetHeight: screenHeight * 0.2,
-            ),
+            if (lvlOneItems.isNotEmpty)
+              ColoredTextContainer(
+                passedText: 'Level 1 review badges',
+                widgetHeight: screenHeight * 0.04,
+              ),
+            if (lvlOneItems.isNotEmpty)
+              GridViewContainer(
+                itemList: lvlOneItems,
+                widgetHeight: screenHeight * 0.2,
+              ),
+            if (lvlTwoItems.isNotEmpty)
+              ColoredTextContainer(
+                passedText: 'Level 2 review badges',
+                widgetHeight: screenHeight * 0.04,
+              ),
+            if (lvlTwoItems.isNotEmpty)
+              GridViewContainer(
+                itemList: lvlTwoItems,
+                widgetHeight: screenHeight * 0.2,
+              ),
+            if (lvlThreeItems.isNotEmpty)
+              ColoredTextContainer(
+                passedText: 'Level 3 review badges',
+                widgetHeight: screenHeight * 0.04,
+              ),
+            if (lvlThreeItems.isNotEmpty)
+              GridViewContainer(
+                itemList: lvlThreeItems,
+                widgetHeight: screenHeight * 0.2,
+              ),
+            if (lvlFourItems.isNotEmpty)
+              ColoredTextContainer(
+                passedText: 'Level 1 practice badges',
+                widgetHeight: screenHeight * 0.04,
+              ),
+            if (lvlFourItems.isNotEmpty)
+              GridViewContainer(
+                itemList: lvlFourItems,
+                widgetHeight: screenHeight * 0.2,
+              ),
+            if (lvlFiveItems.isNotEmpty)
+              ColoredTextContainer(
+                passedText: 'Level 2 practice badges',
+                widgetHeight: screenHeight * 0.04,
+              ),
+            if (lvlFiveItems.isNotEmpty)
+              GridViewContainer(
+                itemList: lvlFiveItems,
+                widgetHeight: screenHeight * 0.2,
+              ),
+            if (lvlSixItems.isNotEmpty)
+              ColoredTextContainer(
+                passedText: 'Level 3 practice badges',
+                widgetHeight: screenHeight * 0.04,
+              ),
+            if (lvlSixItems.isNotEmpty)
+              GridViewContainer(
+                itemList: lvlSixItems,
+                widgetHeight: screenHeight * 0.2,
+              ),
             ColoredTextContainer(
               passedText: 'Acquired badges',
               widgetHeight: screenHeight * 0.04,
             ),
             GridViewContainer(
-              itemList: watch(acquiredListProvider),
+              itemList: acquiredList,
               widgetHeight: screenHeight * 0.2,
             ),
           ],
