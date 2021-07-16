@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../shared/interactive_grid_view.dart';
+import '../shared/grid_view_container.dart';
 import '../../main_providers.dart';
 
 class ResultPage extends ConsumerWidget {
@@ -51,7 +51,7 @@ class ResultPage extends ConsumerWidget {
         Colors.green,
         screenHeight,
       ),
-      InteractiveGrid(
+      GridViewContainer(
         itemList: correctRecallList,
         widgetHeight: screenHeight * 0.175,
         selectHandler: null,
@@ -61,7 +61,7 @@ class ResultPage extends ConsumerWidget {
         Colors.red,
         screenHeight,
       ),
-      InteractiveGrid(
+      GridViewContainer(
         itemList: incorrectRecallList,
         widgetHeight: screenHeight * 0.175,
         selectHandler: null,

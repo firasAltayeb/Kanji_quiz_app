@@ -23,7 +23,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             ColoredTextContainer(
               passedText: 'Study Badges',
-              widgetColor: Colors.red,
+              widgetColor: Colors.red[400],
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(
@@ -33,7 +33,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             ColoredTextContainer(
               passedText: 'Review Badges',
-              widgetColor: Colors.orange,
+              widgetColor: Colors.orange[400],
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(
@@ -43,7 +43,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             ColoredTextContainer(
               passedText: 'Pratice Badges',
-              widgetColor: Colors.blue,
+              widgetColor: Colors.blue[400],
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(
@@ -53,7 +53,7 @@ class ExtraBadgesScreen extends ConsumerWidget {
             ),
             ColoredTextContainer(
               passedText: 'Acquire Badges',
-              widgetColor: Colors.green,
+              widgetColor: Colors.green[400],
               widgetHeight: screenHeight * 0.04,
             ),
             interactiveRow(

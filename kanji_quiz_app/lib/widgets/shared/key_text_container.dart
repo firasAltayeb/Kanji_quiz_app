@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:kanji_quiz_app/model/study_item_model.dart';
 
 class KeyTextContainer extends StatelessWidget {
   final Function passedFunction;
-  final String textToDisplay;
+  final StudyItem targetItem;
   final double widgetHeight;
 
   KeyTextContainer({
-    @required this.textToDisplay,
+    @required this.targetItem,
     this.passedFunction,
     this.widgetHeight,
   });
 
   @override
   Widget build(BuildContext context) {
+    final textToDisplay =
+        targetItem.itemType == "Hiragana" || targetItem.itemType == "Katakana"
+            ? 'Reading: ' + targetItem.itemReadings[0]
+            : 'Keyword: ' + targetItem.keyword;
     return InkWell(
       onLongPress: passedFunction,
       child: Container(

@@ -101,7 +101,7 @@ class MainScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.05,
               ),
-              if (lvlColumnVisible) InteractiveRowColumn()
+              if (lvlColumnVisible) BadgeCollectionColumn()
             ],
           ),
         );

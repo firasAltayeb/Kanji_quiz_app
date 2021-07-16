@@ -69,14 +69,14 @@ class LessonManager extends ConsumerWidget {
               buildContext: context,
               forKeyword: true,
             ),
-            textToDisplay: _lessonList[_queueIndex].itemType == "Hiragana" ||
-                    _lessonList[_queueIndex].itemType == "Katakana"
-                ? 'Reading: ' + _lessonList[_queueIndex].itemReadings[0]
-                : 'Keyword: ' + _lessonList[_queueIndex].keyword,
             widgetHeight: screenHeight * 0.07,
-          ),
-          BuildingBlockRow(
             targetItem: _targetItem,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: BuildingBlockRow(
+              targetItem: _targetItem,
+            ),
           ),
           ScrollableContainer(
             targetItem: _targetItem,

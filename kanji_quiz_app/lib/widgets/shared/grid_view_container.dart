@@ -5,13 +5,13 @@ import '../../model/study_item_model.dart';
 import '../../helper_functions.dart';
 import '../../main_providers.dart';
 
-class InteractiveGrid extends ConsumerWidget {
+class GridViewContainer extends ConsumerWidget {
+  final List<StudyItem> itemList;
+  final Function selectHandler;
   final double widgetHeight;
   final Widget passedWidget;
-  final Function selectHandler;
-  final List<StudyItem> itemList;
 
-  InteractiveGrid({
+  GridViewContainer({
     this.passedWidget,
     @required this.itemList,
     @required this.widgetHeight,
@@ -27,7 +27,7 @@ class InteractiveGrid extends ConsumerWidget {
         : templateAddressProvider;
     return Container(
       height: widgetHeight,
-      padding: EdgeInsets.all(5),
+      padding: EdgeInsets.all(widgetHeight * 0.03),
       child: GridView.builder(
           itemCount: numberOfWidgets,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -40,7 +40,6 @@ class InteractiveGrid extends ConsumerWidget {
             return passedWidget != null && i == -1
                 ? passedWidget
                 : InkWell(
-                    highlightColor: Colors.green[300],
                     onTap: selectHandler == null
                         ? null
                         : () => selectHandler(

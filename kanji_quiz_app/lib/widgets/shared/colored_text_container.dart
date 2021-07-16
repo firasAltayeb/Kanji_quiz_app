@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ColoredTextContainer extends StatelessWidget {
-  final String passedText;
   final double widgetHeight;
-  final MaterialColor widgetColor;
+  final String passedText;
+  final Color widgetColor;
 
   ColoredTextContainer({
     @required this.passedText,
     @required this.widgetHeight,
-    this.widgetColor = Colors.orange,
+    this.widgetColor = const Color(0xfffbc02d),
   });
 
   @override
@@ -16,24 +16,16 @@ class ColoredTextContainer extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        // gradient: LinearGradient(
-        //   colors: [
-        //     widgetColor[300],
-        //     widgetColor[700],
-        //   ],
-        // ),
         border: Border(
           bottom: BorderSide(width: 1.0, color: Colors.black),
         ),
-        color: widgetColor[400],
+        color: widgetColor,
       ),
       padding: const EdgeInsets.all(10),
       child: Text(
         passedText,
         style: TextStyle(
           fontSize: widgetHeight,
-          // fontWeight: FontWeight.bold,
-          // color: Colors.white,
         ),
         textAlign: TextAlign.left,
       ),

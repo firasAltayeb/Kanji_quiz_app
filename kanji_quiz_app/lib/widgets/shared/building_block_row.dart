@@ -2,8 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
 import '../../model/study_item_model.dart';
-import 'interactive_grid_view.dart';
 import '../../main_providers.dart';
+import 'grid_view_container.dart';
 
 class BuildingBlockRow extends ConsumerWidget {
   final StudyItem targetItem;
@@ -31,7 +31,7 @@ class BuildingBlockRow extends ConsumerWidget {
         fontSize: screenWidth * 0.065,
       );
     } else {
-      return InteractiveGrid(
+      return GridViewContainer(
         itemList: watch(buildingBlocksProvider(targetItem)),
         widgetHeight: screenHeight * 0.175,
         passedWidget: _textWidget(

@@ -58,12 +58,12 @@ class TopKanjiRow extends ConsumerWidget {
   Widget _itemPicture(double height, String templateAddress) {
     bool plusChara = targetItem.characterID.length > 1;
     return Expanded(
-      flex: 3,
+      flex: 4,
       child: Stack(
         alignment: Alignment.center,
         children: [
           Container(
-            height: height * 0.275,
+            height: height * 0.25,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(

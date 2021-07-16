@@ -8,7 +8,7 @@ class CornerWidget extends StatelessWidget {
   CornerWidget({
     @required this.passedText,
     @required this.height,
-    this.flexInt = 2,
+    this.flexInt = 3,
   });
 
   @override

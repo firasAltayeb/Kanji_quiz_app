@@ -11,7 +11,7 @@ class CornerButton extends StatelessWidget {
     @required this.passedText,
     @required this.handler,
     @required this.height,
-    this.flexInt = 2,
+    this.flexInt = 3,
   });
 
   @override

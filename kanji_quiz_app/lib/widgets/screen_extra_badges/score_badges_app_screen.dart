@@ -16,6 +16,7 @@ class ScoreBadgesAppBar extends StatelessWidget implements PreferredSizeWidget {
         'Extra Badges',
         style: TextStyle(
           fontSize: screenHeight * 0.03,
+          fontWeight: FontWeight.bold,
         ),
       ),
       actions: [

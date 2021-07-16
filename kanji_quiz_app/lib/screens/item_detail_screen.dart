@@ -40,9 +40,6 @@ class ItemDetailScreen extends ConsumerWidget {
       _targetItem = _argumentItem;
     }
 
-    final isKana = _targetItem.itemType == "Hiragana" ||
-        _targetItem.itemType == "Katakana";
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: ItemDetailAppBar(
@@ -76,21 +73,15 @@ class ItemDetailScreen extends ConsumerWidget {
               rightWidgetText: _argumentItemIsNotNull ? "" : "Next",
               targetItem: _targetItem,
             ),
-            if (!isKana)
-              KeyTextContainer(
-                passedFunction: () => editDataHandler(
-                  studyItem: _targetItem,
-                  buildContext: context,
-                  forKeyword: true,
-                ),
-                textToDisplay: 'Keyword: ' + _targetItem.keyword,
-                widgetHeight: _screenHeight * 0.07,
+            KeyTextContainer(
+              passedFunction: () => editDataHandler(
+                studyItem: _targetItem,
+                buildContext: context,
+                forKeyword: true,
               ),
-            if (isKana)
-              KeyTextContainer(
-                textToDisplay: 'Reading: ' + _targetItem.itemReadings[0],
-                widgetHeight: _screenHeight * 0.07,
-              ),
+              targetItem: _targetItem,
+              widgetHeight: _screenHeight * 0.07,
+            ),
             Padding(
               padding: const EdgeInsets.all(10),
               child: BuildingBlockRow(
