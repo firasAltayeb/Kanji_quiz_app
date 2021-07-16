@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
+import '../widgets/screen_item_details/status_info_column.dart';
 import '../widgets/screen_item_details/item_detail_app_bar.dart';
 import '../widgets/screen_item_details/item_difficulty_row.dart';
 import '../widgets/shared/scrollable_container.dart';
@@ -15,15 +15,6 @@ import '../main_providers.dart';
 
 class ItemDetailScreen extends ConsumerWidget {
   static const routeName = '/item-details';
-
-  String _fixTimeZone(DateTime time) {
-    final _dateFormater = DateFormat('dd/MM/yyyy HH:mm');
-    // if (currentTimeZone == 'Asia/Tokyo' &&
-    //     DateTime.now().timeZoneName != 'JST') {
-    //   time.add(Duration(hours: 9));
-    // }
-    return _dateFormater.format(time);
-  }
 
   Widget build(BuildContext context, ScopedReader watch) {
     final _keywordPressed = watch(keywordPressedProvider).state;
@@ -86,20 +77,19 @@ class ItemDetailScreen extends ConsumerWidget {
               padding: const EdgeInsets.all(10),
               child: BuildingBlockRow(
                 targetItem: _targetItem,
+                screenWidth: _screenWidth,
+                screenHeight: _screenHeight,
                 keywordPressed: _keywordPressed,
               ),
             ),
             ScrollableContainer(
               targetItem: _targetItem,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 20),
-              child: infoColumn(
-                _targetItem,
-                _screenHeight,
-                _screenWidth,
-                _keywordPressed,
-              ),
+            StatusInfoColumn(
+              targetItem: _targetItem,
+              screenWidth: _screenWidth,
+              screenHeight: _screenHeight,
+              keywordPressed: _keywordPressed,
             ),
             ItemDifficultyRow(),
             SizedBox(height: 20),
@@ -116,40 +106,5 @@ class ItemDetailScreen extends ConsumerWidget {
         ),
       ),
     );
-  }
-
-  Widget infoColumn(targetItem, screenHeight, screenWidth, keywordPressed) {
-    return keywordPressed
-        ? SizedBox(
-            height: screenHeight * 0.2,
-          )
-        : Container(
-            padding: const EdgeInsets.all(10),
-            width: double.infinity,
-            color: Colors.grey[200],
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Item status: " + targetItem.levelTranslation(),
-                  style: TextStyle(fontSize: screenWidth * 0.05),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  targetItem.learningStatus == "Acquired"
-                      ? "Next review date: already Acquired"
-                      : 'Next review date: ' +
-                          '${_fixTimeZone(targetItem.nextReviewDate())}',
-                  style: TextStyle(fontSize: screenWidth * 0.05),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  'Last change date: ' +
-                      '${_fixTimeZone(targetItem.dateLastLevelChanged)}',
-                  style: TextStyle(fontSize: screenWidth * 0.05),
-                ),
-              ],
-            ),
-          );
   }
 }

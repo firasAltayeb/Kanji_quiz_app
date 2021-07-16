@@ -30,7 +30,8 @@ class LessonManager extends ConsumerWidget {
 
   Widget build(BuildContext context, ScopedReader watch) {
     List<StudyItem> _lessonList = ModalRoute.of(context).settings.arguments;
-    double screenHeight = MediaQuery.of(context).size.height;
+    double _screenHeight = MediaQuery.of(context).size.height;
+    double _screenWidth = MediaQuery.of(context).size.width;
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;
@@ -52,7 +53,7 @@ class LessonManager extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          Container(height: screenHeight * 0.03, color: Colors.grey[300]),
+          Container(height: _screenHeight * 0.03, color: Colors.grey[300]),
           TopKanjiRow(
             leftWidgetText: "Prev",
             rightWidgetText: "Next",
@@ -69,12 +70,14 @@ class LessonManager extends ConsumerWidget {
               buildContext: context,
               forKeyword: true,
             ),
-            widgetHeight: screenHeight * 0.07,
+            widgetHeight: _screenHeight * 0.07,
             targetItem: _targetItem,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10, bottom: 10),
             child: BuildingBlockRow(
+              screenWidth: _screenWidth,
+              screenHeight: _screenHeight,
               targetItem: _targetItem,
             ),
           ),

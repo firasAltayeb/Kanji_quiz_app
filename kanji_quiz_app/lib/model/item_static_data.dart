@@ -10,6 +10,24 @@ String katakanaList = "アイウエオカキクケコサシスセソタチツテ
 
 List<StudyItem> studyItemStaticData = [
   StudyItem(
+    keyword: "Hiragana a",
+    itemType: "Hiragana",
+    characterID: "あ",
+    jlptLevel: "N5",
+    frameNumFifth: 0,
+    frameNumSixth: 0,
+    buildingBlocksID: [],
+    buildingBlockKeywords: [],
+    dateLastLevelChanged: DateTime.now().subtract(Duration(days: 5)),
+    similarCharactersID: [],
+    similarCharactersKeyword: [],
+    recallHistory: [],
+    practiceHistory: [],
+    frequencyInAozora: 0,
+    itemMeanings: [],
+    itemReadings: ["a"],
+  ),
+  StudyItem(
     keyword: "one",
     itemType: "Kanji",
     characterID: "一",

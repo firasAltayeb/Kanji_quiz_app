@@ -8,8 +8,12 @@ import 'grid_view_container.dart';
 class BuildingBlockRow extends ConsumerWidget {
   final StudyItem targetItem;
   final bool keywordPressed;
+  final screenHeight;
+  final screenWidth;
 
   BuildingBlockRow({
+    @required this.screenHeight,
+    @required this.screenWidth,
     @required this.targetItem,
     this.keywordPressed = false,
   });
@@ -21,8 +25,6 @@ class BuildingBlockRow extends ConsumerWidget {
 
   Widget build(BuildContext ctx, ScopedReader watch) {
     var buildingBlockIDList = targetItem.buildingBlocksID;
-    var screenHeight = MediaQuery.of(ctx).size.height;
-    var screenWidth = MediaQuery.of(ctx).size.width;
     if (keywordPressed) return SizedBox(height: screenHeight * 0.125);
     if (buildingBlockIDList.isEmpty) {
       return _textWidget(
@@ -36,7 +38,7 @@ class BuildingBlockRow extends ConsumerWidget {
         widgetHeight: screenHeight * 0.175,
         passedWidget: _textWidget(
           textToDisplayed: 'Building blocks: ',
-          fontSize: screenWidth * 0.055,
+          fontSize: screenWidth * 0.1,
         ),
       );
     }

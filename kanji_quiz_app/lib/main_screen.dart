@@ -44,7 +44,7 @@ class MainScreen extends StatelessWidget {
                 height: screenHeight * 0.03,
                 color: Colors.grey[300],
               ),
-              richLessonText(screenWidth),
+              bookChapterIndicatorTxt(screenWidth),
               SizedBox(
                 height: screenHeight * 0.05,
               ),
@@ -109,7 +109,7 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  Widget richLessonText(double screenWidth) {
+  Widget bookChapterIndicatorTxt(double screenWidth) {
     return RichText(
       text: TextSpan(
         style: TextStyle(

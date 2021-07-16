@@ -14,12 +14,13 @@ class KeyTextContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textToDisplay =
-        targetItem.itemType == "Hiragana" || targetItem.itemType == "Katakana"
-            ? 'Reading: ' + targetItem.itemReadings[0]
-            : 'Keyword: ' + targetItem.keyword;
+    final isKana =
+        targetItem.itemType == "Hiragana" || targetItem.itemType == "Katakana";
+    final textToDisplay = isKana
+        ? 'Reading: ' + targetItem.itemReadings[0]
+        : 'Keyword: ' + targetItem.keyword;
     return InkWell(
-      onLongPress: passedFunction,
+      onLongPress: isKana ? null : passedFunction,
       child: Container(
         width: double.infinity,
         height: widgetHeight,

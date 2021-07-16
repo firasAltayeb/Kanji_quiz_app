@@ -131,6 +131,22 @@ class StudyItem {
     return "Challenging";
   }
 
+  int correctReviewNumber() {
+    int counter = 0;
+    recallHistory.forEach((element) {
+      if (element == "Correct") counter++;
+    });
+    return counter;
+  }
+
+  int correctPracticeNumber() {
+    int counter = 0;
+    recallHistory.forEach((element) {
+      if (element == "Correct") counter++;
+    });
+    return counter;
+  }
+
   void difficultyAdjustment() {
     var lastIndex = recallHistory.lastIndexOf("Incorrect");
     switch (chosenDifficulty) {
