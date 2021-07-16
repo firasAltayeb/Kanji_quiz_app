@@ -91,23 +91,25 @@ class ItemDetailScreen extends ConsumerWidget {
                 textToDisplay: 'Reading: ' + _targetItem.itemReadings[0],
                 widgetHeight: _screenHeight * 0.07,
               ),
-            SizedBox(height: 20),
-            BuildingBlockRow(
-              targetItem: _targetItem,
-              keywordPressed: _keywordPressed,
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: BuildingBlockRow(
+                targetItem: _targetItem,
+                keywordPressed: _keywordPressed,
+              ),
             ),
-            SizedBox(height: 20),
             ScrollableContainer(
               targetItem: _targetItem,
             ),
-            SizedBox(height: 30),
-            infoColumn(
-              _targetItem,
-              _screenHeight,
-              _screenWidth,
-              _keywordPressed,
+            Padding(
+              padding: const EdgeInsets.only(top: 20, bottom: 20),
+              child: infoColumn(
+                _targetItem,
+                _screenHeight,
+                _screenWidth,
+                _keywordPressed,
+              ),
             ),
-            SizedBox(height: 20),
             ItemDifficultyRow(),
             SizedBox(height: 20),
             if (_showButtonRow)
@@ -144,7 +146,7 @@ class ItemDetailScreen extends ConsumerWidget {
                 SizedBox(height: 20),
                 Text(
                   targetItem.learningStatus == "Acquired"
-                      ? "already Acquired"
+                      ? "Next review date: already Acquired"
                       : 'Next review date: ' +
                           '${_fixTimeZone(targetItem.nextReviewDate())}',
                   style: TextStyle(fontSize: screenWidth * 0.05),

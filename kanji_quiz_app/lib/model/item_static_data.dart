@@ -802,7 +802,7 @@ List<StudyItem> studyItemStaticData = [
     jlptLevel: "N2",
     frameNumFifth: 46,
     frameNumSixth: 47,
-    buildingBlocksID: ["十", "田", "寸"],
+    buildingBlocksID: ["十", "田", "寸", "寸"],
     buildingBlockKeywords: [
       "ten",
       "rice field",

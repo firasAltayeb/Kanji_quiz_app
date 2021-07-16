@@ -15,20 +15,18 @@ class InteractiveRowColumn extends ConsumerWidget {
           color: Colors.white,
           width: screenWidth * 0.025,
         ),
+        color: Colors.grey[300].withOpacity(0.8),
       ),
       child: Column(
         children: [
-          Container(
+          Padding(
             padding: EdgeInsets.all(10),
-            width: double.infinity,
-            color: Colors.grey[300],
             child: Text(
               "Badge Collection",
               style: TextStyle(
                 fontSize: screenHeight * 0.03,
                 fontWeight: FontWeight.bold,
               ),
-              textAlign: TextAlign.center,
             ),
           ),
           ColoredTextContainer(

@@ -26,13 +26,8 @@ class InteractiveGrid extends ConsumerWidget {
         ? coloredAddressProvider
         : templateAddressProvider;
     return Container(
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.white,
-          width: 5,
-        ),
-      ),
       height: widgetHeight,
+      padding: EdgeInsets.all(5),
       child: GridView.builder(
           itemCount: numberOfWidgets,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -45,6 +40,7 @@ class InteractiveGrid extends ConsumerWidget {
             return passedWidget != null && i == -1
                 ? passedWidget
                 : InkWell(
+                    highlightColor: Colors.green[300],
                     onTap: selectHandler == null
                         ? null
                         : () => selectHandler(
@@ -55,9 +51,8 @@ class InteractiveGrid extends ConsumerWidget {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        Ink(
+                        Container(
                           decoration: BoxDecoration(
-                            // color: Colors.grey[300],
                             image: DecorationImage(
                               image: AssetImage(
                                 watch(addressProvider(itemList[i])),
