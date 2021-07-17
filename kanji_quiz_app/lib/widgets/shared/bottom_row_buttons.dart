@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-import 'package:kanji_quiz_app/model/study_item_model.dart';
-import 'package:kanji_quiz_app/helper_functions.dart';
+import '../../model/study_item_model.dart';
+import '../../helper_functions.dart';
 import '../../main_providers.dart';
 
 class ItemBottomRow extends ConsumerWidget {
@@ -21,8 +21,9 @@ class ItemBottomRow extends ConsumerWidget {
   });
 
   Widget build(BuildContext context, ScopedReader watch) {
-    final showAlert = watch(showAlertProvider).state;
     final screenHeight = MediaQuery.of(context).size.height;
+    final showAlert = watch(showAlertProvider).state;
+    final toQueueList = watch(toQueueListProvider);
     StudyItem targetItem =
         passedItem != null ? passedItem : lessonList[lsnQueueIdx];
     return Row(
@@ -53,6 +54,7 @@ class ItemBottomRow extends ConsumerWidget {
                       lsnList: lessonList,
                       showAlert: showAlert,
                       targetItem: targetItem,
+                      toQueueList: toQueueList,
                       lsnQueueIdx: lsnQueueIdx,
                       alertMessage: targetItem.itemType == "Kanji" &&
                               targetItem.learningStatus != "Practice"

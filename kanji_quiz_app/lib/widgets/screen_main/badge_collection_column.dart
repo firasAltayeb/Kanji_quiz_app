@@ -15,7 +15,9 @@ class BadgeCollectionColumn extends ConsumerWidget {
     final lvlFourItems = watch(chosenlvlListProvider(4));
     final lvlFiveItems = watch(chosenlvlListProvider(5));
     final lvlSixItems = watch(chosenlvlListProvider(6));
+    final inPracticeList = watch(inPracticeListProvider);
     final acquiredList = watch(acquiredListProvider);
+    final inReviewList = watch(inReviewListProvider);
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
@@ -103,10 +105,17 @@ class BadgeCollectionColumn extends ConsumerWidget {
                 passedText: 'Acquired badges',
                 widgetHeight: screenHeight * 0.04,
               ),
-            GridViewContainer(
-              itemList: acquiredList,
-              widgetHeight: screenHeight * 0.2,
-            ),
+            if (acquiredList.isNotEmpty)
+              GridViewContainer(
+                itemList: acquiredList,
+                widgetHeight: screenHeight * 0.2,
+              ),
+            if (inReviewList.isEmpty &&
+                inPracticeList.isEmpty &&
+                acquiredList.isEmpty)
+              Container(
+                height: screenHeight * 0.2,
+              ),
           ],
         ),
       ),

@@ -34,9 +34,9 @@ class MainScreen extends StatelessWidget {
         final senQueueIdx = watch(sentenceQueueIdxProvider).state;
         final lsnQueueIndex = watch(lessonQueueIdxProvider).state;
         final revQueueIndex = watch(reviewQueueIdxProvider).state;
+        final pracitceList = watch(inPracticeListProvider);
         final reviewList = watch(reviewReadyListProvider);
-        final pracitceList = watch(practiceListProvider);
-        final lessonList = watch(lessonListProvider);
+        final lessonList = watch(inLessonListProvider);
         return SingleChildScrollView(
           child: Column(
             children: [

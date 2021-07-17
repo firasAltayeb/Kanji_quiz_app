@@ -7,6 +7,7 @@ class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool showAlert;
   final int lsnQueueIdx;
   final List<StudyItem> lessonList;
+  final List<StudyItem> toQueueList;
 
   LessonAppBar({
     Key key,
@@ -14,6 +15,7 @@ class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.showAlert,
     this.lessonList,
     this.lsnQueueIdx,
+    this.toQueueList,
   }) : super(key: key);
 
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
             lessonList: lessonList,
             lsnQueueIdx: lsnQueueIdx,
             targetKanji: targetKanji,
+            toQueueList: toQueueList,
           ),
           icon: Icon(
             Icons.more_vert,

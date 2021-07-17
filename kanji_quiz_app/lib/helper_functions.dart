@@ -26,6 +26,7 @@ void choiceAction({
   @required BuildContext context,
   @required VertOptions choice,
   List<StudyItem> practiceList,
+  List<StudyItem> toQueueList,
   List<StudyItem> lessonList,
   List<StudyItem> reviewList,
   List<bool> sessionChoices,
@@ -39,7 +40,7 @@ void choiceAction({
   if (choice == VertOptions.Koohii) {
     launchURL(targetKanji);
   } else if (choice == VertOptions.WrapLesson) {
-    wrapLessonSession(context, lsnQueueIdx, lessonList);
+    wrapLessonSession(toQueueList, lessonList, context, lsnQueueIdx);
   } else if (choice == VertOptions.WrapReview) {
     wrapReviewSession(context, sessionChoices, reviewList);
   } else if (choice == VertOptions.WrapPractice) {
@@ -62,6 +63,7 @@ void choiceAction({
 void completeChoiceDialog({
   bool showAlert = true,
   bool naviPop = true,
+  List<StudyItem> toQueueList,
   List<StudyItem> lsnList,
   StudyItem targetItem,
   BuildContext context,
@@ -92,7 +94,7 @@ void completeChoiceDialog({
       Navigator.of(context).pop();
     } else if (lsnList.length <= lsnQueueIdx + 1) {
       //the item is the last in the queue
-      wrapLessonSession(context, lsnQueueIdx, lsnList);
+      wrapLessonSession(toQueueList, lsnList, context, lsnQueueIdx);
     } else {
       context.read(targetItemProvider).state = lsnList[lsnQueueIdx + 1];
       context.read(lessonQueueIdxProvider).state++;
@@ -119,7 +121,7 @@ void resetChoiceDialog({
   if (dialogChoice) {
     targetItem.progressLevel = 0;
     targetItem.mnemonicStory = '';
-    targetItem.learningStatus = 'Lesson';
+    targetItem.learningStatus = 'ToQueue';
     targetItem.dateLastLevelChanged = DateTime.now();
     context.read(studyItemProvider.notifier).editKanji(targetItem);
 
@@ -146,7 +148,19 @@ void launchURL(StudyItem targetKanji) async {
   }
 }
 
-void wrapLessonSession(BuildContext context, lsnQueueIdx, lessonList) {
+void wrapLessonSession(
+  List<StudyItem> toQueueList,
+  List<StudyItem> lessonList,
+  BuildContext context,
+  int lsnQueueIdx,
+) {
+  if (toQueueList != null)
+    toQueueList.forEach((item) {
+      if (item.learningStatus == "ToQueue" && item.progressLevel == 0) {
+        item.learningStatus = "Lesson";
+        context.read(studyItemProvider.notifier).editKanji(item);
+      }
+    });
   for (var index = 0; index <= lsnQueueIdx; index++) {
     StudyItem sessionItem = lessonList[index];
     sessionItem.dateLastLevelChanged = DateTime.now();

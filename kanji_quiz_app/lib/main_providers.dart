@@ -63,34 +63,45 @@ final incorrectRecallListProvider = StateProvider<List<StudyItem>>((ref) => []);
 
 final syncNowProvider = StateProvider<int>((ref) => 0);
 
-final lessonListProvider = Provider<List<StudyItem>>((ref) {
-  final kanjiMainList = ref.watch(studyItemProvider);
-  final lessonList = kanjiMainList
-      .where((kanjiItem) => kanjiItem.learningStatus == "Lesson")
-      .toList();
+final toQueueListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final toQueueList =
+      itemMainList.where((item) => item.learningStatus == "ToQueue").toList();
+  return toQueueList;
+});
+
+final inLessonListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final lessonList =
+      itemMainList.where((item) => item.learningStatus == "Lesson").toList();
   return lessonList;
 });
 
-final reviewListProvider = Provider<List<StudyItem>>((ref) {
-  final kanjiMainList = ref.watch(studyItemProvider);
-  final reviewList = kanjiMainList
-      .where((kanjiItem) => kanjiItem.learningStatus == "Review")
-      .toList();
+final inReviewListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final reviewList =
+      itemMainList.where((item) => item.learningStatus == "Review").toList();
   return reviewList;
 });
 
-final practiceListProvider = Provider<List<StudyItem>>((ref) {
-  final kanjiMainList = ref.watch(studyItemProvider);
-  final reviewList = kanjiMainList
-      .where((kanjiItem) => kanjiItem.learningStatus == "Practice")
-      .toList();
-  return reviewList;
+final inPracticeListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final practiceList =
+      itemMainList.where((item) => item.learningStatus == "Practice").toList();
+  return practiceList;
+});
+
+final acquiredListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final acquiredList =
+      itemMainList.where((item) => item.learningStatus == "Acquired").toList();
+  return acquiredList;
 });
 
 final reviewReadyListProvider = Provider<List<StudyItem>>((ref) {
   // ignore: unused_local_variable
   final syncNow = ref.watch(syncNowProvider);
-  final reviewList = ref.watch(reviewListProvider);
+  final reviewList = ref.watch(inReviewListProvider);
   final readyList = reviewList.where((item) {
     return true; // used for testing review screen
     // return DateTime.now().isAfter(item.nextReviewDate()) ? true : false;
@@ -105,14 +116,6 @@ final chosenlvlListProvider =
     return item.progressLevel == level;
   }).toList();
   return chosenlvlList;
-});
-
-final acquiredListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
-  final acquiredList = itemMainList.where((item) {
-    return item.learningStatus == "Acquired";
-  }).toList();
-  return acquiredList;
 });
 
 final studiedListProvider = Provider<List<StudyItem>>((ref) {

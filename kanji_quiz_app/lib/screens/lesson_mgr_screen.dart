@@ -14,11 +14,11 @@ import '../main_providers.dart';
 class LessonManager extends ConsumerWidget {
   static const routeName = '/lesson-screen';
 
-  void _nextKanji(BuildContext context, queueIndex, lessonList) {
+  void _nextKanji(BuildContext context, queueIndex, lessonList, toQueueList) {
     if (queueIndex < lessonList.length - 1) {
       context.read(lessonQueueIdxProvider).state++;
     } else {
-      wrapLessonSession(context, lessonList, queueIndex);
+      wrapLessonSession(queueIndex, lessonList, context, toQueueList);
     }
   }
 
@@ -32,9 +32,11 @@ class LessonManager extends ConsumerWidget {
     List<StudyItem> _lessonList = ModalRoute.of(context).settings.arguments;
     double _screenHeight = MediaQuery.of(context).size.height;
     double _screenWidth = MediaQuery.of(context).size.width;
+
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;
+    final _toQueueList = watch(toQueueListProvider);
     final _targetItem = _lessonList[_queueIndex];
 
     print('Lesson mgr build called');
@@ -50,6 +52,7 @@ class LessonManager extends ConsumerWidget {
         showAlert: _showAlert,
         lessonList: _lessonList,
         lsnQueueIdx: _queueIndex,
+        toQueueList: _toQueueList,
       ),
       body: Column(
         children: [
@@ -62,7 +65,7 @@ class LessonManager extends ConsumerWidget {
                 ? null
                 : () => _previousKanji(context, _queueIndex, _lessonList),
             rightWidgetHandler: () =>
-                _nextKanji(context, _queueIndex, _lessonList),
+                _nextKanji(context, _queueIndex, _lessonList, _toQueueList),
           ),
           KeyTextContainer(
             passedFunction: () => editDataHandler(
