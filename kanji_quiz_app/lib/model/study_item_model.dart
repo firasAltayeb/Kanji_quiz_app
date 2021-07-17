@@ -141,7 +141,7 @@ class StudyItem {
 
   int correctPracticeNumber() {
     int counter = 0;
-    recallHistory.forEach((element) {
+    practiceHistory.forEach((element) {
       if (element == "Correct") counter++;
     });
     return counter;

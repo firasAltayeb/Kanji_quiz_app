@@ -74,7 +74,10 @@ class ItemDetailScreen extends ConsumerWidget {
               widgetHeight: _screenHeight * 0.07,
             ),
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(
+                top: 10,
+                bottom: 10,
+              ),
               child: BuildingBlockRow(
                 targetItem: _targetItem,
                 screenWidth: _screenWidth,

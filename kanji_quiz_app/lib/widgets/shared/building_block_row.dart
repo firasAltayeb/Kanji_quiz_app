@@ -36,10 +36,10 @@ class BuildingBlockRow extends ConsumerWidget {
           _textWidget(
             textToDisplayed: 'Building blocks: ',
             fontSize: screenWidth * 0.055,
-            widgetWidth: screenWidth * 0.35,
+            widgetWidth: screenWidth * 0.275,
           ),
           GridViewContainer(
-            widgetWidth: screenWidth * 0.6,
+            widgetWidth: screenWidth * 0.675,
             widgetHeight: screenHeight * 0.2,
             itemList: watch(buildingBlocksProvider(targetItem)),
           ),

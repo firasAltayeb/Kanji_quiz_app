@@ -64,10 +64,7 @@ class TranslationOptionBtn extends ConsumerWidget {
           width: screenWidth * 0.95,
           height: screenHeight * 0.08,
           decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.black,
-              width: 1,
-            ),
+            border: Border.all(color: Colors.black),
             color: !answeredRevealed ? Theme.of(ctx).accentColor : answerColor,
           ),
           child: FittedBox(

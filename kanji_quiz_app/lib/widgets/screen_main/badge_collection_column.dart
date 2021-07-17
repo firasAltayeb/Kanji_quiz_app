@@ -98,10 +98,11 @@ class BadgeCollectionColumn extends ConsumerWidget {
                 itemList: lvlSixItems,
                 widgetHeight: screenHeight * 0.2,
               ),
-            ColoredTextContainer(
-              passedText: 'Acquired badges',
-              widgetHeight: screenHeight * 0.04,
-            ),
+            if (acquiredList.isNotEmpty)
+              ColoredTextContainer(
+                passedText: 'Acquired badges',
+                widgetHeight: screenHeight * 0.04,
+              ),
             GridViewContainer(
               itemList: acquiredList,
               widgetHeight: screenHeight * 0.2,

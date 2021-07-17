@@ -17,7 +17,7 @@ class ColoredTextContainer extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 1.0, color: Colors.black),
+          bottom: BorderSide(color: Colors.black),
         ),
         color: widgetColor,
       ),

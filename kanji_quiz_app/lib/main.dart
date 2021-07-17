@@ -47,7 +47,7 @@ class MyApp extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(12), // <-- Radius
                 ),
                 elevation: 5,
-                side: BorderSide(width: 1, color: Colors.black),
+                side: BorderSide(color: Colors.black),
                 minimumSize: Size(30, 30),
                 onPrimary: Colors.black,
                 primary: Colors.transparent,

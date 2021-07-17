@@ -12,6 +12,7 @@ class ShowAnswerButton extends ConsumerWidget {
       width: double.infinity,
       height: screenHeight * 0.35,
       decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
         gradient: LinearGradient(
           colors: [
             Colors.yellow[700],
@@ -19,12 +20,13 @@ class ShowAnswerButton extends ConsumerWidget {
           ],
         ),
       ),
-      child: ElevatedButton(
+      child: TextButton(
         child: Text(
           "Show Answer",
           style: TextStyle(
             fontSize: screenHeight * 0.05,
             fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
         ),
         onPressed: () {
