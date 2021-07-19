@@ -11,13 +11,9 @@ import '../main_providers.dart';
 class ReviewManager extends ConsumerWidget {
   static const routeName = '/review-screen';
 
-  void _undoAnswer(BuildContext ctx, ansChoiceList, queueIdx, reviewList) {
-    if (ansChoiceList[queueIdx - 1]) {
-      ctx.read(sessionScoreProvider).state -= 5;
-      ctx.read(correctRecallListProvider).state.removeLast();
-    } else {
-      ctx.read(incorrectRecallListProvider).state.removeLast();
-    }
+  void _undoAnswer(BuildContext ctx, sessionChoices, queueIdx, reviewList) {
+    if (sessionChoices[queueIdx - 1]) ctx.read(sessionScoreProvider).state -= 5;
+
     ctx.read(sessionChoicesListProvider).state.removeLast();
     ctx.read(reviewQueueIdxProvider).state--;
   }
@@ -49,6 +45,8 @@ class ReviewManager extends ConsumerWidget {
                   context, _sessionChoices, _queueIndex, _reviewList),
             )
           : ResultPage(
+              itemList: _reviewList,
+              sessionChoices: _sessionChoices,
               wrapSession: () =>
                   wrapReviewSession(context, _sessionChoices, _reviewList),
               undoLastAnswer: () => _undoAnswer(

@@ -1,27 +1,24 @@
-import 'package:kanji_quiz_app/model/study_item_model.dart';
-import 'package:kanji_quiz_app/helper_functions.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
+import 'package:kanji_quiz_app/model/study_item_model.dart';
+import 'package:kanji_quiz_app/helper_functions.dart';
+
+class LessonAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final AppBar appBar;
   final bool showAlert;
-  final int lsnQueueIdx;
-  final List<StudyItem> lessonList;
-  final List<StudyItem> toQueueList;
+  final double screenHeight;
+  final StudyItem targetKanji;
 
   LessonAppBar({
     Key key,
     this.appBar,
     this.showAlert,
-    this.lessonList,
-    this.lsnQueueIdx,
-    this.toQueueList,
+    this.targetKanji,
+    this.screenHeight,
   }) : super(key: key);
 
-  Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-    final targetKanji = lessonList[lsnQueueIdx];
-
+  Widget build(BuildContext context, ScopedReader watch) {
     return AppBar(
       title: Text(
         'Lesson Page',
@@ -33,13 +30,11 @@ class LessonAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         PopupMenuButton(
           onSelected: (choice) => choiceAction(
+            watch: watch,
             choice: choice,
             context: context,
             showAlert: showAlert,
-            lessonList: lessonList,
-            lsnQueueIdx: lsnQueueIdx,
             targetKanji: targetKanji,
-            toQueueList: toQueueList,
           ),
           icon: Icon(
             Icons.more_vert,

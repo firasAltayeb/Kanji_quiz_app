@@ -14,15 +14,15 @@ import '../main_providers.dart';
 class LessonManager extends ConsumerWidget {
   static const routeName = '/lesson-screen';
 
-  void _nextKanji(BuildContext context, queueIndex, lessonList, toQueueList) {
+  void _nextKanji(BuildContext context, queueIndex, lessonList, watch) {
     if (queueIndex < lessonList.length - 1) {
       context.read(lessonQueueIdxProvider).state++;
     } else {
-      wrapLessonSession(queueIndex, lessonList, context, toQueueList);
+      wrapLessonSession(context, watch);
     }
   }
 
-  void _previousKanji(BuildContext context, queueIndex, lessonList) {
+  void _previousKanji(BuildContext context, queueIndex) {
     if (queueIndex > 0) {
       context.read(lessonQueueIdxProvider).state--;
     }
@@ -36,7 +36,6 @@ class LessonManager extends ConsumerWidget {
     final _showButtonRow = watch(showBottomRowProvider).state;
     final _queueIndex = watch(lessonQueueIdxProvider).state;
     final _showAlert = watch(showAlertProvider).state;
-    final _toQueueList = watch(toQueueListProvider);
     final _targetItem = _lessonList[_queueIndex];
 
     print('Lesson mgr build called');
@@ -50,9 +49,8 @@ class LessonManager extends ConsumerWidget {
       appBar: LessonAppBar(
         appBar: AppBar(),
         showAlert: _showAlert,
-        lessonList: _lessonList,
-        lsnQueueIdx: _queueIndex,
-        toQueueList: _toQueueList,
+        targetKanji: _targetItem,
+        screenHeight: _screenHeight,
       ),
       body: Column(
         children: [
@@ -63,9 +61,9 @@ class LessonManager extends ConsumerWidget {
             targetItem: _targetItem,
             leftWidgetHandler: _queueIndex == 0
                 ? null
-                : () => _previousKanji(context, _queueIndex, _lessonList),
+                : () => _previousKanji(context, _queueIndex),
             rightWidgetHandler: () =>
-                _nextKanji(context, _queueIndex, _lessonList, _toQueueList),
+                _nextKanji(context, _queueIndex, _lessonList, watch),
           ),
           KeyTextContainer(
             passedFunction: () => editDataHandler(

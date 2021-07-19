@@ -20,13 +20,8 @@ class RecallPage extends ConsumerWidget {
 
   void _recordAnswer(BuildContext ctx, answerChoice) {
     ctx.read(sessionChoicesListProvider).state.add(answerChoice);
+    if (answerChoice) ctx.read(sessionScoreProvider).state += 5;
 
-    if (answerChoice) {
-      ctx.read(sessionScoreProvider).state += 5;
-      ctx.read(correctRecallListProvider).state.add(reviewQueue[queueIndex]);
-    } else {
-      ctx.read(incorrectRecallListProvider).state.add(reviewQueue[queueIndex]);
-    }
     ctx.read(reviewQueueIdxProvider).state++;
   }
 

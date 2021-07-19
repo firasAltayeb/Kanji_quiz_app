@@ -3,20 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../shared/grid_view_container.dart';
+import '../../model/study_item_model.dart';
+import '../../helper_functions.dart';
 import '../../main_providers.dart';
 
 class ResultPage extends ConsumerWidget {
+  final List<StudyItem> itemList;
+  final List<bool> sessionChoices;
+
   final Function wrapSession;
   final Function undoLastAnswer;
 
   ResultPage({
+    @required this.itemList,
+    @required this.sessionChoices,
     @required this.wrapSession,
     @required this.undoLastAnswer,
   });
 
   Widget build(BuildContext bldCtx, ScopedReader watch) {
-    final incorrectRecallList = watch(incorrectRecallListProvider).state;
-    final correctRecallList = watch(correctRecallListProvider).state;
+    final incorrectRecallList = incorrectItemList(itemList, sessionChoices);
+    final correctRecallList = correctItemList(itemList, sessionChoices);
     final sessionScore = watch(sessionScoreProvider).state;
     final screenHeight = MediaQuery.of(bldCtx).size.height;
 

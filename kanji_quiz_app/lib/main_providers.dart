@@ -29,43 +29,45 @@ final studyItemProvider =
 final targetItemProvider =
     StateProvider<StudyItem>((ref) => studyItemStaticData[0]);
 
-final showAlertProvider = StateProvider<bool>((ref) => true);
-
-final showSrsPopUpProvider = StateProvider<bool>((ref) => false);
-
-final lvlColumnVisibleProvider = StateProvider<bool>((ref) => true);
-
-final overallProgressVisibleProvider = StateProvider<bool>((ref) => true);
-
 final practiceQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final sentenceQueueIdxProvider = StateProvider<int>((ref) => 0);
 
-final answeredRevealedProvider = StateProvider<bool>((ref) => false);
+final reviewQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final lessonQueueIdxProvider = StateProvider<int>((ref) => 0);
+
+final rtkLessonUnitProvider = StateProvider<int>((ref) => 1);
+
+final sessionScoreProvider = StateProvider<int>((ref) => 0);
+
+final syncNowProvider = StateProvider<int>((ref) => 0);
+
+final sessionChoicesListProvider = StateProvider<List<bool>>((ref) => []);
+
+final overallProgressVisibleProvider = StateProvider<bool>((ref) => true);
+
+final answeredRevealedProvider = StateProvider<bool>((ref) => false);
+
+final showAnsBtnVisibleProvider = StateProvider<bool>((ref) => true);
+
+final lvlColumnVisibleProvider = StateProvider<bool>((ref) => true);
 
 final keywordPressedProvider = StateProvider<bool>((ref) => false);
 
 final showBottomRowProvider = StateProvider<bool>((ref) => true);
 
-final reviewQueueIdxProvider = StateProvider<int>((ref) => 0);
+final showSrsPopUpProvider = StateProvider<bool>((ref) => false);
 
-final sessionScoreProvider = StateProvider<int>((ref) => 0);
+final showAlertProvider = StateProvider<bool>((ref) => true);
 
-final showAnsBtnVisibleProvider = StateProvider<bool>((ref) => true);
-
-final sessionChoicesListProvider = StateProvider<List<bool>>((ref) => []);
-
-final correctRecallListProvider = StateProvider<List<StudyItem>>((ref) => []);
-
-final incorrectRecallListProvider = StateProvider<List<StudyItem>>((ref) => []);
-
-final correctPracticesProvider = StateProvider<List<StudyItem>>((ref) => []);
-
-final incorrectPracticesProvider = StateProvider<List<StudyItem>>((ref) => []);
-
-final syncNowProvider = StateProvider<int>((ref) => 0);
+final understudiedListProvider = Provider<List<StudyItem>>((ref) {
+  final itemMainList = ref.watch(studyItemProvider);
+  final itemList = itemMainList
+      .where((item) => item.learningStatus == "understudied")
+      .toList();
+  return itemList;
+});
 
 final toQueueListProvider = Provider<List<StudyItem>>((ref) {
   final itemMainList = ref.watch(studyItemProvider);
@@ -74,10 +76,26 @@ final toQueueListProvider = Provider<List<StudyItem>>((ref) {
   return toQueueList;
 });
 
+final newUnitItemsProvider = Provider<List<StudyItem>>((ref) {
+  List<StudyItem> lessonList = [];
+  final understudiedList = ref.watch(understudiedListProvider);
+
+  final lessonEndIndex =
+      understudiedList.indexWhere((element) => element.characterID == "古");
+
+  if (lessonEndIndex == -1) return lessonList;
+
+  for (var index = 0; index < lessonEndIndex; index++) {
+    understudiedList[index].learningStatus = "Lesson";
+    lessonList.add(understudiedList[index]);
+  }
+  return lessonList;
+});
+
 final inLessonListProvider = Provider<List<StudyItem>>((ref) {
   final itemMainList = ref.watch(studyItemProvider);
   final lessonList =
-      itemMainList.where((item) => item.learningStatus == "Lesson").toList();
+      itemMainList.where((item) => item.progressLevel == 1).toList();
   return lessonList;
 });
 

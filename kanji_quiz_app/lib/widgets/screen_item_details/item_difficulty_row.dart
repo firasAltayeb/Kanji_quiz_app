@@ -34,7 +34,6 @@ class ItemDifficultyRow extends ConsumerWidget {
                 HapticFeedback.vibrate();
                 if (targetK.chosenDifficulty > 1) {
                   targetK.chosenDifficulty--;
-                  context.read(targetItemProvider).state = targetK;
                   context.read(studyItemProvider.notifier).editKanji(targetK);
                   context.read(studyItemProvider.notifier).saveProgress();
                 }
@@ -58,7 +57,6 @@ class ItemDifficultyRow extends ConsumerWidget {
                 HapticFeedback.vibrate();
                 if (targetK.chosenDifficulty < 4) {
                   targetK.chosenDifficulty++;
-                  context.read(targetItemProvider).state = targetK;
                   context.read(studyItemProvider.notifier).editKanji(targetK);
                   context.read(studyItemProvider.notifier).saveProgress();
                 }
