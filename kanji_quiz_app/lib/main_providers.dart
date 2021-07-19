@@ -39,7 +39,7 @@ final overallProgressVisibleProvider = StateProvider<bool>((ref) => true);
 
 final practiceQueueIdxProvider = StateProvider<int>((ref) => 0);
 
-final sentenceQueueIdxProvider = StateProvider<int>((ref) => 1);
+final sentenceQueueIdxProvider = StateProvider<int>((ref) => 0);
 
 final answeredRevealedProvider = StateProvider<bool>((ref) => false);
 
@@ -60,6 +60,10 @@ final sessionChoicesListProvider = StateProvider<List<bool>>((ref) => []);
 final correctRecallListProvider = StateProvider<List<StudyItem>>((ref) => []);
 
 final incorrectRecallListProvider = StateProvider<List<StudyItem>>((ref) => []);
+
+final correctPracticesProvider = StateProvider<List<StudyItem>>((ref) => []);
+
+final incorrectPracticesProvider = StateProvider<List<StudyItem>>((ref) => []);
 
 final syncNowProvider = StateProvider<int>((ref) => 0);
 

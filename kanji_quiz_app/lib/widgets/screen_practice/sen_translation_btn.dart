@@ -24,13 +24,13 @@ class TranslationOptionBtn extends ConsumerWidget {
     ctx.read(sessionChoicesListProvider).state.add(answerChoice);
     if (answerChoice) {
       ctx.read(sessionScoreProvider).state += 5;
-      ctx.read(correctRecallListProvider).state.add(practiceList[queueIndex]);
+      ctx.read(correctPracticesProvider).state.add(practiceList[queueIndex]);
     } else {
-      ctx.read(incorrectRecallListProvider).state.add(practiceList[queueIndex]);
+      ctx.read(incorrectPracticesProvider).state.add(practiceList[queueIndex]);
     }
     //check whether currecnt item is last in the list
     if (queueIndex < practiceList.length - 1) {
-      ctx.read(sentenceQueueIdxProvider).state = 1;
+      ctx.read(sentenceQueueIdxProvider).state = 0;
       ctx.read(practiceQueueIdxProvider).state++;
     } else {
       wrapPracticeSession(ctx, sessionChoices, practiceList);

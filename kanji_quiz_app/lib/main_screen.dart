@@ -170,9 +170,7 @@ class MainScreen extends StatelessWidget {
           ),
           child: ElevatedButton(
             child: Text(
-              queueIdx != 0 || extraIdx > 1
-                  ? "Resume Session"
-                  : "Start Session",
+              queueIdx > 0 || extraIdx > 0 ? "Resume Session" : "Start Session",
               style: TextStyle(
                 fontSize: label == "Practice"
                     ? widgetHeight * 0.035

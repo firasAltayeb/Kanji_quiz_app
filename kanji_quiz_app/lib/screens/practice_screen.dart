@@ -15,10 +15,10 @@ class PracticeManager extends ConsumerWidget {
 
   void _skipSentence(
       BuildContext ctx, senQueueIdx, ansChoiceList, pracList, pracQueueIdx) {
-    if (senQueueIdx < 15) {
+    if (senQueueIdx < 14) {
       ctx.read(sentenceQueueIdxProvider).state++;
     } else if (pracQueueIdx < pracList.length - 1) {
-      ctx.read(sentenceQueueIdxProvider).state = 1;
+      ctx.read(sentenceQueueIdxProvider).state = 0;
       ctx.read(practiceQueueIdxProvider).state++;
       ctx.read(sessionChoicesListProvider).state.add(null);
     } else {
@@ -28,9 +28,9 @@ class PracticeManager extends ConsumerWidget {
 
   void _previousSentence(
       BuildContext ctx, senQueueIdx, practiceList, practiceQueueIdx) {
-    if (senQueueIdx > 1) {
+    if (senQueueIdx > 0) {
       ctx.read(sentenceQueueIdxProvider).state--;
-    } else if (senQueueIdx == 1 && practiceQueueIdx > 0) {
+    } else if (senQueueIdx == 0 && practiceQueueIdx > 0) {
       ctx.read(practiceQueueIdxProvider).state--;
       ctx.read(sessionChoicesListProvider).state.removeLast();
     }
@@ -47,8 +47,9 @@ class PracticeManager extends ConsumerWidget {
     final _questionList = translationQuestions;
 
     var _screenHeight = MediaQuery.of(context).size.height;
-    var _sentenceRemainingStatus =
-        _senQueueIdx < 10 ? " 0$_senQueueIdx/15" : " $_senQueueIdx/15";
+    var _sentenceRemainingStatus = _senQueueIdx < 10
+        ? " 0${_senQueueIdx + 1}/15"
+        : " ${_senQueueIdx + 1}/15";
 
     print('Practice mgr build called');
 
@@ -73,7 +74,7 @@ class PracticeManager extends ConsumerWidget {
             children: [
               CornerButton(
                 passedText: "Perv",
-                handler: (_senQueueIdx == 1 && _pracQueueIdx == 0) ||
+                handler: (_senQueueIdx == 0 && _pracQueueIdx == 0) ||
                         _answeredRevealed
                     ? null
                     : () => _previousSentence(

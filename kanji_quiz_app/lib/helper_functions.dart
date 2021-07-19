@@ -241,12 +241,12 @@ void wrapPracticeSession(BuildContext context, sessionChoices, practiceList) {
     }
   }
   context.read(sessionScoreProvider).state = 0;
-  context.read(sentenceQueueIdxProvider).state = 1;
+  context.read(sentenceQueueIdxProvider).state = 0;
   context.read(practiceQueueIdxProvider).state = 0;
   context.read(answeredRevealedProvider).state = false;
+  context.read(correctPracticesProvider).state.clear();
+  context.read(incorrectPracticesProvider).state.clear();
   context.read(sessionChoicesListProvider).state.clear();
-  context.read(correctRecallListProvider).state.clear();
-  context.read(incorrectRecallListProvider).state.clear();
   context.read(studyItemProvider.notifier).saveProgress();
   Navigator.pop(context);
 }
