@@ -6,8 +6,8 @@ import 'progress_services.dart';
 import 'progress_model.dart';
 import 'study_item_model.dart';
 
-class ItemList extends StateNotifier<List<StudyItem>> {
-  ItemList([List<StudyItem> kanjiList]) : super(kanjiList ?? []);
+class StudyItemList extends StateNotifier<List<StudyItem>> {
+  StudyItemList([List<StudyItem> kanjiList]) : super(kanjiList ?? []);
 
   void updateProgress(List<Progress> progressList) {
     state = [

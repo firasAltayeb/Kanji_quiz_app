@@ -34,12 +34,12 @@ class ItemBottomRow extends ConsumerWidget {
             child: _bottomButton(
               screenHeight,
               () => resetChoiceDialog(
+                watch: watch,
                 context: context,
                 showAlert: showAlert,
                 targetItem: targetItem,
-                lsnQueueIdx: lsnQueueIdx,
-                alertMessage: "All your changes will be undo",
                 naviPop: itemDetailScreen ? true : false,
+                alertMessage: "All your changes will be undo",
               ),
               "Undo Changes",
               Colors.red,

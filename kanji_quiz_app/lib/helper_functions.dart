@@ -58,6 +58,31 @@ void choiceAction({
   }
 }
 
+void assignNewLessonItems(ScopedReader watch, BuildContext context, rtkLesson) {
+  final notReadyList = watch(notReadyListProvider);
+
+  int lessonEndIndex =
+      notReadyList.indexWhere((element) => element.characterID == "古");
+
+  if (lessonEndIndex == -1) return;
+
+  for (var index = 0; index < lessonEndIndex; index++) {
+    notReadyList[index].progressLevel = 0;
+    notReadyList[index].learningStatus = "Lesson";
+    context.read(studyItemProvider.notifier).editKanji(notReadyList[index]);
+  }
+}
+
+void launchURL(StudyItem targetKanji) async {
+  String url =
+      'https://kanji.koohii.com/study/kanji/' + '${targetKanji.frameNumSixth}';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 void markAsPracticeDialog({
   bool wrapSession = false,
   bool showAlert = true,
@@ -78,15 +103,23 @@ void markAsPracticeDialog({
   if (dialogChoice) {
     if (targetItem.itemType == "Kanji" &&
         targetItem.learningStatus != "Practice") {
-      targetItem.learningStatus = "Practice";
+      targetItem.progressLevel = 4;
+      targetItem.learningStatus = 'Practice';
     } else {
-      targetItem.learningStatus = "Acquired";
+      targetItem.progressLevel = 7;
+      targetItem.learningStatus = 'Acquireds';
     }
     if (naviPop) {
-      sortLearningStatus(context, targetItem);
+      if (targetItem.progressLevel == 4 &&
+          watch(practiceQueueIdxProvider).state > 0)
+        targetItem.learningStatus = "Queued";
+      targetItem.dateLastLevelChanged = DateTime.now();
       context.read(studyItemProvider.notifier).editKanji(targetItem);
       Navigator.of(context).pop();
     } else if (wrapSession) {
+      if (targetItem.progressLevel == 4 &&
+          watch(practiceQueueIdxProvider).state > 0)
+        targetItem.learningStatus = "Queued";
       wrapLessonSession(context, watch);
     } else {
       context.read(lessonQueueIdxProvider).state++;
@@ -100,7 +133,7 @@ void resetChoiceDialog({
   StudyItem targetItem,
   BuildContext context,
   String alertMessage,
-  int lsnQueueIdx,
+  ScopedReader watch,
 }) async {
   bool dialogChoice = true;
   if (showAlert) {
@@ -111,17 +144,19 @@ void resetChoiceDialog({
         false;
   }
   if (dialogChoice) {
-    targetItem.progressLevel = 0;
     targetItem.mnemonicStory = '';
-    targetItem.learningStatus = 'ToQueue';
-    targetItem.dateLastLevelChanged = DateTime.now();
+    if (watch(lessonQueueIdxProvider).state > 0) {
+      targetItem.learningStatus = "Queued";
+    } else {
+      targetItem.progressLevel = 0;
+      targetItem.learningStatus = "Lesson";
+    }
     context.read(studyItemProvider.notifier).editKanji(targetItem);
-
     if (naviPop) {
       context.read(studyItemProvider.notifier).saveProgress();
       Navigator.of(context).pop();
     } else {
-      if (lsnQueueIdx > 0) {
+      if (watch(lessonQueueIdxProvider).state > 0) {
         context.read(lessonQueueIdxProvider).state--;
       } else {
         context.read(lessonQueueIdxProvider).state++;
@@ -130,45 +165,25 @@ void resetChoiceDialog({
   }
 }
 
-void launchURL(StudyItem targetKanji) async {
-  String url =
-      'https://kanji.koohii.com/study/kanji/' + '${targetKanji.frameNumSixth}';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-List<StudyItem> correctItemList(itemList, sessionChoices) {
-  List<StudyItem> itemsMarkedCorrect = [];
-  for (var index = 0; index < sessionChoices.length; index++)
-    if (sessionChoices[index]) itemsMarkedCorrect.add(itemList[index]);
-  return itemsMarkedCorrect;
-}
-
-List<StudyItem> incorrectItemList(itemList, sessionChoices) {
-  List<StudyItem> itemsMarkedCorrect = [];
-  for (var index = 0; index < sessionChoices.length; index++)
-    if (!sessionChoices[index]) itemsMarkedCorrect.add(itemList[index]);
-  return itemsMarkedCorrect;
-}
-
 void wrapLessonSession(BuildContext context, ScopedReader watch) {
-  final toQueueList = watch(toQueueListProvider);
-  if (toQueueList != null)
-    toQueueList.forEach((item) {
-      if (item.learningStatus == "ToQueue" && item.progressLevel == 0) {
-        item.learningStatus = "Lesson";
-        context.read(studyItemProvider.notifier).editKanji(item);
-      }
-    });
+  final queuedList = watch(queuedListProvider);
+  unQueueItems(queuedList, "Lesson", 0, context);
 
   final lsnQueueIndex = watch(lessonQueueIdxProvider).state;
   final lessonList = watch(inLessonListProvider);
   for (var index = 0; index <= lsnQueueIndex; index++) {
-    print("index $index");
-    sortLearningStatus(context, lessonList[index]);
+    StudyItem lessonItem = lessonList[index];
+    //dont change item if marked as prac or acqu
+    if (lessonItem.progressLevel > 0) return;
+
+    if (watch(reviewQueueIdxProvider).state > 0)
+      lessonItem.learningStatus = "Queued";
+    else
+      lessonItem.learningStatus = 'Review';
+
+    lessonItem.progressLevel = 1;
+    lessonItem.dateLastLevelChanged = DateTime.now();
+    context.read(studyItemProvider.notifier).editKanji(lessonItem);
   }
 
   context.read(lessonQueueIdxProvider).state = 0;
@@ -176,16 +191,15 @@ void wrapLessonSession(BuildContext context, ScopedReader watch) {
   Navigator.pop(context);
 }
 
-void sortLearningStatus(BuildContext context, item) {
-  if (item.learningStatus == 'Lesson')
-    item.learningStatus = 'Review';
-  else if (item.learningStatus == 'Practice')
-    item.progressLevel = 4;
-  else if (item.learningStatus == 'Acquired') {
-    item.progressLevel = 7;
-  }
-  item.dateLastLevelChanged = DateTime.now();
-  context.read(studyItemProvider.notifier).editKanji(item);
+void unQueueItems(queuedList, newStatus, lvlInQus, context) {
+  if (queuedList != null)
+    queuedList.forEach((item) {
+      if (item.progressLevel == lvlInQus) {
+        item.learningStatus = newStatus;
+        item.dateLastLevelChanged = DateTime.now();
+        context.read(studyItemProvider.notifier).editKanji(item);
+      }
+    });
 }
 
 void wrapReviewSession(BuildContext context, sessionChoices, reviewList) {
@@ -257,6 +271,20 @@ void wrapPracticeSession(BuildContext context, sessionChoices, practiceList) {
   context.read(sessionChoicesListProvider).state.clear();
   context.read(studyItemProvider.notifier).saveProgress();
   Navigator.pop(context);
+}
+
+List<StudyItem> correctItemList(itemList, sessionChoices) {
+  List<StudyItem> itemsMarkedCorrect = [];
+  for (var index = 0; index < sessionChoices.length; index++)
+    if (sessionChoices[index]) itemsMarkedCorrect.add(itemList[index]);
+  return itemsMarkedCorrect;
+}
+
+List<StudyItem> incorrectItemList(itemList, sessionChoices) {
+  List<StudyItem> itemsMarkedCorrect = [];
+  for (var index = 0; index < sessionChoices.length; index++)
+    if (!sessionChoices[index]) itemsMarkedCorrect.add(itemList[index]);
+  return itemsMarkedCorrect;
 }
 
 void editDataHandler(

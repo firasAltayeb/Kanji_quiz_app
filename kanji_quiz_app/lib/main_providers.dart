@@ -8,7 +8,12 @@ import 'model/study_item_model.dart';
 import 'model/item_static_data.dart';
 import 'model/progress_model.dart';
 
-final progressProvider =
+final studyItemProvider =
+    StateNotifierProvider<StudyItemList, List<StudyItem>>((ref) {
+  return StudyItemList(studyItemStaticData);
+});
+
+final itemProgressProvider =
     FutureProvider.autoDispose<List<Progress>>((ref) async {
   if (Platform.isAndroid) {
     if (!await Permission.storage.isGranted) {
@@ -19,11 +24,6 @@ final progressProvider =
   ref.read(studyItemProvider.notifier).updateProgress(progressList);
 
   return progressList;
-});
-
-final studyItemProvider =
-    StateNotifierProvider<ItemList, List<StudyItem>>((ref) {
-  return ItemList(studyItemStaticData);
 });
 
 final targetItemProvider =
@@ -61,62 +61,45 @@ final showSrsPopUpProvider = StateProvider<bool>((ref) => false);
 
 final showAlertProvider = StateProvider<bool>((ref) => true);
 
-final understudiedListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
-  final itemList = itemMainList
-      .where((item) => item.learningStatus == "understudied")
-      .toList();
+final notReadyListProvider = Provider<List<StudyItem>>((ref) {
+  final mainStudyList = ref.watch(studyItemProvider);
+  final itemList =
+      mainStudyList.where((item) => item.learningStatus == "NotReady").toList();
   return itemList;
 });
 
-final toQueueListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
+final queuedListProvider = Provider<List<StudyItem>>((ref) {
+  final mainStudyList = ref.watch(studyItemProvider);
   final toQueueList =
-      itemMainList.where((item) => item.learningStatus == "ToQueue").toList();
+      mainStudyList.where((item) => item.learningStatus == "Queued").toList();
   return toQueueList;
 });
 
-final newUnitItemsProvider = Provider<List<StudyItem>>((ref) {
-  List<StudyItem> lessonList = [];
-  final understudiedList = ref.watch(understudiedListProvider);
-
-  final lessonEndIndex =
-      understudiedList.indexWhere((element) => element.characterID == "古");
-
-  if (lessonEndIndex == -1) return lessonList;
-
-  for (var index = 0; index < lessonEndIndex; index++) {
-    understudiedList[index].learningStatus = "Lesson";
-    lessonList.add(understudiedList[index]);
-  }
-  return lessonList;
-});
-
 final inLessonListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
+  final mainStudyList = ref.watch(studyItemProvider);
   final lessonList =
-      itemMainList.where((item) => item.progressLevel == 1).toList();
+      mainStudyList.where((item) => item.learningStatus == "Lesson").toList();
   return lessonList;
 });
 
 final inReviewListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
+  final mainStudyList = ref.watch(studyItemProvider);
   final reviewList =
-      itemMainList.where((item) => item.learningStatus == "Review").toList();
+      mainStudyList.where((item) => item.learningStatus == "Review").toList();
   return reviewList;
 });
 
 final inPracticeListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
+  final mainStudyList = ref.watch(studyItemProvider);
   final practiceList =
-      itemMainList.where((item) => item.learningStatus == "Practice").toList();
+      mainStudyList.where((item) => item.learningStatus == "Practice").toList();
   return practiceList;
 });
 
 final acquiredListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
+  final mainStudyList = ref.watch(studyItemProvider);
   final acquiredList =
-      itemMainList.where((item) => item.learningStatus == "Acquired").toList();
+      mainStudyList.where((item) => item.learningStatus == "Acquired").toList();
   return acquiredList;
 });
 
@@ -133,32 +116,32 @@ final reviewReadyListProvider = Provider<List<StudyItem>>((ref) {
 
 final chosenlvlListProvider =
     Provider.autoDispose.family<List<StudyItem>, int>((ref, level) {
-  final itemMainList = ref.watch(studyItemProvider);
-  final chosenlvlList = itemMainList.where((item) {
+  final mainStudyList = ref.watch(studyItemProvider);
+  final chosenlvlList = mainStudyList.where((item) {
     return item.progressLevel == level;
   }).toList();
   return chosenlvlList;
 });
 
 final studiedListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
-  final studiedList = itemMainList.where((item) {
+  final mainStudyList = ref.watch(studyItemProvider);
+  final studiedList = mainStudyList.where((item) {
     return item.mnemonicStory != "" && item.learningStatus != "Lesson";
   }).toList();
   return studiedList;
 });
 
 final reviewedListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
-  final reviewedList = itemMainList.where((item) {
+  final mainStudyList = ref.watch(studyItemProvider);
+  final reviewedList = mainStudyList.where((item) {
     return item.recallHistory.isNotEmpty;
   }).toList();
   return reviewedList;
 });
 
 final practicedListProvider = Provider<List<StudyItem>>((ref) {
-  final itemMainList = ref.watch(studyItemProvider);
-  final practicedList = itemMainList.where((item) {
+  final mainStudyList = ref.watch(studyItemProvider);
+  final practicedList = mainStudyList.where((item) {
     return item.practiceHistory.isNotEmpty;
   }).toList();
   return practicedList;
@@ -202,12 +185,12 @@ final templateAddressProvider =
 
 final buildingBlocksProvider =
     Provider.autoDispose.family<List<StudyItem>, StudyItem>((ref, targetKanji) {
-  final itemMainList = ref.watch(studyItemProvider);
+  final mainStudyList = ref.watch(studyItemProvider);
   List<String> targetbuildingBlockIDs = targetKanji.buildingBlocksID;
 
   List<StudyItem> buildingBlocks = [];
   for (var index = 0; index < targetbuildingBlockIDs.length; index++) {
-    buildingBlocks.addAll(itemMainList
+    buildingBlocks.addAll(mainStudyList
         .where((item) => item.characterID == targetbuildingBlockIDs[index]));
   }
 

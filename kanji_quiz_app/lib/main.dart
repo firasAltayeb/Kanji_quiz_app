@@ -19,7 +19,7 @@ void main() async {
 class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, ScopedReader watch) {
     print('Material app is built');
-    AsyncValue<List<Progress>> progressList = watch(progressProvider);
+    AsyncValue<List<Progress>> progressList = watch(itemProgressProvider);
 
     return progressList.when(
       data: (_) {
